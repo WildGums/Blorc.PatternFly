@@ -133,4 +133,5 @@ TestResults
 .github/
 BundleArtifacts/
 
-FodyWeavers.xsd/src/webgums.sln.tar.gz
+.vscode
+FodyWeavers.xsd
