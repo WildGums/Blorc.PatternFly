@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.452
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.PatternFly", "..\..\..\..\@archive\2019\WildGums\Blazor.PatternFly\src\Blazor.PatternFly\Blazor.PatternFly.csproj", "{818A23A9-05B6-4D04-93CD-43457EE68374}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{63DAA945-FCAD-4AA2-91B8-5B02EA4DCCF7}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.build.props = Directory.build.props
+		Directory.build.shared.explicit.props = Directory.build.shared.explicit.props
+		Directory.build.shared.implicit.props = Directory.build.shared.implicit.props
+		Directory.build.shared.mat.props = Directory.build.shared.mat.props
+		Directory.build.targets = Directory.build.targets
+		MethodTimeLogger.cs = MethodTimeLogger.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{09F98C75-D366-4460-A07D-3B9FCC02B8E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{818A23A9-05B6-4D04-93CD-43457EE68374}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{818A23A9-05B6-4D04-93CD-43457EE68374}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{818A23A9-05B6-4D04-93CD-43457EE68374}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{818A23A9-05B6-4D04-93CD-43457EE68374}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{818A23A9-05B6-4D04-93CD-43457EE68374} = {09F98C75-D366-4460-A07D-3B9FCC02B8E1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B31C42EA-6789-4DE1-B98C-080A2046A44F}
+	EndGlobalSection
+EndGlobal
