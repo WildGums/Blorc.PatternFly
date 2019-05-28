@@ -1,4 +1,4 @@
-﻿@using Blazorc.PatternFly.Components.Accordion
+﻿@using Blazorc.PatternFly.Components.Navigation
 
 <div class="top-row pl-4 navbar navbar-dark">
     <a class="navbar-brand" href="">Blazor.PatternFly.Example</a>
@@ -8,62 +8,59 @@
 </div>
 
 <div class="@NavMenuCssClass" onclick="@ToggleNavMenu">
-    <ul class="nav flex-column">
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+    <Navigation ref="Navigation">
+        <NavigationItem Title="Home" Link="/" Parent="@Navigation" >
+            <Content>
                 <span class="oi oi-home" aria-hidden="true"></span> Home
-            </NavLink>
-        </li>
-        <Accordion ref="Accordion">
-            <AccordionItem Title="Components" Index="0" Parent="@Accordion">
-                <ExpandedContentBody>
-                    <NavLink class="nav-link" href="components/about-modal" Match="NavLinkMatch.All">
-                        <span class="oi oi-browser" aria-hidden="true"></span> About modal box
-                    </NavLink>
-                    <NavLink class="nav-link" href="components/accordion" Match="NavLinkMatch.All">
-                        <span class="oi oi-arrow-bottom" aria-hidden="true"></span> Accordion
-                    </NavLink>
-
-                    <NavLink class="nav-link" href="components/alert" Match="NavLinkMatch.All">
-                        <span class="oi oi-monitor" aria-hidden="true"></span> Alert
-                    </NavLink>
-
-                    <NavLink class="nav-link" href="components/alert-group" Match="NavLinkMatch.All">
-                        <span class="oi oi-arrow-bottom" aria-hidden="true"></span> Alert Group
-                    </NavLink>
-                    <NavLink class="nav-link" href="components/nav" Match="NavLinkMatch.All">
-                        <span class="oi oi-browser" aria-hidden="true"></span> Nav
-                    </NavLink>
-                    <!--TODO: -->
-                    <NavLink class="nav-link" href="components/etc" Match="NavLinkMatch.All">
-                        <span class="oi oi-aperture" aria-hidden="true"></span> etc...
-                    </NavLink>
-                </ExpandedContentBody>
-            </AccordionItem>
-        </Accordion>
-
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
+            </Content>
+        </NavigationItem>
+        <NavigationItem Title="Counter" Link="/counter" Parent="@Navigation" >
+            <Content>
                 <span class="oi oi-plus" aria-hidden="true"></span> Counter
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchdata">
+            </Content>
+        </NavigationItem>
+        <NavigationItem Title="Fetch Data" Link="/fetchdata" Parent="@Navigation">
+            <Content>
                 <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
-            </NavLink>
-        </li>
+            </Content>
+        </NavigationItem>
+        <NavigationExpandableSection Title="Components" Parent="@Navigation" ref="ComponentsNavigationExpandableSection">
+            <Items>
+                <NavigationItem Title="About modal box" Link="components/about-modal-box" Parent="@ComponentsNavigationExpandableSection" >
+                </NavigationItem>
+                <NavigationItem Title="Accordion" Link="components/accordion" Parent="@ComponentsNavigationExpandableSection" />
+                <NavigationItem Title="Nav" Link="components/nav" Parent="@ComponentsNavigationExpandableSection" />
+                <NavigationItem Title="Etc.." Link="components/etc" Parent="@ComponentsNavigationExpandableSection" />
+            </Items>
+        </NavigationExpandableSection>
+    </Navigation>
+
+    <!--
+    <li class="nav-item px-3">
+        <NavLink class="nav-link" href="counter">
+            <span class="oi oi-plus" aria-hidden="true"></span> Counter
+        </NavLink>
+    </li>
+    <li class="nav-item px-3">
+        <NavLink class="nav-link" href="fetchdata">
+            <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
+        </NavLink>
+    </li>
     </ul>
+    -->
 </div>
 
-    @functions {
-        Accordion Accordion = new Accordion();
+@functions {
+    Navigation Navigation = new Navigation();
 
-        bool collapseNavMenu = true;
+    NavigationExpandableSection ComponentsNavigationExpandableSection = new NavigationExpandableSection();
 
-        string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+    bool collapseNavMenu = true;
 
-        void ToggleNavMenu()
-        {
-            collapseNavMenu = !collapseNavMenu;
-        }
+    string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
     }
+}

@@ -1,10 +1,8 @@
 ﻿namespace Blazorc.PatternFly.Components.Navigation
 {
     using System;
-    using System.Security.Principal;
     using System.Threading.Tasks;
-    using System.Transactions;
-    using Catel.IoC;
+    using Interfaces;
     using Microsoft.AspNetCore.Components;
 
     public class NavigationItemComponent : ComponentBase
@@ -12,17 +10,23 @@
         protected const string NavigationItemCurrentClass = "pf-c-nav__link pf-m-current";
 
         protected const string NavigationItemNormalClass = "pf-c-nav__link";
-        [Microsoft.AspNetCore.Components.Inject]
+
+        [Inject]
         public IUriHelper UriHelper { get; set; }
 
         [Parameter]
         public string Title { get; set; }
 
         [Parameter]
+        public RenderFragment Content { get; set; }
+
+        [Parameter]
         public string Link { get; set; }
 
         [Parameter]
-        public NavigationExpandableSection Parent { get; set; }
+        public INavigationComponent Parent { get; set; }
+
+        public bool IsCurrent { get; private set; }
 
         protected override async Task OnInitAsync()
         {
@@ -38,10 +42,8 @@
         {
             Parent.InvalidateCurrent();
             IsCurrent = true;
-            Parent.Refresh(IsCurrent);
-            // UriHelper.NavigateTo(Link);
+            Parent.SetBranchAsCurrent();
+            UriHelper.NavigateTo(Link);
         }
-
-        public bool IsCurrent { get; private set; }
     }
 }

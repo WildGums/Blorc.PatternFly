@@ -2,6 +2,13 @@
 
 <li class="pf-c-nav__item">
     <a class="@(IsCurrent? NavigationItemCurrentClass : NavigationItemNormalClass)" aria-current="page" onclick=@(()=>OnItemClick())>
-        @Title
+        @if (Content != null)
+        {
+            @Content
+        }
+        else
+        {
+            @Title
+        }
     </a>
 </li>
