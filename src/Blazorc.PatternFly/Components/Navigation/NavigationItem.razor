@@ -1,0 +1,7 @@
+﻿@inherits Blazorc.PatternFly.Components.Navigation.NavigationItemComponent
+
+<li class="pf-c-nav__item">
+    <a class="@(IsCurrent? NavigationItemCurrentClass : NavigationItemNormalClass)" aria-current="page" onclick=@(()=>OnItemClick())>
+        @Title
+    </a>
+</li>
