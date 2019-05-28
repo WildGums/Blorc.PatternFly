@@ -1,4 +1,4 @@
-﻿namespace Blazor.PatternFly.Components.Accordion
+﻿namespace Blazorc.PatternFly.Components.Accordion
 {
     using Microsoft.AspNetCore.Components;
 

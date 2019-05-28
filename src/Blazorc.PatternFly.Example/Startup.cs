@@ -1,4 +1,4 @@
-﻿namespace Blazor.PatternFly.Example
+﻿namespace Blazorc.PatternFly.Example
 {
     using Microsoft.AspNetCore.Components.Builder;
     using Microsoft.Extensions.DependencyInjection;

@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Blazor.Hosting;
-
-namespace Blazor.PatternFly.Example
+﻿namespace Blazorc.PatternFly.Example
 {
+    using Microsoft.AspNetCore.Blazor.Hosting;
+
     public class Program
     {
         public static void Main(string[] args)
@@ -9,8 +9,10 @@ namespace Blazor.PatternFly.Example
             CreateHostBuilder(args).Build().Run();
         }
 
-        public static IWebAssemblyHostBuilder CreateHostBuilder(string[] args) =>
-            BlazorWebAssemblyHost.CreateDefaultBuilder()
+        public static IWebAssemblyHostBuilder CreateHostBuilder(string[] args)
+        {
+            return BlazorWebAssemblyHost.CreateDefaultBuilder()
                 .UseBlazorStartup<Startup>();
+        }
     }
 }
