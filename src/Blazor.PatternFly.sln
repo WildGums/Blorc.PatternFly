@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example", "Example", "{E64F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{FF2EEBCC-DAA8-430E-A316-E7B39ADD898B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.PatternFly.Tests", "Blazor.PatternFly.Tests\Blazor.PatternFly.Tests.csproj", "{5916F145-9EC1-46A1-8F6D-09157E81CA88}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{4F5ED02E-F79A-4A83-8263-850CF44C6A66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F5ED02E-F79A-4A83-8263-850CF44C6A66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F5ED02E-F79A-4A83-8263-850CF44C6A66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5916F145-9EC1-46A1-8F6D-09157E81CA88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5916F145-9EC1-46A1-8F6D-09157E81CA88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5916F145-9EC1-46A1-8F6D-09157E81CA88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5916F145-9EC1-46A1-8F6D-09157E81CA88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,6 +55,7 @@ Global
 		{56F92333-D342-4C5F-92F3-01C1D7EF5274} = {09F98C75-D366-4460-A07D-3B9FCC02B8E1}
 		{E64FB0BE-0148-4B05-B673-4ABDFBBFB768} = {09F98C75-D366-4460-A07D-3B9FCC02B8E1}
 		{FF2EEBCC-DAA8-430E-A316-E7B39ADD898B} = {09F98C75-D366-4460-A07D-3B9FCC02B8E1}
+		{5916F145-9EC1-46A1-8F6D-09157E81CA88} = {FF2EEBCC-DAA8-430E-A316-E7B39ADD898B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B31C42EA-6789-4DE1-B98C-080A2046A44F}
