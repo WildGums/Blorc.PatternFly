@@ -1,4 +1,6 @@
-﻿<div class="top-row pl-4 navbar navbar-dark">
+﻿@using Blazor.PatternFly.Components.Accordion
+
+<div class="top-row pl-4 navbar navbar-dark">
     <a class="navbar-brand" href="">Blazor.PatternFly.Example</a>
     <button class="navbar-toggler" onclick="@ToggleNavMenu">
         <span class="navbar-toggler-icon"></span>
@@ -12,11 +14,34 @@
                 <span class="oi oi-home" aria-hidden="true"></span> Home
             </NavLink>
         </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="components/accordion" Match="NavLinkMatch.All">
-                <span class="oi oi-arrow-bottom" aria-hidden="true"></span> Accordion
-            </NavLink>
-        </li>
+        <Accordion ref="Accordion">
+            <AccordionItem Title="Components" Index="0" Parent="@Accordion">
+                <ExpandedContentBody>
+                    <NavLink class="nav-link" href="components/about-modal" Match="NavLinkMatch.All">
+                        <span class="oi oi-browser" aria-hidden="true"></span> About modal box
+                    </NavLink>
+                    <NavLink class="nav-link" href="components/accordion" Match="NavLinkMatch.All">
+                        <span class="oi oi-arrow-bottom" aria-hidden="true"></span> Accordion
+                    </NavLink>
+
+                    <NavLink class="nav-link" href="components/alert" Match="NavLinkMatch.All">
+                        <span class="oi oi-monitor" aria-hidden="true"></span> Alert
+                    </NavLink>
+
+                    <NavLink class="nav-link" href="components/alert-group" Match="NavLinkMatch.All">
+                        <span class="oi oi-arrow-bottom" aria-hidden="true"></span> Alert Group
+                    </NavLink>
+                    <NavLink class="nav-link" href="components/nav" Match="NavLinkMatch.All">
+                        <span class="oi oi-browser" aria-hidden="true"></span> Nav
+                    </NavLink>
+                    <!--TODO: -->
+                    <NavLink class="nav-link" href="components/etc" Match="NavLinkMatch.All">
+                        <span class="oi oi-aperture" aria-hidden="true"></span> etc...
+                    </NavLink>
+                </ExpandedContentBody>
+            </AccordionItem>
+        </Accordion>
+
         <li class="nav-item px-3">
             <NavLink class="nav-link" href="counter">
                 <span class="oi oi-plus" aria-hidden="true"></span> Counter
@@ -30,13 +55,15 @@
     </ul>
 </div>
 
-@functions {
-    bool collapseNavMenu = true;
+    @functions {
+        Accordion Accordion = new Accordion();
 
-    string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+        bool collapseNavMenu = true;
 
-    void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
+        string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+        void ToggleNavMenu()
+        {
+            collapseNavMenu = !collapseNavMenu;
+        }
     }
-}

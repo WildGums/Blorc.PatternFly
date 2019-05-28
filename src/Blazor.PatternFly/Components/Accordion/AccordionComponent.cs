@@ -17,8 +17,13 @@
                 if (_selectedIndex != value)
                 {
                     _selectedIndex = value;
-                    StateHasChanged();
                 }
+                else
+                {
+                    _selectedIndex = -1;
+                }
+
+                StateHasChanged();
             }
         }
     }
