@@ -1,8 +1,8 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras">
   <PropertyGroup>
     <TargetFrameworks>netcoreapp3.0</TargetFrameworks>
-    <AssemblyName>Blazor.PatternFly.Tests</AssemblyName>
-    <RootNamespace>Blazor.PatternFly.Tests</RootNamespace>
+    <AssemblyName>Blazorc.PatternFly.Tests</AssemblyName>
+    <RootNamespace>Blazorc.PatternFly.Tests</RootNamespace>
     <PackageId>WebGums.Tests</PackageId>
     <PackageVersion>1.0.0-alpha0001</PackageVersion>
     <Description></Description>

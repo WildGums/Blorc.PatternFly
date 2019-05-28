@@ -4,7 +4,7 @@
 
 // Define the required parameters
 var Parameters = new Dictionary<string, object>();
-Parameters["SolutionName"] = "Blazor.PatternFly";
+Parameters["SolutionName"] = "Blazorc.PatternFly";
 Parameters["Company"] = "WildGums";
 Parameters["RepositoryUrl"] = string.Format("https://github.com/{0}/{1}", GetBuildServerVariable("Company"), GetBuildServerVariable("SolutionName"));
 Parameters["StartYear"] = "2019";

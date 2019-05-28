@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Blazor.PatternFly\Blazor.PatternFly.csproj" />
+    <ProjectReference Include="..\Blazorc.PatternFly\Blazorc.PatternFly.csproj" />
   </ItemGroup>
 
 </Project>

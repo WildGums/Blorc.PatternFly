@@ -15,9 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{63DAA945-F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{09F98C75-D366-4460-A07D-3B9FCC02B8E1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.PatternFly", "Blazor.PatternFly\Blazor.PatternFly.csproj", "{5A544B26-4726-4B76-9BE0-49DB2A5BD7B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazorc.PatternFly", "Blazorc.PatternFly\Blazorc.PatternFly.csproj", "{5A544B26-4726-4B76-9BE0-49DB2A5BD7B7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.PatternFly.Example", "Blazor.PatternFly.Example\Blazor.PatternFly.Example.csproj", "{4F5ED02E-F79A-4A83-8263-850CF44C6A66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazorc.PatternFly.Example", "Blazorc.PatternFly.Example\Blazorc.PatternFly.Example.csproj", "{4F5ED02E-F79A-4A83-8263-850CF44C6A66}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{56F92333-D342-4C5F-92F3-01C1D7EF5274}"
 EndProject
@@ -25,7 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example", "Example", "{E64F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{FF2EEBCC-DAA8-430E-A316-E7B39ADD898B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.PatternFly.Tests", "Blazor.PatternFly.Tests\Blazor.PatternFly.Tests.csproj", "{5916F145-9EC1-46A1-8F6D-09157E81CA88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazorc.PatternFly.Tests", "Blazorc.PatternFly.Tests\Blazorc.PatternFly.Tests.csproj", "{5916F145-9EC1-46A1-8F6D-09157E81CA88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
