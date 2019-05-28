@@ -1,4 +1,4 @@
-#tool "nuget:?package=OctopusTools&version=6.0.2"
+#tool "nuget:?package=OctopusTools&version=4.39.1"
 
 var OctopusRepositoryUrl = GetBuildServerVariable("OctopusRepositoryUrl", showValue: true);
 var OctopusRepositoryApiKey = GetBuildServerVariable("OctopusRepositoryApiKey", showValue: false);
