@@ -13,9 +13,11 @@
 
         public const string BodyCollapsedClass = "pf-c-accordion__expanded-content";
 
-        [Parameter] public AccordionComponent Parent { get; set; }
+        [Parameter]
+        public AccordionComponent Parent { get; set; }
 
-        [Parameter] public int Index { get; set; }
+        [Parameter]
+        public int Index { get; set; }
 
         public bool IsSelected => Index == Parent.SelectedIndex;
 

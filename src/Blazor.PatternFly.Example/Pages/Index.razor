@@ -1,42 +1,7 @@
 ﻿@page "/"
 
-@using Blazor.PatternFly.Components.Accordion
-
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
-
-<Accordion ref="Accordion">
-    <AccordionItem Title="Item 0" Index="0" Parent="@Accordion">
-        <ExpandedContentBody>
-            This is the item 0
-        </ExpandedContentBody>
-    </AccordionItem>
-
-    <AccordionItem Title="Item 1" Index="1" Parent="@Accordion">
-        <ExpandedContentBody>
-            This is the item 1
-        </ExpandedContentBody>
-    </AccordionItem>
-
-    <AccordionItem Title="Item 2" Index="2" Parent="@Accordion">
-        <ExpandedContentBody>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie lorem lacinia dolor aliquet faucibus.
-            Suspendisse gravida imperdiet accumsan. Aenean auctor lorem justo, vitae tincidunt enim blandit vel. Aenean quis tempus dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit Bla Bla Blee Bla.
-        </ExpandedContentBody>
-    </AccordionItem>
-
-    <AccordionItem Title="Item 3" Index="3" Parent="@Accordion">
-        <ExpandedContentBody>
-            This is the item 2
-        </ExpandedContentBody>
-    </AccordionItem>
-
-</Accordion>
-
-@functions {
-    Accordion Accordion = new Accordion();
-}
-
