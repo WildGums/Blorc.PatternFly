@@ -7,7 +7,7 @@
     public class NavigationComponent : ComponentBase, INavigationComponent
     {
         [Parameter]
-        public RenderFragment ChildContent { get; set; }
+        public RenderFragment Items { get; set; }
 
         public event EventHandler CurrentItemInvalidated;
 

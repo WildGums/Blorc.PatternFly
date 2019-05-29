@@ -3,7 +3,14 @@
 
 <li class="@(IsCurrent ? (IsExpanded ? NavigationExpandableItemExpandedCurrentClass : NavigationExpandableItemCollapsedCurrentClass) : (IsExpanded ? NavigationExpandableItemExpandedClass : NavigationExpandableItemCollapsedClass))">
     <a class="pf-c-nav__link" aria-expanded="true" onclick=@(()=>Toggle())>
-        @Title
+        @if (Content != null)
+        {
+            @Content
+        }
+        else
+        {
+            @Title
+        }
         <span class="pf-c-nav__toggle">
             <i class="fas fa-angle-right" aria-hidden="true"></i>
         </span>

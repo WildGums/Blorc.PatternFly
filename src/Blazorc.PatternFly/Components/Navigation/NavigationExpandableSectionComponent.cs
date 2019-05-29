@@ -26,6 +26,9 @@
         [Parameter]
         public string Title { get; set; }
 
+        [Parameter]
+        public RenderFragment Content { get; set; }
+
         protected bool IsExpanded { get; set; }
 
         public event EventHandler CurrentItemInvalidated;

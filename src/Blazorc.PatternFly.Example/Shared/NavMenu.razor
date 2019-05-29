@@ -9,29 +9,34 @@
 
 <div class="@NavMenuCssClass" onclick="@ToggleNavMenu">
     <Navigation ref="Navigation">
-        <NavigationItem Title="Home" Link="/" Parent="@Navigation" >
-            <Content>
-                <span class="oi oi-home" aria-hidden="true"></span> Home
-            </Content>
-        </NavigationItem>
-        <NavigationItem Title="Counter" Link="/counter" Parent="@Navigation" >
-            <Content>
-                <span class="oi oi-plus" aria-hidden="true"></span> Counter
-            </Content>
-        </NavigationItem>
-        <NavigationItem Title="Fetch Data" Link="/fetchdata" Parent="@Navigation">
-            <Content>
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
-            </Content>
-        </NavigationItem>
-        <NavigationExpandableSection Title="Components" Parent="@Navigation" ref="ComponentsNavigationExpandableSection">
-            <Items>
-                <NavigationItem Title="About modal box" Link="components/about-modal-box" Parent="@ComponentsNavigationExpandableSection" />
-                <NavigationItem Title="Accordion" Link="components/accordion" Parent="@ComponentsNavigationExpandableSection" />
-                <NavigationItem Title="Nav" Link="components/nav" Parent="@ComponentsNavigationExpandableSection" />
-                <NavigationItem Title="Etc.." Link="components/etc" Parent="@ComponentsNavigationExpandableSection" />
-            </Items>
-        </NavigationExpandableSection>
+        <Items>
+            <NavigationItem Title="Home" Link="/" Parent="@Navigation">
+                <Content>
+                    <i class="fa fa-home mr-3" aria-hidden="true"></i>  Home
+                </Content>
+            </NavigationItem>
+            <NavigationItem Title="Counter" Link="/counter" Parent="@Navigation">
+                <Content>
+                    <i class="fa fa-plus mr-3" aria-hidden="true"></i>  Counter
+                </Content>
+            </NavigationItem>
+            <NavigationItem Title="Fetch Data" Link="/fetchdata" Parent="@Navigation">
+                <Content>
+                    <i class="fa fa-list mr-3" aria-hidden="true"></i>  Fetch data
+                </Content>
+            </NavigationItem>
+            <NavigationExpandableSection Title="Components" Parent="@Navigation" ref="ComponentsNavigationExpandableSection">
+                <Content>
+                    <i class="fa fa-server mr-3" aria-hidden="true"></i> Components
+                </Content>
+                <Items>
+                    <NavigationItem Title="About modal box" Link="components/about-modal-box" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Accordion" Link="components/accordion" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Nav" Link="components/nav" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Etc.." Link="components/etc" Parent="@ComponentsNavigationExpandableSection" />
+                </Items>
+            </NavigationExpandableSection>
+        </Items>
     </Navigation>
 </div>
 
