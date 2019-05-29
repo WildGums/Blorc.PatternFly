@@ -37,9 +37,10 @@
 
         private void OnCurrentItemInvalidated(object sender, EventArgs e)
         {
-            if (!_clicked)
+            if (!_clicked && IsCurrent)
             {
                 IsCurrent = false;
+                StateHasChanged();
             }
 
             _clicked = false;
@@ -50,6 +51,7 @@
             _clicked = true;
 
             Parent.InvalidateCurrentItem(_clicked);
+
             if (!IsCurrent)
             {
                 IsCurrent = true;

@@ -39,9 +39,10 @@
         {
             OnInvalidatedCurrent();
 
-            if (!_clicked)
+            if (!_clicked && IsCurrent)
             {
                 IsCurrent = false;
+                StateHasChanged();
             }
 
             _clicked = false;
