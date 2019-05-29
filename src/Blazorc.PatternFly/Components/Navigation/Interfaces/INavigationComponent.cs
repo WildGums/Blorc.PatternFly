@@ -10,10 +10,10 @@ namespace Blazorc.PatternFly.Components.Navigation.Interfaces
 
     public interface INavigationComponent
     {
-        event EventHandler InvalidatedCurrent;
+        event EventHandler CurrentItemInvalidated;
 
-        void InvalidateCurrent();
+        void InvalidateCurrentItem(bool clicked);
 
-        void SetBranchAsCurrent();
+        void MarkBranchAsCurrent();
     }
 }

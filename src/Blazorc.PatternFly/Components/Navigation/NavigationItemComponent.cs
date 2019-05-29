@@ -7,6 +7,8 @@
 
     public class NavigationItemComponent : ComponentBase
     {
+        private bool _clicked;
+
         protected const string NavigationItemCurrentClass = "pf-c-nav__link pf-m-current";
 
         protected const string NavigationItemNormalClass = "pf-c-nav__link";
@@ -30,19 +32,30 @@
 
         protected override async Task OnInitAsync()
         {
-            Parent.InvalidatedCurrent += ParentOnInvalidatedCurrent;
+            Parent.CurrentItemInvalidated += OnCurrentItemInvalidated;
         }
 
-        private void ParentOnInvalidatedCurrent(object sender, EventArgs e)
+        private void OnCurrentItemInvalidated(object sender, EventArgs e)
         {
-            IsCurrent = false;
+            if (!_clicked)
+            {
+                IsCurrent = false;
+            }
+
+            _clicked = false;
         }
 
         protected void OnItemClick()
         {
-            Parent.InvalidateCurrent();
-            IsCurrent = true;
-            Parent.SetBranchAsCurrent();
+            _clicked = true;
+
+            Parent.InvalidateCurrentItem(_clicked);
+            if (!IsCurrent)
+            {
+                IsCurrent = true;
+                Parent.MarkBranchAsCurrent();
+            }
+
             UriHelper.NavigateTo(Link);
         }
     }

@@ -9,21 +9,21 @@
         [Parameter]
         public RenderFragment ChildContent { get; set; }
 
-        public event EventHandler InvalidatedCurrent;
+        public event EventHandler CurrentItemInvalidated;
 
-        public void InvalidateCurrent()
+        public void InvalidateCurrentItem(bool clicked)
         {
             OnInvalidatedCurrent();
         }
 
-        public void SetBranchAsCurrent()
+        public void MarkBranchAsCurrent()
         {
             StateHasChanged();
         }
 
         protected virtual void OnInvalidatedCurrent()
         {
-            InvalidatedCurrent?.Invoke(this, EventArgs.Empty);
+            CurrentItemInvalidated?.Invoke(this, EventArgs.Empty);
         }
     }
 }

@@ -7,6 +7,8 @@
 
     public class NavigationExpandableSectionComponent : ComponentBase, INavigationComponent
     {
+        private bool _clicked;
+
         public const string NavigationExpandableItemExpandedClass = "pf-c-nav__item pf-m-expandable pf-m-expanded";
 
         public const string NavigationExpandableItemCollapsedClass = "pf-c-nav__item pf-m-expandable";
@@ -26,17 +28,23 @@
 
         protected bool IsExpanded { get; set; }
 
-        public event EventHandler InvalidatedCurrent;
+        public event EventHandler CurrentItemInvalidated;
 
         protected override async Task OnInitAsync()
         {
-            Parent.InvalidatedCurrent += ParentOnInvalidatedCurrent;
+            Parent.CurrentItemInvalidated += OnCurrentItemInvalidated;
         }
 
-        private void ParentOnInvalidatedCurrent(object sender, EventArgs e)
+        private void OnCurrentItemInvalidated(object sender, EventArgs e)
         {
-            IsCurrent = false;
             OnInvalidatedCurrent();
+
+            if (!_clicked)
+            {
+                IsCurrent = false;
+            }
+
+            _clicked = false;
         }
 
 
@@ -51,23 +59,25 @@
             private set;
         }
 
-        public void InvalidateCurrent()
+        public void InvalidateCurrentItem(bool clicked)
         {
-            Parent.InvalidateCurrent();
+            _clicked = clicked;
+
+            Parent.InvalidateCurrentItem(clicked);
         }
 
-        public void SetBranchAsCurrent()
+        public void MarkBranchAsCurrent()
         {
             if (!IsCurrent)
             {
                 IsCurrent = true;
-                Parent.SetBranchAsCurrent();
+                Parent.MarkBranchAsCurrent();
             }
         }
 
         protected virtual void OnInvalidatedCurrent()
         {
-            InvalidatedCurrent?.Invoke(this, EventArgs.Empty);
+            CurrentItemInvalidated?.Invoke(this, EventArgs.Empty);
         }
     }
 }

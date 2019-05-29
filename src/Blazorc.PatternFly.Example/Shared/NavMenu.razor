@@ -1,7 +1,7 @@
 ﻿@using Blazorc.PatternFly.Components.Navigation
 
 <div class="top-row pl-4 navbar navbar-dark">
-    <a class="navbar-brand" href="">Blazor.PatternFly.Example</a>
+    <a class="navbar-brand" href="">Blazorc.PatternFly.Example</a>
     <button class="navbar-toggler" onclick="@ToggleNavMenu">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -26,28 +26,13 @@
         </NavigationItem>
         <NavigationExpandableSection Title="Components" Parent="@Navigation" ref="ComponentsNavigationExpandableSection">
             <Items>
-                <NavigationItem Title="About modal box" Link="components/about-modal-box" Parent="@ComponentsNavigationExpandableSection" >
-                </NavigationItem>
+                <NavigationItem Title="About modal box" Link="components/about-modal-box" Parent="@ComponentsNavigationExpandableSection" />
                 <NavigationItem Title="Accordion" Link="components/accordion" Parent="@ComponentsNavigationExpandableSection" />
                 <NavigationItem Title="Nav" Link="components/nav" Parent="@ComponentsNavigationExpandableSection" />
                 <NavigationItem Title="Etc.." Link="components/etc" Parent="@ComponentsNavigationExpandableSection" />
             </Items>
         </NavigationExpandableSection>
     </Navigation>
-
-    <!--
-    <li class="nav-item px-3">
-        <NavLink class="nav-link" href="counter">
-            <span class="oi oi-plus" aria-hidden="true"></span> Counter
-        </NavLink>
-    </li>
-    <li class="nav-item px-3">
-        <NavLink class="nav-link" href="fetchdata">
-            <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
-        </NavLink>
-    </li>
-    </ul>
-    -->
 </div>
 
 @functions {
