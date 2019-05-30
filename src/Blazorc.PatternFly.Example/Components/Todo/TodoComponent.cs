@@ -4,5 +4,7 @@
 
     public class TodoComponent : MetadataComponentBase
     {
+        [Parameter]
+        public RenderFragment TodoList { get; set; }
     }
 }

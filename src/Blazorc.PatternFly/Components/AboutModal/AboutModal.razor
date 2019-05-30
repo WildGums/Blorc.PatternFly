@@ -1,0 +1,44 @@
+﻿@using Microsoft.AspNetCore.Components
+
+@inherits Blazorc.PatternFly.Components.AboutModal.AboutModalComponent
+
+@if (IsOpen)
+{
+        <div class="pf-c-backdrop">
+            <div class="pf-l-bullseye">
+                <div class="pf-c-about-modal-box" role="dialog" aria-modal="true" aria-labelledby="about-modal-title">
+                    <div class="pf-c-about-modal-box__brand">
+                        <img class="pf-c-about-modal-box__brand-image" src="@BrandImageSrc" alt="@BrandImageAlt">
+                    </div>
+
+                    <div class="pf-c-about-modal-box__close">
+                        <button class="pf-c-button pf-m-plain" aria-label="Close dialog" onclick=@(() => Close())>
+                            <i class="fas fa-times" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                    <div class="pf-c-about-modal-box__header">
+                        <h1 class="pf-c-title pf-m-4xl" id="about-modal-title">
+                            @Title
+                        </h1>
+                    </div>
+
+                    <div class="pf-c-about-modal-box__hero">
+
+                    </div>
+
+                    <div class="pf-c-about-modal-box__content">
+                        <div class="pf-c-about-modal-box__body">
+                            @Content
+                        </div>
+
+                        <div class="pf-c-about-modal-box__strapline">
+                            <p class="pf-c-title pf-m-md">
+                                @StrapLine
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+}

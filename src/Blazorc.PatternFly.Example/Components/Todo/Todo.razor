@@ -1,12 +1,25 @@
 ﻿@inherits  Blazorc.PatternFly.Example.Components.Todo.TodoComponent
 
-    <p>
-        Component <b>@ComponentName</b> is not yet supported. Need this component, there are several ways to help out!
-        <br />
-        <br />
+<p>
+    <br />
+    <br />
+    Component <b>@ComponentName</b> is not @(TodoList is null ? "yet" : "full") supported. Need this component, there are several ways to help out!
+    <br />
+    <br />
+    <ol>
+        <li>Create a PR (pull request) with this component on the <a href="https://github.com/wildgums/blazord.patternfly" target="_blank">official repository</a></li>
+        <li>Support us on <a href="https://opencollective.com/wildgums-oss" target="_blank">Open Collective</a></li>
+    </ol>
 
+    @if (TodoList != null)
+    {
+        <br />
+        <br />
+        <b>Well known unsupported features:</b>
+        <br />
+        <br />
         <ol>
-            <li>Create a PR (pull request) with this component on the <a href="https://github.com/wildgums/blazord.patternfly" target="_blank">official repository</a></li>
-            <li>Support us on <a href="https://opencollective.com/wildgums-oss" target="_blank">Open Collective</a></li>
+            @TodoList
         </ol>
-    </p>
+    }
+</p>
