@@ -2,7 +2,7 @@
 
 Blazor wrappers for [PatternFly](https://www.patternfly.org/).
 
-To view the latest *develop* branch in action, visit the GitHub pages: https://wildgums.github.io/Blazorc.PatternFly/
+To view the latest *develop* branch in action, visit the GitHub pages: http://blazorc-patternfly.wildgums.com/
 
 The ultimate goal of this library is to wrap all PatternFly components available.
 
@@ -60,7 +60,7 @@ The ultimate goal of this library is to wrap all PatternFly components available
 
 ## Examples
 
-https://wildgums.github.io/Blazorc.PatternFly/
+http://blazorc-patternfly.wildgums.com/
 
 ## Contributing
 
