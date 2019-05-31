@@ -1,13 +1,25 @@
 ﻿@page "/components/text-area"
 
+@using Blazorc.PatternFly.Components.TextArea
+@using Blazorc.PatternFly.Example.Components.Example
 @using Blazorc.PatternFly.Example.Components.Metadata
 @using Blazorc.PatternFly.Example.Components.Todo
 
 <Metadata ComponentName="Text area" />
 
-<Todo ComponentName="Text area" />
+<section class="ws-section ws-live-demo">
+
+    <Example Title="Simple text area">
+        <TextArea Label="Text area example" />
+    </Example>
+
+    <Example Title="Invalid text area">
+        <TextArea Label="Invalid text area example" IsValid="false" />
+    </Example>
+
+</section>
 
 @functions {
-    
+
 }
 
