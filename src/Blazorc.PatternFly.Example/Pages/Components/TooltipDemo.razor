@@ -9,14 +9,9 @@
 
 <section class="ws-section ws-live-demo">
     <Example Title="Simple tooltip">
-        <Tooltip Position="TooltipPosition.Top">
-            <TooltipContent>
-                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
-            </TooltipContent>
-
-            <ChildContent>
-                <span>Hover to view tooltip</span>
-            </ChildContent>
+        <Tooltip Position="@TooltipPosition.Bottom" Trigger="@TooltipTrigger.MouseEnter">
+            <TooltipContent>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</TooltipContent>
+            <ChildContent>Hover to view tooltip</ChildContent>
         </Tooltip>
     </Example>
 
@@ -34,6 +29,7 @@
         </Tooltip>*@
     </Example>
 </section>
+
 
 @functions {
 

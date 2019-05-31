@@ -20,7 +20,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="content\ElementsFunctionsInterop.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.Browser" Version="3.0.0-preview5-19227-01" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="content\elementsFunctionsInterop.js">
+      <LogicalName>blazor:js:%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
 
   <Import Project="$(MSBuildProjectDirectory)\..\Directory.build.shared.explicit.props" Condition="Exists('$(MSBuildProjectDirectory)\..\Directory.build.shared.explicit.props')" />
