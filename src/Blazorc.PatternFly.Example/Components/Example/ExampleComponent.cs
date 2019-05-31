@@ -11,7 +11,7 @@
         {
             get
             {
-                return Title?.Replace(" ", "-").ToLower();
+                return Title?.Replace(" ", "-").Replace("(", string.Empty).Replace(")", string.Empty).ToLower();
             }
         }
 

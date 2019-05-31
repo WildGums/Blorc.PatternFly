@@ -13,7 +13,7 @@
         builder.AddAttribute(1, "aria-label", Label);
         builder.AddAttribute(2, "class", "pf-c-form-control");
 
-        builder.AddAttribute(3, "aria-invalid", (!IsValid).ToString().ToLower());
+        builder.AddAttribute(3, "aria-invalid", IsInvalid.ToString().ToLower());
         builder.AddAttribute(4, "required", IsRequired.ToString().ToLower());
 
         builder.AddAttribute(5, "bind", "@Value");

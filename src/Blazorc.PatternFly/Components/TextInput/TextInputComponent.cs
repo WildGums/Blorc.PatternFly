@@ -1,13 +1,14 @@
-﻿namespace Blazorc.PatternFly.Components.TextArea
+﻿namespace Blazorc.PatternFly.Components.TextInput
 {
     using System;
     using Microsoft.AspNetCore.Components;
 
-    public class TextAreaComponent : ComponentBase
+    public class TextInputComponent : ComponentBase
     {
-        public TextAreaComponent()
+        public TextInputComponent()
         {
             IsValid = true;
+            Type = "text";
         }
 
         [Parameter]
@@ -23,6 +24,15 @@
         {
             get { return !IsValid; }
         }
+
+        [Parameter]
+        public bool IsDisabled { get; set; }
+
+        [Parameter]
+        public bool IsReadOnly { get; set; }
+
+        [Parameter]
+        public string Type { get; set; }
 
         [Parameter]
         public string Value { get; set; }
