@@ -1,7 +1,6 @@
 ﻿namespace Blazorc.PatternFly.Components.Navigation
 {
     using System;
-    using Interfaces;
     using Microsoft.AspNetCore.Components;
 
     public class NavigationComponent : ComponentBase, INavigationComponent

@@ -2,7 +2,6 @@
 {
     using System;
     using System.Threading.Tasks;
-    using Interfaces;
     using Microsoft.AspNetCore.Components;
 
     public class NavigationExpandableSectionComponent : ComponentBase, INavigationComponent
