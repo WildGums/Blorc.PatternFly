@@ -1,13 +1,41 @@
 ﻿@page "/components/tooltip"
 
+@using Blazorc.PatternFly.Components.Tooltip
+@using Blazorc.PatternFly.Example.Components.Example
 @using Blazorc.PatternFly.Example.Components.Metadata
 @using Blazorc.PatternFly.Example.Components.Todo
 
 <Metadata ComponentName="Tooltip" />
 
-<Todo ComponentName="Tooltip" />
+<section class="ws-section ws-live-demo">
+    <Example Title="Simple tooltip">
+        <Tooltip Position="TooltipPosition.Top">
+            <TooltipContent>
+                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+            </TooltipContent>
+
+            <ChildContent>
+                <span>Hover to view tooltip</span>
+            </ChildContent>
+        </Tooltip>
+    </Example>
+
+    <Example Title="Tooltip positions">
+        This example needs to be added
+
+        @*<Tooltip Position="TooltipPosition.Top">
+            <TooltipContent>
+                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+            </TooltipContent>
+
+            <ChildContent>
+                <span>Hover to view tooltip</span>
+            </ChildContent>
+        </Tooltip>*@
+    </Example>
+</section>
 
 @functions {
-    
+
 }
 

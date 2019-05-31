@@ -1,0 +1,98 @@
+﻿@inherits Blazorc.PatternFly.Components.Tooltip.TooltipComponent
+
+<div onmouseout="@(e => OnMouseOut(e))"
+     onmouseover="@(e => OnMouseEnter(e))"
+     onclick="@(e => OnClick(e))"
+     onfocus="@(e => OnFocus(e))">
+    @ChildContent
+</div>
+
+
+@functions
+{
+    private static int InstanceCounter;
+
+    private readonly string _instanceId = $"tippy-{++InstanceCounter}";
+    private bool _isVisible;
+    private System.Timers.Timer _timer = new System.Timers.Timer();
+
+    protected override void OnInit()
+    {
+        //_timer.Elapsed += OnTimerElapsed;
+    }
+
+    public void Dispose()
+    {
+
+    }
+
+    private void OnMouseOut(UIMouseEventArgs e)
+    {
+        HideTooltip();
+    }
+
+    private void OnMouseEnter(UIMouseEventArgs e)
+    {
+        if (!Trigger.HasFlag(TooltipTrigger.MouseEnter))
+        {
+            return;
+        }
+
+        ShowTooltip();
+    }
+
+    private void OnClick(UIMouseEventArgs e)
+    {
+        if (!Trigger.HasFlag(TooltipTrigger.Click))
+        {
+            return;
+        }
+
+        ShowTooltip();
+    }
+
+    private void OnFocus(UIFocusEventArgs e)
+    {
+        if (!Trigger.HasFlag(TooltipTrigger.Focus))
+        {
+            return;
+        }
+
+        ShowTooltip();
+    }
+
+    private void ShowTooltip()
+    {
+        if (_isVisible)
+        {
+            return;
+        }
+
+        // Step 1: Add to end of the html document
+
+        // <div class="tippy-popper" role="tooltip" id="tt-[generatesomething]" 
+        //      style="z-index: @ZIndex; visibility: visible; transition-duration: 0ms; position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(328px, 1041px, 0px);"
+        //      x-placement="bottom" />
+        //   @TooltipContent
+        // <div>
+
+        // Step 2: Then update the element by setting aria-describedby, e.g:
+        // <span aria-describedby="tt-[generatesomething]">Hover to view tooltip</span>
+
+        _isVisible = true;
+    }
+
+    private void HideTooltip()
+    {
+        if (!_isVisible)
+        {
+            return;
+        }
+
+        // Step 1: Remove tooltip
+
+        // Step 2: remove aria-describedby
+
+        _isVisible = false;
+    }
+}
