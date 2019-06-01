@@ -1,7 +1,6 @@
 ﻿@inherits Blazorc.PatternFly.Components.Navigation.NavigationExpandableSectionComponent
 
-
-<li class="@(IsCurrent ? (IsExpanded ? NavigationExpandableItemExpandedCurrentClass : NavigationExpandableItemCollapsedCurrentClass) : (IsExpanded ? NavigationExpandableItemExpandedClass : NavigationExpandableItemCollapsedClass))">
+<li class="pf-c-nav__item pf-m-expandable @GetExpandableNavItemClass()">
     <a class="pf-c-nav__link" aria-expanded="true" onclick=@(()=>Toggle())>
         @if (Content != null)
         {

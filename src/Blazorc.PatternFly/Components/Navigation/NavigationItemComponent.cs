@@ -8,9 +8,15 @@
     {
         private bool _clicked;
 
-        protected const string NavigationItemCurrentClass = "pf-c-nav__link pf-m-current";
+        protected string GetIsCurrentClass()
+        {
+            if (IsCurrent)
+            {
+                return "pf-m-current";
+            }
 
-        protected const string NavigationItemNormalClass = "pf-c-nav__link";
+            return string.Empty;
+        }
 
         [Inject]
         public IUriHelper UriHelper { get; set; }

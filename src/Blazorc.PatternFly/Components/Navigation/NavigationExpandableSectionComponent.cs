@@ -8,14 +8,6 @@
     {
         private bool _clicked;
 
-        public const string NavigationExpandableItemExpandedClass = "pf-c-nav__item pf-m-expandable pf-m-expanded";
-
-        public const string NavigationExpandableItemCollapsedClass = "pf-c-nav__item pf-m-expandable";
-
-        public const string NavigationExpandableItemExpandedCurrentClass = "pf-c-nav__item pf-m-expandable pf-m-expanded pf-m-current";
-
-        public const string NavigationExpandableItemCollapsedCurrentClass = "pf-c-nav__item pf-m-expandable pf-m-current";
-
         [Parameter]
         public INavigationComponent Parent { get; set; }
 
@@ -30,7 +22,44 @@
 
         protected bool IsExpanded { get; set; }
 
+        public bool IsCurrent
+        {
+            get;
+            private set;
+        }
+
         public event EventHandler CurrentItemInvalidated;
+
+        public void InvalidateCurrentItem(bool clicked)
+        {
+            _clicked = clicked;
+
+            Parent.InvalidateCurrentItem(clicked);
+        }
+
+        public void MarkBranchAsCurrent()
+        {
+            if (!IsCurrent)
+            {
+                IsCurrent = true;
+                Parent.MarkBranchAsCurrent();
+            }
+        }
+
+        protected string GetExpandableNavItemClass()
+        {
+            return (GetIsExpandedClass() + " " + GetIsCurrentClass()).Trim();
+        }
+
+        private string GetIsExpandedClass()
+        {
+            return IsExpanded ? "pf-m-expanded" : string.Empty;
+        }
+
+        private string GetIsCurrentClass()
+        {
+            return IsCurrent ? "pf-m-current" : string.Empty;
+        }
 
         protected override async Task OnInitAsync()
         {
@@ -50,32 +79,9 @@
             _clicked = false;
         }
 
-
         protected void Toggle()
         {
             IsExpanded = !IsExpanded;
-        }
-
-        public bool IsCurrent
-        {
-            get;
-            private set;
-        }
-
-        public void InvalidateCurrentItem(bool clicked)
-        {
-            _clicked = clicked;
-
-            Parent.InvalidateCurrentItem(clicked);
-        }
-
-        public void MarkBranchAsCurrent()
-        {
-            if (!IsCurrent)
-            {
-                IsCurrent = true;
-                Parent.MarkBranchAsCurrent();
-            }
         }
 
         protected virtual void OnInvalidatedCurrent()
