@@ -8,6 +8,8 @@
 
     public class TooltipComponent : ComponentBase
     {
+        private const int ArrowSize = 20;
+
         public TooltipComponent()
         {
             Position = TooltipPosition.Top;
@@ -52,7 +54,7 @@
         [Parameter]
         public RenderFragment ChildContent { get; set; }
 
-        [Inject]
+        [Inject] 
         public IJSRuntime JsRuntime { get; set; }
 
         protected Guid Id { get; } = Guid.NewGuid();
@@ -72,15 +74,6 @@
             }
         }
 
-        protected override void OnInit()
-        {
-            //_timer.Elapsed += OnTimerElapsed;
-        }
-
-        public void Dispose()
-        {
-        }
-
         protected void OnMouseOut(UIMouseEventArgs e)
         {
             HideTooltip();
@@ -88,45 +81,29 @@
 
         protected async Task OnMouseEnter(UIMouseEventArgs e)
         {
+            var tooltipRect = await ElementsFunctionsInterop.GetBoundingClientRectById(JsRuntime, Id.ToString());
+            var tooltipRectHeight = tooltipRect.Height;
+            var tooltipRectWidth = tooltipRect.Width;
+
             var boundingClientRect = await ElementsFunctionsInterop.GetOffsetBoundingClientRect(JsRuntime, e.ClientX, e.ClientY);
-
-            Console.WriteLine(boundingClientRect.X + " " + boundingClientRect.Y + " " + boundingClientRect.Width + " " + boundingClientRect.Height + " " + boundingClientRect.Bottom + " " + boundingClientRect.Top);
-            // TODO: We need to compute the coordinates well.
-
-            const int ToolTipHeight = 80; // How to compute this?
-            const int ToolTipWidth = 300; // How to compute this?
-            const int ArrowSize = 20;
-
-            if (Position == TooltipPosition.Top)
+            switch (Position)
             {
-                var x = boundingClientRect.X - boundingClientRect.Width / 2;
-                X = x + "px";
-                var y = boundingClientRect.Y - ToolTipHeight - ArrowSize;
-                Y = y + "px";
-            }
-
-            if (Position == TooltipPosition.Bottom)
-            {
-                var x = boundingClientRect.X - boundingClientRect.Width / 2;
-                X = x + "px";
-                var y = boundingClientRect.Y + boundingClientRect.Height + ArrowSize; 
-                Y = y + "px";
-            }
-
-            if (Position == TooltipPosition.Right)
-            {
-                var x = boundingClientRect.X + boundingClientRect.Width + ArrowSize;
-                X = x + "px";
-                var y = boundingClientRect.Y  + boundingClientRect.Height / 2 - ToolTipHeight / 2;
-                Y = y + "px";
-            }
-
-            if (Position == TooltipPosition.Left)
-            {
-                var x = boundingClientRect.X - ToolTipWidth - ArrowSize;
-                X = x + "px";
-                var y = boundingClientRect.Y + boundingClientRect.Height / 2 - ToolTipHeight / 2;
-                Y = y + "px";
+                case TooltipPosition.Top:
+                    X = boundingClientRect.X + boundingClientRect.Width / 2 - tooltipRectWidth / 2 + "px";
+                    Y = boundingClientRect.Y - tooltipRectHeight - ArrowSize + "px";
+                    break;
+                case TooltipPosition.Bottom:
+                    X = boundingClientRect.X + boundingClientRect.Width / 2 - tooltipRectWidth / 2 + "px";
+                    Y = boundingClientRect.Y + boundingClientRect.Height + ArrowSize + "px";
+                    break;
+                case TooltipPosition.Right:
+                    X = boundingClientRect.X + boundingClientRect.Width + ArrowSize + "px";
+                    Y = boundingClientRect.Y + boundingClientRect.Height / 2 - tooltipRectHeight / 2 + "px";
+                    break;
+                case TooltipPosition.Left:
+                    X = boundingClientRect.X - tooltipRectWidth - ArrowSize + "px";
+                    Y = boundingClientRect.Y + boundingClientRect.Height / 2 - tooltipRectHeight / 2 + "px";
+                    break;
             }
 
             if (!Trigger.HasFlag(TooltipTrigger.MouseEnter))

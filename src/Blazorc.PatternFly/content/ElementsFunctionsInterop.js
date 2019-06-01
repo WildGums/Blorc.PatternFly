@@ -8,6 +8,14 @@ window.ElementsFunctions = {
 
         return elementFromPoint.getBoundingClientRect();
     },
+    getBoundingClientRectById: function (id) {
+        var elementFromPoint = document.getElementById(id);
+        if (elementFromPoint === undefined || elementFromPoint == null) {
+            return null;
+        }
+
+        return elementFromPoint.getBoundingClientRect();
+    },
     getOffsetBoundingClientRect: function(x, y) {
         var elementFromPoint = document.elementFromPoint(x, y);
         if (elementFromPoint === undefined || elementFromPoint == null) {

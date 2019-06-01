@@ -23,4 +23,14 @@
             </div>
         </div>
     }
+    else
+    {
+        <div class="pf-c-tooltip @GetPositionClass()" role="tooltip" id="@Id" style="position: absolute; visibility: hidden" x-placement="bottom">
+            <div class="pf-c-tooltip__arrow">
+            </div>
+            <div class="pf-c-tooltip__content" id="tooltip-top-content">
+                @TooltipContent
+            </div>
+        </div>
+    }
 </span>
