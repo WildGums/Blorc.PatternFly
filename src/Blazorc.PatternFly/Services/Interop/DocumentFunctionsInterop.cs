@@ -1,34 +1,34 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ElementsFunctionsInterop.cs" company="WildGums">
+// <copyright file="DocumentFunctionsInterop.cs" company="WildGums">
 //   Copyright (c) 2008 - 2019 WildGums. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Blazor.PatternFly
+namespace Blazorc.PatternFly.Services.Interop
 {
     using System.Threading.Tasks;
     using Microsoft.JSInterop;
 
-    public class ElementsFunctionsInterop
+    public class DocumentFunctionsInterop
     {
         public static Task<Rect> GetBoundingClientRect(IJSRuntime jsRuntime, long x, long y)
         {
             return jsRuntime.InvokeAsync<Rect>(
-                "ElementsFunctions.getBoundingClientRect",
+                "DocumentFunctions.getBoundingClientRect",
                 x, y);
         }
 
         public static Task<Rect> GetOffsetBoundingClientRect(IJSRuntime jsRuntime, long x, long y)
         {
             return jsRuntime.InvokeAsync<Rect>(
-                "ElementsFunctions.getOffsetBoundingClientRect",
+                "DocumentFunctions.getOffsetBoundingClientRect",
                 x, y);
         }
 
         public static Task<Rect> GetBoundingClientRectById(IJSRuntime jsRuntime, string id)
         {
             return jsRuntime.InvokeAsync<Rect>(
-                "ElementsFunctions.getBoundingClientRectById",
+                "DocumentFunctions.getBoundingClientRectById",
                 id);
         }
     }

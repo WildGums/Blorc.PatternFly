@@ -5,6 +5,8 @@
     using Blazor.PatternFly;
     using Microsoft.AspNetCore.Components;
     using Microsoft.JSInterop;
+    using Services;
+    using Services.Interop;
 
     public class TooltipComponent : ComponentBase
     {
@@ -54,8 +56,8 @@
         [Parameter]
         public RenderFragment ChildContent { get; set; }
 
-        [Inject] 
-        public IJSRuntime JsRuntime { get; set; }
+        [Inject]
+        public IDocumentService DocumentService { get; set; }
 
         protected Guid Id { get; } = Guid.NewGuid();
 
@@ -81,11 +83,11 @@
 
         protected async Task OnMouseEnter(UIMouseEventArgs e)
         {
-            var tooltipRect = await ElementsFunctionsInterop.GetBoundingClientRectById(JsRuntime, Id.ToString());
+            var tooltipRect = await DocumentService.GetBoundingClientRectById(Id.ToString());
             var tooltipRectHeight = tooltipRect.Height;
             var tooltipRectWidth = tooltipRect.Width;
 
-            var boundingClientRect = await ElementsFunctionsInterop.GetOffsetBoundingClientRect(JsRuntime, e.ClientX, e.ClientY);
+            Rect boundingClientRect = await DocumentService.GetOffsetBoundingClientRect(e.ClientX, e.ClientY);
             switch (Position)
             {
                 case TooltipPosition.Top:
