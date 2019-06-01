@@ -1,6 +1,7 @@
 ﻿@page "/components/about-modal"
 
 @using Blazorc.PatternFly.Components.AboutModal
+@using Blazorc.PatternFly.Components.Text
 
 @using Blazorc.PatternFly.Example.Components.Metadata
 @using Blazorc.PatternFly.Example.Components.Todo
@@ -14,42 +15,24 @@
     <Content>
         <h2>The ultimate goal of this library is to wrap all PatternFly components available</h2>
         <br />
-        <div class="pf-c-content">
-            <dl data-pf-content="true" class="">
-                <dt data-pf-content="true" class="">CFME Version</dt>
-                <dd data-pf-content="true" class="">5.5.3.4.20102789036450</dd>
-                <dt data-pf-content="true" class="">Cloudforms Version</dt>
-                <dd data-pf-content="true" class="">4.1</dd>
-                <!--
-                <dt data-pf-content="true" class="">Server Name</dt>
-                <dd data-pf-content="true" class="">40DemoMaster</dd>
-                <dt data-pf-content="true" class="">User Name</dt>
-                <dd data-pf-content="true" class="">Administrator</dd>
-                <dt data-pf-content="true" class="">User Role</dt>
-                <dd data-pf-content="true" class="">EvmRole-super_administrator</dd>
-                <dt data-pf-content="true" class="">Browser Version</dt>
-                <dd data-pf-content="true" class="">601.2</dd>
-                -->
-            </dl>
+        <div class="pf-c-content"> <!--TODO: Add as component or as part of the component -->
+            <TextList component="dl">
+                <TextListItem component="dt">CFME Version</TextListItem>
+                <TextListItem component="dd">5.5.3.4.20102789036450</TextListItem>
+                <TextListItem component="dt">Cloudforms Version</TextListItem>
+                <TextListItem component="dd">4.1</TextListItem>
+                <TextListItem component="dt">Server Name</TextListItem>
+                <TextListItem component="dd">40DemoMaster</TextListItem>
+                <TextListItem component="dt">User Name</TextListItem>
+                <TextListItem component="dd">Administrator</TextListItem>
+                <TextListItem component="dt">User Role</TextListItem>
+                <TextListItem component="dd">EvmRole-super_administrator</TextListItem>
+                <TextListItem component="dt">Browser Version</TextListItem>
+                <TextListItem component="dd">601.2</TextListItem>
+                <TextListItem component="dt">Browser OS</TextListItem>
+                <TextListItem component="dd">Mac</TextListItem>
+            </TextList>
         </div>
-        <!--
-        <TextList component="dl">
-            <TextListItem component="dt">CFME Version</TextListItem>
-            <TextListItem component="dd">5.5.3.4.20102789036450</TextListItem>
-            <TextListItem component="dt">Cloudforms Version</TextListItem>
-            <TextListItem component="dd">4.1</TextListItem>
-            <TextListItem component="dt">Server Name</TextListItem>
-            <TextListItem component="dd">40DemoMaster</TextListItem>
-            <TextListItem component="dt">User Name</TextListItem>
-            <TextListItem component="dd">Administrator</TextListItem>
-            <TextListItem component="dt">User Role</TextListItem>
-            <TextListItem component="dd">EvmRole-super_administrator</TextListItem>
-            <TextListItem component="dt">Browser Version</TextListItem>
-            <TextListItem component="dd">601.2</TextListItem>
-            <TextListItem component="dt">Browser OS</TextListItem>
-            <TextListItem component="dd">Mac</TextListItem>
-        </TextList>
-        -->
     </Content>
 </AboutModal>
 
