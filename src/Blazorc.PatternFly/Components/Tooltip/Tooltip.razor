@@ -3,6 +3,7 @@
 @using Blazor.PatternFly
 @using Microsoft.AspNetCore.Components
 @using Microsoft.JSInterop
+
 @inherits Blazorc.PatternFly.Components.Tooltip.TooltipComponent
 
 <span onmouseout="@(e => OnMouseOut(e))"
@@ -12,9 +13,9 @@
 
     <span aria-describedby="@Id">@ChildContent</span>
 
-    @if (_isVisible)
+    @if (IsVisible)
     {
-        <div class="pf-c-tooltip pf-m-bottom" role="tooltip" id="@Id" style="position: absolute;transition-duration: 0ms; position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(@_x, @_y, 0px);" x-placement="bottom">
+        <div class="pf-c-tooltip @GetPositionClass()" role="tooltip" id="@Id" style="position: absolute;transition-duration: 0ms; position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(@X, @Y, 0px);" x-placement="bottom">
             <div class="pf-c-tooltip__arrow">
             </div>
             <div class="pf-c-tooltip__content" id="tooltip-top-content">
@@ -23,117 +24,3 @@
         </div>
     }
 </span>
-
-@functions
-{
-    [Inject]
-    public IJSRuntime JsRuntime { get; set; }
-
-    private Guid Id = Guid.NewGuid();
-
-    private static int InstanceCounter;
-
-    private readonly string _instanceId = $"tippy-{++InstanceCounter}";
-    private bool _isVisible;
-
-    private System.Timers.Timer _timer = new System.Timers.Timer();
-
-    private string _x;
-
-    private string _y;
-
-    protected override void OnInit()
-    {
-        //_timer.Elapsed += OnTimerElapsed;
-    }
-
-    public void Dispose()
-    {
-
-    }
-
-    private void OnMouseOut(UIMouseEventArgs e)
-    {
-        HideTooltip();
-    }
-
-    private async Task OnMouseEnter(UIMouseEventArgs e)
-    {
-        var boundingClientRect = await ElementsFunctionsInterop.GetBoundingClientRect(JsRuntime, e.ClientX, e.ClientY);
-
-        Console.WriteLine(boundingClientRect.X + " " + boundingClientRect.Y + " " + boundingClientRect.Width + " " + boundingClientRect.Height + " " + boundingClientRect.Bottom + " " + boundingClientRect.Top);
-        // TODO: We need to compute the coordinates well.
-        if (this.Position == TooltipPosition.Bottom)
-        {
-            var x = boundingClientRect.X - boundingClientRect.Width / 2;
-            _x = x + "px";
-            var y = boundingClientRect.Y + boundingClientRect.Height + 20; // Arrow size?
-            _y = y + "px";
-        }
-
-        if (!Trigger.HasFlag(TooltipTrigger.MouseEnter))
-        {
-            return;
-        }
-
-        ShowTooltip();
-    }
-
-    private void OnClick(UIMouseEventArgs e)
-    {
-        if (!Trigger.HasFlag(TooltipTrigger.Click))
-        {
-            return;
-        }
-
-        ShowTooltip();
-    }
-
-    private void OnFocus(UIFocusEventArgs e)
-    {
-        if (!Trigger.HasFlag(TooltipTrigger.Focus))
-        {
-            return;
-        }
-
-        ShowTooltip();
-    }
-
-    private void ShowTooltip()
-    {
-        if (_isVisible)
-        {
-            return;
-        }
-
-        // Step 1: Add to end of the html document
-
-        // <div class="tippy-popper" role="tooltip" id="tt-[generatesomething]" 
-        //      style="z-index: @ZIndex; visibility: visible; transition-duration: 0ms; position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(328px, 1041px, 0px);"
-        //      x-placement="bottom" />
-        //   @TooltipContent
-        // <div>
-
-        // Step 2: Then update the element by setting aria-describedby, e.g:
-        // <span aria-describedby="tt-[generatesomething]">Hover to view tooltip</span>
-
-        _isVisible = true;
-        StateHasChanged();
-    }
-
-    private void HideTooltip()
-    {
-        if (!_isVisible)
-        {
-            return;
-        }
-
-        // Step 1: Remove tooltip
-
-        // Step 2: remove aria-describedby
-
-        _isVisible = false;
-
-        StateHasChanged();
-    }
-}

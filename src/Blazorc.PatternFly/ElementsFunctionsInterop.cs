@@ -17,6 +17,13 @@ namespace Blazor.PatternFly
                 "ElementsFunctions.getBoundingClientRect",
                 x, y);
         }
+
+        public static Task<Rect> GetOffsetBoundingClientRect(IJSRuntime jsRuntime, long x, long y)
+        {
+            return jsRuntime.InvokeAsync<Rect>(
+                "ElementsFunctions.getOffsetBoundingClientRect",
+                x, y);
+        }
     }
 
     public class Rect

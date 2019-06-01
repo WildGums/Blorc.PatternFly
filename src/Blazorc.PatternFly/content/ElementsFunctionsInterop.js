@@ -6,6 +6,17 @@ window.ElementsFunctions = {
             return null;
         }
 
-        return elementFromPoint.getBoundingClientRect();;
+        return elementFromPoint.getBoundingClientRect();
+    },
+    getOffsetBoundingClientRect: function(x, y) {
+        var elementFromPoint = document.elementFromPoint(x, y);
+        if (elementFromPoint === undefined || elementFromPoint == null) {
+            return null;
+        }
+
+        var boundingClientRect = elementFromPoint.getBoundingClientRect();
+        boundingClientRect.x += window.pageXOffset;
+        boundingClientRect.y += window.pageYOffset;
+        return boundingClientRect;
     }
 }
