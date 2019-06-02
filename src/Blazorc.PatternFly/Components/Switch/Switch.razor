@@ -1,9 +1,9 @@
 ﻿@using Microsoft.AspNetCore.Components
 @inherits Blazorc.PatternFly.Components.Switch.SwitchComponent
 
-<label class="pf-c-switch" for="@_instanceId">
+<label class="pf-c-switch" for="@InstanceId">
     <input aria-label="@Label" 
-           id="@_instanceId" 
+           id="@InstanceId" 
            class="pf-c-switch__input" 
            type="checkbox"
            checked="@IsChecked"
@@ -16,10 +16,6 @@
 
 @functions
 {
-    private static int InstanceCounter;
-
-    private readonly string _instanceId = $"switch-{++InstanceCounter}";
-
     private void OnValueChanged(UIChangeEventArgs e)
     {
         IsChecked = (bool)e.Value;

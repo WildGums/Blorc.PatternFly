@@ -3,12 +3,14 @@
     using System;
     using Microsoft.AspNetCore.Components;
 
-    public class SwitchComponent : ComponentBase
+    public class SwitchComponent : UniqueComponentBase
     {
         public SwitchComponent()
         {
             IsChecked = true;
         }
+
+        public override string ComponentName => "switch";
 
         [Parameter]
         public string Label { get; set; }

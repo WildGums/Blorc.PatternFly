@@ -3,7 +3,7 @@
 
 <div class="pf-c-radio">
     <input name="@Name" 
-           id="@_instanceId" 
+           id="@InstanceId" 
            class="pf-c-radio__input" 
            type="radio" 
            aria-invalid="@IsInvalid" 
@@ -11,15 +11,11 @@
            checked="@IsChecked"
            onchange="@OnValueChanged"
            disabled="@IsDisabled" />
-    <label class="pf-c-radio__label" for="@_instanceId">@Label</label>
+    <label class="pf-c-radio__label" for="@InstanceId">@Label</label>
 </div>
 
 @functions
 {
-    private static int InstanceCounter;
-
-    private readonly string _instanceId = $"radio-{++InstanceCounter}";
-
     private void OnValueChanged(UIChangeEventArgs e)
     {
         IsChecked = (bool)e.Value;

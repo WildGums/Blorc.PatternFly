@@ -3,12 +3,14 @@
     using System;
     using Microsoft.AspNetCore.Components;
 
-    public class RadioComponent : ComponentBase
+    public class RadioComponent : UniqueComponentBase
     {
         public RadioComponent()
         {
             IsValid = true;
         }
+
+        public override string ComponentName => "radio";
 
         [Parameter]
         public string Label { get; set; }
