@@ -5,14 +5,6 @@
 
     public class AccordionItemComponent : ComponentBase
     {
-        public const string ButtonExpandedClass = "pf-c-accordion__toggle pf-m-expanded";
-
-        public const string ButtonCollapsedClass = "pf-c-accordion__toggle";
-
-        public const string BodyExpandedClass = "pf-c-accordion__expanded-content pf-m-expanded";
-
-        public const string BodyCollapsedClass = "pf-c-accordion__expanded-content";
-
         [Parameter]
         public AccordionComponent Parent { get; set; }
 
@@ -28,7 +20,12 @@
         public Action<int> ItemClick { get; set; }
 
         [Parameter]
-        public RenderFragment ExpandedContentBody { get; set; }
+        public RenderFragment Content { get; set; }
+
+        protected string GetIsExpandedClass()
+        {
+            return IsSelected ? "pf-m-expanded" : string.Empty;
+        }
 
         protected virtual void OnItemClick()
         {

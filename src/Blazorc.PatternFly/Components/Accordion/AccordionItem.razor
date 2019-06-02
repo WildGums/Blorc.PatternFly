@@ -2,7 +2,7 @@
 
 <dt>
     <h3>
-        <button class="@(IsSelected ? ButtonExpandedClass : ButtonCollapsedClass)" aria-expanded="false" onclick=@(()=>OnItemClick())>
+        <button class="pf-c-accordion__toggle @GetIsExpandedClass()" aria-expanded="false" onclick=@(()=>OnItemClick())>
             <span class="pf-c-accordion__toggle-text">
                 @Title
             </span>
@@ -10,11 +10,11 @@
         </button>
     </h3>
 </dt>
-<dd class="@(IsSelected ? BodyExpandedClass : BodyCollapsedClass)" hidden="@(!IsSelected)">
-    @if (ExpandedContentBody != null)
+<dd class="pf-c-accordion__expanded-content @GetIsExpandedClass()" hidden="@(!IsSelected)">
+    @if (Content != null)
     {
         <div class="pf-c-accordion__expanded-content-body">
-            @ExpandedContentBody
+            @Content
         </div>
     }
 </dd>

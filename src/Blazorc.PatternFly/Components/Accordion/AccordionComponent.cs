@@ -7,7 +7,7 @@
         private int _selectedIndex;
 
         [Parameter]
-        public RenderFragment ChildContent { get; set; }
+        public RenderFragment Items { get; set; }
 
         public int SelectedIndex
         {
