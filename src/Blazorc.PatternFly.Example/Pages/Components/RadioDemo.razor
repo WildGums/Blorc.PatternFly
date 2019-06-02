@@ -1,13 +1,61 @@
 ﻿@page "/components/radio"
 
+@using Blazorc.PatternFly.Components.Radio
+@using Blazorc.PatternFly.Example.Components.Example
 @using Blazorc.PatternFly.Example.Components.Metadata
 @using Blazorc.PatternFly.Example.Components.Todo
 
 <Metadata ComponentName="Radio" />
 
-<Todo ComponentName="Radio" />
+<section class="ws-section ws-live-demo">
 
-@functions {
-    
+    <Example Title="Controlled radio">
+        <Radio ref="controlledRadio1"
+               Value="3"
+               Name="pf-version"
+               OnChange="OnControlledRadioChanged"
+               Label="Controlled radio 1" />
+        <Radio ref="controlledRadio2"
+               Value="4"
+               Name="pf-version"
+               OnChange="OnControlledRadioChanged"
+               Label="Controlled radio 2" />
+    </Example>
+
+    <Example Title="Uncontrolled radio">
+        <Radio Value="3"
+               Name="radio4"
+               Label="Uncontrolled radio value" />
+        <Radio Value="4"
+               Name="radio4"
+               Label="Uncontrolled radio value" />
+    </Example>
+
+    <Example Title="Disabled radio">
+        <Radio Value="3"
+               Name="radio5"
+               IsChecked="true"
+               IsDisabled="true"
+               Label="Disabled checked radio value" />
+        <Radio Value="4"
+               Name="radio5"
+               IsDisabled="true"
+               Label="Disabled radio value" />
+    </Example>
+
+</section>
+
+@functions
+{
+    private Radio controlledRadio1;
+    private Radio controlledRadio2;
+    private object _controlledRadioValue;
+
+    private void OnControlledRadioChanged(object sender, EventArgs e)
+    {
+        var radio = (Radio)sender;
+
+        _controlledRadioValue = radio.Value;
+    }
 }
 
