@@ -13,7 +13,5 @@
         Plain,
 
         Link,
-
-        InlineLink
     }
 }

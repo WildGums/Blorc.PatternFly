@@ -21,16 +21,16 @@
             {
                 var items = new List<string>();
 
-                switch (Variant)
-                {
-                    case ButtonVariant.InlineLink:
-                        items.Add("pf-m-inline");
-                        items.Add("pf-m-link");
-                        break;
+                items.Add($"pf-m-{Variant.ToString().ToLower()}");
 
-                    default:
-                        items.Add($"pf-m-{Variant.ToString().ToLower()}");
-                        break;
+                if (IsInline)
+                {
+                    items.Add("pf-m-inline");
+                }
+
+                if (IsBlock)
+                {
+                    items.Add("pf-m-block");
                 }
 
                 return string.Join(" ", items);
@@ -71,6 +71,9 @@
 
         [Parameter]
         public ButtonType Type { get; set; }
+
+        [Parameter]
+        public string Href { get; set; }
 
         [Parameter]
         public RenderFragment ChildContent { get; set; }

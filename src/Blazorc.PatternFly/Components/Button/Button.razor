@@ -11,12 +11,22 @@
     {
         builder.OpenElement(0, Component);
 
-        builder.AddAttribute(1, "type", Type.ToString().ToLower());
-        builder.AddAttribute(2, "class", Class);
+        if (Component == "button")
+        {
+            builder.AddAttribute(1, "type", Type.ToString().ToLower());
+        }
+
+        builder.AddAttribute(2, "class", $"pf-c-button {Class}");
         builder.AddAttribute(3, "disabled", Microsoft.AspNetCore.Components.BindMethods.GetValue(IsDisabled));
         builder.AddAttribute(4, "onclick", OnButtonClicked);
 
-        builder.AddContent(4, ChildContent);
+        if (!string.IsNullOrWhiteSpace(Href))
+        {
+            builder.AddAttribute(5, "href", Href);
+            builder.AddAttribute(6, "target", "_blank");
+        }
+
+        builder.AddContent(7, ChildContent);
         builder.CloseElement();
     };
 
