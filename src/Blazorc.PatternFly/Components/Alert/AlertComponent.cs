@@ -33,10 +33,13 @@
             {
                 case AlertType.Info:
                     return "pf-m-info";
+
                 case AlertType.Success:
                     return "pf-m-success";
+
                 case AlertType.Warning:
                     return "pf-m-warning";
+
                 default:
                     return "pf-m-danger";
             }
@@ -48,10 +51,13 @@
             {
                 case AlertType.Info:
                     return "fa-info-circle";
+
                 case AlertType.Success:
                     return "fa-check-circle";
+
                 case AlertType.Warning:
                     return "fa-exclamation-triangle";
+
                 default:
                     return "fa-exclamation-circle";
             }
