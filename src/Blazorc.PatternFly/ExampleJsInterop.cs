@@ -1,8 +1,8 @@
-﻿using Microsoft.JSInterop;
-using System.Threading.Tasks;
-
-namespace Blazor.PatternFly
+﻿namespace Blazor.PatternFly
 {
+    using Microsoft.JSInterop;
+    using System.Threading.Tasks;
+
     public class ExampleJsInterop
     {
         public static Task<string> Prompt(IJSRuntime jsRuntime, string message)
