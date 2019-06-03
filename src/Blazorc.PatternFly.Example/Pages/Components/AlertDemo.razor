@@ -1,75 +1,40 @@
 ﻿@page "/components/alert"
 
-@using Blazorc.PatternFly.Example.Components.Metadata
+@using Blazorc.PatternFly.Components.Alert
+@using Blazorc.PatternFly.Example.Components.Example
 @using Blazorc.PatternFly.Example.Components.Todo
 
 <Metadata ComponentName="Alert" />
 
-<Todo ComponentName="Alert" />
+<section class="ws-section ws-live-demo">
+    <Example Title="Alert types">
+        <Alert Title="Info Alert" AlertType="@AlertType.Info" />
+        <br />
+        <Alert Title="Success Alert" AlertType="@AlertType.Success" />
+        <br />
+        <Alert Title="Warning Alert" AlertType="@AlertType.Warning" />
+        <br />
+        <Alert Title="Danger Alert" AlertType="@AlertType.Danger" />
+    </Example>
+</section>
 
-<div class="pf-c-alert pf-m-success" aria-label="Success alert">
-    <div class="pf-c-alert__icon">
-        <i class="fas fa-check-circle" aria-hidden="true"></i>
-    </div>
-    <h4 class="pf-c-alert__title">
-        <span class="pf-screen-reader">Success alert:</span>
-        Success Alert Title
-    </h4>
-    <div class="pf-c-alert__description">
-        <p>Success alert description. <a href="#">This is a link.</a>
-        </p>
-    </div>
-    <div class="pf-c-alert__action">
-        <button class="pf-c-button pf-m-plain" aria-label="Close Success Alert: Success Alert Title">
-            <i class="fas fa-times" aria-hidden="true"></i></button>
-    </div>
-</div>
-<br/>
-<div class="pf-c-alert pf-m-success" aria-label="Success alert">
-    <div class="pf-c-alert__icon">
-        <i class="fas fa-check-circle" aria-hidden="true"></i>
-    </div>
-    <h4 class="pf-c-alert__title">
-        <span class="pf-screen-reader"
-        >
-            Success alert:</span>
-        Success Alert Title
-    </h4>
-    <div class="pf-c-alert__action">
-        <button class="pf-c-button pf-m-plain" aria-label="Close Success Alert: Success Alert Title">
-            <i class="fas fa-times" aria-hidden="true"></i></button>
-    </div>
-</div>
 <br />
-<div class="pf-c-alert pf-m-success" aria-label="Success alert">
-    <div class="pf-c-alert__icon">
-        <i class="fas fa-check-circle" aria-hidden="true"></i>
-    </div>
-    <h4 class="pf-c-alert__title">
-        <span class="pf-screen-reader"
-        >
-            Success alert:</span>
-        Success Alert Title
-    </h4>
-    <div class="pf-c-alert__action">
-        <button class="pf-c-button pf-m-link">
-            Action Button
-        </button>
-    </div>
-</div>
-<br />
-<div class="pf-c-alert pf-m-success" aria-label="Success alert">
-    <div class="pf-c-alert__icon">
-        <i class="fas fa-check-circle" aria-hidden="true"></i>
-    </div>
-    <h4 class="pf-c-alert__title">
-        <span class="pf-screen-reader">
-            Success alert:</span>
-        Success Alert Title
-    </h4>
-</div>
 
-@functions {
-    
-}
+<section class="ws-section ws-live-demo">
+    <Example Title="Alert variations">
+        <Alert Title="Info Alert" AlertType="@AlertType.Success" ShowCloseActionButton="true">
+            <Description>
+                <p> Success alert description. <a href="#">This is a link.</a></p>
+            </Description>
+        </Alert>
+        <br />
+        <Alert Title="Info Alert" AlertType="@AlertType.Success">
+            <ActionContent>
+                <button class="pf-c-button pf-m-link">
+                    Action Button
+                </button>
+            </ActionContent>
+        </Alert>
+    </Example>
+</section>
 
