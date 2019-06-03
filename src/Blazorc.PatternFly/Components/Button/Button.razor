@@ -1,0 +1,38 @@
+﻿@using Microsoft.AspNetCore.Components
+@inherits Blazorc.PatternFly.Components.Button.ButtonComponent
+
+@CustomRender
+
+@functions
+{
+    private RenderFragment CustomRender;
+
+    private RenderFragment CreateComponent() => builder =>
+    {
+        builder.OpenElement(0, Component);
+
+        builder.AddAttribute(1, "type", Type.ToString().ToLower());
+        builder.AddAttribute(2, "class", Class);
+        builder.AddAttribute(3, "disabled", Microsoft.AspNetCore.Components.BindMethods.GetValue(IsDisabled));
+        builder.AddAttribute(4, "onclick", OnButtonClicked);
+
+        builder.AddContent(4, ChildContent);
+        builder.CloseElement();
+    };
+
+    protected override void OnInit()
+    {
+        base.OnInit();
+
+        CustomRender = CreateComponent();
+    }
+
+    private void OnButtonClicked(UIMouseEventArgs e)
+    {
+        var handler = OnClick;
+        if (handler != null)
+        {
+            handler(this, EventArgs.Empty);
+        }
+    }
+}

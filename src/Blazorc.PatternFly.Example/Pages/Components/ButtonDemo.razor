@@ -1,13 +1,61 @@
 ﻿@page "/components/button"
 
+@using Blazorc.PatternFly.Components.Button
+@using Blazorc.PatternFly.Example.Components.Example
 @using Blazorc.PatternFly.Example.Components.Metadata
 @using Blazorc.PatternFly.Example.Components.Todo
 
 <Metadata ComponentName="Button" />
 
-<Todo ComponentName="Button" />
+<section class="ws-section ws-live-demo">
+    <Example Title="Block button">
+        <Button isBlock>Block level button</Button>
+    </Example>
+
+    <Example Title="Button variants">
+        <Button variant="primary">Primary</Button> <Button variant="secondary">Secondary</Button>
+
+        <Button variant="tertiary">Tertiary</Button> <Button variant="danger">Danger</Button>
+
+        <Button variant="link">
+            <PlusCircleIcon /> Link button
+        </Button>
+
+        <Button variant="plain" aria-label="Action">
+            <TimesIcon />
+        </Button>
+
+        <Button variant="link" isInline>
+            Inline Link Button
+        </Button>
+    </Example>
+
+    <Example Title="Link button">
+        <Button Component="a" 
+                href="https://pf-next.com/" 
+                target="_blank" 
+                Variant="primary">
+            Link to Core Docs
+        </Button>
+
+        <Button Component="a" 
+                href="https://pf-next.com/" 
+                target="_blank" 
+                Variant="secondary">
+            Secondary Link to Core Docs
+        </Button>
+
+        <Button Component="a" 
+                IsDisabled="true" 
+                href="https://pf-next.com/" 
+                target="_blank" 
+                Variant="tertiary">
+            Tertiary Link to Core Docs
+        </Button>
+    </Example>
+</section>
 
 @functions {
-    
+
 }
 
