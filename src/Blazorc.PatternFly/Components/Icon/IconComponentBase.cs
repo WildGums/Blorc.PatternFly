@@ -5,7 +5,7 @@
     using Microsoft.AspNetCore.Components;
     using Microsoft.AspNetCore.Components.RenderTree;
 
-    public abstract class IconComponentBase : ComponentBase
+    public abstract class IconComponentBase : ComponentBase, IIconComponent
     {
         public IconComponentBase()
         {
