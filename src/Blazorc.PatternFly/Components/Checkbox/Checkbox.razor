@@ -1,18 +1,17 @@
-﻿@inherits Blazorc.PatternFly.Components.Radio.RadioComponent
+﻿@inherits Blazorc.PatternFly.Components.Checkbox.CheckboxComponent
 
 @using Microsoft.AspNetCore.Components
 
-<div class="pf-c-radio">
+<div class="pf-c-check">
     <input name="@Name"
            id="@InstanceId"
-           class="pf-c-radio__input"
-           type="radio"
+           class="pf-c-check__input"
+           type="checkbox"
            aria-invalid="@IsInvalid"
-           value="@Value"
            checked="@IsChecked"
            onchange="@OnValueChanged"
            disabled="@IsDisabled" />
-    <label class="pf-c-radio__label" for="@InstanceId">@Label</label>
+    <label class="pf-c-check__label" for="@InstanceId">@Label</label>
 </div>
 
 @functions
