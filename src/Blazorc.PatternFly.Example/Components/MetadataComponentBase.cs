@@ -11,7 +11,7 @@
         {
             get
             {
-                return ComponentName?.Replace(" ", string.Empty).Replace("-", string.Empty).ToLower();
+                return ComponentName?.Replace(" ", string.Empty).Replace("-", string.Empty);
             }
         }
     }
