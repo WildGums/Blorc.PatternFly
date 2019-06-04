@@ -1,0 +1,22 @@
+﻿@inherits Blazorc.PatternFly.Components.Select.SelectComponent
+
+@using Blazorc.PatternFly.Components.Icon
+
+<div class="pf-c-select @Class">
+    <button class="pf-c-select__toggle"
+            type="button"
+            id="@ToggleId"
+            aria-labelledby="@AriaLabelledBy @ToggleId"
+            aria-expanded="@IsExpanded">
+        <div class="pf-c-select__toggle-wrapper @WrapperClass">
+            <span class="pf-c-select__toggle-text">Filter by status</span>
+        </div>
+
+        <SortDownIcon Class="pf-c-select__toggle-arrow" />
+    </button>
+</div>
+
+@functions
+{
+
+}
