@@ -4,13 +4,17 @@
     using System.Collections.Generic;
     using Microsoft.AspNetCore.Components;
 
-    public class DropdownComponent : ComponentBase
+    public class DropdownComponent : UniqueComponentBase
     {
         public DropdownComponent()
         {
             Position = DropdownPosition.Left;
             Direction = DropdownDirection.Down;
+
+            ToggleId = GenerateUniqueId("pf-toggle-id");
         }
+
+        public override string ComponentName => "toggle";
 
         public string Class
         {
@@ -32,6 +36,9 @@
         }
 
         [Parameter]
+        public string ToggleId { get; set; }
+
+        [Parameter]
         public bool IsOpen { get; set; }
 
         [Parameter]
@@ -44,10 +51,13 @@
         public DropdownDirection Direction { get; set; }
 
         [Parameter]
-        public RenderFragment Toggle { get; set; }
+        public RenderFragment<IToggle> Toggle { get; set; }
 
         [Parameter]
         public RenderFragment ChildContent { get; set; }
+
+        [Parameter]
+        public RenderFragment<List<DropdownItem>> Items { get; set; }
 
         [Parameter]
         public EventHandler<EventArgs> SelectionChanged { get; set; }

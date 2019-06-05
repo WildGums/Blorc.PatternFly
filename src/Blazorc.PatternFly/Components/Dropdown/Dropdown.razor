@@ -1,3 +1,29 @@
 ﻿@inherits Blazorc.PatternFly.Components.Dropdown.DropdownComponent
 
-<span class="pf-c-badge @Class">@ChildContent</span>
+<div class="pf-c-dropdown @Class">
+    <ToggleContainer ref="toggleContainer"
+                     Id="@ToggleId"
+                     Toggled="@OnToggled">
+        @Toggle
+    </ToggleContainer>
+
+    @ChildContent
+
+    @if (Items != null)
+    {
+        <ul aria-labelledby="@ToggleId" class="pf-c-dropdown__menu" role="menu">
+            @Items
+        </ul>
+    }
+</div>
+
+@functions
+{
+    private ToggleContainer toggleContainer;
+
+    private void OnToggled(object sender, EventArgs e)
+    {
+        IsOpen = toggleContainer.IsOpen;
+    }
+}
+

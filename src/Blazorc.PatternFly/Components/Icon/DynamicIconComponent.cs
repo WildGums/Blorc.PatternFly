@@ -10,7 +10,7 @@
         }
 
         [Parameter]
-        public string Name { get; set; }
+        public string Icon { get; set; }
 
         [Parameter]
         public string Class { get; set; }

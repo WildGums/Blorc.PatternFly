@@ -4,9 +4,9 @@
     using System.Collections.Generic;
     using Microsoft.AspNetCore.Components;
 
-    public class ToggleComponent : ComponentBase
+    public class ToggleContainerComponent : ComponentBase
     {
-        public ToggleComponent()
+        public ToggleContainerComponent()
         {
 
         }
@@ -29,6 +29,9 @@
                 return string.Join(" ", items);
             }
         }
+
+        [Parameter]
+        public string Id { get; set; }
 
         [Parameter]
         public bool IsOpen { get; set; }

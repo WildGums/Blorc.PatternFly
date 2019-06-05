@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using Microsoft.AspNetCore.Components;
 
-    public class KebabToggleComponent : ComponentBase
+    public class KebabToggleComponent : ComponentBase, IToggle
     {
         public KebabToggleComponent()
         {

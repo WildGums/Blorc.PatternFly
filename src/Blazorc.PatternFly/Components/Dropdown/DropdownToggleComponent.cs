@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using Microsoft.AspNetCore.Components;
 
-    public class DropdownToggleComponent : ComponentBase
+    public class DropdownToggleComponent : ComponentBase, IToggle
     {
         public DropdownToggleComponent()
         {
@@ -31,7 +31,13 @@
         }
 
         [Parameter]
+        public string Id { get; set; }
+
+        [Parameter]
         public string Icon { get; set; }
+
+        [Parameter]
+        public string Text { get; set; }
 
         [Parameter]
         public bool IsDisabled { get; set; }
