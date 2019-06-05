@@ -14,14 +14,14 @@
                     Label="Select Input"
                     SelectedItems="@_singleSelectInputSelectedItems"
                     IsExpanded="false"
-                    AriaLabelledBy="title-id">
-                <SelectOption Key="0" Value="Choose..." IsPlaceholder="true" />
-                <SelectOption Key="1" Value="Mr" IsPlaceholder="false" />
-                <SelectOption Key="2" Value="Miss" IsPlaceholder="false" />
-                <SelectOption Key="3" Value="Mrs" IsPlaceholder="false" />
-                <SelectOption Key="4" Value="Ms" IsPlaceholder="false" />
-                <SelectOption Key="5" Value="Dr" IsPlaceholder="false" />
-                <SelectOption Key="6" Value="Other" IsPlaceholder="false" />
+                    AriaLabelledBy="title-id" ref="singleSelect">
+                <SelectOption Key="0" Value="Choose..." IsPlaceholder="true" Parent="@singleSelect"/>
+                <SelectOption Key="1" Value="Mr" IsPlaceholder="false" Parent="@singleSelect"/>
+                <SelectOption Key="2" Value="Miss" IsPlaceholder="false" Parent="@singleSelect"/>
+                <SelectOption Key="3" Value="Mrs" IsPlaceholder="false" Parent="@singleSelect"/>
+                <SelectOption Key="4" Value="Ms" IsPlaceholder="false" Parent="@singleSelect"/>
+                <SelectOption Key="5" Value="Dr" IsPlaceholder="false" Parent="@singleSelect"/>
+                <SelectOption Key="6" Value="Other" IsPlaceholder="false" Parent="@singleSelect"/>
             </Select>
         </div>
     </Example>
@@ -118,6 +118,8 @@
 
 @functions 
 {
+    Select singleSelect = new Select();
+
     private List<object> _singleSelectInputSelectedItems = new List<object>();
     private List<object> _checkboxSelectInputSelectedItems = new List<object>();
     private List<object> _groupedCheckboxSelectInputSelectedItems = new List<object>();
