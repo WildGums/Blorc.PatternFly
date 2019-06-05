@@ -2,21 +2,21 @@
 
 @using Blazorc.PatternFly.Components.Icon
 
-<div class="pf-c-select @Class">
-    <button class="pf-c-select__toggle"
-            type="button"
-            id="@ToggleId"
-            aria-labelledby="@AriaLabelledBy @ToggleId"
-            aria-expanded="@IsExpanded">
-        <div class="pf-c-select__toggle-wrapper @WrapperClass">
-            <span class="pf-c-select__toggle-text">Filter by status</span>
-        </div>
-
-        <SortDownIcon Class="pf-c-select__toggle-arrow" />
-    </button>
-</div>
-
-@functions
-{
-
-}
+    <div class="pf-c-select @Class">
+        <button class="pf-c-select__toggle"
+                type="button"
+                id="@ToggleId"
+                aria-labelledby="@AriaLabelledBy @ToggleId"
+                aria-expanded="@IsExpanded" onclick=@(()=>Toggle())>
+            <div class="pf-c-select__toggle-wrapper @WrapperClass">
+                <span class="pf-c-select__toggle-text">@Text</span>
+            </div>
+            <SortDownIcon Class="pf-c-select__toggle-arrow" />
+        </button>
+        @if (IsExpanded)
+        {
+            <ul aria-label="Select Input" aria-labelledby="@ToggleId" class="pf-c-select__menu" role="listbox">
+                @ChildContent
+            </ul>
+        }
+    </div>

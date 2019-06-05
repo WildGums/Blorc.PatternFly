@@ -3,6 +3,8 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
+    using Icon;
     using Microsoft.AspNetCore.Components;
 
     public class SelectComponent : UniqueComponentBase
@@ -72,7 +74,7 @@
 
         public override string ComponentName => "Select";
 
-        protected string ToggleId { get; private set; }
+        protected string ToggleId { get; }
 
         [Parameter]
         public SelectVariant Variant { get; set; }
@@ -96,7 +98,7 @@
         public string AriaLabelledBy { get; set; }
 
         [Parameter]
-        public string AriaLabelTypeAhead{ get; set; }
+        public string AriaLabelTypeAhead { get; set; }
 
         [Parameter]
         public string AriaLabelClear { get; set; }
@@ -121,5 +123,47 @@
 
         [Parameter]
         public EventHandler<EventArgs> Cleared { get; set; }
+
+        public string Text
+        {
+            get
+            {
+                if (Variant == SelectVariant.Single)
+                {
+                    var tuple = (Tuple<string, string>)SelectedItems.FirstOrDefault();
+                    return tuple?.Item2;
+                }
+
+                return string.Empty;
+            }
+        }
+
+        protected void Toggle()
+        {
+            IsExpanded = !IsExpanded;
+            StateHasChanged();
+        }
+
+        public void SelectItem(string key, string value)
+        {
+            if (Variant == SelectVariant.Single)
+            {
+                SelectedItems.Clear();
+            }
+
+            SelectedItems.Add(new Tuple<string, string>(key, value));
+            Toggle();
+        }
+
+        public void UnselectItem(string key)
+        {
+            var firstOrDefault = SelectedItems.OfType<Tuple<string, string>>().FirstOrDefault(tuple => tuple.Item1 == key);
+            if (firstOrDefault != null)
+            {
+                SelectedItems.Remove(firstOrDefault);
+            }
+
+            Toggle();
+        }
     }
 }
