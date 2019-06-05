@@ -57,7 +57,7 @@
         public RenderFragment ChildContent { get; set; }
 
         [Parameter]
-        public RenderFragment<List<DropdownItem>> Items { get; set; }
+        public RenderFragment Items { get; set; }
 
         [Parameter]
         public EventHandler<EventArgs> SelectionChanged { get; set; }

@@ -1,5 +1,7 @@
 ﻿@inherits Blazorc.PatternFly.Components.Dropdown.DropdownComponent
 
+@using Blazorc.PatternFly
+
 <div class="pf-c-dropdown @Class">
     <ToggleContainer ref="toggleContainer"
                      Id="@ToggleId"
@@ -7,14 +9,16 @@
         @Toggle
     </ToggleContainer>
 
-    @ChildContent
+    <div style="@DisplayConverter.GetDisplayMode(IsOpen)">
+        @ChildContent
 
-    @if (Items != null)
-    {
-        <ul aria-labelledby="@ToggleId" class="pf-c-dropdown__menu" role="menu">
-            @Items
-        </ul>
-    }
+        @if (Items != null)
+        {
+            <ul aria-labelledby="@ToggleId" class="pf-c-dropdown__menu" role="menu">
+                @Items
+            </ul>
+        }
+    </div>
 </div>
 
 @functions
@@ -23,6 +27,8 @@
 
     private void OnToggled(object sender, EventArgs e)
     {
+        Console.WriteLine("DROPDOWN: IsOpen toggled");
+
         IsOpen = toggleContainer.IsOpen;
     }
 }
