@@ -3,7 +3,7 @@
     using System;
     using Microsoft.AspNetCore.Components;
 
-    public class LabelComponent : ComponentBase
+    public class LabelComponent : BlazorcComponentBase
     {
         public LabelComponent()
         {

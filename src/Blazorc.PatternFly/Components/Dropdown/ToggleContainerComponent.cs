@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using Microsoft.AspNetCore.Components;
 
-    public class ToggleContainerComponent : ComponentBase
+    public class ToggleContainerComponent : BlazorcComponentBase
     {
         public ToggleContainerComponent()
         {

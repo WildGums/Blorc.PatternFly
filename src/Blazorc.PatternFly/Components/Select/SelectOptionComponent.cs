@@ -7,7 +7,7 @@
     using Icon;
     using Microsoft.AspNetCore.Components;
 
-    public class SelectOptionComponent : ComponentBase
+    public class SelectOptionComponent : BlazorcComponentBase
     {
         public SelectOptionComponent()
         {

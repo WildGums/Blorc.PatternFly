@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using Microsoft.AspNetCore.Components;
 
-    public class EmptyStateComponent : ComponentBase
+    public class EmptyStateComponent : BlazorcComponentBase
     {
         public EmptyStateComponent()
         {

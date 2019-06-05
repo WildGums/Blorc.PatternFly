@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using Microsoft.AspNetCore.Components;
 
-    public class BadgeComponent : ComponentBase
+    public class BadgeComponent : BlazorcComponentBase
     {
         public BadgeComponent()
         {

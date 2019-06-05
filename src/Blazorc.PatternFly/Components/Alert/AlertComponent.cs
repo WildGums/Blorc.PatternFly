@@ -2,7 +2,7 @@
 {
     using Microsoft.AspNetCore.Components;
 
-    public class AlertComponent : ComponentBase
+    public class AlertComponent : BlazorcComponentBase
     {
         [Parameter]
         public AlertType AlertType { get; set; } = AlertType.Danger;

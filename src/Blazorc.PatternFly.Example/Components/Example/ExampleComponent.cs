@@ -2,7 +2,7 @@
 {
     using Microsoft.AspNetCore.Components;
 
-    public class ExampleComponent : ComponentBase
+    public class ExampleComponent : BlazorcComponentBase
     {
         [Parameter]
         public string Title { get; set; }

@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using Microsoft.AspNetCore.Components;
 
-    public class DropdownToggleCheckboxComponent : ComponentBase
+    public class DropdownToggleCheckboxComponent : BlazorcComponentBase
     {
         public DropdownToggleCheckboxComponent()
         {

@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using Microsoft.AspNetCore.Components;
 
-    public abstract class UniqueComponentBase : ComponentBase
+    public abstract class UniqueComponentBase : BlazorcComponentBase
     {
         private static readonly Dictionary<string, int> InstanceCounters = new Dictionary<string, int>();
 

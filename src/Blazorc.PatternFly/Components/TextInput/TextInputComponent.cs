@@ -3,7 +3,7 @@
     using System;
     using Microsoft.AspNetCore.Components;
 
-    public class TextInputComponent : ComponentBase
+    public class TextInputComponent : BlazorcComponentBase
     {
         public TextInputComponent()
         {

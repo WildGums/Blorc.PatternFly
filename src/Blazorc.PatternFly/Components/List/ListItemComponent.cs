@@ -3,7 +3,7 @@
     using System;
     using Microsoft.AspNetCore.Components;
 
-    public class ListItemComponent : ComponentBase
+    public class ListItemComponent : BlazorcComponentBase
     {
         public ListItemComponent()
         {

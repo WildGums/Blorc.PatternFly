@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using Microsoft.AspNetCore.Components;
 
-    public class ItemComponent : ComponentBase
+    public class ItemComponent : BlazorcComponentBase
     {
         public ItemComponent()
         {

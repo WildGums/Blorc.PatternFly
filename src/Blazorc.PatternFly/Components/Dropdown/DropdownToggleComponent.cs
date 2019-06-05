@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using Microsoft.AspNetCore.Components;
 
-    public class DropdownToggleComponent : ComponentBase, IToggle
+    public class DropdownToggleComponent : BlazorcComponentBase, IToggle
     {
         public DropdownToggleComponent()
         {

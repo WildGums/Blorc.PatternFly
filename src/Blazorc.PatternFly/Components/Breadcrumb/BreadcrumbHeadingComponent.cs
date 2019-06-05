@@ -3,7 +3,7 @@
     using System;
     using Microsoft.AspNetCore.Components;
 
-    public class BreadcrumbHeadingComponent : ComponentBase
+    public class BreadcrumbHeadingComponent : BlazorcComponentBase
     {
         public BreadcrumbHeadingComponent()
         {

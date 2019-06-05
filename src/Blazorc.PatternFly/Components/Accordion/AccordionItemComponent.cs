@@ -3,7 +3,7 @@
     using System;
     using Microsoft.AspNetCore.Components;
 
-    public class AccordionItemComponent : ComponentBase
+    public class AccordionItemComponent : BlazorcComponentBase
     {
         [Parameter]
         public AccordionComponent Parent { get; set; }

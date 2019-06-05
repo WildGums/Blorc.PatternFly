@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using Microsoft.AspNetCore.Components;
 
-    public class BreadcrumbComponent : ComponentBase
+    public class BreadcrumbComponent : BlazorcComponentBase
     {
         public BreadcrumbComponent()
         {

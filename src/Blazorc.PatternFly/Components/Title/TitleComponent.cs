@@ -3,7 +3,7 @@
     using System;
     using Microsoft.AspNetCore.Components;
 
-    public class TitleComponent : ComponentBase
+    public class TitleComponent : BlazorcComponentBase
     {
         public TitleComponent()
         {

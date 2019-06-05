@@ -4,7 +4,7 @@
     using System;
     using Microsoft.AspNetCore.Components;
 
-    public class SingleSelectComponent : ComponentBase
+    public class SingleSelectComponent : BlazorcComponentBase
     {
         public SingleSelectComponent()
         {

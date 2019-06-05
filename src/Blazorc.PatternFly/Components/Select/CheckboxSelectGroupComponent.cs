@@ -5,7 +5,7 @@
     using System.Collections.Generic;
     using Microsoft.AspNetCore.Components;
 
-    public class CheckboxSelectGroupComponent : ComponentBase
+    public class CheckboxSelectGroupComponent : BlazorcComponentBase
     {
         public CheckboxSelectGroupComponent()
         {

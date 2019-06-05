@@ -4,7 +4,7 @@
     using Blazorc.PatternFly.Components.Icon;
     using Microsoft.AspNetCore.Components;
 
-    public class EmptyStateIconComponent : ComponentBase
+    public class EmptyStateIconComponent : BlazorcComponentBase
     {
         public EmptyStateIconComponent()
         {

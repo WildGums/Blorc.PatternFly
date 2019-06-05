@@ -8,7 +8,7 @@
     using Services;
     using Services.Interop;
 
-    public class TooltipComponent : ComponentBase
+    public class TooltipComponent : BlazorcComponentBase
     {
         private const int ArrowSize = 20;
 

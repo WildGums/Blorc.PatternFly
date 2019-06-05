@@ -4,7 +4,7 @@
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 
-    public class NavigationExpandableSectionComponent : ComponentBase, INavigationComponent
+    public class NavigationExpandableSectionComponent : BlazorcComponentBase, INavigationComponent
     {
         private bool _clicked;
 

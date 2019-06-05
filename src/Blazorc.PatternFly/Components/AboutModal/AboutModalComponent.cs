@@ -2,7 +2,7 @@
 {
     using Microsoft.AspNetCore.Components;
 
-    public class AboutModalComponent : ComponentBase
+    public class AboutModalComponent : BlazorcComponentBase
     {
         protected bool IsOpen { get; set; }
 

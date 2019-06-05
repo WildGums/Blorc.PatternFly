@@ -3,7 +3,7 @@
     using System;
     using Microsoft.AspNetCore.Components;
 
-    public class NavigationComponent : ComponentBase, INavigationComponent
+    public class NavigationComponent : BlazorcComponentBase, INavigationComponent
     {
         [Parameter]
         public RenderFragment Items { get; set; }

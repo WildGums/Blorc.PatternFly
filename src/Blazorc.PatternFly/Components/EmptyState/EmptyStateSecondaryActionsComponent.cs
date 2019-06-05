@@ -2,7 +2,7 @@
 {
     using Microsoft.AspNetCore.Components;
 
-    public class EmptyStateSecondaryActionsComponent : ComponentBase
+    public class EmptyStateSecondaryActionsComponent : BlazorcComponentBase
     {
         public EmptyStateSecondaryActionsComponent()
         {

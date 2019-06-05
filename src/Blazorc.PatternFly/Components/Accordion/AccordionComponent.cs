@@ -2,7 +2,7 @@
 {
     using Microsoft.AspNetCore.Components;
 
-    public class AccordionComponent : ComponentBase
+    public class AccordionComponent : BlazorcComponentBase
     {
         private int _selectedIndex;
 

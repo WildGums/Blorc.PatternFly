@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using Microsoft.AspNetCore.Components;
 
-    public class SeparatorComponent : ComponentBase
+    public class SeparatorComponent : BlazorcComponentBase
     {
         public SeparatorComponent()
         {

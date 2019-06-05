@@ -3,7 +3,7 @@
     using System;
     using Microsoft.AspNetCore.Components;
 
-    public class EmptyStateBodyComponent : ComponentBase
+    public class EmptyStateBodyComponent : BlazorcComponentBase
     {
         public EmptyStateBodyComponent()
         {

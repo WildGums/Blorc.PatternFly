@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using Microsoft.AspNetCore.Components;
 
-    public class DropdownItemComponent : ComponentBase
+    public class DropdownItemComponent : BlazorcComponentBase
     {
         public DropdownItemComponent()
         {

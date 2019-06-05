@@ -4,7 +4,7 @@
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 
-    public class NavigationItemComponent : ComponentBase
+    public class NavigationItemComponent : BlazorcComponentBase
     {
         private bool _clicked;
 

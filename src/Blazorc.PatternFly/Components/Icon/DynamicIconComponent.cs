@@ -2,7 +2,7 @@
 {
     using Microsoft.AspNetCore.Components;
 
-    public class DynamicIconComponent : ComponentBase
+    public class DynamicIconComponent : BlazorcComponentBase
     {
         public DynamicIconComponent()
         {
