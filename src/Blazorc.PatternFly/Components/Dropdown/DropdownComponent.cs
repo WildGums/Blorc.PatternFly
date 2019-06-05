@@ -44,6 +44,9 @@
         public DropdownDirection Direction { get; set; }
 
         [Parameter]
+        public RenderFragment Toggle { get; set; }
+
+        [Parameter]
         public RenderFragment ChildContent { get; set; }
 
         [Parameter]

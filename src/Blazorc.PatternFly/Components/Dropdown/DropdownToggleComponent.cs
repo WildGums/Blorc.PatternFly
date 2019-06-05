@@ -34,6 +34,9 @@
         public string Icon { get; set; }
 
         [Parameter]
+        public bool IsDisabled { get; set; }
+
+        [Parameter]
         public bool IsFocused { get; set; }
 
         [Parameter]

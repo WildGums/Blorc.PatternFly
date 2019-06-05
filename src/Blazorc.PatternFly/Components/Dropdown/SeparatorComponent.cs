@@ -31,6 +31,9 @@
         }
 
         [Parameter]
+        public string Key { get; set; }
+
+        [Parameter]
         public string Component { get; set; }
 
         [Parameter]

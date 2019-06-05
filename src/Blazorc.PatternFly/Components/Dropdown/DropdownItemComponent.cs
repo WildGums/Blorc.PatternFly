@@ -35,6 +35,9 @@
         public string Component { get; set; }
 
         [Parameter]
+        public string Key { get; set; }
+
+        [Parameter]
         public bool IsDisabled { get; set; }
 
         [Parameter]

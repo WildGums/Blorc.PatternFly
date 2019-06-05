@@ -4,9 +4,9 @@
     using System.Collections.Generic;
     using Microsoft.AspNetCore.Components;
 
-    public class KebabComponent : ComponentBase
+    public class KebabToggleComponent : ComponentBase
     {
-        public KebabComponent()
+        public KebabToggleComponent()
         {
             Label = "Actions";
         }
