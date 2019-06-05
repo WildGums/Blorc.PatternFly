@@ -1,0 +1,52 @@
+﻿@inherits Blazorc.PatternFly.Components.Breadcrumb.BreadcrumbItemComponent
+
+@using Blazorc.PatternFly.Components.Icon
+
+<li class="pf-c-breadcrumb__item">
+    @CustomRender
+
+    @if (!IsActive)
+    {
+        <span class="pf-c-breadcrumb__item-divider">
+            <ChevronRightIcon />
+        </span>
+    }
+</li>
+
+@functions
+{
+    private RenderFragment CustomRender;
+
+    private RenderFragment CreateComponent() => builder =>
+    {
+        builder.OpenElement(0, Component);
+
+        var classValue = "pf-c-breadcrumb__link";
+        if (IsActive)
+        {
+            classValue += $" pf-m-current";
+        }
+
+        builder.AddAttribute(1, "class", classValue);
+
+        if (!string.IsNullOrWhiteSpace(To))
+        {
+            builder.AddAttribute(2, "href", To);
+        }
+
+        if (!string.IsNullOrWhiteSpace(Target))
+        {
+            builder.AddAttribute(3, "target", Target);
+        }
+
+        builder.AddContent(4, ChildContent);
+        builder.CloseElement();
+    };
+
+    protected override void OnInit()
+    {
+        base.OnInit();
+
+        CustomRender = CreateComponent();
+    }
+}
