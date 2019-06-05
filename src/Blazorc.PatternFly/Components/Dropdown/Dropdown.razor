@@ -9,7 +9,7 @@
         @Toggle
     </ToggleContainer>
 
-    <div style="@DisplayConverter.GetDisplayMode(IsOpen)">
+    <div style="@OpenState">
         @ChildContent
 
         @if (Items != null)
@@ -27,8 +27,6 @@
 
     private void OnToggled(object sender, EventArgs e)
     {
-        Console.WriteLine("DROPDOWN: IsOpen toggled");
-
         IsOpen = toggleContainer.IsOpen;
     }
 }

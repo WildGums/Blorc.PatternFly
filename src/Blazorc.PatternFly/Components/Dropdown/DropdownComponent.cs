@@ -12,6 +12,11 @@
             Direction = DropdownDirection.Down;
 
             ToggleId = GenerateUniqueId("pf-toggle-id");
+
+            CreateStateConverterContainer<bool>()
+                .If("display: none", () => !IsOpen)
+                .Watch(() => IsOpen)
+                .Update(() => OpenState);
         }
 
         public override string ComponentName => "toggle";
@@ -35,11 +40,17 @@
             }
         }
 
+        public string OpenState { get; set; }
+
         [Parameter]
         public string ToggleId { get; set; }
 
         [Parameter]
-        public bool IsOpen { get; set; }
+        public bool IsOpen
+        {
+            get { return GetPropertyValue<bool>(nameof(IsOpen)); }
+            set { SetPropertyValue(nameof(IsOpen), value); }
+        }
 
         [Parameter]
         public bool IsPlain { get; set; }
