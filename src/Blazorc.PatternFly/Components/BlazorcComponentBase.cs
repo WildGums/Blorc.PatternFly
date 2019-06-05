@@ -50,6 +50,8 @@
                 return;
             }
 
+            Log.Debug($"Forcing update for {GetType().Name}");
+
             StateHasChanged();
         }
 
