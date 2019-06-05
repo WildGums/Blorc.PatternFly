@@ -1,24 +1,5 @@
 ﻿@inherits Blazorc.PatternFly.Components.EmptyState.EmptyStateIconComponent
 
-@CustomRender
+@using Blazorc.PatternFly.Components.Icon
 
-@functions
-{
-    private RenderFragment CustomRender;
-
-    private RenderFragment CreateComponent() => builder =>
-    {
-        builder.OpenComponent(0, Type.GetType($"Blazorc.PatternFly.Components.Icon.{Icon}Icon"));
-
-        builder.AddAttribute(1, "class", "pf-c-empty-state__icon");
-
-        builder.CloseComponent();
-    };
-
-    protected override void OnInit()
-    {
-        base.OnInit();
-
-        CustomRender = CreateComponent();
-    }
-}
+<DynamicIcon Icon="@Icon" Class="pf-c-empty-state__icon" />
