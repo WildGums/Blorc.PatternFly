@@ -20,6 +20,7 @@
         internal StateConverterContainer(BlazorcComponentBase component)
         {
             _component = component;
+            _forceComponentUpdate = true;
         }
 
         public string GetValue()
