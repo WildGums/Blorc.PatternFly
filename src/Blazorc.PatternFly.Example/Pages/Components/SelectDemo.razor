@@ -46,7 +46,7 @@
         </div>
     </Example>
 
-    <Example Title="Grouped checkbox select input">
+    <Example Title="Grouped checkbox select input *">
         <div>
             <span id="grouped-checkbox-select-id" hidden>
                 Grouped Checkbox Title
@@ -56,19 +56,19 @@
                     IsExpanded="false"
                     PlaceholderText="Filter by status"
                     AriaLabelledBy="grouped-checkbox-select-id"
-                    IsGrouped="true">
+                    IsGrouped="true" ref="groupCheckBokSelect">
                 <Items>
                     <CheckboxSelectGroup Label="Status" Key="group1">
-                        <CheckboxSelectOption Key="0" value="Running" />
-                        <CheckboxSelectOption Key="1" value="Stopped" />
-                        <CheckboxSelectOption Key="2" value="Down" />
-                        <CheckboxSelectOption Key="3" value="Degraded" />
-                        <CheckboxSelectOption Key="4" value="Needs Maintenence" />
+                        <CheckboxSelectOption Key="0" value="Running" Parent="@groupCheckBokSelect"/>
+                        <CheckboxSelectOption Key="1" value="Stopped" Parent="@groupCheckBokSelect"/>
+                        <CheckboxSelectOption Key="2" value="Down" Parent="@groupCheckBokSelect"/>
+                        <CheckboxSelectOption Key="3" value="Degraded" Parent="@groupCheckBokSelect"/>
+                        <CheckboxSelectOption Key="4" value="Needs Maintenence" Parent="@groupCheckBokSelect"/>
                     </CheckboxSelectGroup>
                     <CheckboxSelectGroup Label="Vendor Names" Key="group2">
-                        <CheckboxSelectOption Key="5" Value="Dell" />
-                        <CheckboxSelectOption Key="6" Value="Samsung" IsDisabled="true" />
-                        <CheckboxSelectOption Key="7" Value="Hewlett-Packard" />
+                        <CheckboxSelectOption Key="5" Value="Dell" Parent="@groupCheckBokSelect"/>
+                        <CheckboxSelectOption Key="6" Value="Samsung" IsDisabled="true" Parent="@groupCheckBokSelect"/>
+                        <CheckboxSelectOption Key="7" Value="Hewlett-Packard" Parent="@groupCheckBokSelect"/>
                     </CheckboxSelectGroup>
                 </Items>
             </Select>
@@ -124,6 +124,7 @@
 {
     Select singleSelect = new Select();
     Select checkboxSelect = new Select();
+    Select groupCheckBokSelect = new Select();
 
     /*private List<object> _singleSelectInputSelectedItems = new List<object>();
     private List<object> _checkboxSelectInputSelectedItems = new List<object>();
