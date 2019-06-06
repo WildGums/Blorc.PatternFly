@@ -64,3 +64,12 @@ http://blazorc-patternfly.wildgums.com/
 
 ## Contributing
 
+### How to update Patternfly assets?
+
+- Install patternfly from npm repository in an external folder
+
+    `npm install patternfly --save`
+
+- Update the following files and folders in `Blazorc.PatternFly\content\patternfly\` with the files and folders in  `react\node_modules\@patternfly\patternfly\` 
+    - patternfly.css 
+    - assets
