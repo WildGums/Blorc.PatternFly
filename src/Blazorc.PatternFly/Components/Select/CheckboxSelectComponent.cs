@@ -4,34 +4,23 @@
     using System.Collections.Generic;
     using Microsoft.AspNetCore.Components;
 
-    public class CheckboxSelectComponent : BlazorcComponentBase
+    public class CheckboxSelectComponent : SelectComponent
     {
         public CheckboxSelectComponent()
         {
 
         }
 
-        public string Class
-        {
-            get
-            {
-                var items = new List<string>();
+//        [Parameter]
+//        public bool IsExpanded { get; set; }
+//
+//        [Parameter]
+//        public bool IsGrouped { get; set; }
+//
+//        [Parameter]
+//        public List<object> CheckedItems {get;set;}
 
-
-                return string.Join(" ", items);
-            }
-        }
-
-        [Parameter]
-        public bool IsExpanded { get; set; }
-
-        [Parameter]
-        public bool IsGrouped { get; set; }
-
-        [Parameter]
-        public List<object> CheckedItems {get;set;}
-
-        [Parameter]
-        public RenderFragment ChildContent { get; set; }
+//        [Parameter]
+//        public RenderFragment ChildContent { get; set; }
     }
 }

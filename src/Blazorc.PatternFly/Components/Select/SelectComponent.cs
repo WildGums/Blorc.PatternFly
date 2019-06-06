@@ -154,6 +154,11 @@
                     return PlaceholderText;
                 }
 
+                if (Variant == SelectVariant.Checkbox)
+                {
+                    return PlaceholderText;
+                }
+
                 if (Variant == SelectVariant.Single)
                 {
                     return SelectedItems.FirstOrDefault().Value;
@@ -177,12 +182,14 @@
 
             _selectedItems.Add(key, value);
 
-            if (_selectedItems.Remove(key))
+            if (Variant == SelectVariant.Single)
             {
-                SelectionChanged?.Invoke(this, EventArgs.Empty);
+                Toggle();
             }
-
-            Toggle();
+            else
+            {
+                StateHasChanged();
+            }
         }
 
         public void UnselectItem(string key)
@@ -192,7 +199,14 @@
                 SelectionChanged?.Invoke(this, EventArgs.Empty);
             }
 
-            Toggle();
+            if (Variant == SelectVariant.Single)
+            {
+                Toggle();
+            }
+            else
+            {
+                StateHasChanged();
+            }
         }
 
         public void ClearSelection()

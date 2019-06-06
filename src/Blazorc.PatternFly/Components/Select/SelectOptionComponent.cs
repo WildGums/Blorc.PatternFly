@@ -54,7 +54,7 @@
         [Parameter]
         public EventHandler<EventArgs> Clicked { get; set; }
 
-        protected void OnSelectOptionClick()
+        protected void OptionClick()
         {
             if (IsPlaceholder)
             {

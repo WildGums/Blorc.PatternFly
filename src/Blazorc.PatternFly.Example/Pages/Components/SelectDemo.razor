@@ -10,9 +10,8 @@
             <span id="title-id" hidden>
                 Title
             </span>
-            <Select Variant="SelectVariant.Single"
+            <Select Variant="@SelectVariant.Single"
                     Label="Select Input"
-                    IsExpanded="false"
                     AriaLabelledBy="title-id" ref="singleSelect" PlaceholderText="Choose...">
                 <Items>
                     <SelectOption Key="1" Value="Mr" Parent="@singleSelect" />
@@ -26,21 +25,22 @@
         </div>
     </Example>
 
-    <Example Title="Checkbox select input">
+    <Example Title="Checkbox select input *">
         <div>
             <span id="checkbox-select-id" hidden>
                 Title
             </span>
-            <Select Variant="SelectVariant.Single"
+            <Select Variant="@SelectVariant.Checkbox"
                     Label="Select Input"
                     IsExpanded="false"
-                    AriaLabelledBy="checkbox-select-id">
+                    PlaceholderText="Filter by status"
+                    AriaLabelledBy="checkbox-select-id" ref="checkboxSelect">
                 <Items>
-                    <CheckboxSelectOption Key="0" Value="Active" />,
-                    <CheckboxSelectOption Key="1" Value="Cancelled" />,
-                    <CheckboxSelectOption Key="2" Value="Paused" />,
-                    <CheckboxSelectOption Key="3" Value="Warning" />,
-                    <CheckboxSelectOption Key="4" Value="Restarted" />
+                    <CheckboxSelectOption Key="0" Value="Active" Parent="@checkboxSelect"/>,
+                    <CheckboxSelectOption Key="1" Value="Cancelled" Parent="@checkboxSelect"/>,
+                    <CheckboxSelectOption Key="2" Value="Paused" Parent="@checkboxSelect"/>,
+                    <CheckboxSelectOption Key="3" Value="Warning" Parent="@checkboxSelect"/>,
+                    <CheckboxSelectOption Key="4" Value="Restarted" Parent="@checkboxSelect"/>
                 </Items>
             </Select>
         </div>
@@ -106,7 +106,7 @@
                     Label="Select a state"
                     IsExpanded="false"
                     AriaLabelledBy="multi-typeahead-select-id"
-                    PlaceholderText="Select a state">
+                    PlaceholderText="Select a state" >
                 <Items>
                     <SelectOption Key="0" Value="Alabama" />
                     <SelectOption Key="1" Value="Florida" />
@@ -123,6 +123,7 @@
 @functions 
 {
     Select singleSelect = new Select();
+    Select checkboxSelect = new Select();
 
     /*private List<object> _singleSelectInputSelectedItems = new List<object>();
     private List<object> _checkboxSelectInputSelectedItems = new List<object>();

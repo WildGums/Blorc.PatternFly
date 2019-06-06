@@ -1,7 +1,7 @@
 ﻿@inherits Blazorc.PatternFly.Components.Select.SelectOptionComponent
 
 
-<li role="presentation"><button class="pf-c-select__menu-item @Class" role="option" onclick=@(()=>OnSelectOptionClick())>
+<li role="presentation"><button class="pf-c-select__menu-item @Class" role="option" onclick=@(()=>OptionClick())>
     @Value
     @if (IsSelected && !IsPlaceholder)
     {

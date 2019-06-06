@@ -1,6 +1,7 @@
 ﻿@inherits Blazorc.PatternFly.Components.Select.SelectComponent
 
 @using Blazorc.PatternFly.Components.Icon
+@using Blazorc.PatternFly.Components.Badge
 
     <div class="@Class">
         <button class="pf-c-select__toggle"
@@ -9,14 +10,23 @@
                 aria-labelledby="@AriaLabelledBy @ToggleId"
                 aria-expanded="@IsExpanded" onclick=@(()=>Toggle())>
             <div class="pf-c-select__toggle-wrapper @WrapperClass">
-                <span class="pf-c-select__toggle-text">@Text</span>
+                @if (Variant == SelectVariant.Checkbox)
+                {
+                    <span class="pf-c-select__toggle-text">@Text</span>
+                    <Badge>@SelectedItems.Count</Badge>
+                }
+                else
+                {
+                    <span class="pf-c-select__toggle-text">@Text</span>
+                }
             </div>
             <SortDownIcon Class="pf-c-select__toggle-arrow" />
         </button>
+
         @if (IsExpanded)
         {
             <ul aria-label="Select Input" aria-labelledby="@ToggleId" class="pf-c-select__menu" role="listbox">
-                @if (!string.IsNullOrWhiteSpace(PlaceholderText))
+                @if (!string.IsNullOrWhiteSpace(PlaceholderText) && Variant == SelectVariant.Single)
                 {
                     @PlaceholderItem
                 }

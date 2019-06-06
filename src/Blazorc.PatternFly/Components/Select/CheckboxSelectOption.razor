@@ -1,3 +1,7 @@
 ﻿@inherits Blazorc.PatternFly.Components.Select.CheckboxSelectOptionComponent
 
-<span class="pf-c-label @Class">@ChildContent</span>
+@using Blazorc.PatternFly.Components.Checkbox
+
+<label class="pf-c-check pf-c-select__menu-item">
+    <Checkbox Label="@Value" IsChecked="@IsSelected" OnChange=@((sender, args)=> OptionClick()) />
+</label>
