@@ -3,7 +3,10 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.Linq;
+    using System.Reflection;
+    using System.Threading.Tasks;
     using Icon;
     using Microsoft.AspNetCore.Components;
 
@@ -11,6 +14,13 @@
     {
         public SelectOptionComponent()
         {
+            CreateConverter()
+                .Fixed("pf-c-select__menu-item")
+                .If(() => IsSelected, "pf-m-selected")
+                .If(() => IsDisabled, "pf-m-disabled")
+                .Watch(() => IsSelected)
+                .Watch(() => IsDisabled)
+                .Update(() => Class);
         }
 
         [Parameter]
@@ -18,17 +28,12 @@
 
         public string Class
         {
-            get
-            {
-                var items = new List<string>();
-                if (IsSelected)
-                {
-                    items.Add("pf-m-selected");
-                }
-
-                return string.Join(" ", items);
-            }
+            get;
+            set;
         }
+
+        [Parameter]
+        protected bool IsPlaceholder { get; set; }
 
         [Parameter]
         public int Index { get; set; }
@@ -36,15 +41,18 @@
         [Parameter]
         public bool IsDisabled { get; set; }
 
-        [Parameter]
-        public bool IsPlaceholder { get; set; }
+        public bool IsSelected => Parent != null && Parent.SelectedItems.ContainsKey(Key);
 
-        public bool IsSelected
+        public bool IsVisible
         {
             get
             {
-                var item = Parent.SelectedItems.OfType<Tuple<string, string>>().FirstOrDefault(tuple => tuple.Item1 == Key);
-                return item != null;
+                if (Parent.Variant == SelectVariant.Typeahead || Parent.Variant == SelectVariant.TypeaheadMulti)
+                {
+                    return string.IsNullOrWhiteSpace(Parent.FilterText) || Parent != null && Value.StartsWith(Parent.FilterText);
+                }
+
+                return true;
             }
         }
 
@@ -60,9 +68,13 @@
         [Parameter]
         public EventHandler<EventArgs> Clicked { get; set; }
 
-        protected void OptionClicked()
+        protected void OptionClick()
         {
-            if (!IsSelected)
+            if (IsPlaceholder)
+            {
+                Parent.ClearSelection();
+            }
+            else if (!IsSelected)
             {
                 Parent.SelectItem(Key, Value);
             }
@@ -70,6 +82,10 @@
             {
                 Parent.UnselectItem(Key);
             }
+
+            RaisePropertyChanged(nameof(IsSelected));
+
+            Clicked?.Invoke(this, EventArgs.Empty);
         }
     }
 }

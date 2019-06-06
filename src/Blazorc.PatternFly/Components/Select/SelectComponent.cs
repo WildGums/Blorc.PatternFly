@@ -3,12 +3,14 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.Linq;
-    using Icon;
     using Microsoft.AspNetCore.Components;
 
-    public class SelectComponent : UniqueComponentBase
+    public class SelectComponent : BlazorcComponentBase
     {
+        private readonly IDictionary<string,string> _selectedItems = new Dictionary<string, string>();
+
         public SelectComponent()
         {
             Variant = SelectVariant.Single;
@@ -18,22 +20,20 @@
             AriaLabelRemove = "Remove";
 
             ToggleId = GenerateUniqueId("pf-toggle-id");
+
+            CreateConverter()
+                .Fixed("pf-c-select")
+                .If(() => IsExpanded, "pf-m-expanded")
+                .Watch(() => IsExpanded)
+                .Update(() => Class);
         }
 
         public string Class
         {
-            get
-            {
-                var items = new List<string>();
-
-                if (IsExpanded)
-                {
-                    items.Add("pf-m-expanded");
-                }
-
-                return string.Join(" ", items);
-            }
+            get;
+            set;
         }
+
 
         public string WrapperClass
         {
@@ -56,40 +56,51 @@
             }
         }
 
-        //public string VariantClass
-        //{
-        //    get
-        //    {
-        //        return GetVariantClassName();
-        //    }
-        //}
-
-        //public string VariantWrapperClass
-        //{
-        //    get
-        //    {
-        //        return $"{GetVariantClassName()}-wrapper";
-        //    }
-        //}
-
-        public override string ComponentName => "Select";
-
         protected string ToggleId { get; }
 
-        [Parameter]
-        public SelectVariant Variant { get; set; }
+        [Parameter] public SelectVariant Variant { get; set; }
 
         [Parameter]
-        public bool IsExpanded { get; set; }
+        public bool IsExpanded
+        {
+            get => GetPropertyValue<bool>(nameof(IsExpanded));
+            set => SetPropertyValue(nameof(IsExpanded), value);
+        }
+
+        public string FilterText
+        {
+            get => GetPropertyValue<string>(nameof(FilterText));
+            set => SetPropertyValue(nameof(FilterText), value);
+        }
 
         [Parameter]
-        public bool IsGrouped { get; set; }
+        public bool IsGrouped
+        {
+            get => GetPropertyValue<bool>(nameof(IsGrouped));
+            set => SetPropertyValue(nameof(IsGrouped), value);
+        }
 
         [Parameter]
         public string PlaceholderText { get; set; }
 
-        [Parameter]
-        public List<object> SelectedItems { get; set; }
+        protected RenderFragment PlaceholderItem
+        {
+            get
+            {
+                return builder =>
+                {
+                    builder.OpenComponent(0, typeof(SelectOption));
+                    builder.AddAttribute(1, "Key", "-1");
+                    builder.AddAttribute(2, "Value", PlaceholderText);
+                    builder.AddAttribute(2, "IsPlaceholder", true);
+                    builder.AddAttribute(3, "Parent", this);
+                    builder.CloseComponent();
+                };
+            }
+        }
+
+
+        public IReadOnlyDictionary<string, string> SelectedItems => (IReadOnlyDictionary<string, string>)_selectedItems;
 
         [Parameter]
         public string Label { get; set; }
@@ -113,7 +124,7 @@
         public string Width { get; set; }
 
         [Parameter]
-        public RenderFragment ChildContent { get; set; }
+        public RenderFragment Items { get; set; }
 
         [Parameter]
         public EventHandler<EventArgs> SelectionChanged { get; set; }
@@ -128,10 +139,19 @@
         {
             get
             {
-                if (Variant == SelectVariant.Single)
+                if (SelectedItems.Count == 0)
                 {
-                    var tuple = (Tuple<string, string>)SelectedItems.FirstOrDefault();
-                    return tuple?.Item2;
+                    return PlaceholderText;
+                }
+
+                if (Variant == SelectVariant.Checkbox)
+                {
+                    return PlaceholderText;
+                }
+
+                if (Variant == SelectVariant.Single || Variant == SelectVariant.Typeahead || Variant == SelectVariant.TypeaheadMulti)
+                {
+                    return SelectedItems.FirstOrDefault().Value;
                 }
 
                 return string.Empty;
@@ -141,29 +161,76 @@
         protected void Toggle()
         {
             IsExpanded = !IsExpanded;
-            StateHasChanged();
         }
 
         public void SelectItem(string key, string value)
         {
-            if (Variant == SelectVariant.Single)
+            if (Variant == SelectVariant.Single || Variant == SelectVariant.Typeahead)
             {
-                SelectedItems.Clear();
+                _selectedItems.Clear();
             }
 
-            SelectedItems.Add(new Tuple<string, string>(key, value));
-            Toggle();
+            _selectedItems.Add(key, value);
+
+            if (Variant == SelectVariant.Single || Variant == SelectVariant.Typeahead)
+            {
+                Toggle();
+            }
+            else
+            {
+                StateHasChanged();
+            }
         }
 
         public void UnselectItem(string key)
         {
-            var firstOrDefault = SelectedItems.OfType<Tuple<string, string>>().FirstOrDefault(tuple => tuple.Item1 == key);
-            if (firstOrDefault != null)
+            if (_selectedItems.Remove(key))
             {
-                SelectedItems.Remove(firstOrDefault);
+                SelectionChanged?.Invoke(this, EventArgs.Empty);
             }
 
-            Toggle();
+            if (Variant == SelectVariant.Single)
+            {
+                Toggle();
+            }
+            else
+            {
+                StateHasChanged();
+            }
+        }
+
+        public void ClearSelection(bool toggle = true)
+        {
+            _selectedItems.Clear();
+            SelectionChanged?.Invoke(this, EventArgs.Empty);
+            if (toggle)
+            {
+                Toggle();
+            }
+
+            if (Variant == SelectVariant.Typeahead || Variant == SelectVariant.TypeaheadMulti)
+            {
+                FilterText = string.Empty;
+            }
+        }
+
+        protected override void OnPropertyChanged(PropertyChangedEventArgs e)
+        {
+            if ((Variant == SelectVariant.Typeahead || Variant == SelectVariant.TypeaheadMulti) && e.PropertyName == nameof(FilterText))
+            {
+                StateHasChanged();
+            }
+        }
+
+        protected void OnFilterInput(UIChangeEventArgs e)
+        {
+            FilterText = (string)e.Value;
+        }
+
+        protected void UnselectFirstItem()
+        {
+            var firstOrDefault = _selectedItems.FirstOrDefault();
+            UnselectItem(firstOrDefault.Key);
         }
     }
 }

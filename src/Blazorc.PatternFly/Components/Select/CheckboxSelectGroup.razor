@@ -1,3 +1,6 @@
 ﻿@inherits Blazorc.PatternFly.Components.Select.CheckboxSelectGroupComponent
 
-<span class="pf-c-label @Class">@ChildContent</span>
+<div class="pf-c-select__menu-group">
+    <div class="pf-c-select__menu-group-title" aria-hidden="true">@Label</div>
+    @ChildContent
+</div>

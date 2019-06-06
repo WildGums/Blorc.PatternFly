@@ -1,16 +1,10 @@
 ﻿namespace Blazorc.PatternFly.Components.Select
 
 {
-    using System;
     using Microsoft.AspNetCore.Components;
 
     public class SingleSelectComponent : BlazorcComponentBase
     {
-        public SingleSelectComponent()
-        {
-
-        }
-
         //public string Class
         //{
         //    get
@@ -22,17 +16,14 @@
         //    }
         //}
 
-        [Parameter]
-        public object SelectedItem { get; set; }
+        [Parameter] public object SelectedItem { get; set; }
 
-        [Parameter]
-        public bool IsExpanded { get; set; }
+        [Parameter] public bool IsExpanded { get; set; }
 
         // Internal flag
         //[Parameter]
         //public bool IsOpenedOnEnter { get; set; }
 
-        [Parameter]
-        public RenderFragment ChildContent { get; set; }
+        [Parameter] public RenderFragment ChildContent { get; set; }
     }
 }
