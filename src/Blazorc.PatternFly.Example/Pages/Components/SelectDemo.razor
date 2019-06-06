@@ -5,7 +5,7 @@
 <Metadata ComponentName="Select" />
 
 <section class="ws-section ws-live-demo">
-    <Example Title="Single select input *">
+    <Example Title="Single select input">
         <div>
             <span id="title-id" hidden>
                 Title
@@ -25,7 +25,7 @@
         </div>
     </Example>
 
-    <Example Title="Checkbox select input *">
+    <Example Title="Checkbox select input">
         <div>
             <span id="checkbox-select-id" hidden>
                 Title
@@ -46,7 +46,7 @@
         </div>
     </Example>
 
-    <Example Title="Grouped checkbox select input *">
+    <Example Title="Grouped checkbox select input">
         <div>
             <span id="grouped-checkbox-select-id" hidden>
                 Grouped Checkbox Title
@@ -75,7 +75,7 @@
         </div>
     </Example>
 
-    <Example Title="Typeahead select input *">
+    <Example Title="Typeahead select input">
         <div>
             <span id="typeahead-select-id" hidden>
                 Select a state
@@ -106,14 +106,14 @@
                     Label="Select a state"
                     IsExpanded="false"
                     AriaLabelledBy="multi-typeahead-select-id"
-                    PlaceholderText="Select a state" >
+                    PlaceholderText="Select a state" ref="multiTypeaheadSelect">
                 <Items>
-                    <SelectOption Key="0" Value="Alabama" />
-                    <SelectOption Key="1" Value="Florida" />
-                    <SelectOption Key="2" Value="New Jersey" />
-                    <SelectOption Key="3" Value="New Mexico" />
-                    <SelectOption Key="4" Value="New York" />
-                    <SelectOption Key="5" Value="North Carolina" />
+                    <SelectOption Key="0" Value="Alabama" Parent="@multiTypeaheadSelect"/>
+                    <SelectOption Key="1" Value="Florida" Parent="@multiTypeaheadSelect"/>
+                    <SelectOption Key="2" Value="New Jersey" Parent="@multiTypeaheadSelect"/>
+                    <SelectOption Key="3" Value="New Mexico" Parent="@multiTypeaheadSelect"/>
+                    <SelectOption Key="4" Value="New York" Parent="@multiTypeaheadSelect"/>
+                    <SelectOption Key="5" Value="North Carolina" Parent="@multiTypeaheadSelect"/>
                 </Items>
             </Select>
         </div>
@@ -126,13 +126,8 @@
     Select checkboxSelect = new Select();
     Select groupCheckBokSelect = new Select();
     Select typeaheadSelect = new Select();
-
-    /*private List<object> _singleSelectInputSelectedItems = new List<object>();
-    private List<object> _checkboxSelectInputSelectedItems = new List<object>();
-    private List<object> _groupedCheckboxSelectInputSelectedItems = new List<object>();
-    private List<object> _typeaheadSelectInputSelectedItems = new List<object>();
-    private List<object> _multipleTypeaheadSelectInputSelectedItems = new List<object>();*/
-
+    Select multiTypeaheadSelect = new Select();
+    
     private void OnSingleSelectInputSelectionChanged(object sender, EventArgs e)
     {
         Console.WriteLine("Selection changed");

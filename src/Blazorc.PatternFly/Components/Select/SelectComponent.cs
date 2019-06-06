@@ -56,23 +56,6 @@
             }
         }
 
-        //public string VariantClass
-        //{
-        //    get
-        //    {
-        //        return GetVariantClassName();
-        //    }
-        //}
-
-        //public string VariantWrapperClass
-        //{
-        //    get
-        //    {
-        //        return $"{GetVariantClassName()}-wrapper";
-        //    }
-        //}
-
-
         protected string ToggleId { get; }
 
         [Parameter] public SelectVariant Variant { get; set; }
@@ -166,7 +149,7 @@
                     return PlaceholderText;
                 }
 
-                if (Variant == SelectVariant.Single || Variant == SelectVariant.Typeahead)
+                if (Variant == SelectVariant.Single || Variant == SelectVariant.Typeahead || Variant == SelectVariant.TypeaheadMulti)
                 {
                     return SelectedItems.FirstOrDefault().Value;
                 }
@@ -216,11 +199,19 @@
             }
         }
 
-        public void ClearSelection()
+        public void ClearSelection(bool toggle = true)
         {
             _selectedItems.Clear();
             SelectionChanged?.Invoke(this, EventArgs.Empty);
-            Toggle();
+            if (toggle)
+            {
+                Toggle();
+            }
+
+            if (Variant == SelectVariant.Typeahead || Variant == SelectVariant.TypeaheadMulti)
+            {
+                FilterText = string.Empty;
+            }
         }
 
         protected override void OnPropertyChanged(PropertyChangedEventArgs e)
@@ -234,6 +225,12 @@
         protected void OnFilterInput(UIChangeEventArgs e)
         {
             FilterText = (string)e.Value;
+        }
+
+        protected void UnselectFirstItem()
+        {
+            var firstOrDefault = _selectedItems.FirstOrDefault();
+            UnselectItem(firstOrDefault.Key);
         }
     }
 }
