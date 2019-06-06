@@ -17,34 +17,76 @@
 
         public string ButtonClass { get; set; }
 
-        [Parameter]
-        public string Id { get; set; }
+        [CascadingParameter]
+        public Dropdown ContainerDropdown { get; set; }
 
         [Parameter]
-        public bool IsOpen { get; set; }
+        public string Id
+        {
+            get { return GetPropertyValue<string>(nameof(Id)); }
+            set { SetPropertyValue(nameof(Id), value); }
+        }
 
         [Parameter]
-        public bool IsFocused { get; set; }
+        public bool IsOpen
+        {
+            get { return GetPropertyValue<bool>(nameof(IsOpen)); }
+            set { SetPropertyValue(nameof(IsOpen), value); }
+        }
 
         [Parameter]
-        public bool IsHovered { get; set; }
+        public bool IsFocused
+        {
+            get { return GetPropertyValue<bool>(nameof(IsFocused)); }
+            set { SetPropertyValue(nameof(IsFocused), value); }
+        }
 
         [Parameter]
-        public bool IsActive { get; set; }
+        public bool IsHovered
+        {
+            get { return GetPropertyValue<bool>(nameof(IsHovered)); }
+            set { SetPropertyValue(nameof(IsHovered), value); }
+        }
 
         [Parameter]
-        public bool IsDisabled { get; set; }
+        public bool IsActive
+        {
+            get { return GetPropertyValue<bool>(nameof(IsActive)); }
+            set { SetPropertyValue(nameof(IsActive), value); }
+        }
 
         [Parameter]
-        public bool IsPlain { get; set; }
+        public bool IsDisabled
+        {
+            get { return GetPropertyValue<bool>(nameof(IsDisabled)); }
+            set { SetPropertyValue(nameof(IsDisabled), value); }
+        }
 
         [Parameter]
-        public bool IsSplitButton { get; set; }
+        public bool IsPlain
+        {
+            get { return GetPropertyValue<bool>(nameof(IsPlain)); }
+            set { SetPropertyValue(nameof(IsPlain), value); }
+        }
+
+        [Parameter]
+        public bool IsSplitButton
+        {
+            get { return GetPropertyValue<bool>(nameof(IsSplitButton)); }
+            set { SetPropertyValue(nameof(IsSplitButton), value); }
+        }
 
         [Parameter]
         public RenderFragment ChildContent { get; set; }
 
         [Parameter]
         public EventHandler<EventArgs> Toggled { get; set; }
+
+        protected override void OnInit()
+        {
+            base.OnInit();
+
+            
+        }
     }
 }

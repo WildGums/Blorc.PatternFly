@@ -1,14 +1,16 @@
 ﻿@inherits Blazorc.PatternFly.Components.Dropdown.ToggleContainerComponent
 
 <button id="@Id" class="@ButtonClass" type="button" aria-expanded="@IsOpen" aria-haspopup="true" onclick="@(() => OnClick())">
-    @if (IsSplitButton)
-    {
+    <CascadingValue Value=this>
+        @if (IsSplitButton)
+        {
 
-    }
-    else
-    {
-        @ChildContent
-    }
+        }
+        else
+        {
+            @ChildContent
+        }
+    </CascadingValue>
 </button>
 
 @functions

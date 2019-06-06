@@ -12,24 +12,7 @@
             Index = -1;
         }
 
-        public string Class
-        {
-            get
-            {
-                var items = new List<string>();
-
-                //if (IsRead)
-                //{
-                //    items.Add("pf-m-read");
-                //}
-                //else
-                //{
-                //    items.Add("pf-m-unread");
-                //}
-
-                return string.Join(" ", items);
-            }
-        }
+        public string Class { get; set; }
 
         [Parameter]
         public string Component { get; set; }

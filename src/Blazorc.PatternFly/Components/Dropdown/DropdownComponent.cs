@@ -15,7 +15,17 @@
 
             CreateConverter()
                 .Fixed("pf-c-dropdown")
+                .If(() => Direction == DropdownDirection.Up, "pf-m-top")
+                .If(() => IsOpen, "pf-m-expanded")
+                .Watch(() => Direction)
+                .Watch(() => IsOpen)
                 .Update(() => Class);
+
+            CreateConverter()
+                .Fixed("pf-c-dropdown__menu")
+                .If(() => Position == DropdownPosition.Right, "pf-m-align-right")
+                .Watch(() => Position)
+                .Update(() => PopupClass);
 
             CreateConverter()
                 .If(() => !IsOpen, "display: none")
@@ -26,6 +36,8 @@
         public override string ComponentName => "toggle";
 
         public string Class { get; set; }
+
+        public string PopupClass { get; set; }
 
         public string OpenState { get; set; }
 
@@ -40,13 +52,25 @@
         }
 
         [Parameter]
-        public bool IsPlain { get; set; }
+        public bool IsPlain
+        {
+            get { return GetPropertyValue<bool>(nameof(IsPlain)); }
+            set { SetPropertyValue(nameof(IsPlain), value); }
+        }
 
         [Parameter]
-        public DropdownPosition Position { get; set; }
+        public DropdownPosition Position
+        {
+            get { return GetPropertyValue<DropdownPosition>(nameof(Position)); }
+            set { SetPropertyValue(nameof(Position), value); }
+        }
 
         [Parameter]
-        public DropdownDirection Direction { get; set; }
+        public DropdownDirection Direction
+        {
+            get { return GetPropertyValue<DropdownDirection>(nameof(Direction)); }
+            set { SetPropertyValue(nameof(Direction), value); }
+        }
 
         [Parameter]
         public RenderFragment Toggle { get; set; }

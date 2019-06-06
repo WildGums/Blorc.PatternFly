@@ -26,6 +26,11 @@
             Write($"[ERROR] {message}");
         }
 
+        public static void Error(Exception ex, string message)
+        {
+            Write($"[ERROR] {message}: {ex.Message}");
+        }
+
         private static void Write(string message)
         {
 #if DEBUG

@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
+    using Blazorc.PatternFly.Data;
     using Microsoft.AspNetCore.Components;
 
     public abstract partial class BlazorcComponentBase : ComponentBase, IDisposable, INotifyPropertyChanged

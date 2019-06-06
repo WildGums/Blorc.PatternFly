@@ -1,4 +1,4 @@
-﻿namespace Blazorc.PatternFly
+﻿namespace Blazorc.PatternFly.Data
 {
     // Note: this code comes from Catel:
     // https://raw.githubusercontent.com/Catel/Catel/f3191e68f2d8e848bc9eeab86c2963d8f077739f/src/Catel.Core/Data/PropertyBag.cs

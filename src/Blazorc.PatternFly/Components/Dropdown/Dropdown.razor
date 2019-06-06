@@ -2,25 +2,27 @@
 
 @using Blazorc.PatternFly
 
-<div class="@Class">
-    <ToggleContainer ref="toggleContainer"
-                     Id="@ToggleId"
-                     IsPlain="@IsPlain"
-                     Toggled="@OnToggled">
-        @Toggle
-    </ToggleContainer>
+<CascadingValue Value=this>
+    <div class="@Class">
+        <ToggleContainer ref="toggleContainer"
+                         Id="@ToggleId"
+                         IsPlain="@IsPlain"
+                         Toggled="@OnToggled">
+            @Toggle
+        </ToggleContainer>
 
-    <div style="@OpenState">
-        @ChildContent
+        <div style="@OpenState">
+            @ChildContent
 
-        @if (Items != null)
-        {
-            <ul aria-labelledby="@ToggleId" class="pf-c-dropdown__menu" role="menu">
-                @Items
-            </ul>
-        }
+            @if (Items != null)
+            {
+                <ul aria-labelledby="@ToggleId" class="@PopupClass" role="menu">
+                    @Items
+                </ul>
+            }
+        </div>
     </div>
-</div>
+</CascadingValue>
 
 @functions
 {
