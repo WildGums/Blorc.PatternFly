@@ -4,30 +4,12 @@
     using System.Collections.Generic;
     using Microsoft.AspNetCore.Components;
 
-    public class KebabToggleComponent : BlazorcComponentBase, IToggle
+    public class KebabToggleComponent : BlazorcComponentBase
     {
         public KebabToggleComponent()
         {
             Label = "Actions";
-        }
-
-        public string Class
-        {
-            get
-            {
-                var items = new List<string>();
-
-                //if (IsRead)
-                //{
-                //    items.Add("pf-m-read");
-                //}
-                //else
-                //{
-                //    items.Add("pf-m-unread");
-                //}
-
-                return string.Join(" ", items);
-            }
+            IsPlain = true;
         }
 
         [Parameter]

@@ -4,12 +4,7 @@
 
 <CascadingValue Value=this>
     <div class="@Class">
-        <ToggleContainer ref="toggleContainer"
-                         Id="@ToggleId"
-                         IsPlain="@IsPlain"
-                         Toggled="@OnToggled">
-            @Toggle
-        </ToggleContainer>
+        @Toggle
 
         <div style="@OpenState">
             @ChildContent
@@ -30,14 +25,3 @@
         </div>
     </div>
 </CascadingValue>
-
-@functions
-{
-    private ToggleContainer toggleContainer;
-
-    private void OnToggled(object sender, EventArgs e)
-    {
-        IsOpen = toggleContainer.IsOpen;
-    }
-}
-

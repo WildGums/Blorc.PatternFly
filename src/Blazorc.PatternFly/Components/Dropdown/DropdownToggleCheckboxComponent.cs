@@ -12,12 +12,18 @@
 
             CreateConverter()
                 .Fixed("pf-c-dropdown__toggle-check")
+                .Update(() => LabelClass);
+
+            CreateConverter()
+                .Fixed("pf-c-dropdown__toggle-check")
                 .If(() => IsDisabled, "pf-m-disabled")
                 .Watch(() => IsDisabled)
-                .Update(() => Class);
+                .Update(() => CheckboxClass);
         }
 
-        public string Class { get; set; }
+        public string LabelClass { get; set; }
+
+        public string CheckboxClass { get; set; }
 
         [Parameter]
         public string Id
