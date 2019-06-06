@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using Blazorc.PatternFly.Bindings;
     using Microsoft.AspNetCore.Components;
 
     public class ToggleContainerComponent : BlazorcComponentBase
@@ -10,12 +11,22 @@
         {
             CreateConverter()
                 .Fixed("pf-c-dropdown__toggle")
+                .If(() => IsDisabled, "pf-m-disabled")
+                .If(() => IsSplitButton, "pf-m-split-button")
+                .Watch(() => IsDisabled)
+                .Watch(() => IsSplitButton)
+                .Update(() => Class);
+
+            CreateConverter()
+                .Fixed("pf-c-dropdown__toggle")
                 .If(() => IsPlain, "pf-m-plain")
                 .If(() => IsDisabled, "pf-m-disabled")
                 .Watch(() => IsPlain)
                 .Watch(() => IsDisabled)
                 .Update(() => ButtonClass);
         }
+
+        public string Class { get; set; }
 
         public string ButtonClass { get; set; }
 
@@ -71,15 +82,16 @@
             set { SetPropertyValue(nameof(IsPlain), value); }
         }
 
-        [Parameter]
         public bool IsSplitButton
         {
-            get { return GetPropertyValue<bool>(nameof(IsSplitButton)); }
-            set { SetPropertyValue(nameof(IsSplitButton), value); }
+            get { return SplitButtonItems != null; }
         }
 
         [Parameter]
         public RenderFragment ChildContent { get; set; }
+
+        [Parameter]
+        public RenderFragment SplitButtonItems { get; set; }
 
         [Parameter]
         public EventHandler<EventArgs> Toggled { get; set; }

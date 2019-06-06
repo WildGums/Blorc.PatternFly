@@ -195,7 +195,9 @@
         <Dropdown>
             <Toggle>
                 <DropdownToggle>
-                    <DropdownToggleCheckbox IsDisabled="true" />
+                    <SplitButtonItems>
+                        <DropdownToggleCheckbox Id="example-checkbox-1" />
+                    </SplitButtonItems>
                 </DropdownToggle>
             </Toggle>
 
@@ -222,8 +224,11 @@
     <Example Title="Split button (disabled)">
         <Dropdown>
             <Toggle>
-                <DropdownToggle>
-                    <DropdownToggleCheckbox IsDisabled="true" />
+                <DropdownToggle IsDisabled="true">
+                    <SplitButtonItems>
+                        <DropdownToggleCheckbox Id="example-checkbox-2"
+                                                IsDisabled="true" />
+                    </SplitButtonItems>
                 </DropdownToggle>
             </Toggle>
 

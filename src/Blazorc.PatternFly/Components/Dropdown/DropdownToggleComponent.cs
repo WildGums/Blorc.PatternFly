@@ -86,13 +86,12 @@
                 .To(() => ContainerToggleContainer.IsDisabled)
                 .AsMode(BindingMode.OneWay)
                 .Apply();
-        }
 
-        protected override void OnInit()
-        {
-            base.OnInit();
-
-            ContainerToggleContainer.IsDisabled = IsDisabled;
+            BindingContext.CreateBinding()
+                .From(() => SplitButtonItems)
+                .To(() => ContainerToggleContainer.SplitButtonItems)
+                .AsMode(BindingMode.OneWay)
+                .Apply();
         }
     }
 }

@@ -9,6 +9,8 @@
 
     public abstract partial class BlazorcComponentBase : ComponentBase, IDisposable, INotifyPropertyChanged
     {
+        private static readonly Dictionary<string, int> InstanceCounters = new Dictionary<string, int>();
+
         private readonly List<IStateConverterContainer> _stateConverterContainers = new List<IStateConverterContainer>();
         private readonly PropertyBag _propertyBag = new PropertyBag();
 
@@ -71,6 +73,17 @@
             Log.Debug($"Forcing update for {GetType().Name}");
 
             StateHasChanged();
+        }
+
+        protected string GenerateUniqueId(string prefix)
+        {
+            if (InstanceCounters.TryGetValue(prefix, out var index))
+            {
+            }
+
+            InstanceCounters[prefix] = ++index;
+
+            return $"{prefix}-{index}";
         }
 
         protected virtual void DisposeManaged()

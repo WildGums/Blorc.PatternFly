@@ -8,36 +8,49 @@
     {
         public DropdownToggleCheckboxComponent()
         {
-            
+            Id = GenerateUniqueId("dropdown-checkbox");
+
+            CreateConverter()
+                .Fixed("pf-c-dropdown__toggle-check")
+                .If(() => IsDisabled, "pf-m-disabled")
+                .Watch(() => IsDisabled)
+                .Update(() => Class);
         }
 
-        public string Class
+        public string Class { get; set; }
+
+        [Parameter]
+        public string Id
         {
-            get
-            {
-                var items = new List<string>();
-
-                //if (IsRead)
-                //{
-                //    items.Add("pf-m-read");
-                //}
-                //else
-                //{
-                //    items.Add("pf-m-unread");
-                //}
-
-                return string.Join(" ", items);
-            }
+            get { return GetPropertyValue<string>(nameof(Id)); }
+            set { SetPropertyValue(nameof(Id), value); }
         }
 
         [Parameter]
-        public bool IsValid { get; set; }
+        public bool IsValid
+        {
+            get { return GetPropertyValue<bool>(nameof(IsValid)); }
+            set { SetPropertyValue(nameof(IsValid), value); }
+        }
+
+        public bool IsInvalid
+        {
+            get { return !IsValid; }
+        }
 
         [Parameter]
-        public bool IsDisabled { get; set; }
+        public bool IsDisabled
+        {
+            get { return GetPropertyValue<bool>(nameof(IsDisabled)); }
+            set { SetPropertyValue(nameof(IsDisabled), value); }
+        }
 
         [Parameter]
-        public bool IsChecked { get; set; }
+        public bool IsChecked
+        {
+            get { return GetPropertyValue<bool>(nameof(IsChecked)); }
+            set { SetPropertyValue(nameof(IsChecked), value); }
+        }
 
         [Parameter]
         public RenderFragment ChildContent { get; set; }

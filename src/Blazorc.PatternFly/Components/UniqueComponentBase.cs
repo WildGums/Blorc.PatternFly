@@ -5,7 +5,6 @@
 
     public abstract class UniqueComponentBase : BlazorcComponentBase
     {
-        private static readonly Dictionary<string, int> InstanceCounters = new Dictionary<string, int>();
 
         public UniqueComponentBase()
         {
@@ -15,16 +14,5 @@
         public string InstanceId { get; private set; }
 
         public abstract string ComponentName { get; }
-
-        protected string GenerateUniqueId(string prefix)
-        {
-            if (InstanceCounters.TryGetValue(prefix, out var index))
-            {
-            }
-
-            InstanceCounters[prefix] = ++index;
-
-            return $"{prefix}-{index}";
-        }
     }
 }
