@@ -12,25 +12,6 @@
             Href = "#";
         }
 
-        public string Class
-        {
-            get
-            {
-                var items = new List<string>();
-
-                //if (IsRead)
-                //{
-                //    items.Add("pf-m-read");
-                //}
-                //else
-                //{
-                //    items.Add("pf-m-unread");
-                //}
-
-                return string.Join(" ", items);
-            }
-        }
-
         [Parameter]
         public string Component { get; set; }
 
