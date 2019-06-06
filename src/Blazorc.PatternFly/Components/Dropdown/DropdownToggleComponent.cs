@@ -6,17 +6,42 @@
     using Blazorc.PatternFly.Bindings;
     using Microsoft.AspNetCore.Components;
 
-    public class DropdownToggleComponent : BlazorcComponentBase, IToggle
+    public class DropdownToggleComponent : BlazorcComponentBase
     {
         public DropdownToggleComponent()
         {
             Icon = "CaretDown";
+
+            CreateConverter()
+                .Fixed("pf-c-dropdown__toggle")
+                .If(() => IsDisabled, "pf-m-disabled")
+                .If(() => IsSplitButton, "pf-m-split-button")
+                .Watch(() => IsDisabled)
+                .Watch(() => IsSplitButton)
+                .Update(() => DivClass);
+
+            CreateConverter()
+                .If(() => !IsSplitButton, "pf-c-dropdown__toggle")
+                .If(() => IsSplitButton, "pf-c-dropdown__toggle-button")
+                .If(() => IsPlain, "pf-m-plain")
+                .If(() => IsDisabled, "pf-m-disabled")
+                .Watch(() => IsSplitButton)
+                .Watch(() => IsPlain)
+                .Watch(() => IsDisabled)
+                .Update(() => ButtonClass);
         }
 
-        public string Class { get; set; }
+        public string DivClass { get; set; }
+
+        public string ButtonClass { get; set; }
+
+        public bool IsSplitButton
+        {
+            get { return SplitButtonItems != null; }
+        }
 
         [CascadingParameter]
-        public ToggleContainer ContainerToggleContainer { get; set; }
+        public Dropdown ContainerDropdown { get; set; }
 
         [Parameter]
         public string Id
@@ -30,6 +55,13 @@
         {
             get { return GetPropertyValue<string>(nameof(Icon)); }
             set { SetPropertyValue(nameof(Icon), value); }
+        }
+
+        [Parameter]
+        public bool IsOpen
+        {
+            get { return GetPropertyValue<bool>(nameof(IsOpen)); }
+            set { SetPropertyValue(nameof(IsOpen), value); }
         }
 
         [Parameter]
@@ -73,25 +105,35 @@
         [Parameter]
         public RenderFragment SplitButtonItems { get; set; }
 
+        [Parameter]
+        public EventHandler<EventArgs> Toggled { get; set; }
+
         protected override void CreateBindings()
         {
             BindingContext.CreateBinding()
-                .From(() => ContainerToggleContainer.IsPlain)
+                .From(() => ContainerDropdown.IsPlain)
                 .To(() => IsPlain)
                 .AsMode(BindingMode.OneWay)
                 .Apply();
 
             BindingContext.CreateBinding()
-                .From(() => IsDisabled)
-                .To(() => ContainerToggleContainer.IsDisabled)
+                .From(() => ContainerDropdown.ToggleId)
+                .To(() => Id)
                 .AsMode(BindingMode.OneWay)
                 .Apply();
 
-            BindingContext.CreateBinding()
-                .From(() => SplitButtonItems)
-                .To(() => ContainerToggleContainer.SplitButtonItems)
-                .AsMode(BindingMode.OneWay)
-                .Apply();
+            //BindingContext.CreateBinding()
+            //    .From(() => IsOpen)
+            //    .To(() => ContainerDropdown.IsOpen)
+            //    .AsMode(BindingMode.OneWay)
+            //    .Apply();
+        }
+
+        protected override void OnParametersSet()
+        {
+            base.OnParametersSet();
+
+            ContainerDropdown.DropDownToggle = this;
         }
     }
 }

@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using Microsoft.AspNetCore.Components;
 
     public class DropdownComponent : UniqueComponentBase
@@ -34,6 +35,12 @@
         }
 
         public override string ComponentName => "toggle";
+
+        internal DropdownToggleComponent DropDownToggle
+        {
+            get { return GetPropertyValue<DropdownToggleComponent>(nameof(DropDownToggle)); }
+            set { SetPropertyValue(nameof(DropDownToggle), value); }
+        }
 
         public string Class { get; set; }
 
@@ -90,5 +97,24 @@
 
         [Parameter]
         public EventHandler<EventArgs> SelectionChanged { get; set; }
+
+        protected override void OnPropertyChanged(PropertyChangedEventArgs e)
+        {
+            base.OnPropertyChanged(e);
+
+            if (e.PropertyName == nameof(DropDownToggle))
+            {
+                var toggle = DropDownToggle;
+                if (toggle != null)
+                {
+                    toggle.Toggled = OnDropDownToggled;
+                }
+            }
+        }
+
+        private void OnDropDownToggled(object sender, EventArgs e)
+        {
+            IsOpen = DropDownToggle.IsOpen;
+        }
     }
 }

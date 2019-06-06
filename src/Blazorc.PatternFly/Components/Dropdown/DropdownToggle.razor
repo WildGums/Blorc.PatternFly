@@ -2,14 +2,68 @@
 
 @using Blazorc.PatternFly.Components.Icon
 
-@if (IsPlain)
+@* Note that this code is ugly, but it's this way because of this issue:
+    https://github.com/aspnet/AspNetCore/issues/10498 *@
+
+@if (IsSplitButton)
 {
-    <span>
-        <DynamicIcon Icon="@Icon" Class="pf-c-dropdown__toggle-icon" />
-    </span>
+    <div class="@DivClass">
+        @SplitButtonItems
+
+        <button id="@Id"
+                class="@ButtonClass"
+                type="button"
+                disabled="@IsDisabled"
+                aria-expanded="@IsOpen"
+                aria-haspopup="true"
+                onclick="@(() => OnClick())">
+            @if (IsPlain)
+            {
+                <span>
+                    <DynamicIcon Icon="@Icon" Class="pf-c-dropdown__toggle-icon" />
+                </span>
+            }
+            else
+            {
+                <span class="pf-c-dropdown__toggle-text">@ChildContent</span>
+                <DynamicIcon Icon="@Icon" Class="pf-c-dropdown__toggle-icon" />
+            }
+        </button>
+    </div>
 }
 else
 {
-    <span class="pf-c-dropdown__toggle-text">@ChildContent</span>
-    <DynamicIcon Icon="@Icon" Class="pf-c-dropdown__toggle-icon" />
+    <button id="@Id"
+            class="@ButtonClass"
+            type="button"
+            disabled="@IsDisabled"
+            aria-expanded="@IsOpen"
+            aria-haspopup="true"
+            onclick="@(() => OnClick())">
+        @if (IsPlain)
+        {
+            <span>
+                <DynamicIcon Icon="@Icon" Class="pf-c-dropdown__toggle-icon" />
+            </span>
+        }
+        else
+        {
+            <span class="pf-c-dropdown__toggle-text">@ChildContent</span>
+            <DynamicIcon Icon="@Icon" Class="pf-c-dropdown__toggle-icon" />
+        }
+    </button>
+}
+
+@functions
+{
+    private void OnClick()
+    {
+        IsOpen = !IsOpen;
+
+        var handler = Toggled;
+        if (handler != null)
+        {
+            handler(this, EventArgs.Empty);
+        }
+    }
 }
