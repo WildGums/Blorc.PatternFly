@@ -5,23 +5,23 @@
 <Metadata ComponentName="Select" />
 
 <section class="ws-section ws-live-demo">
-    <Example Title="Single select input">
+    <Example Title="Single select input *">
         <div>
             <span id="title-id" hidden>
                 Title
             </span>
             <Select Variant="SelectVariant.Single"
                     Label="Select Input"
-                    SelectedItems="@_singleSelectInputSelectedItems"
                     IsExpanded="false"
-                    AriaLabelledBy="title-id" ref="singleSelect">
-                <SelectOption Key="0" Value="Choose..." IsPlaceholder="true" Parent="@singleSelect"/>
-                <SelectOption Key="1" Value="Mr" IsPlaceholder="false" Parent="@singleSelect"/>
-                <SelectOption Key="2" Value="Miss" IsPlaceholder="false" Parent="@singleSelect"/>
-                <SelectOption Key="3" Value="Mrs" IsPlaceholder="false" Parent="@singleSelect"/>
-                <SelectOption Key="4" Value="Ms" IsPlaceholder="false" Parent="@singleSelect"/>
-                <SelectOption Key="5" Value="Dr" IsPlaceholder="false" Parent="@singleSelect"/>
-                <SelectOption Key="6" Value="Other" IsPlaceholder="false" Parent="@singleSelect"/>
+                    AriaLabelledBy="title-id" ref="singleSelect" PlaceholderText="Choose...">
+                <Items>
+                    <SelectOption Key="1" Value="Mr" Parent="@singleSelect"/>
+                    <SelectOption Key="2" Value="Miss" Parent="@singleSelect"/>
+                    <SelectOption Key="3" Value="Mrs" Parent="@singleSelect"/>
+                    <SelectOption Key="4" Value="Ms" Parent="@singleSelect"/>
+                    <SelectOption Key="5" Value="Dr" Parent="@singleSelect"/>
+                    <SelectOption Key="6" Value="Other" Parent="@singleSelect"/>
+                </Items>
             </Select>
         </div>
     </Example>
@@ -33,14 +33,15 @@
             </span>
             <Select Variant="SelectVariant.Single"
                     Label="Select Input"
-                    SelectedItems="@_checkboxSelectInputSelectedItems"
                     IsExpanded="false"
                     AriaLabelledBy="checkbox-select-id">
-                <CheckboxSelectOption Key="0" Value="Active" />,
-                <CheckboxSelectOption Key="1" Value="Cancelled" />,
-                <CheckboxSelectOption Key="2" Value="Paused" />,
-                <CheckboxSelectOption Key="3" Value="Warning" />,
-                <CheckboxSelectOption Key="4" Value="Restarted" />
+                <Items>
+                    <CheckboxSelectOption Key="0" Value="Active" />,
+                    <CheckboxSelectOption Key="1" Value="Cancelled" />,
+                    <CheckboxSelectOption Key="2" Value="Paused" />,
+                    <CheckboxSelectOption Key="3" Value="Warning" />,
+                    <CheckboxSelectOption Key="4" Value="Restarted" />
+                </Items>
             </Select>
         </div>
     </Example>
@@ -52,23 +53,24 @@
             </span>
             <Select Variant="SelectVariant.Checkbox"
                     Label="Grouped Checkbox Select Input"
-                    SelectedItems="@_groupedCheckboxSelectInputSelectedItems"
                     IsExpanded="false"
                     PlaceholderText="Filter by status"
                     AriaLabelledBy="grouped-checkbox-select-id"
                     IsGrouped="true">
-                <CheckboxSelectGroup Label="Status" Key="group1">
-                    <CheckboxSelectOption Key="0" value="Running" />
-                    <CheckboxSelectOption Key="1" value="Stopped" />
-                    <CheckboxSelectOption Key="2" value="Down" />
-                    <CheckboxSelectOption Key="3" value="Degraded" />
-                    <CheckboxSelectOption Key="4" value="Needs Maintenence" />
-                </CheckboxSelectGroup>
-                <CheckboxSelectGroup Label="Vendor Names" Key="group2">
-                    <CheckboxSelectOption Key="5" Value="Dell" />
-                    <CheckboxSelectOption Key="6" Value="Samsung" IsDisabled="true" />
-                    <CheckboxSelectOption Key="7" Value="Hewlett-Packard" />
-                </CheckboxSelectGroup>
+                <Items>
+                    <CheckboxSelectGroup Label="Status" Key="group1">
+                        <CheckboxSelectOption Key="0" value="Running" />
+                        <CheckboxSelectOption Key="1" value="Stopped" />
+                        <CheckboxSelectOption Key="2" value="Down" />
+                        <CheckboxSelectOption Key="3" value="Degraded" />
+                        <CheckboxSelectOption Key="4" value="Needs Maintenence" />
+                    </CheckboxSelectGroup>
+                    <CheckboxSelectGroup Label="Vendor Names" Key="group2">
+                        <CheckboxSelectOption Key="5" Value="Dell" />
+                        <CheckboxSelectOption Key="6" Value="Samsung" IsDisabled="true" />
+                        <CheckboxSelectOption Key="7" Value="Hewlett-Packard" />
+                    </CheckboxSelectGroup>
+                </Items>
             </Select>
         </div>
     </Example>
@@ -80,16 +82,17 @@
             </span>
             <Select Variant="SelectVariant.Typeahead"
                     Label="Select a state"
-                    SelectedItems="@_typeaheadSelectInputSelectedItems"
                     IsExpanded="false"
                     AriaLabelledBy="typeahead-select-id"
                     PlaceholderText="Select a state">
-                <SelectOption Key="0" Value="Alabama" />
-                <SelectOption Key="1" Value="Florida" />
-                <SelectOption Key="2" Value="New Jersey" />
-                <SelectOption Key="3" Value="New Mexico" />
-                <SelectOption Key="4" Value="New York" />
-                <SelectOption Key="5" Value="North Carolina" />
+                <Items>
+                    <SelectOption Key="0" Value="Alabama" />
+                    <SelectOption Key="1" Value="Florida" />
+                    <SelectOption Key="2" Value="New Jersey" />
+                    <SelectOption Key="3" Value="New Mexico" />
+                    <SelectOption Key="4" Value="New York" />
+                    <SelectOption Key="5" Value="North Carolina" />
+                </Items>
             </Select>
         </div>
     </Example>
@@ -101,16 +104,17 @@
             </span>
             <Select Variant="SelectVariant.TypeaheadMulti"
                     Label="Select a state"
-                    SelectedItems="@_multipleTypeaheadSelectInputSelectedItems"
                     IsExpanded="false"
                     AriaLabelledBy="multi-typeahead-select-id"
                     PlaceholderText="Select a state">
-                <SelectOption Key="0" Value="Alabama" />
-                <SelectOption Key="1" Value="Florida" />
-                <SelectOption Key="2" Value="New Jersey" />
-                <SelectOption Key="3" Value="New Mexico" />
-                <SelectOption Key="4" Value="New York" />
-                <SelectOption Key="5" Value="North Carolina" />
+                <Items>
+                    <SelectOption Key="0" Value="Alabama" />
+                    <SelectOption Key="1" Value="Florida" />
+                    <SelectOption Key="2" Value="New Jersey" />
+                    <SelectOption Key="3" Value="New Mexico" />
+                    <SelectOption Key="4" Value="New York" />
+                    <SelectOption Key="5" Value="North Carolina" />
+                </Items>
             </Select>
         </div>
     </Example>
@@ -120,11 +124,11 @@
 {
     Select singleSelect = new Select();
 
-    private List<object> _singleSelectInputSelectedItems = new List<object>();
+    /*private List<object> _singleSelectInputSelectedItems = new List<object>();
     private List<object> _checkboxSelectInputSelectedItems = new List<object>();
     private List<object> _groupedCheckboxSelectInputSelectedItems = new List<object>();
     private List<object> _typeaheadSelectInputSelectedItems = new List<object>();
-    private List<object> _multipleTypeaheadSelectInputSelectedItems = new List<object>();
+    private List<object> _multipleTypeaheadSelectInputSelectedItems = new List<object>();*/
 
     private void OnSingleSelectInputSelectionChanged(object sender, EventArgs e)
     {

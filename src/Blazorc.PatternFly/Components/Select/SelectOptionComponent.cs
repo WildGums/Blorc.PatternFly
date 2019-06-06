@@ -4,6 +4,8 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Reflection;
+    using System.Threading.Tasks;
     using Icon;
     using Microsoft.AspNetCore.Components;
 
@@ -11,6 +13,11 @@
     {
         public SelectOptionComponent()
         {
+            CreateConverter()
+                .Fixed("pf-c-select__menu-item")
+                .If(() => IsSelected, "pf-m-selected")
+                .Watch(() => IsSelected)
+                .Update(() => Class);
         }
 
         [Parameter]
@@ -18,17 +25,12 @@
 
         public string Class
         {
-            get
-            {
-                var items = new List<string>();
-                if (IsSelected)
-                {
-                    items.Add("pf-m-selected");
-                }
-
-                return string.Join(" ", items);
-            }
+            get;
+            set;
         }
+
+        [Parameter]
+        protected bool IsPlaceholder { get; set; }
 
         [Parameter]
         public int Index { get; set; }
@@ -36,17 +38,7 @@
         [Parameter]
         public bool IsDisabled { get; set; }
 
-        [Parameter]
-        public bool IsPlaceholder { get; set; }
-
-        public bool IsSelected
-        {
-            get
-            {
-                var item = Parent.SelectedItems.OfType<Tuple<string, string>>().FirstOrDefault(tuple => tuple.Item1 == Key);
-                return item != null;
-            }
-        }
+        public bool IsSelected => Parent.SelectedItems.ContainsKey(Key);
 
         [Parameter]
         public string Key { get; set; }
@@ -60,7 +52,7 @@
         [Parameter]
         public EventHandler<EventArgs> Clicked { get; set; }
 
-        protected void OptionClicked()
+        protected void OnSelectOptionClick()
         {
             if (!IsSelected)
             {
@@ -70,6 +62,10 @@
             {
                 Parent.UnselectItem(Key);
             }
+
+            RaisePropertyChanged(nameof(IsSelected));
+
+            Clicked?.Invoke(this, EventArgs.Empty);
         }
     }
 }

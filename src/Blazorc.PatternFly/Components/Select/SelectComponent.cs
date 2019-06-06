@@ -4,11 +4,12 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using Icon;
     using Microsoft.AspNetCore.Components;
 
-    public class SelectComponent : UniqueComponentBase
+    public class SelectComponent : BlazorcComponentBase
     {
+        private readonly IDictionary<string,string> _selectedItems = new Dictionary<string, string>();
+
         public SelectComponent()
         {
             Variant = SelectVariant.Single;
@@ -18,22 +19,20 @@
             AriaLabelRemove = "Remove";
 
             ToggleId = GenerateUniqueId("pf-toggle-id");
+
+            CreateConverter()
+                .Fixed("pf-c-select")
+                .If(() => IsExpanded, "pf-m-expanded")
+                .Watch(() => IsExpanded)
+                .Update(() => Class);
         }
 
         public string Class
         {
-            get
-            {
-                var items = new List<string>();
-
-                if (IsExpanded)
-                {
-                    items.Add("pf-m-expanded");
-                }
-
-                return string.Join(" ", items);
-            }
+            get;
+            set;
         }
+
 
         public string WrapperClass
         {
@@ -72,48 +71,63 @@
         //    }
         //}
 
-        public override string ComponentName => "Select";
 
         protected string ToggleId { get; }
 
-        [Parameter]
-        public SelectVariant Variant { get; set; }
+        [Parameter] public SelectVariant Variant { get; set; }
 
         [Parameter]
-        public bool IsExpanded { get; set; }
+        public bool IsExpanded
+        {
+            get => GetPropertyValue<bool>(nameof(IsExpanded));
+            set => SetPropertyValue(nameof(IsExpanded), value);
+        }
 
         [Parameter]
-        public bool IsGrouped { get; set; }
+        public bool IsGrouped
+        {
+            get => GetPropertyValue<bool>(nameof(IsGrouped));
+            set => SetPropertyValue(nameof(IsGrouped), value);
+        }
 
         [Parameter]
         public string PlaceholderText { get; set; }
 
-        [Parameter]
-        public List<object> SelectedItems { get; set; }
+        protected RenderFragment PlaceholderItem
+        {
+            get
+            {
+                return builder =>
+                {
+                    builder.OpenComponent(0, typeof(SelectOption));
+                    builder.AddAttribute(1, "Key", "-1");
+                    builder.AddAttribute(2, "Value", PlaceholderText);
+                    builder.AddAttribute(2, "IsPlaceholder", true);
+                    builder.AddAttribute(3, "Parent", this);
+                    builder.CloseComponent();
+                };
+            }
+        }
+
+
+        public IReadOnlyDictionary<string, string> SelectedItems => (IReadOnlyDictionary<string, string>)_selectedItems;
+
+        [Parameter] public string Label { get; set; }
+
+        [Parameter] public string AriaLabelledBy { get; set; }
+
+        [Parameter] public string AriaLabelTypeAhead { get; set; }
+
+        [Parameter] public string AriaLabelClear { get; set; }
+
+        [Parameter] public string ArieLabelToggle { get; set; }
+
+        [Parameter] public string AriaLabelRemove { get; set; }
+
+        [Parameter] public string Width { get; set; }
 
         [Parameter]
-        public string Label { get; set; }
-
-        [Parameter]
-        public string AriaLabelledBy { get; set; }
-
-        [Parameter]
-        public string AriaLabelTypeAhead { get; set; }
-
-        [Parameter]
-        public string AriaLabelClear { get; set; }
-
-        [Parameter]
-        public string ArieLabelToggle { get; set; }
-
-        [Parameter]
-        public string AriaLabelRemove { get; set; }
-
-        [Parameter]
-        public string Width { get; set; }
-
-        [Parameter]
-        public RenderFragment ChildContent { get; set; }
+        public RenderFragment Items { get; set; }
 
         [Parameter]
         public EventHandler<EventArgs> SelectionChanged { get; set; }
@@ -128,10 +142,14 @@
         {
             get
             {
+                if (SelectedItems.Count == 0)
+                {
+                    return PlaceholderText;
+                }
+
                 if (Variant == SelectVariant.Single)
                 {
-                    var tuple = (Tuple<string, string>)SelectedItems.FirstOrDefault();
-                    return tuple?.Item2;
+                    return SelectedItems.FirstOrDefault().Value;
                 }
 
                 return string.Empty;
@@ -141,28 +159,22 @@
         protected void Toggle()
         {
             IsExpanded = !IsExpanded;
-            StateHasChanged();
         }
 
         public void SelectItem(string key, string value)
         {
             if (Variant == SelectVariant.Single)
             {
-                SelectedItems.Clear();
+                _selectedItems.Clear();
             }
 
-            SelectedItems.Add(new Tuple<string, string>(key, value));
+            _selectedItems.Add(key, value);
             Toggle();
         }
 
         public void UnselectItem(string key)
         {
-            var firstOrDefault = SelectedItems.OfType<Tuple<string, string>>().FirstOrDefault(tuple => tuple.Item1 == key);
-            if (firstOrDefault != null)
-            {
-                SelectedItems.Remove(firstOrDefault);
-            }
-
+            _selectedItems.Remove(key);
             Toggle();
         }
     }
