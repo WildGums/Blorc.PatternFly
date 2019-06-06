@@ -177,5 +177,11 @@
             _selectedItems.Remove(key);
             Toggle();
         }
+
+        public void ClearSelection()
+        {
+            _selectedItems.Clear();
+            Toggle();
+        }
     }
 }

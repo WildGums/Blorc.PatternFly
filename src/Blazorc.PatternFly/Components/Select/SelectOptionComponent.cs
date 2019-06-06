@@ -54,7 +54,11 @@
 
         protected void OnSelectOptionClick()
         {
-            if (!IsSelected)
+            if (IsPlaceholder)
+            {
+                Parent.ClearSelection();
+            }
+            else if (!IsSelected)
             {
                 Parent.SelectItem(Key, Value);
             }
