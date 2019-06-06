@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using Blazorc.PatternFly.Bindings;
     using Microsoft.AspNetCore.Components;
 
@@ -72,10 +73,8 @@
         [Parameter]
         public RenderFragment SplitButtonItems { get; set; }
 
-        protected override void OnInit()
+        protected override void CreateBindings()
         {
-            base.OnInit();
-
             BindingContext.CreateBinding()
                 .From(() => ContainerToggleContainer.IsPlain)
                 .To(() => IsPlain)
@@ -89,5 +88,13 @@
             //    new BindingParty(this, nameof(IsPlain)),
             //    BindingMode.OneWay));
         }
+
+        //protected override void OnPropertyChanged(PropertyChangedEventArgs e)
+        //{
+        //    if (e.PropertyName == nameof(IsPlain))
+        //    {
+        //        ForceUpdate();
+        //    }
+        //}
     }
 }

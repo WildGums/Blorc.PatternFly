@@ -24,13 +24,20 @@
             RaisePropertyChanged(e);
         }
 
+        protected virtual void OnPropertyChanged(PropertyChangedEventArgs e)
+        {
+
+        }
+
         protected virtual void RaisePropertyChanged(string propertyName)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            RaisePropertyChanged(new PropertyChangedEventArgs(propertyName));
         }
 
         protected virtual void RaisePropertyChanged(PropertyChangedEventArgs eventArgs)
         {
+            OnPropertyChanged(eventArgs);
+
             PropertyChanged?.Invoke(this, eventArgs);
         }
     }

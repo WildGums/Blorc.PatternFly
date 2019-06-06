@@ -36,6 +36,13 @@
         protected override void OnInit()
         {
             base.OnInit();
+
+            CreateBindings();
+        }
+
+        protected virtual void CreateBindings()
+        {
+
         }
 
         protected override void OnParametersSet()
