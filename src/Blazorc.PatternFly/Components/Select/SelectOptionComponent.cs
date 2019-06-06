@@ -16,7 +16,9 @@
             CreateConverter()
                 .Fixed("pf-c-select__menu-item")
                 .If(() => IsSelected, "pf-m-selected")
+                .If(() => IsDisabled, "pf-m-disabled")
                 .Watch(() => IsSelected)
+                .Watch(() => IsDisabled)
                 .Update(() => Class);
         }
 

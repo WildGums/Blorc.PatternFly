@@ -112,19 +112,26 @@
 
         public IReadOnlyDictionary<string, string> SelectedItems => (IReadOnlyDictionary<string, string>)_selectedItems;
 
-        [Parameter] public string Label { get; set; }
+        [Parameter]
+        public string Label { get; set; }
 
-        [Parameter] public string AriaLabelledBy { get; set; }
+        [Parameter]
+        public string AriaLabelledBy { get; set; }
 
-        [Parameter] public string AriaLabelTypeAhead { get; set; }
+        [Parameter]
+        public string AriaLabelTypeAhead { get; set; }
 
-        [Parameter] public string AriaLabelClear { get; set; }
+        [Parameter]
+        public string AriaLabelClear { get; set; }
 
-        [Parameter] public string ArieLabelToggle { get; set; }
+        [Parameter]
+        public string ArieLabelToggle { get; set; }
 
-        [Parameter] public string AriaLabelRemove { get; set; }
+        [Parameter]
+        public string AriaLabelRemove { get; set; }
 
-        [Parameter] public string Width { get; set; }
+        [Parameter]
+        public string Width { get; set; }
 
         [Parameter]
         public RenderFragment Items { get; set; }
@@ -169,18 +176,29 @@
             }
 
             _selectedItems.Add(key, value);
+
+            if (_selectedItems.Remove(key))
+            {
+                SelectionChanged?.Invoke(this, EventArgs.Empty);
+            }
+
             Toggle();
         }
 
         public void UnselectItem(string key)
         {
-            _selectedItems.Remove(key);
+            if (_selectedItems.Remove(key))
+            {
+                SelectionChanged?.Invoke(this, EventArgs.Empty);
+            }
+
             Toggle();
         }
 
         public void ClearSelection()
         {
             _selectedItems.Clear();
+            SelectionChanged?.Invoke(this, EventArgs.Empty);
             Toggle();
         }
     }
