@@ -29,4 +29,8 @@
     <ProjectReference Include="..\Blazorc.PatternFly\Blazorc.PatternFly.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\examples\" />
+  </ItemGroup>
+
 </Project>
