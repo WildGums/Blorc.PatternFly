@@ -11,16 +11,17 @@
         builder.OpenElement(0, Component);
 
         builder.AddAttribute(1, "role", "menuitem");
-        builder.AddAttribute(2, "class", "pf-c-dropdown__menu-item");
+        builder.AddAttribute(2, "class", BindMethods.GetValue(Class));
 
         if (!string.IsNullOrWhiteSpace(Href))
         {
-            builder.AddAttribute(3, "href", Href);
+            builder.AddAttribute(3, "href", BindMethods.GetValue(Href));
         }
 
         builder.AddAttribute(4, "tabindex", BindMethods.GetValue(Index));
+        builder.AddAttribute(5, "disabled", BindMethods.GetValue(IsDisabled));
 
-        builder.AddContent(5, ChildContent);
+        builder.AddContent(6, ChildContent);
         builder.CloseElement();
     };
 
