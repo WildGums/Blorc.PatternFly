@@ -25,7 +25,7 @@
         {
             if (string.IsNullOrWhiteSpace(e.PropertyName) || e.PropertyName.Equals(_propertyName))
             {
-                Log.Debug($"Property '{e.PropertyName}' has changed");
+                //Log.Debug($"Property '{e.PropertyName}' has changed");
 
                 RaiseStateChanged();
             }

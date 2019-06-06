@@ -174,8 +174,6 @@
             {
                 _isUpdatingBinding = true;
 
-                Log.Debug($"Updating binding '{source}' => '{target}'");
-
                 var newValue = source.GetPropertyValue();
 
                 var converter = Converter;
@@ -190,6 +188,8 @@
                         newValue = converter.Convert(newValue, typeof(object), ConverterParameter, CultureInfo.CurrentCulture);
                     }
                 }
+
+                Log.Debug($"Updating binding '{source}' => '{target}', new value '{newValue}'");
 
                 if (ReferenceEquals(newValue, ConverterHelper.UnsetValue))
                 {

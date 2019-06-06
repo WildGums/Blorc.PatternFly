@@ -81,20 +81,18 @@
                 .AsMode(BindingMode.OneWay)
                 .Apply();
 
-            //// -- OR --
-
-            //BindingContext.AddBinding(new Binding(
-            //    new BindingParty(ContainerToggleContainer, nameof(ToggleContainer.IsPlain)),
-            //    new BindingParty(this, nameof(IsPlain)),
-            //    BindingMode.OneWay));
+            BindingContext.CreateBinding()
+                .From(() => IsDisabled)
+                .To(() => ContainerToggleContainer.IsDisabled)
+                .AsMode(BindingMode.OneWay)
+                .Apply();
         }
 
-        //protected override void OnPropertyChanged(PropertyChangedEventArgs e)
-        //{
-        //    if (e.PropertyName == nameof(IsPlain))
-        //    {
-        //        ForceUpdate();
-        //    }
-        //}
+        protected override void OnInit()
+        {
+            base.OnInit();
+
+            ContainerToggleContainer.IsDisabled = IsDisabled;
+        }
     }
 }

@@ -11,7 +11,9 @@
             CreateConverter()
                 .Fixed("pf-c-dropdown__toggle")
                 .If(() => IsPlain, "pf-m-plain")
+                .If(() => IsDisabled, "pf-m-disabled")
                 .Watch(() => IsPlain)
+                .Watch(() => IsDisabled)
                 .Update(() => ButtonClass);
         }
 
@@ -81,12 +83,5 @@
 
         [Parameter]
         public EventHandler<EventArgs> Toggled { get; set; }
-
-        protected override void OnInit()
-        {
-            base.OnInit();
-
-            
-        }
     }
 }

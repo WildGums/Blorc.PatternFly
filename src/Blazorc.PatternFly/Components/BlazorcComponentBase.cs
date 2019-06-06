@@ -36,8 +36,6 @@
         protected override void OnInit()
         {
             base.OnInit();
-
-            CreateBindings();
         }
 
         protected virtual void CreateBindings()
@@ -52,6 +50,8 @@
             if (_stateConverterContainers.Count > 0)
             {
                 _suspendUpdates = true;
+
+                CreateBindings();
 
                 _stateConverterContainers.ForEach(x => x.MarkDirty());
 
