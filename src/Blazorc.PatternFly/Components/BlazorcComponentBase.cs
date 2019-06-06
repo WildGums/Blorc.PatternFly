@@ -18,7 +18,7 @@
             _propertyBag.PropertyChanged += OnPropertyBagPropertyChanged;
         }
 
-        protected StateConverterContainer CreateStateConverterContainer<T>()
+        protected StateConverterContainer CreateConverter()
         {
             var container = new StateConverterContainer(this);
 

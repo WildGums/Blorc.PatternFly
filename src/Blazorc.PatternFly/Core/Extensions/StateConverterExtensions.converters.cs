@@ -9,12 +9,12 @@
             return container.Add(new FixedValueConverter(value));
         }
 
-        public static StateConverterContainer If(this StateConverterContainer container, string value, Func<bool> predicate)
+        public static StateConverterContainer If(this StateConverterContainer container, Func<bool> predicate, string value)
         {
             return container.Add(new PredicateValueConverter(value, predicate));
         }
 
-        public static StateConverterContainer If(this StateConverterContainer container, Func<string> valueFunc, Func<bool> predicate)
+        public static StateConverterContainer If(this StateConverterContainer container, Func<bool> predicate, Func<string> valueFunc)
         {
             return container.Add(new PredicateValueConverter(valueFunc, predicate));
         }

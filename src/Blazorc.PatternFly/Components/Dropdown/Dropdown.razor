@@ -2,9 +2,10 @@
 
 @using Blazorc.PatternFly
 
-<div class="pf-c-dropdown @Class">
+<div class="@Class">
     <ToggleContainer ref="toggleContainer"
                      Id="@ToggleId"
+                     IsPlain="@IsPlain"
                      Toggled="@OnToggled">
         @Toggle
     </ToggleContainer>

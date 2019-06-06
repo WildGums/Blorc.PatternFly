@@ -11,33 +11,13 @@
             Icon = "CaretDown";
         }
 
-        public string Class
-        {
-            get
-            {
-                var items = new List<string>();
-
-                //if (IsRead)
-                //{
-                //    items.Add("pf-m-read");
-                //}
-                //else
-                //{
-                //    items.Add("pf-m-unread");
-                //}
-
-                return string.Join(" ", items);
-            }
-        }
+        public string Class { get; set; }
 
         [Parameter]
         public string Id { get; set; }
 
         [Parameter]
         public string Icon { get; set; }
-
-        [Parameter]
-        public string Text { get; set; }
 
         [Parameter]
         public bool IsDisabled { get; set; }

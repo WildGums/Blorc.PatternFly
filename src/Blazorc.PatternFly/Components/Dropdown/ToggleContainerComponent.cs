@@ -8,27 +8,14 @@
     {
         public ToggleContainerComponent()
         {
-
+            CreateConverter()
+                .Fixed("pf-c-dropdown__toggle")
+                .If(() => IsPlain, "pf-m-plain")
+                .Watch(() => IsPlain)
+                .Update(() => ButtonClass);
         }
 
-        public string Class
-        {
-            get
-            {
-                var items = new List<string>();
-
-                //if (IsRead)
-                //{
-                //    items.Add("pf-m-read");
-                //}
-                //else
-                //{
-                //    items.Add("pf-m-unread");
-                //}
-
-                return string.Join(" ", items);
-            }
-        }
+        public string ButtonClass { get; set; }
 
         [Parameter]
         public string Id { get; set; }

@@ -13,32 +13,19 @@
 
             ToggleId = GenerateUniqueId("pf-toggle-id");
 
-            CreateStateConverterContainer<bool>()
-                .If("display: none", () => !IsOpen)
+            CreateConverter()
+                .Fixed("pf-c-dropdown")
+                .Update(() => Class);
+
+            CreateConverter()
+                .If(() => !IsOpen, "display: none")
                 .Watch(() => IsOpen)
                 .Update(() => OpenState);
         }
 
         public override string ComponentName => "toggle";
 
-        public string Class
-        {
-            get
-            {
-                var items = new List<string>();
-
-                //if (IsRead)
-                //{
-                //    items.Add("pf-m-read");
-                //}
-                //else
-                //{
-                //    items.Add("pf-m-unread");
-                //}
-
-                return string.Join(" ", items);
-            }
-        }
+        public string Class { get; set; }
 
         public string OpenState { get; set; }
 
@@ -62,7 +49,7 @@
         public DropdownDirection Direction { get; set; }
 
         [Parameter]
-        public RenderFragment<IToggle> Toggle { get; set; }
+        public RenderFragment Toggle { get; set; }
 
         [Parameter]
         public RenderFragment ChildContent { get; set; }

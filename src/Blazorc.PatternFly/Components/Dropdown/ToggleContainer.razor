@@ -1,15 +1,13 @@
 ﻿@inherits Blazorc.PatternFly.Components.Dropdown.ToggleContainerComponent
 
-<button id="@Id" class="pf-c-dropdown__toggle" type="button" aria-expanded="false" aria-haspopup="true" onclick="@(() => OnClick())">
+<button id="@Id" class="@ButtonClass" type="button" aria-expanded="@IsOpen" aria-haspopup="true" onclick="@(() => OnClick())">
     @if (IsSplitButton)
     {
 
     }
     else
     {
-        <DropdownToggle>
-            @ChildContent
-        </DropdownToggle>
+        @ChildContent
     }
 </button>
 
@@ -17,8 +15,6 @@
 {
     private void OnClick()
     {
-        Log.Debug("CONTAINER: Toggle IsOpen");
-
         IsOpen = !IsOpen;
 
         var handler = Toggled;
