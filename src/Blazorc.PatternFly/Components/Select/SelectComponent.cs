@@ -3,6 +3,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.Linq;
     using Microsoft.AspNetCore.Components;
 
@@ -83,6 +84,12 @@
             set => SetPropertyValue(nameof(IsExpanded), value);
         }
 
+        public string FilterText
+        {
+            get => GetPropertyValue<string>(nameof(FilterText));
+            set => SetPropertyValue(nameof(FilterText), value);
+        }
+
         [Parameter]
         public bool IsGrouped
         {
@@ -159,7 +166,7 @@
                     return PlaceholderText;
                 }
 
-                if (Variant == SelectVariant.Single)
+                if (Variant == SelectVariant.Single || Variant == SelectVariant.Typeahead)
                 {
                     return SelectedItems.FirstOrDefault().Value;
                 }
@@ -175,14 +182,14 @@
 
         public void SelectItem(string key, string value)
         {
-            if (Variant == SelectVariant.Single)
+            if (Variant == SelectVariant.Single || Variant == SelectVariant.Typeahead)
             {
                 _selectedItems.Clear();
             }
 
             _selectedItems.Add(key, value);
 
-            if (Variant == SelectVariant.Single)
+            if (Variant == SelectVariant.Single || Variant == SelectVariant.Typeahead)
             {
                 Toggle();
             }
@@ -214,6 +221,19 @@
             _selectedItems.Clear();
             SelectionChanged?.Invoke(this, EventArgs.Empty);
             Toggle();
+        }
+
+        protected override void OnPropertyChanged(PropertyChangedEventArgs e)
+        {
+            if ((Variant == SelectVariant.Typeahead || Variant == SelectVariant.TypeaheadMulti) && e.PropertyName == nameof(FilterText))
+            {
+                StateHasChanged();
+            }
+        }
+
+        protected void OnFilterInput(UIChangeEventArgs e)
+        {
+            FilterText = (string)e.Value;
         }
     }
 }

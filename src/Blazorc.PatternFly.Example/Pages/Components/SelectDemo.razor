@@ -75,7 +75,7 @@
         </div>
     </Example>
 
-    <Example Title="Typeahead select input">
+    <Example Title="Typeahead select input *">
         <div>
             <span id="typeahead-select-id" hidden>
                 Select a state
@@ -84,14 +84,14 @@
                     Label="Select a state"
                     IsExpanded="false"
                     AriaLabelledBy="typeahead-select-id"
-                    PlaceholderText="Select a state">
+                    PlaceholderText="Select a state" ref="typeaheadSelect">
                 <Items>
-                    <SelectOption Key="0" Value="Alabama" />
-                    <SelectOption Key="1" Value="Florida" />
-                    <SelectOption Key="2" Value="New Jersey" />
-                    <SelectOption Key="3" Value="New Mexico" />
-                    <SelectOption Key="4" Value="New York" />
-                    <SelectOption Key="5" Value="North Carolina" />
+                    <SelectOption Key="0" Value="Alabama" Parent="@typeaheadSelect" />
+                    <SelectOption Key="1" Value="Florida" Parent="@typeaheadSelect"/>
+                    <SelectOption Key="2" Value="New Jersey" Parent="@typeaheadSelect"/>
+                    <SelectOption Key="3" Value="New Mexico" Parent="@typeaheadSelect"/>
+                    <SelectOption Key="4" Value="New York" Parent="@typeaheadSelect"/>
+                    <SelectOption Key="5" Value="North Carolina" Parent="@typeaheadSelect"/>
                 </Items>
             </Select>
         </div>
@@ -125,6 +125,7 @@
     Select singleSelect = new Select();
     Select checkboxSelect = new Select();
     Select groupCheckBokSelect = new Select();
+    Select typeaheadSelect = new Select();
 
     /*private List<object> _singleSelectInputSelectedItems = new List<object>();
     private List<object> _checkboxSelectInputSelectedItems = new List<object>();

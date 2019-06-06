@@ -3,6 +3,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.Linq;
     using System.Reflection;
     using System.Threading.Tasks;
@@ -40,7 +41,20 @@
         [Parameter]
         public bool IsDisabled { get; set; }
 
-        public bool IsSelected => Parent.SelectedItems.ContainsKey(Key);
+        public bool IsSelected => Parent != null && Parent.SelectedItems.ContainsKey(Key);
+
+        public bool IsVisible
+        {
+            get
+            {
+                if (Parent.Variant == SelectVariant.Typeahead || Parent.Variant == SelectVariant.TypeaheadMulti)
+                {
+                    return string.IsNullOrWhiteSpace(Parent.FilterText) || Parent != null && Value.StartsWith(Parent.FilterText);
+                }
+
+                return true;
+            }
+        }
 
         [Parameter]
         public string Key { get; set; }

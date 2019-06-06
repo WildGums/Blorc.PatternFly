@@ -1,5 +1,7 @@
 ﻿@inherits Blazorc.PatternFly.Components.Select.SelectComponent
 
+
+@using System
 @using Blazorc.PatternFly.Components.Icon
 @using Blazorc.PatternFly.Components.Badge
 
@@ -10,7 +12,11 @@
                 aria-labelledby="@AriaLabelledBy @ToggleId"
                 aria-expanded="@IsExpanded" onclick=@(()=>Toggle())>
             <div class="pf-c-select__toggle-wrapper @WrapperClass">
-                @if (Variant == SelectVariant.Checkbox)
+                @if (Variant == SelectVariant.Typeahead || Variant == SelectVariant.TypeaheadMulti)
+                {
+                    <input class="pf-c-form-control pf-c-select__toggle-typeahead" placeholder="@PlaceholderText" type="text" oninput="@OnFilterInput" value="@Text"/>
+                }
+                else if (Variant == SelectVariant.Checkbox)
                 {
                     <span class="pf-c-select__toggle-text">@Text</span>
                     <Badge>@SelectedItems.Count</Badge>
