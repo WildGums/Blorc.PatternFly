@@ -2,24 +2,10 @@
 
 @if (IsSplitButton)
 {
-    <div class="@Class">
-        @SplitButtonItems
-
-        <button id="@Id"
-                class="@ButtonClass"
-                type="button"
-                disabled="@IsDisabled"
-                aria-expanded="@IsOpen"
-                aria-haspopup="true"
-                onclick="@(() => OnClick())">
-            <CascadingValue Value=this>
-                @ChildContent
-            </CascadingValue>
-        </button>
-    </div>
+    @SplitButtonStart
+    @SplitButtonItems
 }
-else
-{
+
     <button id="@Id"
             class="@ButtonClass"
             type="button"
@@ -31,10 +17,35 @@ else
             @ChildContent
         </CascadingValue>
     </button>
+
+@if (IsSplitButton)
+{
+    @SplitButtonEnd
 }
 
 @functions
 {
+    private RenderFragment SplitButtonStart;
+    private RenderFragment SplitButtonEnd;
+
+    private RenderFragment CreateSplitButtonStartComponent() => builder =>
+    {
+        builder.AddMarkupContent(0, $"<div class=\"{Class}\">");
+    };
+
+    private RenderFragment CreateSplitButtonEndComponent() => builder =>
+    {
+        builder.AddMarkupContent(0, $"</div>");
+    };
+
+    protected override void OnInit()
+    {
+        base.OnInit();
+
+        SplitButtonStart = CreateSplitButtonStartComponent();
+        SplitButtonEnd = CreateSplitButtonEndComponent();
+    }
+
     private void OnClick()
     {
         IsOpen = !IsOpen;
