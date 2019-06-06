@@ -52,6 +52,13 @@
         }
 
         [Parameter]
+        public bool IsGrouped
+        {
+            get { return GetPropertyValue<bool>(nameof(IsGrouped)); }
+            set { SetPropertyValue(nameof(IsGrouped), value); }
+        }
+
+        [Parameter]
         public bool IsPlain
         {
             get { return GetPropertyValue<bool>(nameof(IsPlain)); }

@@ -1,0 +1,12 @@
+﻿@inherits Blazorc.PatternFly.Components.Dropdown.DropdownGroupComponent
+
+<section class="pf-c-dropdown__group">
+    @if (!string.IsNullOrWhiteSpace(Label))
+    {
+        <h1 class="pf-c-dropdown__group-title" aria-hidden="true">@Label</h1>
+    }
+
+    <ul>
+        @ChildContent
+    </ul>
+</section>

@@ -32,6 +32,35 @@
         </Dropdown>
     </Example>
 
+    <Example Title="Dropdown with groups">
+        <Dropdown IsGrouped="true">
+            <Toggle>
+                <DropdownToggle>Dropdown</DropdownToggle>
+            </Toggle>
+
+            <Items>
+                <DropdownGroup Key="group 1">
+                    <DropdownItem Key="group 1 link">Link</DropdownItem>
+                    <DropdownItem Key="group 1 action" Component="button">
+                        Action
+                    </DropdownItem>
+                </DropdownGroup>
+                <DropdownGroup Label="Group 2" Key="group 2">
+                    <DropdownItem Key="group 2 link">Group 2 Link</DropdownItem>
+                    <DropdownItem Key="group 2 action" Component="button">
+                        Group 2 Action
+                    </DropdownItem>
+                </DropdownGroup>
+                <DropdownGroup Label="Group 3" Key="group 3">
+                    <DropdownItem Key="group 3 link">Group 3 Link</DropdownItem>
+                    <DropdownItem Key="group 3 action" Component="button">
+                        Group 3 Action
+                    </DropdownItem>
+                </DropdownGroup>
+            </Items>
+        </Dropdown>
+    </Example>
+
     <Example Title="Dropdown (disabled)">
         <Dropdown>
             <Toggle>

@@ -16,9 +16,16 @@
 
             @if (Items != null)
             {
-                <ul aria-labelledby="@ToggleId" class="@PopupClass" role="menu">
+                if (IsGrouped)
+                {
                     @Items
-                </ul>
+                }
+                else
+                {
+                    <ul aria-labelledby="@ToggleId" class="@PopupClass" role="menu">
+                        @Items
+                    </ul>
+                }
             }
         </div>
     </div>
