@@ -31,6 +31,11 @@
             return binding;
         }
 
+        public static BindingBuilder CreateBinding(this BindingContext bindingContext)
+        {
+            return new BindingBuilder(bindingContext);
+        }
+
         /// <summary>
         /// Adds a new binding to the source object.
         /// </summary>

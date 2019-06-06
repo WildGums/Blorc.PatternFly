@@ -3,8 +3,8 @@
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
+    using System.Linq.Expressions;
     using System.Reflection;
-    using System.Runtime.InteropServices;
 
     /// <summary>
     /// Contains information about a specific binding party (either source or target).
@@ -17,11 +17,6 @@
         private readonly WeakReference _instance;
         private INotifyPropertyChanged _notifyPropertyChanged;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BindingParty" /> class.
-        /// </summary>
-        /// <param name="instance">The instance.</param>
-        /// <param name="propertyName">Name of the property.</param>
         public BindingParty(object instance, string propertyName)
         {
             _instance = new WeakReference(instance);

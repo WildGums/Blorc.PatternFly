@@ -7,13 +7,14 @@
     /// <summary>
     /// Binding context that takes care of binding updates.
     /// </summary>
-    public class BindingContext
+    public class BindingContext : IDisposable
     {
         #region Fields
-        //private int? _lastViewModelId;
-
         private readonly List<Binding> _bindings = new List<Binding>();
         private readonly List<CommandBinding> _commandBindings = new List<CommandBinding>();
+
+        //private int? _lastViewModelId;
+        private bool _disposedValue;
         #endregion
 
         /// <summary>
@@ -22,8 +23,6 @@
         public BindingContext()
         {
             //UniqueIdentifier = UniqueIdentifierHelper.GetUniqueIdentifier<BindingContext>();
-
-            Log.Debug("Initialized binding context");
         }
 
         #region Properties
@@ -67,18 +66,10 @@
         {
             Log.Debug("Clearing binding context");
 
-            foreach (var binding in _bindings)
-            {
-                binding.ClearBinding();
-            }
-
+            _bindings.ForEach(x => x.Dispose());
             _bindings.Clear();
 
-            foreach (var commandBinding in _commandBindings)
-            {
-                commandBinding.ClearBinding();
-            }
-
+            _commandBindings.ForEach(x => x.Dispose());
             _commandBindings.Clear();
         }
 
@@ -175,5 +166,28 @@
         //    }
         //}
         #endregion
+
+        protected virtual void DisposeManaged()
+        {
+            Clear();
+        }
+
+        private void Dispose(bool disposing)
+        {
+            if (!_disposedValue)
+            {
+                if (disposing)
+                {
+                    DisposeManaged();
+                }
+
+                _disposedValue = true;
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+        }
     }
 }

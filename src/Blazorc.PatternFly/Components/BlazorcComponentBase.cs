@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
+    using Blazorc.PatternFly.Bindings;
     using Blazorc.PatternFly.Data;
     using Microsoft.AspNetCore.Components;
 
@@ -16,8 +17,12 @@
 
         public BlazorcComponentBase()
         {
+            BindingContext = new BindingContext();
+
             _propertyBag.PropertyChanged += OnPropertyBagPropertyChanged;
         }
+
+        protected BindingContext BindingContext { get; private set; }
 
         protected StateConverterContainer CreateConverter()
         {
@@ -26,6 +31,11 @@
             _stateConverterContainers.Add(container);
 
             return container;
+        }
+
+        protected override void OnInit()
+        {
+            base.OnInit();
         }
 
         protected override void OnParametersSet()
@@ -58,6 +68,9 @@
 
         protected virtual void DisposeManaged()
         {
+            BindingContext.Dispose();
+            BindingContext = null;
+
             _stateConverterContainers.ForEach(x => x.Dispose());
             _stateConverterContainers.Clear();
         }

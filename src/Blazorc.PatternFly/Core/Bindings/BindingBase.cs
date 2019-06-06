@@ -1,11 +1,14 @@
 ﻿namespace Blazorc.PatternFly.Bindings
 {
+    using System;
+
     /// <summary>
     /// Base class for all bindings.
     /// </summary>
-    public abstract class BindingBase
+    public abstract class BindingBase : IDisposable
     {
         private string _toStringValue;
+        private bool _disposedValue;
 
         /// <summary>
         /// Determines the value to use in the <see cref="ToString"/> method.
@@ -45,6 +48,29 @@
         public void ClearBinding()
         {
             UninitializeBinding();
+        }
+
+        protected virtual void DisposeManaged()
+        {
+            ClearBinding();
+        }
+
+        private void Dispose(bool disposing)
+        {
+            if (!_disposedValue)
+            {
+                if (disposing)
+                {
+                    DisposeManaged();
+                }
+
+                _disposedValue = true;
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
         }
     }
 }

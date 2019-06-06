@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using Blazorc.PatternFly.Bindings;
     using Microsoft.AspNetCore.Components;
 
     public class DropdownToggleComponent : BlazorcComponentBase, IToggle
@@ -75,7 +76,18 @@
         {
             base.OnInit();
 
-            
+            BindingContext.CreateBinding()
+                .From(() => ContainerToggleContainer.IsPlain)
+                .To(() => IsPlain)
+                .AsMode(BindingMode.OneWay)
+                .Apply();
+
+            //// -- OR --
+
+            //BindingContext.AddBinding(new Binding(
+            //    new BindingParty(ContainerToggleContainer, nameof(ToggleContainer.IsPlain)),
+            //    new BindingParty(this, nameof(IsPlain)),
+            //    BindingMode.OneWay));
         }
     }
 }
