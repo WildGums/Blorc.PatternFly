@@ -3,7 +3,7 @@
     using System.Threading.Tasks;
     using Microsoft.JSInterop;
 
-    public class DocumentFunctionsInterop
+    internal static class DocumentFunctionsInterop
     {
         public static Task<Rect> GetBoundingClientRect(IJSRuntime jsRuntime, long x, long y)
         {

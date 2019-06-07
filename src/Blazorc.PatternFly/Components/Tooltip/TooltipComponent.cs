@@ -2,10 +2,8 @@
 {
     using System;
     using System.Threading.Tasks;
-    using Blazor.PatternFly;
     using Blazorc.Components;
     using Microsoft.AspNetCore.Components;
-    using Microsoft.JSInterop;
     using Services;
     using Services.Interop;
 

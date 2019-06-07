@@ -8,7 +8,7 @@
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddBlazorcPatternFly();
+            services.AddBlazorc();
         }
 
         public void Configure(IComponentsApplicationBuilder app)

@@ -1,5 +1,8 @@
 @inherits LayoutComponentBase
 
+@using Blazorc.Dom.Injectors
+@using Blazorc.Services
+
 <div class="sidebar">
     <NavMenu />
 </div>
@@ -13,3 +16,17 @@
         @Body
     </div>
 </div>
+
+@functions
+{
+    [Inject]
+    public IDocumentService DocumentService { get; set; }
+
+    protected override void OnInit()
+    {
+        base.OnInit();
+
+        DocumentService.InjectHead(new Css("/patternfly/patternfly.css"));
+    }
+
+}

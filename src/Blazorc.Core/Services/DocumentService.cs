@@ -1,6 +1,8 @@
 ﻿namespace Blazorc.Services
 {
     using System.Threading.Tasks;
+    using Blazor.Dom.Injectors;
+    using Blazorc.Dom.Injectors;
     using Interop;
     using Microsoft.JSInterop;
 
@@ -26,6 +28,12 @@
         public Task<Rect> GetBoundingClientRect(long x, long y)
         {
             return DocumentFunctionsInterop.GetBoundingClientRect(_jsRuntime, x, y);
+        }
+
+        public void InjectHead(IInjectorValueProvider injectorValueProvider)
+        {
+            var value = injectorValueProvider.GetValue();
+            StyleInjectorFunctionsInterop.InjectHead(_jsRuntime, value);
         }
     }
 }

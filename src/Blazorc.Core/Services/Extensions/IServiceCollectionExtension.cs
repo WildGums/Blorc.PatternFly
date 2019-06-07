@@ -4,7 +4,7 @@
 
     public static class IServiceCollectionExtension
     {
-        public static void AddBlazorcPatternFly(this IServiceCollection service)
+        public static void AddBlazorc(this IServiceCollection service)
         {
             service.AddSingleton<IDocumentService, DocumentService>();
         }
