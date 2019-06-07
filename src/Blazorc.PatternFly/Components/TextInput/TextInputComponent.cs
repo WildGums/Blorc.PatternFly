@@ -1,6 +1,7 @@
 ﻿namespace Blazorc.PatternFly.Components.TextInput
 {
     using System;
+    using Blazorc.Components;
     using Microsoft.AspNetCore.Components;
 
     public class TextInputComponent : BlazorcComponentBase

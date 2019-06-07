@@ -2,6 +2,7 @@
 {
     using Microsoft.AspNetCore.Components;
     using Blazorc.PatternFly.Components;
+    using Blazorc.Components;
 
     public class ExampleComponent : BlazorcComponentBase
     {

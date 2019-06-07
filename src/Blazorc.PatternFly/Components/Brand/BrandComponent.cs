@@ -1,5 +1,6 @@
 ﻿namespace Blazorc.PatternFly.Components.Brand
 {
+    using Blazorc.Components;
     using Microsoft.AspNetCore.Components;
 
     public class BrandComponent : BlazorcComponentBase

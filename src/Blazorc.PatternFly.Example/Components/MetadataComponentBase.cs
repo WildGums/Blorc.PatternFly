@@ -1,6 +1,6 @@
 ﻿namespace Blazorc.PatternFly.Example.Components
 {
-    using Blazorc.PatternFly.Components;
+    using Blazorc.Components;
     using Microsoft.AspNetCore.Components;
 
     public abstract class MetadataComponentBase : BlazorcComponentBase

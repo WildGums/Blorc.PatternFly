@@ -1,6 +1,8 @@
 ﻿namespace Blazorc.PatternFly.Components.Dropdown
 {
     using System;
+    using Blazorc.Components;
+    using Blazorc.StateConverters;
     using Microsoft.AspNetCore.Components;
 
     public class DropdownItemComponent : BlazorcComponentBase

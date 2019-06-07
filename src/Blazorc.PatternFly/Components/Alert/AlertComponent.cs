@@ -1,5 +1,6 @@
 ﻿namespace Blazorc.PatternFly.Components.Alert
 {
+    using Blazorc.Components;
     using Microsoft.AspNetCore.Components;
 
     public class AlertComponent : BlazorcComponentBase

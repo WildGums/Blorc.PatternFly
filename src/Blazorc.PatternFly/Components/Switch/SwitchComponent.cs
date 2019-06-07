@@ -1,6 +1,7 @@
 ﻿namespace Blazorc.PatternFly.Components.Switch
 {
     using System;
+    using Blazorc.Components;
     using Microsoft.AspNetCore.Components;
 
     public class SwitchComponent : UniqueComponentBase

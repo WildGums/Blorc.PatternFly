@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using Blazorc.Components;
     using Microsoft.AspNetCore.Components;
 
     public class BadgeComponent : BlazorcComponentBase

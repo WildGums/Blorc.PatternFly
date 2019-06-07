@@ -1,6 +1,7 @@
 ﻿namespace Blazorc.PatternFly.Components.EmptyState
 {
     using System;
+    using Blazorc.Components;
     using Blazorc.PatternFly.Components.Icon;
     using Microsoft.AspNetCore.Components;
 

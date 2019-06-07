@@ -2,6 +2,7 @@
 {
     using System;
     using System.Threading.Tasks;
+    using Blazorc.Components;
     using Microsoft.AspNetCore.Components;
 
     public class NavigationItemComponent : BlazorcComponentBase

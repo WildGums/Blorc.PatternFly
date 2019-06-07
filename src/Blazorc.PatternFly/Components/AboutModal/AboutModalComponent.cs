@@ -1,5 +1,6 @@
 ﻿namespace Blazorc.PatternFly.Components.AboutModal
 {
+    using Blazorc.Components;
     using Microsoft.AspNetCore.Components;
 
     public class AboutModalComponent : BlazorcComponentBase

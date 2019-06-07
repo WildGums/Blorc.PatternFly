@@ -2,6 +2,8 @@
 {
     using System;
     using System.Collections.Generic;
+    using Blazorc.Components;
+    using Blazorc.StateConverters;
     using Microsoft.AspNetCore.Components;
 
     public class SeparatorComponent : BlazorcComponentBase

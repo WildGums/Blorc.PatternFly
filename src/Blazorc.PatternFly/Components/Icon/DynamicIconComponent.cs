@@ -1,5 +1,6 @@
 ﻿namespace Blazorc.PatternFly.Components.Icon
 {
+    using Blazorc.Components;
     using Microsoft.AspNetCore.Components;
 
     public class DynamicIconComponent : BlazorcComponentBase

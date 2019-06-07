@@ -1,6 +1,7 @@
 ﻿namespace Blazorc.PatternFly.Components.Select
 
 {
+    using Blazorc.Components;
     using Microsoft.AspNetCore.Components;
 
     public class CheckboxSelectGroupComponent : BlazorcComponentBase

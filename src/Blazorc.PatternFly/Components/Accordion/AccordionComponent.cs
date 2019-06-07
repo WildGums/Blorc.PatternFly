@@ -1,5 +1,6 @@
 ﻿namespace Blazorc.PatternFly.Components.Accordion
 {
+    using Blazorc.Components;
     using Microsoft.AspNetCore.Components;
 
     public class AccordionComponent : BlazorcComponentBase

@@ -1,6 +1,8 @@
 ﻿namespace Blazorc.PatternFly.Components.Tabs
 {
     using System;
+    using Blazorc.Components;
+    using Blazorc.StateConverters;
     using Microsoft.AspNetCore.Components;
 
     public class TabsComponent : BlazorcComponentBase

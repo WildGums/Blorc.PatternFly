@@ -1,5 +1,7 @@
 ﻿namespace Blazorc.PatternFly.Components.Card
 {
+    using Blazorc.Components;
+    using Blazorc.StateConverters;
     using Microsoft.AspNetCore.Components;
 
     public class CardComponent : BlazorcComponentBase

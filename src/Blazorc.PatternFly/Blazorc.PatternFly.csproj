@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Blazorc.PatternFly</AssemblyName>
+    <RootNamespace>Blazorc.PatternFly</RootNamespace>
     <IsPackable>true</IsPackable>
     <RestoreAdditionalProjectSources>
       https://dotnet.myget.org/F/aspnetcore-dev/api/v3/index.json;
@@ -58,6 +60,14 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>FortAwesome.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Blazorc.Core\Blazorc.Core.csproj" />
   </ItemGroup>
 
   <Import Project="$(MSBuildProjectDirectory)\..\Directory.build.shared.explicit.props" Condition="Exists('$(MSBuildProjectDirectory)\..\Directory.build.shared.explicit.props')" />

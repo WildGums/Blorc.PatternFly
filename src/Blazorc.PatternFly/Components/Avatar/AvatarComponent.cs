@@ -1,5 +1,6 @@
 ﻿namespace Blazorc.PatternFly.Components.Avatar
 {
+    using Blazorc.Components;
     using Microsoft.AspNetCore.Components;
 
     public class AvatarComponent : BlazorcComponentBase

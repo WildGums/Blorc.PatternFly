@@ -2,6 +2,8 @@
 {
     using System;
     using System.ComponentModel;
+    using Blazorc.Components;
+    using Blazorc.StateConverters;
     using Microsoft.AspNetCore.Components;
 
     public class TabComponent : BlazorcComponentBase, ITab

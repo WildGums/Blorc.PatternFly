@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using Blazorc.Components;
     using Blazorc.PatternFly.Components.Dropdown;
     using Microsoft.AspNetCore.Components;
 

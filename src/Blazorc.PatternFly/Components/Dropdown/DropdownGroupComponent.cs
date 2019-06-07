@@ -1,5 +1,6 @@
 ﻿namespace Blazorc.PatternFly.Components.Dropdown
 {
+    using Blazorc.Components;
     using Microsoft.AspNetCore.Components;
 
     public class DropdownGroupComponent : BlazorcComponentBase
