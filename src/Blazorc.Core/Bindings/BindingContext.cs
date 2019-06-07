@@ -65,7 +65,7 @@
         /// </summary>
         public void Clear()
         {
-            Log.Debug("Clearing binding context");
+            //Log.Debug("Clearing binding context");
 
             _bindings.ForEach(x => x.Dispose());
             _bindings.Clear();
@@ -81,7 +81,7 @@
         /// <exception cref="ArgumentNullException">The <paramref name="binding"/> is <c>null</c>.</exception>
         public void AddBinding(Binding binding)
         {
-            Log.Debug($"Adding binding '{binding}'");
+            //Log.Debug($"Adding binding '{binding}'");
 
             _bindings.Add(binding);
         }
@@ -93,7 +93,7 @@
         /// <exception cref="ArgumentNullException">The <paramref name="binding"/> is <c>null</c>.</exception>
         public void RemoveBinding(Binding binding)
         {
-            Log.Debug($"Removing binding '{binding}'");
+            //Log.Debug($"Removing binding '{binding}'");
 
             for (var i = 0; i < _bindings.Count; i++)
             {
@@ -112,7 +112,7 @@
         /// <exception cref="ArgumentNullException">The <paramref name="commandBinding"/> is <c>null</c>.</exception>
         public void AddCommandBinding(CommandBinding commandBinding)
         {
-            Log.Debug($"Adding command binding '{commandBinding}'");
+            //Log.Debug($"Adding command binding '{commandBinding}'");
 
             _commandBindings.Add(commandBinding);
         }
@@ -124,7 +124,7 @@
         /// <exception cref="ArgumentNullException">The <paramref name="commandBinding"/> is <c>null</c>.</exception>
         public void RemoveCommandBinding(CommandBinding commandBinding)
         {
-            Log.Debug($"Removing command binding '{commandBinding}'");
+            //Log.Debug($"Removing command binding '{commandBinding}'");
 
             for (var i = 0; i < _commandBindings.Count; i++)
             {
