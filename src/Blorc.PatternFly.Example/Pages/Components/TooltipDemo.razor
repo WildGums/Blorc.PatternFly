@@ -1,0 +1,67 @@
+﻿@page "/components/tooltip"
+
+@using Blorc.PatternFly.Components.Tooltip
+
+<Metadata ComponentName="Tooltip" />
+
+<p>This demo page requires improvements</p>
+
+<br />
+
+<section class="ws-section ws-live-demo">
+    <Example Title="Simple tooltip">
+        <Tooltip Position="@TooltipPosition.Bottom" Trigger="@TooltipTrigger.MouseEnter">
+            <TooltipContent>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</TooltipContent>
+            <ChildContent>Hover to view tooltip (Bottom)</ChildContent>
+        </Tooltip>
+
+        <br />
+
+        <Tooltip Position="@TooltipPosition.Right" Trigger="@TooltipTrigger.MouseEnter">
+            <TooltipContent>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</TooltipContent>
+            <ChildContent>Hover to view tooltip (Right)</ChildContent>
+        </Tooltip>
+
+        <br />
+
+        <Tooltip Position="@TooltipPosition.Top" Trigger="@TooltipTrigger.MouseEnter">
+            <TooltipContent>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</TooltipContent>
+            <ChildContent>Hover to view tooltip (Top)</ChildContent>
+        </Tooltip>
+
+        <br />
+
+        <Tooltip Position="@TooltipPosition.Left" Trigger="@TooltipTrigger.MouseEnter">
+            <TooltipContent>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</TooltipContent>
+            <ChildContent>Hover to view tooltip (Left)</ChildContent>
+        </Tooltip>
+    </Example>
+
+    <br/>
+    <br/>
+
+    <Example Title="Tooltip positions">
+        This example needs to be added
+        @*<Tooltip Position="TooltipPosition.Top">
+            <TooltipContent>
+                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+            </TooltipContent>
+
+            <ChildContent>
+                <span>Hover to view tooltip</span>
+            </ChildContent>
+        </Tooltip>*@
+    </Example>
+</section>
+
+<Todo ComponentName="Tooltip">
+    <TodoList>
+        <li>Enable flip</li>
+        <li>Click and Focus Trigger</li>
+    </TodoList>
+</Todo>
+
+@functions {
+
+}
+

@@ -1,0 +1,28 @@
+﻿@page "/components/text-input"
+
+@using Blorc.PatternFly.Components.TextInput
+
+<Metadata ComponentName="Text input" />
+
+<section class="ws-section ws-live-demo">
+    <Example Title="Simple text input">
+        <TextInput Label="Text input example" />
+    </Example>
+
+    <Example Title="Text input (disabled)">
+        <TextInput Value="Disabled text input example" IsDisabled="true" Label="disabled text input example" />
+    </Example>
+
+    <Example Title="Text input (read-only)">
+        <TextInput Value="Read only text input example" IsReadOnly="true" Label="readonly text input example" />
+    </Example>
+
+    <Example Title="Text input (invalid)">
+        <TextInput Value="Invalid text input example" IsValid="false" Label="invalid text input example" />
+    </Example>
+</section>
+
+@functions {
+
+}
+

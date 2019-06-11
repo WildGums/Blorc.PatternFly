@@ -1,0 +1,199 @@
+﻿@page "/components/tabs"
+
+@using Blorc.PatternFly.Components.Tabs
+
+<Metadata ComponentName="Tabs" />
+
+<section class="ws-section ws-live-demo">
+    <Example Title="Simple tabs">
+        <Tabs>
+            <Tab Id="1"
+                 Title="Tab item 1">
+                Tab 1 section
+            </Tab>
+            <Tab Id="2"
+                 Title="Tab item 2">
+                Tab 2 section
+            </Tab>
+            <Tab Id="3"
+                 Title="Tab item 3">
+                Tab 3 section
+            </Tab>
+        </Tabs>
+    </Example>
+
+    <Example Title="Scroll buttons tabs">
+        <Tabs>
+            <Tab Id="1"
+                 Title="Tab item 1">
+                Tab 1 section
+            </Tab>
+            <Tab Id="2"
+                 Title="Tab item 2">
+                Tab 2 section
+            </Tab>
+            <Tab Id="3"
+                 Title="Tab item 3">
+                Tab 3 section
+            </Tab>
+            <Tab Id="4"
+                 Title="Tab item 4">
+                Tab 4 section
+            </Tab>
+            <Tab Id="5"
+                 Title="Tab item 5">
+                Tab 5 section
+            </Tab>
+            <Tab Id="6"
+                 Title="Tab item 6">
+                Tab 6 section
+            </Tab>
+            <Tab Id="7"
+                 Title="Tab item 7">
+                Tab 7 section
+            </Tab>
+            <Tab Id="8"
+                 Title="Tab item 8">
+                Tab 8 section
+            </Tab>
+            <Tab Id="9"
+                 Title="Tab item 9">
+                Tab 9 section
+            </Tab>
+            <Tab Id="10"
+                 Title="Tab item 10">
+                Tab 10 section
+            </Tab>
+            <Tab Id="11"
+                 Title="Tab item 11">
+                Tab 11 section
+            </Tab>
+            <Tab Id="12"
+                 Title="Tab item 12">
+                Tab 12 section
+            </Tab>
+        </Tabs>
+    </Example>
+
+    <Example Title="Secondary buttons tabs">
+        <Tabs>
+            <Tab Id="1"
+                 Title="Tab item 1">
+                <Tabs IsSecondary="true">
+                    <Tab Id="1"
+                         Title="Secondary tab item 1">
+                        Secondary tab item 1 item section
+                    </Tab>
+                    <Tab Id="2"
+                         Title="Secondary tab item 2">
+                        Secondary tab item 2 section
+                    </Tab>
+                    <Tab Id="3"
+                         Title="Secondary tab item 3">
+                        Secondary tab item 3 section
+                    </Tab>
+                </Tabs>
+            </Tab>
+            <Tab Id="2"
+                 Title="Tab item 2">
+                Tab 2 section
+            </Tab>
+            <Tab Id="3"
+                 Title="Tab item 3">
+                Tab 3 section
+            </Tab>
+        </Tabs>
+    </Example>
+
+    <Example Title="Filled buttons tabs">
+        <Tabs IsFilled="true">
+            <Tab Id="1"
+                 Title="Tab item 1">
+                Tab 1 section
+            </Tab>
+            <Tab Id="2"
+                 Title="Tab item 2">
+                Tab 2 section
+            </Tab>
+            <Tab Id="3"
+                 Title="Tab item 3">
+                Tab 3 section
+            </Tab>
+        </Tabs>
+    </Example>
+
+    <Example Title="Secondary tabs using the nav element">
+        <Tabs AriaLabel="Local"
+              Variant="TabsVariant.Nav">
+            <Tab Id="1"
+                 Title="Tab item 1">
+                <Tabs IsSecondary="true"
+                      AriaLabel="Local secondary"
+                      Variant="TabsVariant.Nav">
+                    <Tab Id="10"
+                         Title="Secondary tab item 1">
+                        Secondary tab item 1 item section
+                    </Tab>
+                    <Tab Id="11"
+                         Title="Secondary tab item 2">
+                        Secondary tab item 2 section
+                    </Tab>
+                    <Tab Id="12"
+                         Title="Secondary tab item 3">
+                        Secondary tab item 3 section
+                    </Tab>
+                </Tabs>
+            </Tab>
+            <Tab Id="2"
+                 Title="Tab item 2">
+                Tab 2 section
+            </Tab>
+            <Tab Id="3"
+                 Title="Tab item 3">
+                Tab 3 section
+            </Tab>
+        </Tabs>
+    </Example>
+
+    <Example Title="Tabs using the nav element">
+            <Tabs AriaLabel="Local"
+                  Variant="TabsVariant.Nav">
+                <Tab Id="1"
+                     Title="Tab item 1">
+                    Tab 1 section
+                </Tab>
+                <Tab Id="2"
+                     Title="Tab item 2">
+                    Tab 2 section
+                </Tab>
+                <Tab Id="3"
+                     Title="Tab item 3">
+                    Tab 3 section
+                </Tab>
+            </Tabs>
+        </Example>
+
+    @*<Example Title="Separate tab content">
+            <Tabs>
+                <Tab eventKey={0} title="Tab item 1" tabContentId="refTab1Section" tabContentRef={this.contentRef1} />
+                <Tab eventKey={1} title="Tab item 2" tabContentId="refTab2Section" tabContentRef={this.contentRef2} />
+                <Tab eventKey={2} title="Tab item 3" tabContentId="refTab3Section" tabContentRef={this.contentRef3} />
+            </Tabs>
+            <div>
+                <TabContent eventKey={0} id="refTab1Section" ref={this.contentRef1} aria-label="Tab item 1">
+                    Tab 1 section
+                </TabContent>
+                <TabContent eventKey={1} id="refTab2Section" ref={this.contentRef2} aria-label="Tab item 2" hidden>
+                    Tab 2 section
+                </TabContent>
+                <TabContent eventKey={2} id="refTab3Section" ref={this.contentRef3} aria-label="Tab item 3" hidden>
+                    Tab 3 section
+                </TabContent>
+            </div>
+        </Example>*@
+</section>
+
+@functions {
+
+}
+

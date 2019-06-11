@@ -1,0 +1,86 @@
+﻿@using Blorc.PatternFly.Components.Navigation
+
+<div class="top-row pl-4 navbar navbar-dark">
+    <a class="navbar-brand" href="">Blorc.PatternFly.Example</a>
+    <button class="navbar-toggler" onclick="@ToggleNavMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
+
+<div class="@NavMenuCssClass" onclick="@ToggleNavMenu">
+    <Navigation ref="Navigation">
+        <Items>
+            <NavigationItem Title="Home" Link="/" Parent="@Navigation">
+                <Content>
+                    <i class="fa fa-home mr-3" aria-hidden="true"></i>  Home
+                </Content>
+            </NavigationItem>
+            <NavigationExpandableSection Title="Components" Parent="@Navigation" ref="ComponentsNavigationExpandableSection">
+                <Content>
+                    <i class="fa fa-server mr-3" aria-hidden="true"></i> Components
+                </Content>
+                <Items>
+                    <NavigationItem Title="About modal" Link="components/about-modal" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Accordion" Link="components/accordion" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Alert" Link="components/alert" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Application launcher" Link="components/application-launcher" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Avatar" Link="components/avatar" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Background image *" Link="components/background-image" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Badge" Link="components/badge" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Brand" Link="components/brand" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Breadcrumb" Link="components/breadcrumb" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Button" Link="components/button" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Card" Link="components/card" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Checkbox" Link="components/checkbox" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Chip group *" Link="components/chip-group" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Context selector *" Link="components/context-selector" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Data list *" Link="components/data-list" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Dropdown" Link="components/dropdown" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Empty state" Link="components/empty-state" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Expandable" Link="components/expandable" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Form *" Link="components/form" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Form select *" Link="components/form-select" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Icon" Link="components/icon" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Input group" Link="components/input-group" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Label" Link="components/label" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="List" Link="components/list" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Login page *" Link="components/login-page" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Modal *" Link="components/modal" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Nav" Link="components/nav" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Options menu *" Link="components/options-menu" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Page *" Link="components/page" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Pagination *" Link="components/pagination" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Popover *" Link="components/popover" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Progress" Link="components/progress" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Radio" Link="components/radio" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Select" Link="components/select" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Skip to content *" Link="components/skip-to-content" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Switch" Link="components/switch" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Table *" Link="components/table" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Tabs" Link="components/tabs" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Text" Link="components/text" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Text area" Link="components/text-area" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Text input" Link="components/text-input" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Title" Link="components/title" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Tooltip" Link="components/tooltip" Parent="@ComponentsNavigationExpandableSection" />
+                    <NavigationItem Title="Wizard *" Link="components/wizard" Parent="@ComponentsNavigationExpandableSection" />
+                </Items>
+            </NavigationExpandableSection>
+        </Items>
+    </Navigation>
+</div>
+
+@functions {
+    Navigation Navigation = new Navigation();
+
+    NavigationExpandableSection ComponentsNavigationExpandableSection = new NavigationExpandableSection();
+
+    bool collapseNavMenu = true;
+
+    string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}

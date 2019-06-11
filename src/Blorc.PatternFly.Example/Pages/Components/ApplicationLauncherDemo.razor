@@ -1,0 +1,92 @@
+﻿@page "/components/application-launcher"
+
+@using Blorc.PatternFly.Components.ApplicationLauncher
+@using Blorc.PatternFly.Components.Dropdown
+@using Blorc.PatternFly.Components.Tooltip
+
+<Metadata ComponentName="Application launcher" />
+
+<section class="ws-section ws-live-demo">
+    <Example Title="Simple application launcher">
+        <ApplicationLauncher Direction="DropdownDirection.Up">
+            <DropdownItem Key="application_1"
+                          Component="a">
+                Application 1
+            </DropdownItem>
+
+            <DropdownItem Key="application_2"
+                          Component="a">
+                Application 2
+            </DropdownItem>
+
+            <DropdownItem Key="application_3"
+                          Component="a">
+                Application 3
+            </DropdownItem>
+
+            <DropdownItem Key="application_3"
+                          Component="a"
+                          IsDisabled="true">
+                Unavailable Application
+            </DropdownItem>
+        </ApplicationLauncher>
+    </Example>
+
+    <Example Title="Application launcher with tooltip">
+        <ApplicationLauncher>
+            <Tooltip>
+                <TooltipContent>
+                    <div>Launch Application 1</div>
+                </TooltipContent>
+                <ChildContent>
+                    <DropdownItem Key="application_1" 
+                                  Component="a">
+                        Application 1
+                    </DropdownItem>
+                </ChildContent>
+            </Tooltip>
+
+            <Tooltip Position="TooltipPosition.Right">
+                <TooltipContent>
+                    <div>Launch Application 2</div>
+                </TooltipContent>
+                <ChildContent>
+                    <DropdownItem Key="application_2" 
+                                  Component="a">
+                        Application 2
+                    </DropdownItem>
+                </ChildContent>
+            </Tooltip>
+
+            <Tooltip Position="TooltipPosition.Right">
+                <TooltipContent>
+                    <div>Launch Application 3</div>
+                </TooltipContent>
+                <ChildContent>
+                    <DropdownItem Key="application_3" 
+                                  Component="a">
+                        Application 3
+                    </DropdownItem>
+                </ChildContent>
+            </Tooltip>
+
+            <Tooltip Position="TooltipPosition.Bottom">
+                <TooltipContent>
+                    <div>Application Unavailable At This Time</div>
+                </TooltipContent>
+                <ChildContent>
+                    <DropdownItem Key="application_3"
+                                  Component="a"
+                                  IsDisabled="true">
+                        Unavailable Application
+                    </DropdownItem>
+                </ChildContent>
+            </Tooltip>
+        </ApplicationLauncher>
+    </Example>
+</section>
+
+@functions {
+
+}
+

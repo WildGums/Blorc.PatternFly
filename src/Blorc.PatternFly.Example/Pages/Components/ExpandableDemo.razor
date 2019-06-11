@@ -1,0 +1,37 @@
+﻿@page "/components/expandable"
+
+@using Blorc.PatternFly.Components.Expandable
+
+<Metadata ComponentName="Expandable" />
+
+<section class="ws-section ws-live-demo">
+    <Example Title="Simple expandable">
+        <Expandable ref="expandable" 
+                    ToggleText="Show more" 
+                    Toggled="@OnToggled">
+            This content is visible only when the component is expanded.
+        </Expandable>
+    </Example>
+</section>
+
+@functions {
+    private Expandable expandable;
+
+    private void OnToggled(object sender, EventArgs e)
+    {
+        UpdateText();
+    }
+
+    protected override void OnAfterRender()
+    {
+        base.OnAfterRender();
+
+        UpdateText();
+    }
+
+    private void UpdateText()
+    {
+        expandable.ToggleText = expandable.IsExpanded ? "Show less" : "Show more";
+    }
+}
+

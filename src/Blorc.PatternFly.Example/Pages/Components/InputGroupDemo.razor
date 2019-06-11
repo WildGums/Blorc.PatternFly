@@ -1,0 +1,123 @@
+﻿@page "/components/input-group"
+
+@using Blorc.PatternFly.Components.Button
+@using Blorc.PatternFly.Components.Icon
+@using Blorc.PatternFly.Components.InputGroup
+@using Blorc.PatternFly.Components.Text
+@using Blorc.PatternFly.Components.TextArea
+@using Blorc.PatternFly.Components.TextInput
+
+<Metadata ComponentName="Input group" />
+
+<section class="ws-section ws-live-demo">
+    <Example Title="Simple input group">
+        <InputGroup>
+            <Button Variant="ButtonVariant.Secondary">
+                Button
+            </Button>
+            <TextArea Label="textarea with buttons" />
+            <Button Variant="ButtonVariant.Tertiary">Button</Button>
+        </InputGroup>
+        <br />
+        <br />
+        <InputGroup>
+            <TextArea Label="textarea with button" />
+            <Button Variant="ButtonVariant.Tertiary">
+                Button
+            </Button>
+        </InputGroup>
+        <br />
+        <br />
+        <InputGroup>
+            <Button Variant="ButtonVariant.Primary">
+                Button
+            </Button>
+            <Button variant="ButtonVariant.Secondary">Button</Button>
+            <TextArea Label="textarea with 3 buttons" />
+            <Button variant="ButtonVariant.Tertiary">Button</Button>
+        </InputGroup>
+        <br />
+        <br />
+        @*<InputGroup>
+                <Dropdown onSelect={this.onSelect}
+                          toggle={
+                  <DropdownToggle onToggle={this.onToggle}>
+                    {this.state.selected ? this.state.selected : 'Dropdown'}
+                  </DropdownToggle>
+                }
+                isOpen={this.state.isOpen}
+                dropdownItems={[
+                  <DropdownItem key="opt-1" value="Option 1" component="button">
+                    Option 1
+                  </DropdownItem>,
+                  <DropdownItem key="opt-2" value="Option 2" component="button">
+                    Option 2
+                  </DropdownItem>,
+                  <DropdownItem key="opt-3" value="Option 3" component="button">
+                    Option 3
+                  </DropdownItem>
+                ]}
+              >
+                Dropdown
+              </Dropdown>
+                <TextInput id="textInput3" aria-label="input with dropdown and button" />
+                <Button id="inputDropdownButton1">Button</Button>
+            </InputGroup>*@
+        <br />
+        <br />
+        <InputGroup>
+            <InputGroupText>
+                <DollarSignIcon />
+            </InputGroupText>
+            <TextInput Type="number" Label="Dollar amount input example" />
+            <InputGroupText>.00</InputGroupText>
+        </InputGroup>
+        <br />
+        <br />
+        <InputGroup>
+            <TextInput Type="email" Label="email input field" />
+            <InputGroupText >@@example.com</InputGroupText>
+        </InputGroup>
+        <br />
+        <br />
+        <InputGroup>
+            <InputGroupText Label="Email">
+                <AtIcon />
+            </InputGroupText>
+            <TextInput IsValid="false" Type="email" Label="Error state username example" />
+        </InputGroup>
+        <br />
+        <br />
+        <InputGroup>
+            <InputGroupText Component="label" HtmlFor="textInput9">
+                <CalendarAltIcon />
+            </InputGroupText>
+            <TextInput Type="date" Label="Date input example" />
+        </InputGroup>
+        <br />
+        <br />
+        <InputGroup>
+            <TextInput Type="search" Label="search input example" />
+            <Button Variant="ButtonVariant.Tertiary" Label="search button for search input">
+                <SearchIcon />
+            </Button>
+        </InputGroup>
+        <br />
+        <br />
+        @*<InputGroup>
+            <TextInput Type="search" Label="input example with popover" />
+            <Popover aria-label="popover example"
+                     position={PopoverPosition.top}
+                     bodyContent="This field is an example of input group with popover">
+                <Button variant="ButtonVariant.Tertiary" Label="popover for input">
+                    <QuestionCircleIcon />
+                </Button>
+            </Popover>
+        </InputGroup>*@
+    </Example>
+</section>
+
+@functions {
+
+}
+

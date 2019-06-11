@@ -1,0 +1,104 @@
+﻿@page "/components/progress"
+
+@using Blorc.PatternFly.Components.Progress
+
+<Metadata ComponentName="Progress" />
+
+<section class="ws-section ws-live-demo">
+
+    <Example Title="Simple progress">
+        <Progress Value="33"
+                  Title="Title" />
+    </Example>
+
+    <Example Title="Simple (small)">
+        <Progress Value="33"
+                  Title="Title"
+                  Size="ProgressSize.Small" />
+    </Example>
+
+    <Example Title="Simple (large)">
+        <Progress Value="33"
+                  Title="Title"
+                  Size="ProgressSize.Large" />
+    </Example>
+
+    <Example Title="Progress (outside)">
+        <Progress Value="33"
+                  Title="Title"
+                  MeasureLocation="ProgressMeasureLocation.Outside" />
+    </Example>
+
+    <Example Title="Progress (inside)">
+        <Progress Value="33"
+                  Title="Title"
+                  MeasureLocation="ProgressMeasureLocation.Inside" />
+    </Example>
+
+    <Example Title="Progress (success)">
+        <Progress Value="33"
+                  Title="Title"
+                  Variant="ProgressVariant.Success" />
+    </Example>
+
+    <Example Title="Progress (failure)">
+        <Progress Value="33"
+                  Title="Title"
+                  Variant="ProgressVariant.Danger" />
+    </Example>
+
+    <Example Title="Progress (inside success)">
+        <Progress Value="33"
+                  Title="Title"
+                  MeasureLocation="ProgressMeasureLocation.Inside"
+                  Variant="ProgressVariant.Success" />
+    </Example>
+
+    <Example Title="Progress (outside failure)">
+        <Progress Value="33"
+                  Title="Title"
+                  MeasureLocation="ProgressMeasureLocation.Outside"
+                  Variant="ProgressVariant.Danger" />
+    </Example>
+
+    <Example Title="Progress (single line)">
+        <Progress Value="33"
+                  MeasureLocation="ProgressMeasureLocation.Outside" />
+    </Example>
+
+    <Example Title="Progress (no measure)">
+        <Progress Value="33"
+                  Title="Title"
+                  MeasureLocation="ProgressMeasureLocation.None" />
+    </Example>
+
+    <Example Title="Progress (failure + no measure)">
+        <Progress Value="33"
+                  Title="Title"
+                  MeasureLocation="ProgressMeasureLocation.None"
+                  Variant="ProgressVariant.Danger" />
+    </Example>
+
+    <Example Title="Progress (finite steps)">
+        <Progress Value="2"
+                  Max="5"
+                  Title="Title"
+                  MeasureLocation="ProgressMeasureLocation.Top"
+                  Label="2 of 5"
+                  ValueText="2 of 5" />
+    </Example>
+
+    <Example Title="Progress (step instructions)">
+        <Progress Value="2"
+                  Max="5"
+                  Title="Title"
+                  MeasureLocation="ProgressMeasureLocation.Top"
+                  Label="Step 2: Copying files" 
+                  ValueText="Step 2: Copying files" />
+    </Example>
+</section>
+
+@functions {
+
+}
+

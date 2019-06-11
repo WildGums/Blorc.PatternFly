@@ -1,0 +1,31 @@
+@inherits LayoutComponentBase
+
+@using Blorc.Dom.Injectors
+@using Blorc.Services
+
+<div class="sidebar">
+    <NavMenu />
+</div>
+
+<div class="main">
+    <div class="top-row px-4">
+        <a href="https://github.com/wildgums/Blorc.patternfly" target="_blank" class="ml-md-auto">About</a>
+    </div>
+
+    <div class="content px-4">
+        @Body
+    </div>
+</div>
+
+@functions
+{
+    [Inject]
+    public IDocumentService DocumentService { get; set; }
+
+    protected override void OnInit()
+    {
+        base.OnInit();
+
+        DocumentService.InjectHead(new Css("/patternfly/patternfly.css"));
+    }
+}

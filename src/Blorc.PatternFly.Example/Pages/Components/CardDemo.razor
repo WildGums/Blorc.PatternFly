@@ -1,0 +1,68 @@
+﻿@page "/components/card"
+
+@using Blorc.PatternFly.Components.Card
+
+<Metadata ComponentName="Card" />
+
+<section class="ws-section ws-live-demo">
+    <Example Title="Simple card">
+        <Card>
+            <CardHeader>Header</CardHeader>
+            <CardBody>Body</CardBody>
+            <CardFooter>Footer</CardFooter>
+        </Card>
+    </Example>
+
+    <Example Title="Card with no footer">
+        <Card>
+            <CardHeader>Header</CardHeader>
+            <CardBody>This card has no footer</CardBody>
+        </Card>
+    </Example>
+
+    <Example Title="Card with no header">
+        <Card>
+            <CardBody>This card has no header</CardBody>
+            <CardFooter>Footer</CardFooter>
+        </Card>
+    </Example>
+
+    <Example Title="Card with only a content section">
+        <Card>
+            <CardBody>Body</CardBody>
+        </Card>
+    </Example>
+
+    <Example Title="Card with multiple body sections">
+        <Card>
+            <CardHeader>Header</CardHeader>
+            <CardBody>Body</CardBody>
+            <CardBody>Body</CardBody>
+            <CardBody>Body</CardBody>
+            <CardFooter>Footer</CardFooter>
+        </Card>
+    </Example>
+
+    <Example Title="Card with only one body that fills">
+        <Card>
+            <CardHeader>Header</CardHeader>
+            <CardBody IsFilled="false">Body pf-m-no-fill</CardBody>
+            <CardBody IsFilled="false">Body pf-m-no-fill</CardBody>
+            <CardBody>Body</CardBody>
+            <CardFooter>Footer</CardFooter>
+        </Card>
+    </Example>
+
+    <Example Title="Card hover example">
+        <Card IsHoverable="true">
+            <CardHeader>Header</CardHeader>
+            <CardBody>Body</CardBody>
+            <CardFooter>Footer</CardFooter>
+        </Card>
+    </Example>
+</section>
+
+@functions {
+
+}
+

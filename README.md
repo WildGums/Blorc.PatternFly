@@ -1,8 +1,8 @@
-# Blazor.PatternFly
+# Blorc.PatternFly
 
 Blazor wrappers for [PatternFly](https://www.patternfly.org/).
 
-To view the latest *develop* branch in action, visit the GitHub pages: http://blazorc-patternfly.wildgums.com/
+To view the latest *develop* branch in action, visit the GitHub pages: http://blorc-patternfly.wildgums.com/
 
 The ultimate goal of this library is to wrap all PatternFly components available.
 
@@ -60,7 +60,7 @@ The ultimate goal of this library is to wrap all PatternFly components available
 
 ## Examples
 
-http://blazorc-patternfly.wildgums.com/
+http://blorc-patternfly.wildgums.com/
 
 ## Contributing
 
@@ -70,6 +70,6 @@ http://blazorc-patternfly.wildgums.com/
 
     `npm install patternfly --save`
 
-- Update the following files and folders in `Blazorc.PatternFly\content\patternfly\` with the files and folders in  `react\node_modules\@patternfly\patternfly\` 
+- Update the following files and folders in `Blorc.PatternFly\content\patternfly\` with the files and folders in  `react\node_modules\@patternfly\patternfly\` 
     - patternfly.css 
     - assets

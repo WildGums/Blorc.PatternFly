@@ -1,0 +1,38 @@
+﻿@page "/components/alert"
+
+@using Blorc.PatternFly.Components.Alert
+
+<Metadata ComponentName="Alert" />
+
+<section class="ws-section ws-live-demo">
+    <Example Title="Alert types">
+        <Alert Title="Info Alert" AlertType="@AlertType.Info" />
+        <br />
+        <Alert Title="Success Alert" AlertType="@AlertType.Success" />
+        <br />
+        <Alert Title="Warning Alert" AlertType="@AlertType.Warning" />
+        <br />
+        <Alert Title="Danger Alert" AlertType="@AlertType.Danger" />
+    </Example>
+</section>
+
+<br />
+
+<section class="ws-section ws-live-demo">
+    <Example Title="Alert variations">
+        <Alert Title="Info Alert" AlertType="@AlertType.Success" ShowCloseActionButton="true">
+            <Description>
+                <p> Success alert description. <a href="#">This is a link.</a></p>
+            </Description>
+        </Alert>
+        <br />
+        <Alert Title="Info Alert" AlertType="@AlertType.Success">
+            <ActionContent>
+                <button class="pf-c-button pf-m-link">
+                    Action Button
+                </button>
+            </ActionContent>
+        </Alert>
+    </Example>
+</section>
+

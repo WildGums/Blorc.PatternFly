@@ -1,0 +1,58 @@
+﻿@page "/components/switch"
+
+@using Blorc.PatternFly.Components.Switch
+
+<Metadata ComponentName="Switch" />
+
+<section class="ws-section ws-live-demo">
+    <Example Title="Simple switch">
+        <Switch ref="simpleSwitch"
+                IsChecked="true"
+                OnChange="@OnSimpleSwitchIsCheckedChanged" />
+    </Example>
+
+    <Example Title="Simple (no labels)">
+        <Switch ref="noLabelsSwitch"
+                IsChecked="true" />
+    </Example>
+
+    <Example Title="Simple (disabled)">
+        <Switch IsChecked="true"
+                IsDisabled="true"
+                Label="Message when on" />
+        <br />
+        <Switch IsChecked="false"
+                IsDisabled="true"
+                Label="Message when off" />
+        <br />
+        <Switch IsChecked="true"
+                IsDisabled="true" />
+        <br />
+        <Switch IsChecked="false"
+                IsDisabled="true" />
+    </Example>
+</section>
+
+@functions
+{
+    private Switch simpleSwitch;
+    private Switch noLabelsSwitch;
+
+    private void OnSimpleSwitchIsCheckedChanged()
+    {
+        UpdateSimpleSwitch();
+    }
+
+    private void UpdateSimpleSwitch()
+    {
+        simpleSwitch.Label = simpleSwitch.IsChecked ? "Message when on" : "Message when off";
+    }
+
+    protected override void OnAfterRender()
+    {
+        base.OnAfterRender();
+
+        UpdateSimpleSwitch();
+    }
+}
+

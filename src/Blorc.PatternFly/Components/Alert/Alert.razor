@@ -1,0 +1,34 @@
+﻿@using Microsoft.AspNetCore.Components
+
+@inherits Blorc.PatternFly.Components.Alert.AlertComponent
+
+@if (!IsClosed)
+{
+    <div class="pf-c-alert @GetAlertClass()" aria-label="Information Alert">
+        <div class="pf-c-alert__icon">
+            <i class="fas @GetAlertIcon()" aria-hidden="true"></i>
+        </div>
+        <h4 class="pf-c-alert__title">
+            <span class="pf-screen-reader">Info alert:</span>
+            @Title
+        </h4>
+        
+        @if (ShowCloseActionButton)
+        {
+            <div class="pf-c-alert__action">
+                <button class="pf-c-button pf-m-plain" aria-label="Close Success Alert: Success Alert Title" onclick=@(()=>Close())>
+                    <i class="fas fa-times" aria-hidden="true"></i></button>
+            </div>
+        }
+        else if (ActionContent != null)
+        {
+            <div class="pf-c-alert__action">
+                @ActionContent
+            </div>
+        }
+
+        <div class="pf-c-alert__description">
+            @Description
+        </div>
+    </div>
+}

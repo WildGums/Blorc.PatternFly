@@ -1,0 +1,33 @@
+﻿@page "/components/nav"
+
+@using Blorc.PatternFly.Components.Navigation
+
+<Metadata ComponentName="Nav" />
+
+<Navigation ref="Navigation">
+    <Items>
+        <NavigationExpandableSection Title="Expandable Item 1" Parent="@Navigation" ref="NavigationExpandableSection1">
+            <Items>
+                <NavigationItem Title="Subnav 1 link 1" Link="components/nav" Parent="@NavigationExpandableSection1" />
+                <NavigationItem Title="Subnav 1 link 2" Link="components/nav" Parent="@NavigationExpandableSection1" />
+            </Items>
+        </NavigationExpandableSection>
+
+        <NavigationExpandableSection Title="Expandable Item 2" Parent="@Navigation" ref="NavigationExpandableSection2">
+            <Items>
+                <NavigationItem Title="Subnav 2 link 1" Link="components/nav" Parent="@NavigationExpandableSection2" />
+                <NavigationItem Title="Subnav 2 link 2" Link="components/nav" Parent="@NavigationExpandableSection2" />
+            </Items>
+        </NavigationExpandableSection>
+    </Items>
+</Navigation>
+
+@functions
+{
+    Navigation Navigation = new Navigation();
+
+    NavigationExpandableSection NavigationExpandableSection2 = new NavigationExpandableSection();
+
+    NavigationExpandableSection NavigationExpandableSection1 = new NavigationExpandableSection();
+}
+

@@ -1,0 +1,43 @@
+﻿@page "/components/breadcrumb"
+
+@using Blorc.PatternFly.Components.Breadcrumb;
+
+<Metadata ComponentName="Breadcrumb" />
+
+<section class="ws-section ws-live-demo">
+    <Example Title="Simple breadcrumb">
+        <Breadcrumb>
+            <BreadcrumbItem To="/components/breadcrumb/#">Section Home</BreadcrumbItem>
+            <BreadcrumbItem To="/components/breadcrumb/#">Section Title</BreadcrumbItem>
+            <BreadcrumbItem To="/components/breadcrumb/#">Section Title</BreadcrumbItem>
+            <BreadcrumbItem To="/components/breadcrumb/#" IsActive="true">
+                Section Landing
+            </BreadcrumbItem>
+        </Breadcrumb>
+    </Example>
+
+    <Example Title="Breadcrumb without home link">
+        <Breadcrumb>
+            <BreadcrumbItem>Section Home</BreadcrumbItem>
+            <BreadcrumbItem To="/components/breadcrumb/#">Section Title</BreadcrumbItem>
+            <BreadcrumbItem To="/components/breadcrumb/#">Section Title</BreadcrumbItem>
+            <BreadcrumbItem To="/components/breadcrumb/#">Section Title</BreadcrumbItem>
+            <BreadcrumbItem To="/components/breadcrumb/#">Section Title</BreadcrumbItem>
+            <BreadcrumbItem To="/components/breadcrumb/#" IsActive="true">
+                Section Landing
+            </BreadcrumbItem>
+        </Breadcrumb>
+    </Example>
+
+    <Example Title="Breadcrumb with heading">
+        <Breadcrumb>
+            <BreadcrumbItem To="/components/breadcrumb/#">Section Home</BreadcrumbItem>
+            <BreadcrumbItem To="/components/breadcrumb/#">Section Title</BreadcrumbItem>
+            <BreadcrumbItem To="/components/breadcrumb/#">Section Title</BreadcrumbItem>
+            <BreadcrumbItem To="/components/breadcrumb/#">Section Title</BreadcrumbItem>
+            <BreadcrumbHeading To="/components/breadcrumb/#">Section Landing</BreadcrumbHeading>
+        </Breadcrumb>
+    </Example>
+</section>
+
+

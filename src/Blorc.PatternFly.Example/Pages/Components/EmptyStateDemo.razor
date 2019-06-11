@@ -1,0 +1,93 @@
+﻿@page "/components/empty-state"
+
+@using Blorc.PatternFly.Components.Button
+@using Blorc.PatternFly.Components.EmptyState
+@using Blorc.PatternFly.Components.Icon
+@using Blorc.PatternFly.Components.Title
+
+<Metadata ComponentName="Empty state" />
+
+<section class="ws-section ws-live-demo">
+    <Example Title="Empty state">
+        <EmptyState Variant="EmptyStateVariant.Full">
+            <EmptyStateIcon Icon="Cubes" />
+
+            <Title HeadingLevel="h5" Size="lg">
+                Empty State
+            </Title>
+
+            <EmptyStateBody>
+                This represents an the empty state pattern in Patternfly 4. Hopefully it's simple enough to use but flexible
+                enough to meet a variety of needs.
+            </EmptyStateBody>
+
+            <Button Variant="ButtonVariant.Primary">Primary Action</Button>
+
+            <EmptyStateSecondaryActions>
+                <Button Variant="ButtonVariant.Link">Multiple</Button>
+                <Button Variant="ButtonVariant.Link">Action Buttons</Button>
+                <Button Variant="ButtonVariant.Link">Can</Button>
+                <Button Variant="ButtonVariant.Link">Go here</Button>
+                <Button Variant="ButtonVariant.Link">In the secondary</Button>
+                <Button Variant="ButtonVariant.Link">Action area</Button>
+            </EmptyStateSecondaryActions>
+        </EmptyState>
+    </Example>
+
+    <Example Title="Empty state small">
+        <EmptyState Variant="EmptyStateVariant.Small">
+            <EmptyStateIcon Icon="Cubes" />
+
+            <Title HeadingLevel="h5" Size="lg">
+                Empty State
+            </Title>
+
+            <EmptyStateBody>
+                This represents an the empty state pattern in Patternfly 4. Hopefully it's simple enough to use but flexible
+                enough to meet a variety of needs.
+            </EmptyStateBody>
+
+            <Button Variant="ButtonVariant.Primary">Primary Action</Button>
+
+            <EmptyStateSecondaryActions>
+                <Button Variant="ButtonVariant.Link">Multiple</Button>
+                <Button Variant="ButtonVariant.Link">Action Buttons</Button>
+                <Button Variant="ButtonVariant.Link">Can</Button>
+                <Button Variant="ButtonVariant.Link">Go here</Button>
+                <Button Variant="ButtonVariant.Link">In the secondary</Button>
+                <Button Variant="ButtonVariant.Link">Action area</Button>
+            </EmptyStateSecondaryActions>
+        </EmptyState>
+    </Example>
+
+    <Example Title="Empty state large">
+        <EmptyState Variant="EmptyStateVariant.Large">
+            <EmptyStateIcon Icon="Cubes" />
+
+            <Title HeadingLevel="h5" Size="lg">
+                Empty State
+            </Title>
+
+            <EmptyStateBody>
+                This represents an the empty state pattern in Patternfly 4. Hopefully it's simple enough to use but flexible
+                enough to meet a variety of needs.
+            </EmptyStateBody>
+
+            <Button Variant="ButtonVariant.Primary">Primary Action</Button>
+
+            <EmptyStateSecondaryActions>
+                <Button Variant="ButtonVariant.Link">Multiple</Button>
+                <Button Variant="ButtonVariant.Link">Action Buttons</Button>
+                <Button Variant="ButtonVariant.Link">Can</Button>
+                <Button Variant="ButtonVariant.Link">Go here</Button>
+                <Button Variant="ButtonVariant.Link">In the secondary</Button>
+                <Button Variant="ButtonVariant.Link">Action area</Button>
+            </EmptyStateSecondaryActions>
+        </EmptyState>
+    </Example>
+</section>
+
+@functions {
+
+}
+

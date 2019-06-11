@@ -1,0 +1,271 @@
+﻿@page "/components/dropdown"
+
+@using Blorc.PatternFly.Components.Dropdown
+@using Blorc.PatternFly.Components.Icon
+
+<Metadata ComponentName="Dropdown" />
+
+<section class="ws-section ws-live-demo">
+    <Example Title="Simple dropdown">
+        <Dropdown>
+            <Toggle>
+                <DropdownToggle>Dropdown</DropdownToggle>
+            </Toggle>
+
+            <Items>
+                <DropdownItem Key="link">Link</DropdownItem>
+                <DropdownItem Key="action" Component="button">
+                    Action
+                </DropdownItem>
+                <DropdownItem Key="disabled link" IsDisabled="true">
+                    Disabled Link
+                </DropdownItem>
+                <DropdownItem Key="disabled action" IsDisabled="true" Component="button">
+                    Disabled Action
+                </DropdownItem>
+                <Separator Key="separator" />
+                <DropdownItem Key="separated link">Separated Link</DropdownItem>
+                <DropdownItem Key="separated action" Component="button">
+                    Separated Action
+                </DropdownItem>
+            </Items>
+        </Dropdown>
+    </Example>
+
+    <Example Title="Dropdown with groups">
+        <Dropdown IsGrouped="true">
+            <Toggle>
+                <DropdownToggle>Dropdown</DropdownToggle>
+            </Toggle>
+
+            <Items>
+                <DropdownGroup Key="group 1">
+                    <DropdownItem Key="group 1 link">Link</DropdownItem>
+                    <DropdownItem Key="group 1 action" Component="button">
+                        Action
+                    </DropdownItem>
+                </DropdownGroup>
+                <DropdownGroup Label="Group 2" Key="group 2">
+                    <DropdownItem Key="group 2 link">Group 2 Link</DropdownItem>
+                    <DropdownItem Key="group 2 action" Component="button">
+                        Group 2 Action
+                    </DropdownItem>
+                </DropdownGroup>
+                <DropdownGroup Label="Group 3" Key="group 3">
+                    <DropdownItem Key="group 3 link">Group 3 Link</DropdownItem>
+                    <DropdownItem Key="group 3 action" Component="button">
+                        Group 3 Action
+                    </DropdownItem>
+                </DropdownGroup>
+            </Items>
+        </Dropdown>
+    </Example>
+
+    <Example Title="Dropdown (disabled)">
+        <Dropdown>
+            <Toggle>
+                <DropdownToggle IsDisabled="true">Dropdown</DropdownToggle>
+            </Toggle>
+
+            <Items>
+                <DropdownItem Key="link">Link</DropdownItem>
+                <DropdownItem Key="action" Component="button">
+                    Action
+                </DropdownItem>
+                <DropdownItem Key="disabled link" IsDisabled="true">
+                    Disabled Link
+                </DropdownItem>
+                <DropdownItem Key="disabled action" IsDisabled="true" Component="button">
+                    Disabled Action
+                </DropdownItem>
+                <Separator Key="separator" />
+                <DropdownItem Key="separated link">Separated Link</DropdownItem>
+                <DropdownItem Key="separated action" Component="button">
+                    Separated Action
+                </DropdownItem>
+            </Items>
+        </Dropdown>
+    </Example>
+
+    <Example Title="Dropdown (position right)">
+        <Dropdown Position="DropdownPosition.Right">
+            <Toggle>
+                <DropdownToggle>Dropdown</DropdownToggle>
+            </Toggle>
+
+            <Items>
+                <DropdownItem Key="link">Link</DropdownItem>
+                <DropdownItem Key="action" Component="button">
+                    Action
+                </DropdownItem>
+                <DropdownItem Key="disabled link" IsDisabled="true">
+                    Disabled Link
+                </DropdownItem>
+                <DropdownItem Key="disabled action" IsDisabled="true" Component="button">
+                    Disabled Action
+                </DropdownItem>
+                <Separator Key="separator" />
+                <DropdownItem Key="separated link">Separated Link</DropdownItem>
+                <DropdownItem Key="separated action" Component="button">
+                    Separated Action
+                </DropdownItem>
+            </Items>
+        </Dropdown>
+    </Example>
+
+    <Example Title="Dropdown (direction up)">
+        <Dropdown Direction="DropdownDirection.Up">
+            <Toggle>
+                <DropdownToggle>Dropdown</DropdownToggle>
+            </Toggle>
+
+            <Items>
+                <DropdownItem Key="link">Link</DropdownItem>
+                <DropdownItem Key="action" Component="button">
+                    Action
+                </DropdownItem>
+                <DropdownItem Key="disabled link" IsDisabled="true">
+                    Disabled Link
+                </DropdownItem>
+                <DropdownItem Key="disabled action" IsDisabled="true" Component="button">
+                    Disabled Action
+                </DropdownItem>
+                <Separator Key="separator" />
+                <DropdownItem Key="separated link">Separated Link</DropdownItem>
+                <DropdownItem Key="separated action" Component="button">
+                    Separated Action
+                </DropdownItem>
+            </Items>
+        </Dropdown>
+    </Example>
+
+    <Example Title="Dropdown with kebab">
+        <Dropdown IsPlain="true">
+            <Toggle>
+                <KebabToggle />
+            </Toggle>
+
+            <Items>
+                <DropdownItem Key="link">Link</DropdownItem>
+                <DropdownItem Key="action" Component="button">
+                    Action
+                </DropdownItem>
+                <DropdownItem Key="disabled link" IsDisabled="true">
+                    Disabled Link
+                </DropdownItem>
+                <DropdownItem Key="disabled action" IsDisabled="true" Component="button">
+                    Disabled Action
+                </DropdownItem>
+                <Separator Key="separator" />
+                <DropdownItem Key="separated link">Separated Link</DropdownItem>
+                <DropdownItem Key="separated action" Component="button">
+                    Separated Action
+                </DropdownItem>
+            </Items>
+        </Dropdown>
+    </Example>
+
+    <Example Title="Dropdown (icon only)">
+        <Dropdown IsPlain="true">
+            <Toggle>
+                <DropdownToggle Icon="Th" />
+            </Toggle>
+
+            <Items>
+                <DropdownItem Key="link">Link</DropdownItem>
+                <DropdownItem Key="action" Component="button">
+                    Action
+                </DropdownItem>
+                <DropdownItem Key="disabled link" IsDisabled="true">
+                    Disabled Link
+                </DropdownItem>
+                <DropdownItem Key="disabled action" IsDisabled="true" Component="button">
+                    Disabled Action
+                </DropdownItem>
+                <Separator Key="separator" />
+                <DropdownItem Key="separated link">Separated Link</DropdownItem>
+                <DropdownItem Key="separated action" Component="button">
+                    Separated Action
+                </DropdownItem>
+            </Items>
+        </Dropdown>
+    </Example>
+
+    <Example Title="Split button">
+        <Dropdown>
+            <Toggle>
+                <DropdownToggle>
+                    <SplitButtonItems>
+                        <DropdownToggleCheckbox Id="example-checkbox-1" />
+                    </SplitButtonItems>
+                </DropdownToggle>
+            </Toggle>
+
+            <Items>
+                <DropdownItem Key="link">Link</DropdownItem>
+                <DropdownItem Key="action" Component="button">
+                    Action
+                </DropdownItem>
+                <DropdownItem Key="disabled link" IsDisabled="true">
+                    Disabled Link
+                </DropdownItem>
+                <DropdownItem Key="disabled action" IsDisabled="true" Component="button">
+                    Disabled Action
+                </DropdownItem>
+                <Separator Key="separator" />
+                <DropdownItem Key="separated link">Separated Link</DropdownItem>
+                <DropdownItem Key="separated action" Component="button">
+                    Separated Action
+                </DropdownItem>
+            </Items>
+        </Dropdown>
+    </Example>
+
+    <Example Title="Split button (disabled)">
+        <Dropdown>
+            <Toggle>
+                <DropdownToggle IsDisabled="true">
+                    <SplitButtonItems>
+                        <DropdownToggleCheckbox Id="example-checkbox-2"
+                                                IsDisabled="true" />
+                    </SplitButtonItems>
+                </DropdownToggle>
+            </Toggle>
+
+            <Items>
+                <DropdownItem Key="link">Link</DropdownItem>
+                <DropdownItem Key="action" Component="button">
+                    Action
+                </DropdownItem>
+                <DropdownItem Key="disabled link" IsDisabled="true">
+                    Disabled Link
+                </DropdownItem>
+                <DropdownItem Key="disabled action" IsDisabled="true" Component="button">
+                    Disabled Action
+                </DropdownItem>
+                <Separator Key="separator" />
+                <DropdownItem Key="separated link">Separated Link</DropdownItem>
+                <DropdownItem Key="separated action" Component="button">
+                    Separated Action
+                </DropdownItem>
+            </Items>
+        </Dropdown>
+    </Example>
+
+    <Example Title="Dropdown panel">
+        <Dropdown>
+            <Toggle>
+                <DropdownToggle>Expanded Dropdown</DropdownToggle>
+            </Toggle>
+
+            <ChildContent>
+                <div>[Panel contents here]</div>
+            </ChildContent>
+        </Dropdown>
+    </Example>
+</section>
+
+@functions {
+
+}
+

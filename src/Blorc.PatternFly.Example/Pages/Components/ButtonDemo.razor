@@ -1,0 +1,54 @@
+﻿@page "/components/button"
+
+@using Blorc.PatternFly.Components.Button
+@using Blorc.PatternFly.Components.Icon
+
+<Metadata ComponentName="Button" />
+
+<section class="ws-section ws-live-demo">
+    <Example Title="Block button">
+        <Button isBlock>Block level button</Button>
+    </Example>
+
+    <Example Title="Button variants">
+        <Button Variant="ButtonVariant.Primary">Primary</Button>
+        <Button Variant="ButtonVariant.Secondary">Secondary</Button>
+        <Button Variant="ButtonVariant.Tertiary">Tertiary</Button>
+        <Button Variant="ButtonVariant.Danger">Danger</Button>
+        <Button Variant="ButtonVariant.Link">
+            <PlusCircleIcon /> Link button
+        </Button>
+        <Button Variant="ButtonVariant.Plain" Label="Action">
+            <TimesIcon />
+        </Button>
+        <Button Variant="ButtonVariant.Link">
+            Inline Link Button
+        </Button>
+    </Example>
+
+    <Example Title="Link button">
+        <Button Component="a"
+                Href="https://pf-next.com/"
+                Variant="ButtonVariant.Primary">
+            Link to Core Docs
+        </Button>
+
+        <Button Component="a"
+                Href="https://pf-next.com/"
+                Variant="ButtonVariant.Secondary">
+            Secondary Link to Core Docs
+        </Button>
+
+        <Button Component="a"
+                IsDisabled="true"
+                Href="https://pf-next.com/"
+                Variant="ButtonVariant.Tertiary">
+            Tertiary Link to Core Docs
+        </Button>
+    </Example>
+</section>
+
+@functions {
+
+}
+

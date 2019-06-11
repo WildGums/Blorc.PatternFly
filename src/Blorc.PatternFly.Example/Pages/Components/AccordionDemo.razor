@@ -1,0 +1,39 @@
+﻿@page "/components/accordion"
+
+@using Blorc.PatternFly.Components.Accordion
+
+<Metadata ComponentName="Accordion" />
+
+<Accordion ref="Accordion">
+    <Items>
+        <AccordionItem Title="Item 0" Index="0" Parent="@Accordion">
+            <Content>
+                This is the item 0
+            </Content>
+        </AccordionItem>
+
+        <AccordionItem Title="Item 1" Index="1" Parent="@Accordion">
+            <Content>
+                This is the item 1
+            </Content>
+        </AccordionItem>
+
+        <AccordionItem Title="Item 2" Index="2" Parent="@Accordion">
+            <Content>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie lorem lacinia dolor aliquet faucibus.
+                Suspendisse gravida imperdiet accumsan. Aenean auctor lorem justo, vitae tincidunt enim blandit vel. Aenean quis tempus dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit Bla Bla Blee Bla.
+            </Content>
+        </AccordionItem>
+
+        <AccordionItem Title="Item 3" Index="3" Parent="@Accordion">
+            <Content>
+                This is the item 2
+            </Content>
+        </AccordionItem>
+    </Items>
+</Accordion>
+
+@functions {
+    Accordion Accordion = new Accordion();
+}
+

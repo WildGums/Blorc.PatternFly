@@ -1,0 +1,30 @@
+﻿@inherits Blorc.PatternFly.Components.TextArea.TextAreaComponent
+
+@CustomRender
+
+@functions
+{
+    private RenderFragment CustomRender;
+
+    private RenderFragment CreateComponent() => builder =>
+    {
+        builder.OpenElement(0, "textarea");
+
+        builder.AddAttribute(1, "aria-label", Label);
+        builder.AddAttribute(2, "class", "pf-c-form-control");
+
+        builder.AddAttribute(3, "aria-invalid", IsInvalid.ToString().ToLower());
+        builder.AddAttribute(4, "required", IsRequired.ToString().ToLower());
+
+        builder.AddAttribute(5, "bind", "@Value");
+
+        builder.CloseElement();
+    };
+
+    protected override void OnInit()
+    {
+        base.OnInit();
+
+        CustomRender = CreateComponent();
+    }
+}

@@ -1,0 +1,30 @@
+﻿@page "/components/checkbox"
+
+@using Blorc.PatternFly.Components.Checkbox
+
+<Metadata ComponentName="Checkbox" />
+
+<section class="ws-section ws-live-demo">
+
+    <Example Title="Controlled checkbox">
+        <Checkbox Name="pf-version"
+                  Label="Controlled checkbox 1" />
+        <Checkbox Name="pf-version"
+                  Label="Controlled checkbox 2" />
+    </Example>
+
+    <Example Title="Uncontrolled checkbox">
+        <Checkbox Label="Uncontrolled checkbox" />
+        <Checkbox Label="Uncontrolled checkbox" />
+    </Example>
+
+    <Example Title="Disabled checkbox">
+        <Checkbox IsChecked="true"
+                  IsDisabled="true"
+                  Label="Disabled checkbox" />
+        <Checkbox IsDisabled="true"
+                  Label="Disabled checkbox" />
+    </Example>
+
+</section>
+

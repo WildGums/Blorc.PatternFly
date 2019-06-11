@@ -1,0 +1,24 @@
+﻿@inherits Blorc.PatternFly.Components.Card.CardBodyComponent
+
+@CustomRender
+
+@functions
+{
+    private RenderFragment CustomRender;
+
+    private RenderFragment CreateComponent() => builder =>
+    {
+        builder.OpenElement(0, Component);
+        builder.AddAttribute(1, "class", Class);
+
+        builder.AddContent(2, ChildContent);
+        builder.CloseElement();
+    };
+
+    protected override void OnInit()
+    {
+        base.OnInit();
+
+        CustomRender = CreateComponent();
+    }
+}

@@ -1,0 +1,57 @@
+﻿@page "/components/about-modal"
+
+@using Blorc.PatternFly.Components.AboutModal
+@using Blorc.PatternFly.Components.Text
+
+<Metadata ComponentName="About modal" />
+
+<AboutModal ref="AboutModal" Title="Blorc.PatternFly.Example"
+            StrapLine="Trademark and copyright information here" 
+            BrandImageSrc="_content/Blorc.PatternFly/patternfly/assets/images/pf_mini_logo_white.svg" 
+            BrandImageAlt="Patternfly brand logo">
+    <Content>
+        <h2>The ultimate goal of this library is to wrap all PatternFly components available</h2>
+        <br />
+        <div class="pf-c-content"> <!--TODO: Add as component or as part of the component -->
+            <TextList component="dl">
+                <TextListItem component="dt">CFME Version</TextListItem>
+                <TextListItem component="dd">5.5.3.4.20102789036450</TextListItem>
+                <TextListItem component="dt">Cloudforms Version</TextListItem>
+                <TextListItem component="dd">4.1</TextListItem>
+                <TextListItem component="dt">Server Name</TextListItem>
+                <TextListItem component="dd">40DemoMaster</TextListItem>
+                <TextListItem component="dt">User Name</TextListItem>
+                <TextListItem component="dd">Administrator</TextListItem>
+                <TextListItem component="dt">User Role</TextListItem>
+                <TextListItem component="dd">EvmRole-super_administrator</TextListItem>
+                <TextListItem component="dt">Browser Version</TextListItem>
+                <TextListItem component="dd">601.2</TextListItem>
+                <TextListItem component="dt">Browser OS</TextListItem>
+                <TextListItem component="dd">Mac</TextListItem>
+            </TextList>
+        </div>
+    </Content>
+</AboutModal>
+
+<button class="pf-c-button pf-m-primary" onclick=@(()=> OnButtonClick())>
+    Show About Modal
+</button>
+
+<br />
+
+<Todo ComponentName="About modal" >
+    <TodoList>
+        <li>Customize Background Image</li>
+    </TodoList>
+</Todo>
+
+@functions
+{
+    AboutModal AboutModal { get; set; }
+
+    private void OnButtonClick()
+    {
+        AboutModal.Show();
+    }
+}
+

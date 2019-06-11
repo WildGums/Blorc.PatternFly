@@ -1,0 +1,29 @@
+﻿@using Microsoft.AspNetCore.Components
+@inherits Blorc.PatternFly.Components.Switch.SwitchComponent
+
+<label class="pf-c-switch" for="@InstanceId">
+    <input aria-label="@Label" 
+           id="@InstanceId" 
+           class="pf-c-switch__input" 
+           type="checkbox"
+           checked="@IsChecked"
+           onchange="@OnValueChanged"
+           disabled="@IsDisabled" />
+    <span class="pf-c-switch__toggle"></span>
+    <span class="pf-c-switch__label pf-m-on" aria-hidden="true">@Label</span>
+    <span class="pf-c-switch__label pf-m-off" aria-hidden="true">@Label</span>
+</label>
+
+@functions
+{
+    private void OnValueChanged(UIChangeEventArgs e)
+    {
+        IsChecked = (bool)e.Value;
+
+        var handler = OnChange;
+        if (handler != null)
+        {
+            handler();
+        }
+    }
+}

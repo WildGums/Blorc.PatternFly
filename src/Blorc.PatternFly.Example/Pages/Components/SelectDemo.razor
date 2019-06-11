@@ -1,0 +1,136 @@
+﻿@page "/components/select"
+
+@using Blorc.PatternFly.Components.Select
+
+<Metadata ComponentName="Select" />
+
+<section class="ws-section ws-live-demo">
+    <Example Title="Single select input">
+        <div>
+            <span id="title-id" hidden>
+                Title
+            </span>
+            <Select Variant="@SelectVariant.Single"
+                    Label="Select Input"
+                    AriaLabelledBy="title-id" ref="singleSelect" PlaceholderText="Choose...">
+                <Items>
+                    <SelectOption Key="1" Value="Mr" Parent="@singleSelect" />
+                    <SelectOption Key="2" Value="Miss" Parent="@singleSelect"/>
+                    <SelectOption Key="3" Value="Mrs" Parent="@singleSelect" IsDisabled="true"/>
+                    <SelectOption Key="4" Value="Ms" Parent="@singleSelect"/>
+                    <SelectOption Key="5" Value="Dr" Parent="@singleSelect"/>
+                    <SelectOption Key="6" Value="Other" Parent="@singleSelect"/>
+                </Items>
+            </Select>
+        </div>
+    </Example>
+
+    <Example Title="Checkbox select input">
+        <div>
+            <span id="checkbox-select-id" hidden>
+                Title
+            </span>
+            <Select Variant="@SelectVariant.Checkbox"
+                    Label="Select Input"
+                    IsExpanded="false"
+                    PlaceholderText="Filter by status"
+                    AriaLabelledBy="checkbox-select-id" ref="checkboxSelect">
+                <Items>
+                    <CheckboxSelectOption Key="0" Value="Active" Parent="@checkboxSelect"/>,
+                    <CheckboxSelectOption Key="1" Value="Cancelled" Parent="@checkboxSelect"/>,
+                    <CheckboxSelectOption Key="2" Value="Paused" Parent="@checkboxSelect"/>,
+                    <CheckboxSelectOption Key="3" Value="Warning" Parent="@checkboxSelect"/>,
+                    <CheckboxSelectOption Key="4" Value="Restarted" Parent="@checkboxSelect"/>
+                </Items>
+            </Select>
+        </div>
+    </Example>
+
+    <Example Title="Grouped checkbox select input">
+        <div>
+            <span id="grouped-checkbox-select-id" hidden>
+                Grouped Checkbox Title
+            </span>
+            <Select Variant="SelectVariant.Checkbox"
+                    Label="Grouped Checkbox Select Input"
+                    IsExpanded="false"
+                    PlaceholderText="Filter by status"
+                    AriaLabelledBy="grouped-checkbox-select-id"
+                    IsGrouped="true" ref="groupCheckBokSelect">
+                <Items>
+                    <CheckboxSelectGroup Label="Status" Key="group1">
+                        <CheckboxSelectOption Key="0" value="Running" Parent="@groupCheckBokSelect"/>
+                        <CheckboxSelectOption Key="1" value="Stopped" Parent="@groupCheckBokSelect"/>
+                        <CheckboxSelectOption Key="2" value="Down" Parent="@groupCheckBokSelect"/>
+                        <CheckboxSelectOption Key="3" value="Degraded" Parent="@groupCheckBokSelect"/>
+                        <CheckboxSelectOption Key="4" value="Needs Maintenence" Parent="@groupCheckBokSelect"/>
+                    </CheckboxSelectGroup>
+                    <CheckboxSelectGroup Label="Vendor Names" Key="group2">
+                        <CheckboxSelectOption Key="5" Value="Dell" Parent="@groupCheckBokSelect"/>
+                        <CheckboxSelectOption Key="6" Value="Samsung" IsDisabled="true" Parent="@groupCheckBokSelect"/>
+                        <CheckboxSelectOption Key="7" Value="Hewlett-Packard" Parent="@groupCheckBokSelect"/>
+                    </CheckboxSelectGroup>
+                </Items>
+            </Select>
+        </div>
+    </Example>
+
+    <Example Title="Typeahead select input">
+        <div>
+            <span id="typeahead-select-id" hidden>
+                Select a state
+            </span>
+            <Select Variant="SelectVariant.Typeahead"
+                    Label="Select a state"
+                    IsExpanded="false"
+                    AriaLabelledBy="typeahead-select-id"
+                    PlaceholderText="Select a state" ref="typeaheadSelect">
+                <Items>
+                    <SelectOption Key="0" Value="Alabama" Parent="@typeaheadSelect" />
+                    <SelectOption Key="1" Value="Florida" Parent="@typeaheadSelect"/>
+                    <SelectOption Key="2" Value="New Jersey" Parent="@typeaheadSelect"/>
+                    <SelectOption Key="3" Value="New Mexico" Parent="@typeaheadSelect"/>
+                    <SelectOption Key="4" Value="New York" Parent="@typeaheadSelect"/>
+                    <SelectOption Key="5" Value="North Carolina" Parent="@typeaheadSelect"/>
+                </Items>
+            </Select>
+        </div>
+    </Example>
+
+    <Example Title="Multiple typeahead select input">
+        <div>
+            <span id="multi-typeahead-select-id" hidden>
+                Select a state
+            </span>
+            <Select Variant="SelectVariant.TypeaheadMulti"
+                    Label="Select a state"
+                    IsExpanded="false"
+                    AriaLabelledBy="multi-typeahead-select-id"
+                    PlaceholderText="Select a state" ref="multiTypeaheadSelect">
+                <Items>
+                    <SelectOption Key="0" Value="Alabama" Parent="@multiTypeaheadSelect"/>
+                    <SelectOption Key="1" Value="Florida" Parent="@multiTypeaheadSelect"/>
+                    <SelectOption Key="2" Value="New Jersey" Parent="@multiTypeaheadSelect"/>
+                    <SelectOption Key="3" Value="New Mexico" Parent="@multiTypeaheadSelect"/>
+                    <SelectOption Key="4" Value="New York" Parent="@multiTypeaheadSelect"/>
+                    <SelectOption Key="5" Value="North Carolina" Parent="@multiTypeaheadSelect"/>
+                </Items>
+            </Select>
+        </div>
+    </Example>
+</section>
+
+@functions 
+{
+    Select singleSelect = new Select();
+    Select checkboxSelect = new Select();
+    Select groupCheckBokSelect = new Select();
+    Select typeaheadSelect = new Select();
+    Select multiTypeaheadSelect = new Select();
+    
+    private void OnSingleSelectInputSelectionChanged(object sender, EventArgs e)
+    {
+        Console.WriteLine("Selection changed");
+    }
+}
+

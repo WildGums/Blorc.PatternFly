@@ -1,0 +1,20 @@
+﻿@inherits Blorc.PatternFly.Components.Tabs.TabComponent
+
+@using Microsoft.AspNetCore.Components
+
+<li class="@Class">
+    <button class="pf-c-tabs__button" 
+            id="@UniqueLabelId" 
+            aria-controls="@UniqueSectionId"
+            onclick="@OnClick">
+        @Title
+    </button>
+</li>
+
+@functions
+{
+    private void OnClick()
+    {
+        Activate();
+    }
+}

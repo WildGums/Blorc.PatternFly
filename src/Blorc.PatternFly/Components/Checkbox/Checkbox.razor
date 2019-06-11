@@ -1,0 +1,29 @@
+﻿@inherits Blorc.PatternFly.Components.Checkbox.CheckboxComponent
+
+@using Microsoft.AspNetCore.Components
+
+<div class="pf-c-check">
+    <input name="@Name"
+           id="@InstanceId"
+           class="pf-c-check__input"
+           type="checkbox"
+           aria-invalid="@IsInvalid"
+           checked="@IsChecked"
+           onchange="@OnValueChanged"
+           disabled="@IsDisabled" />
+    <label class="pf-c-check__label" for="@InstanceId">@Label</label>
+</div>
+
+@functions
+{
+    private void OnValueChanged(UIChangeEventArgs e)
+    {
+        IsChecked = (bool)e.Value;
+
+        var handler = OnChange;
+        if (handler != null)
+        {
+            handler(this, EventArgs.Empty);
+        }
+    }
+}

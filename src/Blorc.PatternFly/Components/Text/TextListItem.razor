@@ -1,0 +1,26 @@
+﻿@inherits Blorc.PatternFly.Components.Text.TextListItemComponent
+
+@CustomRender
+
+@functions
+{
+    private RenderFragment CustomRender;
+
+    private RenderFragment CreateComponent() => builder =>
+    {
+        builder.OpenElement(0, Component);
+
+        builder.AddAttribute(1, "data-pf-content", "true");
+        builder.AddAttribute(2, "class", string.Empty);
+
+        builder.AddContent(3, ChildContent);
+        builder.CloseElement();
+    };
+
+    protected override void OnInit()
+    {
+        base.OnInit();
+
+        CustomRender = CreateComponent();
+    }
+}
