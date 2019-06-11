@@ -1,6 +1,7 @@
 ﻿@page "/components/icon"
 
-@using System.Linq;
+@using System.Linq
+@using System.Runtime.CompilerServices
 @using Blorc.PatternFly.Components.Icon
 
 <Metadata ComponentName="Icon" />
@@ -17,12 +18,15 @@
     {
         builder.OpenElement(0, "table");
 
-        var iconTypes = typeof(IconComponentBase).Assembly.GetTypes().Where(x => x.Name.EndsWith("Icon")).OrderBy(x => x.Name);
+        var iconTypes = (from type in typeof(IconComponentBase).Assembly.GetTypes()
+                         where type.Name.EndsWith("Icon") && type.GetCustomAttributes(typeof(CompilerGeneratedAttribute), true).Length > 0
+                         orderby type.Name
+                         select type).ToList();
 
         foreach (var iconType in iconTypes)
         {
             builder.OpenElement(1, "tr");
-            
+
             builder.OpenElement(2, "td");
             builder.OpenComponent(3, iconType);
             builder.CloseComponent();

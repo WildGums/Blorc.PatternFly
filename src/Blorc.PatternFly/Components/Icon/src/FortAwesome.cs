@@ -3,6 +3,9 @@
 
 namespace Blorc.PatternFly.Components.Icon
 {
+    using System.Runtime.CompilerServices;
+
+    [CompilerGenerated]
     public class AdIcon : IconComponentBase
     {
         public override string Path
@@ -15,6 +18,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class AddressBookIcon : IconComponentBase
     {
         public override string Path
@@ -27,6 +31,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class AddressCardIcon : IconComponentBase
     {
         public override string Path
@@ -39,6 +44,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class AdjustIcon : IconComponentBase
     {
         public override string Path
@@ -51,6 +57,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class AirFreshenerIcon : IconComponentBase
     {
         public override string Path
@@ -63,6 +70,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class AlignCenterIcon : IconComponentBase
     {
         public override string Path
@@ -75,6 +83,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class AlignJustifyIcon : IconComponentBase
     {
         public override string Path
@@ -87,6 +96,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class AlignLeftIcon : IconComponentBase
     {
         public override string Path
@@ -99,6 +109,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class AlignRightIcon : IconComponentBase
     {
         public override string Path
@@ -111,6 +122,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class AllergiesIcon : IconComponentBase
     {
         public override string Path
@@ -123,6 +135,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class AmbulanceIcon : IconComponentBase
     {
         public override string Path
@@ -135,6 +148,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class AmericanSignLanguageInterpretingIcon : IconComponentBase
     {
         public override string Path
@@ -147,6 +161,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class AnchorIcon : IconComponentBase
     {
         public override string Path
@@ -159,6 +174,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class AngleDoubleDownIcon : IconComponentBase
     {
         public override string Path
@@ -171,6 +187,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 320 512";
         }
     }
+    [CompilerGenerated]
     public class AngleDoubleLeftIcon : IconComponentBase
     {
         public override string Path
@@ -183,6 +200,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class AngleDoubleRightIcon : IconComponentBase
     {
         public override string Path
@@ -195,6 +213,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class AngleDoubleUpIcon : IconComponentBase
     {
         public override string Path
@@ -207,6 +226,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 320 512";
         }
     }
+    [CompilerGenerated]
     public class AngleDownIcon : IconComponentBase
     {
         public override string Path
@@ -219,6 +239,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 320 512";
         }
     }
+    [CompilerGenerated]
     public class AngleLeftIcon : IconComponentBase
     {
         public override string Path
@@ -231,6 +252,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 256 512";
         }
     }
+    [CompilerGenerated]
     public class AngleRightIcon : IconComponentBase
     {
         public override string Path
@@ -243,6 +265,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 256 512";
         }
     }
+    [CompilerGenerated]
     public class AngleUpIcon : IconComponentBase
     {
         public override string Path
@@ -255,6 +278,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 320 512";
         }
     }
+    [CompilerGenerated]
     public class AngryIcon : IconComponentBase
     {
         public override string Path
@@ -267,6 +291,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class AnkhIcon : IconComponentBase
     {
         public override string Path
@@ -279,6 +304,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 320 512";
         }
     }
+    [CompilerGenerated]
     public class AppleAltIcon : IconComponentBase
     {
         public override string Path
@@ -291,6 +317,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class ArchiveIcon : IconComponentBase
     {
         public override string Path
@@ -303,6 +330,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ArchwayIcon : IconComponentBase
     {
         public override string Path
@@ -315,6 +343,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class ArrowAltCircleDownIcon : IconComponentBase
     {
         public override string Path
@@ -327,6 +356,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ArrowAltCircleLeftIcon : IconComponentBase
     {
         public override string Path
@@ -339,6 +369,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ArrowAltCircleRightIcon : IconComponentBase
     {
         public override string Path
@@ -351,6 +382,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ArrowAltCircleUpIcon : IconComponentBase
     {
         public override string Path
@@ -363,6 +395,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ArrowCircleDownIcon : IconComponentBase
     {
         public override string Path
@@ -375,6 +408,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ArrowCircleLeftIcon : IconComponentBase
     {
         public override string Path
@@ -387,6 +421,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ArrowCircleRightIcon : IconComponentBase
     {
         public override string Path
@@ -399,6 +434,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ArrowCircleUpIcon : IconComponentBase
     {
         public override string Path
@@ -411,6 +447,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ArrowDownIcon : IconComponentBase
     {
         public override string Path
@@ -423,6 +460,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class ArrowLeftIcon : IconComponentBase
     {
         public override string Path
@@ -435,6 +473,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class ArrowRightIcon : IconComponentBase
     {
         public override string Path
@@ -447,6 +486,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class ArrowUpIcon : IconComponentBase
     {
         public override string Path
@@ -459,6 +499,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class ArrowsAltIcon : IconComponentBase
     {
         public override string Path
@@ -471,6 +512,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ArrowsAltHIcon : IconComponentBase
     {
         public override string Path
@@ -483,6 +525,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ArrowsAltVIcon : IconComponentBase
     {
         public override string Path
@@ -495,6 +538,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 256 512";
         }
     }
+    [CompilerGenerated]
     public class AssistiveListeningSystemsIcon : IconComponentBase
     {
         public override string Path
@@ -507,6 +551,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class AsteriskIcon : IconComponentBase
     {
         public override string Path
@@ -519,6 +564,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class AtIcon : IconComponentBase
     {
         public override string Path
@@ -531,6 +577,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class AtlasIcon : IconComponentBase
     {
         public override string Path
@@ -543,6 +590,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class AtomIcon : IconComponentBase
     {
         public override string Path
@@ -555,6 +603,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class AudioDescriptionIcon : IconComponentBase
     {
         public override string Path
@@ -567,6 +616,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class AwardIcon : IconComponentBase
     {
         public override string Path
@@ -579,6 +629,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class BabyIcon : IconComponentBase
     {
         public override string Path
@@ -591,6 +642,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class BabyCarriageIcon : IconComponentBase
     {
         public override string Path
@@ -603,6 +655,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class BackspaceIcon : IconComponentBase
     {
         public override string Path
@@ -615,6 +668,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class BackwardIcon : IconComponentBase
     {
         public override string Path
@@ -627,6 +681,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class BaconIcon : IconComponentBase
     {
         public override string Path
@@ -639,6 +694,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class BalanceScaleIcon : IconComponentBase
     {
         public override string Path
@@ -651,6 +707,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class BanIcon : IconComponentBase
     {
         public override string Path
@@ -663,6 +720,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class BandAidIcon : IconComponentBase
     {
         public override string Path
@@ -675,6 +733,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class BarcodeIcon : IconComponentBase
     {
         public override string Path
@@ -687,6 +746,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class BarsIcon : IconComponentBase
     {
         public override string Path
@@ -699,6 +759,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class BaseballBallIcon : IconComponentBase
     {
         public override string Path
@@ -711,6 +772,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class BasketballBallIcon : IconComponentBase
     {
         public override string Path
@@ -723,6 +785,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class BathIcon : IconComponentBase
     {
         public override string Path
@@ -735,6 +798,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class BatteryEmptyIcon : IconComponentBase
     {
         public override string Path
@@ -747,6 +811,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class BatteryFullIcon : IconComponentBase
     {
         public override string Path
@@ -759,6 +824,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class BatteryHalfIcon : IconComponentBase
     {
         public override string Path
@@ -771,6 +837,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class BatteryQuarterIcon : IconComponentBase
     {
         public override string Path
@@ -783,6 +850,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class BatteryThreeQuartersIcon : IconComponentBase
     {
         public override string Path
@@ -795,6 +863,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class BedIcon : IconComponentBase
     {
         public override string Path
@@ -807,6 +876,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class BeerIcon : IconComponentBase
     {
         public override string Path
@@ -819,6 +889,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class BellIcon : IconComponentBase
     {
         public override string Path
@@ -831,6 +902,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class BellSlashIcon : IconComponentBase
     {
         public override string Path
@@ -843,6 +915,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class BezierCurveIcon : IconComponentBase
     {
         public override string Path
@@ -855,6 +928,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class BibleIcon : IconComponentBase
     {
         public override string Path
@@ -867,6 +941,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class BicycleIcon : IconComponentBase
     {
         public override string Path
@@ -879,6 +954,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class BinocularsIcon : IconComponentBase
     {
         public override string Path
@@ -891,6 +967,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class BiohazardIcon : IconComponentBase
     {
         public override string Path
@@ -903,6 +980,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class BirthdayCakeIcon : IconComponentBase
     {
         public override string Path
@@ -915,6 +993,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class BlenderIcon : IconComponentBase
     {
         public override string Path
@@ -927,6 +1006,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class BlenderPhoneIcon : IconComponentBase
     {
         public override string Path
@@ -939,6 +1019,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class BlindIcon : IconComponentBase
     {
         public override string Path
@@ -951,6 +1032,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class BlogIcon : IconComponentBase
     {
         public override string Path
@@ -963,6 +1045,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class BoldIcon : IconComponentBase
     {
         public override string Path
@@ -975,6 +1058,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class BoltIcon : IconComponentBase
     {
         public override string Path
@@ -987,6 +1071,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 320 512";
         }
     }
+    [CompilerGenerated]
     public class BombIcon : IconComponentBase
     {
         public override string Path
@@ -999,6 +1084,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class BoneIcon : IconComponentBase
     {
         public override string Path
@@ -1011,6 +1097,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class BongIcon : IconComponentBase
     {
         public override string Path
@@ -1023,6 +1110,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class BookIcon : IconComponentBase
     {
         public override string Path
@@ -1035,6 +1123,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class BookDeadIcon : IconComponentBase
     {
         public override string Path
@@ -1047,6 +1136,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class BookMedicalIcon : IconComponentBase
     {
         public override string Path
@@ -1059,6 +1149,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class BookOpenIcon : IconComponentBase
     {
         public override string Path
@@ -1071,6 +1162,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class BookReaderIcon : IconComponentBase
     {
         public override string Path
@@ -1083,6 +1175,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class BookmarkIcon : IconComponentBase
     {
         public override string Path
@@ -1095,6 +1188,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class BowlingBallIcon : IconComponentBase
     {
         public override string Path
@@ -1107,6 +1201,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class BoxIcon : IconComponentBase
     {
         public override string Path
@@ -1119,6 +1214,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class BoxOpenIcon : IconComponentBase
     {
         public override string Path
@@ -1131,6 +1227,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class BoxesIcon : IconComponentBase
     {
         public override string Path
@@ -1143,6 +1240,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class BrailleIcon : IconComponentBase
     {
         public override string Path
@@ -1155,6 +1253,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class BrainIcon : IconComponentBase
     {
         public override string Path
@@ -1167,6 +1266,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class BreadSliceIcon : IconComponentBase
     {
         public override string Path
@@ -1179,6 +1279,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class BriefcaseIcon : IconComponentBase
     {
         public override string Path
@@ -1191,6 +1292,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class BriefcaseMedicalIcon : IconComponentBase
     {
         public override string Path
@@ -1203,6 +1305,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class BroadcastTowerIcon : IconComponentBase
     {
         public override string Path
@@ -1215,6 +1318,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class BroomIcon : IconComponentBase
     {
         public override string Path
@@ -1227,6 +1331,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class BrushIcon : IconComponentBase
     {
         public override string Path
@@ -1239,6 +1344,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class BugIcon : IconComponentBase
     {
         public override string Path
@@ -1251,6 +1357,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class BuildingIcon : IconComponentBase
     {
         public override string Path
@@ -1263,6 +1370,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class BullhornIcon : IconComponentBase
     {
         public override string Path
@@ -1275,6 +1383,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class BullseyeIcon : IconComponentBase
     {
         public override string Path
@@ -1287,6 +1396,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class BurnIcon : IconComponentBase
     {
         public override string Path
@@ -1299,6 +1409,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class BusIcon : IconComponentBase
     {
         public override string Path
@@ -1311,6 +1422,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class BusAltIcon : IconComponentBase
     {
         public override string Path
@@ -1323,6 +1435,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class BusinessTimeIcon : IconComponentBase
     {
         public override string Path
@@ -1335,6 +1448,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class CalculatorIcon : IconComponentBase
     {
         public override string Path
@@ -1347,6 +1461,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class CalendarIcon : IconComponentBase
     {
         public override string Path
@@ -1359,6 +1474,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class CalendarAltIcon : IconComponentBase
     {
         public override string Path
@@ -1371,6 +1487,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class CalendarCheckIcon : IconComponentBase
     {
         public override string Path
@@ -1383,6 +1500,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class CalendarDayIcon : IconComponentBase
     {
         public override string Path
@@ -1395,6 +1513,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class CalendarMinusIcon : IconComponentBase
     {
         public override string Path
@@ -1407,6 +1526,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class CalendarPlusIcon : IconComponentBase
     {
         public override string Path
@@ -1419,6 +1539,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class CalendarTimesIcon : IconComponentBase
     {
         public override string Path
@@ -1431,6 +1552,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class CalendarWeekIcon : IconComponentBase
     {
         public override string Path
@@ -1443,6 +1565,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class CameraIcon : IconComponentBase
     {
         public override string Path
@@ -1455,6 +1578,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CameraRetroIcon : IconComponentBase
     {
         public override string Path
@@ -1467,6 +1591,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CampgroundIcon : IconComponentBase
     {
         public override string Path
@@ -1479,6 +1604,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class CandyCaneIcon : IconComponentBase
     {
         public override string Path
@@ -1491,6 +1617,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CannabisIcon : IconComponentBase
     {
         public override string Path
@@ -1503,6 +1630,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CapsulesIcon : IconComponentBase
     {
         public override string Path
@@ -1515,6 +1643,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class CarIcon : IconComponentBase
     {
         public override string Path
@@ -1527,6 +1656,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CarAltIcon : IconComponentBase
     {
         public override string Path
@@ -1539,6 +1669,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 480 512";
         }
     }
+    [CompilerGenerated]
     public class CarBatteryIcon : IconComponentBase
     {
         public override string Path
@@ -1551,6 +1682,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CarCrashIcon : IconComponentBase
     {
         public override string Path
@@ -1563,6 +1695,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class CarSideIcon : IconComponentBase
     {
         public override string Path
@@ -1575,6 +1708,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class CaretDownIcon : IconComponentBase
     {
         public override string Path
@@ -1587,6 +1721,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 320 512";
         }
     }
+    [CompilerGenerated]
     public class CaretLeftIcon : IconComponentBase
     {
         public override string Path
@@ -1599,6 +1734,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 192 512";
         }
     }
+    [CompilerGenerated]
     public class CaretRightIcon : IconComponentBase
     {
         public override string Path
@@ -1611,6 +1747,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 192 512";
         }
     }
+    [CompilerGenerated]
     public class CaretSquareDownIcon : IconComponentBase
     {
         public override string Path
@@ -1623,6 +1760,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class CaretSquareLeftIcon : IconComponentBase
     {
         public override string Path
@@ -1635,6 +1773,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class CaretSquareRightIcon : IconComponentBase
     {
         public override string Path
@@ -1647,6 +1786,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class CaretSquareUpIcon : IconComponentBase
     {
         public override string Path
@@ -1659,6 +1799,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class CaretUpIcon : IconComponentBase
     {
         public override string Path
@@ -1671,6 +1812,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 320 512";
         }
     }
+    [CompilerGenerated]
     public class CarrotIcon : IconComponentBase
     {
         public override string Path
@@ -1683,6 +1825,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CartArrowDownIcon : IconComponentBase
     {
         public override string Path
@@ -1695,6 +1838,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class CartPlusIcon : IconComponentBase
     {
         public override string Path
@@ -1707,6 +1851,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class CashRegisterIcon : IconComponentBase
     {
         public override string Path
@@ -1719,6 +1864,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CatIcon : IconComponentBase
     {
         public override string Path
@@ -1731,6 +1877,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CertificateIcon : IconComponentBase
     {
         public override string Path
@@ -1743,6 +1890,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ChairIcon : IconComponentBase
     {
         public override string Path
@@ -1755,6 +1903,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class ChalkboardIcon : IconComponentBase
     {
         public override string Path
@@ -1767,6 +1916,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class ChalkboardTeacherIcon : IconComponentBase
     {
         public override string Path
@@ -1779,6 +1929,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class ChargingStationIcon : IconComponentBase
     {
         public override string Path
@@ -1791,6 +1942,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class ChartAreaIcon : IconComponentBase
     {
         public override string Path
@@ -1803,6 +1955,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ChartBarIcon : IconComponentBase
     {
         public override string Path
@@ -1815,6 +1968,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ChartLineIcon : IconComponentBase
     {
         public override string Path
@@ -1827,6 +1981,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ChartPieIcon : IconComponentBase
     {
         public override string Path
@@ -1839,6 +1994,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 544 512";
         }
     }
+    [CompilerGenerated]
     public class CheckIcon : IconComponentBase
     {
         public override string Path
@@ -1851,6 +2007,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CheckCircleIcon : IconComponentBase
     {
         public override string Path
@@ -1863,6 +2020,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CheckDoubleIcon : IconComponentBase
     {
         public override string Path
@@ -1875,6 +2033,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CheckSquareIcon : IconComponentBase
     {
         public override string Path
@@ -1887,6 +2046,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class CheeseIcon : IconComponentBase
     {
         public override string Path
@@ -1899,6 +2059,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ChessIcon : IconComponentBase
     {
         public override string Path
@@ -1911,6 +2072,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ChessBishopIcon : IconComponentBase
     {
         public override string Path
@@ -1923,6 +2085,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 320 512";
         }
     }
+    [CompilerGenerated]
     public class ChessBoardIcon : IconComponentBase
     {
         public override string Path
@@ -1935,6 +2098,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ChessKingIcon : IconComponentBase
     {
         public override string Path
@@ -1947,6 +2111,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class ChessKnightIcon : IconComponentBase
     {
         public override string Path
@@ -1959,6 +2124,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class ChessPawnIcon : IconComponentBase
     {
         public override string Path
@@ -1971,6 +2137,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 320 512";
         }
     }
+    [CompilerGenerated]
     public class ChessQueenIcon : IconComponentBase
     {
         public override string Path
@@ -1983,6 +2150,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ChessRookIcon : IconComponentBase
     {
         public override string Path
@@ -1995,6 +2163,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class ChevronCircleDownIcon : IconComponentBase
     {
         public override string Path
@@ -2007,6 +2176,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ChevronCircleLeftIcon : IconComponentBase
     {
         public override string Path
@@ -2019,6 +2189,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ChevronCircleRightIcon : IconComponentBase
     {
         public override string Path
@@ -2031,6 +2202,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ChevronCircleUpIcon : IconComponentBase
     {
         public override string Path
@@ -2043,6 +2215,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ChevronDownIcon : IconComponentBase
     {
         public override string Path
@@ -2055,6 +2228,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class ChevronLeftIcon : IconComponentBase
     {
         public override string Path
@@ -2067,6 +2241,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 320 512";
         }
     }
+    [CompilerGenerated]
     public class ChevronRightIcon : IconComponentBase
     {
         public override string Path
@@ -2079,6 +2254,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 320 512";
         }
     }
+    [CompilerGenerated]
     public class ChevronUpIcon : IconComponentBase
     {
         public override string Path
@@ -2091,6 +2267,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class ChildIcon : IconComponentBase
     {
         public override string Path
@@ -2103,6 +2280,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class ChurchIcon : IconComponentBase
     {
         public override string Path
@@ -2115,6 +2293,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class CircleIcon : IconComponentBase
     {
         public override string Path
@@ -2127,6 +2306,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CircleNotchIcon : IconComponentBase
     {
         public override string Path
@@ -2139,6 +2319,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CityIcon : IconComponentBase
     {
         public override string Path
@@ -2151,6 +2332,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class ClinicMedicalIcon : IconComponentBase
     {
         public override string Path
@@ -2163,6 +2345,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class ClipboardIcon : IconComponentBase
     {
         public override string Path
@@ -2175,6 +2358,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class ClipboardCheckIcon : IconComponentBase
     {
         public override string Path
@@ -2187,6 +2371,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class ClipboardListIcon : IconComponentBase
     {
         public override string Path
@@ -2199,6 +2384,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class ClockIcon : IconComponentBase
     {
         public override string Path
@@ -2211,6 +2397,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CloneIcon : IconComponentBase
     {
         public override string Path
@@ -2223,6 +2410,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ClosedCaptioningIcon : IconComponentBase
     {
         public override string Path
@@ -2235,6 +2423,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CloudIcon : IconComponentBase
     {
         public override string Path
@@ -2247,6 +2436,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class CloudDownloadAltIcon : IconComponentBase
     {
         public override string Path
@@ -2259,6 +2449,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class CloudMeatballIcon : IconComponentBase
     {
         public override string Path
@@ -2271,6 +2462,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CloudMoonIcon : IconComponentBase
     {
         public override string Path
@@ -2283,6 +2475,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class CloudMoonRainIcon : IconComponentBase
     {
         public override string Path
@@ -2295,6 +2488,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class CloudRainIcon : IconComponentBase
     {
         public override string Path
@@ -2307,6 +2501,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CloudShowersHeavyIcon : IconComponentBase
     {
         public override string Path
@@ -2319,6 +2514,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CloudSunIcon : IconComponentBase
     {
         public override string Path
@@ -2331,6 +2527,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class CloudSunRainIcon : IconComponentBase
     {
         public override string Path
@@ -2343,6 +2540,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class CloudUploadAltIcon : IconComponentBase
     {
         public override string Path
@@ -2355,6 +2553,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class CocktailIcon : IconComponentBase
     {
         public override string Path
@@ -2367,6 +2566,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class CodeIcon : IconComponentBase
     {
         public override string Path
@@ -2379,6 +2579,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class CodeBranchIcon : IconComponentBase
     {
         public override string Path
@@ -2391,6 +2592,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class CoffeeIcon : IconComponentBase
     {
         public override string Path
@@ -2403,6 +2605,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class CogIcon : IconComponentBase
     {
         public override string Path
@@ -2415,6 +2618,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CogsIcon : IconComponentBase
     {
         public override string Path
@@ -2427,6 +2631,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class CoinsIcon : IconComponentBase
     {
         public override string Path
@@ -2439,6 +2644,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ColumnsIcon : IconComponentBase
     {
         public override string Path
@@ -2451,6 +2657,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CommentIcon : IconComponentBase
     {
         public override string Path
@@ -2463,6 +2670,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CommentAltIcon : IconComponentBase
     {
         public override string Path
@@ -2475,6 +2683,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CommentDollarIcon : IconComponentBase
     {
         public override string Path
@@ -2487,6 +2696,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CommentDotsIcon : IconComponentBase
     {
         public override string Path
@@ -2499,6 +2709,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CommentMedicalIcon : IconComponentBase
     {
         public override string Path
@@ -2511,6 +2722,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CommentSlashIcon : IconComponentBase
     {
         public override string Path
@@ -2523,6 +2735,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class CommentsIcon : IconComponentBase
     {
         public override string Path
@@ -2535,6 +2748,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class CommentsDollarIcon : IconComponentBase
     {
         public override string Path
@@ -2547,6 +2761,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class CompactDiscIcon : IconComponentBase
     {
         public override string Path
@@ -2559,6 +2774,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class CompassIcon : IconComponentBase
     {
         public override string Path
@@ -2571,6 +2787,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class CompressIcon : IconComponentBase
     {
         public override string Path
@@ -2583,6 +2800,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class CompressArrowsAltIcon : IconComponentBase
     {
         public override string Path
@@ -2595,6 +2813,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ConciergeBellIcon : IconComponentBase
     {
         public override string Path
@@ -2607,6 +2826,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CookieIcon : IconComponentBase
     {
         public override string Path
@@ -2619,6 +2839,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CookieBiteIcon : IconComponentBase
     {
         public override string Path
@@ -2631,6 +2852,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CopyIcon : IconComponentBase
     {
         public override string Path
@@ -2643,6 +2865,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class CopyrightIcon : IconComponentBase
     {
         public override string Path
@@ -2655,6 +2878,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CouchIcon : IconComponentBase
     {
         public override string Path
@@ -2667,6 +2891,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class CreditCardIcon : IconComponentBase
     {
         public override string Path
@@ -2679,6 +2904,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class CropIcon : IconComponentBase
     {
         public override string Path
@@ -2691,6 +2917,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CropAltIcon : IconComponentBase
     {
         public override string Path
@@ -2703,6 +2930,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CrossIcon : IconComponentBase
     {
         public override string Path
@@ -2715,6 +2943,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class CrosshairsIcon : IconComponentBase
     {
         public override string Path
@@ -2727,6 +2956,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CrowIcon : IconComponentBase
     {
         public override string Path
@@ -2739,6 +2969,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class CrownIcon : IconComponentBase
     {
         public override string Path
@@ -2751,6 +2982,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class CrutchIcon : IconComponentBase
     {
         public override string Path
@@ -2763,6 +2995,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CubeIcon : IconComponentBase
     {
         public override string Path
@@ -2775,6 +3008,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CubesIcon : IconComponentBase
     {
         public override string Path
@@ -2787,6 +3021,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class CutIcon : IconComponentBase
     {
         public override string Path
@@ -2799,6 +3034,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class DatabaseIcon : IconComponentBase
     {
         public override string Path
@@ -2811,6 +3047,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class DeafIcon : IconComponentBase
     {
         public override string Path
@@ -2823,6 +3060,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class DemocratIcon : IconComponentBase
     {
         public override string Path
@@ -2835,6 +3073,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class DesktopIcon : IconComponentBase
     {
         public override string Path
@@ -2847,6 +3086,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class DharmachakraIcon : IconComponentBase
     {
         public override string Path
@@ -2859,6 +3099,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class DiagnosesIcon : IconComponentBase
     {
         public override string Path
@@ -2871,6 +3112,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class DiceIcon : IconComponentBase
     {
         public override string Path
@@ -2883,6 +3125,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class DiceD20Icon : IconComponentBase
     {
         public override string Path
@@ -2895,6 +3138,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 480 512";
         }
     }
+    [CompilerGenerated]
     public class DiceD6Icon : IconComponentBase
     {
         public override string Path
@@ -2907,6 +3151,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class DiceFiveIcon : IconComponentBase
     {
         public override string Path
@@ -2919,6 +3164,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class DiceFourIcon : IconComponentBase
     {
         public override string Path
@@ -2931,6 +3177,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class DiceOneIcon : IconComponentBase
     {
         public override string Path
@@ -2943,6 +3190,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class DiceSixIcon : IconComponentBase
     {
         public override string Path
@@ -2955,6 +3203,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class DiceThreeIcon : IconComponentBase
     {
         public override string Path
@@ -2967,6 +3216,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class DiceTwoIcon : IconComponentBase
     {
         public override string Path
@@ -2979,6 +3229,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class DigitalTachographIcon : IconComponentBase
     {
         public override string Path
@@ -2991,6 +3242,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class DirectionsIcon : IconComponentBase
     {
         public override string Path
@@ -3003,6 +3255,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class DivideIcon : IconComponentBase
     {
         public override string Path
@@ -3015,6 +3268,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class DizzyIcon : IconComponentBase
     {
         public override string Path
@@ -3027,6 +3281,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class DnaIcon : IconComponentBase
     {
         public override string Path
@@ -3039,6 +3294,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class DogIcon : IconComponentBase
     {
         public override string Path
@@ -3051,6 +3307,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class DollarSignIcon : IconComponentBase
     {
         public override string Path
@@ -3063,6 +3320,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 288 512";
         }
     }
+    [CompilerGenerated]
     public class DollyIcon : IconComponentBase
     {
         public override string Path
@@ -3075,6 +3333,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class DollyFlatbedIcon : IconComponentBase
     {
         public override string Path
@@ -3087,6 +3346,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class DonateIcon : IconComponentBase
     {
         public override string Path
@@ -3099,6 +3359,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class DoorClosedIcon : IconComponentBase
     {
         public override string Path
@@ -3111,6 +3372,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class DoorOpenIcon : IconComponentBase
     {
         public override string Path
@@ -3123,6 +3385,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class DotCircleIcon : IconComponentBase
     {
         public override string Path
@@ -3135,6 +3398,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class DoveIcon : IconComponentBase
     {
         public override string Path
@@ -3147,6 +3411,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class DownloadIcon : IconComponentBase
     {
         public override string Path
@@ -3159,6 +3424,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class DraftingCompassIcon : IconComponentBase
     {
         public override string Path
@@ -3171,6 +3437,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class DragonIcon : IconComponentBase
     {
         public override string Path
@@ -3183,6 +3450,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class DrawPolygonIcon : IconComponentBase
     {
         public override string Path
@@ -3195,6 +3463,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class DrumIcon : IconComponentBase
     {
         public override string Path
@@ -3207,6 +3476,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class DrumSteelpanIcon : IconComponentBase
     {
         public override string Path
@@ -3219,6 +3489,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class DrumstickBiteIcon : IconComponentBase
     {
         public override string Path
@@ -3231,6 +3502,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class DumbbellIcon : IconComponentBase
     {
         public override string Path
@@ -3243,6 +3515,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class DumpsterIcon : IconComponentBase
     {
         public override string Path
@@ -3255,6 +3528,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class DumpsterFireIcon : IconComponentBase
     {
         public override string Path
@@ -3267,6 +3541,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class DungeonIcon : IconComponentBase
     {
         public override string Path
@@ -3279,6 +3554,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class EditIcon : IconComponentBase
     {
         public override string Path
@@ -3291,6 +3567,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class EggIcon : IconComponentBase
     {
         public override string Path
@@ -3303,6 +3580,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class EjectIcon : IconComponentBase
     {
         public override string Path
@@ -3315,6 +3593,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class EllipsisHIcon : IconComponentBase
     {
         public override string Path
@@ -3327,6 +3606,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class EllipsisVIcon : IconComponentBase
     {
         public override string Path
@@ -3339,6 +3619,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 192 512";
         }
     }
+    [CompilerGenerated]
     public class EnvelopeIcon : IconComponentBase
     {
         public override string Path
@@ -3351,6 +3632,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class EnvelopeOpenIcon : IconComponentBase
     {
         public override string Path
@@ -3363,6 +3645,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class EnvelopeOpenTextIcon : IconComponentBase
     {
         public override string Path
@@ -3375,6 +3658,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class EnvelopeSquareIcon : IconComponentBase
     {
         public override string Path
@@ -3387,6 +3671,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class EqualsIcon : IconComponentBase
     {
         public override string Path
@@ -3399,6 +3684,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class EraserIcon : IconComponentBase
     {
         public override string Path
@@ -3411,6 +3697,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class EthernetIcon : IconComponentBase
     {
         public override string Path
@@ -3423,6 +3710,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class EuroSignIcon : IconComponentBase
     {
         public override string Path
@@ -3435,6 +3723,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 320 512";
         }
     }
+    [CompilerGenerated]
     public class ExchangeAltIcon : IconComponentBase
     {
         public override string Path
@@ -3447,6 +3736,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ExclamationIcon : IconComponentBase
     {
         public override string Path
@@ -3459,6 +3749,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 192 512";
         }
     }
+    [CompilerGenerated]
     public class ExclamationCircleIcon : IconComponentBase
     {
         public override string Path
@@ -3471,6 +3762,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ExclamationTriangleIcon : IconComponentBase
     {
         public override string Path
@@ -3483,6 +3775,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class ExpandIcon : IconComponentBase
     {
         public override string Path
@@ -3495,6 +3788,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class ExpandArrowsAltIcon : IconComponentBase
     {
         public override string Path
@@ -3507,6 +3801,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class ExternalLinkAltIcon : IconComponentBase
     {
         public override string Path
@@ -3519,6 +3814,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class ExternalLinkSquareAltIcon : IconComponentBase
     {
         public override string Path
@@ -3531,6 +3827,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class EyeIcon : IconComponentBase
     {
         public override string Path
@@ -3543,6 +3840,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class EyeDropperIcon : IconComponentBase
     {
         public override string Path
@@ -3555,6 +3853,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class EyeSlashIcon : IconComponentBase
     {
         public override string Path
@@ -3567,6 +3866,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class FastBackwardIcon : IconComponentBase
     {
         public override string Path
@@ -3579,6 +3879,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class FastForwardIcon : IconComponentBase
     {
         public override string Path
@@ -3591,6 +3892,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class FaxIcon : IconComponentBase
     {
         public override string Path
@@ -3603,6 +3905,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class FeatherIcon : IconComponentBase
     {
         public override string Path
@@ -3615,6 +3918,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class FeatherAltIcon : IconComponentBase
     {
         public override string Path
@@ -3627,6 +3931,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class FemaleIcon : IconComponentBase
     {
         public override string Path
@@ -3639,6 +3944,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 256 512";
         }
     }
+    [CompilerGenerated]
     public class FighterJetIcon : IconComponentBase
     {
         public override string Path
@@ -3651,6 +3957,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class FileIcon : IconComponentBase
     {
         public override string Path
@@ -3663,6 +3970,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class FileAltIcon : IconComponentBase
     {
         public override string Path
@@ -3675,6 +3983,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class FileArchiveIcon : IconComponentBase
     {
         public override string Path
@@ -3687,6 +3996,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class FileAudioIcon : IconComponentBase
     {
         public override string Path
@@ -3699,6 +4009,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class FileCodeIcon : IconComponentBase
     {
         public override string Path
@@ -3711,6 +4022,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class FileContractIcon : IconComponentBase
     {
         public override string Path
@@ -3723,6 +4035,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class FileCsvIcon : IconComponentBase
     {
         public override string Path
@@ -3735,6 +4048,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class FileDownloadIcon : IconComponentBase
     {
         public override string Path
@@ -3747,6 +4061,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class FileExcelIcon : IconComponentBase
     {
         public override string Path
@@ -3759,6 +4074,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class FileExportIcon : IconComponentBase
     {
         public override string Path
@@ -3771,6 +4087,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class FileImageIcon : IconComponentBase
     {
         public override string Path
@@ -3783,6 +4100,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class FileImportIcon : IconComponentBase
     {
         public override string Path
@@ -3795,6 +4113,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class FileInvoiceIcon : IconComponentBase
     {
         public override string Path
@@ -3807,6 +4126,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class FileInvoiceDollarIcon : IconComponentBase
     {
         public override string Path
@@ -3819,6 +4139,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class FileMedicalIcon : IconComponentBase
     {
         public override string Path
@@ -3831,6 +4152,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class FileMedicalAltIcon : IconComponentBase
     {
         public override string Path
@@ -3843,6 +4165,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class FilePdfIcon : IconComponentBase
     {
         public override string Path
@@ -3855,6 +4178,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class FilePowerpointIcon : IconComponentBase
     {
         public override string Path
@@ -3867,6 +4191,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class FilePrescriptionIcon : IconComponentBase
     {
         public override string Path
@@ -3879,6 +4204,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class FileSignatureIcon : IconComponentBase
     {
         public override string Path
@@ -3891,6 +4217,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class FileUploadIcon : IconComponentBase
     {
         public override string Path
@@ -3903,6 +4230,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class FileVideoIcon : IconComponentBase
     {
         public override string Path
@@ -3915,6 +4243,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class FileWordIcon : IconComponentBase
     {
         public override string Path
@@ -3927,6 +4256,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class FillIcon : IconComponentBase
     {
         public override string Path
@@ -3939,6 +4269,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class FillDripIcon : IconComponentBase
     {
         public override string Path
@@ -3951,6 +4282,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class FilmIcon : IconComponentBase
     {
         public override string Path
@@ -3963,6 +4295,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class FilterIcon : IconComponentBase
     {
         public override string Path
@@ -3975,6 +4308,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class FingerprintIcon : IconComponentBase
     {
         public override string Path
@@ -3987,6 +4321,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class FireIcon : IconComponentBase
     {
         public override string Path
@@ -3999,6 +4334,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class FireAltIcon : IconComponentBase
     {
         public override string Path
@@ -4011,6 +4347,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class FireExtinguisherIcon : IconComponentBase
     {
         public override string Path
@@ -4023,6 +4360,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class FirstAidIcon : IconComponentBase
     {
         public override string Path
@@ -4035,6 +4373,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class FishIcon : IconComponentBase
     {
         public override string Path
@@ -4047,6 +4386,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class FistRaisedIcon : IconComponentBase
     {
         public override string Path
@@ -4059,6 +4399,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class FlagIcon : IconComponentBase
     {
         public override string Path
@@ -4071,6 +4412,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class FlagCheckeredIcon : IconComponentBase
     {
         public override string Path
@@ -4083,6 +4425,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class FlagUsaIcon : IconComponentBase
     {
         public override string Path
@@ -4095,6 +4438,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class FlaskIcon : IconComponentBase
     {
         public override string Path
@@ -4107,6 +4451,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class FlushedIcon : IconComponentBase
     {
         public override string Path
@@ -4119,6 +4464,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class FolderIcon : IconComponentBase
     {
         public override string Path
@@ -4131,6 +4477,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class FolderMinusIcon : IconComponentBase
     {
         public override string Path
@@ -4143,6 +4490,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class FolderOpenIcon : IconComponentBase
     {
         public override string Path
@@ -4155,6 +4503,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class FolderPlusIcon : IconComponentBase
     {
         public override string Path
@@ -4167,6 +4516,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class FontIcon : IconComponentBase
     {
         public override string Path
@@ -4179,6 +4529,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class FontAwesomeLogoFullIcon : IconComponentBase
     {
         public override string Path
@@ -4191,6 +4542,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 3992 512";
         }
     }
+    [CompilerGenerated]
     public class FootballBallIcon : IconComponentBase
     {
         public override string Path
@@ -4203,6 +4555,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class ForwardIcon : IconComponentBase
     {
         public override string Path
@@ -4215,6 +4568,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class FrogIcon : IconComponentBase
     {
         public override string Path
@@ -4227,6 +4581,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class FrownIcon : IconComponentBase
     {
         public override string Path
@@ -4239,6 +4594,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class FrownOpenIcon : IconComponentBase
     {
         public override string Path
@@ -4251,6 +4607,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class FunnelDollarIcon : IconComponentBase
     {
         public override string Path
@@ -4263,6 +4620,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class FutbolIcon : IconComponentBase
     {
         public override string Path
@@ -4275,6 +4633,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class GamepadIcon : IconComponentBase
     {
         public override string Path
@@ -4287,6 +4646,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class GasPumpIcon : IconComponentBase
     {
         public override string Path
@@ -4299,6 +4659,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class GavelIcon : IconComponentBase
     {
         public override string Path
@@ -4311,6 +4672,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class GemIcon : IconComponentBase
     {
         public override string Path
@@ -4323,6 +4685,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class GenderlessIcon : IconComponentBase
     {
         public override string Path
@@ -4335,6 +4698,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 288 512";
         }
     }
+    [CompilerGenerated]
     public class GhostIcon : IconComponentBase
     {
         public override string Path
@@ -4347,6 +4711,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class GiftIcon : IconComponentBase
     {
         public override string Path
@@ -4359,6 +4724,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class GiftsIcon : IconComponentBase
     {
         public override string Path
@@ -4371,6 +4737,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class GlassCheersIcon : IconComponentBase
     {
         public override string Path
@@ -4383,6 +4750,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class GlassMartiniIcon : IconComponentBase
     {
         public override string Path
@@ -4395,6 +4763,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class GlassMartiniAltIcon : IconComponentBase
     {
         public override string Path
@@ -4407,6 +4776,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class GlassWhiskeyIcon : IconComponentBase
     {
         public override string Path
@@ -4419,6 +4789,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class GlassesIcon : IconComponentBase
     {
         public override string Path
@@ -4431,6 +4802,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class GlobeIcon : IconComponentBase
     {
         public override string Path
@@ -4443,6 +4815,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class GlobeAfricaIcon : IconComponentBase
     {
         public override string Path
@@ -4455,6 +4828,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class GlobeAmericasIcon : IconComponentBase
     {
         public override string Path
@@ -4467,6 +4841,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class GlobeAsiaIcon : IconComponentBase
     {
         public override string Path
@@ -4479,6 +4854,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class GlobeEuropeIcon : IconComponentBase
     {
         public override string Path
@@ -4491,6 +4867,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class GolfBallIcon : IconComponentBase
     {
         public override string Path
@@ -4503,6 +4880,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 416 512";
         }
     }
+    [CompilerGenerated]
     public class GopuramIcon : IconComponentBase
     {
         public override string Path
@@ -4515,6 +4893,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class GraduationCapIcon : IconComponentBase
     {
         public override string Path
@@ -4527,6 +4906,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class GreaterThanIcon : IconComponentBase
     {
         public override string Path
@@ -4539,6 +4919,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class GreaterThanEqualIcon : IconComponentBase
     {
         public override string Path
@@ -4551,6 +4932,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class GrimaceIcon : IconComponentBase
     {
         public override string Path
@@ -4563,6 +4945,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class GrinIcon : IconComponentBase
     {
         public override string Path
@@ -4575,6 +4958,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class GrinAltIcon : IconComponentBase
     {
         public override string Path
@@ -4587,6 +4971,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class GrinBeamIcon : IconComponentBase
     {
         public override string Path
@@ -4599,6 +4984,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class GrinBeamSweatIcon : IconComponentBase
     {
         public override string Path
@@ -4611,6 +4997,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 504 512";
         }
     }
+    [CompilerGenerated]
     public class GrinHeartsIcon : IconComponentBase
     {
         public override string Path
@@ -4623,6 +5010,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class GrinSquintIcon : IconComponentBase
     {
         public override string Path
@@ -4635,6 +5023,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class GrinSquintTearsIcon : IconComponentBase
     {
         public override string Path
@@ -4647,6 +5036,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class GrinStarsIcon : IconComponentBase
     {
         public override string Path
@@ -4659,6 +5049,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class GrinTearsIcon : IconComponentBase
     {
         public override string Path
@@ -4671,6 +5062,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class GrinTongueIcon : IconComponentBase
     {
         public override string Path
@@ -4683,6 +5075,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class GrinTongueSquintIcon : IconComponentBase
     {
         public override string Path
@@ -4695,6 +5088,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class GrinTongueWinkIcon : IconComponentBase
     {
         public override string Path
@@ -4707,6 +5101,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class GrinWinkIcon : IconComponentBase
     {
         public override string Path
@@ -4719,6 +5114,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class GripHorizontalIcon : IconComponentBase
     {
         public override string Path
@@ -4731,6 +5127,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class GripLinesIcon : IconComponentBase
     {
         public override string Path
@@ -4743,6 +5140,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class GripLinesVerticalIcon : IconComponentBase
     {
         public override string Path
@@ -4755,6 +5153,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 256 512";
         }
     }
+    [CompilerGenerated]
     public class GripVerticalIcon : IconComponentBase
     {
         public override string Path
@@ -4767,6 +5166,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 320 512";
         }
     }
+    [CompilerGenerated]
     public class GuitarIcon : IconComponentBase
     {
         public override string Path
@@ -4779,6 +5179,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class HSquareIcon : IconComponentBase
     {
         public override string Path
@@ -4791,6 +5192,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class HamburgerIcon : IconComponentBase
     {
         public override string Path
@@ -4803,6 +5205,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class HammerIcon : IconComponentBase
     {
         public override string Path
@@ -4815,6 +5218,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class HamsaIcon : IconComponentBase
     {
         public override string Path
@@ -4827,6 +5231,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class HandHoldingIcon : IconComponentBase
     {
         public override string Path
@@ -4839,6 +5244,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class HandHoldingHeartIcon : IconComponentBase
     {
         public override string Path
@@ -4851,6 +5257,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class HandHoldingUsdIcon : IconComponentBase
     {
         public override string Path
@@ -4863,6 +5270,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 544 512";
         }
     }
+    [CompilerGenerated]
     public class HandLizardIcon : IconComponentBase
     {
         public override string Path
@@ -4875,6 +5283,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class HandMiddleFingerIcon : IconComponentBase
     {
         public override string Path
@@ -4887,6 +5296,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class HandPaperIcon : IconComponentBase
     {
         public override string Path
@@ -4899,6 +5309,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class HandPeaceIcon : IconComponentBase
     {
         public override string Path
@@ -4911,6 +5322,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class HandPointDownIcon : IconComponentBase
     {
         public override string Path
@@ -4923,6 +5335,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class HandPointLeftIcon : IconComponentBase
     {
         public override string Path
@@ -4935,6 +5348,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class HandPointRightIcon : IconComponentBase
     {
         public override string Path
@@ -4947,6 +5361,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class HandPointUpIcon : IconComponentBase
     {
         public override string Path
@@ -4959,6 +5374,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class HandPointerIcon : IconComponentBase
     {
         public override string Path
@@ -4971,6 +5387,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class HandRockIcon : IconComponentBase
     {
         public override string Path
@@ -4983,6 +5400,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class HandScissorsIcon : IconComponentBase
     {
         public override string Path
@@ -4995,6 +5413,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class HandSpockIcon : IconComponentBase
     {
         public override string Path
@@ -5007,6 +5426,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class HandsIcon : IconComponentBase
     {
         public override string Path
@@ -5019,6 +5439,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class HandsHelpingIcon : IconComponentBase
     {
         public override string Path
@@ -5031,6 +5452,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class HandshakeIcon : IconComponentBase
     {
         public override string Path
@@ -5043,6 +5465,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class HanukiahIcon : IconComponentBase
     {
         public override string Path
@@ -5055,6 +5478,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class HardHatIcon : IconComponentBase
     {
         public override string Path
@@ -5067,6 +5491,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class HashtagIcon : IconComponentBase
     {
         public override string Path
@@ -5079,6 +5504,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class HatWizardIcon : IconComponentBase
     {
         public override string Path
@@ -5091,6 +5517,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class HaykalIcon : IconComponentBase
     {
         public override string Path
@@ -5103,6 +5530,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class HddIcon : IconComponentBase
     {
         public override string Path
@@ -5115,6 +5543,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class HeadingIcon : IconComponentBase
     {
         public override string Path
@@ -5127,6 +5556,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class HeadphonesIcon : IconComponentBase
     {
         public override string Path
@@ -5139,6 +5569,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class HeadphonesAltIcon : IconComponentBase
     {
         public override string Path
@@ -5151,6 +5582,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class HeadsetIcon : IconComponentBase
     {
         public override string Path
@@ -5163,6 +5595,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class HeartIcon : IconComponentBase
     {
         public override string Path
@@ -5175,6 +5608,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class HeartBrokenIcon : IconComponentBase
     {
         public override string Path
@@ -5187,6 +5621,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class HeartbeatIcon : IconComponentBase
     {
         public override string Path
@@ -5199,6 +5634,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class HelicopterIcon : IconComponentBase
     {
         public override string Path
@@ -5211,6 +5647,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class HighlighterIcon : IconComponentBase
     {
         public override string Path
@@ -5223,6 +5660,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 544 512";
         }
     }
+    [CompilerGenerated]
     public class HikingIcon : IconComponentBase
     {
         public override string Path
@@ -5235,6 +5673,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class HippoIcon : IconComponentBase
     {
         public override string Path
@@ -5247,6 +5686,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class HistoryIcon : IconComponentBase
     {
         public override string Path
@@ -5259,6 +5699,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class HockeyPuckIcon : IconComponentBase
     {
         public override string Path
@@ -5271,6 +5712,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class HollyBerryIcon : IconComponentBase
     {
         public override string Path
@@ -5283,6 +5725,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class HomeIcon : IconComponentBase
     {
         public override string Path
@@ -5295,6 +5738,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class HorseIcon : IconComponentBase
     {
         public override string Path
@@ -5307,6 +5751,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class HorseHeadIcon : IconComponentBase
     {
         public override string Path
@@ -5319,6 +5764,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class HospitalIcon : IconComponentBase
     {
         public override string Path
@@ -5331,6 +5777,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class HospitalAltIcon : IconComponentBase
     {
         public override string Path
@@ -5343,6 +5790,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class HospitalSymbolIcon : IconComponentBase
     {
         public override string Path
@@ -5355,6 +5803,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class HotTubIcon : IconComponentBase
     {
         public override string Path
@@ -5367,6 +5816,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class HotdogIcon : IconComponentBase
     {
         public override string Path
@@ -5379,6 +5829,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class HotelIcon : IconComponentBase
     {
         public override string Path
@@ -5391,6 +5842,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class HourglassIcon : IconComponentBase
     {
         public override string Path
@@ -5403,6 +5855,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class HourglassEndIcon : IconComponentBase
     {
         public override string Path
@@ -5415,6 +5868,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class HourglassHalfIcon : IconComponentBase
     {
         public override string Path
@@ -5427,6 +5881,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class HourglassStartIcon : IconComponentBase
     {
         public override string Path
@@ -5439,6 +5894,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class HouseDamageIcon : IconComponentBase
     {
         public override string Path
@@ -5451,6 +5907,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class HryvniaIcon : IconComponentBase
     {
         public override string Path
@@ -5463,6 +5920,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class ICursorIcon : IconComponentBase
     {
         public override string Path
@@ -5475,6 +5933,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 256 512";
         }
     }
+    [CompilerGenerated]
     public class IceCreamIcon : IconComponentBase
     {
         public override string Path
@@ -5487,6 +5946,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class IciclesIcon : IconComponentBase
     {
         public override string Path
@@ -5499,6 +5959,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class IdBadgeIcon : IconComponentBase
     {
         public override string Path
@@ -5511,6 +5972,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class IdCardIcon : IconComponentBase
     {
         public override string Path
@@ -5523,6 +5985,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class IdCardAltIcon : IconComponentBase
     {
         public override string Path
@@ -5535,6 +5998,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class IglooIcon : IconComponentBase
     {
         public override string Path
@@ -5547,6 +6011,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class ImageIcon : IconComponentBase
     {
         public override string Path
@@ -5559,6 +6024,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ImagesIcon : IconComponentBase
     {
         public override string Path
@@ -5571,6 +6037,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class InboxIcon : IconComponentBase
     {
         public override string Path
@@ -5583,6 +6050,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class IndentIcon : IconComponentBase
     {
         public override string Path
@@ -5595,6 +6063,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class IndustryIcon : IconComponentBase
     {
         public override string Path
@@ -5607,6 +6076,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class InfinityIcon : IconComponentBase
     {
         public override string Path
@@ -5619,6 +6089,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class InfoIcon : IconComponentBase
     {
         public override string Path
@@ -5631,6 +6102,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 192 512";
         }
     }
+    [CompilerGenerated]
     public class InfoCircleIcon : IconComponentBase
     {
         public override string Path
@@ -5643,6 +6115,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ItalicIcon : IconComponentBase
     {
         public override string Path
@@ -5655,6 +6128,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 320 512";
         }
     }
+    [CompilerGenerated]
     public class JediIcon : IconComponentBase
     {
         public override string Path
@@ -5667,6 +6141,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 544 512";
         }
     }
+    [CompilerGenerated]
     public class JointIcon : IconComponentBase
     {
         public override string Path
@@ -5679,6 +6154,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class JournalWhillsIcon : IconComponentBase
     {
         public override string Path
@@ -5691,6 +6167,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class KaabaIcon : IconComponentBase
     {
         public override string Path
@@ -5703,6 +6180,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class KeyIcon : IconComponentBase
     {
         public override string Path
@@ -5715,6 +6193,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class KeyboardIcon : IconComponentBase
     {
         public override string Path
@@ -5727,6 +6206,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class KhandaIcon : IconComponentBase
     {
         public override string Path
@@ -5739,6 +6219,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class KissIcon : IconComponentBase
     {
         public override string Path
@@ -5751,6 +6232,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class KissBeamIcon : IconComponentBase
     {
         public override string Path
@@ -5763,6 +6245,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class KissWinkHeartIcon : IconComponentBase
     {
         public override string Path
@@ -5775,6 +6258,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 504 512";
         }
     }
+    [CompilerGenerated]
     public class KiwiBirdIcon : IconComponentBase
     {
         public override string Path
@@ -5787,6 +6271,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class LandmarkIcon : IconComponentBase
     {
         public override string Path
@@ -5799,6 +6284,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class LanguageIcon : IconComponentBase
     {
         public override string Path
@@ -5811,6 +6297,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class LaptopIcon : IconComponentBase
     {
         public override string Path
@@ -5823,6 +6310,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class LaptopCodeIcon : IconComponentBase
     {
         public override string Path
@@ -5835,6 +6323,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class LaptopMedicalIcon : IconComponentBase
     {
         public override string Path
@@ -5847,6 +6336,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class LaughIcon : IconComponentBase
     {
         public override string Path
@@ -5859,6 +6349,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class LaughBeamIcon : IconComponentBase
     {
         public override string Path
@@ -5871,6 +6362,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class LaughSquintIcon : IconComponentBase
     {
         public override string Path
@@ -5883,6 +6375,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class LaughWinkIcon : IconComponentBase
     {
         public override string Path
@@ -5895,6 +6388,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class LayerGroupIcon : IconComponentBase
     {
         public override string Path
@@ -5907,6 +6401,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class LeafIcon : IconComponentBase
     {
         public override string Path
@@ -5919,6 +6414,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class LemonIcon : IconComponentBase
     {
         public override string Path
@@ -5931,6 +6427,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class LessThanIcon : IconComponentBase
     {
         public override string Path
@@ -5943,6 +6440,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class LessThanEqualIcon : IconComponentBase
     {
         public override string Path
@@ -5955,6 +6453,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class LevelDownAltIcon : IconComponentBase
     {
         public override string Path
@@ -5967,6 +6466,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 320 512";
         }
     }
+    [CompilerGenerated]
     public class LevelUpAltIcon : IconComponentBase
     {
         public override string Path
@@ -5979,6 +6479,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 320 512";
         }
     }
+    [CompilerGenerated]
     public class LifeRingIcon : IconComponentBase
     {
         public override string Path
@@ -5991,6 +6492,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class LightbulbIcon : IconComponentBase
     {
         public override string Path
@@ -6003,6 +6505,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 352 512";
         }
     }
+    [CompilerGenerated]
     public class LinkIcon : IconComponentBase
     {
         public override string Path
@@ -6015,6 +6518,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class LiraSignIcon : IconComponentBase
     {
         public override string Path
@@ -6027,6 +6531,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class ListIcon : IconComponentBase
     {
         public override string Path
@@ -6039,6 +6544,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ListAltIcon : IconComponentBase
     {
         public override string Path
@@ -6051,6 +6557,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ListOlIcon : IconComponentBase
     {
         public override string Path
@@ -6063,6 +6570,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ListUlIcon : IconComponentBase
     {
         public override string Path
@@ -6075,6 +6583,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class LocationArrowIcon : IconComponentBase
     {
         public override string Path
@@ -6087,6 +6596,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class LockIcon : IconComponentBase
     {
         public override string Path
@@ -6099,6 +6609,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class LockOpenIcon : IconComponentBase
     {
         public override string Path
@@ -6111,6 +6622,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class LongArrowAltDownIcon : IconComponentBase
     {
         public override string Path
@@ -6123,6 +6635,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 256 512";
         }
     }
+    [CompilerGenerated]
     public class LongArrowAltLeftIcon : IconComponentBase
     {
         public override string Path
@@ -6135,6 +6648,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class LongArrowAltRightIcon : IconComponentBase
     {
         public override string Path
@@ -6147,6 +6661,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class LongArrowAltUpIcon : IconComponentBase
     {
         public override string Path
@@ -6159,6 +6674,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 256 512";
         }
     }
+    [CompilerGenerated]
     public class LowVisionIcon : IconComponentBase
     {
         public override string Path
@@ -6171,6 +6687,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class LuggageCartIcon : IconComponentBase
     {
         public override string Path
@@ -6183,6 +6700,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class MagicIcon : IconComponentBase
     {
         public override string Path
@@ -6195,6 +6713,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class MagnetIcon : IconComponentBase
     {
         public override string Path
@@ -6207,6 +6726,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class MailBulkIcon : IconComponentBase
     {
         public override string Path
@@ -6219,6 +6739,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class MaleIcon : IconComponentBase
     {
         public override string Path
@@ -6231,6 +6752,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 192 512";
         }
     }
+    [CompilerGenerated]
     public class MapIcon : IconComponentBase
     {
         public override string Path
@@ -6243,6 +6765,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class MapMarkedIcon : IconComponentBase
     {
         public override string Path
@@ -6255,6 +6778,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class MapMarkedAltIcon : IconComponentBase
     {
         public override string Path
@@ -6267,6 +6791,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class MapMarkerIcon : IconComponentBase
     {
         public override string Path
@@ -6279,6 +6804,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class MapMarkerAltIcon : IconComponentBase
     {
         public override string Path
@@ -6291,6 +6817,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class MapPinIcon : IconComponentBase
     {
         public override string Path
@@ -6303,6 +6830,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 288 512";
         }
     }
+    [CompilerGenerated]
     public class MapSignsIcon : IconComponentBase
     {
         public override string Path
@@ -6315,6 +6843,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class MarkerIcon : IconComponentBase
     {
         public override string Path
@@ -6327,6 +6856,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class MarsIcon : IconComponentBase
     {
         public override string Path
@@ -6339,6 +6869,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class MarsDoubleIcon : IconComponentBase
     {
         public override string Path
@@ -6351,6 +6882,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class MarsStrokeIcon : IconComponentBase
     {
         public override string Path
@@ -6363,6 +6895,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class MarsStrokeHIcon : IconComponentBase
     {
         public override string Path
@@ -6375,6 +6908,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 480 512";
         }
     }
+    [CompilerGenerated]
     public class MarsStrokeVIcon : IconComponentBase
     {
         public override string Path
@@ -6387,6 +6921,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 288 512";
         }
     }
+    [CompilerGenerated]
     public class MaskIcon : IconComponentBase
     {
         public override string Path
@@ -6399,6 +6934,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class MedalIcon : IconComponentBase
     {
         public override string Path
@@ -6411,6 +6947,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class MedkitIcon : IconComponentBase
     {
         public override string Path
@@ -6423,6 +6960,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class MehIcon : IconComponentBase
     {
         public override string Path
@@ -6435,6 +6973,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class MehBlankIcon : IconComponentBase
     {
         public override string Path
@@ -6447,6 +6986,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class MehRollingEyesIcon : IconComponentBase
     {
         public override string Path
@@ -6459,6 +6999,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class MemoryIcon : IconComponentBase
     {
         public override string Path
@@ -6471,6 +7012,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class MenorahIcon : IconComponentBase
     {
         public override string Path
@@ -6483,6 +7025,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class MercuryIcon : IconComponentBase
     {
         public override string Path
@@ -6495,6 +7038,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 288 512";
         }
     }
+    [CompilerGenerated]
     public class MeteorIcon : IconComponentBase
     {
         public override string Path
@@ -6507,6 +7051,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class MicrochipIcon : IconComponentBase
     {
         public override string Path
@@ -6519,6 +7064,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class MicrophoneIcon : IconComponentBase
     {
         public override string Path
@@ -6531,6 +7077,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 352 512";
         }
     }
+    [CompilerGenerated]
     public class MicrophoneAltIcon : IconComponentBase
     {
         public override string Path
@@ -6543,6 +7090,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 352 512";
         }
     }
+    [CompilerGenerated]
     public class MicrophoneAltSlashIcon : IconComponentBase
     {
         public override string Path
@@ -6555,6 +7103,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class MicrophoneSlashIcon : IconComponentBase
     {
         public override string Path
@@ -6567,6 +7116,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class MicroscopeIcon : IconComponentBase
     {
         public override string Path
@@ -6579,6 +7129,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class MinusIcon : IconComponentBase
     {
         public override string Path
@@ -6591,6 +7142,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class MinusCircleIcon : IconComponentBase
     {
         public override string Path
@@ -6603,6 +7155,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class MinusSquareIcon : IconComponentBase
     {
         public override string Path
@@ -6615,6 +7168,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class MittenIcon : IconComponentBase
     {
         public override string Path
@@ -6627,6 +7181,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class MobileIcon : IconComponentBase
     {
         public override string Path
@@ -6639,6 +7194,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 320 512";
         }
     }
+    [CompilerGenerated]
     public class MobileAltIcon : IconComponentBase
     {
         public override string Path
@@ -6651,6 +7207,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 320 512";
         }
     }
+    [CompilerGenerated]
     public class MoneyBillIcon : IconComponentBase
     {
         public override string Path
@@ -6663,6 +7220,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class MoneyBillAltIcon : IconComponentBase
     {
         public override string Path
@@ -6675,6 +7233,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class MoneyBillWaveIcon : IconComponentBase
     {
         public override string Path
@@ -6687,6 +7246,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class MoneyBillWaveAltIcon : IconComponentBase
     {
         public override string Path
@@ -6699,6 +7259,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class MoneyCheckIcon : IconComponentBase
     {
         public override string Path
@@ -6711,6 +7272,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class MoneyCheckAltIcon : IconComponentBase
     {
         public override string Path
@@ -6723,6 +7285,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class MonumentIcon : IconComponentBase
     {
         public override string Path
@@ -6735,6 +7298,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class MoonIcon : IconComponentBase
     {
         public override string Path
@@ -6747,6 +7311,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class MortarPestleIcon : IconComponentBase
     {
         public override string Path
@@ -6759,6 +7324,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class MosqueIcon : IconComponentBase
     {
         public override string Path
@@ -6771,6 +7337,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class MotorcycleIcon : IconComponentBase
     {
         public override string Path
@@ -6783,6 +7350,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class MountainIcon : IconComponentBase
     {
         public override string Path
@@ -6795,6 +7363,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class MousePointerIcon : IconComponentBase
     {
         public override string Path
@@ -6807,6 +7376,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 320 512";
         }
     }
+    [CompilerGenerated]
     public class MugHotIcon : IconComponentBase
     {
         public override string Path
@@ -6819,6 +7389,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class MusicIcon : IconComponentBase
     {
         public override string Path
@@ -6831,6 +7402,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class NetworkWiredIcon : IconComponentBase
     {
         public override string Path
@@ -6843,6 +7415,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class NeuterIcon : IconComponentBase
     {
         public override string Path
@@ -6855,6 +7428,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 288 512";
         }
     }
+    [CompilerGenerated]
     public class NewspaperIcon : IconComponentBase
     {
         public override string Path
@@ -6867,6 +7441,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class NotEqualIcon : IconComponentBase
     {
         public override string Path
@@ -6879,6 +7454,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class NotesMedicalIcon : IconComponentBase
     {
         public override string Path
@@ -6891,6 +7467,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class ObjectGroupIcon : IconComponentBase
     {
         public override string Path
@@ -6903,6 +7480,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ObjectUngroupIcon : IconComponentBase
     {
         public override string Path
@@ -6915,6 +7493,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class OilCanIcon : IconComponentBase
     {
         public override string Path
@@ -6927,6 +7506,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class OmIcon : IconComponentBase
     {
         public override string Path
@@ -6939,6 +7519,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class OtterIcon : IconComponentBase
     {
         public override string Path
@@ -6951,6 +7532,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class OutdentIcon : IconComponentBase
     {
         public override string Path
@@ -6963,6 +7545,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class PagerIcon : IconComponentBase
     {
         public override string Path
@@ -6975,6 +7558,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class PaintBrushIcon : IconComponentBase
     {
         public override string Path
@@ -6987,6 +7571,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class PaintRollerIcon : IconComponentBase
     {
         public override string Path
@@ -6999,6 +7584,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class PaletteIcon : IconComponentBase
     {
         public override string Path
@@ -7011,6 +7597,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class PalletIcon : IconComponentBase
     {
         public override string Path
@@ -7023,6 +7610,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class PaperPlaneIcon : IconComponentBase
     {
         public override string Path
@@ -7035,6 +7623,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class PaperclipIcon : IconComponentBase
     {
         public override string Path
@@ -7047,6 +7636,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class ParachuteBoxIcon : IconComponentBase
     {
         public override string Path
@@ -7059,6 +7649,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ParagraphIcon : IconComponentBase
     {
         public override string Path
@@ -7071,6 +7662,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class ParkingIcon : IconComponentBase
     {
         public override string Path
@@ -7083,6 +7675,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class PassportIcon : IconComponentBase
     {
         public override string Path
@@ -7095,6 +7688,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class PastafarianismIcon : IconComponentBase
     {
         public override string Path
@@ -7107,6 +7701,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class PasteIcon : IconComponentBase
     {
         public override string Path
@@ -7119,6 +7714,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class PauseIcon : IconComponentBase
     {
         public override string Path
@@ -7131,6 +7727,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class PauseCircleIcon : IconComponentBase
     {
         public override string Path
@@ -7143,6 +7740,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class PawIcon : IconComponentBase
     {
         public override string Path
@@ -7155,6 +7753,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class PeaceIcon : IconComponentBase
     {
         public override string Path
@@ -7167,6 +7766,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class PenIcon : IconComponentBase
     {
         public override string Path
@@ -7179,6 +7779,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class PenAltIcon : IconComponentBase
     {
         public override string Path
@@ -7191,6 +7792,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class PenFancyIcon : IconComponentBase
     {
         public override string Path
@@ -7203,6 +7805,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class PenNibIcon : IconComponentBase
     {
         public override string Path
@@ -7215,6 +7818,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class PenSquareIcon : IconComponentBase
     {
         public override string Path
@@ -7227,6 +7831,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class PencilAltIcon : IconComponentBase
     {
         public override string Path
@@ -7239,6 +7844,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class PencilRulerIcon : IconComponentBase
     {
         public override string Path
@@ -7251,6 +7857,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class PeopleCarryIcon : IconComponentBase
     {
         public override string Path
@@ -7263,6 +7870,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class PepperHotIcon : IconComponentBase
     {
         public override string Path
@@ -7275,6 +7883,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class PercentIcon : IconComponentBase
     {
         public override string Path
@@ -7287,6 +7896,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class PercentageIcon : IconComponentBase
     {
         public override string Path
@@ -7299,6 +7909,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class PersonBoothIcon : IconComponentBase
     {
         public override string Path
@@ -7311,6 +7922,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class PhoneIcon : IconComponentBase
     {
         public override string Path
@@ -7323,6 +7935,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class PhoneSlashIcon : IconComponentBase
     {
         public override string Path
@@ -7335,6 +7948,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class PhoneSquareIcon : IconComponentBase
     {
         public override string Path
@@ -7347,6 +7961,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class PhoneVolumeIcon : IconComponentBase
     {
         public override string Path
@@ -7359,6 +7974,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class PiggyBankIcon : IconComponentBase
     {
         public override string Path
@@ -7371,6 +7987,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class PillsIcon : IconComponentBase
     {
         public override string Path
@@ -7383,6 +8000,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class PizzaSliceIcon : IconComponentBase
     {
         public override string Path
@@ -7395,6 +8013,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class PlaceOfWorshipIcon : IconComponentBase
     {
         public override string Path
@@ -7407,6 +8026,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class PlaneIcon : IconComponentBase
     {
         public override string Path
@@ -7419,6 +8039,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class PlaneArrivalIcon : IconComponentBase
     {
         public override string Path
@@ -7431,6 +8052,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class PlaneDepartureIcon : IconComponentBase
     {
         public override string Path
@@ -7443,6 +8065,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class PlayIcon : IconComponentBase
     {
         public override string Path
@@ -7455,6 +8078,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class PlayCircleIcon : IconComponentBase
     {
         public override string Path
@@ -7467,6 +8091,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class PlugIcon : IconComponentBase
     {
         public override string Path
@@ -7479,6 +8104,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class PlusIcon : IconComponentBase
     {
         public override string Path
@@ -7491,6 +8117,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class PlusCircleIcon : IconComponentBase
     {
         public override string Path
@@ -7503,6 +8130,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class PlusSquareIcon : IconComponentBase
     {
         public override string Path
@@ -7515,6 +8143,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class PodcastIcon : IconComponentBase
     {
         public override string Path
@@ -7527,6 +8156,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class PollIcon : IconComponentBase
     {
         public override string Path
@@ -7539,6 +8169,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class PollHIcon : IconComponentBase
     {
         public override string Path
@@ -7551,6 +8182,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class PooIcon : IconComponentBase
     {
         public override string Path
@@ -7563,6 +8195,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class PooStormIcon : IconComponentBase
     {
         public override string Path
@@ -7575,6 +8208,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class PoopIcon : IconComponentBase
     {
         public override string Path
@@ -7587,6 +8221,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class PortraitIcon : IconComponentBase
     {
         public override string Path
@@ -7599,6 +8234,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class PoundSignIcon : IconComponentBase
     {
         public override string Path
@@ -7611,6 +8247,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 320 512";
         }
     }
+    [CompilerGenerated]
     public class PowerOffIcon : IconComponentBase
     {
         public override string Path
@@ -7623,6 +8260,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class PrayIcon : IconComponentBase
     {
         public override string Path
@@ -7635,6 +8273,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class PrayingHandsIcon : IconComponentBase
     {
         public override string Path
@@ -7647,6 +8286,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class PrescriptionIcon : IconComponentBase
     {
         public override string Path
@@ -7659,6 +8299,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class PrescriptionBottleIcon : IconComponentBase
     {
         public override string Path
@@ -7671,6 +8312,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class PrescriptionBottleAltIcon : IconComponentBase
     {
         public override string Path
@@ -7683,6 +8325,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class PrintIcon : IconComponentBase
     {
         public override string Path
@@ -7695,6 +8338,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ProceduresIcon : IconComponentBase
     {
         public override string Path
@@ -7707,6 +8351,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class ProjectDiagramIcon : IconComponentBase
     {
         public override string Path
@@ -7719,6 +8364,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class PuzzlePieceIcon : IconComponentBase
     {
         public override string Path
@@ -7731,6 +8377,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class QrcodeIcon : IconComponentBase
     {
         public override string Path
@@ -7743,6 +8390,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class QuestionIcon : IconComponentBase
     {
         public override string Path
@@ -7755,6 +8403,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class QuestionCircleIcon : IconComponentBase
     {
         public override string Path
@@ -7767,6 +8416,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class QuidditchIcon : IconComponentBase
     {
         public override string Path
@@ -7779,6 +8429,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class QuoteLeftIcon : IconComponentBase
     {
         public override string Path
@@ -7791,6 +8442,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class QuoteRightIcon : IconComponentBase
     {
         public override string Path
@@ -7803,6 +8455,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class QuranIcon : IconComponentBase
     {
         public override string Path
@@ -7815,6 +8468,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class RadiationIcon : IconComponentBase
     {
         public override string Path
@@ -7827,6 +8481,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class RadiationAltIcon : IconComponentBase
     {
         public override string Path
@@ -7839,6 +8494,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class RainbowIcon : IconComponentBase
     {
         public override string Path
@@ -7851,6 +8507,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class RandomIcon : IconComponentBase
     {
         public override string Path
@@ -7863,6 +8520,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ReceiptIcon : IconComponentBase
     {
         public override string Path
@@ -7875,6 +8533,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class RecycleIcon : IconComponentBase
     {
         public override string Path
@@ -7887,6 +8546,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class RedoIcon : IconComponentBase
     {
         public override string Path
@@ -7899,6 +8559,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class RedoAltIcon : IconComponentBase
     {
         public override string Path
@@ -7911,6 +8572,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class RegisteredIcon : IconComponentBase
     {
         public override string Path
@@ -7923,6 +8585,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ReplyIcon : IconComponentBase
     {
         public override string Path
@@ -7935,6 +8598,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ReplyAllIcon : IconComponentBase
     {
         public override string Path
@@ -7947,6 +8611,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class RepublicanIcon : IconComponentBase
     {
         public override string Path
@@ -7959,6 +8624,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class RestroomIcon : IconComponentBase
     {
         public override string Path
@@ -7971,6 +8637,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class RetweetIcon : IconComponentBase
     {
         public override string Path
@@ -7983,6 +8650,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class RibbonIcon : IconComponentBase
     {
         public override string Path
@@ -7995,6 +8663,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class RingIcon : IconComponentBase
     {
         public override string Path
@@ -8007,6 +8676,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class RoadIcon : IconComponentBase
     {
         public override string Path
@@ -8019,6 +8689,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class RobotIcon : IconComponentBase
     {
         public override string Path
@@ -8031,6 +8702,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class RocketIcon : IconComponentBase
     {
         public override string Path
@@ -8043,6 +8715,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class RouteIcon : IconComponentBase
     {
         public override string Path
@@ -8055,6 +8728,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class RssIcon : IconComponentBase
     {
         public override string Path
@@ -8067,6 +8741,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class RssSquareIcon : IconComponentBase
     {
         public override string Path
@@ -8079,6 +8754,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class RubleSignIcon : IconComponentBase
     {
         public override string Path
@@ -8091,6 +8767,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class RulerIcon : IconComponentBase
     {
         public override string Path
@@ -8103,6 +8780,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class RulerCombinedIcon : IconComponentBase
     {
         public override string Path
@@ -8115,6 +8793,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class RulerHorizontalIcon : IconComponentBase
     {
         public override string Path
@@ -8127,6 +8806,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class RulerVerticalIcon : IconComponentBase
     {
         public override string Path
@@ -8139,6 +8819,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 256 512";
         }
     }
+    [CompilerGenerated]
     public class RunningIcon : IconComponentBase
     {
         public override string Path
@@ -8151,6 +8832,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 416 512";
         }
     }
+    [CompilerGenerated]
     public class RupeeSignIcon : IconComponentBase
     {
         public override string Path
@@ -8163,6 +8845,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 320 512";
         }
     }
+    [CompilerGenerated]
     public class SadCryIcon : IconComponentBase
     {
         public override string Path
@@ -8175,6 +8858,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class SadTearIcon : IconComponentBase
     {
         public override string Path
@@ -8187,6 +8871,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class SatelliteIcon : IconComponentBase
     {
         public override string Path
@@ -8199,6 +8884,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SatelliteDishIcon : IconComponentBase
     {
         public override string Path
@@ -8211,6 +8897,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SaveIcon : IconComponentBase
     {
         public override string Path
@@ -8223,6 +8910,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class SchoolIcon : IconComponentBase
     {
         public override string Path
@@ -8235,6 +8923,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class ScrewdriverIcon : IconComponentBase
     {
         public override string Path
@@ -8247,6 +8936,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ScrollIcon : IconComponentBase
     {
         public override string Path
@@ -8259,6 +8949,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class SdCardIcon : IconComponentBase
     {
         public override string Path
@@ -8271,6 +8962,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class SearchIcon : IconComponentBase
     {
         public override string Path
@@ -8283,6 +8975,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SearchDollarIcon : IconComponentBase
     {
         public override string Path
@@ -8295,6 +8988,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SearchLocationIcon : IconComponentBase
     {
         public override string Path
@@ -8307,6 +9001,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SearchMinusIcon : IconComponentBase
     {
         public override string Path
@@ -8319,6 +9014,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SearchPlusIcon : IconComponentBase
     {
         public override string Path
@@ -8331,6 +9027,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SeedlingIcon : IconComponentBase
     {
         public override string Path
@@ -8343,6 +9040,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ServerIcon : IconComponentBase
     {
         public override string Path
@@ -8355,6 +9053,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ShapesIcon : IconComponentBase
     {
         public override string Path
@@ -8367,6 +9066,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ShareIcon : IconComponentBase
     {
         public override string Path
@@ -8379,6 +9079,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ShareAltIcon : IconComponentBase
     {
         public override string Path
@@ -8391,6 +9092,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class ShareAltSquareIcon : IconComponentBase
     {
         public override string Path
@@ -8403,6 +9105,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class ShareSquareIcon : IconComponentBase
     {
         public override string Path
@@ -8415,6 +9118,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class ShekelSignIcon : IconComponentBase
     {
         public override string Path
@@ -8427,6 +9131,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class ShieldAltIcon : IconComponentBase
     {
         public override string Path
@@ -8439,6 +9144,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ShipIcon : IconComponentBase
     {
         public override string Path
@@ -8451,6 +9157,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class ShippingFastIcon : IconComponentBase
     {
         public override string Path
@@ -8463,6 +9170,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class ShoePrintsIcon : IconComponentBase
     {
         public override string Path
@@ -8475,6 +9183,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class ShoppingBagIcon : IconComponentBase
     {
         public override string Path
@@ -8487,6 +9196,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class ShoppingBasketIcon : IconComponentBase
     {
         public override string Path
@@ -8499,6 +9209,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class ShoppingCartIcon : IconComponentBase
     {
         public override string Path
@@ -8511,6 +9222,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class ShowerIcon : IconComponentBase
     {
         public override string Path
@@ -8523,6 +9235,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ShuttleVanIcon : IconComponentBase
     {
         public override string Path
@@ -8535,6 +9248,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class SignIcon : IconComponentBase
     {
         public override string Path
@@ -8547,6 +9261,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SignInAltIcon : IconComponentBase
     {
         public override string Path
@@ -8559,6 +9274,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SignLanguageIcon : IconComponentBase
     {
         public override string Path
@@ -8571,6 +9287,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class SignOutAltIcon : IconComponentBase
     {
         public override string Path
@@ -8583,6 +9300,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SignalIcon : IconComponentBase
     {
         public override string Path
@@ -8595,6 +9313,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class SignatureIcon : IconComponentBase
     {
         public override string Path
@@ -8607,6 +9326,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class SimCardIcon : IconComponentBase
     {
         public override string Path
@@ -8619,6 +9339,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class SitemapIcon : IconComponentBase
     {
         public override string Path
@@ -8631,6 +9352,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class SkatingIcon : IconComponentBase
     {
         public override string Path
@@ -8643,6 +9365,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class SkiingIcon : IconComponentBase
     {
         public override string Path
@@ -8655,6 +9378,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SkiingNordicIcon : IconComponentBase
     {
         public override string Path
@@ -8667,6 +9391,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class SkullIcon : IconComponentBase
     {
         public override string Path
@@ -8679,6 +9404,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SkullCrossbonesIcon : IconComponentBase
     {
         public override string Path
@@ -8691,6 +9417,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class SlashIcon : IconComponentBase
     {
         public override string Path
@@ -8703,6 +9430,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class SleighIcon : IconComponentBase
     {
         public override string Path
@@ -8715,6 +9443,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class SlidersHIcon : IconComponentBase
     {
         public override string Path
@@ -8727,6 +9456,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SmileIcon : IconComponentBase
     {
         public override string Path
@@ -8739,6 +9469,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class SmileBeamIcon : IconComponentBase
     {
         public override string Path
@@ -8751,6 +9482,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class SmileWinkIcon : IconComponentBase
     {
         public override string Path
@@ -8763,6 +9495,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class SmogIcon : IconComponentBase
     {
         public override string Path
@@ -8775,6 +9508,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class SmokingIcon : IconComponentBase
     {
         public override string Path
@@ -8787,6 +9521,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class SmokingBanIcon : IconComponentBase
     {
         public override string Path
@@ -8799,6 +9534,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SmsIcon : IconComponentBase
     {
         public override string Path
@@ -8811,6 +9547,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SnowboardingIcon : IconComponentBase
     {
         public override string Path
@@ -8823,6 +9560,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SnowflakeIcon : IconComponentBase
     {
         public override string Path
@@ -8835,6 +9573,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class SnowmanIcon : IconComponentBase
     {
         public override string Path
@@ -8847,6 +9586,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SnowplowIcon : IconComponentBase
     {
         public override string Path
@@ -8859,6 +9599,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class SocksIcon : IconComponentBase
     {
         public override string Path
@@ -8871,6 +9612,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SolarPanelIcon : IconComponentBase
     {
         public override string Path
@@ -8883,6 +9625,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class SortIcon : IconComponentBase
     {
         public override string Path
@@ -8895,6 +9638,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 320 512";
         }
     }
+    [CompilerGenerated]
     public class SortAlphaDownIcon : IconComponentBase
     {
         public override string Path
@@ -8907,6 +9651,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class SortAlphaUpIcon : IconComponentBase
     {
         public override string Path
@@ -8919,6 +9664,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class SortAmountDownIcon : IconComponentBase
     {
         public override string Path
@@ -8931,6 +9677,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SortAmountUpIcon : IconComponentBase
     {
         public override string Path
@@ -8943,6 +9690,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SortDownIcon : IconComponentBase
     {
         public override string Path
@@ -8955,6 +9703,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 320 512";
         }
     }
+    [CompilerGenerated]
     public class SortNumericDownIcon : IconComponentBase
     {
         public override string Path
@@ -8967,6 +9716,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class SortNumericUpIcon : IconComponentBase
     {
         public override string Path
@@ -8979,6 +9729,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class SortUpIcon : IconComponentBase
     {
         public override string Path
@@ -8991,6 +9742,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 320 512";
         }
     }
+    [CompilerGenerated]
     public class SpaIcon : IconComponentBase
     {
         public override string Path
@@ -9003,6 +9755,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class SpaceShuttleIcon : IconComponentBase
     {
         public override string Path
@@ -9015,6 +9768,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class SpiderIcon : IconComponentBase
     {
         public override string Path
@@ -9027,6 +9781,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class SpinnerIcon : IconComponentBase
     {
         public override string Path
@@ -9039,6 +9794,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SplotchIcon : IconComponentBase
     {
         public override string Path
@@ -9051,6 +9807,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SprayCanIcon : IconComponentBase
     {
         public override string Path
@@ -9063,6 +9820,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SquareIcon : IconComponentBase
     {
         public override string Path
@@ -9075,6 +9833,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class SquareFullIcon : IconComponentBase
     {
         public override string Path
@@ -9087,6 +9846,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SquareRootAltIcon : IconComponentBase
     {
         public override string Path
@@ -9099,6 +9859,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class StampIcon : IconComponentBase
     {
         public override string Path
@@ -9111,6 +9872,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class StarIcon : IconComponentBase
     {
         public override string Path
@@ -9123,6 +9885,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class StarAndCrescentIcon : IconComponentBase
     {
         public override string Path
@@ -9135,6 +9898,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class StarHalfIcon : IconComponentBase
     {
         public override string Path
@@ -9147,6 +9911,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class StarHalfAltIcon : IconComponentBase
     {
         public override string Path
@@ -9159,6 +9924,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 536 512";
         }
     }
+    [CompilerGenerated]
     public class StarOfDavidIcon : IconComponentBase
     {
         public override string Path
@@ -9171,6 +9937,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 464 512";
         }
     }
+    [CompilerGenerated]
     public class StarOfLifeIcon : IconComponentBase
     {
         public override string Path
@@ -9183,6 +9950,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 480 512";
         }
     }
+    [CompilerGenerated]
     public class StepBackwardIcon : IconComponentBase
     {
         public override string Path
@@ -9195,6 +9963,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class StepForwardIcon : IconComponentBase
     {
         public override string Path
@@ -9207,6 +9976,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class StethoscopeIcon : IconComponentBase
     {
         public override string Path
@@ -9219,6 +9989,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class StickyNoteIcon : IconComponentBase
     {
         public override string Path
@@ -9231,6 +10002,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class StopIcon : IconComponentBase
     {
         public override string Path
@@ -9243,6 +10015,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class StopCircleIcon : IconComponentBase
     {
         public override string Path
@@ -9255,6 +10028,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class StopwatchIcon : IconComponentBase
     {
         public override string Path
@@ -9267,6 +10041,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class StoreIcon : IconComponentBase
     {
         public override string Path
@@ -9279,6 +10054,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 616 512";
         }
     }
+    [CompilerGenerated]
     public class StoreAltIcon : IconComponentBase
     {
         public override string Path
@@ -9291,6 +10067,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class StreamIcon : IconComponentBase
     {
         public override string Path
@@ -9303,6 +10080,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class StreetViewIcon : IconComponentBase
     {
         public override string Path
@@ -9315,6 +10093,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class StrikethroughIcon : IconComponentBase
     {
         public override string Path
@@ -9327,6 +10106,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class StroopwafelIcon : IconComponentBase
     {
         public override string Path
@@ -9339,6 +10119,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SubscriptIcon : IconComponentBase
     {
         public override string Path
@@ -9351,6 +10132,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SubwayIcon : IconComponentBase
     {
         public override string Path
@@ -9363,6 +10145,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class SuitcaseIcon : IconComponentBase
     {
         public override string Path
@@ -9375,6 +10158,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SuitcaseRollingIcon : IconComponentBase
     {
         public override string Path
@@ -9387,6 +10171,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class SunIcon : IconComponentBase
     {
         public override string Path
@@ -9399,6 +10184,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SuperscriptIcon : IconComponentBase
     {
         public override string Path
@@ -9411,6 +10197,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SurpriseIcon : IconComponentBase
     {
         public override string Path
@@ -9423,6 +10210,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class SwatchbookIcon : IconComponentBase
     {
         public override string Path
@@ -9435,6 +10223,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 511 512";
         }
     }
+    [CompilerGenerated]
     public class SwimmerIcon : IconComponentBase
     {
         public override string Path
@@ -9447,6 +10236,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class SwimmingPoolIcon : IconComponentBase
     {
         public override string Path
@@ -9459,6 +10249,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class SynagogueIcon : IconComponentBase
     {
         public override string Path
@@ -9471,6 +10262,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class SyncIcon : IconComponentBase
     {
         public override string Path
@@ -9483,6 +10275,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SyncAltIcon : IconComponentBase
     {
         public override string Path
@@ -9495,6 +10288,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class SyringeIcon : IconComponentBase
     {
         public override string Path
@@ -9507,6 +10301,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class TableIcon : IconComponentBase
     {
         public override string Path
@@ -9519,6 +10314,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class TableTennisIcon : IconComponentBase
     {
         public override string Path
@@ -9531,6 +10327,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class TabletIcon : IconComponentBase
     {
         public override string Path
@@ -9543,6 +10340,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class TabletAltIcon : IconComponentBase
     {
         public override string Path
@@ -9555,6 +10353,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class TabletsIcon : IconComponentBase
     {
         public override string Path
@@ -9567,6 +10366,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class TachometerAltIcon : IconComponentBase
     {
         public override string Path
@@ -9579,6 +10379,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class TagIcon : IconComponentBase
     {
         public override string Path
@@ -9591,6 +10392,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class TagsIcon : IconComponentBase
     {
         public override string Path
@@ -9603,6 +10405,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class TapeIcon : IconComponentBase
     {
         public override string Path
@@ -9615,6 +10418,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class TasksIcon : IconComponentBase
     {
         public override string Path
@@ -9627,6 +10431,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class TaxiIcon : IconComponentBase
     {
         public override string Path
@@ -9639,6 +10444,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class TeethIcon : IconComponentBase
     {
         public override string Path
@@ -9651,6 +10457,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class TeethOpenIcon : IconComponentBase
     {
         public override string Path
@@ -9663,6 +10470,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class TemperatureHighIcon : IconComponentBase
     {
         public override string Path
@@ -9675,6 +10483,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class TemperatureLowIcon : IconComponentBase
     {
         public override string Path
@@ -9687,6 +10496,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class TengeIcon : IconComponentBase
     {
         public override string Path
@@ -9699,6 +10509,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class TerminalIcon : IconComponentBase
     {
         public override string Path
@@ -9711,6 +10522,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class TextHeightIcon : IconComponentBase
     {
         public override string Path
@@ -9723,6 +10535,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class TextWidthIcon : IconComponentBase
     {
         public override string Path
@@ -9735,6 +10548,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class ThIcon : IconComponentBase
     {
         public override string Path
@@ -9747,6 +10561,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ThLargeIcon : IconComponentBase
     {
         public override string Path
@@ -9759,6 +10574,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ThListIcon : IconComponentBase
     {
         public override string Path
@@ -9771,6 +10587,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class TheaterMasksIcon : IconComponentBase
     {
         public override string Path
@@ -9783,6 +10600,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class ThermometerIcon : IconComponentBase
     {
         public override string Path
@@ -9795,6 +10613,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ThermometerEmptyIcon : IconComponentBase
     {
         public override string Path
@@ -9807,6 +10626,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 256 512";
         }
     }
+    [CompilerGenerated]
     public class ThermometerFullIcon : IconComponentBase
     {
         public override string Path
@@ -9819,6 +10639,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 256 512";
         }
     }
+    [CompilerGenerated]
     public class ThermometerHalfIcon : IconComponentBase
     {
         public override string Path
@@ -9831,6 +10652,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 256 512";
         }
     }
+    [CompilerGenerated]
     public class ThermometerQuarterIcon : IconComponentBase
     {
         public override string Path
@@ -9843,6 +10665,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 256 512";
         }
     }
+    [CompilerGenerated]
     public class ThermometerThreeQuartersIcon : IconComponentBase
     {
         public override string Path
@@ -9855,6 +10678,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 256 512";
         }
     }
+    [CompilerGenerated]
     public class ThumbsDownIcon : IconComponentBase
     {
         public override string Path
@@ -9867,6 +10691,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ThumbsUpIcon : IconComponentBase
     {
         public override string Path
@@ -9879,6 +10704,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ThumbtackIcon : IconComponentBase
     {
         public override string Path
@@ -9891,6 +10717,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class TicketAltIcon : IconComponentBase
     {
         public override string Path
@@ -9903,6 +10730,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class TimesIcon : IconComponentBase
     {
         public override string Path
@@ -9915,6 +10743,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 352 512";
         }
     }
+    [CompilerGenerated]
     public class TimesCircleIcon : IconComponentBase
     {
         public override string Path
@@ -9927,6 +10756,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class TintIcon : IconComponentBase
     {
         public override string Path
@@ -9939,6 +10769,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 352 512";
         }
     }
+    [CompilerGenerated]
     public class TintSlashIcon : IconComponentBase
     {
         public override string Path
@@ -9951,6 +10782,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class TiredIcon : IconComponentBase
     {
         public override string Path
@@ -9963,6 +10795,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class ToggleOffIcon : IconComponentBase
     {
         public override string Path
@@ -9975,6 +10808,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class ToggleOnIcon : IconComponentBase
     {
         public override string Path
@@ -9987,6 +10821,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class ToiletIcon : IconComponentBase
     {
         public override string Path
@@ -9999,6 +10834,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class ToiletPaperIcon : IconComponentBase
     {
         public override string Path
@@ -10011,6 +10847,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class ToolboxIcon : IconComponentBase
     {
         public override string Path
@@ -10023,6 +10860,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ToolsIcon : IconComponentBase
     {
         public override string Path
@@ -10035,6 +10873,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class ToothIcon : IconComponentBase
     {
         public override string Path
@@ -10047,6 +10886,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class TorahIcon : IconComponentBase
     {
         public override string Path
@@ -10059,6 +10899,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class ToriiGateIcon : IconComponentBase
     {
         public override string Path
@@ -10071,6 +10912,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class TractorIcon : IconComponentBase
     {
         public override string Path
@@ -10083,6 +10925,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class TrademarkIcon : IconComponentBase
     {
         public override string Path
@@ -10095,6 +10938,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class TrafficLightIcon : IconComponentBase
     {
         public override string Path
@@ -10107,6 +10951,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class TrainIcon : IconComponentBase
     {
         public override string Path
@@ -10119,6 +10964,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class TramIcon : IconComponentBase
     {
         public override string Path
@@ -10131,6 +10977,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class TransgenderIcon : IconComponentBase
     {
         public override string Path
@@ -10143,6 +10990,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class TransgenderAltIcon : IconComponentBase
     {
         public override string Path
@@ -10155,6 +11003,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 480 512";
         }
     }
+    [CompilerGenerated]
     public class TrashIcon : IconComponentBase
     {
         public override string Path
@@ -10167,6 +11016,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class TrashAltIcon : IconComponentBase
     {
         public override string Path
@@ -10179,6 +11029,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class TrashRestoreIcon : IconComponentBase
     {
         public override string Path
@@ -10191,6 +11042,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class TrashRestoreAltIcon : IconComponentBase
     {
         public override string Path
@@ -10203,6 +11055,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class TreeIcon : IconComponentBase
     {
         public override string Path
@@ -10215,6 +11068,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class TrophyIcon : IconComponentBase
     {
         public override string Path
@@ -10227,6 +11081,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class TruckIcon : IconComponentBase
     {
         public override string Path
@@ -10239,6 +11094,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class TruckLoadingIcon : IconComponentBase
     {
         public override string Path
@@ -10251,6 +11107,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class TruckMonsterIcon : IconComponentBase
     {
         public override string Path
@@ -10263,6 +11120,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class TruckMovingIcon : IconComponentBase
     {
         public override string Path
@@ -10275,6 +11133,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class TruckPickupIcon : IconComponentBase
     {
         public override string Path
@@ -10287,6 +11146,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class TshirtIcon : IconComponentBase
     {
         public override string Path
@@ -10299,6 +11159,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class TtyIcon : IconComponentBase
     {
         public override string Path
@@ -10311,6 +11172,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class TvIcon : IconComponentBase
     {
         public override string Path
@@ -10323,6 +11185,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class UmbrellaIcon : IconComponentBase
     {
         public override string Path
@@ -10335,6 +11198,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class UmbrellaBeachIcon : IconComponentBase
     {
         public override string Path
@@ -10347,6 +11211,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class UnderlineIcon : IconComponentBase
     {
         public override string Path
@@ -10359,6 +11224,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class UndoIcon : IconComponentBase
     {
         public override string Path
@@ -10371,6 +11237,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class UndoAltIcon : IconComponentBase
     {
         public override string Path
@@ -10383,6 +11250,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class UniversalAccessIcon : IconComponentBase
     {
         public override string Path
@@ -10395,6 +11263,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class UniversityIcon : IconComponentBase
     {
         public override string Path
@@ -10407,6 +11276,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class UnlinkIcon : IconComponentBase
     {
         public override string Path
@@ -10419,6 +11289,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class UnlockIcon : IconComponentBase
     {
         public override string Path
@@ -10431,6 +11302,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class UnlockAltIcon : IconComponentBase
     {
         public override string Path
@@ -10443,6 +11315,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class UploadIcon : IconComponentBase
     {
         public override string Path
@@ -10455,6 +11328,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class UserIcon : IconComponentBase
     {
         public override string Path
@@ -10467,6 +11341,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class UserAltIcon : IconComponentBase
     {
         public override string Path
@@ -10479,6 +11354,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class UserAltSlashIcon : IconComponentBase
     {
         public override string Path
@@ -10491,6 +11367,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class UserAstronautIcon : IconComponentBase
     {
         public override string Path
@@ -10503,6 +11380,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class UserCheckIcon : IconComponentBase
     {
         public override string Path
@@ -10515,6 +11393,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class UserCircleIcon : IconComponentBase
     {
         public override string Path
@@ -10527,6 +11406,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 496 512";
         }
     }
+    [CompilerGenerated]
     public class UserClockIcon : IconComponentBase
     {
         public override string Path
@@ -10539,6 +11419,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class UserCogIcon : IconComponentBase
     {
         public override string Path
@@ -10551,6 +11432,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class UserEditIcon : IconComponentBase
     {
         public override string Path
@@ -10563,6 +11445,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class UserFriendsIcon : IconComponentBase
     {
         public override string Path
@@ -10575,6 +11458,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class UserGraduateIcon : IconComponentBase
     {
         public override string Path
@@ -10587,6 +11471,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class UserInjuredIcon : IconComponentBase
     {
         public override string Path
@@ -10599,6 +11484,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class UserLockIcon : IconComponentBase
     {
         public override string Path
@@ -10611,6 +11497,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class UserMdIcon : IconComponentBase
     {
         public override string Path
@@ -10623,6 +11510,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class UserMinusIcon : IconComponentBase
     {
         public override string Path
@@ -10635,6 +11523,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class UserNinjaIcon : IconComponentBase
     {
         public override string Path
@@ -10647,6 +11536,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class UserNurseIcon : IconComponentBase
     {
         public override string Path
@@ -10659,6 +11549,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class UserPlusIcon : IconComponentBase
     {
         public override string Path
@@ -10671,6 +11562,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class UserSecretIcon : IconComponentBase
     {
         public override string Path
@@ -10683,6 +11575,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class UserShieldIcon : IconComponentBase
     {
         public override string Path
@@ -10695,6 +11588,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class UserSlashIcon : IconComponentBase
     {
         public override string Path
@@ -10707,6 +11601,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class UserTagIcon : IconComponentBase
     {
         public override string Path
@@ -10719,6 +11614,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class UserTieIcon : IconComponentBase
     {
         public override string Path
@@ -10731,6 +11627,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 448 512";
         }
     }
+    [CompilerGenerated]
     public class UserTimesIcon : IconComponentBase
     {
         public override string Path
@@ -10743,6 +11640,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class UsersIcon : IconComponentBase
     {
         public override string Path
@@ -10755,6 +11653,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class UsersCogIcon : IconComponentBase
     {
         public override string Path
@@ -10767,6 +11666,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class UtensilSpoonIcon : IconComponentBase
     {
         public override string Path
@@ -10779,6 +11679,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class UtensilsIcon : IconComponentBase
     {
         public override string Path
@@ -10791,6 +11692,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 416 512";
         }
     }
+    [CompilerGenerated]
     public class VectorSquareIcon : IconComponentBase
     {
         public override string Path
@@ -10803,6 +11705,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class VenusIcon : IconComponentBase
     {
         public override string Path
@@ -10815,6 +11718,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 288 512";
         }
     }
+    [CompilerGenerated]
     public class VenusDoubleIcon : IconComponentBase
     {
         public override string Path
@@ -10827,6 +11731,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class VenusMarsIcon : IconComponentBase
     {
         public override string Path
@@ -10839,6 +11744,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class VialIcon : IconComponentBase
     {
         public override string Path
@@ -10851,6 +11757,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 480 512";
         }
     }
+    [CompilerGenerated]
     public class VialsIcon : IconComponentBase
     {
         public override string Path
@@ -10863,6 +11770,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class VideoIcon : IconComponentBase
     {
         public override string Path
@@ -10875,6 +11783,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class VideoSlashIcon : IconComponentBase
     {
         public override string Path
@@ -10887,6 +11796,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class ViharaIcon : IconComponentBase
     {
         public override string Path
@@ -10899,6 +11809,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class VolleyballBallIcon : IconComponentBase
     {
         public override string Path
@@ -10911,6 +11822,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class VolumeDownIcon : IconComponentBase
     {
         public override string Path
@@ -10923,6 +11835,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class VolumeMuteIcon : IconComponentBase
     {
         public override string Path
@@ -10935,6 +11848,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class VolumeOffIcon : IconComponentBase
     {
         public override string Path
@@ -10947,6 +11861,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 256 512";
         }
     }
+    [CompilerGenerated]
     public class VolumeUpIcon : IconComponentBase
     {
         public override string Path
@@ -10959,6 +11874,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class VoteYeaIcon : IconComponentBase
     {
         public override string Path
@@ -10971,6 +11887,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class VrCardboardIcon : IconComponentBase
     {
         public override string Path
@@ -10983,6 +11900,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class WalkingIcon : IconComponentBase
     {
         public override string Path
@@ -10995,6 +11913,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 320 512";
         }
     }
+    [CompilerGenerated]
     public class WalletIcon : IconComponentBase
     {
         public override string Path
@@ -11007,6 +11926,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class WarehouseIcon : IconComponentBase
     {
         public override string Path
@@ -11019,6 +11939,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class WaterIcon : IconComponentBase
     {
         public override string Path
@@ -11031,6 +11952,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class WaveSquareIcon : IconComponentBase
     {
         public override string Path
@@ -11043,6 +11965,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class WeightIcon : IconComponentBase
     {
         public override string Path
@@ -11055,6 +11978,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class WeightHangingIcon : IconComponentBase
     {
         public override string Path
@@ -11067,6 +11991,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class WheelchairIcon : IconComponentBase
     {
         public override string Path
@@ -11079,6 +12004,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class WifiIcon : IconComponentBase
     {
         public override string Path
@@ -11091,6 +12017,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class WindIcon : IconComponentBase
     {
         public override string Path
@@ -11103,6 +12030,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class WindowCloseIcon : IconComponentBase
     {
         public override string Path
@@ -11115,6 +12043,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class WindowMaximizeIcon : IconComponentBase
     {
         public override string Path
@@ -11127,6 +12056,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class WindowMinimizeIcon : IconComponentBase
     {
         public override string Path
@@ -11139,6 +12069,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class WindowRestoreIcon : IconComponentBase
     {
         public override string Path
@@ -11151,6 +12082,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class WineBottleIcon : IconComponentBase
     {
         public override string Path
@@ -11163,6 +12095,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class WineGlassIcon : IconComponentBase
     {
         public override string Path
@@ -11175,6 +12108,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 288 512";
         }
     }
+    [CompilerGenerated]
     public class WineGlassAltIcon : IconComponentBase
     {
         public override string Path
@@ -11187,6 +12121,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 288 512";
         }
     }
+    [CompilerGenerated]
     public class WonSignIcon : IconComponentBase
     {
         public override string Path
@@ -11199,6 +12134,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 576 512";
         }
     }
+    [CompilerGenerated]
     public class WrenchIcon : IconComponentBase
     {
         public override string Path
@@ -11211,6 +12147,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 512 512";
         }
     }
+    [CompilerGenerated]
     public class XRayIcon : IconComponentBase
     {
         public override string Path
@@ -11223,6 +12160,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 640 512";
         }
     }
+    [CompilerGenerated]
     public class YenSignIcon : IconComponentBase
     {
         public override string Path
@@ -11235,6 +12173,7 @@ namespace Blorc.PatternFly.Components.Icon
             get => "0 0 384 512";
         }
     }
+    [CompilerGenerated]
     public class YinYangIcon : IconComponentBase
     {
         public override string Path

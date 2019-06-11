@@ -8,9 +8,16 @@
 
     private RenderFragment CreateComponent() => builder =>
     {
-        builder.OpenComponent(0, Type.GetType($"Blorc.PatternFly.Components.Icon.{Icon}Icon"));
+        var type = Type.GetType($"Blorc.PatternFly.Components.Icon.{Icon}Icon");
+        if (type is null)
+        {
+            builder.AddMarkupContent(0, $"<b>Cannot find icon '{Icon}'</b>");
+            return;
+        }
 
-        builder.AddAttribute(1, "Class", BindMethods.GetValue(Class));
+        builder.OpenComponent(1, type);
+
+        builder.AddAttribute(2, "Class", BindMethods.GetValue(Class));
 
         builder.CloseComponent();
     };

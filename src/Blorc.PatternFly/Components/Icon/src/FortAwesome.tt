@@ -14,6 +14,8 @@
 
 namespace Blorc.PatternFly.Components.Icon
 {
+    using System.Runtime.CompilerServices;
+
 <#
 
 	var lines = File.ReadAllLines(this.Host.ResolvePath(@"fortawesome-solid.js")).ToList();
@@ -50,6 +52,7 @@ public bool CreateIcon(string line)
         var unicode = CleanValue(valueSplit[3]);
         var svgPathData = CleanValue(valueSplit[4]);
 
+        WriteLine($"    [CompilerGenerated]");
         WriteLine($"    public class {name}Icon : IconComponentBase");
         WriteLine("    {");
         WriteLine($"        public override string Path");
