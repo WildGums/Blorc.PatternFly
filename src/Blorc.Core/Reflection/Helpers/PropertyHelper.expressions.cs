@@ -1,4 +1,4 @@
-﻿namespace Blorc.PatternFly
+﻿namespace Blorc.Reflection
 {
     // Note: this code comes from Catel:
     // https://raw.githubusercontent.com/Catel/Catel/58d964c15281728972d9f1326048fdf665045663/src/Catel.Core/Reflection/Helpers/PropertyHelper.cs

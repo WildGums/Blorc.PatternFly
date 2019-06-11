@@ -12,12 +12,12 @@
     {
         public static string GetPropertyName<TSource, TProperty>(Expression<Func<TSource, TProperty>> propertyExpression)
         {
-            return GetPropertyName(propertyExpression);
+            return PropertyHelper.GetPropertyName(propertyExpression);
         }
 
         public static string GetPropertyName<TProperty>(Expression<Func<TProperty>> propertyExpression)
         {
-            return GetPropertyName(propertyExpression);
+            return PropertyHelper.GetPropertyName(propertyExpression);
         }
 
         public static object GetOwner<TProperty>(Expression<Func<TProperty>> propertyExpression)
