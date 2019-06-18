@@ -4,6 +4,8 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Blorc.PatternFly</AssemblyName>
     <RootNamespace>Blorc.PatternFly</RootNamespace>
+    <PackageId>Blorc.PatternFly</PackageId>
+    <PackageVersion>1.0.0-alpha0001</PackageVersion>
     <IsPackable>true</IsPackable>
     <RestoreAdditionalProjectSources>
       https://dotnet.myget.org/F/aspnetcore-dev/api/v3/index.json;
