@@ -6,6 +6,8 @@
     <RootNamespace>Blorc.PatternFly</RootNamespace>
     <PackageId>Blorc.PatternFly</PackageId>
     <PackageVersion>1.0.0-alpha0001</PackageVersion>
+    <Description>PatternFly implementation for Blazor.</Description>
+    <PackageTags>blazor;patternfly</PackageTags>
     <IsPackable>true</IsPackable>
     <RestoreAdditionalProjectSources>
       https://dotnet.myget.org/F/aspnetcore-dev/api/v3/index.json;
@@ -36,6 +38,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Blorc.Core" Version="1.0.0-alpha0005" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Browser" Version="3.0.0-preview5-19227-01" />
   </ItemGroup>
 
@@ -62,15 +65,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>FortAwesome.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="content\" />
-    <Folder Include="Services\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Blorc.Core\Blorc.Core.csproj" />
   </ItemGroup>
 
   <Import Project="$(MSBuildProjectDirectory)\..\Directory.build.shared.explicit.props" Condition="Exists('$(MSBuildProjectDirectory)\..\Directory.build.shared.explicit.props')" />
