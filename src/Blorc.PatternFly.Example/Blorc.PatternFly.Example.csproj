@@ -12,6 +12,11 @@
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <!-- SonarQube requires a project guid -->
+    <ProjectGuid>C664866A-BFBB-4FAC-B9F7-A292CF757017</ProjectGuid>
+  </PropertyGroup>
+
   <ItemGroup>
 <!--
     <PackageReference Include="Catel.Analyzers" Version="1.0.0" PrivateAssets="all" />
