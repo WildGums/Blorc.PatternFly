@@ -8,14 +8,14 @@
 </div>
 
 <div class="@NavMenuCssClass" onclick="@ToggleNavMenu">
-    <Navigation ref="Navigation">
+    <Navigation @ref="Navigation">
         <Items>
             <NavigationItem Title="Home" Link="/" Parent="@Navigation">
                 <Content>
                     <i class="fa fa-home mr-3" aria-hidden="true"></i>  Home
                 </Content>
             </NavigationItem>
-            <NavigationExpandableSection Title="Components" Parent="@Navigation" ref="ComponentsNavigationExpandableSection">
+            <NavigationExpandableSection Title="Components" Parent="@Navigation" @ref="ComponentsNavigationExpandableSection">
                 <Content>
                     <i class="fa fa-server mr-3" aria-hidden="true"></i> Components
                 </Content>
@@ -70,7 +70,7 @@
     </Navigation>
 </div>
 
-@functions {
+@code {
     Navigation Navigation = new Navigation();
 
     NavigationExpandableSection ComponentsNavigationExpandableSection = new NavigationExpandableSection();

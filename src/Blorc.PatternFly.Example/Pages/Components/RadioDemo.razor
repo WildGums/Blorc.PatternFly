@@ -7,12 +7,12 @@
 <section class="ws-section ws-live-demo">
 
     <Example Title="Controlled radio">
-        <Radio ref="controlledRadio1"
+        <Radio @ref="controlledRadio1"
                Value="3"
                Name="pf-version"
                OnChange="OnControlledRadioChanged"
                Label="Controlled radio 1" />
-        <Radio ref="controlledRadio2"
+        <Radio @ref="controlledRadio2"
                Value="4"
                Name="pf-version"
                OnChange="OnControlledRadioChanged"
@@ -42,7 +42,7 @@
 
 </section>
 
-@functions
+@code
 {
     private Radio controlledRadio1;
     private Radio controlledRadio2;

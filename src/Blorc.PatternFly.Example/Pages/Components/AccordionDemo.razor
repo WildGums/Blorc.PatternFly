@@ -4,7 +4,7 @@
 
 <Metadata ComponentName="Accordion" />
 
-<Accordion ref="Accordion">
+<Accordion @ref="Accordion">
     <Items>
         <AccordionItem Title="Item 0" Index="0" Parent="@Accordion">
             <Content>
@@ -33,7 +33,7 @@
     </Items>
 </Accordion>
 
-@functions {
+@code {
     Accordion Accordion = new Accordion();
 }
 

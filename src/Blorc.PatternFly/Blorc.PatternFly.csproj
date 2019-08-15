@@ -9,10 +9,12 @@
     <Description>PatternFly implementation for Blazor.</Description>
     <PackageTags>blazor;patternfly</PackageTags>
     <IsPackable>true</IsPackable>
+    <!--
     <RestoreAdditionalProjectSources>
       https://dotnet.myget.org/F/aspnetcore-dev/api/v3/index.json;
       https://dotnet.myget.org/F/blazor-dev/api/v3/index.json;
     </RestoreAdditionalProjectSources>
+    -->
     <LangVersion>7.3</LangVersion>
     <RazorLangVersion>3.0</RazorLangVersion>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
@@ -43,9 +45,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!--
     <PackageReference Include="Catel.Analyzers" Version="1.0.0" PrivateAssets="all" />
-    <PackageReference Include="Blorc.Core" Version="1.0.0-alpha0005" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Browser" Version="3.0.0-preview5-19227-01" />
+    -->
+    <PackageReference Include="Blorc.Core" Version="1.0.0-alpha0085" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Browser" Version="3.0.0-preview7.19365.7" />
   </ItemGroup>
 
   <ItemGroup>

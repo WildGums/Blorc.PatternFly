@@ -6,7 +6,7 @@
 
 <section class="ws-section ws-live-demo">
     <Example Title="Simple expandable">
-        <Expandable ref="expandable" 
+        <Expandable @ref="expandable" 
                     ToggleText="Show more" 
                     Toggled="@OnToggled">
             This content is visible only when the component is expanded.
@@ -14,7 +14,7 @@
     </Example>
 </section>
 
-@functions {
+@code {
     private Expandable expandable;
 
     private void OnToggled(object sender, EventArgs e)

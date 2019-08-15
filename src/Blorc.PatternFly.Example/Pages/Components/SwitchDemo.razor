@@ -6,13 +6,13 @@
 
 <section class="ws-section ws-live-demo">
     <Example Title="Simple switch">
-        <Switch ref="simpleSwitch"
+        <Switch @ref="simpleSwitch"
                 IsChecked="true"
                 OnChange="@OnSimpleSwitchIsCheckedChanged" />
     </Example>
 
     <Example Title="Simple (no labels)">
-        <Switch ref="noLabelsSwitch"
+        <Switch @ref="noLabelsSwitch"
                 IsChecked="true" />
     </Example>
 
@@ -33,7 +33,7 @@
     </Example>
 </section>
 
-@functions
+@code
 {
     private Switch simpleSwitch;
     private Switch noLabelsSwitch;
