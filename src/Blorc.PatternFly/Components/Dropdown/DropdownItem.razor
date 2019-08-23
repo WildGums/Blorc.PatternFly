@@ -18,10 +18,12 @@
             builder.AddAttribute(3, "href", BindMethods.GetValue(Href));
         }
 
-        builder.AddAttribute(4, "tabindex", BindMethods.GetValue(Index));
-        builder.AddAttribute(5, "disabled", BindMethods.GetValue(IsDisabled));
+        builder.AddAttribute(4, "onclick", OnButtonClicked);
 
-        builder.AddContent(6, ChildContent);
+        builder.AddAttribute(5, "tabindex", BindMethods.GetValue(Index));
+        builder.AddAttribute(6, "disabled", BindMethods.GetValue(IsDisabled));
+
+        builder.AddContent(7, ChildContent);
         builder.CloseElement();
     };
 

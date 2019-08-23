@@ -68,5 +68,25 @@
 
         [Parameter]
         public EventHandler<EventArgs> SelectionChanged { get; set; }
+
+        [Parameter]
+        public Dropdown Parent { get; set; }
+
+        protected void OnButtonClicked(UIMouseEventArgs e)
+        {
+            var handler = OnClick;
+            if (handler != null)
+            {
+                handler(this, EventArgs.Empty);
+            }
+
+            if (Parent != null)
+            {
+                Parent.IsOpen = false;
+            }
+        }
+
+        [Parameter]
+        public EventHandler<EventArgs> OnClick { get; set; }
     }
 }
