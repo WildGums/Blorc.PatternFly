@@ -9,8 +9,24 @@
     {
         private bool _clicked;
 
-        [Parameter]
-        public INavigationComponent Parent { get; set; }
+        public INavigationComponent Parent
+        {
+            get
+            {
+                if (ContainerNavigationExpandableSection != null)
+                {
+                    return ContainerNavigationExpandableSection;
+                }
+
+                return ContainerNavigation;
+            }
+        }
+
+        [CascadingParameter]
+        public NavigationExpandableSection ContainerNavigationExpandableSection { get; set; }
+
+        [CascadingParameter]
+        public Navigation ContainerNavigation { get; set; }
 
         [Parameter]
         public RenderFragment Items { get; set; }
@@ -66,6 +82,7 @@
         {
             Parent.CurrentItemInvalidated += OnCurrentItemInvalidated;
         }
+
 
         private void OnCurrentItemInvalidated(object sender, EventArgs e)
         {

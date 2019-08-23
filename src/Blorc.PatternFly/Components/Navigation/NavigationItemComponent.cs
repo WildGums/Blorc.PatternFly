@@ -31,8 +31,24 @@
         [Parameter]
         public string Link { get; set; }
 
-        [Parameter]
-        public INavigationComponent Parent { get; set; }
+        public INavigationComponent Parent
+        {
+            get
+            {
+                if (ContainerNavigationExpandableSection != null)
+                {
+                    return ContainerNavigationExpandableSection;
+                }
+
+                return ContainerNavigation;
+            }
+        }
+
+        [CascadingParameter]
+        public NavigationExpandableSection ContainerNavigationExpandableSection { get; set; }
+
+        [CascadingParameter]
+        public Navigation ContainerNavigation { get; set; }
 
         public bool IsCurrent { get; private set; }
 
