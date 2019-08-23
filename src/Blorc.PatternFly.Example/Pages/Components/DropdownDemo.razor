@@ -7,14 +7,14 @@
 
 <section class="ws-section ws-live-demo">
     <Example Title="Simple dropdown">
-        <Dropdown @ref="SimpleDropdown">
+        <Dropdown>
             <Toggle>
                 <DropdownToggle>Dropdown</DropdownToggle>
             </Toggle>
 
             <Items>
-                <DropdownItem Key="link" Parent=@SimpleDropdown>Link</DropdownItem>
-                <DropdownItem Key="action" Component="button" Parent=@SimpleDropdown>
+                <DropdownItem Key="link">Link</DropdownItem>
+                <DropdownItem Key="action" Component="button">
                     Action
                 </DropdownItem>
                 <DropdownItem Key="disabled link" IsDisabled="true">
@@ -24,8 +24,8 @@
                     Disabled Action
                 </DropdownItem>
                 <Separator Key="separator" />
-                <DropdownItem Key="separated link" Parent=@SimpleDropdown>Separated Link</DropdownItem>
-                <DropdownItem Key="separated action" Component="button" Parent=@SimpleDropdown>
+                <DropdownItem Key="separated link">Separated Link</DropdownItem>
+                <DropdownItem Key="separated action" Component="button">
                     Separated Action
                 </DropdownItem>
             </Items>
@@ -264,8 +264,3 @@
         </Dropdown>
     </Example>
 </section>
-
-@code {
-    Dropdown SimpleDropdown = new Dropdown();
-}
-

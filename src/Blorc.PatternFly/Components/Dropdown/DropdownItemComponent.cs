@@ -69,8 +69,8 @@
         [Parameter]
         public EventHandler<EventArgs> SelectionChanged { get; set; }
 
-        [Parameter]
-        public Dropdown Parent { get; set; }
+        [CascadingParameter]
+        public Dropdown ContainerDropdown { get; set; }
 
         protected void OnButtonClicked(UIMouseEventArgs e)
         {
@@ -80,9 +80,9 @@
                 handler(this, EventArgs.Empty);
             }
 
-            if (Parent != null)
+            if (ContainerDropdown != null)
             {
-                Parent.IsOpen = false;
+                ContainerDropdown.IsOpen = false;
             }
         }
 
