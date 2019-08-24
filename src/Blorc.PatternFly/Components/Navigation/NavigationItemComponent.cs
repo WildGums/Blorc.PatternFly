@@ -31,30 +31,15 @@
         [Parameter]
         public string Link { get; set; }
 
-        public INavigationComponent Parent
-        {
-            get
-            {
-                if (ContainerNavigationExpandableSection != null)
-                {
-                    return ContainerNavigationExpandableSection;
-                }
-
-                return ContainerNavigation;
-            }
-        }
-
         [CascadingParameter]
-        public NavigationExpandableSection ContainerNavigationExpandableSection { get; set; }
+        public IContainerNavigationComponent ContainerNavigationComponent { get; set; }
 
-        [CascadingParameter]
-        public Navigation ContainerNavigation { get; set; }
 
         public bool IsCurrent { get; private set; }
 
         protected override async Task OnInitAsync()
         {
-            Parent.CurrentItemInvalidated += OnCurrentItemInvalidated;
+            ContainerNavigationComponent.CurrentItemInvalidated += OnCurrentItemInvalidated;
         }
 
         private void OnCurrentItemInvalidated(object sender, EventArgs e)
@@ -72,12 +57,12 @@
         {
             _clicked = true;
 
-            Parent.InvalidateCurrentItem(_clicked);
+            ContainerNavigationComponent.InvalidateCurrentItem(_clicked);
 
             if (!IsCurrent)
             {
                 IsCurrent = true;
-                Parent.MarkBranchAsCurrent();
+                ContainerNavigationComponent.MarkBranchAsCurrent();
             }
 
             UriHelper.NavigateTo(Link);

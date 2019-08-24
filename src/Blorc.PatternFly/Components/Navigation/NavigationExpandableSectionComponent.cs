@@ -5,28 +5,12 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class NavigationExpandableSectionComponent : BlorcComponentBase, INavigationComponent
+    public class NavigationExpandableSectionComponent : BlorcComponentBase, IContainerNavigationComponent
     {
         private bool _clicked;
 
-        public INavigationComponent Parent
-        {
-            get
-            {
-                if (ContainerNavigationExpandableSection != null)
-                {
-                    return ContainerNavigationExpandableSection;
-                }
-
-                return ContainerNavigation;
-            }
-        }
-
         [CascadingParameter]
-        public NavigationExpandableSection ContainerNavigationExpandableSection { get; set; }
-
-        [CascadingParameter]
-        public Navigation ContainerNavigation { get; set; }
+        public IContainerNavigationComponent ContainerNavigationComponent { get; set; }
 
         [Parameter]
         public RenderFragment Items { get; set; }
@@ -51,7 +35,7 @@
         {
             _clicked = clicked;
 
-            Parent.InvalidateCurrentItem(clicked);
+            ContainerNavigationComponent.InvalidateCurrentItem(clicked);
         }
 
         public void MarkBranchAsCurrent()
@@ -59,7 +43,7 @@
             if (!IsCurrent)
             {
                 IsCurrent = true;
-                Parent.MarkBranchAsCurrent();
+                ContainerNavigationComponent.MarkBranchAsCurrent();
             }
         }
 
@@ -80,7 +64,7 @@
 
         protected override async Task OnInitAsync()
         {
-            Parent.CurrentItemInvalidated += OnCurrentItemInvalidated;
+            ContainerNavigationComponent.CurrentItemInvalidated += OnCurrentItemInvalidated;
         }
 
 

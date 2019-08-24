@@ -2,7 +2,7 @@
 {
     using System;
 
-    public interface INavigationComponent
+    public interface IContainerNavigationComponent
     {
         event EventHandler CurrentItemInvalidated;
 
