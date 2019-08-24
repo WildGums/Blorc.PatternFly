@@ -137,5 +137,15 @@
 
             ContainerDropdown.DropDownToggle = this;
         }
+        protected void OnClick()
+        {
+            IsOpen = !IsOpen;
+
+            var handler = Toggled;
+            if (handler != null)
+            {
+                handler(this, EventArgs.Empty);
+            }
+        }
     }
 }

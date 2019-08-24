@@ -83,6 +83,11 @@
             if (ContainerDropdown != null)
             {
                 ContainerDropdown.IsOpen = false;
+                //// TODO: This can be removed after a binding system fix.
+                if (ContainerDropdown.DropDownToggle != null)
+                {
+                    ContainerDropdown.DropDownToggle.IsOpen = false;
+                }
             }
         }
 

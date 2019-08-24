@@ -53,17 +53,3 @@ else
         }
     </button>
 }
-
-@functions
-{
-    private void OnClick()
-    {
-        IsOpen = !IsOpen;
-
-        var handler = Toggled;
-        if (handler != null)
-        {
-            handler(this, EventArgs.Empty);
-        }
-    }
-}
