@@ -80,9 +80,18 @@
         public RenderFragment ChildContent { get; set; }
 
         [Parameter]
-        public EventCallback<UIMouseEventArgs> OnClick { get; set; }
-
+        public EventHandler<EventArgs> OnClick { get; set; }
+        
         protected RenderFragment CustomRender;
+
+        protected void OnButtonClicked(UIMouseEventArgs e)
+        {
+            var handler = OnClick;
+            if (handler != null)
+            {
+                handler(this, EventArgs.Empty);
+            }
+        }
 
         private RenderFragment CreateComponent() => builder =>
         {
@@ -95,7 +104,7 @@
 
             builder.AddAttribute(2, "class", $"pf-c-button {Class}");
             builder.AddAttribute(3, "disabled", IsDisabled);
-            builder.AddAttribute(4, "onclick", OnClick);
+            builder.AddAttribute(4, "onclick", new EventCallback<UIMouseEventArgs>(this, new Action<UIMouseEventArgs>(OnButtonClicked)));
 
             if (!string.IsNullOrWhiteSpace(Href))
             {
