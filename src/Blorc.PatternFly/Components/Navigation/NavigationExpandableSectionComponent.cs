@@ -62,7 +62,7 @@
             return IsCurrent ? "pf-m-current" : string.Empty;
         }
 
-        protected override async Task OnInitAsync()
+        protected override async Task OnInitializedAsync()
         {
             ContainerNavigationComponent.CurrentItemInvalidated += OnCurrentItemInvalidated;
         }

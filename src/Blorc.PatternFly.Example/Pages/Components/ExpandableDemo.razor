@@ -6,8 +6,8 @@
 
 <section class="ws-section ws-live-demo">
     <Example Title="Simple expandable">
-        <Expandable @ref="expandable" 
-                    ToggleText="Show more" 
+        <Expandable @ref:suppressField @ref="expandable"
+                    ToggleText="Show more"
                     Toggled="@OnToggled">
             This content is visible only when the component is expanded.
         </Expandable>
@@ -31,7 +31,7 @@
 
     private void UpdateText()
     {
-        expandable.ToggleText = expandable.IsExpanded ? "Show less" : "Show more";
+        expandable.SetToggleText(expandable.IsExpanded ? "Show less" : "Show more");
     }
 }
 

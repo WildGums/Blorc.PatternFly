@@ -80,6 +80,38 @@
         public RenderFragment ChildContent { get; set; }
 
         [Parameter]
-        public EventHandler<EventArgs> OnClick { get; set; }
+        public EventCallback<UIMouseEventArgs> OnClick { get; set; }
+
+        protected RenderFragment CustomRender;
+
+        private RenderFragment CreateComponent() => builder =>
+        {
+            builder.OpenElement(0, Component);
+
+            if (Component == "button")
+            {
+                builder.AddAttribute(1, "type", Type.ToString().ToLower());
+            }
+
+            builder.AddAttribute(2, "class", $"pf-c-button {Class}");
+            builder.AddAttribute(3, "disabled", IsDisabled);
+            builder.AddAttribute(4, "onclick", OnClick);
+
+            if (!string.IsNullOrWhiteSpace(Href))
+            {
+                builder.AddAttribute(5, "href", Href);
+                builder.AddAttribute(6, "target", "_blank");
+            }
+
+            builder.AddContent(7, ChildContent);
+            builder.CloseElement();
+        };
+
+        protected override void OnInitialized()
+        {
+            base.OnInitialized();
+
+            CustomRender = CreateComponent();
+        }
     }
 }

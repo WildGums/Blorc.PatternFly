@@ -58,5 +58,30 @@
 
         [Parameter]
         public RenderFragment ChildContent { get; set; }
+
+        protected RenderFragment CustomRender;
+
+        private RenderFragment CreateComponent() => builder =>
+        {
+            builder.OpenElement(0, Component);
+
+            builder.AddAttribute(1, "role", "separator");
+            builder.AddAttribute(2, "class", Class);
+
+            if (!string.IsNullOrWhiteSpace(Href))
+            {
+                builder.AddAttribute(3, "href", Href);
+            }
+
+            builder.AddContent(4, ChildContent);
+            builder.CloseElement();
+        };
+
+        protected override void OnInitialized()
+        {
+            base.OnInitialized();
+
+            CustomRender = CreateComponent();
+        }
     }
 }

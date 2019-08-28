@@ -16,7 +16,7 @@
                 disabled="@IsDisabled"
                 aria-expanded="@IsOpen"
                 aria-haspopup="true"
-                onclick="@(() => OnClick())">
+                @onclick="OnClick">
             @if (IsPlain)
             {
                 <span>
@@ -39,7 +39,7 @@ else
             disabled="@IsDisabled"
             aria-expanded="@IsOpen"
             aria-haspopup="true"
-            onclick="@(() => OnClick())">
+            @onclick="OnClick">
         @if (IsPlain)
         {
             <span>

@@ -58,7 +58,7 @@
         [Parameter]
         public RenderFragment ChildContent { get; set; }
 
-        protected override void OnInit()
+        protected override void OnInitialized()
         {
             TabsContainer.AddTab(this);
             TabsContainer.PropertyChanged += OnTabsContainerPropertyChanged;

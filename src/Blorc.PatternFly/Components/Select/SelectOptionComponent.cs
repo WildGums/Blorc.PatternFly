@@ -35,7 +35,7 @@
         }
 
         [Parameter]
-        protected bool IsPlaceholder { get; set; }
+        public bool IsPlaceholder { get; set; }
 
         [Parameter]
         public int Index { get; set; }

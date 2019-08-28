@@ -1,11 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
-
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Blorc.PatternFly</AssemblyName>
     <RootNamespace>Blorc.PatternFly</RootNamespace>
     <PackageId>Blorc.PatternFly</PackageId>
-    <PackageVersion>1.0.0-alpha0001</PackageVersion>
+    <PackageVersion>1.0.0-alpha0249</PackageVersion>
     <Description>PatternFly implementation for Blazor.</Description>
     <PackageTags>blazor;patternfly</PackageTags>
     <IsPackable>true</IsPackable>
@@ -19,23 +18,19 @@
     <RazorLangVersion>3.0</RazorLangVersion>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
   </PropertyGroup>
-
   <PropertyGroup>
     <!-- SonarQube requires a project guid -->
     <ProjectGuid>28A51610-AD4C-4BDF-B4B4-F902E689C3D3</ProjectGuid>
   </PropertyGroup>
-
   <ItemGroup>
     <!-- .js/.css files will be referenced via <script>/<link> tags; other content files will just be included in the app's 'dist' directory without any tags referencing them -->
     <EmbeddedResource Include="content\**\*.js" LogicalName="blazor:js:%(RecursiveDir)%(Filename)%(Extension)" />
     <EmbeddedResource Include="content\**\*.css" LogicalName="blazor:css:%(RecursiveDir)%(Filename)%(Extension)" />
     <EmbeddedResource Include="content\**" Exclude="**\*.js;**\*.css" LogicalName="blazor:file:%(RecursiveDir)%(Filename)%(Extension)" />
   </ItemGroup>
-
   <ItemGroup>
     <None Remove="content\ElementsFunctionsInterop.js" />
   </ItemGroup>
-
   <ItemGroup>
     <None Include="Components\Icon\src\FortAwesome.cs">
       <DesignTime>True</DesignTime>
@@ -43,25 +38,21 @@
       <DependentUpon>FortAwesome.tt</DependentUpon>
     </None>
   </ItemGroup>
-
   <ItemGroup>
     <!--
     <PackageReference Include="Catel.Analyzers" Version="1.0.0" PrivateAssets="all" />
     -->
-    <PackageReference Include="Blorc.Core" Version="1.0.0-alpha0085" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Browser" Version="3.0.0-preview7.19365.7" />
+    <PackageReference Include="Blorc.Core" Version="1.0.0-alpha0108" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.0.0-preview8.19405.7" />
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Update="content\elementsFunctionsInterop.js">
       <LogicalName>blazor:js:%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
-
   <ItemGroup>
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Update="Components\Icon\src\FortAwesome.cs">
       <DesignTime>True</DesignTime>
@@ -69,14 +60,12 @@
       <DependentUpon>FortAwesome.tt</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <None Update="Components\Icon\src\FortAwesome.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>FortAwesome.cs</LastGenOutput>
     </None>
   </ItemGroup>
-
   <Import Project="$(MSBuildProjectDirectory)\..\Directory.build.shared.explicit.props" Condition="Exists('$(MSBuildProjectDirectory)\..\Directory.build.shared.explicit.props')" />
   <Import Project="$(MSBuildProjectDirectory)\..\Directory.build.shared.mat.props" Condition="Exists('$(MSBuildProjectDirectory)\..\Directory.build.shared.mat.props')" />
 </Project>

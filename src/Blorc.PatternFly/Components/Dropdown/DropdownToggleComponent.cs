@@ -147,5 +147,15 @@
                 handler(this, EventArgs.Empty);
             }
         }
+
+        public void Close()
+        {
+            IsOpen = false;
+        }
+
+        public void SetToggled(EventHandler<EventArgs> onDropDownToggled)
+        {
+            Toggled = onDropDownToggled;
+        }
     }
 }

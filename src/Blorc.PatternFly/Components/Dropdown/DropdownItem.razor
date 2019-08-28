@@ -1,36 +1,4 @@
-﻿@inherits Blorc.PatternFly.Components.Dropdown.DropdownItemComponent
+﻿@using Microsoft.AspNetCore.Components
+@inherits Blorc.PatternFly.Components.Dropdown.DropdownItemComponent
 
 <li role="none">@CustomRender</li>
-
-@functions
-{
-    private RenderFragment CustomRender;
-
-    private RenderFragment CreateComponent() => builder =>
-    {
-        builder.OpenElement(0, Component);
-
-        builder.AddAttribute(1, "role", "menuitem");
-        builder.AddAttribute(2, "class", BindMethods.GetValue(Class));
-
-        if (!string.IsNullOrWhiteSpace(Href))
-        {
-            builder.AddAttribute(3, "href", BindMethods.GetValue(Href));
-        }
-
-        builder.AddAttribute(4, "onclick", OnButtonClicked);
-
-        builder.AddAttribute(5, "tabindex", BindMethods.GetValue(Index));
-        builder.AddAttribute(6, "disabled", BindMethods.GetValue(IsDisabled));
-
-        builder.AddContent(7, ChildContent);
-        builder.CloseElement();
-    };
-
-    protected override void OnInit()
-    {
-        base.OnInit();
-
-        CustomRender = CreateComponent();
-    }
-}

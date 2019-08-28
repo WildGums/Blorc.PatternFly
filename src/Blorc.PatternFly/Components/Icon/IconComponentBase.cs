@@ -45,18 +45,18 @@
 
             builder.OpenElement(1, "svg");
 
-            builder.AddAttribute(2, "class", BindMethods.GetValue(Class));
-            builder.AddAttribute(3, "fill", BindMethods.GetValue(Fill));
-            builder.AddAttribute(4, "height", BindMethods.GetValue(Height));
-            builder.AddAttribute(5, "width", BindMethods.GetValue(Width));
-            builder.AddAttribute(6, "viewBox", BindMethods.GetValue(ViewBox));
+            builder.AddAttribute(2, "class", Class);
+            builder.AddAttribute(3, "fill", Fill);
+            builder.AddAttribute(4, "height", Height);
+            builder.AddAttribute(5, "width", Width);
+            builder.AddAttribute(6, "viewBox", ViewBox);
             builder.AddAttribute(7, "aria-hidden", "true");
             builder.AddAttribute(8, "role", "img");
-            builder.AddAttribute(9, "style", BindMethods.GetValue(Style));
+            builder.AddAttribute(9, "style", Style);
 
             builder.OpenElement(10, "path");
-            builder.AddAttribute(11, "d", BindMethods.GetValue(Path));
-            builder.AddAttribute(12, "transform", BindMethods.GetValue(Transform));
+            builder.AddAttribute(11, "d", Path);
+            builder.AddAttribute(12, "transform", Transform);
             builder.CloseElement();
             builder.CloseElement();
         }

@@ -2,7 +2,7 @@
 
 <dt>
     <h3>
-        <button class="pf-c-accordion__toggle @GetIsExpandedClass()" aria-expanded="false" onclick=@(()=>OnItemClick())>
+        <button class="pf-c-accordion__toggle @GetIsExpandedClass()" aria-expanded="false" @onclick="OnItemClick">
             <span class="pf-c-accordion__toggle-text">
                 @Title
             </span>

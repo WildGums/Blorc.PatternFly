@@ -2,7 +2,7 @@
 
 @if (IsVisible)
 {
-    <li role="presentation"><button class="pf-c-select__menu-item @Class" role="option" onclick=@(()=>OptionClick())>
+    <li role="presentation"><button class="pf-c-select__menu-item @Class" role="option" @onclick="OptionClick">
         @Value
         @if (IsSelected && !IsPlaceholder)
         {

@@ -24,5 +24,10 @@
 
         [Parameter]
         public Action OnChange { get; set; }
+
+        public void SetLabel(string text)
+        {
+            Label = text;
+        }
     }
 }

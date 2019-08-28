@@ -109,7 +109,7 @@
                 var toggle = DropDownToggle;
                 if (toggle != null)
                 {
-                    toggle.Toggled = OnDropDownToggled;
+                    toggle.SetToggled(OnDropDownToggled);
                 }
             }
         }
@@ -118,5 +118,16 @@
         {
             IsOpen = DropDownToggle.IsOpen;
         }
+
+        public void Close()
+        {
+            IsOpen = false;
+            //// TODO: This can be removed after a binding system fix.
+            if (DropDownToggle != null)
+            {
+                DropDownToggle.Close();
+            }
+        }
+
     }
 }

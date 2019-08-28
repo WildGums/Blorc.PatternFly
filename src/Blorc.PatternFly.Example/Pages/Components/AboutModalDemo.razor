@@ -5,14 +5,15 @@
 
 <Metadata ComponentName="About modal" />
 
-<AboutModal @ref="AboutModal" Title="Blorc.PatternFly.Example"
-            StrapLine="Trademark and copyright information here" 
-            BrandImageSrc="_content/Blorc.PatternFly/patternfly/assets/images/pf_mini_logo_white.svg" 
+<AboutModal @ref:suppressField @ref="AboutModal" Title="Blorc.PatternFly.Example"
+            StrapLine="Trademark and copyright information here"
+            BrandImageSrc="_content/Blorc.PatternFly/patternfly/assets/images/pf_mini_logo_white.svg"
             BrandImageAlt="Patternfly brand logo">
     <Content>
         <h2>The ultimate goal of this library is to wrap all PatternFly components available</h2>
         <br />
-        <div class="pf-c-content"> <!--TODO: Add as component or as part of the component -->
+        <div class="pf-c-content">
+            <!--TODO: Add as component or as part of the component -->
             <TextList component="dl">
                 <TextListItem component="dt">CFME Version</TextListItem>
                 <TextListItem component="dd">5.5.3.4.20102789036450</TextListItem>
@@ -33,13 +34,13 @@
     </Content>
 </AboutModal>
 
-<button class="pf-c-button pf-m-primary" onclick=@(()=> OnButtonClick())>
+<button class="pf-c-button pf-m-primary" @onclick="OnButtonClick">
     Show About Modal
 </button>
 
 <br />
 
-<Todo ComponentName="About modal" >
+<Todo ComponentName="About modal">
     <TodoList>
         <li>Customize Background Image</li>
     </TodoList>
@@ -47,7 +48,7 @@
 
 @code
 {
-    AboutModal AboutModal { get; set; }
+    private AboutModal AboutModal;
 
     private void OnButtonClick()
     {

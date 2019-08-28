@@ -82,16 +82,43 @@
 
             if (ContainerDropdown != null)
             {
-                ContainerDropdown.IsOpen = false;
-                //// TODO: This can be removed after a binding system fix.
-                if (ContainerDropdown.DropDownToggle != null)
-                {
-                    ContainerDropdown.DropDownToggle.IsOpen = false;
-                }
+                ContainerDropdown.Close();
             }
         }
 
         [Parameter]
         public EventHandler<EventArgs> OnClick { get; set; }
+
+        protected RenderFragment CustomRender;
+
+        private RenderFragment CreateComponent() => builder =>
+        {
+            builder.OpenElement(0, Component);
+
+            builder.AddAttribute(1, "role", "menuitem");
+            builder.AddAttribute(2, "class", Class);
+
+            if (!string.IsNullOrWhiteSpace(Href))
+            {
+
+                builder.AddAttribute(3, "href", Href);
+            }
+
+            builder.AddAttribute(4, "onclick", new EventCallback<UIMouseEventArgs>(this, new Action<UIMouseEventArgs>(OnButtonClicked)));
+
+            builder.AddAttribute(5, "tabindex", Index);
+            builder.AddAttribute(6, "disabled", IsDisabled);
+
+            builder.AddContent(7, ChildContent);
+            builder.CloseElement();
+        };
+
+
+        protected override void OnInitialized()
+        {
+            base.OnInitialized();
+
+            CustomRender = CreateComponent();
+        }
     }
 }

@@ -234,5 +234,10 @@
             var firstOrDefault = _selectedItems.FirstOrDefault();
             UnselectItem(firstOrDefault.Key);
         }
+
+        protected void ButtonClick()
+        {
+            ClearSelection(false);
+        }
     }
 }

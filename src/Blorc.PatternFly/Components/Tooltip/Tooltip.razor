@@ -5,10 +5,10 @@
 
 @inherits Blorc.PatternFly.Components.Tooltip.TooltipComponent
 
-<span onmouseout="@(e => OnMouseOut(e))"
-        onmouseover="@(e => OnMouseEnter(e))"
-        onclick="@(e => OnClick(e))"
-        onfocus="@(e => OnFocus(e))">
+<span @onmouseout="OnMouseOut"
+        @onmouseover="OnMouseEnter"
+        @onclick="OnClick"
+        @onfocus="OnFocus">
 
     <span aria-describedby="@Id">@ChildContent</span>
 

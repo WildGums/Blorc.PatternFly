@@ -37,7 +37,7 @@
 
         public bool IsCurrent { get; private set; }
 
-        protected override async Task OnInitAsync()
+        protected override async Task OnInitializedAsync()
         {
             ContainerNavigationComponent.CurrentItemInvalidated += OnCurrentItemInvalidated;
         }

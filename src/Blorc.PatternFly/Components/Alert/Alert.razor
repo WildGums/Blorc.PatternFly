@@ -16,7 +16,7 @@
         @if (ShowCloseActionButton)
         {
             <div class="pf-c-alert__action">
-                <button class="pf-c-button pf-m-plain" aria-label="Close Success Alert: Success Alert Title" onclick=@(()=>Close())>
+                <button class="pf-c-button pf-m-plain" aria-label="Close Success Alert: Success Alert Title" @onclick="Close">
                     <i class="fas fa-times" aria-hidden="true"></i></button>
             </div>
         }

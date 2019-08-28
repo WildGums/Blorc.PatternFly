@@ -22,9 +22,9 @@
     [Inject]
     public IDocumentService DocumentService { get; set; }
 
-    protected override void OnInit()
+    protected override void OnInitialized()
     {
-        base.OnInit();
+        base.OnInitialized();
 
         DocumentService.InjectHead(new Css("/patternfly/patternfly.css"));
     }

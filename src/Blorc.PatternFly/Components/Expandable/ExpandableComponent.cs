@@ -68,5 +68,20 @@
 
         [Parameter]
         public EventHandler<EventArgs> Toggled { get; set; }
+
+        protected void OnClick()
+        {
+            IsExpanded = !IsExpanded;
+            var handler = Toggled;
+            if (handler != null)
+            {
+                handler(this, EventArgs.Empty);
+            }
+        }
+
+        public void SetToggleText(string text)
+        {
+            ToggleText = text;
+        }
     }
 }

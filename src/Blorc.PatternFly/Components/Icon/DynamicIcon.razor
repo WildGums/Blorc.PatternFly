@@ -1,31 +1,4 @@
-﻿@inherits Blorc.PatternFly.Components.Icon.DynamicIconComponent
+﻿@using Microsoft.AspNetCore.Components
+@inherits Blorc.PatternFly.Components.Icon.DynamicIconComponent
 
 @CustomRender
-
-@functions
-{
-    private RenderFragment CustomRender;
-
-    private RenderFragment CreateComponent() => builder =>
-    {
-        var type = Type.GetType($"Blorc.PatternFly.Components.Icon.{Icon}Icon");
-        if (type is null)
-        {
-            builder.AddMarkupContent(0, $"<b>Cannot find icon '{Icon}'</b>");
-            return;
-        }
-
-        builder.OpenComponent(1, type);
-
-        builder.AddAttribute(2, "Class", BindMethods.GetValue(Class));
-
-        builder.CloseComponent();
-    };
-
-    protected override void OnInit()
-    {
-        base.OnInit();
-
-        CustomRender = CreateComponent();
-    }
-}
