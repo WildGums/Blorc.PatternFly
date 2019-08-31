@@ -4,68 +4,70 @@
 @using Blorc.PatternFly.Components.Icon
 @using Blorc.PatternFly.Components.Badge
 
-<div class="@Class">
-    <button class="pf-c-select__toggle"
-            type="button"
-            id="@ToggleId"
-            aria-labelledby="@AriaLabelledBy @ToggleId"
-            aria-expanded="@IsExpanded" @onclick="Toggle">
-        <div class="pf-c-select__toggle-wrapper @WrapperClass">
-            @if (Variant == SelectVariant.TypeaheadMulti)
-            {
-                <div class="pf-c-select__toggle pf-m-typeahead">
-                    <div class="pf-c-select__toggle-wrapper">
-                        @if (SelectedItems.Count > 0)
-                        {
-                            <ul class="pf-c-chip-group">
-                                <li class="pf-c-chip">
-                                    <span class="pf-c-chip__text" id="pf-random-id-2">@Text</span>
-                                    <button id="remove_pf-random-id-2" aria-labelledby="remove_pf-random-id-2 pf-random-id-2" aria-label="Remove" class="pf-c-button pf-m-plain" type="button"  @onclick="UnselectFirstItem">
-                                        <svg fill="currentColor" height="1em" width="1em" viewBox="0 0 512 512" aria-hidden="true" role="img" style="vertical-align: -0.125em;">
-                                            <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z" transform=""></path>
-                                        </svg>
-                                    </button>
-                                </li>
-                                <li class="pf-c-chip pf-m-overflow">
-                                    <button aria-label="close" class="pf-c-button pf-m-plain" type="button">
-                                        @if (SelectedItems.Count > 1)
-                                        {
-                                            <span class="pf-c-chip__text">@(SelectedItems.Count - 1) more</span>
-                                        }
-                                    </button>
-                                </li>
-                            </ul>
-                        }
-                        <input class="pf-c-form-control pf-c-select__toggle-typeahead" placeholder="@PlaceholderText" type="text" @oninput="OnFilterInput" />
-                    </div><button class="pf-c-button pf-m-plain pf-c-select__toggle-clear" aria-label="Clear all" @onclick="ButtonClick"><svg fill="currentColor" height="1em" width="1em" viewBox="0 0 512 512" aria-hidden="true" role="img" style="vertical-align: -0.125em;"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z" transform=""></path></svg></button><button class="pf-c-button pf-c-select__toggle-button" id="pf-toggle-id-13" aria-labelledby="multi-typeahead-select-id pf-toggle-id-13" aria-expanded="true" aria-haspopup="listbox" aria-label="Options menu"><svg fill="currentColor" height="1em" width="1em" viewBox="0 0 320 512" aria-hidden="true" role="img" class="pf-c-select__toggle-arrow" style="vertical-align: -0.125em;"><path d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z" transform=""></path></svg></button>
-                </div>
+<CascadingValue Value=this>
+    <div class="@Class">
+        <button class="pf-c-select__toggle"
+                type="button"
+                id="@ToggleId"
+                aria-labelledby="@AriaLabelledBy @ToggleId"
+                aria-expanded="@IsExpanded" @onclick="Toggle">
+            <div class="pf-c-select__toggle-wrapper @WrapperClass">
+                @if (Variant == SelectVariant.TypeaheadMulti)
+                {
+                    <div class="pf-c-select__toggle pf-m-typeahead">
+                        <div class="pf-c-select__toggle-wrapper">
+                            @if (SelectedItems.Count > 0)
+                            {
+                                <ul class="pf-c-chip-group">
+                                    <li class="pf-c-chip">
+                                        <span class="pf-c-chip__text" id="pf-random-id-2">@Text</span>
+                                        <button id="remove_pf-random-id-2" aria-labelledby="remove_pf-random-id-2 pf-random-id-2" aria-label="Remove" class="pf-c-button pf-m-plain" type="button" @onclick="UnselectFirstItem">
+                                            <svg fill="currentColor" height="1em" width="1em" viewBox="0 0 512 512" aria-hidden="true" role="img" style="vertical-align: -0.125em;">
+                                                <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z" transform=""></path>
+                                            </svg>
+                                        </button>
+                                    </li>
+                                    <li class="pf-c-chip pf-m-overflow">
+                                        <button aria-label="close" class="pf-c-button pf-m-plain" type="button">
+                                            @if (SelectedItems.Count > 1)
+                                            {
+                                                <span class="pf-c-chip__text">@(SelectedItems.Count - 1) more</span>
+                                            }
+                                        </button>
+                                    </li>
+                                </ul>
+                            }
+                            <input class="pf-c-form-control pf-c-select__toggle-typeahead" placeholder="@PlaceholderText" type="text" @oninput="OnFilterInput" />
+                        </div><button class="pf-c-button pf-m-plain pf-c-select__toggle-clear" aria-label="Clear all" @onclick="ButtonClick"><svg fill="currentColor" height="1em" width="1em" viewBox="0 0 512 512" aria-hidden="true" role="img" style="vertical-align: -0.125em;"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z" transform=""></path></svg></button><button class="pf-c-button pf-c-select__toggle-button" id="pf-toggle-id-13" aria-labelledby="multi-typeahead-select-id pf-toggle-id-13" aria-expanded="true" aria-haspopup="listbox" aria-label="Options menu"><svg fill="currentColor" height="1em" width="1em" viewBox="0 0 320 512" aria-hidden="true" role="img" class="pf-c-select__toggle-arrow" style="vertical-align: -0.125em;"><path d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z" transform=""></path></svg></button>
+                    </div>
 
-            }
-            else if (Variant == SelectVariant.Typeahead)
-            {
-                <input class="pf-c-form-control pf-c-select__toggle-typeahead" placeholder="@PlaceholderText" type="text" @oninput="OnFilterInput" value="@Text" />
-            }
-            else if (Variant == SelectVariant.Checkbox)
-            {
-                <span class="pf-c-select__toggle-text">@Text</span>
-                <Badge>@SelectedItems.Count</Badge>
-            }
-            else
-            {
-                <span class="pf-c-select__toggle-text">@Text</span>
-            }
-        </div>
-        <SortDownIcon Class="pf-c-select__toggle-arrow" />
-    </button>
+                }
+                else if (Variant == SelectVariant.Typeahead)
+                {
+                    <input class="pf-c-form-control pf-c-select__toggle-typeahead" placeholder="@PlaceholderText" type="text" @oninput="OnFilterInput" value="@Text" />
+                }
+                else if (Variant == SelectVariant.Checkbox)
+                {
+                    <span class="pf-c-select__toggle-text">@Text</span>
+                    <Badge>@SelectedItems.Count</Badge>
+                }
+                else
+                {
+                    <span class="pf-c-select__toggle-text">@Text</span>
+                }
+            </div>
+            <SortDownIcon Class="pf-c-select__toggle-arrow" />
+        </button>
 
-    @if (IsExpanded)
-    {
-        <ul aria-label="Select Input" aria-labelledby="@ToggleId" class="pf-c-select__menu" role="listbox">
-            @if (!string.IsNullOrWhiteSpace(PlaceholderText) && Variant == SelectVariant.Single)
-            {
-                @PlaceholderItem
-            }
-            @Items
-        </ul>
-    }
-</div>
+        @if (IsExpanded)
+        {
+            <ul aria-label="Select Input" aria-labelledby="@ToggleId" class="pf-c-select__menu" role="listbox">
+                @if (!string.IsNullOrWhiteSpace(PlaceholderText) && Variant == SelectVariant.Single)
+                {
+                    @PlaceholderItem
+                }
+                @Items
+            </ul>
+        }
+    </div>
+</CascadingValue>    

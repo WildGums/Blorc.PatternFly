@@ -95,7 +95,6 @@
                     builder.AddAttribute(1, "Key", "-1");
                     builder.AddAttribute(2, "Value", PlaceholderText);
                     builder.AddAttribute(2, "IsPlaceholder", true);
-                    builder.AddAttribute(3, "Parent", this);
                     builder.CloseComponent();
                 };
             }

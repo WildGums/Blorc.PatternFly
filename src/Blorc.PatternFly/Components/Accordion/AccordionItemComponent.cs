@@ -6,13 +6,13 @@
 
     public class AccordionItemComponent : BlorcComponentBase
     {
-        [Parameter]
-        public AccordionComponent Parent { get; set; }
+        [CascadingParameter]
+        public AccordionComponent ContainerAccordion { get; set; }
 
         [Parameter]
         public int Index { get; set; }
 
-        public bool IsSelected => Index == Parent.SelectedIndex;
+        public bool IsSelected => Index == ContainerAccordion.SelectedIndex;
 
         [Parameter]
         public string Title { get; set; }
@@ -30,7 +30,7 @@
 
         protected virtual void OnItemClick()
         {
-            Parent.SelectedIndex = Index;
+            ContainerAccordion.SelectedIndex = Index;
             ItemClick?.Invoke(Index);
         }
     }

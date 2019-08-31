@@ -1,5 +1,7 @@
 ﻿@inherits  Blorc.PatternFly.Components.Accordion.AccordionComponent
 
-<dl class="pf-c-accordion">
-    @Items
-</dl>
+<CascadingValue Value=this>
+    <dl class="pf-c-accordion">
+        @Items
+    </dl>
+</CascadingValue>

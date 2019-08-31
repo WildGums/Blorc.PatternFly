@@ -25,8 +25,8 @@
                 .Update(() => Class);
         }
 
-        [Parameter]
-        public SelectComponent Parent { get; set; }
+        [CascadingParameter]
+        public SelectComponent ContainerSelect { get; set; }
 
         public string Class
         {
@@ -43,15 +43,15 @@
         [Parameter]
         public bool IsDisabled { get; set; }
 
-        public bool IsSelected => Parent != null && Parent.SelectedItems.ContainsKey(Key);
+        public bool IsSelected => ContainerSelect != null && ContainerSelect.SelectedItems.ContainsKey(Key);
 
         public bool IsVisible
         {
             get
             {
-                if (Parent.Variant == SelectVariant.Typeahead || Parent.Variant == SelectVariant.TypeaheadMulti)
+                if (ContainerSelect.Variant == SelectVariant.Typeahead || ContainerSelect.Variant == SelectVariant.TypeaheadMulti)
                 {
-                    return string.IsNullOrWhiteSpace(Parent.FilterText) || Parent != null && Value.StartsWith(Parent.FilterText);
+                    return string.IsNullOrWhiteSpace(ContainerSelect.FilterText) || ContainerSelect != null && Value.StartsWith(ContainerSelect.FilterText);
                 }
 
                 return true;
@@ -74,15 +74,15 @@
         {
             if (IsPlaceholder)
             {
-                Parent.ClearSelection();
+                ContainerSelect.ClearSelection();
             }
             else if (!IsSelected)
             {
-                Parent.SelectItem(Key, Value);
+                ContainerSelect.SelectItem(Key, Value);
             }
             else
             {
-                Parent.UnselectItem(Key);
+                ContainerSelect.UnselectItem(Key);
             }
 
             RaisePropertyChanged(nameof(IsSelected));
