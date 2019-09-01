@@ -45,7 +45,7 @@
 
     private void UpdateSimpleSwitch()
     {
-        simpleSwitch.SetLabel(simpleSwitch.IsChecked ? "Message when on" : "Message when off");
+        simpleSwitch.Label = simpleSwitch.IsChecked ? "Message when on" : "Message when off";
     }
 
     protected override void OnAfterRender()

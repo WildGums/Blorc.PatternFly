@@ -7,7 +7,6 @@
     {
         public AvatarComponent()
         {
-            
         }
 
         [Parameter]

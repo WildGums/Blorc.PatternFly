@@ -140,7 +140,6 @@
         protected void OnClick()
         {
             IsOpen = !IsOpen;
-
             var handler = Toggled;
             if (handler != null)
             {
@@ -151,11 +150,6 @@
         public void Close()
         {
             IsOpen = false;
-        }
-
-        public void SetToggled(EventHandler<EventArgs> onDropDownToggled)
-        {
-            Toggled = onDropDownToggled;
         }
     }
 }

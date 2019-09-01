@@ -78,10 +78,5 @@
                 handler(this, EventArgs.Empty);
             }
         }
-
-        public void SetToggleText(string text)
-        {
-            ToggleText = text;
-        }
     }
 }

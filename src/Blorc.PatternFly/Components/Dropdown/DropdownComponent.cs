@@ -109,7 +109,7 @@
                 var toggle = DropDownToggle;
                 if (toggle != null)
                 {
-                    toggle.SetToggled(OnDropDownToggled);
+                    toggle.Toggled += OnDropDownToggled;
                 }
             }
         }

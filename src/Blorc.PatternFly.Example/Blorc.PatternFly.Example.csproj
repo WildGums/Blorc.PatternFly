@@ -9,11 +9,17 @@
     <RazorLangVersion>3.0</RazorLangVersion>
     <BlazorLinkOnBuild>false</BlazorLinkOnBuild>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
-    <PackageVersion>1.0.0-alpha0257</PackageVersion>
+    <PackageVersion>1.0.0-alpha0260</PackageVersion>
   </PropertyGroup>
   <PropertyGroup>
     <!-- SonarQube requires a project guid -->
     <ProjectGuid>C664866A-BFBB-4FAC-B9F7-A292CF757017</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <CodeAnalysisRuleSet>Blorc.PatternFly.Example.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <CodeAnalysisRuleSet>Blorc.PatternFly.Example.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <!--
