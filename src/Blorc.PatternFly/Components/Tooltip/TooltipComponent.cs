@@ -4,6 +4,7 @@
     using System.Threading.Tasks;
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
+    using Microsoft.AspNetCore.Components.Web;
     using Services;
     using Services.Interop;
 
@@ -75,12 +76,12 @@
             }
         }
 
-        protected void OnMouseOut(UIMouseEventArgs e)
+        protected void OnMouseOut(MouseEventArgs e)
         {
             HideTooltip();
         }
 
-        protected async Task OnMouseEnter(UIMouseEventArgs e)
+        protected async Task OnMouseEnter(MouseEventArgs e)
         {
             var tooltipRect = await DocumentService.GetBoundingClientRectById(Id.ToString());
             var tooltipRectHeight = tooltipRect.Height;
@@ -115,7 +116,7 @@
             ShowTooltip();
         }
 
-        protected void OnClick(UIMouseEventArgs e)
+        protected void OnClick(MouseEventArgs e)
         {
             if (!Trigger.HasFlag(TooltipTrigger.Click))
             {
@@ -125,7 +126,7 @@
             ShowTooltip();
         }
 
-        protected void OnFocus(UIFocusEventArgs e)
+        protected void OnFocus(FocusEventArgs e)
         {
             if (!Trigger.HasFlag(TooltipTrigger.Focus))
             {

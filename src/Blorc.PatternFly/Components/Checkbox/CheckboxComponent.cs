@@ -36,7 +36,7 @@
         [Parameter]
         public EventHandler<EventArgs> OnChange { get; set; }
 
-        protected void OnValueChanged(UIChangeEventArgs e)
+        protected void OnValueChanged(ChangeEventArgs e)
         {
             IsChecked = (bool)e.Value;
 

@@ -223,7 +223,7 @@
             }
         }
 
-        protected void OnFilterInput(UIChangeEventArgs e)
+        protected void OnFilterInput(ChangeEventArgs e)
         {
             FilterText = (string)e.Value;
         }

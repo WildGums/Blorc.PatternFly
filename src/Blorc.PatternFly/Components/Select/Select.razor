@@ -1,8 +1,10 @@
-﻿@inherits Blorc.PatternFly.Components.Select.SelectComponent
-
+﻿@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
 @using System
 @using Blorc.PatternFly.Components.Icon
 @using Blorc.PatternFly.Components.Badge
+
+@inherits Blorc.PatternFly.Components.Select.SelectComponent
 
 <CascadingValue Value=this>
     <div class="@Class">
@@ -70,4 +72,4 @@
             </ul>
         }
     </div>
-</CascadingValue>    
+</CascadingValue>

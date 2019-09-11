@@ -1,10 +1,12 @@
-﻿@inherits Blorc.PatternFly.Components.TextInput.TextInputComponent
+﻿@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
 
-<input aria-label="@Label" 
+@inherits Blorc.PatternFly.Components.TextInput.TextInputComponent
+
+<input aria-label="@Label"
        class="pf-c-form-control" type="@Type"
        aria-invalid="@IsInvalid.ToString().ToLower()"
        aria-required="@IsRequired"
        bind="@Value"
        readonly="@IsReadOnly"
-       disabled="@IsDisabled"
-       />
+       disabled="@IsDisabled" />

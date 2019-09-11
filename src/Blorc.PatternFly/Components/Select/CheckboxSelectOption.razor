@@ -1,6 +1,10 @@
-﻿@inherits Blorc.PatternFly.Components.Select.CheckboxSelectOptionComponent
-
+﻿@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
 @using Blorc.PatternFly.Components.Checkbox
+
+@inherits Blorc.PatternFly.Components.Select.CheckboxSelectOptionComponent
+
+
 
 <label class="pf-c-check pf-c-select__menu-item">
     <Checkbox Label="@Value" IsChecked="@IsSelected" OnChange=@((sender, args)=> OptionClick()) />

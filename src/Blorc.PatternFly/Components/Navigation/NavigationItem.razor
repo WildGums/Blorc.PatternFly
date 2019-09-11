@@ -1,5 +1,7 @@
-﻿@inherits Blorc.PatternFly.Components.Navigation.NavigationItemComponent
+﻿@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
 
+@inherits Blorc.PatternFly.Components.Navigation.NavigationItemComponent
 
 <li class="pf-c-nav__item">
     <a class="pf-c-nav__link @GetIsCurrentClass()" aria-current="page" @onclick="OnItemClick">

@@ -1,6 +1,9 @@
-﻿@inherits Blorc.PatternFly.Components.Radio.RadioComponent
+﻿@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
+@using System
 
-@using Microsoft.AspNetCore.Components
+@inherits Blorc.PatternFly.Components.Radio.RadioComponent
+
 
 <div class="pf-c-radio">
     <input name="@Name"
@@ -15,9 +18,9 @@
     <label class="pf-c-radio__label" for="@InstanceId">@Label</label>
 </div>
 
-@functions
+@code
 {
-    private void OnValueChanged(UIChangeEventArgs e)
+    private void OnValueChanged(ChangeEventArgs e)
     {
         IsChecked = (bool)e.Value;
 

@@ -1,4 +1,7 @@
-﻿@inherits Blorc.PatternFly.Components.Breadcrumb.BreadcrumbHeadingComponent
+﻿@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
+
+@inherits Blorc.PatternFly.Components.Breadcrumb.BreadcrumbHeadingComponent
 
 <BreadcrumbItem Component="@Component" To="@To" Target="@Target" IsActive="true">
     @ChildContent

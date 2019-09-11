@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
+    using Microsoft.AspNetCore.Components.Rendering;
     using Microsoft.AspNetCore.Components.RenderTree;
 
     public abstract class IconComponentBase : BlorcComponentBase, IIconComponent

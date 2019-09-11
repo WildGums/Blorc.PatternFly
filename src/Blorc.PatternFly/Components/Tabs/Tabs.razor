@@ -1,6 +1,8 @@
-﻿@inherits Blorc.PatternFly.Components.Tabs.TabsComponent
-
+﻿@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
 @using Blorc.PatternFly.Components.Icon
+
+@inherits Blorc.PatternFly.Components.Tabs.TabsComponent
 
 <div class="@Class">
     <button class="pf-c-tabs__scroll-button" variant="plain" aria-label="@LeftScrollAriaLabel">
@@ -21,7 +23,7 @@
 <section class="pf-c-tab-content"
          id="@ActiveTab?.UniqueSectionId"
          aria-labelledby="@ActiveTab?.UniqueLabelId"
-         role="tabpanel" 
+         role="tabpanel"
          tabindex="@ActiveTab?.Id">
     @ActiveTab?.ChildContent
 </section>

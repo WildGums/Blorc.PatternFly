@@ -6,7 +6,7 @@
 
 <section class="ws-section ws-live-demo">
     <Example Title="Simple expandable">
-        <Expandable @ref:suppressField @ref="expandable"
+        <Expandable @ref="expandable"
                     ToggleText="Show more"
                     Toggled="@OnToggled">
             This content is visible only when the component is expanded.
@@ -22,9 +22,9 @@
         UpdateText();
     }
 
-    protected override void OnAfterRender()
+    protected override void OnAfterRender(bool firstRender)
     {
-        base.OnAfterRender();
+        base.OnAfterRender(firstRender);
 
         UpdateText();
     }

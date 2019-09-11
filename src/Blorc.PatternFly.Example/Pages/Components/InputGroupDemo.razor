@@ -1,11 +1,11 @@
-﻿@page "/components/input-group"
-
-@using Blorc.PatternFly.Components.Button
+﻿@using Blorc.PatternFly.Components.Button
 @using Blorc.PatternFly.Components.Icon
 @using Blorc.PatternFly.Components.InputGroup
 @using Blorc.PatternFly.Components.Text
 @using Blorc.PatternFly.Components.TextArea
 @using Blorc.PatternFly.Components.TextInput
+
+@page "/components/input-group"
 
 <Metadata ComponentName="Input group" />
 
@@ -32,9 +32,9 @@
             <Button Variant="ButtonVariant.Primary">
                 Button
             </Button>
-            <Button variant="ButtonVariant.Secondary">Button</Button>
+            <Button Variant="ButtonVariant.Secondary">Button</Button>
             <TextArea Label="textarea with 3 buttons" />
-            <Button variant="ButtonVariant.Tertiary">Button</Button>
+            <Button Variant="ButtonVariant.Tertiary">Button</Button>
         </InputGroup>
         <br />
         <br />
@@ -76,7 +76,7 @@
         <br />
         <InputGroup>
             <TextInput Type="email" Label="email input field" />
-            <InputGroupText >@@example.com</InputGroupText>
+            <InputGroupText>@@example.com</InputGroupText>
         </InputGroup>
         <br />
         <br />
@@ -105,19 +105,15 @@
         <br />
         <br />
         @*<InputGroup>
-            <TextInput Type="search" Label="input example with popover" />
-            <Popover aria-label="popover example"
-                     position={PopoverPosition.top}
-                     bodyContent="This field is an example of input group with popover">
-                <Button variant="ButtonVariant.Tertiary" Label="popover for input">
-                    <QuestionCircleIcon />
-                </Button>
-            </Popover>
-        </InputGroup>*@
+                <TextInput Type="search" Label="input example with popover" />
+                <Popover aria-label="popover example"
+                         position={PopoverPosition.top}
+                         bodyContent="This field is an example of input group with popover">
+                    <Button variant="ButtonVariant.Tertiary" Label="popover for input">
+                        <QuestionCircleIcon />
+                    </Button>
+                </Popover>
+            </InputGroup>*@
     </Example>
 </section>
-
-@code {
-
-}
 

@@ -4,6 +4,7 @@
     using Blorc.Components;
     using Blorc.StateConverters;
     using Microsoft.AspNetCore.Components;
+    using Microsoft.AspNetCore.Components.Web;
 
     public class DropdownItemComponent : BlorcComponentBase
     {
@@ -72,7 +73,7 @@
         [CascadingParameter]
         public Dropdown ContainerDropdown { get; set; }
 
-        protected void OnButtonClicked(UIMouseEventArgs e)
+        protected void OnButtonClicked(MouseEventArgs e)
         {
             var handler = OnClick;
             if (handler != null)
@@ -104,7 +105,7 @@
                 builder.AddAttribute(3, "href", Href);
             }
 
-            builder.AddAttribute(4, "onclick", new EventCallback<UIMouseEventArgs>(this, new Action<UIMouseEventArgs>(OnButtonClicked)));
+            builder.AddAttribute(4, "onclick", new EventCallback<MouseEventArgs>(this, new Action<MouseEventArgs>(OnButtonClicked)));
 
             builder.AddAttribute(5, "tabindex", Index);
             builder.AddAttribute(6, "disabled", IsDisabled);

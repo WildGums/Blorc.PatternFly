@@ -1,14 +1,15 @@
-﻿@using System
+﻿@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
+@using System
 @using System.Threading.Tasks
-@using Microsoft.AspNetCore.Components
 @using Microsoft.JSInterop
 
 @inherits Blorc.PatternFly.Components.Tooltip.TooltipComponent
 
 <span @onmouseout="OnMouseOut"
-        @onmouseover="OnMouseEnter"
-        @onclick="OnClick"
-        @onfocus="OnFocus">
+      @onmouseover="OnMouseEnter"
+      @onclick="OnClick"
+      @onfocus="OnFocus">
 
     <span aria-describedby="@Id">@ChildContent</span>
 

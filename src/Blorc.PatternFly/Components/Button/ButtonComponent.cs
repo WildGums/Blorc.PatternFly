@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
+    using Microsoft.AspNetCore.Components.Web;
 
     public class ButtonComponent : UniqueComponentBase
     {
@@ -84,7 +85,7 @@
         
         protected RenderFragment CustomRender;
 
-        protected void OnButtonClicked(UIMouseEventArgs e)
+        protected void OnButtonClicked(MouseEventArgs e)
         {
             var handler = OnClick;
             if (handler != null)
@@ -104,7 +105,7 @@
 
             builder.AddAttribute(2, "class", $"pf-c-button {Class}");
             builder.AddAttribute(3, "disabled", IsDisabled);
-            builder.AddAttribute(4, "onclick", new EventCallback<UIMouseEventArgs>(this, new Action<UIMouseEventArgs>(OnButtonClicked)));
+            builder.AddAttribute(4, "onclick", new EventCallback<MouseEventArgs>(this, new Action<MouseEventArgs>(OnButtonClicked)));
 
             if (!string.IsNullOrWhiteSpace(Href))
             {

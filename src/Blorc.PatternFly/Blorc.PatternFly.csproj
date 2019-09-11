@@ -48,8 +48,8 @@
     <!--
     <PackageReference Include="Catel.Analyzers" Version="1.0.0" PrivateAssets="all" />
     -->
-    <PackageReference Include="Blorc.Core" Version="1.0.0-alpha0116" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.0.0-preview8.19405.7" />
+    <PackageReference Include="Blorc.Core" Version="1.0.0-alpha0117" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.0.0-preview9.19424.4" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="content\elementsFunctionsInterop.js">

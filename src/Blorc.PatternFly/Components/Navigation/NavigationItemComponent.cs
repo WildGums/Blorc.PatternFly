@@ -20,7 +20,7 @@
         }
 
         [Inject]
-        public IUriHelper UriHelper { get; set; }
+        public NavigationManager NavigationManager { get; set; }
 
         [Parameter]
         public string Title { get; set; }
@@ -65,7 +65,7 @@
                 ContainerNavigationComponent.MarkBranchAsCurrent();
             }
 
-            UriHelper.NavigateTo(Link);
+            NavigationManager.NavigateTo(Link);
         }
     }
 }

@@ -1,4 +1,7 @@
-﻿@inherits Blorc.PatternFly.Components.Navigation.NavigationExpandableSectionComponent
+﻿@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
+
+@inherits Blorc.PatternFly.Components.Navigation.NavigationExpandableSectionComponent
 
 <CascadingValue Value=this>
     <li class="pf-c-nav__item pf-m-expandable @GetExpandableNavItemClass()">
@@ -17,10 +20,10 @@
         </a>
         <section class="pf-c-nav__subnav" aria-labelledby="subnav-title1">
             <!--
-        <h2 class="pf-c-nav__subnav-title pf-screen-reader" id="subnav-title1">
-            Current and expanded example sub-navigation
-        </h2>
-        -->
+            <h2 class="pf-c-nav__subnav-title pf-screen-reader" id="subnav-title1">
+                Current and expanded example sub-navigation
+            </h2>
+            -->
             <ul class="pf-c-nav__simple-list">
                 @Items
             </ul>
