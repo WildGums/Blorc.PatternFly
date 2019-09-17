@@ -129,7 +129,7 @@ Setup<BuildContext>(setupContext =>
 
     setupContext.LogSeparator("Validating build context");
 
-    // buildContext.Validate();
+    buildContext.Validate();
 
     setupContext.LogSeparator("Creating processors");
 
