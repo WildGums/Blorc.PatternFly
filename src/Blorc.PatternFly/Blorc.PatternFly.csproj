@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Razor">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Blorc.PatternFly</AssemblyName>
@@ -48,8 +48,8 @@
     <!--
     <PackageReference Include="Catel.Analyzers" Version="1.0.0" PrivateAssets="all" />
     -->
-    <PackageReference Include="Blorc.Core" Version="1.0.0-alpha0117" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.0.0-preview9.19424.4" />
+    <PackageReference Include="Blorc.Core" Version="1.0.0-alpha0125" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.0.0" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="content\elementsFunctionsInterop.js">
