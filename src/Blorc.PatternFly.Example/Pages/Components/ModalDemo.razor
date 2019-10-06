@@ -1,10 +1,81 @@
 ﻿@page "/components/modal"
+@using Blorc.PatternFly.Components.Modal
+@using Blorc.PatternFly.Components.Button
 
 <Metadata ComponentName="Modal" />
 
-<Todo ComponentName="Modal" />
+<Todo ComponentName="Modal" >
+    <TodoList>
+        - Size customization via Style
+    </TodoList>
+</Todo>
+
+<section class="ws-section ws-live-demo">
+    <Example Title="Simple modal">
+        <Modal ShowCloseButton="true" @ref="simpleModal" >
+            <Header>
+                Modal Header
+            </Header>
+            <Body>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+        est laborum.
+            </Body>
+            <Footer>
+                <Button Variant="ButtonVariant.Secondary" OnClick=@((s,e) => simpleModal.Close())>Cancel</Button>
+                <Button Variant="ButtonVariant.Primary" OnClick=@((s,e) => simpleModal.Close())>Confirm</Button>
+            </Footer>
+        </Modal>
+        <Button Variant="ButtonVariant.Primary" OnClick=@((s,e) => simpleModal.Show())>Show Modal</Button>
+    </Example>
+
+    <Example Title="Modal (small)">
+        <Modal ShowCloseButton="true" @ref="smallModal" Size="ModalSize.Small">
+            <Header>
+                Modal Header
+            </Header>
+            <Body>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+        est laborum.
+            </Body>
+            <Footer>
+                <Button Variant="ButtonVariant.Secondary" OnClick=@((s,e) => smallModal.Close())>Cancel</Button>
+                <Button Variant="ButtonVariant.Primary" OnClick=@((s,e) => smallModal.Close())>Confirm</Button>
+            </Footer>
+        </Modal>
+        <Button Variant="ButtonVariant.Primary" OnClick=@((s,e) => smallModal.Show())>Show Small Modal</Button>
+    </Example>
+    
+    <Example Title="Modal (large)">
+        <Modal ShowCloseButton="true" @ref="largeModal" Size="ModalSize.Large">
+            <Header>
+                Modal Header
+            </Header>
+            <Body>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+        est laborum.
+            </Body>
+            <Footer>
+                <Button Variant="ButtonVariant.Secondary" OnClick=@((s,e) => largeModal.Close())>Cancel</Button>
+                <Button Variant="ButtonVariant.Primary" OnClick=@((s,e) => largeModal.Close())>Confirm</Button>
+            </Footer>
+        </Modal>
+        <Button Variant="ButtonVariant.Primary" OnClick=@((s,e) => largeModal.Show())>Show Small Modal</Button>
+    </Example>
+</section>
 
 @code {
-    
-}
+    private Modal simpleModal;
 
+    private Modal smallModal;
+
+    private Modal largeModal;
+}
