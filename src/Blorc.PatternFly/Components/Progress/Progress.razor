@@ -13,19 +13,23 @@
     <div class="pf-c-progress__description"
          id="@InstanceId-description"
          style="@TitleStyle">@Title</div>
-        <div class="pf-c-progress__status">
+
+    <div class="pf-c-progress__status">
+        @if (Value > -1)
+        {
             <span class="pf-c-progress__measure">@OutsideValue</span>
+        }
 
-            <span class="pf-c-progress__status-icon"
-                  style="@DangerIconStyle">
-                <TimesCircleIcon />
-            </span>
+        <span class="pf-c-progress__status-icon"
+              style="@DangerIconStyle">
+            <TimesCircleIcon />
+        </span>
 
-            <span class="pf-c-progress__status-icon"
-                  style="@SuccessIconStyle">
-                <CheckCircleIcon />
-            </span>
-        </div>
+        <span class="pf-c-progress__status-icon"
+              style="@SuccessIconStyle">
+            <CheckCircleIcon />
+        </span>
+    </div>
         <div class="pf-c-progress__bar"
              aria-describedby="@InstanceId-description"
              aria-valuemin="@Min"
@@ -38,8 +42,3 @@
             </div>
         </div>
     </div>
-
-    @functions
-{
-
-    }

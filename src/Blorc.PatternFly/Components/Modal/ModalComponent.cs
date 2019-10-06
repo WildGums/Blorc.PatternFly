@@ -59,16 +59,10 @@
         {
             IsVisble = false;
         }
+
         public void Show()
         {
             IsVisble = true;
         }
-    }
-
-    public enum ModalSize
-    {
-        Default,
-        Large, 
-        Small
     }
 }

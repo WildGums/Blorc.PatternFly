@@ -2,11 +2,21 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
     public class ProgressComponent : UniqueComponentBase
     {
+        protected override void OnPropertyChanged(PropertyChangedEventArgs e)
+        {
+            base.OnPropertyChanged(e);
+            if (e.PropertyName == nameof(Value))
+            {
+                StateHasChanged();
+            }
+        }
+
         public ProgressComponent()
         {
             Size = ProgressSize.Normal;
@@ -58,7 +68,11 @@
         public int Max { get; set; }
 
         [Parameter]
-        public int Value { get; set; }
+        public int Value
+        {
+            get { return GetPropertyValue<int>(nameof(Value)); }
+            set { SetPropertyValue(nameof(Value), value); }
+        }
 
         public string Class
         {

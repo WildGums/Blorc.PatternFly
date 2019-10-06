@@ -1,0 +1,29 @@
+﻿@using System.Drawing
+@using System.Threading.Tasks
+@using Blorc.PatternFly.Components.Icon
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
+@using Blorc.PatternFly.Components.Modal
+@using Blorc.PatternFly.Components.Progress
+
+@inherits Blorc.PatternFly.Components.Modal.PleaseWaitModalComponent
+
+<Modal Size="@Size" @ref="Modal">
+    <Header>
+        @if (Header != null)
+        {
+            @Header
+        }
+        else
+        {
+            @DefaultPleaseWaitHeader
+        }
+    </Header>
+    <Body>
+        @if (ShowProgress)
+        {
+            <Progress Size="ProgressSize.Large" @ref="Progress"/>
+        }
+    </Body>
+</Modal>
+

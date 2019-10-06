@@ -2,11 +2,13 @@
 @using Blorc.PatternFly.Components.Modal
 @using Blorc.PatternFly.Components.Button
 
+
 <Metadata ComponentName="Modal" />
 
 <Todo ComponentName="Modal" >
     <TodoList>
-        - Size customization via Style
+        - Size customization via style
+        - PleaseWait doesn't update the progress properly.
     </TodoList>
 </Todo>
 
@@ -69,6 +71,21 @@
             </Footer>
         </Modal>
         <Button Variant="ButtonVariant.Primary" OnClick=@((s,e) => largeModal.Show())>Show Small Modal</Button>
+    </Example> 
+    
+    <Example Title="Execute Async Task">
+        <PleaseWaitModal @ref="pleaseWaitModal" 
+                         Size="ModalSize.Small" 
+                         Action=@(progress => DoSomething(progress))/>
+        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await pleaseWaitModal.Execute())>Show Please Wait</Button>
+    </Example>
+    <Example Title="Execute Async Task (Progress)">
+        <PleaseWaitModal @ref="pleaseWaitModalWithProgress" 
+                         Size="ModalSize.Small" 
+                         Action=@(progress => DoSomething(progress)) 
+                         ShowProgress="true"/>
+
+        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await pleaseWaitModalWithProgress.Execute())>Show Please Wait</Button>
     </Example>
 </section>
 
@@ -78,4 +95,23 @@
     private Modal smallModal;
 
     private Modal largeModal;
+
+    private PleaseWaitModal pleaseWaitModal;
+
+    private PleaseWaitModal pleaseWaitModalWithProgress;
+
+    private async Task DoSomething(IProgress<int> progress)
+    {
+        int total = 1000000;
+        int percent = 0;
+        for (int i = 0; i < total; i++)
+        {
+            int value = System.Convert.ToInt32(1.0d * i / total * 100);
+            if(value > percent)
+            {
+                percent = value;
+                progress.Report(value);
+            }
+        }
+    }
 }
