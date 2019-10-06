@@ -76,14 +76,22 @@
     <Example Title="Execute Async Task">
         <PleaseWaitModal @ref="pleaseWaitModal" 
                          Size="ModalSize.Small" 
-                         Action=@(progress => DoSomething(progress))/>
+                         Action=@(progress => DoSomething(progress))>
+            <Header>
+                Doing something...
+            </Header>
+        </PleaseWaitModal>
         <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await pleaseWaitModal.Execute())>Show Please Wait</Button>
     </Example>
     <Example Title="Execute Async Task (Progress)">
         <PleaseWaitModal @ref="pleaseWaitModalWithProgress" 
                          Size="ModalSize.Small" 
                          Action=@(progress => DoSomething(progress)) 
-                         ShowProgress="true"/>
+                         ShowProgress="true" >
+            <Header>
+                Doing something...
+            </Header>
+        </PleaseWaitModal>
 
         <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await pleaseWaitModalWithProgress.Execute())>Show Please Wait</Button>
     </Example>

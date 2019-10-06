@@ -1,7 +1,6 @@
 ﻿namespace Blorc.PatternFly.Components.Modal
 {
     using System;
-    using System.Threading;
     using System.Threading.Tasks;
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
@@ -22,7 +21,7 @@
         public Func<IProgress<int>, Task> Action { get; set; }
 
         [Parameter] 
-        public RenderFragment<string> Header { get; set; }
+        public RenderFragment Header { get; set; }
 
         [Parameter]
         public bool ShowProgress { get; set; }
