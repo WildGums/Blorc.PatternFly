@@ -18,7 +18,7 @@
         public ModalSize Size { get; set; } = ModalSize.Small;
 
         [Parameter] 
-        public Func<IProgress<int>, Task> Action { get; set; }
+        public Func<ExecutionContext, Task> Action { get; set; }
 
         [Parameter] 
         public RenderFragment Header { get; set; }
@@ -35,12 +35,12 @@
             }
         }
 
-        public Task Execute()
+        public Task ExecuteAsync(object state = null)
         {
             Modal.Show();
             return Task.Run(async () =>
             {
-                await Action(this);
+                await Action(new ExecutionContext(this, state));
                 Modal.Close();
             });
         }

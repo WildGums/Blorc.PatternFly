@@ -8,22 +8,22 @@
 
 @inherits Blorc.PatternFly.Components.Modal.PleaseWaitModalComponent
 
-    <Modal Size="@Size" @ref="Modal">
-        <Header>
-            @if (Header != null)
-            {
-                @Header
-            }
-            else
-            {
-                @DefaultPleaseWaitHeader
-            }
-        </Header>
-        <Body>
-            @if (ShowProgress)
-            {
-                <Progress Size="ProgressSize.Large" @ref="Progress" />
-            }
-        </Body>
-    </Modal>
+<Modal Size="@Size" @ref="Modal">
+    <Header>
+        @if (Header != null)
+        {
+            @Header
+        }
+        else
+        {
+            @DefaultPleaseWaitHeader
+        }
+    </Header>
+    <Body>
+        @if (ShowProgress)
+        {
+            <Progress Size="ProgressSize.Large" @ref="Progress" />
+        }
+    </Body>
+</Modal>
 

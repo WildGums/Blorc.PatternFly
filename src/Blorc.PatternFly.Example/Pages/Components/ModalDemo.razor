@@ -76,24 +76,25 @@
     <Example Title="Execute Async Task">
         <PleaseWaitModal @ref="pleaseWaitModal" 
                          Size="ModalSize.Small" 
-                         Action=@(progress => DoSomething(progress))>
+                         Action=@(ctx => DoSomething(ctx))>
             <Header>
                 Doing something...
             </Header>
         </PleaseWaitModal>
-        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await pleaseWaitModal.Execute())>Show Please Wait</Button>
+        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await pleaseWaitModal.ExecuteAsync())>Show Please Wait</Button>
     </Example>
+
     <Example Title="Execute Async Task (Progress)">
         <PleaseWaitModal @ref="pleaseWaitModalWithProgress" 
                          Size="ModalSize.Small" 
-                         Action=@(progress => DoSomething(progress)) 
+                         Action=@(ctx => DoSomething(ctx)) 
                          ShowProgress="true" >
             <Header>
                 Doing something...
             </Header>
         </PleaseWaitModal>
 
-        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await pleaseWaitModalWithProgress.Execute())>Show Please Wait</Button>
+        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await pleaseWaitModalWithProgress.ExecuteAsync())>Show Please Wait</Button>
     </Example>
 </section>
 
@@ -108,7 +109,7 @@
 
     private PleaseWaitModal pleaseWaitModalWithProgress;
 
-    private async Task DoSomething(IProgress<int> progress)
+    private async Task DoSomething(ExecutionContext ctx)
     {
         int total = 1000000;
         int percent = 0;
@@ -118,7 +119,7 @@
             if(value > percent)
             {
                 percent = value;
-                progress.Report(value);
+                ctx.Progress.Report(value);
             }
         }
     }
