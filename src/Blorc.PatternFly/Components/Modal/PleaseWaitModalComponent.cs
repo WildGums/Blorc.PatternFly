@@ -3,10 +3,11 @@
     using System;
     using System.Threading.Tasks;
     using Blorc.Components;
+    using Core;
     using Microsoft.AspNetCore.Components;
     using Progress;
 
-    public class PleaseWaitModalComponent : BlorcComponentBase, IProgress<int>
+    public class PleaseWaitModalComponent : BlorcComponentBase, IProgressAsync<int>
     {
         public const string DefaultPleaseWaitHeader = "Please Wait...";
 
@@ -26,12 +27,12 @@
         [Parameter]
         public bool ShowProgress { get; set; }
 
-        public void Report(int value)
+        public async Task ReportAsync(int value)
         {
             if (ShowProgress)
             {
-                // TODO: This is not working properly. 
                 Progress.Value = value;
+                await Task.Delay(1);
             }
         }
 
@@ -43,11 +44,6 @@
                 await Action(new ExecutionContext(this, state));
                 Modal.Close();
             });
-        }
-
-        public void Close()
-        {
-            Modal.Close();
         }
     }
 }
