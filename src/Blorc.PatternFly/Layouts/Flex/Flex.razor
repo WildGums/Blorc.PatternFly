@@ -1,0 +1,10 @@
+﻿@using Microsoft.AspNetCore.Components
+
+<div class="pf-l-gallery">
+    @Content
+</div>
+
+@code {
+        [Parameter]
+        public RenderFragment Content { get; set; }
+}

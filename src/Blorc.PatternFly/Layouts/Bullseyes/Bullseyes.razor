@@ -1,0 +1,12 @@
+﻿@using Microsoft.AspNetCore.Components
+
+<div class="pf-l-bullseye">
+    <div class="pf-l-bullseye__item">
+        @Content
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public RenderFragment Content { get; set; }
+}
