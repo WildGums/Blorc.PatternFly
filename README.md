@@ -10,9 +10,6 @@ The ultimate goal of this library is to wrap all PatternFly components available
 
 ### Done
 
-
-### Todo
-
 - About modal
 - Accordion
 - Alert
@@ -27,36 +24,55 @@ The ultimate goal of this library is to wrap all PatternFly components available
 - Checkbox
 - Chip group
 - Clipboard copy
-- Context selector
-- Data list
 - Dropdown
 - Empty state
 - Expandable
-- Form
 - FormSelect
 - Input group
 - Label
 - List
-- Login page
 - Modal
 - Nav
-- Options menu
-- Page
-- Pagination
-- Popover
 - Progress
 - Radio
 - Select
-- Skip to content
-- Switch
-- Table
 - Tabs
 - Text
 - Text area
 - Text input
 - Title
 - Tooltip
+
+### Todo
+
+- Context selector
+- Data list
+- Form
+- Login page
+- Options menu
+- Page
+- Pagination
+- Popover
+- Skip to content
+- Switch
+- Table
 - Wizard
+
+## Layouts
+
+### Done
+
+- Bullseyes
+- Flex
+- Gallery
+- Grid
+- Level
+- Split
+- Stack
+
+### Todo
+
+- Grid
 
 ## Examples
 
