@@ -1,0 +1,45 @@
+﻿@page "/layouts/toolbar"
+
+@using Blorc.PatternFly.Layouts.Toolbar
+
+<Metadata ComponentName="toolbar" ComponentType="layouts"/>
+
+<section class="ws-section ws-live-demo">
+    <Example Title="Simple toolbar layout">
+        <Toolbar>
+            <ToolbarGroup>
+                <ToolbarItem>Item 1</ToolbarItem>
+            </ToolbarGroup>
+            <ToolbarGroup>
+                <ToolbarItem>Item 2</ToolbarItem>
+                <ToolbarItem>Item 3</ToolbarItem>
+            </ToolbarGroup>
+            <ToolbarGroup>
+                <ToolbarItem>Item 4</ToolbarItem>
+            </ToolbarGroup>
+        </Toolbar>
+    </Example>
+    <Example Title="Simple toolbar layout">
+        <Toolbar>
+            <ToolbarSection AriaLabel="First section">
+                <ToolbarGroup>
+                    <ToolbarItem>Item 1</ToolbarItem>
+                </ToolbarGroup>
+                <ToolbarGroup>
+                    <ToolbarItem>Item 2</ToolbarItem>
+                    <ToolbarItem>Item 3</ToolbarItem>
+                </ToolbarGroup>
+            </ToolbarSection>
+            <ToolbarSection AriaLabel="Second section">
+                <ToolbarGroup>
+                    <ToolbarItem>Item 4</ToolbarItem>
+                    <ToolbarItem>Item 5</ToolbarItem>
+                    <ToolbarItem>Item 6</ToolbarItem>
+                </ToolbarGroup>
+                <ToolbarGroup>
+                    <ToolbarItem>Item 7</ToolbarItem>
+                </ToolbarGroup>
+            </ToolbarSection>
+        </Toolbar>
+    </Example>
+</section>

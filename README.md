@@ -72,7 +72,7 @@ The ultimate goal of this library is to wrap all PatternFly components available
 
 ### Todo
 
-- Grid
+- Toolbar
 
 ## Examples
 
