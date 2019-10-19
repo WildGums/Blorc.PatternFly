@@ -1,0 +1,304 @@
+﻿@page "/layouts/flex"
+
+@using Blorc.PatternFly.Components.Icon
+@using Blorc.PatternFly.Layouts.Flex
+
+<Metadata ComponentName="Flex" ComponentType="layouts" />
+
+<section class="ws-section ws-live-demo">
+    <Example Title="Basic flex">
+        <Flex>
+            <FlexItem>Flex item</FlexItem>
+            <FlexItem>Flex item</FlexItem>
+            <FlexItem>Flex item</FlexItem>
+            <FlexItem>Flex item</FlexItem>
+            <FlexItem>Flex item</FlexItem>
+        </Flex>
+    </Example>
+    <Example Title="Flex nesting">
+        <Flex>
+            <Flex>
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+            </Flex>
+            <Flex>
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+            </Flex>
+        </Flex>
+    </Example>  
+    <Example Title="Nested flex and items">
+        <Flex>
+            <Flex>
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+            </Flex>
+            <FlexItem>Flex item</FlexItem>
+            <FlexItem>Flex item</FlexItem>
+            <Flex>
+                <FlexItem>Flex item</FlexItem>
+            </Flex>
+        </Flex>
+    </Example>   
+    
+    <Example Title="Individually spaced items (spacer=xs,sm,md,lg,xl,2xl,3xl)">
+        <Flex>
+            <FlexItem Spacer="@Spacer.None">Item - none</FlexItem>
+            <FlexItem Spacer="@Spacer.Xs">Item - xs</FlexItem>
+            <FlexItem Spacer="@Spacer.Sm">Item -sm</FlexItem>
+            <FlexItem Spacer="@Spacer.Md">Item - md</FlexItem>
+            <FlexItem Spacer="@Spacer.Lg">Item - lg</FlexItem>
+            <FlexItem Spacer="@Spacer.Xl">Item - xl</FlexItem>
+            <FlexItem Spacer="@Spacer.Xxl">Item - 2xl</FlexItem>
+            <FlexItem Spacer="@Spacer.Xxl">Item - 3xl</FlexItem>
+        </Flex>
+    </Example>
+    
+        <Example Title="Flex with modified spacing (spaceItems=xl)">
+        <Flex>
+            <FlexItem Spacer="@Spacer.Xl">Item - none</FlexItem>
+            <FlexItem Spacer="@Spacer.Xs">Item - xs</FlexItem>
+            <FlexItem Spacer="@Spacer.Sm">Item -sm</FlexItem>
+            <FlexItem Spacer="@Spacer.Md">Item - md</FlexItem>
+            <FlexItem Spacer="@Spacer.Lg">Item - lg</FlexItem>
+            <FlexItem Spacer="@Spacer.Xl">Item - xl</FlexItem>
+            <FlexItem Spacer="@Spacer.Xxl">Item - 2xl</FlexItem>
+            <FlexItem Spacer="@Spacer.Xxl">Item - 3xl</FlexItem>
+        </Flex>
+    </Example>
+        <Example Title="Adjusting width with grow (first group has prop canGrow and will occupy remaining available space)">
+            <Flex>
+                <Flex CanGrow="true">
+                    <FlexItem>Flex item</FlexItem>
+                    <FlexItem>Flex item</FlexItem>
+                    <FlexItem>Flex item</FlexItem>
+                </Flex>
+                <Flex>
+                    <FlexItem>Flex item</FlexItem>
+                    <FlexItem>Flex item</FlexItem>
+                </Flex>
+                <Flex>
+                    <FlexItem>Flex item</FlexItem>
+                </Flex>
+            </Flex>
+    </Example>
+
+        <Example Title="Specifying column widths with flex-1, 2, and 3">
+            <Flex>
+                <Flex FlexModifier="@FlexModifier.Flex1">
+                    <FlexItem>Flex item</FlexItem>
+                </Flex>
+                <Flex FlexModifier="@FlexModifier.Flex2">
+                    <FlexItem>Flex item</FlexItem>
+                    <FlexItem>Flex item</FlexItem>
+                </Flex>
+                <Flex FlexModifier="@FlexModifier.Flex3">
+                    <FlexItem>Flex item</FlexItem>
+                    <FlexItem>Flex item</FlexItem>
+                    <FlexItem>Flex item</FlexItem>
+                </Flex>
+            </Flex> 
+        </Example>     
+    
+    <Example Title="Flex column layout">
+        <Flex IsColumn="true">
+            <FlexItem>Flex item</FlexItem>
+            <FlexItem>Flex item</FlexItem>
+            <FlexItem>Flex item</FlexItem>
+        </Flex>
+    </Example>   
+
+    <Example Title="Stacking flex elements">
+        <Flex IsColumn="true">
+            <Flex>
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+            </Flex>
+            <Flex>
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+            </Flex>
+            <Flex>
+                <FlexItem>Flex item</FlexItem>
+            </Flex>
+        </Flex>
+    </Example>
+
+    <Example Title="Nesting flex elements in columns">
+        <Flex>
+            <Flex IsColumn="true">
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+            </Flex>
+            <Flex IsColumn="true">
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+            </Flex>
+        </Flex>
+    </Example>     
+    
+    <Example Title="Switching between flex-direction column and row at large breakpoint">
+        <Flex IsColumn="true" IsRowOnLg="true">
+            <Flex>
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+            </Flex>
+            <Flex IsColumn="true">
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+            </Flex>
+        </Flex>
+    </Example> 
+    
+    <Example Title="Controlling width of large text-filled flex item with flex-1">
+        <Flex IsColumn="true" IsRowOnLg="true">
+            <Flex FlexModifier="@FlexModifier.Flex1">
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est animi modi temporibus, alias qui obcaecati ullam dolor nam, nulla magni iste rem praesentium numquam provident amet ut nesciunt harum accusamus.</FlexItem>
+            </Flex>
+            <Flex IsColumn="true">
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+            </Flex>
+        </Flex>
+    </Example> 
+    
+    <Example Title="Aligning right, including when wrapped">
+        <Flex>
+            <FlexItem>Flex item</FlexItem>
+            <FlexItem>Flex item</FlexItem>
+            <FlexItem>Flex item</FlexItem>
+            <FlexItem Align="@Align.Right">Flex item</FlexItem>
+            <FlexItem>Flex item</FlexItem>
+        </Flex>
+    </Example> 
+    
+    <Example Title="Align right on single item">
+        <Flex>
+            <FlexItem Align="@Align.Right">Flex item</FlexItem>
+            <FlexItem>Flex item</FlexItem>
+        </Flex>
+    </Example>    
+    
+    <Example Title="Align right on multiple groups">
+        <Flex>
+            <Flex>
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+            </Flex>
+            <Flex Align="@Align.Right">
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+            </Flex>
+            <Flex Align="@Align.Right">
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+            </Flex>
+        </Flex>
+    </Example>    
+    
+    <Example Title="Using flex-1 to align adjacent content">
+        <Flex>
+            <Flex FlexModifier="@FlexModifier.Flex1">
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+            </Flex>
+            <Flex>
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+            </Flex>
+        </Flex>
+    </Example>   
+    
+    <Example Title="Aligning nested columns with align-self-flex-end">
+        <Flex>
+            <Flex IsColumn="true">
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+            </Flex>
+            <Flex IsColumn="true" Align="@Align.SelfFlexEnd">
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+            </Flex>
+        </Flex>
+    </Example> 
+    <Example Title="Aligning nested columns with align-self-baseline">
+        <Flex>
+            <Flex IsColumn="true">
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+            </Flex>
+            <Flex IsColumn="true" Align="@Align.SelfBaseline">
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+            </Flex>
+        </Flex>
+    </Example> 
+    <Example Title="Aligning nested columns with align-self-stretch">
+        <Flex>
+            <Flex IsColumn="true">
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+            </Flex>
+            <Flex IsColumn="true" Align="@Align.SelfStretch">
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+            </Flex>
+        </Flex>
+    </Example> 
+
+    <Example Title="Aligning nested columns with align-self-flex-end">
+        <Flex>
+            <Flex IsColumn="true">
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+            </Flex>
+            <Flex IsColumn="true" Align="@Align.SelfCenter">
+                <FlexItem>Flex item</FlexItem>
+                <FlexItem>Flex item</FlexItem>
+            </Flex>
+        </Flex>
+    </Example> 
+
+
+    <Example Title="Justify content with justify-content-flex-end">
+        <Flex ContentJustification="@ContentJustification.FlexEnd">
+            <FlexItem>Flex item</FlexItem>
+            <FlexItem>Flex item</FlexItem>
+            <FlexItem>Flex item</FlexItem>
+            <FlexItem>Flex item</FlexItem>
+        </Flex>
+    </Example>
+    
+    <Example Title="Justify content with justify-content-space-between">
+        <Flex ContentJustification="@ContentJustification.SpaceBetween">
+            <FlexItem>Flex item</FlexItem>
+            <FlexItem>Flex item</FlexItem>
+            <FlexItem>Flex item</FlexItem>
+        </Flex>
+    </Example> 
+
+    <Example Title="Justify content with justify-content-flex-start">
+        <Flex ContentJustification="@ContentJustification.FlexStart">
+            <FlexItem>Flex item</FlexItem>
+            <FlexItem>Flex item</FlexItem>
+            <FlexItem>Flex item</FlexItem>
+        </Flex>
+    </Example> 
+</section>
+
+    @code {
+
+    }
+
