@@ -96,6 +96,52 @@ app {
     color: red;
 }
 
+.ws-preview .pf-l-bullseye {
+    padding: 1rem;
+    border-width: 2px;
+    border-style: dashed;
+}
+
+.ws-preview .pf-l-bullseye > div {
+    padding: 1rem;
+    border-width: 2px;
+    border-style: dashed;
+}
+
+.ws-preview .pf-l-flex > div {
+    border-style: dashed;
+    border-width: 2px;
+    padding: 1rem;
+}
+.ws-preview .pf-l-flex {
+    border-style: dashed;
+    border-width: 2px;
+    padding: 1rem;
+}
+
+.ws-preview .pf-l-flex__item {
+    border-style: dashed;
+    border-width: 2px;
+    padding: 1rem;
+}
+
+.ws-preview .pf-m-justify-content-flex-start {
+    border-style: dashed;
+    border-width: 2px;
+    padding: 1rem;
+}
+
+.ws-preview .pf-m-justify-content-flex-end {
+    border-style: dashed;
+    border-width: 2px;
+    padding: 1rem;
+}
+.ws-preview .pf-m-justify-content-space-between {
+    border-style: dashed;
+    border-width: 2px;
+    padding: 1rem;
+}
+
 @media (max-width: 767.98px) {
     .main .top-row {
         display: none;
