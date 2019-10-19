@@ -18,7 +18,7 @@
         protected string Class { get; set; }
 
         [Parameter]
-        public RenderFragment Content { get; set; }
+        public RenderFragment ChildContent { get; set; }
 
         [Parameter]
         public bool IsGutter

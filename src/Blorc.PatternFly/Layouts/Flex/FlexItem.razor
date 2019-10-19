@@ -1,10 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Components
 
-<div class="pf-l-flex__item">
-    @Content
-</div>
+@inherits FlexItemComponent
 
-@code {
-        [Parameter]
-        public RenderFragment Content { get; set; }
-}
+<div class="@Class">
+    @ChildContent
+</div>

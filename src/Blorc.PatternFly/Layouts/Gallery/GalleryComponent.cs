@@ -4,12 +4,12 @@
     using Microsoft.AspNetCore.Components;
     using StateConverters;
 
-    public class GalleryComponent : BlorcComponentBase
+    public class GalleryItemComponent : BlorcComponentBase
     {
-        public GalleryComponent()
+        public GalleryItemComponent()
         {
             CreateConverter()
-                .Fixed("pf-l-flex")
+                .Fixed("pf-l-gallery")
                 .Watch(() => IsGutter)
                 .If(() => IsGutter, "pf-m-gutter")
                 .Update(() => Class);
@@ -18,7 +18,7 @@
         protected string Class { get; set; }
 
         [Parameter]
-        public RenderFragment Content { get; set; }
+        public RenderFragment ChildContent { get; set; }
 
         [Parameter]
         public bool IsGutter
