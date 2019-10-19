@@ -11,14 +11,14 @@
             CreateConverter()
                 .Fixed("pf-l-flex")
                 .Watch(() => CanGrow)
-                .Watch(() => FlexModifier)
+                .Watch(() => FlexType)
                 .Watch(() => Align)
                 .Watch(() => IsColumn)
-                .Watch(() => IsRowOnLg)
+                .Watch(() => IsRowOnLarge)
                 .Watch(() => ContentJustification)
                 .If(() => CanGrow, "pf-m-grow")
                 .If(() => IsColumn, "pf-m-column")
-                .If(() => IsRowOnLg, "pf-m-row-on-lg")
+                .If(() => IsRowOnLarge, "pf-m-row-on-lg")
                 .If(() => ContentJustification == ContentJustification.Default, "")
                 .If(() => ContentJustification == ContentJustification.FlexEnd, "pf-m-justify-content-flex-end")
                 .If(() => ContentJustification == ContentJustification.SpaceBetween, "pf-m-justify-content-space-between")
@@ -29,19 +29,19 @@
                 .If(() => Align == Align.SelfCenter, "pf-m-align-self-center")
                 .If(() => Align == Align.SelfBaseline, "pf-m-align-self-baseline")
                 .If(() => Align == Align.SelfStretch, "pf-m-align-self-stretch")
-                .If(() => FlexModifier == FlexModifier.Default, "")
-                .If(() => FlexModifier == FlexModifier.Flex1, " pf-m-flex-1")
-                .If(() => FlexModifier == FlexModifier.Flex2, " pf-m-flex-2")
-                .If(() => FlexModifier == FlexModifier.Flex3, " pf-m-flex-3")
+                .If(() => FlexType == FlexType.Default, "")
+                .If(() => FlexType == FlexType.Flex1, " pf-m-flex-1")
+                .If(() => FlexType == FlexType.Flex2, " pf-m-flex-2")
+                .If(() => FlexType == FlexType.Flex3, " pf-m-flex-3")
                 .If(() => CanGrow, "pf-m-grow")
                 .Update(() => Class);
         }
 
         [Parameter]
-        public bool IsRowOnLg
+        public bool IsRowOnLarge
         {
-            get => GetPropertyValue<bool>(nameof(IsRowOnLg));
-            set => SetPropertyValue(nameof(IsRowOnLg), value);
+            get => GetPropertyValue<bool>(nameof(IsRowOnLarge));
+            set => SetPropertyValue(nameof(IsRowOnLarge), value);
         }
 
         public string Class { get; set; }
@@ -64,10 +64,10 @@
         }
 
         [Parameter]
-        public FlexModifier FlexModifier
+        public FlexType FlexType
         {
-            get => GetPropertyValue<FlexModifier>(nameof(FlexModifier));
-            set => SetPropertyValue(nameof(FlexModifier), value);
+            get => GetPropertyValue<FlexType>(nameof(FlexType));
+            set => SetPropertyValue(nameof(FlexType), value);
         }
 
         [Parameter]

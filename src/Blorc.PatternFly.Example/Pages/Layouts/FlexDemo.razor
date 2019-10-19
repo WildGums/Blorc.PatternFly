@@ -42,29 +42,29 @@
         </Flex>
     </Example>   
     
-    <Example Title="Individually spaced items (spacer=xs,sm,md,lg,xl,2xl,3xl)">
+    <Example Title="Individually spaced items (Space=xs,sm,md,lg,xl,2xl,3xl)">
         <Flex>
-            <FlexItem Spacer="@Spacer.None">Item - none</FlexItem>
-            <FlexItem Spacer="@Spacer.Xs">Item - xs</FlexItem>
-            <FlexItem Spacer="@Spacer.Sm">Item -sm</FlexItem>
-            <FlexItem Spacer="@Spacer.Md">Item - md</FlexItem>
-            <FlexItem Spacer="@Spacer.Lg">Item - lg</FlexItem>
-            <FlexItem Spacer="@Spacer.Xl">Item - xl</FlexItem>
-            <FlexItem Spacer="@Spacer.Xxl">Item - 2xl</FlexItem>
-            <FlexItem Spacer="@Spacer.Xxl">Item - 3xl</FlexItem>
+            <FlexItem Space="@Space.None">Item - none</FlexItem>
+            <FlexItem Space="@Space.VerySmall">Item - xs</FlexItem>
+            <FlexItem Space="@Space.Small">Item -sm</FlexItem>
+            <FlexItem Space="@Space.Medium">Item - md</FlexItem>
+            <FlexItem Space="@Space.Large">Item - lg</FlexItem>
+            <FlexItem Space="@Space.VeryLarge">Item - xl</FlexItem>
+            <FlexItem Space="@Space.VeryLargeX2">Item - 2xl</FlexItem>
+            <FlexItem Space="@Space.VeryLargeX3">Item - 3xl</FlexItem>
         </Flex>
     </Example>
     
         <Example Title="Flex with modified spacing (spaceItems=xl)">
         <Flex>
-            <FlexItem Spacer="@Spacer.Xl">Item - none</FlexItem>
-            <FlexItem Spacer="@Spacer.Xs">Item - xs</FlexItem>
-            <FlexItem Spacer="@Spacer.Sm">Item -sm</FlexItem>
-            <FlexItem Spacer="@Spacer.Md">Item - md</FlexItem>
-            <FlexItem Spacer="@Spacer.Lg">Item - lg</FlexItem>
-            <FlexItem Spacer="@Spacer.Xl">Item - xl</FlexItem>
-            <FlexItem Spacer="@Spacer.Xxl">Item - 2xl</FlexItem>
-            <FlexItem Spacer="@Spacer.Xxl">Item - 3xl</FlexItem>
+            <FlexItem Space="@Space.VeryLarge">Item - none</FlexItem>
+            <FlexItem Space="@Space.VerySmall">Item - xs</FlexItem>
+            <FlexItem Space="@Space.Small">Item -sm</FlexItem>
+            <FlexItem Space="@Space.Medium">Item - md</FlexItem>
+            <FlexItem Space="@Space.Large">Item - lg</FlexItem>
+            <FlexItem Space="@Space.VeryLarge">Item - xl</FlexItem>
+            <FlexItem Space="@Space.VeryLargeX2">Item - 2xl</FlexItem>
+            <FlexItem Space="@Space.VeryLargeX2">Item - 3xl</FlexItem>
         </Flex>
     </Example>
         <Example Title="Adjusting width with grow (first group has prop canGrow and will occupy remaining available space)">
@@ -86,14 +86,14 @@
 
         <Example Title="Specifying column widths with flex-1, 2, and 3">
             <Flex>
-                <Flex FlexModifier="@FlexModifier.Flex1">
+                <Flex FlexType="@FlexType.Flex1">
                     <FlexItem>Flex item</FlexItem>
                 </Flex>
-                <Flex FlexModifier="@FlexModifier.Flex2">
+                <Flex FlexType="@FlexType.Flex2">
                     <FlexItem>Flex item</FlexItem>
                     <FlexItem>Flex item</FlexItem>
                 </Flex>
-                <Flex FlexModifier="@FlexModifier.Flex3">
+                <Flex FlexType="@FlexType.Flex3">
                     <FlexItem>Flex item</FlexItem>
                     <FlexItem>Flex item</FlexItem>
                     <FlexItem>Flex item</FlexItem>
@@ -141,7 +141,7 @@
     </Example>     
     
     <Example Title="Switching between flex-direction column and row at large breakpoint">
-        <Flex IsColumn="true" IsRowOnLg="true">
+        <Flex IsColumn="true" IsRowOnLarge="true">
             <Flex>
                 <FlexItem>Flex item</FlexItem>
                 <FlexItem>Flex item</FlexItem>
@@ -156,8 +156,8 @@
     </Example> 
     
     <Example Title="Controlling width of large text-filled flex item with flex-1">
-        <Flex IsColumn="true" IsRowOnLg="true">
-            <Flex FlexModifier="@FlexModifier.Flex1">
+        <Flex IsColumn="true" IsRowOnLarge="true">
+            <Flex FlexType="@FlexType.Flex1">
                 <FlexItem>Flex item</FlexItem>
                 <FlexItem>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est animi modi temporibus, alias qui obcaecati ullam dolor nam, nulla magni iste rem praesentium numquam provident amet ut nesciunt harum accusamus.</FlexItem>
             </Flex>
@@ -204,7 +204,7 @@
     
     <Example Title="Using flex-1 to align adjacent content">
         <Flex>
-            <Flex FlexModifier="@FlexModifier.Flex1">
+            <Flex FlexType="@FlexType.Flex1">
                 <FlexItem>Flex item</FlexItem>
                 <FlexItem>Flex item</FlexItem>
                 <FlexItem>Flex item</FlexItem>

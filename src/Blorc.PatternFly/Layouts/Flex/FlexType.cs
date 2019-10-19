@@ -1,20 +1,15 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Spacer.cs" company="WildGums">
+// <copyright file="FlexModifier.cs" company="WildGums">
 //   Copyright (c) 2008 - 2019 WildGums. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 namespace Blorc.PatternFly.Layouts.Flex
 {
-    public enum Spacer
+    public enum FlexType
     {
         Default,
-        None,
-        Xs,
-        Sm,
-        Md,
-        Lg,
-        Xl,
-        Xxl,
-        Xxxl
+        Flex1,
+        Flex2,
+        Flex3
     }
 }
