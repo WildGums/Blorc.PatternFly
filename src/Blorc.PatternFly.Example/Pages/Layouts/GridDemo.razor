@@ -1,0 +1,50 @@
+﻿@page "/layouts/grid"
+
+@using Blorc.PatternFly.Layouts.Grid
+
+<Metadata ComponentName="Split" ComponentType="layouts"/>
+
+<section class="ws-section ws-live-demo">
+    <Example Title="Simple grid">
+        <Grid>
+            <GridItem ColSpan="8">span = 8</GridItem>
+            <GridItem ColSpan="4" RowSpan="2">
+                span = 4, rowSpan = 2
+            </GridItem>
+            <GridItem ColSpan="2" RowSpan="3">
+                span = 2, rowSpan = 3
+            </GridItem>
+            <GridItem ColSpan="2">span = 2</GridItem>
+            <GridItem ColSpan="4">span = 4</GridItem>
+            <GridItem ColSpan="2">span = 2</GridItem>
+            <GridItem ColSpan="2">span = 2</GridItem>
+            <GridItem ColSpan="2">span = 2</GridItem>
+            <GridItem ColSpan="4">span = 4</GridItem>
+            <GridItem ColSpan="2">span = 2</GridItem>
+            <GridItem ColSpan="4">span = 4</GridItem>
+            <GridItem ColSpan="4">span = 4</GridItem>
+        </Grid>
+    </Example>    
+
+    <Example Title="Grid with gutters">
+        <Grid IsGutter="true">
+            <GridItem ColSpan="8">span = 8</GridItem>
+            <GridItem ColSpan="4" RowSpan="2">
+                span = 4, rowSpan = 2
+            </GridItem>
+            <GridItem ColSpan="2" RowSpan="3">
+                span = 2, rowSpan = 3
+            </GridItem>
+            <GridItem ColSpan="2">span = 2</GridItem>
+            <GridItem ColSpan="4">span = 4</GridItem>
+            <GridItem ColSpan="2">span = 2</GridItem>
+            <GridItem ColSpan="2">span = 2</GridItem>
+            <GridItem ColSpan="2">span = 2</GridItem>
+            <GridItem ColSpan="4">span = 4</GridItem>
+            <GridItem ColSpan="2">span = 2</GridItem>
+            <GridItem ColSpan="4">span = 4</GridItem>
+            <GridItem ColSpan="4">span = 4</GridItem>
+        </Grid>
+    </Example>    
+
+</section>
