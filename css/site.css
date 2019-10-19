@@ -173,6 +173,18 @@ app {
     border-style: dashed;
 }
 
+.ws-preview .pf-l-grid {
+    padding: 1rem;
+    border-width: 2px;
+    border-style: dashed;
+}
+
+.ws-preview .pf-l-grid__item {
+    padding: 1rem;
+    border-width: 2px;
+    border-style: dashed;
+}
+
 
 .ws-preview .pf-m-justify-content-flex-end {
     border-style: dashed;
