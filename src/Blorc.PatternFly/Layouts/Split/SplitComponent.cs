@@ -15,7 +15,7 @@
                 .Update(() => Class);
         }
 
-        protected string Class { get; set; }
+        public string Class { get; set; }
 
         [Parameter]
         public RenderFragment ChildContent { get; set; }

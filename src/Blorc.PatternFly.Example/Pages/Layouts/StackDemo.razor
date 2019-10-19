@@ -1,0 +1,24 @@
+﻿@page "/layouts/stack"
+
+@using Blorc.PatternFly.Layouts.Stack
+
+<Metadata ComponentName="Split" ComponentType="layouts"/>
+
+<section class="ws-section ws-live-demo">
+
+    <Example Title="Simple stack layout">
+        <Stack>
+            <StackItem>content</StackItem>
+            <StackItem IsFilled="true">pf-m-fill</StackItem>
+            <StackItem>content</StackItem>
+        </Stack>
+    </Example>    
+
+    <Example Title="Simple stack layout with gutter">
+        <Stack IsGutter="true">
+            <StackItem>content</StackItem>
+            <StackItem IsFilled="true">pf-m-fill</StackItem>
+            <StackItem>content</StackItem>
+        </Stack>
+    </Example>
+</section>

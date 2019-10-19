@@ -1,15 +1,15 @@
-﻿namespace Blorc.PatternFly.Layouts.Stack
+﻿namespace Blorc.PatternFly.Layouts.Split
 {
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
     using StateConverters;
 
-    public class StackItemComponent : BlorcComponentBase
+    public class SplitItemComponent : BlorcComponentBase
     {
-        public StackItemComponent()
+        public SplitItemComponent()
         {
             CreateConverter()
-                .Fixed("pf-l-stack__item")
+                .Fixed("pf-l-split__item")
                 .Watch(() => IsFilled)
                 .If(() => IsFilled, "pf-m-fill")
                 .Update(() => Class);

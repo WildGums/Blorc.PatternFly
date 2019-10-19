@@ -4,9 +4,9 @@
     using Microsoft.AspNetCore.Components;
     using StateConverters;
 
-    public class GalleryItemComponent : BlorcComponentBase
+    public class LevelComponent : BlorcComponentBase
     {
-        public GalleryItemComponent()
+        public LevelComponent()
         {
             CreateConverter()
                 .Fixed("pf-l-gallery")
@@ -15,7 +15,7 @@
                 .Update(() => Class);
         }
 
-        protected string Class { get; set; }
+        public string Class { get; set; }
 
         [Parameter]
         public RenderFragment ChildContent { get; set; }

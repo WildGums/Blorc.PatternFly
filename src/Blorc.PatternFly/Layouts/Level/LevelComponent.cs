@@ -1,15 +1,15 @@
-﻿namespace Blorc.PatternFly.Layouts.Stack
+﻿namespace Blorc.PatternFly.Layouts.Level
 {
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
     using StateConverters;
 
-    public class StackComponent : BlorcComponentBase
+    public class LevelComponent : BlorcComponentBase
     {
-        public StackComponent()
+        public LevelComponent()
         {
             CreateConverter()
-                .Fixed("pf-l-stack")
+                .Fixed("pf-l-level")
                 .Watch(() => IsGutter)
                 .If(() => IsGutter, "pf-m-gutter")
                 .Update(() => Class);

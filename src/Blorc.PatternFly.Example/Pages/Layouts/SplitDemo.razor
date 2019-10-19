@@ -1,0 +1,24 @@
+﻿@page "/layouts/split"
+
+@using Blorc.PatternFly.Layouts.Split
+
+<Metadata ComponentName="Split" ComponentType="layouts"/>
+
+<section class="ws-section ws-live-demo">
+
+    <Example Title="Split example">
+        <Split>
+            <SplitItem>content</SplitItem>
+            <SplitItem IsFilled="true">pf-m-fill</SplitItem>
+            <SplitItem>content</SplitItem>
+        </Split>
+    </Example>    
+
+    <Example Title="Split example with gutter">
+        <Split IsGutter="true">
+            <SplitItem>content</SplitItem>
+            <SplitItem IsFilled="true">pf-m-fill</SplitItem>
+            <SplitItem>content</SplitItem>
+        </Split>
+    </Example>
+</section>

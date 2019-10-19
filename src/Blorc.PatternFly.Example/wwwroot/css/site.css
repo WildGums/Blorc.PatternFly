@@ -131,6 +131,49 @@ app {
     padding: 1rem;
 }
 
+.ws-preview .pf-l-gallery > div {
+    padding: 1rem;
+    border-width: 2px;
+    border-style: dashed;
+}
+
+.ws-preview .pf-l-level > div {
+    padding: 1rem;
+    border-width: 2px;
+    border-style: dashed;
+}
+
+.ws-preview .pf-l-level {
+    padding: 1rem;
+    border-width: 2px;
+    border-style: dashed;
+}
+
+.ws-preview .pf-l-split > div {
+    padding: 1rem;
+    border-width: 2px;
+    border-style: dashed;
+}
+
+.ws-preview .pf-l-split {
+    padding: 1rem;
+    border-width: 2px;
+    border-style: dashed;
+}
+
+.ws-preview .pf-l-stack {
+    padding: 1rem;
+    border-width: 2px;
+    border-style: dashed;
+}
+
+.ws-preview .pf-l-stack__item {
+    padding: 1rem;
+    border-width: 2px;
+    border-style: dashed;
+}
+
+
 .ws-preview .pf-m-justify-content-flex-end {
     border-style: dashed;
     border-width: 2px;
