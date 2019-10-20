@@ -1,13 +1,14 @@
 ﻿@using Microsoft.AspNetCore.Components
 @using Microsoft.AspNetCore.Components.Web
+@using Blorc.PatternFly.Layouts.Bullseye
 
 @inherits Blorc.PatternFly.Components.Modal.ModalComponent
 
 @if(IsVisble)
 {
     <div class="pf-c-backdrop">
-        <div class="pf-l-bullseye">
-            <div role="dialog" aria-label="Modal Header" aria-describedby="pf-modal-2" aria-modal="true" class="@Class" >
+        <Bullseye>
+            <div role="dialog" aria-label="Modal Header" aria-describedby="pf-modal-2" aria-modal="true" class="@Class">
                 @if (ShowCloseButton)
                 {
                     // TODO: Extract this also as component
@@ -34,6 +35,6 @@
                     </div>
                 }
             </div>
-        </div>
+        </Bullseye>
     </div>
 }

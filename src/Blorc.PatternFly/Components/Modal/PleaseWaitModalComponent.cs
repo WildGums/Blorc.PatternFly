@@ -25,6 +25,10 @@
         public RenderFragment Header { get; set; }
 
         [Parameter]
+        public RenderFragment Body { get; set; }
+
+
+        [Parameter]
         public bool ShowProgress { get; set; }
 
         public async Task ReportAsync(int value)

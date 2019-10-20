@@ -20,6 +20,11 @@
         }
     </Header>
     <Body>
+        @if (Body != null)
+        {
+            @Body
+        }
+
         @if (ShowProgress)
         {
             <Progress Size="ProgressSize.Large" @ref="Progress" />

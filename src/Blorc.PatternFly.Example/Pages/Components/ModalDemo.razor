@@ -73,27 +73,45 @@
     </Example> 
     
     <Example Title="Execute Async Task">
-        <PleaseWaitModal @ref="pleaseWaitModal" 
-                         Size="ModalSize.Small" 
-                         Action=@(ctx => DoSomething(ctx))>
-            <Header>
-                Please wait...
-            </Header>
-        </PleaseWaitModal>
+            <PleaseWaitModal @ref="pleaseWaitModal" 
+                             Size="ModalSize.Small" 
+                             Action=@(ctx => DoSomething(ctx))>
+                <Header>
+                    Please wait...
+                </Header>
+            </PleaseWaitModal>
         <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await pleaseWaitModal.ExecuteAsync(true))>Show Please Wait</Button>
     </Example>
 
     <Example Title="Execute Async Task (Progress)">
-        <PleaseWaitModal @ref="pleaseWaitModalWithProgress" 
-                         Size="ModalSize.Small" 
-                         Action=@(ctx => DoSomething(ctx)) 
-                         ShowProgress="true" >
-            <Header>
-                Please wait...
-            </Header>
-        </PleaseWaitModal>
+            <PleaseWaitModal @ref="pleaseWaitModalWithProgress" 
+                             Size="ModalSize.Small" 
+                             Action=@(ctx => DoSomething(ctx)) 
+                             ShowProgress="true" >
+                <Header>
+                    Please wait...
+                </Header>
+            </PleaseWaitModal>
 
         <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await pleaseWaitModalWithProgress.ExecuteAsync())>Show Please Wait</Button>
+    </Example>
+    <Example Title="Execute Async Task (Progress & Body)">
+            <PleaseWaitModal @ref="pleaseWaitModalWithProgressAndBody" 
+                             Size="@ModalSize.Small" 
+                             Action=@(ctx => DoSomething(ctx)) 
+                             ShowProgress="true" >
+                <Header>
+                    Please wait...
+                </Header>
+                <Body>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                    est laborum.
+                </Body>
+            </PleaseWaitModal>
+        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await pleaseWaitModalWithProgressAndBody.ExecuteAsync())>Show Please Wait</Button>
     </Example>
 </section>
 
@@ -107,6 +125,8 @@
     private PleaseWaitModal pleaseWaitModal;
 
     private PleaseWaitModal pleaseWaitModalWithProgress;
+
+    private PleaseWaitModal pleaseWaitModalWithProgressAndBody;
 
     private async Task DoSomething(ExecutionContext ctx)
     {
