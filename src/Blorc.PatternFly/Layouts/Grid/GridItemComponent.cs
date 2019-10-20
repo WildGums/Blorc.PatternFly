@@ -1,5 +1,6 @@
 ﻿namespace Blorc.PatternFly.Layouts.Grid
 {
+    using System;
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
     using StateConverters;
@@ -25,15 +26,15 @@
         [Parameter]
         public int ColSpan
         {
-            get { return GetPropertyValue<int>(nameof(ColSpan)); }
-            set { SetPropertyValue(nameof(ColSpan), value); }
+            get => GetPropertyValue<int>(nameof(ColSpan));
+            set => SetPropertyValue(nameof(ColSpan), Math.Min(Math.Max(1, value), 12));
         }
 
         [Parameter]
         public int RowSpan
         {
-            get { return GetPropertyValue<int>(nameof(RowSpan)); }
-            set { SetPropertyValue(nameof(RowSpan), value); }
+            get => GetPropertyValue<int>(nameof(RowSpan));
+            set => SetPropertyValue(nameof(RowSpan), Math.Min(Math.Max(1, value), 12));
         }
     }
 }
