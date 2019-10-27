@@ -39,16 +39,17 @@
         public void OrderBy(ColumnComponent columnComponent, Order order)
         {
             OrderByColumnChanged?.Invoke(this, new OrderByColumnChangedEventArg(columnComponent));
+           
             if (Records == null || AlwaysReload)
             {
                 Records = DataSource.Invoke();
             }
 
-            if (order == Order.Asc)
+            if (order == Order.Ascending)
             {
                 Records = Records.OfType<object>().OrderBy(o => PropertyHelper.GetPropertyValue(o, columnComponent.Key));
             }
-            else
+            else if (order == Order.Descending)
             {
                 Records = Records.OfType<object>().OrderByDescending(o => PropertyHelper.GetPropertyValue(o, columnComponent.Key));
             }
@@ -61,5 +62,14 @@
 
         [Parameter]
         public Func<IEnumerable> DataSource { get; set; }
+
+        protected override async Task OnInitializedAsync()
+        {
+            if (Records == null)
+            {
+                Records = DataSource?.Invoke();
+                StateHasChanged();
+            }
+        }
     }
 }

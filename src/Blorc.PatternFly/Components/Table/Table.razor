@@ -34,11 +34,6 @@
             }
             else
             {
-                if (Records == null && DataSource != null)
-                {
-                    Records = DataSource.Invoke();
-                }
-
                 if (Records != null && ColumnDefinitions != null)
                 {
                     foreach (var record in Records)
