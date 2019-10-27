@@ -1,10 +1,87 @@
 ﻿@page "/components/table"
 
+@using Blorc.PatternFly.Components.Table
+@using System
+
+
 <Metadata ComponentName="Table" />
 
 <Todo ComponentName="Table" />
+<section class="ws-section ws-live-demo">
+    <Example Title="Simple Manual Table">
+        <Table Caption="Simple Manual Table" >
+            <Header>
+                <Row>
+                    <Column Label="Repositories" Key="0" />
+                    <Column Label="Branches" Key="1" />
+                    <Column Label="Pull requests" Key="2" />
+                    <Column Label="Workspaces" Key="3"/>
+                    <Column Label="Last commit" Key="4" Align="@Align.Center"/>
+                </Row>
+            </Header>
+            <Body>
+                <Row>
+                    <Cell Label="Repositories" Key="0" Value="one"/>
+                    <Cell Label="Branches" Key="1" Value="two"/>
+                    <Cell Label="Pull requests" Key="2" Value="three"/>
+                    <Cell Label="Workspaces" Key="3" Value="four"/>
+                    <Cell Label="Last commit" Key="4" Value="five" Align="@Align.Center"/>
+                </Row>
+                <Row>
+                    <Cell Label="Repositories" Key="0" Value="one"/>
+                    <Cell Label="Branches" Key="1" Value="two"/>
+                    <Cell Label="Pull requests" Key="2" Value="three"/>
+                    <Cell Label="Workspaces" Key="3" Value="four"/>
+                    <Cell Label="Last commit" Key="4" Value="five" Align="@Align.Center"/>
+                </Row>
+                <Row>
+                    <Cell Label="Repositories" Key="0" Value="one"/>
+                    <Cell Label="Branches" Key="1" Value="two"/>
+                    <Cell Label="Pull requests" Key="2" Value="three"/>
+                    <Cell Label="Workspaces" Key="3" Value="four"/>
+                    <Cell Label="Last commit" Key="4" Value="five (not centered)"/>
+                </Row>
+            </Body>
+        </Table>
+    </Example> 
+    
+    <Example Title="Sortable Table">
+        <Table Caption="Sortable Table" DataSource=@(()=> GetData())>
+            <Header>
+                <Row>
+                    <!--TODO Try to avoid the index parameter later-->
+                    <Column Label="Repositories" Key="Repositories" IsSortable="true" Idx="0" />
+                    <Column Label="Branches" Key="Branches" IsSortable="true" Idx="1"/>
+                    <Column Label="Pull requests" Key="PullRequests" IsSortable="true" Idx="2" />
+                    <Column Label="Workspaces" Key="Workspaces" Idx="3"/>
+                    <Column Label="Last commit" Key="LastCommit" Align="@Align.Center" Idx="4"/>
+                </Row>
+            </Header>
+        </Table>
+    </Example>
+</section>
 
 @code {
-    
-}
 
+    public class Record
+    {
+        public string Repositories { get; set; }
+
+        public string Branches { get; set; }
+
+        public string PullRequests { get; set; }
+
+        public string Workspaces { get; set; }
+
+        public string LastCommit { get; set; }
+    }
+
+    public System.Collections.IEnumerable GetData()
+    {
+        var random = new Random();
+        for(int i = 0; i < 5; i++)
+        {
+            yield return new Record() { Repositories = $"one-{random.Next(0, 100)}", Branches=$"two-{random.Next(0, 100)}", PullRequests=$"three-{random.Next(0, 100)}", Workspaces=$"four-{random.Next(0, 100)}", LastCommit=$"five-{random.Next(0, 100)}"} ;
+        }
+    }
+}

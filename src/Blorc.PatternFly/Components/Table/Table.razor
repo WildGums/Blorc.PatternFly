@@ -1,0 +1,57 @@
+﻿@using System
+@using System.Linq
+@using Blorc.Reflection
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
+
+@inherits TableComponent
+
+<CascadingValue Value=this>
+    <table class="pf-c-table pf-m-grid-md">
+        <caption>@Caption</caption>
+        <thead>
+            @if (Header != null)
+            {
+                @Header
+            }
+            else
+            {
+                if (ColumnDefinitions != null && ColumnDefinitions.Count > 0)
+                {
+                    <Row>
+                    @foreach (var columnDefinition in ColumnDefinitions.OrderBy(pair => pair.Value.Idx).Select(pair => pair.Value))
+                    {
+                        <Column Label="@columnDefinition.Label" Key="@columnDefinition.Key" Idx="@columnDefinition.Idx"/>
+                    }
+                    </Row>
+                }
+            }
+        </thead>
+        <tbody>
+            @if (Body != null)
+            {
+                @Body
+            }
+            else
+            {
+                if (Records == null && DataSource != null)
+                {
+                    Records = DataSource.Invoke();
+                }
+
+                if (Records != null && ColumnDefinitions != null)
+                {
+                    foreach (var record in Records)
+                    {
+                        <Row>
+                            @foreach (var columnDefinition in ColumnDefinitions.OrderBy(pair => pair.Value.Idx).Select(pair => pair.Value))
+                            {
+                                <Cell Label="@columnDefinition.Label" Key="@columnDefinition.Key" Value="@PropertyHelper.GetPropertyValue(record, columnDefinition.Key).ToString()"/>
+                            }
+                        </Row>
+                    }
+                }
+            }
+        </tbody>
+    </table>
+</CascadingValue>

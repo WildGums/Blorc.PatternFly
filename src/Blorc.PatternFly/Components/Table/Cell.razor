@@ -1,0 +1,13 @@
+﻿@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
+
+@inherits CellComponent
+
+@if (ValueContent != null)
+{
+    <td data-label="@Label" data-key="@Key" class="@Class">@ValueContent</td>
+}
+else
+{
+    <td data-label="@Label" data-key="@Key" class="@Class">@Value</td>
+}

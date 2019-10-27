@@ -1,0 +1,22 @@
+﻿@using System.Collections.Concurrent
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
+
+@inherits ColumnComponent
+
+<th scope="col" data-label="@Label" data-key="@Key" class="@Class">
+    @if (IsSortable)
+    {
+        <button class="pf-c-button pf-m-plain" @onclick="Toggle">@Label
+            <span class="pf-c-table__sort-indicator">
+                <svg fill="currentColor" height="1em" width="1em" viewBox="0 0 256 512" aria-hidden="true" role="img" style="vertical-align: -0.125em;">
+                    <path d="@Path" transform=""></path>
+                </svg>
+            </span>
+        </button>
+    }
+    else
+    {
+        @Label
+    }
+</th>
