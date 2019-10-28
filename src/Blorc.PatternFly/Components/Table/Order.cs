@@ -8,7 +8,9 @@ namespace Blorc.PatternFly.Components.Table
     public enum Order
     {
         None,
-        Desc,
-        Asc
+
+        Descending,
+        
+        Ascending
     }
 }
