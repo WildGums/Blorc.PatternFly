@@ -3,43 +3,43 @@
     using System;
     using System.Collections;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
     using System.Threading.Tasks;
     using Blorc.Components;
     using EventArgs;
     using Microsoft.AspNetCore.Components;
     using Reflection;
-    using Select;
 
     public class TableComponent : BlorcComponentBase
     {
         protected IEnumerable Records { get; set; }
 
-        public TableComponent()
-        {
-        }
-
         [Parameter]
         public string Caption { get; set; }
-        
+
         [Parameter]
         public RenderFragment ChildContent { get; set; }
 
         [Parameter]
-        public RenderFragment Header { get; set; }       
-        
+        public RenderFragment Header { get; set; }
+
         [Parameter]
         public RenderFragment Body { get; set; }
 
         public SortedDictionary<string, ColumnDefinition> ColumnDefinitions { get; } = new SortedDictionary<string, ColumnDefinition>();
+
+        [Parameter]
+        public bool AlwaysReload { get; set; }
+
+        [Parameter]
+        public Func<IEnumerable> DataSource { get; set; }
 
         public event EventHandler<OrderByColumnChangedEventArg> OrderByColumnChanged;
 
         public void OrderBy(ColumnComponent columnComponent, Order order)
         {
             OrderByColumnChanged?.Invoke(this, new OrderByColumnChangedEventArg(columnComponent));
-           
+
             if (Records == null || AlwaysReload)
             {
                 Records = DataSource.Invoke();
@@ -56,12 +56,6 @@
 
             StateHasChanged();
         }
-
-        [Parameter]
-        public bool AlwaysReload { get; set; }
-
-        [Parameter]
-        public Func<IEnumerable> DataSource { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
