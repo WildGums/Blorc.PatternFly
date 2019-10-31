@@ -1,11 +1,15 @@
 ﻿@page "/components/text-area"
 
+@using System.ComponentModel
+@using Microsoft.AspNetCore.Components.Web
 @using Blorc.PatternFly.Components.TextArea
+@using Blorc.PatternFly.Core
+
+@inherits Blorc.Components.BlorcComponentBase
 
 <Metadata ComponentName="Text area" />
 
 <section class="ws-section ws-live-demo">
-
     <Example Title="Simple text area">
         <TextArea Label="Text area example" />
     </Example>
@@ -14,9 +18,20 @@
         <TextArea Label="Invalid text area example" IsValid="false" />
     </Example>
 
+    <Example Title="Binding Sample">
+        <TextArea Label="Text area example" @bind-Value="TextValue" UpdateMode="@UpdateMode.Continuous" />
+    </Example>
 </section>
 
 @code {
+    public string TextValue
+    {
+        set { SetPropertyValue(nameof(TextValue), value); }
+        get { return GetPropertyValue<string>(nameof(TextValue)); }
+    }
 
+    protected override void OnPropertyChanged(PropertyChangedEventArgs e)
+    {
+        Console.WriteLine(e.PropertyName + "=" + GetPropertyValue<object>(e.PropertyName));
+    }
 }
-

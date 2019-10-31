@@ -1,6 +1,13 @@
 ﻿@page "/components/text-input"
 
+@using System.Runtime.Serialization.Formatters.Binary
 @using Blorc.PatternFly.Components.TextInput
+@using Blorc.PatternFly.Components.Text
+@using Blorc.PatternFly.Core
+@using Microsoft.AspNetCore.Components.Web
+@using System.ComponentModel
+
+@inherits Blorc.Components.BlorcComponentBase
 
 <Metadata ComponentName="Text input" />
 
@@ -20,9 +27,22 @@
     <Example Title="Text input (invalid)">
         <TextInput Value="Invalid text input example" IsValid="false" Label="invalid text input example" />
     </Example>
+
+    <Example Title="Binding Sample">
+        <TextInput Label="Text input example" @bind-Value="TextValue" UpdateMode="@UpdateMode.Continuous" />
+    </Example>
 </section>
 
-@code {
+@code
+{
+    public string TextValue
+    {
+        get { return GetPropertyValue<string>(nameof(TextValue)); }
+        set { SetPropertyValue(nameof(TextValue), value); }
+    }
 
+    protected override void OnPropertyChanged(PropertyChangedEventArgs e)
+    {
+        Console.WriteLine(e.PropertyName + "=" + GetPropertyValue<object>(e.PropertyName));
+    }
 }
-

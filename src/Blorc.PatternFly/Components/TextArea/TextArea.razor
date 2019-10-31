@@ -1,33 +1,27 @@
-﻿@using Microsoft.AspNetCore.Components
+﻿@using System
+@using Blorc.PatternFly.Core
+@using Microsoft.AspNetCore.Components
 @using Microsoft.AspNetCore.Components.Web
 
 @inherits Blorc.PatternFly.Components.TextArea.TextAreaComponent
 
-@CustomRender
-
-@code
+@switch (UpdateMode)
 {
-    private RenderFragment CustomRender;
-
-    private RenderFragment CreateComponent() => builder =>
-    {
-        builder.OpenElement(0, "textarea");
-
-        builder.AddAttribute(1, "aria-label", Label);
-        builder.AddAttribute(2, "class", "pf-c-form-control");
-
-        builder.AddAttribute(3, "aria-invalid", IsInvalid.ToString().ToLower());
-        builder.AddAttribute(4, "required", IsRequired.ToString().ToLower());
-
-        builder.AddAttribute(5, "bind", "@Value");
-
-        builder.CloseElement();
-    };
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-
-        CustomRender = CreateComponent();
-    }
+    case UpdateMode.Continuous:
+        <textarea aria-label="@Label" 
+               class="pf-c-form-control" 
+               aria-invalid="@IsInvalid.ToString().ToLower()" 
+               aria-required="@IsRequired" 
+               @bind-value="Value" 
+               @bind-value:event="oninput" 
+            />
+        break;
+    default:
+        <textarea aria-label="@Label" 
+           class="pf-c-form-control" 
+           aria-invalid="@IsInvalid.ToString().ToLower()" 
+           aria-required="@IsRequired" 
+           @bind-value="Value"
+           @bind-value:event="onchange"/>
+    break;
 }
