@@ -3,6 +3,7 @@
 @using Blorc.Reflection
 @using Microsoft.AspNetCore.Components
 @using Microsoft.AspNetCore.Components.Web
+@using Blorc.PatternFly.Components.Dropdown
 
 @inherits TableComponent
 
@@ -19,10 +20,17 @@
                 if (ColumnDefinitions != null && ColumnDefinitions.Count > 0)
                 {
                     <Row>
-                    @foreach (var columnDefinition in ColumnDefinitions.OrderBy(pair => pair.Value.Idx).Select(pair => pair.Value))
-                    {
-                        <Column Label="@columnDefinition.Label" Key="@columnDefinition.Key" Idx="@columnDefinition.Idx"/>
-                    }
+                        @foreach (var columnDefinition in ColumnDefinitions.OrderBy(pair => pair.Value.Idx).Select(pair => pair.Value))
+                        {
+                            if (columnDefinition is ActionColumnDefinition)
+                            {
+                                <ActionColumn Label="@columnDefinition.Label" Key="@columnDefinition.Key" Idx="@columnDefinition.Idx" />
+                            }
+                            else
+                            {
+                                <Column Label="@columnDefinition.Label" Key="@columnDefinition.Key" Idx="@columnDefinition.Idx" />
+                            }
+                        }
                     </Row>
                 }
             }
@@ -41,7 +49,36 @@
                         <Row>
                             @foreach (var columnDefinition in ColumnDefinitions.OrderBy(pair => pair.Value.Idx).Select(pair => pair.Value))
                             {
-                                <Cell Label="@columnDefinition.Label" Key="@columnDefinition.Key" Value="@PropertyHelper.GetPropertyValue(record, columnDefinition.Key).ToString()"/>
+                                if (columnDefinition is ActionColumnDefinition actionColumnDefinition)
+                                {
+                                    <ActionCell>
+                                        <Dropdown IsPlain="true" Position="@DropdownPosition.Right">
+                                            <Toggle>
+                                                <KebabToggle />
+                                            </Toggle>
+                                            <Items>
+                                                @if (actionColumnDefinition.ActionSource != null)
+                                                {
+                                                    foreach (var action in actionColumnDefinition.ActionSource(record))
+                                                    {
+                                                        @if (action is SeparatorActionDefinition)
+                                                        {
+                                                            <Separator Key="separator" />
+                                                        }
+                                                        else if (action is CallActionDefinition callActionDefinition)
+                                                        {
+                                                            <DropdownItem Key="@callActionDefinition.Key" OnClick=@((s, e)=> callActionDefinition.Action(record)) IsDisabled="@callActionDefinition.IsDisabled">@callActionDefinition.Label</DropdownItem>
+                                                        }
+                                                    }
+                                                }
+                                            </Items>
+                                        </Dropdown>
+                                    </ActionCell>
+                                }
+                                else
+                                {
+                                    <Cell Label="@columnDefinition.Label" Key="@columnDefinition.Key" Value="@PropertyHelper.GetPropertyValue(record, columnDefinition.Key).ToString()"/>
+                                }
                             }
                         </Row>
                     }

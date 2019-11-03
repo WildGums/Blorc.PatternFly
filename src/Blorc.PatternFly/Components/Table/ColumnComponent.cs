@@ -106,6 +106,7 @@
 
         private void ContainerTableOnOrderByColumnChanged(object sender, OrderByColumnChangedEventArg e)
         {
+            ContainerTable.SetActiveToggleComponent(null);
             IsSelected = e.ColumnComponent == this;
             if (!IsSelected)
             {

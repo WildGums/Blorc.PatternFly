@@ -2,8 +2,10 @@
 
 @using Blorc.PatternFly.Components.Table
 @using System
+@using System.Collections.Generic;
 
 
+@inherits TableDemoComponent
 <Metadata ComponentName="Table" />
 
 <Todo ComponentName="Table" />
@@ -59,37 +61,19 @@
             </Header>
         </Table>
     </Example>
+
+    <Example Title="Action Column Table">
+        <Table Caption="Sortable Table" DataSource=@(()=> GetData())>
+            <Header>
+                <Row>
+                    <Column Label="Repositories" Key="Repositories" IsSortable="true" Idx="0" />
+                    <Column Label="Branches" Key="Branches" IsSortable="true" Idx="1"/>
+                    <Column Label="Pull requests" Key="PullRequests" IsSortable="true" Idx="2" />
+                    <Column Label="Workspaces" Key="Workspaces" Idx="3"/>
+                    <Column Label="Last commit" Key="LastCommit" Align="@Align.Center" Idx="4"/>
+                    <ActionColumn Label="Actions" Key="Actions" Align="@Align.Center" Idx="5" ActionSource=@(record => GetActions(record)) />
+                </Row>
+            </Header>
+        </Table>
+    </Example>
 </section>
-
-@code {
-
-    public class Record
-    {
-        public string Repositories { get; set; }
-
-        public string Branches { get; set; }
-
-        public string PullRequests { get; set; }
-
-        public string Workspaces { get; set; }
-
-        public string LastCommit { get; set; }
-    }
-
-    private System.Collections.ArrayList data;
-
-    public System.Collections.IEnumerable GetData()
-    {
-        if(data == null)
-        {
-            data = new System.Collections.ArrayList();
-            var random = new Random();
-            for(int i = 0; i < 5; i++)
-            {
-                data.Add(new Record() { Repositories = $"one-{random.Next(0, 100)}", Branches = $"two-{random.Next(0, 100)}", PullRequests = $"three-{random.Next(0, 100)}", Workspaces = $"four-{random.Next(0, 100)}", LastCommit = $"five-{random.Next(0, 100)}" });
-            }
-        }
-
-        return data;
-    }
-}

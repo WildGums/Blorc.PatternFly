@@ -1,0 +1,16 @@
+﻿@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
+
+@inherits ActionCellComponent
+
+@if (ChildContent != null)
+{
+    <td data-label="@Label" data-key="@Key" class="pf-c-table__action">
+        @ChildContent
+    </td>
+}
+else
+{
+    <td data-label="@Label" data-key="@Key" class="pf-c-table__action">
+    </td>
+}

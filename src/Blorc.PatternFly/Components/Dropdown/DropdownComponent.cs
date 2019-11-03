@@ -1,13 +1,15 @@
 ﻿namespace Blorc.PatternFly.Components.Dropdown
 {
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel;
+    using System.Threading.Tasks;
     using Blorc.Components;
     using Blorc.StateConverters;
+    using Core;
     using Microsoft.AspNetCore.Components;
+    using Table;
 
-    public class DropdownComponent : UniqueComponentBase
+    public class DropdownComponent : UniqueComponentBase, IToggleComponent
     {
         public DropdownComponent()
         {
@@ -100,6 +102,15 @@
         [Parameter]
         public EventHandler<EventArgs> SelectionChanged { get; set; }
 
+        protected override async Task OnParametersSetAsync()
+        {
+            await base.OnParametersSetAsync();
+            if (!ToggleComponentContainer.Components.Contains(this))
+            {
+                ToggleComponentContainer.Components.Add(this);
+            }
+        }
+
         protected override void OnPropertyChanged(PropertyChangedEventArgs e)
         {
             base.OnPropertyChanged(e);
@@ -117,17 +128,20 @@
         private void OnDropDownToggled(object sender, EventArgs e)
         {
             IsOpen = DropDownToggle.IsOpen;
+            if (ToggleComponentContainer != null && IsOpen)
+            {
+                ToggleComponentContainer.SetActiveToggleComponent(this);
+            }
         }
 
         public void Close()
         {
             IsOpen = false;
             //// TODO: This can be removed after a binding system fix.
-            if (DropDownToggle != null)
-            {
-                DropDownToggle.Close();
-            }
+            DropDownToggle?.Close();
         }
 
+        [CascadingParameter]
+        public IToggleComponentContainer ToggleComponentContainer { get; set; }
     }
 }
