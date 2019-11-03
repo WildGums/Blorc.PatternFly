@@ -1,6 +1,5 @@
 ﻿namespace Blorc.PatternFly.Components.TextArea
 {
-    using System.ComponentModel;
     using Blorc.Components;
     using Core;
     using Microsoft.AspNetCore.Components;
