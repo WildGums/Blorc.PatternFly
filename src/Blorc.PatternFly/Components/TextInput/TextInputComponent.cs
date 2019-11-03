@@ -45,14 +45,5 @@
 
         [Parameter] 
         public EventCallback<string> ValueChanged { get; set; }
-
-        protected override void OnPropertyChanged(PropertyChangedEventArgs e)
-        {
-            base.OnPropertyChanged(e);
-            if (e.PropertyName == nameof(Value))
-            {
-                ValueChanged.InvokeAsync(Value).GetAwaiter().GetResult();
-            }
-        }
     }
 }
