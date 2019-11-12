@@ -6,14 +6,13 @@
     using System.Collections.ObjectModel;
     using System.ComponentModel;
     using System.Linq;
+    using System.Threading.Tasks;
     using Blorc.Components;
     using Blorc.StateConverters;
     using Microsoft.AspNetCore.Components;
 
     public class SelectComponent : BlorcComponentBase
     {
-        private readonly IDictionary<string, string> _selectedItems = new Dictionary<string, string>();
-
         public SelectComponent()
         {
             Variant = SelectVariant.Single;
@@ -101,7 +100,17 @@
             }
         }
 
-        public IReadOnlyDictionary<string, string> SelectedItems => (IReadOnlyDictionary<string, string>)_selectedItems;
+        protected override void OnAfterRender(bool firstRender)
+        {
+            base.OnAfterRender(firstRender);
+            if (firstRender)
+            {
+                // Required to ensure binding
+                RaisePropertyChanged(nameof(SelectedItems));
+            }
+        }
+
+        public ObservableCollection<string> SelectedItems { get; } = new ObservableCollection<string>();
 
         [Parameter]
         public string Label { get; set; }
@@ -128,9 +137,7 @@
         public RenderFragment Items { get; set; }
 
         [Parameter]
-        public EventCallback<IReadOnlyDictionary<string, string>> SelectedItemsChanged { get; set; }
-
-        
+        public EventCallback<ObservableCollection<string>> SelectedItemsChanged { get; set; }
 
         [Parameter]
         public EventHandler<EventArgs> Toggled { get; set; }
@@ -154,7 +161,7 @@
 
                 if (Variant == SelectVariant.Single || Variant == SelectVariant.Typeahead || Variant == SelectVariant.TypeaheadMulti)
                 {
-                    return SelectedItems.FirstOrDefault().Value;
+                    return SelectedItems.FirstOrDefault();
                 }
 
                 return string.Empty;
@@ -166,15 +173,16 @@
             IsExpanded = !IsExpanded;
         }
 
-        public void SelectItem(string key, string value)
+        public void SelectItem(string key)
         {
             if (Variant == SelectVariant.Single || Variant == SelectVariant.Typeahead)
             {
-                _selectedItems.Clear();
+                SelectedItems.Clear();
             }
 
-            _selectedItems.Add(key, value);
+            SelectedItems.Add(key);
 
+            // TODO: review if this is required
             RaisePropertyChanged(nameof(SelectedItems));
 
             if (Variant == SelectVariant.Single || Variant == SelectVariant.Typeahead)
@@ -189,8 +197,9 @@
 
         public void UnselectItem(string key)
         {
-            if (_selectedItems.Remove(key))
+            if (SelectedItems.Remove(key))
             {
+                // TODO: review if this is required
                 RaisePropertyChanged(nameof(SelectedItems));
             }
 
@@ -206,8 +215,9 @@
 
         public void ClearSelection(bool toggle = true)
         {
-            _selectedItems.Clear();
+            SelectedItems.Clear();
 
+            // TODO: review if this is required
             RaisePropertyChanged(nameof(SelectedItems));
 
             if (toggle)
@@ -236,8 +246,8 @@
 
         protected void UnselectFirstItem()
         {
-            var firstOrDefault = _selectedItems.FirstOrDefault();
-            UnselectItem(firstOrDefault.Key);
+            var firstOrDefault = SelectedItems.FirstOrDefault();
+            UnselectItem(firstOrDefault);
         }
 
         protected void ButtonClick()

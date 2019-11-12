@@ -43,7 +43,7 @@
         [Parameter]
         public bool IsDisabled { get; set; }
 
-        public bool IsSelected => ContainerSelect != null && ContainerSelect.SelectedItems.ContainsKey(Key);
+        public bool IsSelected => ContainerSelect != null && ContainerSelect.SelectedItems.Contains(Key);
 
         public bool IsVisible
         {
@@ -78,7 +78,7 @@
             }
             else if (!IsSelected)
             {
-                ContainerSelect.SelectItem(Key, Value);
+                ContainerSelect.SelectItem(Key);
             }
             else
             {
