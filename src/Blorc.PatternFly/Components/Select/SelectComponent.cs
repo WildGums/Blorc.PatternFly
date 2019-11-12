@@ -3,6 +3,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.ComponentModel;
     using System.Linq;
     using Blorc.Components;
@@ -11,7 +12,7 @@
 
     public class SelectComponent : BlorcComponentBase
     {
-        private readonly IDictionary<string,string> _selectedItems = new Dictionary<string, string>();
+        private readonly IDictionary<string, string> _selectedItems = new Dictionary<string, string>();
 
         public SelectComponent()
         {
@@ -100,7 +101,6 @@
             }
         }
 
-
         public IReadOnlyDictionary<string, string> SelectedItems => (IReadOnlyDictionary<string, string>)_selectedItems;
 
         [Parameter]
@@ -128,7 +128,9 @@
         public RenderFragment Items { get; set; }
 
         [Parameter]
-        public EventHandler<EventArgs> SelectionChanged { get; set; }
+        public EventCallback<IReadOnlyDictionary<string, string>> SelectedItemsChanged { get; set; }
+
+        
 
         [Parameter]
         public EventHandler<EventArgs> Toggled { get; set; }
@@ -173,6 +175,8 @@
 
             _selectedItems.Add(key, value);
 
+            RaisePropertyChanged(nameof(SelectedItems));
+
             if (Variant == SelectVariant.Single || Variant == SelectVariant.Typeahead)
             {
                 Toggle();
@@ -187,7 +191,7 @@
         {
             if (_selectedItems.Remove(key))
             {
-                SelectionChanged?.Invoke(this, EventArgs.Empty);
+                RaisePropertyChanged(nameof(SelectedItems));
             }
 
             if (Variant == SelectVariant.Single)
@@ -203,7 +207,9 @@
         public void ClearSelection(bool toggle = true)
         {
             _selectedItems.Clear();
-            SelectionChanged?.Invoke(this, EventArgs.Empty);
+
+            RaisePropertyChanged(nameof(SelectedItems));
+
             if (toggle)
             {
                 Toggle();
