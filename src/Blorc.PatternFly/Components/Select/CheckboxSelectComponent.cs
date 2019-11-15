@@ -4,9 +4,9 @@
     using System.Collections.Generic;
     using Microsoft.AspNetCore.Components;
 
-    public class TableComponent : SelectComponent
+    public class CheckboxSelectComponent : SelectComponent
     {
-        public TableComponent()
+        public CheckboxSelectComponent()
         {
 
         }

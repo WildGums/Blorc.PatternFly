@@ -1,6 +1,7 @@
 ﻿@page "/components/select"
 
 @using System.Runtime.Serialization.Formatters.Binary
+@using System.Text.RegularExpressions
 @using Blorc.PatternFly.Components.Select
 
 
@@ -89,6 +90,28 @@
                     IsExpanded="false"
                     AriaLabelledBy="typeahead-select-id"
                     PlaceholderText="Select a state">
+                <Items>
+                    <SelectOption Key="0" Value="Alabama"/>
+                    <SelectOption Key="1" Value="Florida"/>
+                    <SelectOption Key="2" Value="New Jersey"/>
+                    <SelectOption Key="3" Value="New Mexico"/>
+                    <SelectOption Key="4" Value="New York"/>
+                    <SelectOption Key="5" Value="North Carolina"/>
+                </Items>
+            </Select>
+        </div>
+    </Example>
+
+    <Example Title="Typeahead select input (Custom Match Expression)">
+        <div>
+            <span id="typeahead-select-id" hidden>
+                Select a state
+            </span>
+            <Select Variant="SelectVariant.Typeahead"
+                    Label="Select a state"
+                    IsExpanded="false"
+                    AriaLabelledBy="typeahead-select-id"
+                    PlaceholderText="Select a state" TypeaheadMatchExpression=@((string filter, string value) => CustomMatch(filter, value))>
                 <Items>
                     <SelectOption Key="0" Value="Alabama"/>
                     <SelectOption Key="1" Value="Florida"/>

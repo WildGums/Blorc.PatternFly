@@ -51,7 +51,8 @@
             {
                 if (ContainerSelect.Variant == SelectVariant.Typeahead || ContainerSelect.Variant == SelectVariant.TypeaheadMulti)
                 {
-                    return string.IsNullOrWhiteSpace(ContainerSelect.FilterText) || ContainerSelect != null && Value.StartsWith(ContainerSelect.FilterText);
+                    return string.IsNullOrWhiteSpace(ContainerSelect.FilterText) || ContainerSelect != null && 
+                           (ContainerSelect.TypeaheadMatchExpression?.Invoke(ContainerSelect.FilterText, Value) ?? Value.StartsWith(ContainerSelect.FilterText, StringComparison.InvariantCultureIgnoreCase));
                 }
 
                 return true;
@@ -88,6 +89,15 @@
             RaisePropertyChanged(nameof(IsSelected));
 
             Clicked?.Invoke(this, EventArgs.Empty);
+        }
+
+        protected override void OnParametersSet()
+        {
+            base.OnParametersSet();
+            if (ContainerSelect != null && !string.IsNullOrWhiteSpace(Key))
+            {
+                ContainerSelect.Values[Key] = Value;
+            }
         }
     }
 }

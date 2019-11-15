@@ -6,13 +6,14 @@
     using System.Collections.ObjectModel;
     using System.ComponentModel;
     using System.Linq;
-    using System.Threading.Tasks;
     using Blorc.Components;
     using Blorc.StateConverters;
     using Microsoft.AspNetCore.Components;
 
     public class SelectComponent : BlorcComponentBase
     {
+        private readonly Dictionary<string, string> _selectedItems = new Dictionary<string, string>();
+
         public SelectComponent()
         {
             Variant = SelectVariant.Single;
@@ -110,6 +111,8 @@
             }
         }
 
+        public Dictionary<string, string> Values { get; } = new Dictionary<string, string>();
+
         public ObservableCollection<string> SelectedItems { get; } = new ObservableCollection<string>();
 
         [Parameter]
@@ -149,24 +152,29 @@
         {
             get
             {
-                if (SelectedItems.Count == 0)
+                if (Variant == SelectVariant.Checkbox)
                 {
                     return PlaceholderText;
                 }
 
-                if (Variant == SelectVariant.Checkbox)
+                if (Variant == SelectVariant.Single && SelectedItems.Count == 0)
                 {
                     return PlaceholderText;
                 }
 
                 if (Variant == SelectVariant.Single || Variant == SelectVariant.Typeahead || Variant == SelectVariant.TypeaheadMulti)
                 {
-                    return SelectedItems.FirstOrDefault();
+                    var selectedKey = SelectedItems.FirstOrDefault();
+                    if (selectedKey != null)
+                    {
+                        return Values[selectedKey];
+                    }
                 }
 
                 return string.Empty;
             }
         }
+
 
         protected void Toggle()
         {
@@ -254,5 +262,8 @@
         {
             ClearSelection(false);
         }
+
+        [Parameter]
+        public Func<string, string, bool> TypeaheadMatchExpression { get; set; }
     }
 }

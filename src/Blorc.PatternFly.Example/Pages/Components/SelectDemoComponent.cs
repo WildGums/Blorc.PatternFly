@@ -3,6 +3,7 @@
     using System;
     using System.Collections.ObjectModel;
     using System.ComponentModel;
+    using System.Linq;
     using Blorc.Components;
 
     public class SelectDemoComponent : BlorcComponentBase
@@ -28,6 +29,21 @@
         private void OnSingleSelectInputSelectionChanged(object sender, EventArgs e)
         {
             Console.WriteLine("Selection changed");
+        }
+
+        protected bool CustomMatch(string filter, string value)
+        {
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(filter))
+            {
+                return true;
+            }
+
+            return value.ToLower().Contains(filter.ToLower());
         }
     }
 }
