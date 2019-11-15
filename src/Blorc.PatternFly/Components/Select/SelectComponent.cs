@@ -101,19 +101,33 @@
             }
         }
 
-        protected override void OnAfterRender(bool firstRender)
+//        protected override void OnAfterRender(bool firstRender)
+//        {
+//            base.OnAfterRender(firstRender);
+//            if (firstRender)
+//            {
+//                // Required to ensure binding
+//                // RaisePropertyChanged(nameof(SelectedItems));
+//            }
+//        }
+
+        protected override void OnParametersSet()
         {
-            base.OnAfterRender(firstRender);
-            if (firstRender)
+            base.OnParametersSet();
+            if (SelectedItems == null)
             {
-                // Required to ensure binding
-                RaisePropertyChanged(nameof(SelectedItems));
+                SelectedItems = new ObservableCollection<string>();
             }
         }
 
         public Dictionary<string, string> Values { get; } = new Dictionary<string, string>();
 
-        public ObservableCollection<string> SelectedItems { get; } = new ObservableCollection<string>();
+        [Parameter]
+        public ObservableCollection<string> SelectedItems
+        {
+            get => GetPropertyValue<ObservableCollection<string>>(nameof(SelectedItems));
+            set => SetPropertyValue(nameof(SelectedItems), value);
+        }
 
         [Parameter]
         public string Label { get; set; }
@@ -165,9 +179,9 @@
                 if (Variant == SelectVariant.Single || Variant == SelectVariant.Typeahead || Variant == SelectVariant.TypeaheadMulti)
                 {
                     var selectedKey = SelectedItems.FirstOrDefault();
-                    if (selectedKey != null)
+                    if (selectedKey != null && Values.TryGetValue(selectedKey, out var selectedValue))
                     {
-                        return Values[selectedKey];
+                        return selectedValue;
                     }
                 }
 

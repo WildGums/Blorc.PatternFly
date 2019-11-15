@@ -167,5 +167,26 @@
             </Select>
         </div>
     </Example>
-
+    
+    <Example Title="Select input binding (Set SelectedItems)">
+        <div>
+            <span id="checkbox-select-id" hidden>
+                Title
+            </span>
+            <Select Variant="@SelectVariant.Single"
+                    Label="Select Input"
+                    IsExpanded="false"
+                    PlaceholderText="Filter by status"
+                    AriaLabelledBy="checkbox-select-id"
+                    @bind-SelectedItems="SelectedItems2">
+                <Items>
+                    <SelectOption Key="0" Value="Active" />
+                    <SelectOption Key="1" Value="Cancelled"/>
+                    <SelectOption Key="2" Value="Paused"/>
+                    <SelectOption Key="3" Value="Warning"/>
+                    <SelectOption Key="4" Value="Restarted"/>
+                </Items>
+            </Select>
+        </div>
+    </Example>
 </section>

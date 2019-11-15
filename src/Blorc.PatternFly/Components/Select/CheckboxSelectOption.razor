@@ -4,8 +4,9 @@
 
 @inherits Blorc.PatternFly.Components.Select.CheckboxSelectOptionComponent
 
-
-
-<label class="pf-c-check pf-c-select__menu-item">
-    <Checkbox Label="@Value" IsChecked="@IsSelected" OnChange=@((sender, args)=> OptionClick()) />
-</label>
+@if (ContainerSelect != null && ContainerSelect.IsExpanded && IsVisible)
+{
+    <label class="pf-c-check pf-c-select__menu-item">
+        <Checkbox Label="@Value" IsChecked="@IsSelected" OnChange=@((sender, args)=> OptionClick()) />
+    </label>
+}

@@ -2,7 +2,7 @@
 
 @inherits SelectOptionComponent
 
-@if (IsVisible)
+@if (ContainerSelect != null && ContainerSelect.IsExpanded && IsVisible)
 {
     <li role="presentation">
         <button class="@Class" role="option" @onclick="OptionClick">
