@@ -10,7 +10,11 @@
 
 <Modal Size="@Size" @ref="Modal">
     <Header>
-        @if (Header != null)
+        @if (!string.IsNullOrWhiteSpace(HeaderText))
+        {
+            @HeaderText
+        }
+        else if (Header != null)
         {
             @Header
         }

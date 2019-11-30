@@ -1,6 +1,7 @@
 ﻿namespace Blorc.PatternFly.Components.Modal
 {
     using System;
+    using System.ComponentModel;
     using System.Threading.Tasks;
     using Blorc.Components;
     using Core;
@@ -21,6 +22,9 @@
         [Parameter] 
         public Func<ExecutionContext, Task> Action { get; set; }
 
+        [Parameter]
+        public Func<ExecutionContext, Task<string>> HeaderTextAction { get; set; }
+
         [Parameter] 
         public RenderFragment Header { get; set; }
 
@@ -40,14 +44,30 @@
             }
         }
 
-        public Task ExecuteAsync(object state = null)
+        public async Task ExecuteAsync(object state = null)
         {
+            var executionContext = new ExecutionContext(this, state);
+            HeaderText = await HeaderTextAction(executionContext);
             Modal.Show();
-            return Task.Run(async () =>
+            await Task.Run(async () =>
             {
-                await Action(new ExecutionContext(this, state));
+                await Action(executionContext);
                 Modal.Close();
             });
+        }
+
+        public string HeaderText
+        {
+            get => GetPropertyValue<string>(nameof(HeaderText));
+            set => SetPropertyValue(nameof(HeaderText), value);
+        }
+
+        protected override void OnPropertyChanged(PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(HeaderText))
+            {
+                StateHasChanged();
+            }
         }
     }
 }
