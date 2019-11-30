@@ -77,7 +77,7 @@
                                 }
                                 else
                                 {
-                                    <Cell Label="@columnDefinition.Label" Key="@columnDefinition.Key" Value="@PropertyHelper.GetPropertyValue(record, columnDefinition.Key).ToString()"/>
+                                    <Cell Label="@columnDefinition.Label" Key="@columnDefinition.Key" Value="@PropertyHelper.GetPropertyValue(record, columnDefinition.Key)?.ToString()"/>
                                 }
                             }
                         </Row>
