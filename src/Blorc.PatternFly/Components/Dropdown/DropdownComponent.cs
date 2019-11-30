@@ -105,7 +105,7 @@
         protected override async Task OnParametersSetAsync()
         {
             await base.OnParametersSetAsync();
-            if (!ToggleComponentContainer.Components.Contains(this))
+            if (ToggleComponentContainer != null && !ToggleComponentContainer.Components.Contains(this))
             {
                 ToggleComponentContainer.Components.Add(this);
             }
