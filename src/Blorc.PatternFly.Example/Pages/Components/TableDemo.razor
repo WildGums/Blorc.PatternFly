@@ -50,6 +50,43 @@
         </Table>
     </Example>
 
+    <Example Title="Simple Manual Table (No Caption)">
+        <Table>
+            <Header>
+                <Row>
+                    <Column Label="Repositories" Key="0" />
+                    <Column Label="Branches" Key="1" />
+                    <Column Label="Pull requests" Key="2" />
+                    <Column Label="Workspaces" Key="3" />
+                    <Column Label="Last commit" Key="4" Align="@Align.Center" />
+                </Row>
+            </Header>
+            <Body>
+                <Row>
+                    <Cell Label="Repositories" Key="0" Value="one" />
+                    <Cell Label="Branches" Key="1" Value="two" />
+                    <Cell Label="Pull requests" Key="2" Value="three" />
+                    <Cell Label="Workspaces" Key="3" Value="four" />
+                    <Cell Label="Last commit" Key="4" Value="five" Align="@Align.Center" />
+                </Row>
+                <Row>
+                    <Cell Label="Repositories" Key="0" Value="one" />
+                    <Cell Label="Branches" Key="1" Value="two" />
+                    <Cell Label="Pull requests" Key="2" Value="three" />
+                    <Cell Label="Workspaces" Key="3" Value="four" />
+                    <Cell Label="Last commit" Key="4" Value="five" Align="@Align.Center" />
+                </Row>
+                <Row>
+                    <Cell Label="Repositories" Key="0" Value="one" />
+                    <Cell Label="Branches" Key="1" Value="two" />
+                    <Cell Label="Pull requests" Key="2" Value="three" />
+                    <Cell Label="Workspaces" Key="3" Value="four" />
+                    <Cell Label="Last commit" Key="4" Value="five (not centered)" />
+                </Row>
+            </Body>
+        </Table>
+    </Example>
+
     <Example Title="Sortable Table">
         <Table Caption="Sortable Table" DataSource=@(()=> GetData())>
             <Header>
@@ -65,6 +102,7 @@
         </Table>
     </Example>
     <ToggleComponentContainer>
+
         <Example Title="Action Column Table">
             <Table Caption="Sortable Table" DataSource=@(()=> GetData())>
                 <Header>

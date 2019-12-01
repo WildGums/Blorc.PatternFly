@@ -9,7 +9,10 @@
 
 <CascadingValue Value=this>
     <table class="pf-c-table pf-m-grid-md">
-        <caption>@Caption</caption>
+        @if (string.IsNullOrWhiteSpace(Caption))
+        {
+            <caption>@Caption</caption>
+        }
         <thead>
             @if (Header != null)
             {
@@ -77,7 +80,7 @@
                                 }
                                 else
                                 {
-                                    <Cell Label="@columnDefinition.Label" Key="@columnDefinition.Key" Value="@PropertyHelper.GetPropertyValue(record, columnDefinition.Key)?.ToString()"/>
+                                    <Cell Label="@columnDefinition.Label" Key="@columnDefinition.Key" Value="@PropertyHelper.GetPropertyValue(record, columnDefinition.Key)?.ToString()" />
                                 }
                             }
                         </Row>
