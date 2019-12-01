@@ -1,5 +1,7 @@
 ﻿namespace Blorc.PatternFly.Components.Table
 {
+    using System;
+
     using Blorc.Components;
     using Blorc.PatternFly.Components.ToggleComponentContainer;
 
@@ -52,6 +54,13 @@
         {
             get => GetPropertyValue<bool>(nameof(IsSelected));
             set => SetPropertyValue(nameof(IsSelected), value);
+        }     
+        
+        [Parameter]
+        public Predicate<object> FilterPredicate
+        {
+            get => GetPropertyValue<Predicate<object>>(nameof(FilterPredicate));
+            set => SetPropertyValue(nameof(FilterPredicate), value);
         }
 
         [Parameter]
@@ -99,7 +108,8 @@
                 {
                     Label = Label, 
                     Key = Key,
-                    Idx = Idx
+                    Idx = Idx,
+                    FilterPredicate = FilterPredicate
                 };
             }
 

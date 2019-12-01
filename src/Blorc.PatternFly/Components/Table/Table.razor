@@ -49,6 +49,12 @@
                 {
                     foreach (var record in Records)
                     {
+                        var columnsWithPredicate = ColumnDefinitions.Where(pair => pair.Value.FilterPredicate != null).ToList();
+                        if(columnsWithPredicate.Count > 0 && !columnsWithPredicate.Select(pair => pair.Value).Any(definition => definition.FilterPredicate(PropertyHelper.GetPropertyValue(record, definition.Key))))
+                        {
+                            continue;
+                        }
+
                         <Row>
                             @foreach (var columnDefinition in ColumnDefinitions.OrderBy(pair => pair.Value.Idx).Select(pair => pair.Value))
                             {

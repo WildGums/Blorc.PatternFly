@@ -1,9 +1,11 @@
 ﻿@page "/components/table"
 
 @using Blorc.PatternFly.Components.Table
+@using Blorc.PatternFly.Components.TextInput
 @using Blorc.PatternFly.Components.ToggleComponentContainer
 @using System
 @using System.Collections.Generic;
+@using Blorc.PatternFly.Core
 
 
 @inherits TableDemoComponent
@@ -101,8 +103,24 @@
             </Header>
         </Table>
     </Example>
-    <ToggleComponentContainer>
+    
+    <Example Title="Filtrable Table">
+        <TextInput @bind-Value=@FilterText UpdateMode="@UpdateMode.Continuous"/>
+        <Table Caption="Filtrable Table" DataSource=@(()=> GetData()) @ref="FiltrableTable">
+            <Header>
+                <Row>
+                    <!--TODO Try to avoid the index parameter later-->
+                    <Column Label="Repositories" Key="Repositories" IsSortable="true" Idx="0" FilterPredicate=@(o => ((string)o).Contains(FilterText)) />
+                    <Column Label="Branches" Key="Branches" IsSortable="true" Idx="1" />
+                    <Column Label="Pull requests" Key="PullRequests" IsSortable="true" Idx="2" />
+                    <Column Label="Workspaces" Key="Workspaces" Idx="3" />
+                    <Column Label="Last commit" Key="LastCommit" Align="@Align.Center" Idx="4" />
+                </Row>
+            </Header>
+        </Table>
+    </Example>
 
+    <ToggleComponentContainer>
         <Example Title="Action Column Table">
             <Table Caption="Sortable Table" DataSource=@(()=> GetData())>
                 <Header>
