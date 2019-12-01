@@ -35,27 +35,29 @@
         public IEnumerable<ActionDefinition> GetActions(object row)
         {
             // This parameter allow customization per row state.
+            var actionDefinitions = new List<ActionDefinition>();
             if (row is Record record)
             {
-                return new List<ActionDefinition>
-                {
+                actionDefinitions.Add(
                     new CallActionDefinition
                     {
                         Label = "Print Repositories", Action = PrintRepositories
-                    }, 
-                    new SeparatorActionDefinition(), 
+                    });
+                actionDefinitions.Add(new SeparatorActionDefinition());
+                actionDefinitions.Add(
                     new CallActionDefinition
                     {
                         Label = "Print Branches", Action = PrintBranches
-                    }, 
+                    });
+                actionDefinitions.Add(
                     new CallActionDefinition
                     {
                         Label = "Disabled Call", IsDisabled = true
-                    }
-                };
+                    });
+                return actionDefinitions;
             }
 
-            return Array.Empty<CallActionDefinition>();
+            return actionDefinitions;
         }
 
         private void PrintRepositories(object obj)
