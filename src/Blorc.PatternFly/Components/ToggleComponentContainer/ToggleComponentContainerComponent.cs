@@ -3,6 +3,7 @@
 //   Copyright (c) 2008 - 2019 WildGums. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
+
 namespace Blorc.PatternFly.Components.ToggleComponentContainer
 {
     using System;
@@ -14,14 +15,19 @@ namespace Blorc.PatternFly.Components.ToggleComponentContainer
 
     public class ToggleComponentContainerComponent : BlorcComponentBase, IToggleComponentContainer
     {
+        public event EventHandler<ToggleComponentChangedEventArg> ToogleComponentChanged;
+
         [Parameter]
         public RenderFragment ChildContent { get; set; }
-
-        public event EventHandler<ToggleComponentChangedEventArg> ToogleComponentChanged;
 
         public void Register(IToggleComponent toggleComponent)
         {
             toggleComponent.Toggled += Toggled;
+        }
+
+        protected virtual void OnToogleComponentChanged(ToggleComponentChangedEventArg e)
+        {
+            ToogleComponentChanged?.Invoke(this, e);
         }
 
         private void Toggled(object sender, EventArgs e)
@@ -30,11 +36,6 @@ namespace Blorc.PatternFly.Components.ToggleComponentContainer
             {
                 OnToogleComponentChanged(new ToggleComponentChangedEventArg(toggleComponent));
             }
-        }
-
-        protected virtual void OnToogleComponentChanged(ToggleComponentChangedEventArg e)
-        {
-            ToogleComponentChanged?.Invoke(this, e);
         }
     }
 }
