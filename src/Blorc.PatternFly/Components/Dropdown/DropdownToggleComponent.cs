@@ -5,10 +5,11 @@
     using System.ComponentModel;
     using Blorc.Bindings;
     using Blorc.Components;
+    using Blorc.PatternFly.Core;
     using Blorc.StateConverters;
     using Microsoft.AspNetCore.Components;
 
-    public class DropdownToggleComponent : BlorcComponentBase
+    public class DropdownToggleComponent : BlorcComponentBase, IToggleComponent
     {
         public DropdownToggleComponent()
         {
@@ -137,6 +138,7 @@
 
             ContainerDropdown.DropDownToggle = this;
         }
+
         protected void OnClick()
         {
             IsOpen = !IsOpen;

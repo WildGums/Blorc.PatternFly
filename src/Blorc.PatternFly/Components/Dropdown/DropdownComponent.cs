@@ -3,11 +3,13 @@
     using System;
     using System.ComponentModel;
     using System.Threading.Tasks;
+
     using Blorc.Components;
+    using Blorc.PatternFly.Components.ToggleComponentContainer;
+    using Blorc.PatternFly.Core;
     using Blorc.StateConverters;
-    using Core;
+
     using Microsoft.AspNetCore.Components;
-    using Table;
 
     public class DropdownComponent : UniqueComponentBase, IToggleComponent
     {
@@ -38,76 +40,99 @@
                 .Update(() => OpenState);
         }
 
-        public override string ComponentName => "toggle";
-
-        internal DropdownToggleComponent DropDownToggle
-        {
-            get { return GetPropertyValue<DropdownToggleComponent>(nameof(DropDownToggle)); }
-            set { SetPropertyValue(nameof(DropDownToggle), value); }
-        }
+        [Parameter]
+        public RenderFragment ChildContent { get; set; }
 
         public string Class { get; set; }
 
-        public string PopupClass { get; set; }
-
-        public string OpenState { get; set; }
+        public override string ComponentName => "toggle";
 
         [Parameter]
-        public string ToggleId { get; set; }
-
-        [Parameter]
-        public bool IsOpen
+        public DropdownDirection Direction
         {
-            get { return GetPropertyValue<bool>(nameof(IsOpen)); }
-            set { SetPropertyValue(nameof(IsOpen), value); }
+            get => GetPropertyValue<DropdownDirection>(nameof(Direction));
+            set => SetPropertyValue(nameof(Direction), value);
         }
 
         [Parameter]
         public bool IsGrouped
         {
-            get { return GetPropertyValue<bool>(nameof(IsGrouped)); }
-            set { SetPropertyValue(nameof(IsGrouped), value); }
+            get => GetPropertyValue<bool>(nameof(IsGrouped));
+            set => SetPropertyValue(nameof(IsGrouped), value);
+        }
+
+        [Parameter]
+        public bool IsOpen
+        {
+            get => GetPropertyValue<bool>(nameof(IsOpen));
+            set => SetPropertyValue(nameof(IsOpen), value);
         }
 
         [Parameter]
         public bool IsPlain
         {
-            get { return GetPropertyValue<bool>(nameof(IsPlain)); }
-            set { SetPropertyValue(nameof(IsPlain), value); }
+            get => GetPropertyValue<bool>(nameof(IsPlain));
+            set => SetPropertyValue(nameof(IsPlain), value);
         }
-
-        [Parameter]
-        public DropdownPosition Position
-        {
-            get { return GetPropertyValue<DropdownPosition>(nameof(Position)); }
-            set { SetPropertyValue(nameof(Position), value); }
-        }
-
-        [Parameter]
-        public DropdownDirection Direction
-        {
-            get { return GetPropertyValue<DropdownDirection>(nameof(Direction)); }
-            set { SetPropertyValue(nameof(Direction), value); }
-        }
-
-        [Parameter]
-        public RenderFragment Toggle { get; set; }
-
-        [Parameter]
-        public RenderFragment ChildContent { get; set; }
 
         [Parameter]
         public RenderFragment Items { get; set; }
 
+        public string OpenState { get; set; }
+
+        public string PopupClass { get; set; }
+
+        [Parameter]
+        public DropdownPosition Position
+        {
+            get => GetPropertyValue<DropdownPosition>(nameof(Position));
+            set => SetPropertyValue(nameof(Position), value);
+        }
+
         [Parameter]
         public EventHandler<EventArgs> SelectionChanged { get; set; }
+
+        [Parameter]
+        public RenderFragment Toggle { get; set; }
+
+        [CascadingParameter]
+        public IToggleComponentContainer ToggleComponentContainer { get; set; }
+
+        [Parameter]
+        public EventHandler<EventArgs> Toggled { get; set; }
+
+        [Parameter]
+        public string ToggleId { get; set; }
+
+        internal DropdownToggleComponent DropDownToggle
+        {
+            get => GetPropertyValue<DropdownToggleComponent>(nameof(DropDownToggle));
+            set => SetPropertyValue(nameof(DropDownToggle), value);
+        }
+
+        public void Close()
+        {
+            IsOpen = false;
+            //// TODO: This can be removed after a binding system fix.
+            DropDownToggle?.Close();
+        }
 
         protected override async Task OnParametersSetAsync()
         {
             await base.OnParametersSetAsync();
-            if (ToggleComponentContainer != null && !ToggleComponentContainer.Components.Contains(this))
+            if (ToggleComponentContainer != null)
             {
-                ToggleComponentContainer.Components.Add(this);
+                ToggleComponentContainer.Register(this);
+                ToggleComponentContainer.ToogleComponentChanged += ToggleComponentContainerOnToogleComponentChanged;
+            }
+        }
+
+        private void ToggleComponentContainerOnToogleComponentChanged(object sender, ToggleComponentChangedEventArg e)
+        {
+            Console.WriteLine("ToggleComponentChanged");
+            if(e.ToggleComponent != this && IsOpen)
+            {
+                Close();
             }
         }
 
@@ -125,23 +150,15 @@
             }
         }
 
+        protected virtual void OnToggled()
+        {
+            Toggled?.Invoke(this, EventArgs.Empty);
+        }
+
         private void OnDropDownToggled(object sender, EventArgs e)
         {
             IsOpen = DropDownToggle.IsOpen;
-            if (ToggleComponentContainer != null && IsOpen)
-            {
-                ToggleComponentContainer.SetActiveToggleComponent(this);
-            }
+            OnToggled();
         }
-
-        public void Close()
-        {
-            IsOpen = false;
-            //// TODO: This can be removed after a binding system fix.
-            DropDownToggle?.Close();
-        }
-
-        [CascadingParameter]
-        public IToggleComponentContainer ToggleComponentContainer { get; set; }
     }
 }

@@ -1,6 +1,8 @@
 ﻿namespace Blorc.PatternFly.Components.Table
 {
     using Blorc.Components;
+    using Blorc.PatternFly.Components.ToggleComponentContainer;
+
     using EventArgs;
     using Microsoft.AspNetCore.Components;
     using StateConverters;
@@ -67,7 +69,10 @@
         }
 
         [CascadingParameter]
-        public TableComponent ContainerTable { get; set; }
+        public TableComponent ContainerTable { get; set; }  
+        
+        [CascadingParameter]
+        public IToggleComponentContainer ToggleComponentContainer { get; set; }
 
         protected void Toggle()
         {
@@ -106,7 +111,7 @@
 
         private void ContainerTableOnOrderByColumnChanged(object sender, OrderByColumnChangedEventArg e)
         {
-            ContainerTable.SetActiveToggleComponent(null);
+            // ToggleComponentContainer.SetActiveToggleComponent(null);
             IsSelected = e.ColumnComponent == this;
             if (!IsSelected)
             {

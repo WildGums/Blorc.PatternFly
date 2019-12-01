@@ -5,8 +5,14 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace Blorc.PatternFly.Core
 {
+    using System;
+
     public interface IToggleComponent
     {
         void Close();
+
+        EventHandler<EventArgs> Toggled { get; set; }
+
+        bool IsOpen { get; set; }
     }
 }

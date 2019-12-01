@@ -6,13 +6,12 @@
     using System.Linq;
     using System.Threading.Tasks;
     using Blorc.Components;
-    using Core;
 
     using EventArgs;
     using Microsoft.AspNetCore.Components;
     using Reflection;
 
-    public class TableComponent : BlorcComponentBase, IToggleComponentContainer
+    public class TableComponent : BlorcComponentBase
     {
         protected IEnumerable Records { get; set; }
 
@@ -74,17 +73,5 @@
             StateHasChanged();
         }
 
-        public List<IToggleComponent> Components { get; } = new List<IToggleComponent>();
-        
-        public void SetActiveToggleComponent(IToggleComponent toggleComponent)
-        {
-            foreach (var component in Components)
-            {
-                if (component != toggleComponent)
-                {
-                    component.Close();
-                }
-            }
-        }
     }
 }
