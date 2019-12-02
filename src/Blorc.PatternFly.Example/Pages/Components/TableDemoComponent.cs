@@ -25,7 +25,6 @@
             base.OnPropertyChanged(e);
             if (e.PropertyName == nameof(FilterText))
             {
-                
                 FiltrableTable.Refresh();
             }
         }

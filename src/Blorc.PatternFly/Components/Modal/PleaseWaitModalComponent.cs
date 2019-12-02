@@ -47,7 +47,11 @@
         public async Task ExecuteAsync(object state = null)
         {
             var executionContext = new ExecutionContext(this, state);
-            HeaderText = await HeaderTextAction(executionContext);
+            if (HeaderTextAction != null)
+            {
+                HeaderText = await HeaderTextAction(executionContext);
+            }
+
             Modal.Show();
             await Task.Run(async () =>
             {

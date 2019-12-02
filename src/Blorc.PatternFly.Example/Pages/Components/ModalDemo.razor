@@ -3,6 +3,8 @@
 @using Blorc.PatternFly.Components.Button
 
 
+@inherits ModalDemoComponent
+
 <Metadata ComponentName="Modal" />
 
 <Todo ComponentName="Modal" >
@@ -13,7 +15,7 @@
 
 <section class="ws-section ws-live-demo">
     <Example Title="Simple modal">
-        <Modal ShowCloseButton="true" @ref="simpleModal" >
+        <Modal ShowCloseButton="true" @ref="SimpleModal" >
             <Header>
                 Modal Header
             </Header>
@@ -25,15 +27,15 @@
         est laborum.
             </Body>
             <Footer>
-                <Button Variant="ButtonVariant.Secondary" OnClick=@((s,e) => simpleModal.Close())>Cancel</Button>
-                <Button Variant="ButtonVariant.Primary" OnClick=@((s,e) => simpleModal.Close())>Confirm</Button>
+                <Button Variant="ButtonVariant.Secondary" OnClick=@((s,e) => SimpleModal.Close())>Cancel</Button>
+                <Button Variant="ButtonVariant.Primary" OnClick=@((s,e) => SimpleModal.Close())>Confirm</Button>
             </Footer>
         </Modal>
-        <Button Variant="ButtonVariant.Primary" OnClick=@((s,e) => simpleModal.Show())>Show Modal</Button>
+        <Button Variant="ButtonVariant.Primary" OnClick=@((s,e) => SimpleModal.Show())>Show Modal</Button>
     </Example>
 
     <Example Title="Modal (small)">
-        <Modal ShowCloseButton="true" @ref="smallModal" Size="ModalSize.Small">
+        <Modal ShowCloseButton="true" @ref="SmallModal" Size="ModalSize.Small">
             <Header>
                 Modal Header
             </Header>
@@ -45,15 +47,15 @@
         est laborum.
             </Body>
             <Footer>
-                <Button Variant="ButtonVariant.Secondary" OnClick=@((s,e) => smallModal.Close())>Cancel</Button>
-                <Button Variant="ButtonVariant.Primary" OnClick=@((s,e) => smallModal.Close())>Confirm</Button>
+                <Button Variant="ButtonVariant.Secondary" OnClick=@((s,e) => SmallModal.Close())>Cancel</Button>
+                <Button Variant="ButtonVariant.Primary" OnClick=@((s,e) => SmallModal.Close())>Confirm</Button>
             </Footer>
         </Modal>
-        <Button Variant="ButtonVariant.Primary" OnClick=@((s,e) => smallModal.Show())>Show Small Modal</Button>
+        <Button Variant="ButtonVariant.Primary" OnClick=@((s,e) => SmallModal.Show())>Show Small Modal</Button>
     </Example>
     
     <Example Title="Modal (large)">
-        <Modal ShowCloseButton="true" @ref="largeModal" Size="ModalSize.Large">
+        <Modal ShowCloseButton="true" @ref="LargeModal" Size="ModalSize.Large">
             <Header>
                 Modal Header
             </Header>
@@ -65,26 +67,26 @@
         est laborum.
             </Body>
             <Footer>
-                <Button Variant="ButtonVariant.Secondary" OnClick=@((s,e) => largeModal.Close())>Cancel</Button>
-                <Button Variant="ButtonVariant.Primary" OnClick=@((s,e) => largeModal.Close())>Confirm</Button>
+                <Button Variant="ButtonVariant.Secondary" OnClick=@((s,e) => LargeModal.Close())>Cancel</Button>
+                <Button Variant="ButtonVariant.Primary" OnClick=@((s,e) => LargeModal.Close())>Confirm</Button>
             </Footer>
         </Modal>
-        <Button Variant="ButtonVariant.Primary" OnClick=@((s,e) => largeModal.Show())>Show Small Modal</Button>
+        <Button Variant="ButtonVariant.Primary" OnClick=@((s,e) => LargeModal.Show())>Show Small Modal</Button>
     </Example> 
     
     <Example Title="Execute Async Task">
-            <PleaseWaitModal @ref="pleaseWaitModal" 
+            <PleaseWaitModal @ref="PleaseWaitModal" 
                              Size="ModalSize.Small" 
                              Action=@(ctx => DoSomething(ctx))>
                 <Header>
                     Please wait...
                 </Header>
             </PleaseWaitModal>
-        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await pleaseWaitModal.ExecuteAsync(true))>Show Please Wait</Button>
+        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await PleaseWaitModal.ExecuteAsync(true))>Show Please Wait</Button>
     </Example>
 
     <Example Title="Execute Async Task (Progress)">
-            <PleaseWaitModal @ref="pleaseWaitModalWithProgress" 
+            <PleaseWaitModal @ref="PleaseWaitModalWithProgress" 
                              Size="ModalSize.Small" 
                              Action=@(ctx => DoSomething(ctx)) 
                              ShowProgress="true" >
@@ -93,10 +95,10 @@
                 </Header>
             </PleaseWaitModal>
 
-        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await pleaseWaitModalWithProgress.ExecuteAsync())>Show Please Wait</Button>
+        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await PleaseWaitModalWithProgress.ExecuteAsync())>Show Please Wait</Button>
     </Example>
     <Example Title="Execute Async Task (Progress & Body)">
-            <PleaseWaitModal @ref="pleaseWaitModalWithProgressAndBody" 
+            <PleaseWaitModal @ref="PleaseWaitModalWithProgressAndBody" 
                              Size="@ModalSize.Small" 
                              Action=@(ctx => DoSomething(ctx)) 
                              ShowProgress="true" >
@@ -111,38 +113,6 @@
                     est laborum.
                 </Body>
             </PleaseWaitModal>
-        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await pleaseWaitModalWithProgressAndBody.ExecuteAsync())>Show Please Wait</Button>
+        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await PleaseWaitModalWithProgressAndBody.ExecuteAsync())>Show Please Wait</Button>
     </Example>
 </section>
-
-@code {
-    private Modal simpleModal;
-
-    private Modal smallModal;
-
-    private Modal largeModal;
-
-    private PleaseWaitModal pleaseWaitModal;
-
-    private PleaseWaitModal pleaseWaitModalWithProgress;
-
-    private PleaseWaitModal pleaseWaitModalWithProgressAndBody;
-
-    private async Task DoSomething(ExecutionContext ctx)
-    {
-        int total = 100;
-        for (int i = 0; i < total; i++)
-        {
-            int value = System.Convert.ToInt32(100.0d * i / total);
-
-            if (ctx.State != null && ((bool)ctx.State))
-            {
-                await Task.Delay(10);
-            }
-            else
-            {
-                await ctx.Progress.ReportAsync(value);
-            }
-        }
-    }
-}
