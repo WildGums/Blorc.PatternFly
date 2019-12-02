@@ -1,6 +1,7 @@
 ﻿@page "/components/table"
 
 @using Blorc.PatternFly.Components.Table
+@using Blorc.PatternFly.Components.Button
 @using Blorc.PatternFly.Components.TextInput
 @using Blorc.PatternFly.Components.ToggleComponentContainer
 @using System
@@ -89,6 +90,8 @@
         </Table>
     </Example>
 
+    <Button Variant="ButtonVariant.Primary" OnClick=@((s, e) => UpdateSingleRow())>Update Single Row</Button>
+
     <Example Title="Sortable Table">
         <Table Caption="Sortable Table" DataSource=@(()=> GetData())>
             <Header>
@@ -118,11 +121,11 @@
                 </Row>
             </Header>
         </Table>
-    </Example>
+    </Example> 
 
     <ToggleComponentContainer>
         <Example Title="Action Column Table">
-            <Table Caption="Sortable Table" DataSource=@(()=> GetData())>
+            <Table Caption="Action Column" DataSource=@(()=> GetData())>
                 <Header>
                     <Row>
                         <Column Label="Repositories" Key="Repositories" IsSortable="true" Idx="0" />

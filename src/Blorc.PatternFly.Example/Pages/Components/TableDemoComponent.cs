@@ -4,15 +4,15 @@
     using System.Collections;
     using System.Collections.Generic;
     using System.ComponentModel;
+    using System.Runtime.CompilerServices;
 
     using Blorc.Components;
     using Blorc.PatternFly.Components.Table;
+    using Blorc.PatternFly.Example.Annotations;
 
     public class TableDemoComponent : BlorcComponentBase
     {
         private ArrayList _data;
-
-        public TableComponent FiltrableTable { get; set; }
 
         public string FilterText
         {
@@ -20,14 +20,7 @@
             set => SetPropertyValue(nameof(FilterText), value);
         }
 
-        protected override void OnPropertyChanged(PropertyChangedEventArgs e)
-        {
-            base.OnPropertyChanged(e);
-            if (e.PropertyName == nameof(FilterText))
-            {
-                FiltrableTable.Refresh();
-            }
-        }
+        public TableComponent FiltrableTable { get; set; }
 
         public IEnumerable<ActionDefinition> GetActions(object row)
         {
@@ -48,27 +41,45 @@
             return actionDefinitions;
         }
 
+        public void UpdateSingleRow()
+        {
+            var next = _random.Next(0, _data.Count);
+            var record = _data[next] as Record;
+            record.Repositories = $"one-{_random.Next(0, 100)}";
+        }
+
+        private readonly Random _random = new Random();
+
         public IEnumerable GetData()
         {
             if (_data == null)
             {
                 _data = new ArrayList();
-                var random = new Random();
+           
                 for (var i = 0; i < 5; i++)
                 {
                     _data.Add(
                         new Record
                         {
-                            Repositories = $"one-{random.Next(0, 100)}",
-                            Branches = $"two-{random.Next(0, 100)}",
-                            PullRequests = $"three-{random.Next(0, 100)}",
-                            Workspaces = $"four-{random.Next(0, 100)}",
-                            LastCommit = $"five-{random.Next(0, 100)}"
+                            Repositories = $"one-{_random.Next(0, 100)}",
+                            Branches = $"two-{_random.Next(0, 100)}",
+                            PullRequests = $"three-{_random.Next(0, 100)}",
+                            Workspaces = $"four-{_random.Next(0, 100)}",
+                            LastCommit = $"five-{_random.Next(0, 100)}"
                         });
                 }
             }
 
             return _data;
+        }
+
+        protected override void OnPropertyChanged(PropertyChangedEventArgs e)
+        {
+            base.OnPropertyChanged(e);
+            if (e.PropertyName == nameof(FilterText))
+            {
+                FiltrableTable.Refresh();
+            }
         }
 
         private void PrintBranches(object obj)
@@ -87,17 +98,100 @@
             }
         }
 
-        public class Record
+        public class Record : INotifyPropertyChanged
         {
-            public string Branches { get; set; }
+            private string _branches;
 
-            public string LastCommit { get; set; }
+            private string _lastCommit;
 
-            public string PullRequests { get; set; }
+            private string _pullRequests;
 
-            public string Repositories { get; set; }
+            private string _repositories;
 
-            public string Workspaces { get; set; }
+            private string _workspaces;
+
+            public event PropertyChangedEventHandler PropertyChanged;
+
+            public string Branches
+            {
+                get => _branches;
+                set
+                {
+                    if (value == _branches)
+                    {
+                        return;
+                    }
+
+                    _branches = value;
+                    OnPropertyChanged();
+                }
+            }
+
+            public string LastCommit
+            {
+                get => _lastCommit;
+                set
+                {
+                    if (value == _lastCommit)
+                    {
+                        return;
+                    }
+
+                    _lastCommit = value;
+                    OnPropertyChanged();
+                }
+            }
+
+            public string PullRequests
+            {
+                get => _pullRequests;
+                set
+                {
+                    if (value == _pullRequests)
+                    {
+                        return;
+                    }
+
+                    _pullRequests = value;
+                    OnPropertyChanged();
+                }
+            }
+
+            public string Repositories
+            {
+                get => _repositories;
+                set
+                {
+                    if (value == _repositories)
+                    {
+                        return;
+                    }
+
+                    _repositories = value;
+                    OnPropertyChanged();
+                }
+            }
+
+            public string Workspaces
+            {
+                get => _workspaces;
+                set
+                {
+                    if (value == _workspaces)
+                    {
+                        return;
+                    }
+
+                    _workspaces = value;
+                    OnPropertyChanged();
+                }
+            }
+
+            [NotifyPropertyChangedInvocator]
+            protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 }
