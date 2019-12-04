@@ -1,6 +1,8 @@
 ﻿namespace Blorc.PatternFly.Components.Table
 {
+    using System;
     using System.ComponentModel;
+    using System.Linq;
 
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
@@ -28,7 +30,17 @@
 
             if (Record is INotifyPropertyChanged propertyChanged)
             {
-                propertyChanged.PropertyChanged += (sender, args) => StateHasChanged();
+                propertyChanged.PropertyChanged += (sender, args) =>
+                {
+                    if (ContainerTable.IsSortedBy(args.PropertyName))
+                    { 
+                        ContainerTable.Refresh();
+                    }
+                    else
+                    {
+                        StateHasChanged();
+                    }
+                };
             }
         }
     }

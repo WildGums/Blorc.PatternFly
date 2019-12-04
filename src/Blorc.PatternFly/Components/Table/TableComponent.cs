@@ -5,15 +5,22 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-    using Blorc.Components;
 
-    using EventArgs;
+    using Blorc.Components;
+    using Blorc.PatternFly.Components.Table.EventArgs;
+    using Blorc.Reflection;
+
     using Microsoft.AspNetCore.Components;
-    using Reflection;
 
     public class TableComponent : BlorcComponentBase
     {
-        protected IEnumerable Records { get; set; }
+        public event EventHandler<OrderByColumnChangedEventArg> OrderByColumnChanged;
+
+        [Parameter]
+        public bool AlwaysReload { get; set; }
+
+        [Parameter]
+        public RenderFragment Body { get; set; }
 
         [Parameter]
         public string Caption { get; set; }
@@ -21,24 +28,29 @@
         [Parameter]
         public RenderFragment ChildContent { get; set; }
 
-        [Parameter]
-        public RenderFragment Header { get; set; }
-
-        [Parameter]
-        public RenderFragment Body { get; set; }
-
         public SortedDictionary<string, ColumnDefinition> ColumnDefinitions { get; } = new SortedDictionary<string, ColumnDefinition>();
-
-        [Parameter]
-        public bool AlwaysReload { get; set; }
 
         [Parameter]
         public Func<IEnumerable> DataSource { get; set; }
 
-        public event EventHandler<OrderByColumnChangedEventArg> OrderByColumnChanged;
+        [Parameter]
+        public RenderFragment Header { get; set; }
+
+        public bool IsSorted => OrderState != null && OrderState.IsSorted;
+
+        public OrderState OrderState { get; set; }
+
+        protected IEnumerable Records { get; set; }
+
+        public bool IsSortedBy(string propertyName)
+        {
+            return OrderState != null && OrderState.IsSortedBy(propertyName);
+        }
 
         public void OrderBy(ColumnComponent columnComponent, Order order)
         {
+            OrderState = new OrderState(columnComponent.Key, order);
+
             OrderByColumnChanged?.Invoke(this, new OrderByColumnChangedEventArg(columnComponent));
 
             if (Records == null || AlwaysReload)
@@ -46,15 +58,18 @@
                 Records = DataSource.Invoke();
             }
 
-            if (order == Order.Ascending)
+            SortIfRequired();
+            StateHasChanged();
+        }
+
+        public void Refresh(bool reload = true)
+        {
+            if (reload)
             {
-                Records = Records.OfType<object>().OrderBy(o => PropertyHelper.GetPropertyValue(o, columnComponent.Key));
-            }
-            else if (order == Order.Descending)
-            {
-                Records = Records.OfType<object>().OrderByDescending(o => PropertyHelper.GetPropertyValue(o, columnComponent.Key));
+                Records = DataSource?.Invoke();
             }
 
+            SortIfRequired();
             StateHasChanged();
         }
 
@@ -67,11 +82,21 @@
             }
         }
 
-        public void Refresh()
+        private void SortIfRequired()
         {
-            Records = DataSource?.Invoke();
-            StateHasChanged();
-        }
+            if (OrderState is null)
+            {
+                return;
+            }
 
+            if (OrderState.Order == Order.Ascending)
+            {
+                Records = Records.OfType<object>().OrderBy(o => PropertyHelper.GetPropertyValue(o, OrderState.Key));
+            }
+            else if (OrderState.Order == Order.Descending)
+            {
+                Records = Records.OfType<object>().OrderByDescending(o => PropertyHelper.GetPropertyValue(o, OrderState.Key));
+            }
+        }
     }
 }

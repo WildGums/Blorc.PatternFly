@@ -45,7 +45,7 @@
         {
             var next = _random.Next(0, _data.Count);
             var record = _data[next] as Record;
-            record.Repositories = $"one-{_random.Next(0, 100)}";
+            record.Repositories = $"one-{_random.Next(0, 100).ToString().PadLeft(2, '0')}";
         }
 
         private readonly Random _random = new Random();
@@ -55,17 +55,16 @@
             if (_data == null)
             {
                 _data = new ArrayList();
-           
                 for (var i = 0; i < 5; i++)
                 {
                     _data.Add(
                         new Record
                         {
-                            Repositories = $"one-{_random.Next(0, 100)}",
-                            Branches = $"two-{_random.Next(0, 100)}",
-                            PullRequests = $"three-{_random.Next(0, 100)}",
-                            Workspaces = $"four-{_random.Next(0, 100)}",
-                            LastCommit = $"five-{_random.Next(0, 100)}"
+                            Repositories = $"one-{_random.Next(0, 100).ToString().PadLeft(2,'0')}",
+                            Branches = $"two-{_random.Next(0, 100).ToString().PadLeft(2, '0')}",
+                            PullRequests = $"three-{_random.Next(0, 100).ToString().PadLeft(2, '0')}",
+                            Workspaces = $"four-{_random.Next(0, 100).ToString().PadLeft(2, '0')}",
+                            LastCommit = $"five-{_random.Next(0, 100).ToString().PadLeft(2, '0')}"
                         });
                 }
             }
