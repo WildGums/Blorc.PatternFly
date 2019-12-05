@@ -62,7 +62,7 @@
             StateHasChanged();
         }
 
-        public void Refresh(bool reload = true)
+        public void Refresh(bool reload = false)
         {
             if (reload)
             {

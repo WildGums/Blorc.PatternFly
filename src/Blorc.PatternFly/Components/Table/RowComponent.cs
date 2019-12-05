@@ -30,17 +30,24 @@
 
             if (Record is INotifyPropertyChanged propertyChanged)
             {
-                propertyChanged.PropertyChanged += (sender, args) =>
+                propertyChanged.PropertyChanged += OnPropertyChangedOnPropertyChanged;
+            }
+        }
+
+        private void OnPropertyChangedOnPropertyChanged(object sender, PropertyChangedEventArgs args)
+        {
+            if (ContainerTable.IsSortedBy(args.PropertyName))
+            {
+                if (Record is INotifyPropertyChanged propertyChanged)
                 {
-                    if (ContainerTable.IsSortedBy(args.PropertyName))
-                    { 
-                        ContainerTable.Refresh();
-                    }
-                    else
-                    {
-                        StateHasChanged();
-                    }
-                };
+                    propertyChanged.PropertyChanged -= OnPropertyChangedOnPropertyChanged;
+                }
+
+                ContainerTable.Refresh();
+            }
+            else
+            {
+                StateHasChanged();
             }
         }
     }
