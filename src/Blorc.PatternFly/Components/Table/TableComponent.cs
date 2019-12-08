@@ -49,7 +49,7 @@
 
         public void OrderBy(ColumnComponent columnComponent, Order order)
         {
-            OrderState = new OrderState(columnComponent.Key, order);
+            OrderState = new OrderState(columnComponent.Key, order, columnComponent.Comparer);
 
             OrderByColumnChanged?.Invoke(this, new OrderByColumnChangedEventArg(columnComponent));
 
@@ -91,11 +91,11 @@
 
             if (OrderState.Order == Order.Ascending)
             {
-                Records = Records.OfType<object>().OrderBy(o => PropertyHelper.GetPropertyValue(o, OrderState.Key));
+                Records = Records.OfType<object>().OrderBy(o => PropertyHelper.GetPropertyValue(o, OrderState.Key), OrderState.Comparer);
             }
             else if (OrderState.Order == Order.Descending)
             {
-                Records = Records.OfType<object>().OrderByDescending(o => PropertyHelper.GetPropertyValue(o, OrderState.Key));
+                Records = Records.OfType<object>().OrderByDescending(o => PropertyHelper.GetPropertyValue(o, OrderState.Key), OrderState.Comparer);
             }
         }
     }

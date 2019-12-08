@@ -5,12 +5,16 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace Blorc.PatternFly.Components.Table
 {
+    using System.Collections;
+    using System.Collections.Generic;
+
     public class OrderState
     {
-        public OrderState(string key, Order order)
+        public OrderState(string key, Order order, IComparer<object> comparer)
         {
             Key = key;
             Order = order;
+            Comparer = comparer ?? Comparer<object>.Default;
         }
 
         public bool IsSorted => !string.IsNullOrWhiteSpace(Key) && Order != Order.None;
@@ -18,6 +22,8 @@ namespace Blorc.PatternFly.Components.Table
         public string Key { get; }
 
         public Order Order { get; }
+
+        public IComparer<object> Comparer { get; }
 
         public bool IsSortedBy(string propertyName)
         {

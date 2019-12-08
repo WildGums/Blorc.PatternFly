@@ -1,6 +1,8 @@
 ﻿namespace Blorc.PatternFly.Components.Table
 {
     using System;
+    using System.Collections;
+    using System.Collections.Generic;
 
     using Blorc.Components;
     using Blorc.PatternFly.Components.ToggleComponentContainer;
@@ -61,6 +63,13 @@
         {
             get => GetPropertyValue<Predicate<object>>(nameof(FilterPredicate));
             set => SetPropertyValue(nameof(FilterPredicate), value);
+        }
+        
+        [Parameter]
+        public IComparer<object> Comparer
+        {
+            get => GetPropertyValue<IComparer<object>>(nameof(Comparer));
+            set => SetPropertyValue(nameof(Comparer), value);
         }
 
         [Parameter]
