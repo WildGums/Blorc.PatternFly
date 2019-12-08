@@ -66,9 +66,9 @@
         }
         
         [Parameter]
-        public IComparer<object> Comparer
+        public IComparer Comparer
         {
-            get => GetPropertyValue<IComparer<object>>(nameof(Comparer));
+            get => GetPropertyValue<IComparer>(nameof(Comparer));
             set => SetPropertyValue(nameof(Comparer), value);
         }
 

@@ -10,11 +10,11 @@ namespace Blorc.PatternFly.Components.Table
 
     public class OrderState
     {
-        public OrderState(string key, Order order, IComparer<object> comparer)
+        public OrderState(string key, Order order, IComparer comparer)
         {
             Key = key;
             Order = order;
-            Comparer = comparer ?? Comparer<object>.Default;
+            Comparer = Comparer<object>.Create((o1, o2) => comparer.Compare(o1, o2)) ?? Comparer<object>.Default;
         }
 
         public bool IsSorted => !string.IsNullOrWhiteSpace(Key) && Order != Order.None;
