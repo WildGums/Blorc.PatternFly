@@ -14,7 +14,7 @@ namespace Blorc.PatternFly.Components.Table
         {
             Key = key;
             Order = order;
-            Comparer = Comparer<object>.Create((o1, o2) => comparer.Compare(o1, o2)) ?? Comparer<object>.Default;
+            Comparer = comparer != null ? Comparer<object>.Create(comparer.Compare) : Comparer<object>.Default;
         }
 
         public bool IsSorted => !string.IsNullOrWhiteSpace(Key) && Order != Order.None;
