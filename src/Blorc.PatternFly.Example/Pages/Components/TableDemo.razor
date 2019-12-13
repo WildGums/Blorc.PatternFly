@@ -3,6 +3,7 @@
 @using Blorc.PatternFly.Components.Table
 @using Blorc.PatternFly.Components.Button
 @using Blorc.PatternFly.Components.TextInput
+@using Blorc.PatternFly.Components.Text
 @using Blorc.PatternFly.Components.ToggleComponentContainer
 @using System
 @using System.Collections.Generic;
@@ -90,7 +91,14 @@
         </Table>
     </Example>
 
-    <Button Variant="ButtonVariant.Primary" OnClick=@((s, e) => UpdateSingleRow())>Update Single Row</Button>
+    <Example Title="Update Data">
+        <TextContent>
+            <Text Component="p">
+                This button will update the Repository property of a random record in the data source in order to test the row only render capabilities of the table
+            </Text>
+        </TextContent>
+        <Button Variant="ButtonVariant.Primary" OnClick=@((s, e) => UpdateSingleRow())>Update</Button>
+    </Example>
 
     <Example Title="Sortable Table">
         <Table Caption="Sortable Table" DataSource=@(()=> GetData())>

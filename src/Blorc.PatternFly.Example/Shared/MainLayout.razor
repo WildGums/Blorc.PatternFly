@@ -1,21 +1,27 @@
-@inherits LayoutComponentBase
-
 @using Blorc.Dom.Injectors
 @using Blorc.Services
+@using Blorc.PatternFly.Components.Page
+@using Blorc.PatternFly.Components.Button
 
-<div class="sidebar">
-    <NavMenu />
-</div>
 
-<div class="main">
-    <div class="top-row px-4">
-        <a href="https://github.com/wildgums/Blorc.patternfly" target="_blank" class="ml-md-auto">About</a>
-    </div>
+@inherits LayoutComponentBase
 
-    <div class="content px-4">
+<Page>
+    <LogoContent>
+        Blorc.PatternFly.Example
+    </LogoContent>
+    <ToolbarContent>
+        <Button Variant="ButtonVariant.Link" Href="https://github.com/wildgums/Blorc.patternfly">
+            About
+        </Button>
+    </ToolbarContent>
+    <SidebarContent>
+        <NavMenu />
+    </SidebarContent>
+    <MainContent>
         @Body
-    </div>
-</div>
+    </MainContent>
+</Page>
 
 @code
 {
@@ -27,5 +33,5 @@
         base.OnInitialized();
 
         DocumentService.InjectHead(new Css("/patternfly/patternfly.css"));
-	}
+    }
 }

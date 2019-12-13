@@ -1,97 +1,88 @@
 ﻿@using Blorc.PatternFly.Components.Navigation
+@using Blorc.PatternFly.Components.Icon
+@using Blorc.PatternFly.Layouts.Split
 
-<div class="top-row pl-4 navbar navbar-dark">
-    <a class="navbar-brand" href="">Blorc.PatternFly.Example</a>
-    <button class="navbar-toggler" @onclick="ToggleNavMenu">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-</div>
-
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <Navigation>
-        <Items>
-            <NavigationItem Title="Home" Link="/">
-                <Content>
-                    <i class="fa fa-home mr-3" aria-hidden="true"></i>  Home
-                </Content>
-            </NavigationItem>
-            <NavigationExpandableSection Title="Components">
-                <Content>
-                    <i class="fa fa-server mr-3" aria-hidden="true"></i> Components
-                </Content>
-                <Items>
-                    <NavigationItem Title="About modal" Link="components/about-modal" />
-                    <NavigationItem Title="Accordion" Link="components/accordion" />
-                    <NavigationItem Title="Alert" Link="components/alert" />
-                    <NavigationItem Title="Application launcher" Link="components/application-launcher" />
-                    <NavigationItem Title="Avatar" Link="components/avatar" />
-                    <NavigationItem Title="Background image *" Link="components/background-image" />
-                    <NavigationItem Title="Badge" Link="components/badge" />
-                    <NavigationItem Title="Brand" Link="components/brand" />
-                    <NavigationItem Title="Breadcrumb" Link="components/breadcrumb" />
-                    <NavigationItem Title="Button" Link="components/button" />
-                    <NavigationItem Title="Card" Link="components/card" />
-                    <NavigationItem Title="Checkbox" Link="components/checkbox" />
-                    <NavigationItem Title="Chip group *" Link="components/chip-group" />
-                    <NavigationItem Title="Context selector *" Link="components/context-selector" />
-                    <NavigationItem Title="Data list *" Link="components/data-list" />
-                    <NavigationItem Title="Dropdown" Link="components/dropdown" />
-                    <NavigationItem Title="Empty state" Link="components/empty-state" />
-                    <NavigationItem Title="Expandable" Link="components/expandable" />
-                    <NavigationItem Title="Form *" Link="components/form" />
-                    <NavigationItem Title="Form select *" Link="components/form-select" />
-                    <NavigationItem Title="Icon" Link="components/icon" />
-                    <NavigationItem Title="Input group" Link="components/input-group" />
-                    <NavigationItem Title="Label" Link="components/label" />
-                    <NavigationItem Title="List" Link="components/list" />
-                    <NavigationItem Title="Login page *" Link="components/login-page" />
-                    <NavigationItem Title="Modal" Link="components/modal" />
-                    <NavigationItem Title="Nav" Link="components/nav" />
-                    <NavigationItem Title="Options menu *" Link="components/options-menu" />
-                    <NavigationItem Title="Page *" Link="components/page" />
-                    <NavigationItem Title="Pagination *" Link="components/pagination" />
-                    <NavigationItem Title="Popover *" Link="components/popover" />
-                    <NavigationItem Title="Progress" Link="components/progress" />
-                    <NavigationItem Title="Radio" Link="components/radio" />
-                    <NavigationItem Title="Select" Link="components/select" />
-                    <NavigationItem Title="Skip to content *" Link="components/skip-to-content" />
-                    <NavigationItem Title="Switch" Link="components/switch" />
-                    <NavigationItem Title="Table *" Link="components/table" />
-                    <NavigationItem Title="Tabs" Link="components/tabs" />
-                    <NavigationItem Title="Text" Link="components/text" />
-                    <NavigationItem Title="Text area" Link="components/text-area" />
-                    <NavigationItem Title="Text input" Link="components/text-input" />
-                    <NavigationItem Title="Title" Link="components/title" />
-                    <NavigationItem Title="Tooltip" Link="components/tooltip" />
-                    <NavigationItem Title="Wizard *" Link="components/wizard" />
-                </Items>
-            </NavigationExpandableSection>
-            <NavigationExpandableSection Title="Components">
-                <Content>
-                    <i class="fa fa-server mr-3" aria-hidden="true"></i> Layouts
-                </Content>
-                <Items>
-                    <NavigationItem Title="Bullseye" Link="layouts/bullseye" />
-                    <NavigationItem Title="Flex" Link="layouts/flex" />
-                    <NavigationItem Title="Gallery" Link="layouts/gallery" />
-                    <NavigationItem Title="Grid" Link="layouts/grid" />
-                    <NavigationItem Title="Level" Link="layouts/level" />
-                    <NavigationItem Title="Split" Link="layouts/split" />
-                    <NavigationItem Title="Stack" Link="layouts/stack" />
-                    <NavigationItem Title="Toolbar *" Link="layouts/toolbar" />
-                </Items>
-            </NavigationExpandableSection>
-        </Items>
-    </Navigation>
-</div>
-
-@code {
-    bool collapseNavMenu = true;
-
-    string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
-}
+<Navigation>
+    <Items>
+        <NavigationItem Title="Home" Link="/">
+            <Content>
+                <Split IsGutter="true">
+                    <SplitItem><HomeIcon /></SplitItem>    
+                    <SplitItem>Home</SplitItem>    
+                </Split>
+            </Content>
+        </NavigationItem>
+        <NavigationExpandableSection Title="Components">
+            <Content>
+                <Split IsGutter="true">
+                    <SplitItem><ServerIcon /></SplitItem>    
+                    <SplitItem>Components</SplitItem>    
+                </Split>
+            </Content>
+            <Items>
+                <NavigationItem Title="About modal" Link="components/about-modal" />
+                <NavigationItem Title="Accordion" Link="components/accordion" />
+                <NavigationItem Title="Alert" Link="components/alert" />
+                <NavigationItem Title="Application launcher" Link="components/application-launcher" />
+                <NavigationItem Title="Avatar" Link="components/avatar" />
+                <NavigationItem Title="Background image *" Link="components/background-image" />
+                <NavigationItem Title="Badge" Link="components/badge" />
+                <NavigationItem Title="Brand" Link="components/brand" />
+                <NavigationItem Title="Breadcrumb" Link="components/breadcrumb" />
+                <NavigationItem Title="Button" Link="components/button" />
+                <NavigationItem Title="Card" Link="components/card" />
+                <NavigationItem Title="Checkbox" Link="components/checkbox" />
+                <NavigationItem Title="Chip group *" Link="components/chip-group" />
+                <NavigationItem Title="Context selector *" Link="components/context-selector" />
+                <NavigationItem Title="Data list *" Link="components/data-list" />
+                <NavigationItem Title="Dropdown" Link="components/dropdown" />
+                <NavigationItem Title="Empty state" Link="components/empty-state" />
+                <NavigationItem Title="Expandable" Link="components/expandable" />
+                <NavigationItem Title="Form *" Link="components/form" />
+                <NavigationItem Title="Form select *" Link="components/form-select" />
+                <NavigationItem Title="Icon" Link="components/icon" />
+                <NavigationItem Title="Input group" Link="components/input-group" />
+                <NavigationItem Title="Label" Link="components/label" />
+                <NavigationItem Title="List" Link="components/list" />
+                <NavigationItem Title="Login page *" Link="components/login-page" />
+                <NavigationItem Title="Modal" Link="components/modal" />
+                <NavigationItem Title="Nav" Link="components/nav" />
+                <NavigationItem Title="Options menu *" Link="components/options-menu" />
+                <NavigationItem Title="Page +" Link="components/page" />
+                <NavigationItem Title="Pagination *" Link="components/pagination" />
+                <NavigationItem Title="Popover *" Link="components/popover" />
+                <NavigationItem Title="Progress" Link="components/progress" />
+                <NavigationItem Title="Radio" Link="components/radio" />
+                <NavigationItem Title="Select" Link="components/select" />
+                <NavigationItem Title="Skip to content *" Link="components/skip-to-content" />
+                <NavigationItem Title="Switch" Link="components/switch" />
+                <NavigationItem Title="Table +" Link="components/table" />
+                <NavigationItem Title="Tabs" Link="components/tabs" />
+                <NavigationItem Title="Text" Link="components/text" />
+                <NavigationItem Title="Text area" Link="components/text-area" />
+                <NavigationItem Title="Text input" Link="components/text-input" />
+                <NavigationItem Title="Title" Link="components/title" />
+                <NavigationItem Title="Tooltip" Link="components/tooltip" />
+                <NavigationItem Title="Wizard *" Link="components/wizard" />
+            </Items>
+        </NavigationExpandableSection>
+        <NavigationExpandableSection Title="Components">
+            <Content>
+                <Split IsGutter="true">
+                    <SplitItem><ServerIcon /></SplitItem>
+                    <SplitItem>Layouts</SplitItem>
+                </Split>
+            </Content>
+            <Items>
+                <NavigationItem Title="Bullseye" Link="layouts/bullseye" />
+                <NavigationItem Title="Flex" Link="layouts/flex" />
+                <NavigationItem Title="Gallery" Link="layouts/gallery" />
+                <NavigationItem Title="Grid" Link="layouts/grid" />
+                <NavigationItem Title="Level" Link="layouts/level" />
+                <NavigationItem Title="Split" Link="layouts/split" />
+                <NavigationItem Title="Stack" Link="layouts/stack" />
+                <NavigationItem Title="Toolbar *" Link="layouts/toolbar" />
+            </Items>
+        </NavigationExpandableSection>
+    </Items>
+</Navigation>
