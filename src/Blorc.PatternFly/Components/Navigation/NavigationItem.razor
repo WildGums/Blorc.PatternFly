@@ -5,9 +5,9 @@
 
 <li class="pf-c-nav__item">
     <a class="pf-c-nav__link @GetIsCurrentClass()" aria-current="page" @onclick="OnItemClick">
-        @if (Content != null)
+        @if (ChildContent != null)
         {
-            @Content
+            @ChildContent
         }
         else
         {
