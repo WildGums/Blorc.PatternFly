@@ -10,7 +10,7 @@
         public SidebarComponent()
         {
             CreateConverter()
-                .Fixed("pf-c-page__sidebar")
+                .Fixed("pf-c-page__sidebar ws-page-sidebar")
                 .If(() => IsExpanded, "pf-m-expanded")
                 .Update(() => Class);
         }

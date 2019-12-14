@@ -3,8 +3,9 @@
 
 @inherits SidebarComponent
 
-<div id="page-sidebar" class=@Class>
-    <div class="pf-c-page__sidebar-body">
+<!--TODO: Review why set z-index is required (modal components are not properly working) -->
+<div id="page-sidebar" class=@Class style="z-index: 0">
+    <div class="pf-c-page__sidebar-body" >
         @ChildContent                  
     </div>
 </div>
