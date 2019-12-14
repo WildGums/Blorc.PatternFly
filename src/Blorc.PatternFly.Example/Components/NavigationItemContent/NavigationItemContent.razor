@@ -1,0 +1,26 @@
+﻿@using Blorc.PatternFly.Layouts.Split
+@using Blorc.PatternFly.Components.Badge
+@using Blorc.PatternFly.Components.Icon
+
+@inherits  NavigationItemContentComponent
+
+
+<Split IsGutter="true">
+    <SplitItem IsFilled="true">@Text</SplitItem>
+    @if (ItemType == ItemType.New)
+    {
+        <SplitItem><PlusCircleIcon /></SplitItem>
+    }
+    else if (ItemType == ItemType.Unavailable)
+    {
+        <SplitItem><TimesCircleIcon /></SplitItem>
+    }
+    else if (ItemType == ItemType.Updated)
+    {
+        <SplitItem><ArrowCircleUpIcon /></SplitItem>
+    }
+    else
+    {
+        <SplitItem></SplitItem>
+    }
+</Split>

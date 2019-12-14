@@ -1,8 +1,19 @@
 ﻿@page "/layouts/toolbar"
 
 @using Blorc.PatternFly.Layouts.Toolbar
+@using Blorc.PatternFly.Components.Text
 
-<Metadata ComponentName="toolbar" ComponentType="layouts"/>
+<Metadata ComponentName="toolbar" ComponentType="layouts" />
+
+<Todo ComponentName="Toolbar">
+    <TodoList>
+        <TextContent>
+            <TextList>
+                <TextListItem>Update resources</TextListItem>
+            </TextList>
+        </TextContent>
+    </TodoList>
+</Todo>
 
 <section class="ws-section ws-live-demo">
     <Example Title="Simple toolbar layout">

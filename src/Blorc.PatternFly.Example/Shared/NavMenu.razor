@@ -1,22 +1,22 @@
 ﻿@using Blorc.PatternFly.Components.Navigation
 @using Blorc.PatternFly.Components.Icon
+@using Blorc.PatternFly.Components.Badge
 @using Blorc.PatternFly.Layouts.Split
+@using Blorc.PatternFly.Example.Components.NavigationItemContent
 
 <Navigation>
     <Items>
         <NavigationItem Title="Home" Link="/">
-            <Content>
-                <Split IsGutter="true">
-                    <SplitItem><HomeIcon /></SplitItem>    
-                    <SplitItem>Home</SplitItem>    
-                </Split>
-            </Content>
+            <Split IsGutter="true">
+                <SplitItem><HomeIcon /></SplitItem>
+                <SplitItem>Home</SplitItem>
+            </Split>
         </NavigationItem>
         <NavigationExpandableSection Title="Components">
             <Content>
                 <Split IsGutter="true">
-                    <SplitItem><ServerIcon /></SplitItem>    
-                    <SplitItem>Components</SplitItem>    
+                    <SplitItem><ServerIcon /></SplitItem>
+                    <SplitItem>Components</SplitItem>
                 </Split>
             </Content>
             <Items>
@@ -25,45 +25,73 @@
                 <NavigationItem Title="Alert" Link="components/alert" />
                 <NavigationItem Title="Application launcher" Link="components/application-launcher" />
                 <NavigationItem Title="Avatar" Link="components/avatar" />
-                <NavigationItem Title="Background image *" Link="components/background-image" />
+                <NavigationItem Link="components/background-image">
+                    <NavigationItemContent Text="Background image" ItemType=@ItemType.Unavailable />
+                </NavigationItem>
                 <NavigationItem Title="Badge" Link="components/badge" />
                 <NavigationItem Title="Brand" Link="components/brand" />
                 <NavigationItem Title="Breadcrumb" Link="components/breadcrumb" />
                 <NavigationItem Title="Button" Link="components/button" />
                 <NavigationItem Title="Card" Link="components/card" />
                 <NavigationItem Title="Checkbox" Link="components/checkbox" />
-                <NavigationItem Title="Chip group *" Link="components/chip-group" />
-                <NavigationItem Title="Context selector *" Link="components/context-selector" />
-                <NavigationItem Title="Data list *" Link="components/data-list" />
+                <NavigationItem Link="components/chip-group">
+                    <NavigationItemContent Text="Chip group" ItemType=@ItemType.Unavailable />
+                </NavigationItem>
+                <NavigationItem Link="components/context-selector">
+                    <NavigationItemContent Text="Context selector" ItemType=@ItemType.Unavailable />
+                </NavigationItem>
+                <NavigationItem Link="components/data-list">
+                    <NavigationItemContent Text="Data list" ItemType=@ItemType.Unavailable />
+                </NavigationItem>
                 <NavigationItem Title="Dropdown" Link="components/dropdown" />
                 <NavigationItem Title="Empty state" Link="components/empty-state" />
                 <NavigationItem Title="Expandable" Link="components/expandable" />
-                <NavigationItem Title="Form *" Link="components/form" />
-                <NavigationItem Title="Form select *" Link="components/form-select" />
+                <NavigationItem Link="components/form">
+                    <NavigationItemContent Text="Form" ItemType=@ItemType.Unavailable />
+                </NavigationItem>
+                <NavigationItem Link="components/form-select">
+                    <NavigationItemContent Text="Form Select" ItemType=@ItemType.Unavailable />
+                </NavigationItem>
                 <NavigationItem Title="Icon" Link="components/icon" />
                 <NavigationItem Title="Input group" Link="components/input-group" />
                 <NavigationItem Title="Label" Link="components/label" />
                 <NavigationItem Title="List" Link="components/list" />
-                <NavigationItem Title="Login page *" Link="components/login-page" />
+                <NavigationItem Link="components/login-page">
+                    <NavigationItemContent Text="Login Page" ItemType=@ItemType.Unavailable />
+                </NavigationItem>
                 <NavigationItem Title="Modal" Link="components/modal" />
                 <NavigationItem Title="Nav" Link="components/nav" />
-                <NavigationItem Title="Options menu *" Link="components/options-menu" />
-                <NavigationItem Title="Page +" Link="components/page" />
-                <NavigationItem Title="Pagination *" Link="components/pagination" />
-                <NavigationItem Title="Popover *" Link="components/popover" />
+                <NavigationItem Link="components/options-menu">
+                    <NavigationItemContent Text="Options menu" ItemType=@ItemType.Unavailable />
+                </NavigationItem>
+                <NavigationItem Link="components/page">
+                    <NavigationItemContent Text="Page" ItemType=@ItemType.New />
+                </NavigationItem>
+                <NavigationItem Link="components/pagination">
+                    <NavigationItemContent Text="Pagination" ItemType=@ItemType.Unavailable />
+                </NavigationItem>
+                <NavigationItem Link="components/popover">
+                    <NavigationItemContent Text="Popover" ItemType=@ItemType.Unavailable />
+                </NavigationItem>
                 <NavigationItem Title="Progress" Link="components/progress" />
                 <NavigationItem Title="Radio" Link="components/radio" />
                 <NavigationItem Title="Select" Link="components/select" />
-                <NavigationItem Title="Skip to content *" Link="components/skip-to-content" />
+                <NavigationItem Link="components/skip-to-content">
+                    <NavigationItemContent Text="Skip to content" ItemType=@ItemType.Unavailable />
+                </NavigationItem>
                 <NavigationItem Title="Switch" Link="components/switch" />
-                <NavigationItem Title="Table +" Link="components/table" />
+                <NavigationItem Link="components/table">
+                    <NavigationItemContent Text="Table" ItemType=@ItemType.Updated />
+                </NavigationItem>
                 <NavigationItem Title="Tabs" Link="components/tabs" />
                 <NavigationItem Title="Text" Link="components/text" />
                 <NavigationItem Title="Text area" Link="components/text-area" />
                 <NavigationItem Title="Text input" Link="components/text-input" />
                 <NavigationItem Title="Title" Link="components/title" />
                 <NavigationItem Title="Tooltip" Link="components/tooltip" />
-                <NavigationItem Title="Wizard *" Link="components/wizard" />
+                <NavigationItem Link="components/wizard">
+                    <NavigationItemContent Text="Wizard" ItemType=@ItemType.Unavailable />
+                </NavigationItem>
             </Items>
         </NavigationExpandableSection>
         <NavigationExpandableSection Title="Components">
@@ -81,7 +109,9 @@
                 <NavigationItem Title="Level" Link="layouts/level" />
                 <NavigationItem Title="Split" Link="layouts/split" />
                 <NavigationItem Title="Stack" Link="layouts/stack" />
-                <NavigationItem Title="Toolbar *" Link="layouts/toolbar" />
+                <NavigationItem Link="layouts/toolbar">
+                    <NavigationItemContent Text="Toolbar" ItemType=@ItemType.Unavailable />
+                </NavigationItem>
             </Items>
         </NavigationExpandableSection>
     </Items>
