@@ -129,7 +129,7 @@
             <Header>
                 <Row>
                     <!--TODO Try to avoid the index parameter later-->
-                    <Column Label="Repositories" Key="Repositories" IsSortable="true" Idx="0" FilterPredicate=@(o => ((string)o).Contains(FilterText)) />
+                    <Column Label="Repositories" Key="Repositories" IsSortable="true" Idx="0" FilterPredicate=@(o => string.IsNullOrEmpty(FilterText) || ((string)o).Contains(FilterText)) />
                     <Column Label="Branches" Key="Branches" IsSortable="true" Idx="1" />
                     <Column Label="Pull requests" Key="PullRequests" IsSortable="true" Idx="2" />
                     <Column Label="Workspaces" Key="Workspaces" Idx="3" />
