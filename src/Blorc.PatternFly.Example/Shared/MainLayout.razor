@@ -4,7 +4,6 @@
 @using Blorc.PatternFly.Components.Button
 
 
-
 @inherits LayoutComponentBase
 
 <Page>
@@ -23,16 +22,3 @@
         @Body
     </MainContent>
 </Page>
-
-@code
-{
-    [Inject]
-    public IDocumentService DocumentService { get; set; }
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-
-        DocumentService.InjectHead(new Css("/patternfly/patternfly.css"));
-    }
-}
