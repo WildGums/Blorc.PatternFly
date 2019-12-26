@@ -35,10 +35,7 @@
     <EmbeddedResource Include="content\**" Exclude="**\*.js;**\*.css" LogicalName="blazor:file:%(RecursiveDir)%(Filename)%(Extension)" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="content\ElementsFunctionsInterop.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Blorc.Core" Version="1.0.0-alpha0170" />
+    <PackageReference Include="Blorc.Core" Version="1.0.0-alpha0171" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.1.0" />
   </ItemGroup>
   <ItemGroup>
