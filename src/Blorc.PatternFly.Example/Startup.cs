@@ -12,11 +12,8 @@
             services.AddBlorcCore();
         }
 
-        public void Configure(IComponentsApplicationBuilder app, IDocumentService documentService)
+        public void Configure(IComponentsApplicationBuilder app)
         {
-            documentService.InjectBlorcCoreJS();
-            documentService.InjectHead(new Css("/patternfly/patternfly.css"));
-
             app.AddComponent<App>("app");
         }
     }

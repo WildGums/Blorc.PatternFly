@@ -4,6 +4,7 @@
     using Blorc.StateConverters;
 
     using Microsoft.AspNetCore.Components;
+    using System.ComponentModel;
 
     public class SidebarComponent : BlorcComponentBase
     {
@@ -57,6 +58,14 @@
             {
                 StateHasChanged();
             }
+        }
+        
+        protected override void OnPropertyChanged(PropertyChangedEventArgs e)
+        {
+            //if(e.PropertyName == nameof(Class))
+            //{
+            //    StateHasChanged();
+            //}
         }
     }
 }

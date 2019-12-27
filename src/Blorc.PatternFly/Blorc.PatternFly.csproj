@@ -4,7 +4,7 @@
     <AssemblyName>Blorc.PatternFly</AssemblyName>
     <RootNamespace>Blorc.PatternFly</RootNamespace>
     <PackageId>Blorc.PatternFly</PackageId>
-    <PackageVersion>1.0.0-alpha0260</PackageVersion>
+    <PackageVersion>1.0.0-alpha0369</PackageVersion>
     <Description>PatternFly implementation for Blazor.</Description>
     <PackageTags>blazor;patternfly</PackageTags>
     <IsPackable>true</IsPackable>
@@ -29,7 +29,7 @@
     <CodeAnalysisRuleSet>Blorc.PatternFly.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Blorc.Core" Version="1.0.0-alpha0173" />
+    <PackageReference Include="Blorc.Core" Version="1.0.0-alpha0177" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.1.0" />
   </ItemGroup>
   <ItemGroup>
