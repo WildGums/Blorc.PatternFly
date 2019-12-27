@@ -31,11 +31,10 @@
 
         public event EventHandler CurrentItemInvalidated;
 
-        public void InvalidateCurrentItem(bool clicked)
+        public void InvalidateCurrentItem()
         {
-            _clicked = clicked;
-
-            ContainerNavigationComponent.InvalidateCurrentItem(clicked);
+            ContainerNavigationComponent.InvalidateCurrentItem();
+            IsExpanded = true;
         }
 
         public void MarkBranchAsCurrent()

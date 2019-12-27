@@ -4,7 +4,7 @@
 @inherits Blorc.PatternFly.Components.Navigation.NavigationItemComponent
 
 <li class="pf-c-nav__item">
-    <a class="pf-c-nav__link @GetIsCurrentClass()" aria-current="page" @onclick="OnItemClick">
+    <a class=@Class aria-current="page" @onclick="OnItemClick">
         @if (ChildContent != null)
         {
             @ChildContent

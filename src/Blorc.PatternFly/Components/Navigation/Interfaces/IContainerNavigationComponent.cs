@@ -6,7 +6,7 @@
     {
         event EventHandler CurrentItemInvalidated;
 
-        void InvalidateCurrentItem(bool clicked);
+        void InvalidateCurrentItem();
 
         void MarkBranchAsCurrent();
     }

@@ -11,7 +11,7 @@
 
         public event EventHandler CurrentItemInvalidated;
 
-        public void InvalidateCurrentItem(bool clicked)
+        public void InvalidateCurrentItem()
         {
             OnInvalidatedCurrent();
         }

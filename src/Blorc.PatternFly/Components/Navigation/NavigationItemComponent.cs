@@ -3,20 +3,24 @@
     using System;
     using System.Threading.Tasks;
     using Blorc.Components;
+    using Blorc.StateConverters;
     using Microsoft.AspNetCore.Components;
 
     public class NavigationItemComponent : BlorcComponentBase
     {
-        private bool _clicked;
-
-        protected string GetIsCurrentClass()
+        public NavigationItemComponent()
         {
-            if (IsCurrent)
-            {
-                return "pf-m-current";
-            }
+            CreateConverter()
+                .Fixed("pf-c-nav__link")
+                .If(() => IsCurrent, "pf-m-current")
+                .Watch(() => IsCurrent)
+                .Update(() => Class);
+        }
 
-            return string.Empty;
+        public string Class
+        {
+            get { return GetPropertyValue<string>(nameof(Class)); }
+            set { SetPropertyValue(nameof(Class), value); }
         }
 
         [Inject]
@@ -35,37 +39,43 @@
         public IContainerNavigationComponent ContainerNavigationComponent { get; set; }
 
 
-        public bool IsCurrent { get; private set; }
+        public bool IsCurrent
+        {
+            get { return GetPropertyValue<bool>(nameof(IsCurrent)); }
+            set { SetPropertyValue(nameof(IsCurrent), value); }
+        }
 
         protected override async Task OnInitializedAsync()
         {
             ContainerNavigationComponent.CurrentItemInvalidated += OnCurrentItemInvalidated;
+            if (NavigationManager.Uri.EndsWith(Link))
+            {
+                SetAsCurrent();
+            }
         }
 
         private void OnCurrentItemInvalidated(object sender, EventArgs e)
         {
-            if (!_clicked && IsCurrent)
+            if (IsCurrent)
             {
                 IsCurrent = false;
-                StateHasChanged();
             }
-
-            _clicked = false;
         }
 
         protected void OnItemClick()
         {
-            _clicked = true;
+            SetAsCurrent();
+            NavigationManager.NavigateTo(Link);
+        }
 
-            ContainerNavigationComponent.InvalidateCurrentItem(_clicked);
-
+        private void SetAsCurrent()
+        {
+            ContainerNavigationComponent.InvalidateCurrentItem();
             if (!IsCurrent)
             {
                 IsCurrent = true;
                 ContainerNavigationComponent.MarkBranchAsCurrent();
             }
-
-            NavigationManager.NavigateTo(Link);
         }
     }
 }
