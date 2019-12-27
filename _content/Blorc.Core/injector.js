@@ -11,15 +11,17 @@ window.BlorcInjector = {
     },
 
     injectScript: function (source, type) {
-        var head = document.getElementsByTagName('head')[0];
+        return new Promise((resolve, reject) => {
 
-        var script = document.createElement('script');
-        script.onload = function ()
-        {
-        };
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.onload = function () {
+                resolve();
+            };
 
-        script.src = source;
-        script.type = type;
-        head.appendChild(script);
+            script.src = source;
+            script.type = type;
+            head.appendChild(script);
+        });
     }
 };
