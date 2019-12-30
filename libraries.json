@@ -1,0 +1,14 @@
+{
+	"PatternFly": {
+		"imports": ["@patternfly/patternfly"],
+		"technologies": ["Frontend", "Web Development", "SPA"],
+		"description": "PatternFly is an open source design system created to enable consistency and usability across a wide range of applications and use cases.",
+		"language": "CSS"
+	},
+	"Blazor": {
+		"imports": ["Microsoft.AspNetCore"],
+		"technologies": ["Frontend", "Web Development", "SPA", " Razor", "WebAssembly"],
+		"description": "Blazor is a framework for building interactive client-side web UI with .NET",
+		"language": "C#"
+	}
+}	
