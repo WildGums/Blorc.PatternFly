@@ -1,10 +1,11 @@
 @using Blorc.Dom.Injectors
 @using Blorc.Components
+@using Blorc.PatternFly.Layouts
 @using Blorc.PatternFly.Components.Page
 @using Blorc.PatternFly.Components.Button
 
 
-@inherits BlorcLayoutComponentBase
+@inherits PatternFlyLayoutComponentBase
 
 <Page>
     <LogoContent>
@@ -22,11 +23,3 @@
         @Body
     </MainContent>
 </Page>
-
-@code {
-    protected override async Task OnInitializedAsync()
-    {
-        DocumentService.InjectHead(new Css("/patternfly/patternfly.css"));
-        DocumentService.InjectHead(new Css("/css/site.css"));
-    }
-}

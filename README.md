@@ -33,9 +33,11 @@ The ultimate goal of this library is to wrap all PatternFly components available
 - List
 - Modal
 - Nav
+- Page
 - Progress
 - Radio
 - Select
+- Table
 - Tabs
 - Text
 - Text area
@@ -50,12 +52,10 @@ The ultimate goal of this library is to wrap all PatternFly components available
 - Form
 - Login page
 - Options menu
-- Page
 - Pagination
 - Popover
 - Skip to content
 - Switch
-- Table
 - Wizard
 
 ## Layouts
@@ -84,8 +84,8 @@ http://blorc-patternfly.wildgums.com/
 
 - Install patternfly from npm repository in an external folder
 
-    `npm install patternfly --save`
+    `npm install @patternfly --save`
 
-- Update the following files and folders in `Blorc.PatternFly\content\patternfly\` with the files and folders in  `react\node_modules\@patternfly\patternfly\` 
+- Update the following files and folders in `Blorc.PatternFly\wwwroot\patternfly\` with the files and folders in  `react\node_modules\@patternfly\patternfly\` 
     - patternfly.css 
     - assets

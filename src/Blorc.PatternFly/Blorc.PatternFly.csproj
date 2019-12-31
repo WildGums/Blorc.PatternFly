@@ -51,6 +51,7 @@
   <ItemGroup>
     <Folder Include="App_Code\" />
     <Folder Include="Components\Icon\src\" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
   <Import Project="$(MSBuildProjectDirectory)\..\Directory.build.shared.explicit.props" Condition="Exists('$(MSBuildProjectDirectory)\..\Directory.build.shared.explicit.props')" />
   <Import Project="$(MSBuildProjectDirectory)\..\Directory.build.shared.mat.props" Condition="Exists('$(MSBuildProjectDirectory)\..\Directory.build.shared.mat.props')" />
