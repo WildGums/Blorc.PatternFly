@@ -82,6 +82,12 @@ http://blorc-patternfly.wildgums.com/
 
 ## Contributing
 
+If you would like support for any new component, you can get in touch by:
+
+- Creating tickets.
+- Contributing by pull requests.
+- Contributing via Open Collective.
+
 ### How to update Patternfly assets?
 
 - Install patternfly from npm repository in an external folder
