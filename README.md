@@ -4,7 +4,9 @@ Blazor wrappers for [PatternFly](https://www.patternfly.org/).
 
 To view the latest *develop* branch in action, visit the GitHub pages: http://blorc-patternfly.wildgums.com/
 
-The ultimate goal of this library is to wrap all PatternFly components available.
+The ultimate goal of this library is to wrap all PatternFly components and making them available as Blazor components.
+
+![](design/image.png)
 
 ## Components
 
