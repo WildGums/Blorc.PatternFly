@@ -2,6 +2,7 @@
 
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.ComponentModel;
@@ -161,6 +162,15 @@
 
         [Parameter]
         public EventHandler<EventArgs> Cleared { get; set; }
+
+        [Parameter]
+        public IEnumerable DataSource { get; set; }
+
+        [Parameter]
+        public Func<object, string> KeyFunc { get; set; }
+
+        [Parameter]
+        public Func<object, string> ValueFunc { get; set; }
 
         public string Text
         {

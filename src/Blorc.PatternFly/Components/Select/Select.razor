@@ -71,12 +71,46 @@
                     @PlaceholderItem
                 }*@
 
-                @Items
+                @if (DataSource is null)
+                {
+                    @Items
+                }
+                else
+                {
+                    foreach (var item in DataSource)
+                    {
+                        if (Variant == SelectVariant.Single)
+                        {
+                            <SelectOption Key="@KeyFunc(item)" Value="@ValueFunc(item)" />
+                        }
+                        else if (Variant == SelectVariant.Checkbox)
+                        {
+                            <CheckboxSelectOption Key="@KeyFunc(item)" Value="@ValueFunc(item)" />
+                        }
+                    }
+                }
             </ul>
         }
         else
         {
-            @Items
+            @if (DataSource is null)
+            {
+                @Items
+            }
+            else
+            {
+                foreach (var item in DataSource)
+                {
+                    if (Variant == SelectVariant.Single)
+                    {
+                        <SelectOption Key="@KeyFunc(item)" Value="@ValueFunc(item)" />
+                    }
+                    else if (Variant == SelectVariant.Checkbox)
+                    {
+                        <CheckboxSelectOption Key="@KeyFunc(item)" Value="@ValueFunc(item)" />
+                    }
+                }
+            }
         }
     </div>
 </CascadingValue>
