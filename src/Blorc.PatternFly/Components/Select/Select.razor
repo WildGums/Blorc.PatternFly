@@ -66,10 +66,10 @@
         @if (IsExpanded)
         {
             <ul aria-label="Select Input" aria-labelledby="@ToggleId" class="pf-c-select__menu" role="listbox">
-                @if (!string.IsNullOrWhiteSpace(PlaceholderText) && Variant == SelectVariant.Single)
+                @*@if (!string.IsNullOrWhiteSpace(PlaceholderText) && Variant == SelectVariant.Single)
                 {
                     @PlaceholderItem
-                }
+                }*@
 
                 @Items
             </ul>
