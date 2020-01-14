@@ -5,6 +5,7 @@
     using Blorc.Components;
     using Blorc.StateConverters;
     using Microsoft.AspNetCore.Components;
+    using Microsoft.AspNetCore.Components.Routing;
 
     public class NavigationItemComponent : BlorcComponentBase
     {
@@ -47,8 +48,18 @@
 
         protected override async Task OnInitializedAsync()
         {
+            NavigationManager.LocationChanged += NavigationManagerOnLocationChanged;
             ContainerNavigationComponent.CurrentItemInvalidated += OnCurrentItemInvalidated;
+
             if (NavigationManager.Uri.EndsWith(Link))
+            {
+                SetAsCurrent();
+            }
+        }
+
+        private void NavigationManagerOnLocationChanged(object sender, LocationChangedEventArgs e)
+        {
+            if (e.Location.EndsWith(Link))
             {
                 SetAsCurrent();
             }
@@ -64,7 +75,6 @@
 
         protected void OnItemClick()
         {
-            SetAsCurrent();
             NavigationManager.NavigateTo(Link);
         }
 
