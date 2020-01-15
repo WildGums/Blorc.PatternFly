@@ -48,12 +48,14 @@
 
         protected override async Task OnInitializedAsync()
         {
-            NavigationManager.LocationChanged += NavigationManagerOnLocationChanged;
             ContainerNavigationComponent.CurrentItemInvalidated += OnCurrentItemInvalidated;
-
-            if (NavigationManager.Uri.EndsWith(Link))
+            if (ContainerNavigationComponent.IsSynchronized)
             {
-                SetAsCurrent();
+                NavigationManager.LocationChanged += NavigationManagerOnLocationChanged;
+                if (NavigationManager.Uri.EndsWith(Link))
+                {
+                    SetAsCurrent();
+                }
             }
         }
 
@@ -75,6 +77,11 @@
 
         protected void OnItemClick()
         {
+            if (!ContainerNavigationComponent.IsSynchronized)
+            {
+                SetAsCurrent();
+            }
+
             NavigationManager.NavigateTo(Link);
         }
 

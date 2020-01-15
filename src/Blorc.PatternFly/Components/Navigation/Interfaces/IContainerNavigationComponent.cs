@@ -9,5 +9,7 @@
         void InvalidateCurrentItem();
 
         void MarkBranchAsCurrent();
+
+        bool IsSynchronized { get; }
     }
 }

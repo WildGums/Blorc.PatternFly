@@ -46,6 +46,14 @@
             }
         }
 
+        public bool IsSynchronized
+        {
+            get
+            {
+                return ContainerNavigationComponent.IsSynchronized;
+            }
+        }
+
         protected string GetExpandableNavItemClass()
         {
             return (GetIsExpandedClass() + " " + GetIsCurrentClass()).Trim();

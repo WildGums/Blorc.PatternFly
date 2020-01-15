@@ -21,6 +21,9 @@
             StateHasChanged();
         }
 
+        [Parameter]
+        public bool IsSynchronized { get; set; }
+
         protected virtual void OnInvalidatedCurrent()
         {
             CurrentItemInvalidated?.Invoke(this, EventArgs.Empty);
