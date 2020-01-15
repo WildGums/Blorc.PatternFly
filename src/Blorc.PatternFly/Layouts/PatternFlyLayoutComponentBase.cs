@@ -8,6 +8,7 @@
     {
         protected override async Task OnInitializedAsync()
         {
+            await base.OnInitializedAsync();
             DocumentService.InjectHead(new Css("_content/Blorc.PatternFly/patternfly/patternfly.css"));
         }
     }
