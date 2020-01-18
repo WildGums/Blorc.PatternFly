@@ -23,8 +23,7 @@
     <CodeAnalysisRuleSet>Blorc.PatternFly.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Blorc.Core" Version="1.0.0-alpha0188" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.1.0" />
+    <PackageReference Include="Blorc.Core" Version="1.0.0-alpha0190" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
