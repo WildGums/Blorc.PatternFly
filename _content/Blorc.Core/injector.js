@@ -23,5 +23,21 @@ window.BlorcInjector = {
             script.type = type;
             head.appendChild(script);
         });
+    },
+
+    injectLink: function (href, rel, type) {
+        return new Promise((resolve, reject) => {
+
+            var head = document.getElementsByTagName('head')[0];
+            var link = document.createElement('link');
+            link.onload = function () {
+                resolve();
+            };
+
+            link.href = href;
+            link.rel = rel;
+            link.type = type;
+            head.appendChild(link);
+        });
     }
 };
