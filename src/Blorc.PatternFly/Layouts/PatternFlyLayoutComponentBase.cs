@@ -1,15 +1,16 @@
 ﻿namespace Blorc.PatternFly.Layouts
 {
     using System.Threading.Tasks;
+
     using Blorc.Components;
-    using Blorc.Dom.Injectors;
+    using Blorc.Services;
 
     public class PatternFlyLayoutComponentBase : BlorcLayoutComponentBase
     {
         protected override async Task OnInitializedAsync()
         {
             await base.OnInitializedAsync();
-            DocumentService.InjectHead(new Css("_content/Blorc.PatternFly/patternfly/patternfly.css"));
+            await DocumentService.InjectAssemblyCSSFile(typeof(PatternFlyLayoutComponentBase).Assembly, "patternfly/patternfly.css");
         }
     }
 }
