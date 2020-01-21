@@ -3,10 +3,11 @@
     using System;
     using System.Threading.Tasks;
     using Blorc.Components;
+    using Blorc.Services;
+    using Blorc.Services.Interop;
+
     using Microsoft.AspNetCore.Components;
     using Microsoft.AspNetCore.Components.Web;
-    using Services;
-    using Services.Interop;
 
     public class TooltipComponent : BlorcComponentBase
     {

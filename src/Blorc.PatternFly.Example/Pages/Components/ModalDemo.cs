@@ -5,20 +5,21 @@
 
     using Blorc.Components;
     using Blorc.PatternFly.Components.Modal;
+    using Blorc.Services;
 
     public class ModalDemoComponent : BlorcComponentBase
     {
-        public Modal SimpleModal { get; set; }
+        public IUIVisualizationService SimpleModal { get; set; }
 
-        public ModalComponent SmallModal { get; set; }
+        public IUIVisualizationService SmallModal { get; set; }
 
-        public ModalComponent LargeModal { get; set; }
+        public IUIVisualizationService LargeModal { get; set; }
 
-        public PleaseWaitModalComponent PleaseWaitModal { get; set; }
+        public IExecutionService PleaseWaitModal { get; set; }
 
-        public PleaseWaitModalComponent PleaseWaitModalWithProgress { get; set; }
+        public IExecutionService PleaseWaitModalWithProgress { get; set; }
 
-        public PleaseWaitModalComponent PleaseWaitModalWithProgressAndBody { get; set; }
+        public IExecutionService PleaseWaitModalWithProgressAndBody { get; set; }
 
         public async Task DoSomething(ExecutionContext ctx)
         {

@@ -1,13 +1,16 @@
 ﻿@page "/components/modal"
+@using Blorc.Attributes
+@using Blorc.Services
 @using Blorc.PatternFly.Components.Modal
 @using Blorc.PatternFly.Components.Button
+@using Blorc.PatternFly.Services
 
 
 @inherits ModalDemoComponent
 
 <Metadata ComponentName="Modal" />
 
-<Todo ComponentName="Modal" >
+<Todo ComponentName="Modal">
     <TodoList>
         - Size customization via style
     </TodoList>
@@ -15,104 +18,131 @@
 
 <section class="ws-section ws-live-demo">
     <Example Title="Simple modal">
-        <Modal ShowCloseButton="true" @ref="SimpleModal" >
+        <Modal ShowCloseButton="true" @ref="_simpleModal">
             <Header>
                 Modal Header
             </Header>
             <Body>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-        est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                est laborum.
             </Body>
             <Footer>
-                <Button Variant="ButtonVariant.Secondary" OnClick=@((s,e) => SimpleModal.Close())>Cancel</Button>
-                <Button Variant="ButtonVariant.Primary" OnClick=@((s,e) => SimpleModal.Close())>Confirm</Button>
+                <Button Variant="ButtonVariant.Secondary" OnClick=@(async (s,e) => await SimpleModal.CloseAsync())>Cancel</Button>
+                <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await SimpleModal.CloseAsync())>Confirm</Button>
             </Footer>
         </Modal>
-        <Button Variant="ButtonVariant.Primary" OnClick=@((s,e) => SimpleModal.Show())>Show Modal</Button>
+        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await SimpleModal.ShowAsync())>Show Modal</Button>
     </Example>
 
     <Example Title="Modal (small)">
-        <Modal ShowCloseButton="true" @ref="SmallModal" Size="ModalSize.Small">
+        <Modal ShowCloseButton="true" @ref="_smallModal" Size="ModalSize.Small">
             <Header>
                 Modal Header
             </Header>
             <Body>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-        est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                est laborum.
             </Body>
             <Footer>
-                <Button Variant="ButtonVariant.Secondary" OnClick=@((s,e) => SmallModal.Close())>Cancel</Button>
-                <Button Variant="ButtonVariant.Primary" OnClick=@((s,e) => SmallModal.Close())>Confirm</Button>
+                <Button Variant="ButtonVariant.Secondary" OnClick=@(async (s,e) => await SmallModal.CloseAsync())>Cancel</Button>
+                <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await SmallModal.CloseAsync())>Confirm</Button>
             </Footer>
         </Modal>
-        <Button Variant="ButtonVariant.Primary" OnClick=@((s,e) => SmallModal.Show())>Show Small Modal</Button>
+        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await SmallModal.ShowAsync())>Show Small Modal</Button>
     </Example>
-    
+
     <Example Title="Modal (large)">
-        <Modal ShowCloseButton="true" @ref="LargeModal" Size="ModalSize.Large">
+        <Modal ShowCloseButton="true" @ref="_largeModal" Size="ModalSize.Large">
             <Header>
                 Modal Header
             </Header>
             <Body>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-        est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                est laborum.
             </Body>
             <Footer>
-                <Button Variant="ButtonVariant.Secondary" OnClick=@((s,e) => LargeModal.Close())>Cancel</Button>
-                <Button Variant="ButtonVariant.Primary" OnClick=@((s,e) => LargeModal.Close())>Confirm</Button>
+                <Button Variant="ButtonVariant.Secondary" OnClick=@(async (s,e) => await LargeModal.CloseAsync())>Cancel</Button>
+                <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await LargeModal.CloseAsync())>Confirm</Button>
             </Footer>
         </Modal>
-        <Button Variant="ButtonVariant.Primary" OnClick=@((s,e) => LargeModal.Show())>Show Small Modal</Button>
-    </Example> 
-    
+        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await LargeModal.ShowAsync())>Show Small Modal</Button>
+    </Example>
+
     <Example Title="Execute Async Task">
-            <PleaseWaitModal @ref="PleaseWaitModal" 
-                             Size="ModalSize.Small" 
-                             Action=@(ctx => DoSomething(ctx))>
-                <Header>
-                    Please wait...
-                </Header>
-            </PleaseWaitModal>
+        <PleaseWaitModal @ref="_pleaseWaitModal"
+                         Size="ModalSize.Small"
+                         Action=@(ctx => DoSomething(ctx))>
+            <Header>
+                Please wait...
+            </Header>
+        </PleaseWaitModal>
         <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await PleaseWaitModal.ExecuteAsync(true))>Show Please Wait</Button>
     </Example>
 
     <Example Title="Execute Async Task (Progress)">
-            <PleaseWaitModal @ref="PleaseWaitModalWithProgress" 
-                             Size="ModalSize.Small" 
-                             Action=@(ctx => DoSomething(ctx)) 
-                             ShowProgress="true" >
-                <Header>
-                    Please wait...
-                </Header>
-            </PleaseWaitModal>
+        <PleaseWaitModal @ref="_pleaseWaitModalWithProgress"
+                         Size="ModalSize.Small"
+                         Action=@(ctx => DoSomething(ctx))
+                         ShowProgress="true">
+            <Header>
+                Please wait...
+            </Header>
+        </PleaseWaitModal>
 
         <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await PleaseWaitModalWithProgress.ExecuteAsync())>Show Please Wait</Button>
     </Example>
     <Example Title="Execute Async Task (Progress & Body)">
-            <PleaseWaitModal @ref="PleaseWaitModalWithProgressAndBody" 
-                             Size="@ModalSize.Small" 
-                             Action=@(ctx => DoSomething(ctx)) 
-                             ShowProgress="true" >
-                <Header>
-                    Please wait...
-                </Header>
-                <Body>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                    est laborum.
-                </Body>
-            </PleaseWaitModal>
+        <PleaseWaitModal @ref="_pleaseWaitModalWithProgressAndBody"
+                         Size="@ModalSize.Small"
+                         Action=@(ctx => DoSomething(ctx))
+                         ShowProgress="true">
+            <Header>
+                Please wait...
+            </Header>
+            <Body>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                est laborum.
+            </Body>
+        </PleaseWaitModal>
         <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await PleaseWaitModalWithProgressAndBody.ExecuteAsync())>Show Please Wait</Button>
     </Example>
 </section>
+
+@code
+{
+    [InjectAsService(typeof(ModalUIVisualizationService), nameof(SimpleModal))]
+    private Modal _simpleModal;
+
+    [InjectAsService(typeof(ModalUIVisualizationService), nameof(SmallModal))]
+    private Modal _smallModal;
+
+    [InjectAsService(typeof(ModalUIVisualizationService), nameof(LargeModal))]
+    private Modal _largeModal;
+
+    [InjectAsService(typeof(PleaseWaitModalExecutionService), nameof(PleaseWaitModal))]
+    private PleaseWaitModal _pleaseWaitModal;
+
+    [InjectAsService(typeof(PleaseWaitModalExecutionService), nameof(PleaseWaitModalWithProgress))]
+    private PleaseWaitModal _pleaseWaitModalWithProgress;
+
+    [InjectAsService(typeof(PleaseWaitModalExecutionService), nameof(PleaseWaitModalWithProgressAndBody))]
+    private PleaseWaitModal _pleaseWaitModalWithProgressAndBody;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        InjectComponentReferenceAsService = true;
+    }
+}

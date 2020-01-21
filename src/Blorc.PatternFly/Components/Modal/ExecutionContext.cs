@@ -3,10 +3,10 @@
 //   Copyright (c) 2008 - 2019 WildGums. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
+
 namespace Blorc.PatternFly.Components.Modal
 {
-    using System;
-    using Core;
+    using Blorc.PatternFly.Core;
 
     public class ExecutionContext
     {

@@ -1,9 +1,13 @@
 ﻿namespace Blorc.PatternFly.Components.Modal
 {
     using System.ComponentModel;
+    using System.Threading.Tasks;
+
     using Blorc.Components;
+    using Blorc.Services;
+    using Blorc.StateConverters;
+
     using Microsoft.AspNetCore.Components;
-    using StateConverters;
 
     public class ModalComponent : BlorcComponentBase
     {
@@ -19,21 +23,56 @@
         }
 
         [Parameter]
+        public RenderFragment Body { get; set; }
+
+        public string Class { get; set; }
+
+        [Parameter]
+        public RenderFragment Footer { get; set; }
+
+        [Parameter]
+        public RenderFragment Header { get; set; }
+
+        [Parameter]
+        public bool IsVisble
+        {
+            get { return GetPropertyValue<bool>(nameof(IsVisble)); }
+            set { SetPropertyValue(nameof(IsVisble), value); }
+        }
+
+        [Parameter]
+        public bool ShowCloseButton { get; set; }
+
+        [Parameter]
         public ModalSize Size
         {
             get { return GetPropertyValue<ModalSize>(nameof(Size)); }
             set { SetPropertyValue(nameof(Size), value); }
         }
 
-        [Parameter] 
-        public bool ShowCloseButton { get; set; }
-
-
-        [Parameter] 
-        public bool IsVisble
+        public void Close()
         {
-            get { return GetPropertyValue<bool>(nameof(IsVisble)); }
-            set { SetPropertyValue(nameof(IsVisble), value); }
+            IsVisble = false;
+        }
+
+        public async Task CloseAsync()
+        {
+            await InvokeAsync(() => Close());
+        }
+
+        public void Show()
+        {
+            IsVisble = true;
+        }
+
+        public async Task ShowAsync()
+        {
+            await InvokeAsync(() => Show());
+        }
+
+        public async Task UpdateAsync()
+        {
+            await InvokeAsync(() => StateHasChanged());
         }
 
         protected override void OnPropertyChanged(PropertyChangedEventArgs e)
@@ -42,27 +81,6 @@
             {
                 StateHasChanged();
             }
-        }
-
-        [Parameter]
-        public RenderFragment Header { get; set; }
-
-        [Parameter]
-        public RenderFragment Body { get; set; }
-
-        [Parameter]
-        public RenderFragment Footer { get; set; }
-
-        public string Class { get; set; }
-
-        public void Close()
-        {
-            IsVisble = false;
-        }
-
-        public void Show()
-        {
-            IsVisble = true;
         }
     }
 }
