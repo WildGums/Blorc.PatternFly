@@ -2,6 +2,7 @@
 {
     using Blorc.PatternFly.Components.Modal;
     using Blorc.PatternFly.Services;
+    using Blorc.PatternFly.Services.Extensions;
     using Blorc.Services;
 
     using Microsoft.AspNetCore.Components.Builder;
@@ -14,8 +15,7 @@
             app.UseComponentServices(
                 options =>
                 {
-                    options.Map<Modal, ModalUIVisualizationService>();
-                    options.Map<PleaseWaitModal, PleaseWaitModalExecutionService>();
+                    options.MapBlorcPatternFly();
                 });
 
             app.AddComponent<App>("app");
@@ -24,9 +24,7 @@
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddBlorcCore();
-
-            services.AddTransient<PleaseWaitModalExecutionService>();
-            services.AddTransient<ModalUIVisualizationService>();
+            services.AddBlorcPatternFly();
         }
     }
 }
