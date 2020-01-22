@@ -122,27 +122,21 @@
 
 @code
 {
-    [InjectAsService(typeof(ModalUIVisualizationService), nameof(SimpleModal))]
+    [InjectComponentService(nameof(SimpleModal))]
     private Modal _simpleModal;
 
-    [InjectAsService(typeof(ModalUIVisualizationService), nameof(SmallModal))]
+    [InjectComponentService(nameof(SmallModal))]
     private Modal _smallModal;
 
-    [InjectAsService(typeof(ModalUIVisualizationService), nameof(LargeModal))]
+    [InjectComponentService(nameof(LargeModal))]
     private Modal _largeModal;
 
-    [InjectAsService(typeof(PleaseWaitModalExecutionService), nameof(PleaseWaitModal))]
+    [InjectComponentService(nameof(PleaseWaitModal))]
     private PleaseWaitModal _pleaseWaitModal;
 
-    [InjectAsService(typeof(PleaseWaitModalExecutionService), nameof(PleaseWaitModalWithProgress))]
+    [InjectComponentService(nameof(PleaseWaitModalWithProgress))]
     private PleaseWaitModal _pleaseWaitModalWithProgress;
 
-    [InjectAsService(typeof(PleaseWaitModalExecutionService), nameof(PleaseWaitModalWithProgressAndBody))]
+    [InjectComponentService(nameof(PleaseWaitModalWithProgressAndBody))]
     private PleaseWaitModal _pleaseWaitModalWithProgressAndBody;
-
-    protected override async Task OnInitializedAsync()
-    {
-        await base.OnInitializedAsync();
-        InjectComponentReferenceAsService = true;
-    }
 }

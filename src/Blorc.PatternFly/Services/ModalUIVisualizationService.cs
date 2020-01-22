@@ -6,29 +6,25 @@
 
 namespace Blorc.PatternFly.Services
 {
-    using System;
     using System.Threading.Tasks;
 
     using Blorc.PatternFly.Components.Modal;
     using Blorc.Services;
 
+    using Microsoft.AspNetCore.Components;
+
     public class ModalUIVisualizationService : IUIVisualizationService
     {
-        private readonly ModalComponent _modalComponent;
-
-        public ModalUIVisualizationService(ModalComponent modalComponent)
-        {
-            _modalComponent = modalComponent ?? throw new ArgumentNullException(nameof(modalComponent));
-        }
+        public ComponentBase Component { get; set; }
 
         public async Task CloseAsync()
         {
-            await _modalComponent.CloseAsync();
+            await ((ModalComponent)Component).CloseAsync();
         }
 
         public async Task ShowAsync()
         {
-            await _modalComponent.ShowAsync();
+            await ((ModalComponent)Component).ShowAsync();
         }
 
         public async Task UpdateAsync()

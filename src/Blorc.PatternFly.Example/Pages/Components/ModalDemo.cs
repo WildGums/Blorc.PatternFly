@@ -9,26 +9,26 @@
 
     public class ModalDemoComponent : BlorcComponentBase
     {
-        public IUIVisualizationService SimpleModal { get; set; }
+        protected IUIVisualizationService LargeModal { get; set; }
 
-        public IUIVisualizationService SmallModal { get; set; }
+        protected IExecutionService PleaseWaitModal { get; set; }
 
-        public IUIVisualizationService LargeModal { get; set; }
+        protected IExecutionService PleaseWaitModalWithProgress { get; set; }
 
-        public IExecutionService PleaseWaitModal { get; set; }
+        protected IExecutionService PleaseWaitModalWithProgressAndBody { get; set; }
 
-        public IExecutionService PleaseWaitModalWithProgress { get; set; }
+        protected IUIVisualizationService SimpleModal { get; set; }
 
-        public IExecutionService PleaseWaitModalWithProgressAndBody { get; set; }
+        protected IUIVisualizationService SmallModal { get; set; }
 
         public async Task DoSomething(ExecutionContext ctx)
         {
-            int total = 100;
-            for (int i = 0; i < total; i++)
+            var total = 100;
+            for (var i = 0; i < total; i++)
             {
-                int value = Convert.ToInt32(100.0d * i / total);
+                var value = Convert.ToInt32(100.0d * i / total);
 
-                if (ctx.State != null && ((bool)ctx.State))
+                if (ctx.State != null && (bool)ctx.State)
                 {
                     await Task.Delay(10);
                 }
@@ -37,6 +37,12 @@
                     await ctx.Progress.ReportAsync(value);
                 }
             }
+        }
+
+        protected override async Task OnInitializedAsync()
+        {
+            await base.OnInitializedAsync();
+            InjectComponentServices = true;
         }
     }
 }

@@ -6,18 +6,15 @@
     using Blorc.PatternFly.Components.Modal;
     using Blorc.Services;
 
+    using Microsoft.AspNetCore.Components;
+
     public class PleaseWaitModalExecutionService : IExecutionService
     {
-        private readonly PleaseWaitModalComponent _pleaseWaitModal;
-
-        public PleaseWaitModalExecutionService(PleaseWaitModalComponent pleaseWaitModal)
-        {
-            _pleaseWaitModal = pleaseWaitModal ?? throw new ArgumentNullException(nameof(pleaseWaitModal));
-        }
+        public ComponentBase Component { get; set; }
 
         public async Task ExecuteAsync(object state = null)
         {
-            await _pleaseWaitModal.ExecuteAsync(state);
+            await ((PleaseWaitModalComponent)Component).ExecuteAsync(state);
         }
     }
 }
