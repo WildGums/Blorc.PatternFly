@@ -3,16 +3,19 @@
 @using Blorc.PatternFly.Layouts
 @using Blorc.PatternFly.Components.Page
 @using Blorc.PatternFly.Components.Button
+@using Blorc.PatternFly.Components.AlertGroup
 
 
 @inherits PatternFlyLayoutComponentBase
 
+<AlertGroupContainer></AlertGroupContainer>
 <Page>
     <LogoContent>
         Blorc.PatternFly.Example
     </LogoContent>
     <ToolbarContent>
-        <Button Component="a" Variant="ButtonVariant.Primary" Href="https://github.com/wildgums/Blorc.patternfly">
+        <Button Component="a" Variant="ButtonVariant.Primary"
+                Href="https://github.com/wildgums/Blorc.patternfly">
             GitHub
         </Button>
     </ToolbarContent>

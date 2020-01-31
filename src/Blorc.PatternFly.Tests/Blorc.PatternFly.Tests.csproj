@@ -15,12 +15,12 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="9.0.0" />
     <PackageReference Include="Catel.Core" Version="5.12.2" />
-    <PackageReference Include="Catel.Fody" Version="4.3.0" PrivateAssets="all" />
+    <PackageReference Include="Catel.Fody" Version="4.4.0-alpha0078" PrivateAssets="all" />
     <PackageReference Include="Fody" Version="6.0.8" PrivateAssets="all">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
     <PackageReference Include="LoadAssembliesOnStartup.Fody" Version="4.3.0" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0-preview-20200116-01" />
     <PackageReference Include="ModuleInit.Fody" Version="2.1.0" PrivateAssets="all" />
     <PackageReference Include="Moq" Version="4.13.1" />
     <PackageReference Include="NUnit" Version="3.12.0" PrivateAssets="all" />

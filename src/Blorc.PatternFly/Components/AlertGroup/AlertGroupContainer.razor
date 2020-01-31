@@ -1,0 +1,15 @@
+﻿@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
+
+@inherits Blorc.PatternFly.Components.AlertGroup.AlertGroupContainerComponent
+
+<div>
+    @if (Items != null)
+    {
+        ////Console.WriteLine("Items.Count - " + Items.Count);
+        foreach (var item in Items)
+        {
+            <AlertGroup Description="@item.Description" AlertType="@item.AlertType" ShowCloseIconButton="@item.ShowCloseIcon"></AlertGroup>
+        }
+    }
+</div>

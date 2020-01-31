@@ -1,0 +1,61 @@
+﻿@page "/components/alert-group"
+
+@using Blorc.PatternFly.Components.Alert
+@using Blorc.PatternFly.Components.Button
+@using Blorc.PatternFly.Components.AlertGroup
+
+<Metadata ComponentName="AlertGroup" />
+
+@inject INotificationService NotificationService;
+
+
+<section class="ws-section ws-live-demo">
+    <Example Title="Alert Group types">
+        <Button Variant="ButtonVariant.Primary" OnClick=@((e,s) =>
+                                                        {
+                                                            var notification = new Notification()
+                                                            {
+                                                                AlertType = AlertType.Info,
+                                                                Description = "Info Alert",
+                                                                ShowCloseIcon = true
+                                                            };
+
+                                                            NotificationService.Notifications.Add(notification);
+                                                        })>
+            Show Info Alert
+        </Button>
+        <br />
+        <br />
+        <Button Variant="ButtonVariant.Primary" OnClick=@((e,s) =>
+                                                        {
+                                                            var notification = new Notification()
+                                                            {
+                                                                AlertType = AlertType.Success,
+                                                                Description = "Success Alert",
+                                                                ShowCloseIcon = true
+                                                            };
+
+                                                            NotificationService.Notifications.Add(notification);
+                                                        })>
+            Show Success Alert
+        </Button>
+        <br />
+        <br />
+        <Button Variant="ButtonVariant.Primary" OnClick=@((e,s) =>
+                                                        {
+                                                            var notification = new Notification()
+                                                            {
+                                                                AlertType = AlertType.Danger,
+                                                                Description = "Danger Alert",
+                                                                ShowCloseIcon = true
+                                                            };
+                                                            
+                                                            NotificationService.Notifications.Add(notification);
+                                                        })>
+            Show Danger Alert
+        </Button>
+
+    </Example>
+</section>
+
+
