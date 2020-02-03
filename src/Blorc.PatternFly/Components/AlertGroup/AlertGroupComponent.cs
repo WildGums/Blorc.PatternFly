@@ -1,6 +1,5 @@
 ﻿namespace Blorc.PatternFly.Components.AlertGroup
 {
-    using System;
     using Alert;
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;

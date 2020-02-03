@@ -11,5 +11,6 @@
             @this.AddTransient<PleaseWaitModalExecutionService>();
             @this.AddTransient<ModalUIVisualizationService>();
         }
+
     }
 }

@@ -5,38 +5,36 @@
 
 @if (!IsClosed)
 {
-    <ul class="pf-c-alert-group pf-m-toast">
-        <li>
-            <div class="@Class" aria-label="@AriaLabel"
-                 aria-live="polite" aria-atomic="false">
-                <div class="pf-c-alert__icon">
-                    <i class="@AlertGroupIcon" aria-hidden="true"></i>
-                </div>
-                <h4 class="pf-c-alert__title">
-                    <span class="pf-screen-reader">Success alert:</span>
-                    @Description
-                </h4>
-
-                @if (ShowCloseIconButton)
-                {
-                    <div class="pf-c-alert__action">
-                        <button aria-label="Close Success alert: alert: Toast Success Alert"
-                                class="pf-c-button pf-m-plain" type="button"
-                                @onclick="@Close">
-                            <i class="fas fa-times" aria-hidden="true"></i>
-                        </button>
-                    </div>
-                }
-                else if (ActionContent != null)
-                {
-                    <div class="pf-c-alert__action">
-                        @ActionContent
-                    </div>
-                }
-
+    <li>
+        <div class="@Class" aria-label="@AriaLabel"
+             aria-live="polite" aria-atomic="false">
+            <div class="pf-c-alert__icon">
+                <i class="@AlertGroupIcon" aria-hidden="true"></i>
             </div>
-        </li>
-    </ul>
+            <h4 class="pf-c-alert__title">
+                <span class="pf-screen-reader">Success alert:</span>
+                @Description
+            </h4>
+
+            @if (ShowCloseIconButton)
+            {
+                <div class="pf-c-alert__action">
+                    <button aria-label="Close Success alert: alert: Toast Success Alert"
+                            class="pf-c-button pf-m-plain" type="button"
+                            @onclick="@Close">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </button>
+                </div>
+            }
+            else if (ActionContent != null)
+            {
+                <div class="pf-c-alert__action">
+                    @ActionContent
+                </div>
+            }
+
+        </div>
+    </li>
 }
 
 

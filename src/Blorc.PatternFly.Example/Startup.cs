@@ -25,6 +25,7 @@
         {
             services.AddBlorcCore();
             services.AddBlorcPatternFly();
+            //services.AddAlertGroupContainerConfiguration();
         }
     }
 }

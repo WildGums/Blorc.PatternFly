@@ -2,14 +2,15 @@
 @using Microsoft.AspNetCore.Components.Web
 
 @inherits Blorc.PatternFly.Components.AlertGroup.AlertGroupContainerComponent
-
-<div>
+   
+<ul class="pf-c-alert-group pf-m-toast @Class">
     @if (Items != null)
     {
-        ////Console.WriteLine("Items.Count - " + Items.Count);
         foreach (var item in Items)
         {
-            <AlertGroup Description="@item.Description" AlertType="@item.AlertType" ShowCloseIconButton="@item.ShowCloseIcon"></AlertGroup>
+            <AlertGroup Description="@item.Description"
+                        AlertType="@item.AlertType"
+                        ShowCloseIconButton="@item.ShowCloseIcon"></AlertGroup>
         }
     }
-</div>
+</ul>

@@ -6,52 +6,21 @@
 
 <Metadata ComponentName="AlertGroup" />
 
-@inject INotificationService NotificationService;
-
+@inherits AlertGroupDemoComponent;
 
 <section class="ws-section ws-live-demo">
     <Example Title="Alert Group types">
-        <Button Variant="ButtonVariant.Primary" OnClick=@((e,s) =>
-                                                        {
-                                                            var notification = new Notification()
-                                                            {
-                                                                AlertType = AlertType.Info,
-                                                                Description = "Info Alert",
-                                                                ShowCloseIcon = true
-                                                            };
-
-                                                            NotificationService.Notifications.Add(notification);
-                                                        })>
+        <Button Variant="ButtonVariant.Primary" OnClick="@ShowInfoAlert">
             Show Info Alert
         </Button>
         <br />
         <br />
-        <Button Variant="ButtonVariant.Primary" OnClick=@((e,s) =>
-                                                        {
-                                                            var notification = new Notification()
-                                                            {
-                                                                AlertType = AlertType.Success,
-                                                                Description = "Success Alert",
-                                                                ShowCloseIcon = true
-                                                            };
-
-                                                            NotificationService.Notifications.Add(notification);
-                                                        })>
+        <Button Variant="ButtonVariant.Primary" OnClick="@ShowSuccessAlert">
             Show Success Alert
         </Button>
         <br />
         <br />
-        <Button Variant="ButtonVariant.Primary" OnClick=@((e,s) =>
-                                                        {
-                                                            var notification = new Notification()
-                                                            {
-                                                                AlertType = AlertType.Danger,
-                                                                Description = "Danger Alert",
-                                                                ShowCloseIcon = true
-                                                            };
-                                                            
-                                                            NotificationService.Notifications.Add(notification);
-                                                        })>
+        <Button Variant="ButtonVariant.Primary" OnClick="@ShowDangerAlert">
             Show Danger Alert
         </Button>
 

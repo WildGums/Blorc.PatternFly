@@ -1,13 +1,12 @@
 ﻿namespace Blorc.PatternFly.Components.AlertGroup
 {
-    using System;
     using System.Collections.Generic;
-    using System.Collections.ObjectModel;
     using System.Collections.Specialized;
     using System.Linq;
     using Alert;
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
+
     public class AlertGroupContainerComponent : BlorcComponentBase
     {
         [Inject]
@@ -24,7 +23,6 @@
             NotificationService.Notifications.CollectionChanged += NotificationsOnCollectionChanged;
         }
 
-
         private void NotificationsOnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if(e.Action == NotifyCollectionChangedAction.Add)
@@ -39,17 +37,13 @@
             get => GetPropertyValue<List<Notification>>(nameof(Items));
             set => SetPropertyValue(nameof(Items), value);
         }
+
+        public string Class => NotificationService.Configuration.PositionClass;
+
+
     }
 
-    public interface INotificationService
-    {
-        ObservableCollection<Notification> Notifications { get;  }
-    }
-
-    public class NotificationService : INotificationService
-    {
-        public ObservableCollection<Notification> Notifications { get;  } = new ObservableCollection<Notification>();
-    }
+  
 
     public class Notification : BlorcComponentBase
     {
