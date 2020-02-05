@@ -30,7 +30,9 @@
             {
                 AlertType = AlertType.Info,
                 Description = "Info Alert",
-                ShowCloseIcon = true
+                ShowCloseIcon = false,
+                VisibleStateDuration = 15,
+                MaximumOpacity = 80
             };
             NotificationService.Notifications.Add(notification);
         }
@@ -42,7 +44,9 @@
             {
                 AlertType = AlertType.Success,
                 Description = "Success Alert",
-                ShowCloseIcon = true
+                ShowCloseIcon = true,
+                VisibleStateDuration = 6,
+                MaximumOpacity = 100
             };
             NotificationService.Notifications.Add(notification);
         }
@@ -53,7 +57,9 @@
             {
                 AlertType = AlertType.Danger,
                 Description = "Danger Alert",
-                ShowCloseIcon = true
+                ShowCloseIcon = true,
+                VisibleStateDuration = 5,
+                MaximumOpacity = 50
             };
             NotificationService.Notifications.Add(notification);
         }

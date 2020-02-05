@@ -3,14 +3,22 @@
 
 @inherits Blorc.PatternFly.Components.AlertGroup.AlertGroupContainerComponent
    
-<ul class="pf-c-alert-group pf-m-toast @Class">
-    @if (Items != null)
-    {
-        foreach (var item in Items)
-        {
-            <AlertGroup Description="@item.Description"
-                        AlertType="@item.AlertType"
-                        ShowCloseIconButton="@item.ShowCloseIcon"></AlertGroup>
-        }
-    }
-</ul>
+  
+@if (Items != null)
+{
+    <div class="pf-c-alert-group pf-m-toast @PositionClass">
+        <CascadingValue Value=this>
+            @foreach (var item in Items)
+            {
+                <AlertGroup Description="@item.Description"
+                            AlertType="@item.AlertType"
+                            MaximumOpacity="@item.MaximumOpacity"
+                            VisibleStateDuration="@item.VisibleStateDuration"
+                            ShowCloseIconButton="@item.ShowCloseIcon"></AlertGroup>
+            }
+        </CascadingValue>
+
+    </div>
+}
+       
+       

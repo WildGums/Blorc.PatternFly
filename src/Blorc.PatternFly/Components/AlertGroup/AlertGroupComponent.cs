@@ -1,5 +1,6 @@
 ﻿namespace Blorc.PatternFly.Components.AlertGroup
 {
+    using System.Threading;
     using Alert;
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
@@ -7,11 +8,11 @@
 
     public class AlertGroupComponent : BlorcComponentBase
     {
-
+     
         public AlertGroupComponent()
         {
             CreateConverter()
-                .Fixed("pf-c-alert")
+                .Fixed("pf-c-alert pf-c-alert-group-animation")
                 .If(() => AlertType == AlertType.Success, "pf-m-success")
                 .If(() => AlertType == AlertType.Danger, "pf-m-danger")
                 .If(() => AlertType == AlertType.Info, "pf-m-info")
@@ -32,6 +33,24 @@
                 .If(() => AlertType == AlertType.Info, "fa-info-circle")
                 .Watch(() => AlertType)
                 .Update(() => AlertGroupIcon);
+
+            Timer = new Timer(TimerOnTick, null,0,1000);
+
+        }
+
+        private void TimerOnTick(object state)
+        {
+            VisibleStateDuration--;
+            if (VisibleStateDuration >= 0)
+            {
+                IsClosed = false;
+            }
+            else
+            {
+                IsClosed = true;
+                Timer.Dispose();
+            }
+            StateHasChanged();
         }
 
         public string Class { get; set; }
@@ -54,12 +73,19 @@
 
         public bool IsClosed { get; set; }
 
+        private Timer Timer { get; }
+
+        [Parameter] 
+        public int VisibleStateDuration { get; set; } = 5;
+
+        [Parameter]
+        public int MaximumOpacity { get; set; } = 80;
+
         protected void Close()
         {
             IsClosed = true;
             StateHasChanged();
         }
-
-
-    }
+       
+}
 }

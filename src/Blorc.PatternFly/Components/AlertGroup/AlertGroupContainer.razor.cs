@@ -1,8 +1,11 @@
 ﻿namespace Blorc.PatternFly.Components.AlertGroup
 {
+    using System;
     using System.Collections.Generic;
     using System.Collections.Specialized;
+    using System.Dynamic;
     using System.Linq;
+    using System.Threading;
     using Alert;
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
@@ -38,7 +41,7 @@
             set => SetPropertyValue(nameof(Items), value);
         }
 
-        public string Class => NotificationService.Configuration.PositionClass;
+        public string PositionClass => NotificationService.Configuration.PositionClass;
 
 
     }
@@ -64,12 +67,17 @@
             set => SetPropertyValue(nameof(ShowCloseIcon), value);
         }
 
-        public int ShowTransitionDuration { get; set; }
+        public int MaximumOpacity
+        {
+            get => GetPropertyValue<int>(nameof(MaximumOpacity));
+            set => SetPropertyValue(nameof(MaximumOpacity), value);
+        }
 
-        public int VisibleStateDuration { get; set; }
+        public int VisibleStateDuration
+        {
+            get => GetPropertyValue<int>(nameof(VisibleStateDuration));
+            set => SetPropertyValue(nameof(VisibleStateDuration), value);
+        }
 
-        public int HideTransitionDuration { get; set; }
-
-        public bool ShowProgressBar { get; set; }
     }
 }
