@@ -21,6 +21,10 @@
 
         protected IUIVisualizationService SmallModal { get; set; }
 
+        public ModalDemoComponent() : base(true)
+        {
+        }
+
         public async Task DoSomething(ExecutionContext ctx)
         {
             var total = 100;
@@ -37,12 +41,6 @@
                     await ctx.Progress.ReportAsync(value);
                 }
             }
-        }
-
-        protected override async Task OnInitializedAsync()
-        {
-            await base.OnInitializedAsync();
-            InjectComponentServices = true;
         }
     }
 }
