@@ -1,6 +1,6 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras">
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.0</TargetFrameworks>
     <AssemblyName>Blorc.PatternFly.Tests</AssemblyName>
     <RootNamespace>Blorc.PatternFly.Tests</RootNamespace>
     <PackageId>WebGums.Tests</PackageId>
