@@ -1,6 +1,5 @@
 ﻿namespace Blorc.PatternFly.Services
 {
-    using System;
     using System.Threading.Tasks;
 
     using Blorc.PatternFly.Components.Modal;
