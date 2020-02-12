@@ -15,15 +15,14 @@
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             
             builder.RootComponents.Add<App>("app");
+
             builder.Services.AddBlorcCore();
             builder.Services.AddBlorcPatternFly();
 
-            var build = builder.Build();
-
-            var componentServiceFactory = build.Services.GetService<IComponentServiceFactory>();
-            componentServiceFactory.MapBlorcPatternFly();
-
-            await build.RunAsync();
+            await builder
+                .Build()
+                .MapComponentServices(options => options.MapBlorcPatternFly())
+                .RunAsync();
         }
     }
 }

@@ -45,6 +45,6 @@
     <Folder Include="wwwroot\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Blorc.Core" Version="1.0.0-alpha0221" />
+    <PackageReference Include="Blorc.Core" Version="1.0.0-alpha0223" />
   </ItemGroup>
 </Project>
