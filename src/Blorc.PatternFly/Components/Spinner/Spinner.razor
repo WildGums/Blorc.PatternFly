@@ -1,0 +1,13 @@
+﻿@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
+
+@inherits Blorc.PatternFly.Components.Spinner.SpinnerComponent
+
+@if (IsVisible)
+{
+    <span class=@Class role="progressbar" aria-valuetext="Loading...">
+        <span class="pf-c-spinner__clipper"></span>
+        <span class="pf-c-spinner__lead-ball"></span>
+        <span class="pf-c-spinner__tail-ball"></span>
+    </span>
+}

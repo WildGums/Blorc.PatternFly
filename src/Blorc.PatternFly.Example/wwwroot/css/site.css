@@ -7,6 +7,13 @@ app {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+.ws-example {
+    background-color: #fff;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+
 .ws-preview .pf-l-bullseye {
     padding: 1rem;
     border-width: 2px;
