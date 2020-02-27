@@ -2,13 +2,15 @@
 
 <br /><br />
 
-<h3 id="@Slug" class="pf-c-title pf-m-lg ws-example-heading">
-    <a href="#@Slug" class="anchor"></a>
-    <b>@Title</b>
-</h3>
-
-<br />
-
 <div class="ws-example">
-    @ChildContent
+    <h3 id="@Slug" class="pf-c-title pf-m-lg ws-example-heading">
+        <a href="#@Slug" class="ws-heading-anchor" tabindex="-1" aria-hidden="true">
+        @Title
+        </a>
+    </h3>
+    <div class="ws-preview">
+        <div class="ws-preview-html">
+        @ChildContent
+        </div>
+    </div>
 </div>
