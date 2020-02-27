@@ -13,6 +13,7 @@
             base.OnInitialized();
             SelectedItems2 = new ObservableCollection<string> {"1"};
             SelectedItems4 = new ObservableCollection<string> { "1" };
+            SelectedItems5 = new ObservableCollection<string> { "1", "7" };
             DataSource = new List<Tuple<string, string>>()
             {
                 new Tuple<string, string>("0", "Active"),
@@ -20,10 +21,23 @@
                 new Tuple<string, string>("2", "Paused"),
                 new Tuple<string, string>("3", "Warning"),
                 new Tuple<string, string>("4", "Restarted"),
+            };    
+            
+            DataSource2 = new List<Tuple<string, string, string>>()
+            {
+                new Tuple<string, string, string>("Status", "0", "Active"),
+                new Tuple<string, string, string>("Status", "1", "Cancelled"),
+                new Tuple<string, string, string>("Status", "2", "Paused"),
+                new Tuple<string, string, string>("Status", "3", "Warning"),
+                new Tuple<string, string, string>("Status", "4", "Restarted"),
+                new Tuple<string, string, string>("Vendor Names", "5", "Dell"),
+                new Tuple<string, string, string>("Vendor Names", "6", "Samsung"),
+                new Tuple<string, string, string>("Vendor Names", "7", "Hewlett-Packard"),
             };
         }
 
         public List<Tuple<string, string>> DataSource { get; set; }
+        public List<Tuple<string, string, string>> DataSource2 { get; set; }
 
         public ObservableCollection<string> SelectedItems
         {
@@ -47,6 +61,12 @@
         {
             get => GetPropertyValue<ObservableCollection<string>>(nameof(SelectedItems4));
             set => SetPropertyValue(nameof(SelectedItems4), value);
+        }
+
+        public ObservableCollection<string> SelectedItems5
+        {
+            get => GetPropertyValue<ObservableCollection<string>>(nameof(SelectedItems5));
+            set => SetPropertyValue(nameof(SelectedItems5), value);
         }
 
         protected override void OnPropertyChanged(PropertyChangedEventArgs e)

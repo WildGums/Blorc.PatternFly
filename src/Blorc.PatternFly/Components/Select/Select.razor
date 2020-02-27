@@ -1,6 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Components
 @using Microsoft.AspNetCore.Components.Web
 @using System
+@using System.Linq
 @using Blorc.PatternFly.Components.Icon
 @using Blorc.PatternFly.Components.Badge
 
@@ -62,7 +63,6 @@
 
             <SortDownIcon Class="pf-c-select__toggle-arrow" />
         </button>
-
         @if (IsExpanded)
         {
             <ul aria-label="Select Input" aria-labelledby="@ToggleId" class="pf-c-select__menu" role="listbox">
@@ -77,40 +77,35 @@
                 }
                 else
                 {
-                    foreach (var item in DataSource)
+                    if (GroupFunc == null)
                     {
-                        if (Variant == SelectVariant.Single)
+                        foreach (var item in DataSource)
                         {
-                            <SelectOption Key="@KeyFunc(item)" Value="@ValueFunc(item)" />
+                            if (Variant == SelectVariant.Single)
+                            {
+                                <SelectOption Key="@KeyFunc(item)" Value="@ValueFunc(item)" />
+                            }
+                            else if (Variant == SelectVariant.Checkbox)
+                            {
+                                <CheckboxSelectOption Key="@KeyFunc(item)" Value="@ValueFunc(item)" />
+                            }
                         }
-                        else if (Variant == SelectVariant.Checkbox)
+                    }
+                    else if(Variant == SelectVariant.Checkbox)
+                    {
+                        var groupedDataSource = DataSource.OfType<object>().GroupBy(item => GroupFunc(item));
+                        foreach (var group in groupedDataSource)
                         {
-                            <CheckboxSelectOption Key="@KeyFunc(item)" Value="@ValueFunc(item)" />
+                            <CheckboxSelectGroup Label="@group.Key" Key="@group.Key">
+                                @foreach (var item in group)
+                                {
+                                    <CheckboxSelectOption Key="@KeyFunc(item)" Value="@ValueFunc(item)" />
+                                }
+                            </CheckboxSelectGroup>
                         }
                     }
                 }
             </ul>
-        }
-        else
-        {
-            @if (DataSource is null)
-            {
-                @Items
-            }
-            else
-            {
-                foreach (var item in DataSource)
-                {
-                    if (Variant == SelectVariant.Single)
-                    {
-                        <SelectOption Key="@KeyFunc(item)" Value="@ValueFunc(item)" />
-                    }
-                    else if (Variant == SelectVariant.Checkbox)
-                    {
-                        <CheckboxSelectOption Key="@KeyFunc(item)" Value="@ValueFunc(item)" />
-                    }
-                }
-            }
         }
     </div>
 </CascadingValue>

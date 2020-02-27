@@ -205,6 +205,26 @@
                     KeyFunc=@((o) => ((System.Tuple<string, string>)o).Item1) ValueFunc=@((o) => ((System.Tuple<string, string>)o).Item2)>
             </Select>
         </div>
+</Example>   
+
+
+<Example Title="Select input binding with data source (CheckBoxGroup)">
+        <div>
+            <span id="checkbox-select-id" hidden>
+                Title
+            </span>
+            <Select Variant="@SelectVariant.Checkbox"
+                    Label="Select Input"
+                    IsExpanded="false"
+                    PlaceholderText="Filter by status"
+                    AriaLabelledBy="checkbox-select-id"
+                    @bind-SelectedItems="SelectedItems4"
+                    DataSource=@DataSource2
+                    GroupFunc=@((o) => ((System.Tuple<string, string, string>)o).Item1) 
+                    KeyFunc=@((o) => ((System.Tuple<string, string, string>)o).Item2) 
+                    ValueFunc=@((o) => ((System.Tuple<string, string, string>)o).Item3)>
+            </Select>
+        </div>
     </Example>
 
     <Example Title="Select input binding with data source (Set SelectedItems)">

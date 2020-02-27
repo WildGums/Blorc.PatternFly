@@ -170,7 +170,10 @@
         public Func<object, string> KeyFunc { get; set; }
 
         [Parameter]
-        public Func<object, string> ValueFunc { get; set; }
+        public Func<object, string> ValueFunc { get; set; }     
+        
+        [Parameter]
+        public Func<object, string> GroupFunc { get; set; }
 
         public string Text
         {
@@ -215,7 +218,7 @@
             SelectedItems.Add(key);
 
             // TODO: review if this is required
-            RaisePropertyChanged(nameof(SelectedItems));
+            // RaisePropertyChanged(nameof(SelectedItems));
 
             if (Variant == SelectVariant.Single || Variant == SelectVariant.Typeahead)
             {
@@ -223,7 +226,7 @@
             }
             else
             {
-                StateHasChanged();
+               StateHasChanged();
             }
         }
 
@@ -232,7 +235,7 @@
             if (SelectedItems.Remove(key))
             {
                 // TODO: review if this is required
-                RaisePropertyChanged(nameof(SelectedItems));
+                // RaisePropertyChanged(nameof(SelectedItems));
             }
 
             if (Variant == SelectVariant.Single)
