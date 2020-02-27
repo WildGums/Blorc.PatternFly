@@ -7,12 +7,30 @@ app {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-/*.ws-example {
+.ws-example {
     background-color: #fff;
     margin-top: 25px;
     margin-bottom: 25px;
-}*/
+}
 
+.ws-preview {
+    padding: 1rem;
+    background-color: #fff;
+    border-bottom: 1px solid #f8f8f8;
+    -webkit-transition: width .2s ease-in-out;
+    transition: width .2s ease-in-out;
+}
+
+.ws-heading-anchor {
+    color: #000;
+    /*float: left;
+    margin-left: -32px;*/
+}
+
+.ws-example .ws-example-heading {
+    padding: var(--pf-global--spacer--md);
+    border-bottom: var(--pf-global--BorderWidth--sm) solid #f8f8f8;
+}
 
 .ws-preview .pf-l-bullseye {
     padding: 1rem;
