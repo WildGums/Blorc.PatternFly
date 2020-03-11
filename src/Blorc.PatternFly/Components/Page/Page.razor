@@ -6,26 +6,42 @@
 <CascadingValue Value=@this>
     <div class="pf-c-page">
         <!--TODO: Review why set z-index is required (modal components are not properly working) -->
-        <header role="banner" class="pf-c-page__header">
-            <div class="pf-c-page__header-brand">
-                <div class="pf-c-page__header-brand-toggle">
-                    <button id="nav-toggle" aria-controls="page-sidebar" aria-label="Global navigation" class="pf-c-button pf-m-plain" type="button" @onclick="OnClickNavbarToogle">
-                        <svg style="vertical-align: -0.125em" fill="currentColor" height="1em" width="1em" viewBox="0 0 448 512" aria-hidden="true" role="img">
-                            <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" transform=""></path>
-                        </svg>
-                    </button>
-                </div>
-                @LogoContent
-            </div>
+        @if (SidebarContent != null || LogoContent != null || ToolbarContent != null)
+        {
+            <header role="banner" class="pf-c-page__header">
+                @if (SidebarContent != null || LogoContent != null)
+                {
+                    <div class="pf-c-page__header-brand">
+                        @if (SidebarContent != null)
+                        {
+                            <div class="pf-c-page__header-brand-toggle">
+                                <button id="nav-toggle" aria-controls="page-sidebar" aria-label="Global navigation" class="pf-c-button pf-m-plain" type="button" @onclick="OnClickNavbarToogle">
+                                    <svg style="vertical-align: -0.125em" fill="currentColor" height="1em" width="1em" viewBox="0 0 448 512" aria-hidden="true" role="img">
+                                        <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" transform=""></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        }
 
-            <div class="pf-c-page__header-tools">
-                @ToolbarContent
-            </div>
-        </header>
+                        @LogoContent
+                    </div>
+                }
 
-        <Sidebar @ref="Sidebar">
-            @SidebarContent
-        </Sidebar>
+                @if (ToolbarContent != null)
+                {
+                    <div class="pf-c-page__header-tools">
+                        @ToolbarContent
+                    </div>
+                }
+            </header>
+        }
+
+        @if (SidebarContent != null)
+        {
+            <Sidebar @ref="Sidebar">
+                @SidebarContent
+            </Sidebar>
+        }
 
         <main role="main" class="pf-c-page__main" tabindex="-1" style="z-index: unset">
             <section class="pf-c-page__main-section">
