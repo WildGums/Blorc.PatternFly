@@ -1,0 +1,56 @@
+﻿@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
+
+@inherits PaginationComponent
+
+
+  
+
+
+    <div class="pf-c-pagination pf-m-compact" id="pagination-options-menu-top-13">
+        <div class="pf-c-pagination__total-items">
+            <b>@(PageFirstItemIndex + 1)<!-- --> - <!-- -->@(PageLastItemIndex + 1)</b> <!-- -->of <b>@ItemsCount</b>
+        </div>
+        <!--TODO: Add expanded options -->
+        <div class="pf-c-options-menu">
+            <div class="pf-c-options-menu__toggle pf-m-plain pf-m-text">
+                <span class="pf-c-options-menu__toggle-text">
+                    <b>@(PageFirstItemIndex + 1)<!-- --> - <!-- -->@(PageLastItemIndex + 1)</b> <!-- -->of <b>@ItemsCount</b>
+                </span>
+                @*<button aria-label="Items per page" id="pagination-options-menu-top-toggle-7" class="  pf-c-options-menu__toggle-button" type="button" aria-expanded="false">
+                    <svg style="vertical-align: -0.125em" fill="currentColor" height="1em" width="1em" viewBox="0 0 320 512" aria-hidden="true" role="img" class=""><path d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z" transform=""></path></svg>
+                </button>*@
+            </div>
+        </div>
+        @if (IsCompact)
+        {
+            <nav class="pf-c-pagination__nav" aria-label="Pagination">
+                @if (PageIndex == 0)
+                {
+                    <button data-action="previous" aria-label="Go to previous page" class="pf-c-button pf-m-plain" disabled="" type="button">
+                        <svg style="vertical-align: -0.125em" fill="currentColor" height="1em" width="1em" viewBox="0 0 256 512" aria-hidden="true" role="img"><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z" transform=""></path></svg>
+                    </button>
+                }
+                else
+                {
+                    <button data-action="previous" aria-label="Go to previous page" class="pf-c-button pf-m-plain" type="button" @onclick="OnPrevPageButtonPressed">
+                        <svg style="vertical-align: -0.125em" fill="currentColor" height="1em" width="1em" viewBox="0 0 256 512" aria-hidden="true" role="img"><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z" transform=""></path></svg>
+                    </button>
+
+                }
+
+                @if (PageIndex == PagesCount - 1)
+                {
+                    <button data-action="next" aria-label="Go to next page" class="pf-c-button pf-m-plain" disabled="" type="button">
+                        <svg style="vertical-align: -0.125em" fill="currentColor" height="1em" width="1em" viewBox="0 0 256 512" aria-hidden="true" role="img"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" transform=""></path></svg>
+                    </button>
+                }
+                else
+                {
+                    <button data-action="next" aria-label="Go to next page" class="pf-c-button pf-m-plain" type="button" @onclick="OnNextPageButtonPressed">
+                        <svg style="vertical-align: -0.125em" fill="currentColor" height="1em" width="1em" viewBox="0 0 256 512" aria-hidden="true" role="img"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" transform=""></path></svg>
+                    </button>
+                }
+            </nav>
+        }
+    </div>
