@@ -18,8 +18,7 @@
                 .Fixed("pf-c-pagination")
                 .If(() => IsCompact, "pf-m-compact")
                 .Watch(() => IsCompact)
-                .Update(() => Class)
-                .DoNotForceComponentUpdate();
+                .Update(() => Class);
 
             CreateConverter()
                 .Fixed("pf-c-options-menu")
@@ -27,7 +26,15 @@
                 .Watch(() => IsOptionsExpanded)
                 .Update(() => OptionsClass);
 
+            CreateConverter()
+                .Fixed("pf-c-options-menu__toggle pf-m-plain pf-m-text")
+                .If(() => IsDisabled, "pf-m-disabled")
+                .Watch(() => IsDisabled)
+                .Update(() => OptionsToogleClass);
+
+            IsOptionsExpanded = false;
             IsCompact = false;
+            IsDisabled = false;
         }
 
         public string Class
@@ -60,6 +67,20 @@
             set
             {
                 SetPropertyValue(nameof(IsCompact), value);
+            }
+        }
+
+        [Parameter]
+        public bool IsDisabled
+        {
+            get
+            {
+                return GetPropertyValue<bool>(nameof(IsDisabled));
+            }
+
+            set
+            {
+                SetPropertyValue(nameof(IsDisabled), value);
             }
         }
 
@@ -122,6 +143,12 @@
         public EventHandler<PaginationStateChangedEventArgs> OnStateChanged { get; set; }
 
         public string OptionsClass
+        {
+            get;
+            set;
+        }
+
+        public string OptionsToogleClass
         {
             get;
             set;
