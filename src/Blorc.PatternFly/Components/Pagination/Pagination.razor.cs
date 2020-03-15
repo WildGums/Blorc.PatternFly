@@ -14,14 +14,40 @@
     {
         public PaginationComponent()
         {
-            CreateConverter().Fixed("pf-c-pagination")
-                .If(() => IsCompact, "pf-m-compact").Watch(() => IsCompact)
-                .Update(() => Class);
+            CreateConverter()
+                .Fixed("pf-c-pagination")
+                .If(() => IsCompact, "pf-m-compact")
+                .Watch(() => IsCompact)
+                .Update(() => Class)
+                .DoNotForceComponentUpdate();
 
-            CreateConverter().Fixed("pf-c-options-menu").If(() => IsOptionsExpanded, "pf-m-expanded").Watch(() => IsOptionsExpanded).Update(() => OptionsClass);
+            CreateConverter()
+                .Fixed("pf-c-options-menu")
+                .If(() => IsOptionsExpanded, "pf-m-expanded")
+                .Watch(() => IsOptionsExpanded)
+                .Update(() => OptionsClass);
+
+            IsCompact = false;
         }
 
-        public string Class { get; set; }
+        public string Class
+        {
+            get;
+            set;
+        }
+
+        public int CurrentPage
+        {
+            get
+            {
+                return GetPropertyValue<int>(nameof(CurrentPage));
+            }
+
+            set
+            {
+                SetPropertyValue(nameof(CurrentPage), value);
+            }
+        }
 
         [Parameter]
         public bool IsCompact
@@ -95,7 +121,11 @@
         [Parameter]
         public EventHandler<PaginationStateChangedEventArgs> OnStateChanged { get; set; }
 
-        public string OptionsClass { get; set; }
+        public string OptionsClass
+        {
+            get;
+            set;
+        }
 
         public int PageFirstItemIndex
         {
@@ -152,9 +182,23 @@
             return option == ItemsPerPage;
         }
 
+        protected void OnFirstPageButtonPressed()
+        {
+            CurrentPage = 1;
+        }
+
+        protected override void OnInitialized()
+        {
+        }
+
+        protected void OnLastPageButtonPressed()
+        {
+            CurrentPage = PagesCount;
+        }
+
         protected void OnNextPageButtonPressed()
         {
-            SetPageIndex(PageIndex + 1);
+            CurrentPage++;
         }
 
         protected override void OnParametersSet()
@@ -165,19 +209,23 @@
                 if (itemsPerPage != ItemsPerPage)
                 {
                     ItemsPerPage = itemsPerPage;
-                    PageIndex = 0;
+                    CurrentPage = 1;
                 }
             }
         }
 
         protected void OnPrevPageButtonPressed()
         {
-            SetPageIndex(PageIndex - 1);
+            CurrentPage--;
         }
 
         protected override void OnPropertyChanged(PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == nameof(IsOptionsExpanded) && IsOptionsExpanded)
+            if (e.PropertyName == nameof(CurrentPage))
+            {
+                PageIndex = CurrentPage - 1;
+            }
+            else if (e.PropertyName == nameof(IsOptionsExpanded) && IsOptionsExpanded)
             {
                 StateHasChanged();
             }
@@ -197,12 +245,7 @@
         {
             ItemsPerPage = option;
             IsOptionsExpanded = false;
-            SetPageIndex(0);
-        }
-
-        private void SetPageIndex(int pageIndex)
-        {
-            PageIndex = pageIndex;
+            CurrentPage = 1;
         }
     }
 }

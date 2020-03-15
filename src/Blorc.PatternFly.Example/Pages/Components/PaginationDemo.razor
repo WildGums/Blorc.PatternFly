@@ -7,6 +7,10 @@
 <Todo ComponentName="Pagination" />
 
 <section class="ws-section ws-live-demo">
+    <Example Title="Top">
+        <Pagination ItemsCount="100" ItemsPerPageOptions=@(new[] { 10, 20, 50, 100 }) OnStateChanged=@((s, e) => Console.WriteLine(e.Offset + "-" + e.Limit)) />
+    </Example>    
+    
     <Example Title="Compact">
         <Pagination IsCompact="true" ItemsCount="100" ItemsPerPage="20" OnStateChanged=@((s, e) => Console.WriteLine(e.Offset + "-" + e.Limit)) />
     </Example>
