@@ -36,6 +36,7 @@ The ultimate goal of this library is to wrap all PatternFly components and makin
 - Modal
 - Nav
 - Page
+- Pagination
 - Progress
 - Radio
 - Select
@@ -54,7 +55,6 @@ The ultimate goal of this library is to wrap all PatternFly components and makin
 - Form
 - Login page
 - Options menu
-- Pagination
 - Popover
 - Skip to content
 - Switch
