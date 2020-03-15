@@ -1,5 +1,10 @@
 ﻿namespace Blorc.PatternFly.Components.Pagination
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Linq;
+
     using Blorc.Components;
     using Blorc.StateConverters;
 
@@ -12,6 +17,8 @@
             CreateConverter().Fixed("pf-c-pagination")
                 .If(() => IsCompact, "pf-m-compact").Watch(() => IsCompact)
                 .Update(() => Class);
+
+            CreateConverter().Fixed("pf-c-options-menu").If(() => IsOptionsExpanded, "pf-m-expanded").Watch(() => IsOptionsExpanded).Update(() => OptionsClass);
         }
 
         public string Class { get; set; }
@@ -27,6 +34,19 @@
             set
             {
                 SetPropertyValue(nameof(IsCompact), value);
+            }
+        }
+
+        public bool IsOptionsExpanded
+        {
+            get
+            {
+                return GetPropertyValue<bool>(nameof(IsOptionsExpanded));
+            }
+
+            set
+            {
+                SetPropertyValue(nameof(IsOptionsExpanded), value);
             }
         }
 
@@ -59,7 +79,23 @@
         }
 
         [Parameter]
-        public EventCallback<PaginationEventArgs> OnStateChanged { get; set; }
+        public IEnumerable<int> ItemsPerPageOptions
+        {
+            get
+            {
+                return GetPropertyValue<IEnumerable<int>>(nameof(ItemsPerPageOptions));
+            }
+
+            set
+            {
+                SetPropertyValue(nameof(ItemsPerPageOptions), value);
+            }
+        }
+
+        [Parameter]
+        public EventHandler<PaginationStateChangedEventArgs> OnStateChanged { get; set; }
+
+        public string OptionsClass { get; set; }
 
         public int PageFirstItemIndex
         {
@@ -106,18 +142,67 @@
             }
         }
 
+        protected string GetOptionClass(int option)
+        {
+            return IsOptionSelected(option) ? "pf-m-selected pf-c-options-menu__menu-item" : "pf-c-options-menu__menu-item";
+        }
+
+        protected bool IsOptionSelected(int option)
+        {
+            return option == ItemsPerPage;
+        }
+
         protected void OnNextPageButtonPressed()
         {
-            PageIndex++;
-            StateHasChanged();
-            InvokeAsync(() => OnStateChanged.InvokeAsync(new PaginationEventArgs(PageFirstItemIndex, ItemsPerPage)));
+            SetPageIndex(PageIndex + 1);
+        }
+
+        protected override void OnParametersSet()
+        {
+            if (ItemsPerPageOptions != null && ItemsPerPageOptions.Any())
+            {
+                var itemsPerPage = ItemsPerPageOptions.First();
+                if (itemsPerPage != ItemsPerPage)
+                {
+                    ItemsPerPage = itemsPerPage;
+                    PageIndex = 0;
+                }
+            }
         }
 
         protected void OnPrevPageButtonPressed()
         {
-            PageIndex--;
-            StateHasChanged();
-            InvokeAsync(() => OnStateChanged.InvokeAsync(new PaginationEventArgs(PageFirstItemIndex, ItemsPerPage)));
+            SetPageIndex(PageIndex - 1);
+        }
+
+        protected override void OnPropertyChanged(PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(IsOptionsExpanded) && IsOptionsExpanded)
+            {
+                StateHasChanged();
+            }
+            else if (e.PropertyName == nameof(PageIndex))
+            {
+                RaisePaginationStateChanged(new PaginationStateChangedEventArgs(PageFirstItemIndex, ItemsPerPage));
+                StateHasChanged();
+            }
+        }
+
+        protected virtual void RaisePaginationStateChanged(PaginationStateChangedEventArgs e)
+        {
+            OnStateChanged?.Invoke(this, e);
+        }
+
+        protected void SetItemsPerPage(int option)
+        {
+            ItemsPerPage = option;
+            IsOptionsExpanded = false;
+            SetPageIndex(0);
+        }
+
+        private void SetPageIndex(int pageIndex)
+        {
+            PageIndex = pageIndex;
         }
     }
 }

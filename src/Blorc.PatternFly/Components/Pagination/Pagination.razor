@@ -4,23 +4,54 @@
 @inherits PaginationComponent
 
 
-  
-
-
-    <div class="pf-c-pagination pf-m-compact" id="pagination-options-menu-top-13">
+<div class="pf-c-pagination pf-m-compact" id="pagination-options-menu-top-13">
         <div class="pf-c-pagination__total-items">
             <b>@(PageFirstItemIndex + 1)<!-- --> - <!-- -->@(PageLastItemIndex + 1)</b> <!-- -->of <b>@ItemsCount</b>
         </div>
         <!--TODO: Add expanded options -->
         <div class="pf-c-options-menu">
-            <div class="pf-c-options-menu__toggle pf-m-plain pf-m-text">
-                <span class="pf-c-options-menu__toggle-text">
-                    <b>@(PageFirstItemIndex + 1)<!-- --> - <!-- -->@(PageLastItemIndex + 1)</b> <!-- -->of <b>@ItemsCount</b>
-                </span>
-                @*<button aria-label="Items per page" id="pagination-options-menu-top-toggle-7" class="  pf-c-options-menu__toggle-button" type="button" aria-expanded="false">
-                    <svg style="vertical-align: -0.125em" fill="currentColor" height="1em" width="1em" viewBox="0 0 320 512" aria-hidden="true" role="img" class=""><path d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z" transform=""></path></svg>
-                </button>*@
-            </div>
+            @if (ItemsPerPageOptions != null)
+            {
+                <div class=@OptionsClass>
+                    <div class="pf-c-options-menu__toggle pf-m-plain pf-m-text">
+                        <span class="pf-c-options-menu__toggle-text"><b>@(PageFirstItemIndex + 1) - @(PageLastItemIndex + 1)</b> of <b>@ItemsCount</b> </span>
+                        <button aria-label="Items per page" id="pagination-options-menu-top-toggle-36" class="pf-c-options-menu__toggle-button" type="button" aria-expanded="true" @onclick=@(()=> IsOptionsExpanded =!IsOptionsExpanded )>
+                            <svg fill="currentColor" height="1em" width="1em" viewBox="0 0 320 512" aria-hidden="true" role="img" class="" style="vertical-align: -0.125em;">
+                                <path d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z" transform=""></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    @if (IsOptionsExpanded)
+                    {
+                        <ul aria-labelledby="pagination-options-menu-top-toggle" class="pf-c-options-menu__menu" role="menu">
+                            @foreach (var option in ItemsPerPageOptions)
+                            {
+                                <li role="menuitem">
+                                    <button tabindex="-1" data-action="per-page-@option" type="button" class="@GetOptionClass(option)" @onclick=@(()=>SetItemsPerPage(option))>
+                                        @option
+                                        <span class="pf-c-pagination__menu-text"> per page</span>
+                                        @if (IsOptionSelected(option))
+                                        {
+                                            <i class="pf-c-options-menu__menu-item-icon">
+                                                <svg fill="currentColor" height="1em" width="1em" viewBox="0 0 512 512" aria-hidden="true" role="img" style="vertical-align: -0.125em;">
+                                                    <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" transform=""></path>
+                                                </svg>
+                                            </i>
+                                        }
+                                    </button>
+                                </li>
+                            }
+                        </ul>
+                    }
+                </div>
+            }
+            else
+            {
+                <div class="pf-c-options-menu__toggle pf-m-plain pf-m-text">
+                    <span class="pf-c-options-menu__toggle-text"><b>@(PageFirstItemIndex + 1) - @(PageLastItemIndex + 1)</b> of <b>@ItemsCount</b> </span>
+                </div>
+            }
         </div>
         @if (IsCompact)
         {
