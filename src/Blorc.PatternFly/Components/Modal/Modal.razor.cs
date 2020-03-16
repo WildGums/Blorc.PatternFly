@@ -1,10 +1,11 @@
 ﻿namespace Blorc.PatternFly.Components.Modal
 {
+    using System;
     using System.ComponentModel;
     using System.Threading.Tasks;
 
     using Blorc.Components;
-    using Blorc.Services;
+    using Blorc.PatternFly.Components.Container;
     using Blorc.StateConverters;
 
     using Microsoft.AspNetCore.Components;
@@ -28,16 +29,19 @@
         public string Class { get; set; }
 
         [Parameter]
+        public EventHandler CloseButtonPressed { get; set; }
+
+        [Parameter]
         public RenderFragment Footer { get; set; }
 
         [Parameter]
         public RenderFragment Header { get; set; }
 
         [Parameter]
-        public bool IsVisble
+        public bool IsOpen
         {
-            get { return GetPropertyValue<bool>(nameof(IsVisble)); }
-            set { SetPropertyValue(nameof(IsVisble), value); }
+            get { return GetPropertyValue<bool>(nameof(IsOpen)); }
+            set { SetPropertyValue(nameof(IsOpen), value); }
         }
 
         [Parameter]
@@ -50,9 +54,17 @@
             set { SetPropertyValue(nameof(Size), value); }
         }
 
+        [CascadingParameter]
+        public TargetContainerComponent TargetContainer { get; set; }
+
         public void Close()
         {
-            IsVisble = false;
+            if (TargetContainer == null)
+            {
+                IsOpen = false;
+            }
+
+            RaiseCloseButtonPressed();
         }
 
         public async Task CloseAsync()
@@ -62,7 +74,10 @@
 
         public void Show()
         {
-            IsVisble = true;
+            if (TargetContainer == null)
+            {
+                IsOpen = true;
+            }
         }
 
         public async Task ShowAsync()
@@ -75,12 +90,26 @@
             await InvokeAsync(() => StateHasChanged());
         }
 
+        protected override void OnParametersSet()
+        {
+            base.OnParametersSet();
+            if (TargetContainer != null)
+            {
+                IsOpen = true;
+            }
+        }
+
         protected override void OnPropertyChanged(PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == nameof(IsVisble))
+            if (e.PropertyName == nameof(IsOpen))
             {
                 StateHasChanged();
             }
+        }
+
+        protected virtual void RaiseCloseButtonPressed()
+        {
+            CloseButtonPressed?.Invoke(this, EventArgs.Empty);
         }
     }
 }

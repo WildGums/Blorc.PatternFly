@@ -3,6 +3,7 @@
 @using Blorc.Services
 @using Blorc.PatternFly.Components.Modal
 @using Blorc.PatternFly.Components.Button
+@using Blorc.PatternFly.Components.Container
 @using Blorc.PatternFly.Services
 
 
@@ -17,119 +18,127 @@
 </Todo>
 
 <section class="ws-section ws-live-demo">
+
     <Example Title="Simple modal">
-        <Modal ShowCloseButton="true" @ref="_simpleModal">
-            <Header>
-                Modal Header
-            </Header>
-            <Body>
+        <SourceContainer @ref="_simpleModalSourceContainer">
+            <Modal ShowCloseButton="true" CloseButtonPressed=@(async (e,s) => await SimpleModalSourceContainerService.HideContentAsync())>
+                <Header>
+                    Modal Header
+                </Header>
+                <Body>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
                 magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
                 pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
                 est laborum.
-            </Body>
-            <Footer>
-                <Button Variant="ButtonVariant.Secondary" OnClick=@(async (s,e) => await SimpleModal.CloseAsync())>Cancel</Button>
-                <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await SimpleModal.CloseAsync())>Confirm</Button>
-            </Footer>
-        </Modal>
-        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await SimpleModal.ShowAsync())>Show Modal</Button>
+                </Body>
+                <Footer>
+                    <Button Variant="ButtonVariant.Secondary" OnClick=@(async (e,s) => await SimpleModalSourceContainerService.HideContentAsync())>Cancel</Button>
+                    <Button Variant="ButtonVariant.Primary" OnClick=@(async (e,s) => await SimpleModalSourceContainerService.HideContentAsync())>Confirm</Button>
+                </Footer>
+            </Modal>
+        </SourceContainer>
+        <Button Variant="ButtonVariant.Primary" OnClick=@(async (e,s) => await SimpleModalSourceContainerService.ShowContentAsync())>Show Modal </Button>
     </Example>
 
     <Example Title="Modal (small)">
-        <Modal ShowCloseButton="true" @ref="_smallModal" Size="ModalSize.Small">
-            <Header>
-                Modal Header
-            </Header>
-            <Body>
+        <SourceContainer @ref="_smallModalSourceContainer">
+            <Modal ShowCloseButton="true" Size="ModalSize.Small" CloseButtonPressed=@(async (e,s) => await SmallModalSourceContainerService.HideContentAsync())>
+                <Header>
+                    Modal Header
+                </Header>
+                <Body>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
                 magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
                 pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
                 est laborum.
-            </Body>
-            <Footer>
-                <Button Variant="ButtonVariant.Secondary" OnClick=@(async (s,e) => await SmallModal.CloseAsync())>Cancel</Button>
-                <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await SmallModal.CloseAsync())>Confirm</Button>
-            </Footer>
-        </Modal>
-        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await SmallModal.ShowAsync())>Show Small Modal</Button>
+                </Body>
+                <Footer>
+                    <Button Variant="ButtonVariant.Secondary" OnClick=@(async (s, e)=> await SmallModalSourceContainerService.HideContentAsync())>Cancel
+                    </Button>
+                    <Button Variant="ButtonVariant.Primary" OnClick=@(async (s, e) => await SmallModalSourceContainerService.HideContentAsync())>Confirm</Button>
+                </Footer>
+            </Modal>
+        </SourceContainer>
+        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s, e)=> await SmallModalSourceContainerService.ShowContentAsync())>Show Small Modal</Button>
     </Example>
 
     <Example Title="Modal (large)">
-        <Modal ShowCloseButton="true" @ref="_largeModal" Size="ModalSize.Large">
-            <Header>
-                Modal Header
-            </Header>
-            <Body>
+        <SourceContainer @ref="_largeModalSourceContainer">
+            <Modal ShowCloseButton="true" Size="ModalSize.Large" CloseButtonPressed=@(async (e,s) => await LargeModalSourceContainerService.HideContentAsync())>
+                <Header>
+                    Modal Header
+                </Header>
+                <Body>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
                 magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
                 pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
                 est laborum.
-            </Body>
-            <Footer>
-                <Button Variant="ButtonVariant.Secondary" OnClick=@(async (s,e) => await LargeModal.CloseAsync())>Cancel</Button>
-                <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await LargeModal.CloseAsync())>Confirm</Button>
-            </Footer>
-        </Modal>
-        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await LargeModal.ShowAsync())>Show Small Modal</Button>
+                </Body>
+                <Footer>
+                    <Button Variant="ButtonVariant.Secondary" OnClick=@(async (e,s) => await LargeModalSourceContainerService.HideContentAsync())>Cancel</Button>
+                    <Button Variant="ButtonVariant.Primary" OnClick=@(async (e,s) => await LargeModalSourceContainerService.HideContentAsync())>Confirm</Button>
+                </Footer>
+            </Modal>
+        </SourceContainer>
+        <Button Variant="ButtonVariant.Primary" OnClick=@(async (e,s) => await LargeModalSourceContainerService.ShowContentAsync())>Show Large Modal</Button>
     </Example>
 
     <Example Title="Execute Async Task">
         <PleaseWaitModal @ref="_pleaseWaitModal"
-                         Size="ModalSize.Small"
-                         Action=@(ctx => DoSomething(ctx))>
+                          Size="ModalSize.Small"
+                          Action=@(ctx => DoSomething(ctx))>
             <Header>
                 Please wait...
             </Header>
         </PleaseWaitModal>
-        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await PleaseWaitModal.ExecuteAsync(true))>Show Please Wait</Button>
+        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s, e) => await PleaseWaitModal.ExecuteAsync(true))>Show Please Wait</Button>
     </Example>
 
     <Example Title="Execute Async Task (Progress)">
         <PleaseWaitModal @ref="_pleaseWaitModalWithProgress"
-                         Size="ModalSize.Small"
-                         Action=@(ctx => DoSomething(ctx))
-                         ShowProgress="true">
+                          Size="ModalSize.Small"
+                          Action=@(ctx => DoSomething(ctx))
+                          ShowProgress="true">
             <Header>
                 Please wait...
             </Header>
         </PleaseWaitModal>
 
-        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await PleaseWaitModalWithProgress.ExecuteAsync())>Show Please Wait</Button>
+        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s, e) => await PleaseWaitModalWithProgress.ExecuteAsync())>Show Please Wait</Button>
     </Example>
     <Example Title="Execute Async Task (Progress & Body)">
         <PleaseWaitModal @ref="_pleaseWaitModalWithProgressAndBody"
-                         Size="@ModalSize.Small"
-                         Action=@(ctx => DoSomething(ctx))
-                         ShowProgress="true">
+                          Size="@ModalSize.Small"
+                          Action=@(ctx => DoSomething(ctx))
+                          ShowProgress="true">
             <Header>
                 Please wait...
             </Header>
             <Body>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+            est laborum.
             </Body>
         </PleaseWaitModal>
-        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s,e) => await PleaseWaitModalWithProgressAndBody.ExecuteAsync())>Show Please Wait</Button>
+        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s, e) => await PleaseWaitModalWithProgressAndBody.ExecuteAsync())>Show Please Wait</Button>
     </Example>
 </section>
 
 @code
 {
-    [InjectComponentService(nameof(SimpleModal))]
-    private Modal _simpleModal;
-
-    [InjectComponentService(nameof(SmallModal))]
-    private Modal _smallModal;
-
-    [InjectComponentService(nameof(LargeModal))]
-    private Modal _largeModal;
+    [InjectComponentService(nameof(SimpleModalSourceContainerService))]
+    private SourceContainer _simpleModalSourceContainer;
+    
+    [InjectComponentService(nameof(SmallModalSourceContainerService))]
+    private SourceContainer _smallModalSourceContainer;     
+    
+    [InjectComponentService(nameof(LargeModalSourceContainerService))]
+    private SourceContainer _largeModalSourceContainer;  
 
     [InjectComponentService(nameof(PleaseWaitModal))]
     private PleaseWaitModal _pleaseWaitModal;

@@ -1,11 +1,25 @@
 ﻿namespace Blorc.PatternFly.Components.Page
 {
     using Blorc.Components;
+    using Blorc.PatternFly.Services.Interfaces;
 
     using Microsoft.AspNetCore.Components;
 
     public class PageComponent : BlorcComponentBase
     {
+        public PageComponent()
+            : base(true)
+        {
+            IncludeTargetContainer = true;
+        }
+
+        [Parameter]
+        public bool IncludeTargetContainer
+        {
+            get => GetPropertyValue<bool>(nameof(IncludeTargetContainer));
+            set => SetPropertyValue(nameof(IncludeTargetContainer), value);
+        }
+
         [Parameter]
         public RenderFragment LogoContent { get; set; }
 
@@ -25,6 +39,8 @@
 
         [Parameter]
         public RenderFragment ToolbarContent { get; set; }
+
+        protected ITargetContainerService TargetContainerService { get; set; }
 
         protected void OnClickNavbarToogle()
         {

@@ -6,7 +6,9 @@
 
 namespace Blorc.PatternFly.Services.Extensions
 {
+    using Blorc.PatternFly.Components.Container;
     using Blorc.PatternFly.Components.Modal;
+    using Blorc.PatternFly.Services.Interfaces;
     using Blorc.Services;
 
     public static class IComponentServiceFactoryExtensions
@@ -15,6 +17,9 @@ namespace Blorc.PatternFly.Services.Extensions
         {
             @this.Map<Modal, ModalUIVisualizationService>();
             @this.Map<PleaseWaitModal, PleaseWaitModalExecutionService>();
+
+            @this.Map<TargetContainer, ITargetContainerService>();
+            @this.Map<SourceContainer, ISourceContainerService>();
         }
     }
 }

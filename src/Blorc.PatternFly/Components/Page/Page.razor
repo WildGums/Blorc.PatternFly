@@ -1,9 +1,17 @@
-﻿@using Microsoft.AspNetCore.Components
+﻿@using Blorc.Attributes
+@using Blorc.PatternFly.Components.Container
+@using Microsoft.AspNetCore.Components
 @using Microsoft.AspNetCore.Components.Web
 
 @inherits PageComponent
 
 <CascadingValue Value=@this>
+
+    @if (IncludeTargetContainer)
+    {
+        <TargetContainer @ref="_targetContainer" />
+    }
+
     <div class="pf-c-page">
         <!--TODO: Review why set z-index is required (modal components are not properly working) -->
         @if (SidebarContent != null || LogoContent != null || ToolbarContent != null)
@@ -43,8 +51,8 @@
             </Sidebar>
         }
 
-        <main role="main" class="pf-c-page__main" tabindex="-1" style="z-index: unset">
-            <section class="pf-c-page__main-section" >
+        <main role="main" class="pf-c-page__main" tabindex="-1">
+            <section class="pf-c-page__main-section">
                 @MainContent
             </section>
             @* <section class="pf-c-page__main-section pf-m-no-padding pf-m-light">Section with no padding</section> *@
@@ -68,3 +76,9 @@
     @*     </div> *@
     @* </section> *@
 </CascadingValue>
+
+@code
+{
+    [InjectComponentService(nameof(TargetContainerService))]
+    private TargetContainer _targetContainer;
+}

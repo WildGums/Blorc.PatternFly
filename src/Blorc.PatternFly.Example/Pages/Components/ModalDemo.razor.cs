@@ -5,11 +5,19 @@
 
     using Blorc.Components;
     using Blorc.PatternFly.Components.Modal;
+    using Blorc.PatternFly.Services.Interfaces;
     using Blorc.Services;
 
     public class ModalDemoComponent : BlorcComponentBase
     {
+        public ModalDemoComponent()
+            : base(true)
+        {
+        }
+
         protected IUIVisualizationService LargeModal { get; set; }
+
+        protected ISourceContainerService LargeModalSourceContainerService { get; set; }
 
         protected IExecutionService PleaseWaitModal { get; set; }
 
@@ -19,11 +27,11 @@
 
         protected IUIVisualizationService SimpleModal { get; set; }
 
+        protected ISourceContainerService SimpleModalSourceContainerService { get; set; }
+
         protected IUIVisualizationService SmallModal { get; set; }
 
-        public ModalDemoComponent() : base(true)
-        {
-        }
+        protected ISourceContainerService SmallModalSourceContainerService { get; set; }
 
         public async Task DoSomething(ExecutionContext ctx)
         {
@@ -41,6 +49,16 @@
                     await ctx.Progress.ReportAsync(value);
                 }
             }
+        }
+
+        public async Task HideSimpleModal()
+        {
+            await SimpleModalSourceContainerService.HideContentAsync();
+        }
+
+        public async Task ShowSimpleModal()
+        {
+            await SimpleModalSourceContainerService.ShowContentAsync();
         }
     }
 }
