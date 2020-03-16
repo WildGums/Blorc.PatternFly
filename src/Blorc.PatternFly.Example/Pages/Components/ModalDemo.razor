@@ -18,72 +18,65 @@
 </Todo>
 
 <section class="ws-section ws-live-demo">
-
     <Example Title="Simple modal">
-        <SourceContainer @ref="_simpleModalSourceContainer">
-            <Modal ShowCloseButton="true" CloseButtonPressed=@(async (e,s) => await SimpleModalSourceContainerService.HideContentAsync())>
-                <Header>
-                    Modal Header
-                </Header>
-                <Body>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                est laborum.
-                </Body>
-                <Footer>
-                    <Button Variant="ButtonVariant.Secondary" OnClick=@(async (e,s) => await SimpleModalSourceContainerService.HideContentAsync())>Cancel</Button>
-                    <Button Variant="ButtonVariant.Primary" OnClick=@(async (e,s) => await SimpleModalSourceContainerService.HideContentAsync())>Confirm</Button>
-                </Footer>
-            </Modal>
-        </SourceContainer>
-        <Button Variant="ButtonVariant.Primary" OnClick=@(async (e,s) => await SimpleModalSourceContainerService.ShowContentAsync())>Show Modal </Button>
+        <UIModal @ref="_simpleUIModal" ShowCloseButton="true"  CloseButtonPressed=@(async (e,s) => await SimpleUIModal.CloseAsync())>
+            <Header>
+                Modal Header
+            </Header>
+            <Body>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+            est laborum.
+            </Body>
+            <Footer>
+                <Button Variant="ButtonVariant.Secondary" OnClick=@(async (e,s) => await SimpleUIModal.CloseAsync())>Cancel</Button>
+                <Button Variant="ButtonVariant.Primary" OnClick=@(async (e,s) => await SimpleUIModal.CloseAsync())>Confirm</Button>
+            </Footer>
+        </UIModal>
+        <Button Variant="ButtonVariant.Primary" OnClick=@(async (e,s) => await SimpleUIModal.ShowAsync())>Show Modal </Button>
     </Example>
 
     <Example Title="Modal (small)">
-        <SourceContainer @ref="_smallModalSourceContainer">
-            <Modal ShowCloseButton="true" Size="ModalSize.Small" CloseButtonPressed=@(async (e,s) => await SmallModalSourceContainerService.HideContentAsync())>
-                <Header>
-                    Modal Header
-                </Header>
-                <Body>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                est laborum.
-                </Body>
-                <Footer>
-                    <Button Variant="ButtonVariant.Secondary" OnClick=@(async (s, e)=> await SmallModalSourceContainerService.HideContentAsync())>Cancel
-                    </Button>
-                    <Button Variant="ButtonVariant.Primary" OnClick=@(async (s, e) => await SmallModalSourceContainerService.HideContentAsync())>Confirm</Button>
-                </Footer>
-            </Modal>
-        </SourceContainer>
-        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s, e)=> await SmallModalSourceContainerService.ShowContentAsync())>Show Small Modal</Button>
+	    <UIModal @ref="_smallUIModal" ShowCloseButton="true" Size="ModalSize.Small" CloseButtonPressed=@(async (e,s) => await SmallUIModal.CloseAsync())>
+	        <Header>
+	            Modal Header
+	        </Header>
+	        <Body>
+	        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+	        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+	        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+	        est laborum.
+	        </Body>
+	        <Footer>
+	            <Button Variant="ButtonVariant.Secondary" OnClick=@(async (s, e)=> await SmallUIModal.CloseAsync())>Cancel
+	            </Button>
+	            <Button Variant="ButtonVariant.Primary" OnClick=@(async (s, e) => await SmallUIModal.CloseAsync())>Confirm</Button>
+	        </Footer>
+	    </UIModal>
+        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s, e)=> await SmallUIModal.ShowAsync())>Show Small Modal</Button>
     </Example>
 
     <Example Title="Modal (large)">
-        <SourceContainer @ref="_largeModalSourceContainer">
-            <Modal ShowCloseButton="true" Size="ModalSize.Large" CloseButtonPressed=@(async (e,s) => await LargeModalSourceContainerService.HideContentAsync())>
-                <Header>
-                    Modal Header
-                </Header>
-                <Body>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                est laborum.
-                </Body>
-                <Footer>
-                    <Button Variant="ButtonVariant.Secondary" OnClick=@(async (e,s) => await LargeModalSourceContainerService.HideContentAsync())>Cancel</Button>
-                    <Button Variant="ButtonVariant.Primary" OnClick=@(async (e,s) => await LargeModalSourceContainerService.HideContentAsync())>Confirm</Button>
-                </Footer>
-            </Modal>
-        </SourceContainer>
-        <Button Variant="ButtonVariant.Primary" OnClick=@(async (e,s) => await LargeModalSourceContainerService.ShowContentAsync())>Show Large Modal</Button>
+        <UIModal @ref="_largeUIModal" ShowCloseButton="true" Size="ModalSize.Large" CloseButtonPressed=@(async (e,s) => await LargeUIModal.CloseAsync())>
+            <Header>
+                Modal Header
+            </Header>
+            <Body>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+            est laborum.
+            </Body>
+            <Footer>
+                <Button Variant="ButtonVariant.Secondary" OnClick=@(async (e,s) => await LargeUIModal.CloseAsync())>Cancel</Button>
+                <Button Variant="ButtonVariant.Primary" OnClick=@(async (e,s) => await LargeUIModal.CloseAsync())>Confirm</Button>
+            </Footer>
+        </UIModal>
+        <Button Variant="ButtonVariant.Primary" OnClick=@(async (e,s) => await LargeUIModal.ShowAsync())>Show Large Modal</Button>
     </Example>
 
     <Example Title="Execute Async Task">
@@ -106,9 +99,9 @@
                 Please wait...
             </Header>
         </PleaseWaitModal>
-
         <Button Variant="ButtonVariant.Primary" OnClick=@(async (s, e) => await PleaseWaitModalWithProgress.ExecuteAsync())>Show Please Wait</Button>
     </Example>
+
     <Example Title="Execute Async Task (Progress & Body)">
         <PleaseWaitModal @ref="_pleaseWaitModalWithProgressAndBody"
                           Size="@ModalSize.Small"
@@ -131,14 +124,14 @@
 
 @code
 {
-    [InjectComponentService(nameof(SimpleModalSourceContainerService))]
-    private SourceContainer _simpleModalSourceContainer;
+    [InjectComponentService(nameof(SimpleUIModal))]
+    private UIModal _simpleUIModal;
     
-    [InjectComponentService(nameof(SmallModalSourceContainerService))]
-    private SourceContainer _smallModalSourceContainer;     
+    [InjectComponentService(nameof(SmallUIModal))]
+    private UIModal _smallUIModal;     
     
-    [InjectComponentService(nameof(LargeModalSourceContainerService))]
-    private SourceContainer _largeModalSourceContainer;  
+    [InjectComponentService(nameof(LargeUIModal))]
+    private UIModal _largeUIModal;  
 
     [InjectComponentService(nameof(PleaseWaitModal))]
     private PleaseWaitModal _pleaseWaitModal;

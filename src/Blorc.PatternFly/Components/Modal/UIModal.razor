@@ -1,0 +1,31 @@
+﻿@using System.Drawing
+@using System.Threading.Tasks
+@using Blorc.Attributes
+@using Blorc.PatternFly.Components.Container
+@using Blorc.PatternFly.Components.Icon
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
+@using Blorc.PatternFly.Components.Modal
+@using Blorc.PatternFly.Components.Progress
+
+@inherits Blorc.PatternFly.Components.Modal.UIModalComponent
+
+<SourceContainer @ref="_modalSourceContainer">
+    <Modal Size="@Size" ShowCloseButton="@ShowCloseButton" CloseButtonPressed="@CloseButtonPressed" >
+        <Header>
+                @Header
+        </Header>
+        <Body>
+            @Body
+        </Body>
+        <Footer>
+            @Footer
+        </Footer>
+    </Modal>
+</SourceContainer>
+
+@code
+{
+    [InjectComponentService(nameof(ModalSourceContainerService))]
+    private SourceContainer _modalSourceContainer;
+}

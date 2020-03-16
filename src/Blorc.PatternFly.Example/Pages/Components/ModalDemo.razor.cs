@@ -15,7 +15,7 @@
         {
         }
 
-        protected ISourceContainerService LargeModalSourceContainerService { get; set; }
+        protected IUIVisualizationService LargeUIModal { get; set; }
 
         protected IExecutionService PleaseWaitModal { get; set; }
 
@@ -23,9 +23,9 @@
 
         protected IExecutionService PleaseWaitModalWithProgressAndBody { get; set; }
 
-        protected ISourceContainerService SimpleModalSourceContainerService { get; set; }
+        protected IUIVisualizationService SimpleUIModal { get; set; }
 
-        protected ISourceContainerService SmallModalSourceContainerService { get; set; }
+        protected IUIVisualizationService SmallUIModal { get; set; }
 
         public async Task DoSomething(ExecutionContext ctx)
         {

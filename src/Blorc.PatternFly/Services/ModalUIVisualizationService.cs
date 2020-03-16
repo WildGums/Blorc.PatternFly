@@ -19,12 +19,12 @@ namespace Blorc.PatternFly.Services
 
         public async Task CloseAsync()
         {
-            await ((ModalComponent)Component).CloseAsync();
+            await ((UIModalComponent)Component).CloseAsync();
         }
 
         public async Task ShowAsync()
         {
-            await ((ModalComponent)Component).ShowAsync();
+            await ((UIModalComponent)Component).ShowAsync();
         }
 
         public async Task UpdateAsync()

@@ -15,7 +15,7 @@ namespace Blorc.PatternFly.Services.Extensions
     {
         public static void MapBlorcPatternFly(this IComponentServiceFactory @this)
         {
-            @this.Map<Modal, ModalUIVisualizationService>();
+            @this.Map<UIModal, ModalUIVisualizationService>();
             @this.Map<PleaseWaitModal, PleaseWaitModalExecutionService>();
 
             @this.Map<TargetContainer, ITargetContainerService>();
