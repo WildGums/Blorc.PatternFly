@@ -4,5 +4,21 @@
         <name>Blorc.PatternFly</name>
     </assembly>
     <members>
+        <member name="P:Blorc.PatternFly.Components.Container.TargetContainerComponent.RenderFragments">
+            <summary>
+                Gets or sets the render fragments.
+            </summary>
+        </member>
+        <member name="M:Blorc.PatternFly.Components.Container.TargetContainerComponent.RenderFragments_OnCollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            The render fragments_ on collection changed.
+            </summary>
+            <param name="sender">
+            The sender.
+            </param>
+            <param name="e">
+            The e.
+            </param>
+        </member>
     </members>
 </doc>
