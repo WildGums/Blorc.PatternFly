@@ -1,5 +1,7 @@
 ﻿@using System.Drawing
 @using System.Threading.Tasks
+@using Blorc.Attributes
+@using Blorc.PatternFly.Components.Container
 @using Blorc.PatternFly.Components.Icon
 @using Microsoft.AspNetCore.Components
 @using Microsoft.AspNetCore.Components.Web
@@ -8,22 +10,23 @@
 
 @inherits Blorc.PatternFly.Components.Modal.PleaseWaitModalComponent
 
-<Modal Size="@Size" @ref="Modal">
-    <Header>
-        @if (!string.IsNullOrWhiteSpace(HeaderText))
-        {
-            @HeaderText
-        }
-        else if (Header != null)
-        {
-            @Header
-        }
-        else
-        {
-            @DefaultPleaseWaitHeader
-        }
-    </Header>
-    <Body>
+<SourceContainer @ref="_pleaseWaitSourceContainer">
+    <Modal Size="@Size">
+        <Header>
+            @if (!string.IsNullOrWhiteSpace(HeaderText))
+            {
+                @HeaderText
+            }
+            else if (Header != null)
+            {
+                @Header
+            }
+            else
+            {
+                @DefaultPleaseWaitHeader
+            }
+        </Header>
+        <Body>
         @if (Body != null)
         {
             @Body
@@ -31,7 +34,14 @@
 
         @if (ShowProgress)
         {
-            <Progress Size="ProgressSize.Large" @ref="Progress" />
+            <Progress Size="ProgressSize.Large" @ref="Progress"/>
         }
-    </Body>
-</Modal>
+        </Body>
+    </Modal>
+</SourceContainer>
+
+@code
+{
+    [InjectComponentService(nameof(ModalSourceContainerService))]
+    private SourceContainer _pleaseWaitSourceContainer;
+}

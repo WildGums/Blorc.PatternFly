@@ -87,14 +87,14 @@
     </Example>
 
     <Example Title="Execute Async Task">
-        <PleaseWaitModal @ref="_pleaseWaitModal"
-                          Size="ModalSize.Small"
-                          Action=@(ctx => DoSomething(ctx))>
+        <PleaseWaitModal Size="ModalSize.Small" Action=@(ctx => DoSomething(ctx)) @ref="_pleaseWaitModal">
             <Header>
                 Please wait...
             </Header>
         </PleaseWaitModal>
-        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s, e) => await PleaseWaitModal.ExecuteAsync(true))>Show Please Wait</Button>
+        <Button Variant="ButtonVariant.Primary" OnClick=@(async (s, e)=> await PleaseWaitModal.ExecuteAsync(true))>
+            Show Please Wait
+        </Button>
     </Example>
 
     <Example Title="Execute Async Task (Progress)">

@@ -5,14 +5,21 @@
     using System.Threading.Tasks;
 
     using Blorc.Components;
+    using Blorc.PatternFly.Components.Container;
     using Blorc.PatternFly.Components.Progress;
     using Blorc.PatternFly.Core;
+    using Blorc.PatternFly.Services.Interfaces;
 
     using Microsoft.AspNetCore.Components;
 
     public class PleaseWaitModalComponent : BlorcComponentBase, IProgressAsync<int>
     {
         public const string DefaultPleaseWaitHeader = "Please Wait...";
+
+        public PleaseWaitModalComponent()
+            : base(true)
+        {
+        }
 
         [Parameter]
         public Func<ExecutionContext, Task> Action { get; set; }
@@ -38,7 +45,7 @@
         [Parameter]
         public ModalSize Size { get; set; } = ModalSize.Small;
 
-        protected Modal Modal { get; set; }
+        protected ISourceContainerService ModalSourceContainerService { get; set; }
 
         protected ProgressComponent Progress { get; set; }
 
@@ -50,12 +57,13 @@
                 HeaderText = await HeaderTextAction(executionContext);
             }
 
-            Modal.Show();
+            await ModalSourceContainerService.ShowContentAsync();
+
             await Task.Run(
                 async () =>
                 {
                     await Action(executionContext);
-                    Modal.Close();
+                    await ModalSourceContainerService.HideContentAsync();
                 });
         }
 

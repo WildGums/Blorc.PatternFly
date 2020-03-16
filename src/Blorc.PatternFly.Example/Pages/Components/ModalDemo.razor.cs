@@ -15,8 +15,6 @@
         {
         }
 
-        protected IUIVisualizationService LargeModal { get; set; }
-
         protected ISourceContainerService LargeModalSourceContainerService { get; set; }
 
         protected IExecutionService PleaseWaitModal { get; set; }
@@ -25,11 +23,7 @@
 
         protected IExecutionService PleaseWaitModalWithProgressAndBody { get; set; }
 
-        protected IUIVisualizationService SimpleModal { get; set; }
-
         protected ISourceContainerService SimpleModalSourceContainerService { get; set; }
-
-        protected IUIVisualizationService SmallModal { get; set; }
 
         protected ISourceContainerService SmallModalSourceContainerService { get; set; }
 
@@ -49,16 +43,6 @@
                     await ctx.Progress.ReportAsync(value);
                 }
             }
-        }
-
-        public async Task HideSimpleModal()
-        {
-            await SimpleModalSourceContainerService.HideContentAsync();
-        }
-
-        public async Task ShowSimpleModal()
-        {
-            await SimpleModalSourceContainerService.ShowContentAsync();
         }
     }
 }
