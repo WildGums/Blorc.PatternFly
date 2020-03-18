@@ -4,7 +4,9 @@
 @using Blorc.PatternFly.Components.Button
 @using Blorc.PatternFly.Components.Icon
 @using Blorc.PatternFly.Components.TextInput
+@using Blorc.PatternFly.Components.EmptyState
 @using Blorc.PatternFly.Components.Text
+@using Blorc.PatternFly.Components.Title
 @using Blorc.PatternFly.Components.ToggleComponentContainer
 @using System
 @using System.Collections.Generic;
@@ -138,11 +140,16 @@
                 </Row>
             </Header>
             <NoRowsContent>
-                <TableEmptyState IconType=@typeof(SearchIcon)
-                                 Title="No results found"
-                                 Body="No results match the filter criteria. Remove all filters or clear all filters to show results.">
+                <EmptyState Variant="EmptyStateVariant.Full">
+                    <EmptyStateIcon Icon="Search" />
+                    <Title HeadingLevel="h2" Size="lg">
+                        No results found
+                    </Title>
+                    <EmptyStateBody>
+                        No results match the filter criteria. Remove all filters or clear all filters to show results.
+                    </EmptyStateBody>
                     <Button Variant="ButtonVariant.Link" OnClick=@((s, e) => _filterTextInput.Clear())>Clear all filters</Button>
-                </TableEmptyState>
+                </EmptyState>
             </NoRowsContent>
         </Table>
     </Example> 

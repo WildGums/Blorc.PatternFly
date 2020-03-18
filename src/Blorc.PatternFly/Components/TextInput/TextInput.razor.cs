@@ -51,5 +51,14 @@
         {
             Value = string.Empty;
         }
+
+        protected override void OnPropertyChanged(PropertyChangedEventArgs e)
+        {
+            base.OnPropertyChanged(e);
+            if (e.PropertyName == nameof(Value))
+            {
+                ValueChanged.InvokeAsync(Value);
+            }
+        }
     }
 }
