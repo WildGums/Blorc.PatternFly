@@ -4,59 +4,75 @@
 @using Microsoft.AspNetCore.Components
 @using Microsoft.AspNetCore.Components.Web
 @using Blorc.PatternFly.Components.Dropdown
+@using Blorc.PatternFly.Layouts
+@using Blorc.PatternFly.Components.Icon
+@using Blorc.PatternFly.Components.Text
 
 @inherits TableComponent
 
-<CascadingValue Value=this>
-    <table class="pf-c-table pf-m-grid-md">
-        @if (string.IsNullOrWhiteSpace(Caption))
-        {
-            <caption>@Caption</caption>
-        }
-        <thead>
-            @if (Header != null)
+    <CascadingValue Value=this>
+        <table class="pf-c-table pf-m-grid-md">
+            @if (string.IsNullOrWhiteSpace(Caption))
             {
-                @Header
+                <caption>@Caption</caption>
             }
-            else
-            {
-                if (ColumnDefinitions != null && ColumnDefinitions.Count > 0)
+            <thead>
+                @if (Header != null)
                 {
-                    <Row>
-                        @foreach (var columnDefinition in ColumnDefinitions.OrderBy(pair => pair.Value.Idx).Select(pair => pair.Value))
-                        {
-                            if (columnDefinition is ActionColumnDefinition)
+                    @Header
+                }
+                else
+                {
+                    if (ColumnDefinitions != null && ColumnDefinitions.Count > 0)
+                    {
+                        <Row>
+                            @foreach (var columnDefinition in ColumnDefinitions.OrderBy(pair => pair.Value.Idx).Select(pair => pair.Value))
                             {
-                                <ActionColumn Label="@columnDefinition.Label" Key="@columnDefinition.Key" Idx="@columnDefinition.Idx" />
+                                if (columnDefinition is ActionColumnDefinition)
+                                {
+                                    <ActionColumn Label="@columnDefinition.Label" Key="@columnDefinition.Key" Idx="@columnDefinition.Idx" />
+                                }
+                                else
+                                {
+                                    <Column Label="@columnDefinition.Label" Key="@columnDefinition.Key" Idx="@columnDefinition.Idx" />
+                                }
                             }
-                            else
+                        </Row>
+                    }
+                }
+            </thead>
+            <tbody>
+                @if (Body != null)
+                {
+                    @Body
+                }
+                else
+                {
+                    if (Records != null && ColumnDefinitions != null)
+                    {
+                        bool noRows = true;
+                        foreach (var record in Records)
+                        {
+                            var columnsWithPredicate = ColumnDefinitions.Where(pair => pair.Value.FilterPredicate != null).ToList();
+                            if (columnsWithPredicate.Count <= 0 || columnsWithPredicate.Select(pair => pair.Value).Any(definition => definition.FilterPredicate(PropertyHelper.GetPropertyValue(record, definition.Key))))
                             {
-                                <Column Label="@columnDefinition.Label" Key="@columnDefinition.Key" Idx="@columnDefinition.Idx" />
+                                <Row Record="@record" />
+                                noRows = false;
                             }
                         }
-                    </Row>
-                }
-            }
-        </thead>
-        <tbody>
-            @if (Body != null)
-            {
-                @Body
-            }
-            else
-            {
-                if (Records != null && ColumnDefinitions != null)
-                {
-                    foreach (var record in Records)
-                    {
-                        var columnsWithPredicate = ColumnDefinitions.Where(pair => pair.Value.FilterPredicate != null).ToList();
-                        if (columnsWithPredicate.Count <= 0 || columnsWithPredicate.Select(pair => pair.Value).Any(definition => definition.FilterPredicate(PropertyHelper.GetPropertyValue(record, definition.Key))))
+
+                        if (noRows && NoRowsContent != null)
                         {
-                            <Row Record="@record"/>
+                            <tr class="pf-m-height-auto">
+                                <td colspan="@ColumnDefinitions.Count">
+                                    <Bullseye>
+                                        @NoRowsContent
+                                    </Bullseye>
+                                </td>
+                            </tr>
                         }
                     }
                 }
-            }
-        </tbody>
-    </table>
-</CascadingValue>
+            </tbody>
+        </table>
+    </CascadingValue>

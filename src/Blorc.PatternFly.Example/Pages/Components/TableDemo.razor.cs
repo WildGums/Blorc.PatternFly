@@ -12,6 +12,8 @@
 
     public class TableDemoComponent : BlorcComponentBase
     {
+        private readonly Random _random = new Random();
+
         private ArrayList _data;
 
         public string FilterText
@@ -41,15 +43,6 @@
             return actionDefinitions;
         }
 
-        public void UpdateSingleRow()
-        {
-            var next = _random.Next(0, _data.Count);
-            var record = _data[next] as Record;
-            record.Repositories = $"one-{_random.Next(0, 100).ToString().PadLeft(2, '0')}";
-        }
-
-        private readonly Random _random = new Random();
-
         public IEnumerable GetData()
         {
             if (_data == null)
@@ -60,7 +53,7 @@
                     _data.Add(
                         new Record
                         {
-                            Repositories = $"one-{_random.Next(0, 100).ToString().PadLeft(2,'0')}",
+                            Repositories = $"one-{_random.Next(0, 100).ToString().PadLeft(2, '0')}",
                             Branches = $"two-{_random.Next(0, 100).ToString().PadLeft(2, '0')}",
                             PullRequests = $"three-{_random.Next(0, 100).ToString().PadLeft(2, '0')}",
                             Workspaces = $"four-{_random.Next(0, 100).ToString().PadLeft(2, '0')}",
@@ -70,6 +63,13 @@
             }
 
             return _data;
+        }
+
+        public void UpdateSingleRow()
+        {
+            var next = _random.Next(0, _data.Count);
+            var record = _data[next] as Record;
+            record.Repositories = $"one-{_random.Next(0, 100).ToString().PadLeft(2, '0')}";
         }
 
         protected override void OnPropertyChanged(PropertyChangedEventArgs e)

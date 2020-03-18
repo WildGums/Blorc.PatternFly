@@ -1,0 +1,12 @@
+﻿@using Blorc.PatternFly.Components.Icon
+
+@inherits TableEmptyStateComponent
+
+<div class="pf-c-empty-state">
+    @Icon
+    <h2 class="pf-c-title pf-m-lg">@Title</h2>
+    <div class="pf-c-empty-state__body">
+        @Body
+    </div>
+    @ChildContent
+</div>

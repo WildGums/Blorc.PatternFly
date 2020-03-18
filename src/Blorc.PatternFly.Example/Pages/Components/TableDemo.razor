@@ -2,6 +2,7 @@
 
 @using Blorc.PatternFly.Components.Table
 @using Blorc.PatternFly.Components.Button
+@using Blorc.PatternFly.Components.Icon
 @using Blorc.PatternFly.Components.TextInput
 @using Blorc.PatternFly.Components.Text
 @using Blorc.PatternFly.Components.ToggleComponentContainer
@@ -37,27 +38,27 @@
                 </Row>
             </Header>
             <Body>
-                <Row>
-                    <Cell Label="Repositories" Key="0" Value="one" />
-                    <Cell Label="Branches" Key="1" Value="two" />
-                    <Cell Label="Pull requests" Key="2" Value="three" />
-                    <Cell Label="Workspaces" Key="3" Value="four" />
-                    <Cell Label="Last commit" Key="4" Value="five" Align="@Align.Center" />
-                </Row>
-                <Row>
-                    <Cell Label="Repositories" Key="0" Value="one" />
-                    <Cell Label="Branches" Key="1" Value="two" />
-                    <Cell Label="Pull requests" Key="2" Value="three" />
-                    <Cell Label="Workspaces" Key="3" Value="four" />
-                    <Cell Label="Last commit" Key="4" Value="five" Align="@Align.Center" />
-                </Row>
-                <Row>
-                    <Cell Label="Repositories" Key="0" Value="one" />
-                    <Cell Label="Branches" Key="1" Value="two" />
-                    <Cell Label="Pull requests" Key="2" Value="three" />
-                    <Cell Label="Workspaces" Key="3" Value="four" />
-                    <Cell Label="Last commit" Key="4" Value="five (not centered)" />
-                </Row>
+            <Row>
+                <Cell Label="Repositories" Key="0" Value="one" />
+                <Cell Label="Branches" Key="1" Value="two" />
+                <Cell Label="Pull requests" Key="2" Value="three" />
+                <Cell Label="Workspaces" Key="3" Value="four" />
+                <Cell Label="Last commit" Key="4" Value="five" Align="@Align.Center" />
+            </Row>
+            <Row>
+                <Cell Label="Repositories" Key="0" Value="one" />
+                <Cell Label="Branches" Key="1" Value="two" />
+                <Cell Label="Pull requests" Key="2" Value="three" />
+                <Cell Label="Workspaces" Key="3" Value="four" />
+                <Cell Label="Last commit" Key="4" Value="five" Align="@Align.Center" />
+            </Row>
+            <Row>
+                <Cell Label="Repositories" Key="0" Value="one" />
+                <Cell Label="Branches" Key="1" Value="two" />
+                <Cell Label="Pull requests" Key="2" Value="three" />
+                <Cell Label="Workspaces" Key="3" Value="four" />
+                <Cell Label="Last commit" Key="4" Value="five (not centered)" />
+            </Row>
             </Body>
         </Table>
     </Example>
@@ -74,27 +75,27 @@
                 </Row>
             </Header>
             <Body>
-                <Row>
-                    <Cell Label="Repositories" Key="0" Value="one" />
-                    <Cell Label="Branches" Key="1" Value="two" />
-                    <Cell Label="Pull requests" Key="2" Value="three" />
-                    <Cell Label="Workspaces" Key="3" Value="four" />
-                    <Cell Label="Last commit" Key="4" Value="five" Align="@Align.Center" />
-                </Row>
-                <Row>
-                    <Cell Label="Repositories" Key="0" Value="one" />
-                    <Cell Label="Branches" Key="1" Value="two" />
-                    <Cell Label="Pull requests" Key="2" Value="three" />
-                    <Cell Label="Workspaces" Key="3" Value="four" />
-                    <Cell Label="Last commit" Key="4" Value="five" Align="@Align.Center" />
-                </Row>
-                <Row>
-                    <Cell Label="Repositories" Key="0" Value="one" />
-                    <Cell Label="Branches" Key="1" Value="two" />
-                    <Cell Label="Pull requests" Key="2" Value="three" />
-                    <Cell Label="Workspaces" Key="3" Value="four" />
-                    <Cell Label="Last commit" Key="4" Value="five (not centered)" />
-                </Row>
+            <Row>
+                <Cell Label="Repositories" Key="0" Value="one" />
+                <Cell Label="Branches" Key="1" Value="two" />
+                <Cell Label="Pull requests" Key="2" Value="three" />
+                <Cell Label="Workspaces" Key="3" Value="four" />
+                <Cell Label="Last commit" Key="4" Value="five" Align="@Align.Center" />
+            </Row>
+            <Row>
+                <Cell Label="Repositories" Key="0" Value="one" />
+                <Cell Label="Branches" Key="1" Value="two" />
+                <Cell Label="Pull requests" Key="2" Value="three" />
+                <Cell Label="Workspaces" Key="3" Value="four" />
+                <Cell Label="Last commit" Key="4" Value="five" Align="@Align.Center" />
+            </Row>
+            <Row>
+                <Cell Label="Repositories" Key="0" Value="one" />
+                <Cell Label="Branches" Key="1" Value="two" />
+                <Cell Label="Pull requests" Key="2" Value="three" />
+                <Cell Label="Workspaces" Key="3" Value="four" />
+                <Cell Label="Last commit" Key="4" Value="five (not centered)" />
+            </Row>
             </Body>
         </Table>
     </Example>
@@ -124,8 +125,8 @@
     </Example>
     
     <Example Title="Filtrable Table">
-        <TextInput @bind-Value=@FilterText UpdateMode="@UpdateMode.Continuous"/>
-        <Table Caption="Filtrable Table" DataSource=@(()=> GetData()) @ref="FiltrableTable">
+        <TextInput @bind-Value="FilterText" UpdateMode="@UpdateMode.Continuous" @ref="_filterTextInput" />
+        <Table Caption="Filtrable Table" DataSource=@(()=> GetData())  ShowEmptyState="true" EmptyStateTextMessage="No results found" @ref="FiltrableTable">
             <Header>
                 <Row>
                     <!--TODO Try to avoid the index parameter later-->
@@ -136,6 +137,13 @@
                     <Column Label="Last commit" Key="LastCommit" Align="@Align.Center" Idx="4" />
                 </Row>
             </Header>
+            <NoRowsContent>
+                <TableEmptyState IconType=@typeof(SearchIcon) 
+                            Title="No results found" 
+                            Body="No results match the filter criteria. Remove all filters or clear all filters to show results.">
+                    <Button Variant="ButtonVariant.Link" OnClick=@((s,e)=> _filterTextInput.Clear())>Clear all filters</Button>
+                </TableEmptyState>
+            </NoRowsContent>
         </Table>
     </Example> 
 
@@ -156,3 +164,8 @@
         </Example>
     </ToggleComponentContainer>
 </section>
+
+@code
+{
+    TextInput _filterTextInput;
+}

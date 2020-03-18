@@ -1,5 +1,6 @@
 ﻿namespace Blorc.PatternFly.Components.TextInput
 {
+    using System;
     using System.ComponentModel;
     using Blorc.Components;
     using Core;
@@ -45,5 +46,10 @@
 
         [Parameter] 
         public EventCallback<string> ValueChanged { get; set; }
+
+        public void Clear()
+        {
+            Value = string.Empty;
+        }
     }
 }
