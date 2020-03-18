@@ -126,7 +126,7 @@
     
     <Example Title="Filtrable Table">
         <TextInput @bind-Value="FilterText" UpdateMode="@UpdateMode.Continuous" @ref="_filterTextInput" />
-        <Table Caption="Filtrable Table" DataSource=@(()=> GetData())  ShowEmptyState="true" EmptyStateTextMessage="No results found" @ref="FiltrableTable">
+        <Table Caption="Filtrable Table" DataSource=@(()=> GetData()) @ref="FiltrableTable">
             <Header>
                 <Row>
                     <!--TODO Try to avoid the index parameter later-->
@@ -138,10 +138,10 @@
                 </Row>
             </Header>
             <NoRowsContent>
-                <TableEmptyState IconType=@typeof(SearchIcon) 
-                            Title="No results found" 
-                            Body="No results match the filter criteria. Remove all filters or clear all filters to show results.">
-                    <Button Variant="ButtonVariant.Link" OnClick=@((s,e)=> _filterTextInput.Clear())>Clear all filters</Button>
+                <TableEmptyState IconType=@typeof(SearchIcon)
+                                 Title="No results found"
+                                 Body="No results match the filter criteria. Remove all filters or clear all filters to show results.">
+                    <Button Variant="ButtonVariant.Link" OnClick=@((s, e) => _filterTextInput.Clear())>Clear all filters</Button>
                 </TableEmptyState>
             </NoRowsContent>
         </Table>
