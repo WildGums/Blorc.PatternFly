@@ -1,10 +1,12 @@
 ﻿namespace Blorc.PatternFly.Components.Table
 {
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel;
     using System.Linq;
 
     using Blorc.Components;
+
     using Microsoft.AspNetCore.Components;
 
     public class RowComponent : BlorcComponentBase

@@ -8,6 +8,7 @@
 
     using Blorc.Components;
     using Blorc.PatternFly.Components.Table.EventArgs;
+    using Blorc.PatternFly.Helpers;
     using Blorc.Reflection;
 
     using Microsoft.AspNetCore.Components;
@@ -91,11 +92,11 @@
 
             if (OrderState.Order == Order.Ascending)
             {
-                Records = Records.OfType<object>().OrderBy(o => PropertyHelper.GetPropertyValue(o, OrderState.Key), OrderState.Comparer);
+                Records = Records.OfType<object>().OrderBy(o => DataHelper.GetValue(o, OrderState.Key), OrderState.Comparer);
             }
             else if (OrderState.Order == Order.Descending)
             {
-                Records = Records.OfType<object>().OrderByDescending(o => PropertyHelper.GetPropertyValue(o, OrderState.Key), OrderState.Comparer);
+                Records = Records.OfType<object>().OrderByDescending(o => DataHelper.GetValue(o, OrderState.Key), OrderState.Comparer);
             }
         }
     }

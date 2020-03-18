@@ -7,6 +7,7 @@
 @using Blorc.PatternFly.Layouts
 @using Blorc.PatternFly.Components.Icon
 @using Blorc.PatternFly.Components.Text
+@using Blorc.PatternFly.Helpers
 
 @inherits TableComponent
 
@@ -54,7 +55,7 @@
                         foreach (var record in Records)
                         {
                             var columnsWithPredicate = ColumnDefinitions.Where(pair => pair.Value.FilterPredicate != null).ToList();
-                            if (columnsWithPredicate.Count <= 0 || columnsWithPredicate.Select(pair => pair.Value).Any(definition => definition.FilterPredicate(PropertyHelper.GetPropertyValue(record, definition.Key))))
+                            if (columnsWithPredicate.Count <= 0 || columnsWithPredicate.Select(pair => pair.Value).Any(definition => definition.FilterPredicate(DataHelper.GetValue(record, definition.Key))))
                             {
                                 <Row Record="@record" />
                                 noRows = false;

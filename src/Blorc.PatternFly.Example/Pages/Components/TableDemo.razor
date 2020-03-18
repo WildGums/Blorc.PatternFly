@@ -148,7 +148,7 @@
                     <EmptyStateBody>
                         No results match the filter criteria. Remove all filters or clear all filters to show results.
                     </EmptyStateBody>
-                    <Button Variant="ButtonVariant.Link" OnClick=@((s, e) => _filterTextInput.Clear())>Clear all filters</Button>
+                    <Button Variant="ButtonVariant.Link" OnClick=@((s, e) => FilterText = string.Empty)>Clear all filters</Button>
                 </EmptyState>
             </NoRowsContent>
         </Table>

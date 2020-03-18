@@ -1,10 +1,12 @@
 ﻿@using System.Linq
 @using Blorc.PatternFly.Components.Dropdown
+@using Blorc.PatternFly.Helpers
 @using Blorc.Reflection
 @using Microsoft.AspNetCore.Components
 @using Microsoft.AspNetCore.Components.Web
 
 @inherits RowComponent
+
 
     @if (ChildContent != null)
     {
@@ -45,7 +47,7 @@
                 }
                 else
                 {
-                    <Cell Label="@columnDefinition.Label" Key="@columnDefinition.Key" Value="@PropertyHelper.GetPropertyValue(Record, columnDefinition.Key)?.ToString()" />
+                    <Cell Label="@columnDefinition.Label" Key="@columnDefinition.Key" Value="@DataHelper.GetValue(Record, columnDefinition.Key)?.ToString()" />
                 }
             }
          </tr>
