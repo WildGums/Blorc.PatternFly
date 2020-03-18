@@ -3,6 +3,7 @@
 @using System.Runtime.Serialization.Formatters.Binary
 @using Blorc.PatternFly.Components.TextInput
 @using Blorc.PatternFly.Components.Text
+@using Blorc.PatternFly.Components.Button
 @using Blorc.PatternFly.Core
 @using Microsoft.AspNetCore.Components.Web
 @using System.ComponentModel
@@ -30,6 +31,7 @@
 
     <Example Title="Binding Sample">
         <TextInput Label="Text input example" @bind-Value="TextValue" UpdateMode="@UpdateMode.Continuous" />
+        <Button OnClick=@((s,e) => TextValue=string.Empty)>Clear</Button>
     </Example>    
 </section>
 
