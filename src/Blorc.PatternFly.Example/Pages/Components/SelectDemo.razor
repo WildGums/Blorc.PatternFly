@@ -202,7 +202,8 @@
                     AriaLabelledBy="checkbox-select-id"
                     @bind-SelectedItems="SelectedItems3"
                     DataSource=@DataSource
-                    KeyFunc=@((o) => ((System.Tuple<string, string>)o).Item1) ValueFunc=@((o) => ((System.Tuple<string, string>)o).Item2)>
+                    KeyFunc=@((o) => ((System.Tuple<string, string>)o).Item1) 
+                    ValueFunc=@((o) => ((System.Tuple<string, string>)o).Item2)>
             </Select>
         </div>
 </Example>   
@@ -227,19 +228,37 @@
         </div>
     </Example>
 
-    <Example Title="Select input binding with data source (Set SelectedItems)">
+<Example Title="Checkbox Select input binding with data source (Set SelectedItems)">
+    <div>
+        <span id="checkbox-select-id" hidden>
+            Title
+        </span>
+        <Select Variant="@SelectVariant.Checkbox"
+                Label="Select Input"
+                IsExpanded="false"
+                PlaceholderText="Filter by status"
+                AriaLabelledBy="checkbox-select-id"
+                @bind-SelectedItems="SelectedItems4"
+                DataSource=@DataSource
+                KeyFunc=@((o) => ((System.Tuple<string, string>)o).Item1) ValueFunc=@((o) => ((System.Tuple<string, string>)o).Item2)>
+        </Select>
+    </div>
+</Example>
+
+    <Example Title="Single Select input binding with data source (Set SelectedItems)">
         <div>
             <span id="checkbox-select-id" hidden>
                 Title
             </span>
-            <Select Variant="@SelectVariant.Checkbox"
+            <Select Variant="@SelectVariant.Single"
                     Label="Select Input"
                     IsExpanded="false"
                     PlaceholderText="Filter by status"
                     AriaLabelledBy="checkbox-select-id"
-                    @bind-SelectedItems="SelectedItems4"
+                    @bind-SelectedItems="SelectedItems6"
                     DataSource=@DataSource
-                    KeyFunc=@((o) => ((System.Tuple<string, string>)o).Item1) ValueFunc=@((o) => ((System.Tuple<string, string>)o).Item2)>
+                    KeyFunc=@((o) => ((System.Tuple<string, string>)o).Item1) 
+                    ValueFunc=@((o) => ((System.Tuple<string, string>)o).Item2)>
             </Select>
         </div>
     </Example>

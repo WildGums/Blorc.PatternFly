@@ -14,6 +14,7 @@
             SelectedItems2 = new ObservableCollection<string> {"1"};
             SelectedItems4 = new ObservableCollection<string> { "1" };
             SelectedItems5 = new ObservableCollection<string> { "1", "7" };
+            SelectedItems6 = new ObservableCollection<string> { "3" };
             DataSource = new List<Tuple<string, string>>()
             {
                 new Tuple<string, string>("0", "Active"),
@@ -34,6 +35,12 @@
                 new Tuple<string, string, string>("Vendor Names", "6", "Samsung"),
                 new Tuple<string, string, string>("Vendor Names", "7", "Hewlett-Packard"),
             };
+        }
+
+        public ObservableCollection<string> SelectedItems6
+        {
+            get => GetPropertyValue<ObservableCollection<string>>(nameof(SelectedItems6));
+            set => SetPropertyValue(nameof(SelectedItems6), value);
         }
 
         public List<Tuple<string, string>> DataSource { get; set; }

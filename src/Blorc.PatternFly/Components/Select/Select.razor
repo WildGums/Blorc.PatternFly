@@ -91,7 +91,7 @@
                             }
                         }
                     }
-                    else if(Variant == SelectVariant.Checkbox)
+                    else if (Variant == SelectVariant.Checkbox)
                     {
                         var groupedDataSource = DataSource.OfType<object>().GroupBy(item => GroupFunc(item));
                         foreach (var group in groupedDataSource)
@@ -106,6 +106,13 @@
                     }
                 }
             </ul>
+        }
+        else
+        {
+            @if (DataSource is null)
+            {
+                @Items
+            }
         }
     </div>
 </CascadingValue>

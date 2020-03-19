@@ -3,7 +3,10 @@
 
 @inherits Blorc.PatternFly.Components.Select.CheckboxSelectGroupComponent
 
-<div class="pf-c-select__menu-group">
-    <div class="pf-c-select__menu-group-title" aria-hidden="true">@Label</div>
-    @ChildContent
-</div>
+@if (ContainerSelect != null && ContainerSelect.IsExpanded)
+{
+    <div class="pf-c-select__menu-group">
+        <div class="pf-c-select__menu-group-title" aria-hidden="true">@Label</div>
+        @ChildContent
+    </div>
+}

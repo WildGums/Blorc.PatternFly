@@ -2,17 +2,21 @@
 
 {
     using Blorc.Components;
+
     using Microsoft.AspNetCore.Components;
 
     public class CheckboxSelectGroupComponent : BlorcComponentBase
     {
         [Parameter]
-        public string Label { get; set; }
+        public RenderFragment ChildContent { get; set; }
+
+        [CascadingParameter]
+        public SelectComponent ContainerSelect { get; set; }
 
         [Parameter]
         public string Key { get; set; }
 
         [Parameter]
-        public RenderFragment ChildContent { get; set; }
+        public string Label { get; set; }
     }
 }
