@@ -272,7 +272,15 @@
         {
             ItemsPerPage = option;
             IsOptionsExpanded = false;
-            CurrentPage = 1;
+            if (CurrentPage != 1)
+            {
+                CurrentPage = 1;
+            }
+            else
+            {
+                RaisePaginationStateChanged(new PaginationStateChangedEventArgs(PageFirstItemIndex, ItemsPerPage));
+                StateHasChanged();
+            }
         }
     }
 }
