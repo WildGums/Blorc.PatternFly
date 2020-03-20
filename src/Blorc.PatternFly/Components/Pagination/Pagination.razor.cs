@@ -214,10 +214,6 @@
             CurrentPage = 1;
         }
 
-        protected override void OnInitialized()
-        {
-        }
-
         protected void OnLastPageButtonPressed()
         {
             CurrentPage = PagesCount;
@@ -233,7 +229,7 @@
             if (ItemsPerPageOptions != null && ItemsPerPageOptions.Any())
             {
                 var itemsPerPage = ItemsPerPageOptions.First();
-                if (itemsPerPage != ItemsPerPage)
+                if (ItemsPerPage == 0)
                 {
                     ItemsPerPage = itemsPerPage;
                     CurrentPage = 1;
@@ -248,7 +244,20 @@
 
         protected override void OnPropertyChanged(PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == nameof(CurrentPage))
+            if (e.PropertyName == nameof(ItemsPerPage))
+            {
+                IsOptionsExpanded = false;
+                if (CurrentPage != 1)
+                {
+                    CurrentPage = 1;
+                }
+                else
+                {
+                    RaisePaginationStateChanged(new PaginationStateChangedEventArgs(PageFirstItemIndex, ItemsPerPage));
+                    StateHasChanged();
+                }
+            }
+            else if (e.PropertyName == nameof(CurrentPage))
             {
                 PageIndex = CurrentPage - 1;
             }
@@ -271,16 +280,6 @@
         protected void SetItemsPerPage(int option)
         {
             ItemsPerPage = option;
-            IsOptionsExpanded = false;
-            if (CurrentPage != 1)
-            {
-                CurrentPage = 1;
-            }
-            else
-            {
-                RaisePaginationStateChanged(new PaginationStateChangedEventArgs(PageFirstItemIndex, ItemsPerPage));
-                StateHasChanged();
-            }
         }
     }
 }

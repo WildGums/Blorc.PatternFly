@@ -6,45 +6,46 @@
 @using Blorc.PatternFly.Components.Spinner
 @using Blorc.PatternFly.Components.ToggleComponentContainer
 @using Blorc.PatternFly.Example.Components.Example
+@using Blorc.PatternFly.Components.Pagination
 
 
 @inherits TableIntegrationExampleComponent
 
-<ToggleComponentContainer>
-    <Table Caption="Data Table" DataSource=@Data>
-        <Header>
-            <Row>
-                <Column Label="Repositories" Key="Repositories" IsSortable="true" Idx="0" />
-                <Column Label="Branches" Key="Branches" IsSortable="true" Idx="1" />
-                <Column Label="Pull requests" Key="PullRequests" IsSortable="true" Idx="2" />
-                <Column Label="Workspaces" Key="Workspaces" Idx="3" />
-                <Column Label="Last commit" Key="LastCommit" Align="@Align.Center" Idx="4" />
-            </Row>
-        </Header>
-        <NoRowsContent>
-            @if (Loading)
-            {
-                <EmptyState Variant="EmptyStateVariant.Full">
-                    <Title HeadingLevel="h2" Size="lg">
-                        Loading...
-                    </Title>
-                    <Spinner IsVisible="true" Size="@SpinnerSize.XLarge"/>
-                </EmptyState>
-            }
-            else
-            {
-                <EmptyState Variant="EmptyStateVariant.Full">
-                    <EmptyStateIcon Icon="Search" />
-                    <Title HeadingLevel="h2" Size="lg">
-                        No data
-                    </Title>
-                    <Button Variant="ButtonVariant.Link" OnClick=@((s, e) => Generate())>Generate</Button>
-                </EmptyState>
-            }
-        </NoRowsContent>
-    </Table>
-    @if (Data != null)
-    {
-        <Button Variant="ButtonVariant.Link" OnClick=@((s, e) => Generate())>Generate Again</Button>
-    }
-</ToggleComponentContainer>
+    <ToggleComponentContainer>
+        <Table Caption="Data Table" DataSource=@Data>
+            <Header>
+                <Row>
+                    <Column Label="Repositories" Key="Repositories" IsSortable="true" Idx="0" />
+                    <Column Label="Branches" Key="Branches" IsSortable="true" Idx="1" />
+                    <Column Label="Pull requests" Key="PullRequests" IsSortable="true" Idx="2" />
+                    <Column Label="Workspaces" Key="Workspaces" Idx="3" />
+                    <Column Label="Last commit" Key="LastCommit" Align="@Align.Center" Idx="4" />
+                </Row>
+            </Header>
+            <NoRowsContent>
+                @if (Loading)
+                {
+                    <EmptyState Variant="EmptyStateVariant.Full">
+                        <Title HeadingLevel="h2" Size="lg">
+                            Loading...
+                        </Title>
+                        <Spinner IsVisible="true" Size="@SpinnerSize.XLarge" />
+                    </EmptyState>
+                }
+                else
+                {
+                    <EmptyState Variant="EmptyStateVariant.Full">
+                        <EmptyStateIcon Icon="Search" />
+                        <Title HeadingLevel="h2" Size="lg">
+                            No data
+                        </Title>
+                        <Button Variant="ButtonVariant.Link" OnClick=@((s, e) => Generate())>Generate</Button>
+                    </EmptyState>
+                }
+            </NoRowsContent>
+        </Table>
+        @if (Data != null)
+        {
+            <Pagination ItemsCount="@Count" ItemsPerPage="@Limit" ItemsPerPageOptions=@(new[]{5,10,20}) OnStateChanged=@((s, e)=> Load(e.Offset, e.Limit)) />
+        }
+    </ToggleComponentContainer>
