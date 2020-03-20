@@ -46,6 +46,6 @@
         </Table>
         @if (Data != null)
         {
-            <Pagination ItemsCount="@Count" ItemsPerPage="@Limit" ItemsPerPageOptions=@(new[]{5,10,20}) OnStateChanged=@((s, e)=> Load(e.Offset, e.Limit)) />
+            <Pagination ItemsCount="@Count" PageIndex="@PageIndex" ItemsPerPage="@Limit" ItemsPerPageOptions=@(new[]{5,10,20}) OnStateChanged=@(async (s, e)=> await Load(e.Page, e.Offset, e.Limit)) />
         }
     </ToggleComponentContainer>

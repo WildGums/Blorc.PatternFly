@@ -113,7 +113,7 @@
     </Example>
 
     <Example Title="Sortable Table">
-        <Table Caption="Sortable Table" DataSourceFunc=@(()=> GetData())>
+        <Table Caption="Sortable Table" DataSourceFunc=@(() => GetData())>
             <Header>
                 <Row>
                     <!--TODO Try to avoid the index parameter later-->
@@ -129,7 +129,7 @@
 
     <Example Title="Filtrable Table">
         <TextInput @bind-Value="FilterText" UpdateMode="@UpdateMode.Continuous" @ref="_filterTextInput" />
-        <Table Caption="Filtrable Table" DataSourceFunc=@(()=> GetData()) @ref="FiltrableTable">
+        <Table Caption="Filtrable Table" DataSourceFunc=@(() => GetData()) @ref="FiltrableTable">
             <Header>
                 <Row>
                     <!--TODO Try to avoid the index parameter later-->
@@ -157,7 +157,7 @@
 
     <ToggleComponentContainer>
         <Example Title="Action Column Table">
-            <Table Caption="Action Column" DataSourceFunc=@(()=> GetData())>
+            <Table Caption="Action Column" DataSourceFunc=@(() => GetData())>
                 <Header>
                     <Row>
                         <Column Label="Repositories" Key="Repositories" IsSortable="true" Idx="0" />
@@ -171,8 +171,8 @@
             </Table>
         </Example>
     </ToggleComponentContainer>
-    
-    <Example Title="Integration Demo (via DataSource)">
+
+    <Example Title="Integration Demo (Spinner / Pagination)">
         <TableIntegrationExample />
     </Example>
 

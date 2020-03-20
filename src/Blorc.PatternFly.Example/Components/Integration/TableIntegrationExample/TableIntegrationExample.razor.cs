@@ -2,12 +2,15 @@
 {
     using System;
     using System.Collections;
+    using System.Collections.Generic;
     using System.ComponentModel;
     using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
 
     using Blorc.Components;
+    using Blorc.PatternFly.Components.List;
+    using Blorc.PatternFly.Components.Page;
     using Blorc.PatternFly.Example.Pages.Components;
 
     using Microsoft.AspNetCore.Components;
@@ -16,16 +19,16 @@
     {
         private readonly Random _random = new Random();
 
-        private ArrayList _data;
+        private List<object> _data;
 
         public int Count { get { return _data.Count; } }
 
         [Parameter]
-        public IEnumerable Data
+        public List<object> Data
         {
             get
             {
-                return GetPropertyValue<IEnumerable>(nameof(Data));
+                return GetPropertyValue<List<object>>(nameof(Data));
             }
 
             set
@@ -34,17 +37,29 @@
             }
         }
 
-        public bool Loading { get; set; }
+        public bool Loading
+        {
+            get
+            {
+                return GetPropertyValue<bool>(nameof(Loading));
+            }
+
+            set
+            {
+                SetPropertyValue(nameof(Loading), value);
+            }
+        }
 
         public void Generate()
         {
-            Load(0, 5);
+            Load(0, 0, 5);
+           
         }
 
         protected override void OnInitialized()
         {
         base.OnInitialized();
-            _data = new ArrayList();
+            _data = new List<object>();
             for (var i = 0; i < 100; i++)
             {
                 _data.Add(
@@ -56,23 +71,41 @@
                         Workspaces = $"four-{_random.Next(0, 100).ToString().PadLeft(2, '0')}",
                         LastCommit = $"five-{_random.Next(0, 100).ToString().PadLeft(2, '0')}"
                     });
-                // Thread.Sleep(10);
             }
         }
 
-        public void Load(int offset, int limit)
+        public Task Load(int page, int offset, int limit)
         {
+            Console.WriteLine($"Loading {page} {offset} {limit}...");
+
+            PageIndex = page;
+            Limit = limit;
+            
             Loading = true;
-            this.Limit = limit;
-            Data = _data.OfType<object>().Skip(offset).Take(limit).ToList();
+            
+            Task.Run(
+                async () =>
+                {
+                    await Task.Delay(1000);
+                    Data = _data.OfType<object>().Skip(offset).Take(limit).ToList();
+                    Loading = false;
+                });
+            
+            return Task.CompletedTask;
         }
 
         protected int Limit { get; set; }
 
+        protected int PageIndex { get; set; }
+
         protected override void OnPropertyChanged(PropertyChangedEventArgs e)
         {
             base.OnPropertyChanged(e);
-            if (e.PropertyName == nameof(Data))
+            if (e.PropertyName == nameof(Loading) && Loading)
+            {
+                Data = null;
+            }
+            else if (e.PropertyName == nameof(Data))
             {
                 StateHasChanged();
             }

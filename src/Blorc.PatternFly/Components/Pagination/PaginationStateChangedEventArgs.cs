@@ -10,8 +10,9 @@ namespace Blorc.PatternFly.Components.Pagination
 
     public class PaginationStateChangedEventArgs : EventArgs
     {
-        public PaginationStateChangedEventArgs(int offset, int limit)
+        public PaginationStateChangedEventArgs(int page, int offset, int limit)
         {
+            Page = page;
             Offset = offset;
             Limit = limit;
         }
@@ -19,5 +20,7 @@ namespace Blorc.PatternFly.Components.Pagination
         public int Limit { get; }
 
         public int Offset { get; }
+
+        public int Page { get; }
     }
 }

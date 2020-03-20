@@ -47,12 +47,12 @@
         {
             get
             {
-                return GetPropertyValue<int>(nameof(CurrentPage));
+                return PageIndex + 1;
             }
 
             set
             {
-                SetPropertyValue(nameof(CurrentPage), value);
+                PageIndex = value - 1;
             }
         }
 
@@ -211,63 +211,47 @@
 
         protected void OnFirstPageButtonPressed()
         {
-            CurrentPage = 1;
+            PageIndex = 0;
         }
 
         protected void OnLastPageButtonPressed()
         {
-            CurrentPage = PagesCount;
+            PageIndex = PagesCount - 1;
         }
 
         protected void OnNextPageButtonPressed()
         {
-            CurrentPage++;
+            PageIndex++;
         }
 
         protected override void OnParametersSet()
         {
+            base.OnParametersSet();
             if (ItemsPerPageOptions != null && ItemsPerPageOptions.Any())
             {
                 var itemsPerPage = ItemsPerPageOptions.First();
                 if (ItemsPerPage == 0)
                 {
                     ItemsPerPage = itemsPerPage;
-                    CurrentPage = 1;
+                    PageIndex = 0;
                 }
             }
         }
 
         protected void OnPrevPageButtonPressed()
         {
-            CurrentPage--;
+            PageIndex--;
         }
 
         protected override void OnPropertyChanged(PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == nameof(ItemsPerPage))
-            {
-                IsOptionsExpanded = false;
-                if (CurrentPage != 1)
-                {
-                    CurrentPage = 1;
-                }
-                else
-                {
-                    RaisePaginationStateChanged(new PaginationStateChangedEventArgs(PageFirstItemIndex, ItemsPerPage));
-                    StateHasChanged();
-                }
-            }
-            else if (e.PropertyName == nameof(CurrentPage))
-            {
-                PageIndex = CurrentPage - 1;
-            }
-            else if (e.PropertyName == nameof(IsOptionsExpanded) && IsOptionsExpanded)
+            if (e.PropertyName == nameof(IsOptionsExpanded) && IsOptionsExpanded)
             {
                 StateHasChanged();
             }
             else if (e.PropertyName == nameof(PageIndex))
             {
-                RaisePaginationStateChanged(new PaginationStateChangedEventArgs(PageFirstItemIndex, ItemsPerPage));
+                RaisePaginationStateChanged(new PaginationStateChangedEventArgs(PageIndex, PageFirstItemIndex, ItemsPerPage));
                 StateHasChanged();
             }
         }
@@ -280,6 +264,16 @@
         protected void SetItemsPerPage(int option)
         {
             ItemsPerPage = option;
+            IsOptionsExpanded = false;
+            if (PageIndex != 0)
+            {
+                PageIndex = 0;
+            }
+            else
+            {
+                RaisePaginationStateChanged(new PaginationStateChangedEventArgs(PageIndex, PageFirstItemIndex, ItemsPerPage));
+                StateHasChanged();
+            }
         }
     }
 }
