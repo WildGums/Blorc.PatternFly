@@ -12,9 +12,9 @@
         {
             CreateConverter()
                 .Fixed("pf-c-spinner")
-                .If(() => Size == SpinnerSize.Large, "pf-m-sm")
+                .If(() => Size == SpinnerSize.Small, "pf-m-sm")
                 .If(() => Size == SpinnerSize.Medium, "pf-m-md")
-                .If(() => Size == SpinnerSize.Small, "pf-m-lg")
+                .If(() => Size == SpinnerSize.Large, "pf-m-lg")
                 .If(() => Size == SpinnerSize.XLarge, "pf-m-xl")
                 .Watch(() => Size)
                 .Update(() => Class);
