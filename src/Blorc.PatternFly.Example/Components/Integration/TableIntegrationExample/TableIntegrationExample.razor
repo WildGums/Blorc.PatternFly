@@ -23,13 +23,13 @@
                 </Row>
             </Header>
             <NoRowsContent>
-                @if (Loading)
+                @if (IsLoading)
                 {
                     <EmptyState Variant="EmptyStateVariant.Full">
-                        <Title HeadingLevel="h2" Size="lg">
-                            Loading...
-                        </Title>
                         <Spinner IsVisible="true" Size="@SpinnerSize.XLarge" />
+                        <Title HeadingLevel="h5" Size="lg">
+                            Loading
+                        </Title>
                     </EmptyState>
                 }
                 else
@@ -44,8 +44,5 @@
                 }
             </NoRowsContent>
         </Table>
-        @if (Data != null)
-        {
-            <Pagination ItemsCount="@Count" PageIndex="@PageIndex" ItemsPerPage="@Limit" ItemsPerPageOptions=@(new[]{5,10,20}) OnStateChanged=@(async (s, e)=> await Load(e.Page, e.Offset, e.Limit)) />
-        }
+        <Pagination ItemsCount="@Count" PageIndex="@PageIndex" ItemsPerPage="@Limit" ItemsPerPageOptions=@(new[]{5,10,20}) IsDisabled="@(IsLoading || !IsDataAvailable)" OnStateChanged=@(async (s, e)=> await Load(e.Page, e.Offset, e.Limit)) />
     </ToggleComponentContainer>
