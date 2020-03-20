@@ -20,5 +20,21 @@
             The e.
             </param>
         </member>
+        <member name="M:Blorc.PatternFly.Helpers.DataHelper.GetValue(System.Object,System.String)">
+            <summary>
+            Gets the value.
+            </summary>
+            <param name="record">
+            The record.
+            </param>
+            <param name="key">
+            The key.
+            </param>
+            <returns>
+            The <see cref="T:System.Object"/>.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            </exception>
+        </member>
     </members>
 </doc>
