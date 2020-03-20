@@ -11,35 +11,32 @@
 
 @inherits TableComponent
 
-    <CascadingValue Value=this>
+<CascadingValue Value=this>
         <table class="pf-c-table pf-m-grid-md">
             @if (string.IsNullOrWhiteSpace(Caption))
             {
                 <caption>@Caption</caption>
             }
             <thead>
-                @if (Header != null)
+                @if (ColumnDefinitions.Count > 0)
+                {
+                    <Row>
+                        @foreach (var columnDefinition in ColumnDefinitions.OrderBy(pair => pair.Value.Idx).Select(pair => pair.Value))
+                        {
+                            if (columnDefinition is ActionColumnDefinition)
+                            {
+                                <ActionColumn Label="@columnDefinition.Label" Key="@columnDefinition.Key" Idx="@columnDefinition.Idx" />
+                            }
+                            else
+                            {
+                                <Column Label="@columnDefinition.Label" Key="@columnDefinition.Key" Idx="@columnDefinition.Idx" IsSortable="@columnDefinition.IsSortable" IsSelected="@columnDefinition.IsSelected" FilterPredicate=@((o)=> columnDefinition.FilterPredicate != null && columnDefinition.FilterPredicate(o))/>
+                            }
+                        }
+                    </Row>
+                }
+                else if(Header != null)
                 {
                     @Header
-                }
-                else
-                {
-                    if (ColumnDefinitions != null && ColumnDefinitions.Count > 0)
-                    {
-                        <Row>
-                            @foreach (var columnDefinition in ColumnDefinitions.OrderBy(pair => pair.Value.Idx).Select(pair => pair.Value))
-                            {
-                                if (columnDefinition is ActionColumnDefinition)
-                                {
-                                    <ActionColumn Label="@columnDefinition.Label" Key="@columnDefinition.Key" Idx="@columnDefinition.Idx" />
-                                }
-                                else
-                                {
-                                    <Column Label="@columnDefinition.Label" Key="@columnDefinition.Key" Idx="@columnDefinition.Idx" />
-                                }
-                            }
-                        </Row>
-                    }
                 }
             </thead>
             <tbody>
@@ -49,10 +46,10 @@
                 }
                 else
                 {
-                    if (Records != null && ColumnDefinitions != null)
+                    bool noRows = true;
+                    if (DataSource != null)
                     {
-                        bool noRows = true;
-                        foreach (var record in Records)
+                        foreach (var record in DataSource)
                         {
                             var columnsWithPredicate = ColumnDefinitions.Where(pair => pair.Value.FilterPredicate != null).ToList();
                             if (columnsWithPredicate.Count <= 0 || columnsWithPredicate.Select(pair => pair.Value).Any(definition => definition.FilterPredicate(DataHelper.GetValue(record, definition.Key))))
@@ -61,17 +58,17 @@
                                 noRows = false;
                             }
                         }
+                    }
 
-                        if (noRows && NoRowsContent != null)
-                        {
-                            <tr class="pf-m-height-auto">
-                                <td colspan="@ColumnDefinitions.Count">
-                                    <Bullseye>
-                                        @NoRowsContent
-                                    </Bullseye>
-                                </td>
-                            </tr>
-                        }
+                    if (noRows && NoRowsContent != null)
+                    {
+                        <tr class="pf-m-height-auto">
+                            <td colspan="@ColumnDefinitions.Count">
+                                <Bullseye>
+                                    @NoRowsContent
+                                </Bullseye>
+                            </td>
+                        </tr>
                     }
                 }
             </tbody>

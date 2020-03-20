@@ -2,28 +2,25 @@
 {
     using System;
     using System.Collections.Generic;
+
     using Blorc.Components;
+    using Blorc.StateConverters;
+
     using Microsoft.AspNetCore.Components;
-    using StateConverters;
 
     public class ActionColumnComponent : BlorcComponentBase
     {
         public ActionColumnComponent()
         {
             CreateConverter()
-                .Fixed("")
+                .Fixed(string.Empty)
                 .If(() => Align == Align.Center, "pf-m-center")
                 .Watch(() => Align)
                 .Update(() => Class);
         }
 
         [Parameter]
-        public string Label { get; set; }
-
-        [Parameter]
-        public string Key { get; set; }
-
-        public string Class { get; set; }
+        public Func<object, IEnumerable<ActionDefinition>> ActionSource { get; set; }
 
         [Parameter]
         public Align Align
@@ -32,28 +29,30 @@
             set => SetPropertyValue(nameof(Align), value);
         }
 
+        public string Class { get; set; }
+
         [CascadingParameter]
         public TableComponent ContainerTable { get; set; }
+
+        [Parameter]
+        public int Idx { get; set; }
+
+        [Parameter]
+        public string Key { get; set; }
+
+        [Parameter]
+        public string Label { get; set; }
 
         protected override void OnParametersSet()
         {
             base.OnParametersSet();
             if (!string.IsNullOrWhiteSpace(Key))
             {
-                ContainerTable.ColumnDefinitions[Key] = new ActionColumnDefinition
+                if (!ContainerTable.ColumnDefinitions.ContainsKey(Key))
                 {
-                    Label = Label, 
-                    Key = Key,
-                    Idx = Idx,
-                    ActionSource = ActionSource
-                };
+                    ContainerTable.ColumnDefinitions[Key] = new ActionColumnDefinition { Label = Label, Key = Key, Idx = Idx, ActionSource = ActionSource };
+                }
             }
         }
-
-        [Parameter]
-        public int Idx { get; set; }
-        
-        [Parameter]
-        public Func<object, IEnumerable<ActionDefinition>> ActionSource { get; set; }
     }
 }

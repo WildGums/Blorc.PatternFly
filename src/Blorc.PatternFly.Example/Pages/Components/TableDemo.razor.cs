@@ -44,9 +44,9 @@
             return actionDefinitions;
         }
 
-        public IEnumerable GetData()
+        public IEnumerable GetData(bool reload = false)
         {
-            if (_data == null)
+            if (_data == null || reload)
             {
                 _data = new ArrayList();
                 for (var i = 0; i < 5; i++)

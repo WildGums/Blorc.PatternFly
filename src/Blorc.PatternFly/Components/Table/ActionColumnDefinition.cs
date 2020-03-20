@@ -3,6 +3,7 @@
 //   Copyright (c) 2008 - 2019 WildGums. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
+
 namespace Blorc.PatternFly.Components.Table
 {
     using System;
@@ -12,6 +13,4 @@ namespace Blorc.PatternFly.Components.Table
     {
         public Func<object, IEnumerable<ActionDefinition>> ActionSource { get; set; }
     }
-
-    
 }

@@ -17,5 +17,9 @@ namespace Blorc.PatternFly.Components.Table
         public string Key { get; set; }
 
         public string Label { get; set; }
+
+        public bool IsSortable { get; set; }
+
+        public bool IsSelected { get; set; }
     }
 }

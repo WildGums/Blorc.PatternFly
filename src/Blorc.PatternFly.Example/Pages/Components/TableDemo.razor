@@ -11,6 +11,7 @@
 @using System
 @using System.Collections.Generic;
 @using Blorc.PatternFly.Core
+@using Blorc.PatternFly.Example.Components.Integration.TableIntegrationExample
 
 
 @inherits TableDemoComponent
@@ -40,27 +41,27 @@
                 </Row>
             </Header>
             <Body>
-            <Row>
-                <Cell Label="Repositories" Key="0" Value="one" />
-                <Cell Label="Branches" Key="1" Value="two" />
-                <Cell Label="Pull requests" Key="2" Value="three" />
-                <Cell Label="Workspaces" Key="3" Value="four" />
-                <Cell Label="Last commit" Key="4" Value="five" Align="@Align.Center" />
-            </Row>
-            <Row>
-                <Cell Label="Repositories" Key="0" Value="one" />
-                <Cell Label="Branches" Key="1" Value="two" />
-                <Cell Label="Pull requests" Key="2" Value="three" />
-                <Cell Label="Workspaces" Key="3" Value="four" />
-                <Cell Label="Last commit" Key="4" Value="five" Align="@Align.Center" />
-            </Row>
-            <Row>
-                <Cell Label="Repositories" Key="0" Value="one" />
-                <Cell Label="Branches" Key="1" Value="two" />
-                <Cell Label="Pull requests" Key="2" Value="three" />
-                <Cell Label="Workspaces" Key="3" Value="four" />
-                <Cell Label="Last commit" Key="4" Value="five (not centered)" />
-            </Row>
+                <Row>
+                    <Cell Label="Repositories" Key="0" Value="one" />
+                    <Cell Label="Branches" Key="1" Value="two" />
+                    <Cell Label="Pull requests" Key="2" Value="three" />
+                    <Cell Label="Workspaces" Key="3" Value="four" />
+                    <Cell Label="Last commit" Key="4" Value="five" Align="@Align.Center" />
+                </Row>
+                <Row>
+                    <Cell Label="Repositories" Key="0" Value="one" />
+                    <Cell Label="Branches" Key="1" Value="two" />
+                    <Cell Label="Pull requests" Key="2" Value="three" />
+                    <Cell Label="Workspaces" Key="3" Value="four" />
+                    <Cell Label="Last commit" Key="4" Value="five" Align="@Align.Center" />
+                </Row>
+                <Row>
+                    <Cell Label="Repositories" Key="0" Value="one" />
+                    <Cell Label="Branches" Key="1" Value="two" />
+                    <Cell Label="Pull requests" Key="2" Value="three" />
+                    <Cell Label="Workspaces" Key="3" Value="four" />
+                    <Cell Label="Last commit" Key="4" Value="five (not centered)" />
+                </Row>
             </Body>
         </Table>
     </Example>
@@ -77,27 +78,27 @@
                 </Row>
             </Header>
             <Body>
-            <Row>
-                <Cell Label="Repositories" Key="0" Value="one" />
-                <Cell Label="Branches" Key="1" Value="two" />
-                <Cell Label="Pull requests" Key="2" Value="three" />
-                <Cell Label="Workspaces" Key="3" Value="four" />
-                <Cell Label="Last commit" Key="4" Value="five" Align="@Align.Center" />
-            </Row>
-            <Row>
-                <Cell Label="Repositories" Key="0" Value="one" />
-                <Cell Label="Branches" Key="1" Value="two" />
-                <Cell Label="Pull requests" Key="2" Value="three" />
-                <Cell Label="Workspaces" Key="3" Value="four" />
-                <Cell Label="Last commit" Key="4" Value="five" Align="@Align.Center" />
-            </Row>
-            <Row>
-                <Cell Label="Repositories" Key="0" Value="one" />
-                <Cell Label="Branches" Key="1" Value="two" />
-                <Cell Label="Pull requests" Key="2" Value="three" />
-                <Cell Label="Workspaces" Key="3" Value="four" />
-                <Cell Label="Last commit" Key="4" Value="five (not centered)" />
-            </Row>
+                <Row>
+                    <Cell Label="Repositories" Key="0" Value="one" />
+                    <Cell Label="Branches" Key="1" Value="two" />
+                    <Cell Label="Pull requests" Key="2" Value="three" />
+                    <Cell Label="Workspaces" Key="3" Value="four" />
+                    <Cell Label="Last commit" Key="4" Value="five" Align="@Align.Center" />
+                </Row>
+                <Row>
+                    <Cell Label="Repositories" Key="0" Value="one" />
+                    <Cell Label="Branches" Key="1" Value="two" />
+                    <Cell Label="Pull requests" Key="2" Value="three" />
+                    <Cell Label="Workspaces" Key="3" Value="four" />
+                    <Cell Label="Last commit" Key="4" Value="five" Align="@Align.Center" />
+                </Row>
+                <Row>
+                    <Cell Label="Repositories" Key="0" Value="one" />
+                    <Cell Label="Branches" Key="1" Value="two" />
+                    <Cell Label="Pull requests" Key="2" Value="three" />
+                    <Cell Label="Workspaces" Key="3" Value="four" />
+                    <Cell Label="Last commit" Key="4" Value="five (not centered)" />
+                </Row>
             </Body>
         </Table>
     </Example>
@@ -112,7 +113,7 @@
     </Example>
 
     <Example Title="Sortable Table">
-        <Table Caption="Sortable Table" DataSource=@(()=> GetData())>
+        <Table Caption="Sortable Table" DataSourceFunc=@(()=> GetData())>
             <Header>
                 <Row>
                     <!--TODO Try to avoid the index parameter later-->
@@ -125,10 +126,10 @@
             </Header>
         </Table>
     </Example>
-    
+
     <Example Title="Filtrable Table">
         <TextInput @bind-Value="FilterText" UpdateMode="@UpdateMode.Continuous" @ref="_filterTextInput" />
-        <Table Caption="Filtrable Table" DataSource=@(()=> GetData()) @ref="FiltrableTable">
+        <Table Caption="Filtrable Table" DataSourceFunc=@(()=> GetData()) @ref="FiltrableTable">
             <Header>
                 <Row>
                     <!--TODO Try to avoid the index parameter later-->
@@ -152,11 +153,11 @@
                 </EmptyState>
             </NoRowsContent>
         </Table>
-    </Example> 
+    </Example>
 
     <ToggleComponentContainer>
         <Example Title="Action Column Table">
-            <Table Caption="Action Column" DataSource=@(()=> GetData())>
+            <Table Caption="Action Column" DataSourceFunc=@(()=> GetData())>
                 <Header>
                     <Row>
                         <Column Label="Repositories" Key="Repositories" IsSortable="true" Idx="0" />
@@ -170,6 +171,11 @@
             </Table>
         </Example>
     </ToggleComponentContainer>
+    
+    <Example Title="Integration Demo (via DataSource)">
+        <TableIntegrationExample />
+    </Example>
+
 </section>
 
 @code
