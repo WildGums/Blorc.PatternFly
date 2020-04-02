@@ -7,6 +7,6 @@
 @if (ContainerSelect != null && ContainerSelect.IsExpanded && IsVisible)
 {
     <label class="pf-c-check pf-c-select__menu-item">
-        <Checkbox Label="@Value" IsChecked="@IsSelected" OnChange=@((sender, args)=> OptionClick()) />
+        <Checkbox Label="@Value" IsChecked="@IsSelected" OnChange="@OptionClick" />
     </label>
 }

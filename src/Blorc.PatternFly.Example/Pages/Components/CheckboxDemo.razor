@@ -2,6 +2,8 @@
 
 @using Blorc.PatternFly.Components.Checkbox
 
+@inherits Blorc.PatternFly.Example.Pages.Components.CheckboxDemoComponent
+
 <Metadata ComponentName="Checkbox" />
 
 <section class="ws-section ws-live-demo">
@@ -24,6 +26,11 @@
                   Label="Disabled checkbox" />
         <Checkbox IsDisabled="true"
                   Label="Disabled checkbox" />
+    </Example>
+
+    <Example Title="Checkbox (binding)">
+        <Checkbox @bind-IsChecked="@IsChecked" @bind-IsChecked:event="OnChange"
+                  Label="Binding" />
     </Example>
 
 </section>

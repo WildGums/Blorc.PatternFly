@@ -1,7 +1,7 @@
 ﻿namespace Blorc.PatternFly.Components.Checkbox
 {
-    using System;
     using Blorc.Components;
+
     using Microsoft.AspNetCore.Components;
 
     public class CheckboxComponent : UniqueComponentBase
@@ -14,10 +14,21 @@
         public override string ComponentName => "checkbox";
 
         [Parameter]
-        public string Label { get; set; }
+        public bool IsChecked
+        {
+            get
+            {
+                return GetPropertyValue<bool>(nameof(IsChecked));
+            }
+
+            set
+            {
+                SetPropertyValue(nameof(IsChecked), value);
+            }
+        }
 
         [Parameter]
-        public bool IsValid { get; set; }
+        public bool IsDisabled { get; set; }
 
         public bool IsInvalid
         {
@@ -25,27 +36,21 @@
         }
 
         [Parameter]
-        public bool IsChecked { get; set; }
+        public bool IsValid { get; set; }
 
         [Parameter]
-        public bool IsDisabled { get; set; }
+        public string Label { get; set; }
 
         [Parameter]
         public string Name { get; set; }
 
         [Parameter]
-        public EventHandler<EventArgs> OnChange { get; set; }
+        public EventCallback<bool> OnChange { get; set; }
 
         protected void OnValueChanged(ChangeEventArgs e)
         {
             IsChecked = (bool)e.Value;
-
-            var handler = OnChange;
-            if (handler != null)
-            {
-                handler(this, EventArgs.Empty);
-            }
+            OnChange.InvokeAsync(IsChecked);
         }
-
     }
 }
