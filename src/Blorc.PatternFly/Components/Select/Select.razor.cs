@@ -119,7 +119,7 @@
                     return PlaceholderText;
                 }
 
-                if (Variant == SelectVariant.Single && SelectedItems.Any())
+                if (Variant == SelectVariant.Single)
                 {
                     if (SelectedItems.Count == 0)
                     {
