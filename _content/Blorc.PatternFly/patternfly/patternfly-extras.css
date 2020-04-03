@@ -1,0 +1,23 @@
+﻿.pf-c-table.pf-m-sticky-header {
+    position: relative;
+}
+
+.pf-c-table.pf-m-sticky-header > thead > tr {
+    border-bottom: 0;
+}
+
+.pf-c-table.pf-m-sticky-header > thead > tr > * {
+    position: sticky;
+    top: 0;
+    background: var(--pf-c-table--BackgroundColor);
+    z-index: var(--pf-global--ZIndex--xs);
+}
+
+.pf-c-table.pf-m-sticky-header > thead > tr > *::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-bottom: var(--pf-c-table--BorderWidth) solid var(--pf-c-table--BorderColor);
+}
