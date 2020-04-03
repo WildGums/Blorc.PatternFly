@@ -4,7 +4,7 @@
     <AssemblyName>Blorc.PatternFly</AssemblyName>
     <RootNamespace>Blorc.PatternFly</RootNamespace>
     <PackageId>Blorc.PatternFly</PackageId>
-    <PackageVersion>1.0.0-alpha0450</PackageVersion>
+    <PackageVersion>1.0.0-alpha0486</PackageVersion>
     <Description>PatternFly implementation for Blazor.</Description>
     <PackageTags>blazor;patternfly</PackageTags>
     <IsPackable>true</IsPackable>
@@ -42,7 +42,6 @@
   <ItemGroup>
     <Folder Include="App_Code\" />
     <Folder Include="Components\Icon\src\" />
-    <Folder Include="wwwroot\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Blorc.Core" Version="1.0.0-alpha0244" />

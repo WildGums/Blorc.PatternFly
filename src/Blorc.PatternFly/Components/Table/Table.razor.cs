@@ -10,12 +10,30 @@
     using Blorc.Components;
     using Blorc.PatternFly.Components.Table.EventArgs;
     using Blorc.PatternFly.Helpers;
+    using Blorc.PatternFly.Layouts.Grid;
+    using Blorc.StateConverters;
 
     using Microsoft.AspNetCore.Components;
 
     public class TableComponent : BlorcComponentBase
     {
         private bool _sorting;
+
+        public TableComponent()
+        {
+            
+            CreateConverter()
+                .Fixed("pf-c-table")
+                .If(() => GridSize == GridSize.Md, "pf-m-grid-md")
+                .If(() => GridSize == GridSize.Xl, "pf-m-grid-xl")
+                .If(() => IsStickyHeader, "pf-m-sticky-header")
+                .Watch(() => GridSize)
+                .Watch(() => IsStickyHeader)
+                .Update(() => Class);
+
+            GridSize = GridSize.Md;
+            IsStickyHeader = false;
+        }
 
         public event EventHandler<OrderByColumnChangedEventArg> OrderByColumnChanged;
 
@@ -27,6 +45,8 @@
 
         [Parameter]
         public string Caption { get; set; }
+
+        public string Class { get; set; }
 
         public SortedDictionary<string, ColumnDefinition> ColumnDefinitions { get; } = new SortedDictionary<string, ColumnDefinition>();
 
@@ -51,6 +71,20 @@
         public RenderFragment Header { get; set; }
 
         public bool IsSorted => OrderState != null && OrderState.IsSorted;
+
+        [Parameter]
+        public bool IsStickyHeader
+        {
+            get { return GetPropertyValue<bool>(nameof(IsStickyHeader)); }
+            set { SetPropertyValue(nameof(IsStickyHeader), value); }
+        } 
+        
+        [Parameter]
+        public GridSize GridSize
+        {
+            get { return GetPropertyValue<GridSize>(nameof(GridSize)); }
+            set { SetPropertyValue(nameof(GridSize), value); }
+        }
 
         [Parameter]
         public RenderFragment NoRowsContent { get; set; }

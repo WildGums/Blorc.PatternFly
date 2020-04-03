@@ -9,6 +9,7 @@
         public static async Task InjectBlorcPatternFly(this IDocumentService documentService)
         {
             await documentService.InjectAssemblyCSSFile(typeof(DocumentServiceExtensions).Assembly, "patternfly/patternfly.css");
+            await documentService.InjectAssemblyCSSFile(typeof(DocumentServiceExtensions).Assembly, "patternfly/patternfly-extras.css");
         }
     }
 }

@@ -12,7 +12,7 @@
 @inherits TableComponent
 
 <CascadingValue Value=this>
-        <table class="pf-c-table pf-m-grid-md">
+        <table class="@Class">
             @if (string.IsNullOrWhiteSpace(Caption))
             {
                 <caption>@Caption</caption>
