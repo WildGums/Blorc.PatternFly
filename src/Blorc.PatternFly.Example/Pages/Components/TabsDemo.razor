@@ -1,6 +1,9 @@
 ﻿@page "/components/tabs"
 
 @using Blorc.PatternFly.Components.Tabs
+@using Blorc.PatternFly.Components.Table
+
+@inherits TabsDemoComponent
 
 <Metadata ComponentName="Tabs" />
 
@@ -156,22 +159,22 @@
     </Example>
 
     <Example Title="Tabs using the nav element">
-            <Tabs AriaLabel="Local"
-                  Variant="TabsVariant.Nav">
-                <Tab Id="1"
-                     Title="Tab item 1">
-                    Tab 1 section
-                </Tab>
-                <Tab Id="2"
-                     Title="Tab item 2">
-                    Tab 2 section
-                </Tab>
-                <Tab Id="3"
-                     Title="Tab item 3">
-                    Tab 3 section
-                </Tab>
-            </Tabs>
-        </Example>
+        <Tabs AriaLabel="Local"
+              Variant="TabsVariant.Nav">
+            <Tab Id="1"
+                 Title="Tab item 1">
+                Tab 1 section
+            </Tab>
+            <Tab Id="2"
+                 Title="Tab item 2">
+                Tab 2 section
+            </Tab>
+            <Tab Id="3"
+                 Title="Tab item 3">
+                Tab 3 section
+            </Tab>
+        </Tabs>
+    </Example>
 
     @*<Example Title="Separate tab content">
             <Tabs>
@@ -191,9 +194,42 @@
                 </TabContent>
             </div>
         </Example>*@
+
+    <Example Title="Tabs Dinamic Content">
+        <Tabs IsFilled="true" @bind-SelectedId="@SelectedId" @bind-SelectedId:event="SelectedTabChanged">
+            @for (int i = 0; i < 3; i++)
+            {
+                <Tab Id="@i" Title=@("Tab item " + @i.ToString())>
+                    @if (SelectedId % 2 == 0)
+                    {
+                        <Table Caption="Action Column" DataSource=@Data[SelectedId]>
+                            <Header>
+                                <Row>
+                                    <Column Label="Repositories" Key="Repositories" IsSortable="true" Idx="0" />
+                                    <Column Label="Branches" Key="Branches" IsSortable="true" Idx="1" />
+                                    <Column Label="Pull requests" Key="PullRequests" IsSortable="true" Idx="2" />
+                                    <Column Label="Workspaces" Key="Workspaces" Idx="3" />
+                                    <Column Label="Last commit" Key="LastCommit" Align="@Align.Center" Idx="4" />
+                                </Row>
+                            </Header>
+                        </Table>
+                    }
+                    else
+                    {
+                        <Table Caption="Action Column" DataSource=@Data[SelectedId]>
+                            <Header>
+                                <Row>
+                                    <Column Label="Repositories" Key="Repositories" IsSortable="true" Idx="0" />
+                                    <Column Label="Branches" Key="Branches" IsSortable="true" Idx="1" />
+                                    <Column Label="Pull requests" Key="PullRequests" IsSortable="true" Idx="2" />
+                                </Row>
+                            </Header>
+                        </Table>
+                    }
+                </Tab>
+            }
+        </Tabs> 
+    </Example>
 </section>
 
-@code {
-
-}
 
