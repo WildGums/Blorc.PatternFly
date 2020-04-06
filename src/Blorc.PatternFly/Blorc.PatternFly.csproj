@@ -4,7 +4,7 @@
     <AssemblyName>Blorc.PatternFly</AssemblyName>
     <RootNamespace>Blorc.PatternFly</RootNamespace>
     <PackageId>Blorc.PatternFly</PackageId>
-    <PackageVersion>1.0.0-alpha0486</PackageVersion>
+    <PackageVersion>1.0.0-alpha0491</PackageVersion>
     <Description>PatternFly implementation for Blazor.</Description>
     <PackageTags>blazor;patternfly</PackageTags>
     <IsPackable>true</IsPackable>

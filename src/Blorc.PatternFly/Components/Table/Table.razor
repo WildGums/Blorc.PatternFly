@@ -12,7 +12,7 @@
 @inherits TableComponent
 
 <CascadingValue Value=this>
-        <table class="@Class">
+        <table id="@TableId" class="@Class">
             @if (string.IsNullOrWhiteSpace(Caption))
             {
                 <caption>@Caption</caption>
@@ -20,16 +20,38 @@
             <thead>
                 @if (ColumnDefinitions.Count > 0)
                 {
+                    {
+                        Console.WriteLine($"Razor: {ColumnDefinitions.Count}");
+                    }
+
                     <Row>
                         @foreach (var columnDefinition in ColumnDefinitions.OrderBy(pair => pair.Value.Idx).Select(pair => pair.Value))
                         {
                             if (columnDefinition is ActionColumnDefinition)
                             {
-                                <ActionColumn Label="@columnDefinition.Label" Key="@columnDefinition.Key" Idx="@columnDefinition.Idx" />
+                                <ActionColumn Label="@columnDefinition.Label" 
+                                              Key="@columnDefinition.Key" 
+                                              Idx="@columnDefinition.Idx" />
                             }
                             else
                             {
-                                <Column Label="@columnDefinition.Label" Key="@columnDefinition.Key" Idx="@columnDefinition.Idx" IsSortable="@columnDefinition.IsSortable" IsSelected="@columnDefinition.IsSelected" FilterPredicate=@((o)=> columnDefinition.FilterPredicate != null && columnDefinition.FilterPredicate(o))/>
+                                if (columnDefinition.FilterPredicate != null)
+                                {
+                                    <Column Label="@columnDefinition.Label"
+                                            Key="@columnDefinition.Key"
+                                            Idx="@columnDefinition.Idx"
+                                            IsSortable="@columnDefinition.IsSortable"
+                                            IsSelected="@columnDefinition.IsSelected"
+                                            FilterPredicate=@columnDefinition.FilterPredicate />
+                                }
+                                else
+                                {
+                                    <Column Label="@columnDefinition.Label"
+                                            Key="@columnDefinition.Key"
+                                            Idx="@columnDefinition.Idx"
+                                            IsSortable="@columnDefinition.IsSortable"
+                                            IsSelected="@columnDefinition.IsSelected"/>
+                                }
                             }
                         }
                     </Row>

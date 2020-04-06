@@ -10,18 +10,17 @@
     using Blorc.Components;
     using Blorc.PatternFly.Components.Table.EventArgs;
     using Blorc.PatternFly.Helpers;
-    using Blorc.PatternFly.Layouts.Grid;
     using Blorc.StateConverters;
 
     using Microsoft.AspNetCore.Components;
 
-    public class TableComponent : BlorcComponentBase
+    public class TableComponent : UniqueComponentBase
     {
         private bool _sorting;
 
         public TableComponent()
         {
-            
+            TableId = GenerateUniqueId("pf-table-id");
             CreateConverter()
                 .Fixed("pf-c-table")
                 .If(() => GridSize == GridSize.Md, "pf-m-grid-md")
@@ -35,11 +34,13 @@
             IsStickyHeader = false;
         }
 
+        public string TableId { get; }
+
         public event EventHandler<OrderByColumnChangedEventArg> OrderByColumnChanged;
 
         [Parameter]
         public bool AlwaysReload { get; set; }
-
+        
         [Parameter]
         public RenderFragment Body { get; set; }
 
@@ -48,7 +49,8 @@
 
         public string Class { get; set; }
 
-        public SortedDictionary<string, ColumnDefinition> ColumnDefinitions { get; } = new SortedDictionary<string, ColumnDefinition>();
+        [Parameter]
+        public SortedDictionary<string, ColumnDefinition> ColumnDefinitions { get; set; } = new SortedDictionary<string, ColumnDefinition>();
 
         [Parameter]
         public IEnumerable DataSource
@@ -181,5 +183,7 @@
                 _sorting = false;
             }
         }
+
+        public override string ComponentName { get { return "table";  } }
     }
 }

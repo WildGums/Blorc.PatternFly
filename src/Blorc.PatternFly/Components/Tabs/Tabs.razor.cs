@@ -94,8 +94,9 @@
         public RenderFragment ChildContent { get; set; }
 
         [Parameter]
-        public EventHandler<EventArgs> SelectedTabChanged { get; set; }
-
+        public EventCallback<int> SelectedTabChanged { get; set; }
+        
+  
         public ITab ActiveTab { get; private set; }
 
         public void AddTab(ITab tab)
@@ -121,7 +122,7 @@
                 ActiveTab = tab;
                 SelectedId = tab?.Id ?? -1;
 
-                SelectedTabChanged?.Invoke(this, EventArgs.Empty);
+                SelectedTabChanged.InvokeAsync(SelectedId);
 
                 StateHasChanged();
             }
