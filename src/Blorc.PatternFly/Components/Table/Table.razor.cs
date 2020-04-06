@@ -36,6 +36,9 @@
 
         public string TableId { get; }
 
+        [Parameter]
+        public string Id { get; set; }
+
         public event EventHandler<OrderByColumnChangedEventArg> OrderByColumnChanged;
 
         [Parameter]
