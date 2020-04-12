@@ -37,11 +37,16 @@
         protected RenderFragment CreateComponent() =>
             builder =>
             {
-                builder.OpenElement(0, Component);
-                builder.AddAttribute(1, "class", Class);
-                builder.AddAttribute(2, "onmouseover", EventCallback.Factory.Create(this, MouseOver));
+                var idx = 0;
+                builder.OpenElement(idx++, Component);
+                builder.AddAttribute(idx++, "class", Class);
+                builder.AddAttribute(idx++, "onmouseover", EventCallback.Factory.Create(this, MouseOver));
+                if (AdditionalAttributes != null && AdditionalAttributes.TryGetValue("style", out var style))
+                {
+                    builder.AddAttribute(idx++, "style", style);
+                }
 
-                builder.AddContent(3, ChildContent);
+                builder.AddContent(idx, ChildContent);
                 builder.CloseElement();
             };
 

@@ -1,7 +1,4 @@
-﻿@using Microsoft.AspNetCore.Components
-@using Microsoft.AspNetCore.Components.Web
-
-@inherits Blorc.PatternFly.Components.Text.TextComponent
+﻿@inherits TextComponent
 
 @CustomRender
 
@@ -9,21 +6,30 @@
 {
     private RenderFragment CustomRender;
 
-    private RenderFragment CreateComponent() => builder =>
+    private RenderFragment CreateComponent()
     {
-        builder.OpenElement(0, Component);
+        return builder =>
+            {
+                var idx = 0;
+                builder.OpenElement(idx++, Component);
 
-        builder.AddAttribute(1, "data-pf-content", "true");
-        builder.AddAttribute(2, "class", string.Empty);
+                builder.AddAttribute(idx++, "data-pf-content", "true");
+                builder.AddAttribute(idx++, "class", string.Empty);
 
-        if (!string.IsNullOrWhiteSpace(Href))
-        {
-            builder.AddAttribute(3, "href", Href);
-        }
+                if (!string.IsNullOrWhiteSpace(Href))
+                {
+                    builder.AddAttribute(idx++, "href", Href);
+                }
 
-        builder.AddContent(4, ChildContent);
-        builder.CloseElement();
-    };
+                if (AdditionalAttributes != null && AdditionalAttributes.TryGetValue("style", out var style))
+                {
+                    builder.AddAttribute(idx++, "style", style);
+                }
+
+                builder.AddContent(idx, ChildContent);
+                builder.CloseElement();
+            };
+    }
 
     protected override void OnInitialized()
     {
@@ -31,4 +37,5 @@
 
         CustomRender = CreateComponent();
     }
+
 }
