@@ -10,19 +10,36 @@
 
 @inherits Blorc.PatternFly.Components.Modal.UIModalComponent
 
-<SourceContainer @ref="_modalSourceContainer">
-    <Modal Size="@Size" ShowCloseButton="@ShowCloseButton" CloseButtonPressed="@CloseButtonPressed" >
-        <Header>
-                @Header
-        </Header>
-        <Body>
-            @Body
-        </Body>
-        <Footer>
-            @Footer
-        </Footer>
-    </Modal>
-</SourceContainer>
+    <SourceContainer @ref="_modalSourceContainer">
+        @if (CloseButtonPressed != null)
+        {
+            <Modal Size="@Size" ShowCloseButton="@ShowCloseButton" CloseButtonPressed="@CloseButtonPressed">
+                <Header>
+                    @Header
+                </Header>
+                <Body>
+                    @Body
+                </Body>
+                <Footer>
+                    @Footer
+                </Footer>
+            </Modal>
+        }
+        else
+        {
+            <Modal Size="@Size" ShowCloseButton="@ShowCloseButton">
+                <Header>
+                    @Header
+                </Header>
+                <Body>
+                    @Body
+                </Body>
+                <Footer>
+                    @Footer
+                </Footer>
+            </Modal>
+        }
+    </SourceContainer>
 
 @code
 {
