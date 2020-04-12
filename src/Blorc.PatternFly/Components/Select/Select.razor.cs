@@ -82,6 +82,9 @@
         }
 
         [Parameter]
+        public EventCallback<bool> IsExpandedChanged { get; set; }
+
+        [Parameter]
         public bool IsGrouped
         {
             get => GetPropertyValue<bool>(nameof(IsGrouped));
@@ -286,7 +289,11 @@
 
         protected override void OnPropertyChanged(PropertyChangedEventArgs e)
         {
-            if ((Variant == SelectVariant.Typeahead || Variant == SelectVariant.TypeaheadMulti) && e.PropertyName == nameof(FilterText))
+            if (e.PropertyName == nameof(IsExpanded))
+            {
+                IsExpandedChanged.InvokeAsync(IsExpanded);
+            } 
+            else if ((Variant == SelectVariant.Typeahead || Variant == SelectVariant.TypeaheadMulti) && e.PropertyName == nameof(FilterText))
             {
                 StateHasChanged();
             }

@@ -252,10 +252,11 @@
             </span>
             <Select Variant="@SelectVariant.Single"
                     Label="Select Input"
-                    IsExpanded="false"
                     PlaceholderText="Filter by status"
                     AriaLabelledBy="checkbox-select-id"
-                    @bind-SelectedItems="SelectedItems6"
+                    @bind-SelectedItems="SelectedItems6" 
+                    @bind-IsExpanded="IsSelectedExpanded"
+                    @bind-IsExpanded:event="IsExpandedChanged"
                     DataSource=@DataSource
                     KeyFunc=@((o) => ((System.Tuple<string, string>)o).Item1) 
                     ValueFunc=@((o) => ((System.Tuple<string, string>)o).Item2)>
