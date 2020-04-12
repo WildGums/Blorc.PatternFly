@@ -1,5 +1,6 @@
 ﻿@page "/components/card"
 
+@using System
 @using Blorc.PatternFly.Components.Card
 
 <Metadata ComponentName="Card" />
@@ -54,7 +55,7 @@
     </Example>
 
     <Example Title="Card hover example">
-        <Card IsHoverable="true">
+        <Card IsHoverable="true" OnMouseOver=@((s, e) => MouseOver())>
             <CardHeader>Header</CardHeader>
             <CardBody>Body</CardBody>
             <CardFooter>Footer</CardFooter>
@@ -64,5 +65,9 @@
 
 @code {
 
+    void MouseOver()
+    {
+        Console.WriteLine("Mouse Over");
+    }
 }
 
