@@ -182,7 +182,7 @@
         {
             get
             {
-                return ItemsCount / ItemsPerPage;
+                return (ItemsCount - 1) / ItemsPerPage + 1;
             }
         }
 
