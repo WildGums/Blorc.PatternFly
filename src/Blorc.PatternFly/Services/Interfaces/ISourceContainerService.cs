@@ -15,5 +15,7 @@ namespace Blorc.PatternFly.Services.Interfaces
         Task HideContentAsync();
 
         Task ShowContentAsync();
+
+        Task UpdateContentAsync();
     }
 }

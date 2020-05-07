@@ -29,6 +29,7 @@ namespace Blorc.PatternFly.Services
 
         public async Task UpdateAsync()
         {
+            await ((UIModalComponent)Component).UpdateAsync();
         }
     }
 }

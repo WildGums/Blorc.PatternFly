@@ -44,5 +44,10 @@
         {
             await ModalSourceContainerService.ShowContentAsync();
         }
+
+        public async Task UpdateAsync()
+        {
+            await ModalSourceContainerService.UpdateContentAsync();
+        }
     }
 }

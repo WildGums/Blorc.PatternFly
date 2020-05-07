@@ -60,4 +60,7 @@ Global
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B31C42EA-6789-4DE1-B98C-080A2046A44F}
 	EndGlobalSection
+	GlobalSection(NDepend) = preSolution
+		Project = ".\Blorc.PatternFly.ndproj"
+	EndGlobalSection
 EndGlobal

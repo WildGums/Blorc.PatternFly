@@ -129,7 +129,6 @@
 
         private void ToggleComponentContainerOnToogleComponentChanged(object sender, ToggleComponentChangedEventArg e)
         {
-            Console.WriteLine("ToggleComponentChanged");
             if(e.ToggleComponent != this && IsOpen)
             {
                 Close();
