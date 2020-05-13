@@ -8,12 +8,12 @@
 
     public class TabComponent : BlorcComponentBase, ITab
     {
-        private static int Counter; 
+        private static int Counter;
 
         public TabComponent()
         {
             Id = ++Counter;
-            UniqueLabelId =  GenerateUniqueId($"pf-tab-pf");
+            UniqueLabelId = GenerateUniqueId($"pf-tab-pf");
             UniqueSectionId = GenerateUniqueId($"pf-tab-section-pf");
 
             CreateConverter()

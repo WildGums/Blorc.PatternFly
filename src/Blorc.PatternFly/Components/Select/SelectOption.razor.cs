@@ -51,7 +51,7 @@
             {
                 if (ContainerSelect.Variant == SelectVariant.Typeahead || ContainerSelect.Variant == SelectVariant.TypeaheadMulti)
                 {
-                    return string.IsNullOrWhiteSpace(ContainerSelect.FilterText) || ContainerSelect != null && 
+                    return string.IsNullOrWhiteSpace(ContainerSelect.FilterText) || ContainerSelect != null &&
                            (ContainerSelect.TypeaheadMatchExpression?.Invoke(ContainerSelect.FilterText, Value) ?? Value.StartsWith(ContainerSelect.FilterText, StringComparison.InvariantCultureIgnoreCase));
                 }
 

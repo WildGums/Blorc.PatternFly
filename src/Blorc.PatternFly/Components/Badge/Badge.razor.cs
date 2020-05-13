@@ -9,7 +9,7 @@
     {
         public BadgeComponent()
         {
-            
+
         }
 
         public string Class

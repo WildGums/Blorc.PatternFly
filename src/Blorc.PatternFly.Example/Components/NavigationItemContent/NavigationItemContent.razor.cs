@@ -14,7 +14,7 @@
             get => GetPropertyValue<string>(nameof(Text));
             set => SetPropertyValue(nameof(Text), value);
         }
-        
+
         [Parameter]
         public ItemType ItemType
         {
@@ -28,7 +28,7 @@
         Unchanged,
 
         New,
-        
+
         Updated,
 
         Unavailable

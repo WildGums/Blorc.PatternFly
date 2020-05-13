@@ -283,7 +283,7 @@
             {
                 InitializeValues();
             }
-            
+
             StateHasChanged();
         }
 
@@ -292,7 +292,7 @@
             if (e.PropertyName == nameof(IsExpanded))
             {
                 IsExpandedChanged.InvokeAsync(IsExpanded);
-            } 
+            }
             else if ((Variant == SelectVariant.Typeahead || Variant == SelectVariant.TypeaheadMulti) && e.PropertyName == nameof(FilterText))
             {
                 StateHasChanged();

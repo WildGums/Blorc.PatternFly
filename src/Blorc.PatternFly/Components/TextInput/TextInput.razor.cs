@@ -44,7 +44,7 @@
         [Parameter]
         public UpdateMode UpdateMode { get; set; }
 
-        [Parameter] 
+        [Parameter]
         public EventCallback<string> ValueChanged { get; set; }
 
         public void Clear()

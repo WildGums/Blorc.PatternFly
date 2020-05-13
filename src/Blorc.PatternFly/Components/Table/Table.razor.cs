@@ -43,7 +43,7 @@
 
         [Parameter]
         public bool AlwaysReload { get; set; }
-        
+
         [Parameter]
         public RenderFragment Body { get; set; }
 
@@ -82,8 +82,8 @@
         {
             get { return GetPropertyValue<bool>(nameof(IsStickyHeader)); }
             set { SetPropertyValue(nameof(IsStickyHeader), value); }
-        } 
-        
+        }
+
         [Parameter]
         public GridSize GridSize
         {
@@ -187,6 +187,6 @@
             }
         }
 
-        public override string ComponentName { get { return "table";  } }
+        public override string ComponentName { get { return "table"; } }
     }
 }

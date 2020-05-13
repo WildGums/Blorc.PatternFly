@@ -40,7 +40,7 @@
     {
         event EventHandler ModalRequest;
 
-        Type ModalType { get;  }
+        Type ModalType { get; }
 
         void ShowAsync<TModal>();
     }

@@ -75,8 +75,8 @@
         {
             get => GetPropertyValue<Align>(nameof(Align));
             set => SetPropertyValue(nameof(Align), value);
-        } 
-        
+        }
+
         [Parameter]
         public ContentJustification ContentJustification
         {

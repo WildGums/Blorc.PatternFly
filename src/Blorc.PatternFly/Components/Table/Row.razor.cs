@@ -17,7 +17,7 @@
         public string Class { get; set; }
 
         [Parameter]
-        public object Record { get; set; } 
+        public object Record { get; set; }
 
         [CascadingParameter]
         public TableComponent ContainerTable { get; set; }

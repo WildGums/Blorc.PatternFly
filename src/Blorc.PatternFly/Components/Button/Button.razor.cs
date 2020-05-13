@@ -82,7 +82,7 @@
 
         [Parameter]
         public EventHandler<EventArgs> OnClick { get; set; }
-        
+
         protected RenderFragment CustomRender;
 
         protected void OnButtonClicked(MouseEventArgs e)

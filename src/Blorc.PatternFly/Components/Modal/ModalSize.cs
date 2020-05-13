@@ -8,7 +8,7 @@ namespace Blorc.PatternFly.Components.Modal
     public enum ModalSize
     {
         Default,
-        Large, 
+        Large,
         Small
     }
 }

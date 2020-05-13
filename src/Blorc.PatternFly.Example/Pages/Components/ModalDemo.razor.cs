@@ -5,7 +5,6 @@
 
     using Blorc.Components;
     using Blorc.PatternFly.Components.Modal;
-    using Blorc.PatternFly.Services.Interfaces;
     using Blorc.Services;
 
     public class ModalDemoComponent : BlorcComponentBase

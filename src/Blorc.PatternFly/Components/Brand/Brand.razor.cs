@@ -7,7 +7,7 @@
     {
         public BrandComponent()
         {
-            
+
         }
 
         [Parameter]

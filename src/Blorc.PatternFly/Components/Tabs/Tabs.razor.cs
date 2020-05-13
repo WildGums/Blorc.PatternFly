@@ -95,8 +95,8 @@
 
         [Parameter]
         public EventCallback<int> SelectedTabChanged { get; set; }
-        
-  
+
+
         public ITab ActiveTab { get; private set; }
 
         public void AddTab(ITab tab)

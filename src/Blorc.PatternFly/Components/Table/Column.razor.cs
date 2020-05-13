@@ -106,14 +106,14 @@
                 else
                 {
                     ContainerTable.ColumnDefinitions[Key] = new ColumnDefinition
-                                                            {
-                                                                Label = Label,
-                                                                Key = Key,
-                                                                Idx = Idx,
-                                                                IsSortable = IsSortable,
-                                                                IsSelected = IsSelected,
-                                                                FilterPredicate = FilterPredicate
-                                                            };
+                    {
+                        Label = Label,
+                        Key = Key,
+                        Idx = Idx,
+                        IsSortable = IsSortable,
+                        IsSelected = IsSelected,
+                        FilterPredicate = FilterPredicate
+                    };
                 }
             }
 

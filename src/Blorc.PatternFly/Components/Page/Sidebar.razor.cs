@@ -59,7 +59,7 @@
                 StateHasChanged();
             }
         }
-        
+
         protected override void OnPropertyChanged(PropertyChangedEventArgs e)
         {
             //if(e.PropertyName == nameof(Class))

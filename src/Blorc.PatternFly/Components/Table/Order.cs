@@ -10,7 +10,7 @@ namespace Blorc.PatternFly.Components.Table
         None,
 
         Descending,
-        
+
         Ascending
     }
 }

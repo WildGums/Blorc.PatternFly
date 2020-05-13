@@ -36,8 +36,8 @@
         {
             get => GetPropertyValue<Space>(nameof(Space));
             set => SetPropertyValue(nameof(Space), value);
-        } 
-        
+        }
+
         [Parameter]
         public Align Align
         {
