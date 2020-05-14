@@ -377,7 +377,7 @@ private GeneralContext InitializeGeneralContext(BuildContext buildContext, IBuil
         AssemblyInfoFileName = "./src/SolutionAssemblyInfo.cs",
         FileName = string.Format("./src/{0}", string.Format("{0}.sln", solutionName)),
         PublishType = buildContext.BuildServer.GetVariable("PublishType", "Unknown", showValue: true),
-        ConfigurationName = buildContext.BuildServer.GetVariable("ConfigurationName", "Release", showValue: true),
+        ConfigurationName = buildContext.BuildServer.GetVariable("ConfigurationName", "Debug", showValue: true),
         BuildSolution = buildContext.BuildServer.GetVariableAsBool("BuildSolution", false, showValue: true)
     };
 
