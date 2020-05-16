@@ -54,7 +54,7 @@
                                 <Split IsGutter="true">
                                     @if (actionDefinition != null)
                                     {
-                                        <SplitItem>
+                                        <SplitItem IsFilled="true">
                                             <Button Variant=@ButtonVariant.Primary OnClick=@((s, e) => actionDefinition.Action(Record)) IsDisabled="@actionDefinition.IsDisabled">@actionDefinition.Label</Button>
                                         </SplitItem>
                                     }
@@ -89,7 +89,7 @@
                                         if (action is CallActionDefinition callActionDefinition)
                                         {
                                             var buttonVariant = ButtonVariants[Math.Min(ButtonVariants.Length - 1, i++)];
-                                            <SplitItem>
+                                            <SplitItem IsFilled="true">
                                                 <Button Variant=@buttonVariant OnClick=@((s, e) => callActionDefinition.Action(Record)) IsDisabled="@callActionDefinition.IsDisabled">@callActionDefinition.Label</Button>
                                             </SplitItem>
                                         }
