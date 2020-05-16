@@ -1,26 +1,26 @@
 ﻿namespace Blorc.PatternFly.Components.Table
 {
-    using System;
-    using System.Collections.Generic;
     using System.ComponentModel;
-    using System.Linq;
 
     using Blorc.Components;
+    using Blorc.PatternFly.Components.Button;
 
     using Microsoft.AspNetCore.Components;
 
     public class RowComponent : BlorcComponentBase
     {
+        protected static readonly ButtonVariant[] ButtonVariants = { ButtonVariant.Primary, ButtonVariant.Secondary, ButtonVariant.Tertiary };
+
         [Parameter]
         public RenderFragment ChildContent { get; set; }
 
         public string Class { get; set; }
 
-        [Parameter]
-        public object Record { get; set; }
-
         [CascadingParameter]
         public TableComponent ContainerTable { get; set; }
+
+        [Parameter]
+        public object Record { get; set; }
 
         protected override void OnParametersSet()
         {

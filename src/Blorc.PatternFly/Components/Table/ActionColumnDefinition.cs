@@ -12,5 +12,7 @@ namespace Blorc.PatternFly.Components.Table
     public class ActionColumnDefinition : ColumnDefinition
     {
         public Func<object, IEnumerable<ActionDefinition>> ActionSource { get; set; }
+
+        public ActionColumnType ActionColumnType { get; set; }
     }
 }

@@ -64,9 +64,11 @@
                 <NavigationItem Link="components/options-menu">
                     <NavigationItemContent Text="Options menu" ItemType=@ItemType.Unavailable />
                 </NavigationItem>
-                <NavigationItem Link="components/page"/>
+                <NavigationItem Link="components/page">
+                    <NavigationItemContent Text="Page" />
+                </NavigationItem>
                 <NavigationItem Link="components/pagination">
-                    <NavigationItemContent Text="Pagination" ItemType=@ItemType.New />
+                    <NavigationItemContent Text="Pagination" />
                 </NavigationItem>
                 <NavigationItem Link="components/popover">
                     <NavigationItemContent Text="Popover" ItemType=@ItemType.Unavailable />
@@ -78,10 +80,10 @@
                     <NavigationItemContent Text="Skip to content" ItemType=@ItemType.Unavailable />
                 </NavigationItem>
                 <NavigationItem Title="Spinner" Link="components/spinner">
-                    <NavigationItemContent Text="Spinner" ItemType=@ItemType.New />
+                    <NavigationItemContent Text="Spinner" />
                 </NavigationItem>
                 <NavigationItem Title="Switch" Link="components/switch" />
-                <NavigationItem Title="Table" Link="components/table"/>
+                <NavigationItem Title="Table" Link="components/table" ItemType=@ItemType.Updated/>
                 <NavigationItem Title="Tabs" Link="components/tabs" />
                 <NavigationItem Title="Text" Link="components/text" />
                 <NavigationItem Title="Text area" Link="components/text-area" />

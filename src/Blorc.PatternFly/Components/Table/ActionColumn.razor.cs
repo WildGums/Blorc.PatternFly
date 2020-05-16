@@ -43,6 +43,9 @@
         [Parameter]
         public string Label { get; set; }
 
+        [Parameter]
+        public ActionColumnType ActionColumnType { get; set; }
+
         protected override void OnParametersSet()
         {
             base.OnParametersSet();
@@ -50,7 +53,14 @@
             {
                 if (!ContainerTable.ColumnDefinitions.ContainsKey(Key))
                 {
-                    ContainerTable.ColumnDefinitions[Key] = new ActionColumnDefinition { Label = Label, Key = Key, Idx = Idx, ActionSource = ActionSource };
+                    ContainerTable.ColumnDefinitions[Key] = new ActionColumnDefinition
+                                                            {
+                                                                Label = Label, 
+                                                                Key = Key, 
+                                                                Idx = Idx, 
+                                                                ActionSource = ActionSource,
+                                                                ActionColumnType = ActionColumnType
+                    };
                 }
             }
         }

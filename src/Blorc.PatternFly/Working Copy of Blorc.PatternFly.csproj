@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>Blorc.PatternFly</AssemblyName>
+    <RootNamespace>Blorc.PatternFly</RootNamespace>
+    <PackageId>Blorc.PatternFly</PackageId>
+    <PackageVersion>1.0.0-alpha0430</PackageVersion>
+    <Description>PatternFly implementation for Blazor.</Description>
+    <PackageTags>blazor;patternfly</PackageTags>
+    <IsPackable>true</IsPackable>
+    <LangVersion>7.3</LangVersion>
+    <RazorLangVersion>3.0</RazorLangVersion>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <!-- SonarQube requires a project guid -->
+    <ProjectGuid>28A51610-AD4C-4BDF-B4B4-F902E689C3D3</ProjectGuid>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Blorc.Core" Version="1.0.0-alpha0295" />
+  </ItemGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <CodeAnalysisRuleSet>Blorc.PatternFly.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <CodeAnalysisRuleSet>Blorc.PatternFly.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Update="Components\Icon\src\FortAwesome.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FortAwesome.tt</DependentUpon>
+    </Compile>
+    <None Update="Components\Icon\src\FortAwesome.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>FortAwesome.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  
+  <Import Project="$(MSBuildProjectDirectory)\..\Directory.build.shared.explicit.props" Condition="Exists('$(MSBuildProjectDirectory)\..\Directory.build.shared.explicit.props')" />
+  <Import Project="$(MSBuildProjectDirectory)\..\Directory.build.shared.mat.props" Condition="Exists('$(MSBuildProjectDirectory)\..\Directory.build.shared.mat.props')" />
+</Project>

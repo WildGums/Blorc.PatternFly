@@ -1,5 +1,7 @@
 ﻿@using System.Linq
 @using Blorc.PatternFly.Components.Dropdown
+@using Blorc.PatternFly.Components.Button
+@using Blorc.PatternFly.Layouts.Split
 @using Blorc.PatternFly.Helpers
 @using Blorc.Reflection
 @using Microsoft.AspNetCore.Components
@@ -21,28 +23,80 @@
             {
                 if (columnDefinition is ActionColumnDefinition actionColumnDefinition)
                 {
+                    var actionDefinitions = actionColumnDefinition.ActionSource(Record)?.ToList();
                     <ActionCell>
-                        <Dropdown IsPlain="true" Position="@DropdownPosition.Right">
-                            <Toggle>
-                                <KebabToggle />
-                            </Toggle>
-                            <Items>
-                                @if (actionColumnDefinition.ActionSource != null)
-                                {
-                                    foreach (var action in actionColumnDefinition.ActionSource(Record))
-                                    {
-                                        @if (action is SeparatorActionDefinition)
+                        @if (actionDefinitions != null)
+                        {
+                            @if (actionColumnDefinition.ActionColumnType == ActionColumnType.Toggle)
+                            {
+                                <Dropdown IsPlain="true" Position="@DropdownPosition.Right">
+                                    <Toggle>
+                                        <KebabToggle />
+                                    </Toggle>
+                                    <Items>
+                                        @foreach (var action in actionDefinitions)
                                         {
-                                            <Separator Key="separator" />
+                                            @if (action is SeparatorActionDefinition)
+                                            {
+                                                <Separator Key="separator" />
+                                            }
+                                            else if (action is CallActionDefinition callActionDefinition)
+                                            {
+                                                <DropdownItem Key="@callActionDefinition.Key" OnClick=@((s, e) => callActionDefinition.Action(Record)) IsDisabled="@callActionDefinition.IsDisabled">@callActionDefinition.Label</DropdownItem>
+                                            }
                                         }
-                                        else if (action is CallActionDefinition callActionDefinition)
+                                    </Items>
+                                </Dropdown>
+                            }
+                            else if (actionColumnDefinition.ActionColumnType == ActionColumnType.ButtonAndToggle)
+                            {
+                                var actionDefinition = actionDefinitions.OfType<CallActionDefinition>().FirstOrDefault(definition => !definition.IsDisabled);
+                                <Split IsGutter="true">
+                                    @if (actionDefinition != null)
+                                    {
+                                        <SplitItem>
+                                            <Button Variant=@ButtonVariant.Primary OnClick=@((s, e) => actionDefinition.Action(Record)) IsDisabled="@actionDefinition.IsDisabled">@actionDefinition.Label</Button>
+                                        </SplitItem>
+                                    }
+                                    <SplitItem >
+                                        <Dropdown IsPlain="true" Position="@DropdownPosition.Right">
+                                            <Toggle>
+                                                <KebabToggle />
+                                            </Toggle>
+                                            <Items>
+                                                @foreach (var action in actionDefinitions)
+                                                {
+                                                    @if (action is SeparatorActionDefinition)
+                                                    {
+                                                        <Separator Key="separator" />
+                                                    }
+                                                    else if (action is CallActionDefinition callActionDefinition)
+                                                    {
+                                                        <DropdownItem Key="@callActionDefinition.Key" OnClick=@((s, e) => callActionDefinition.Action(Record)) IsDisabled="@callActionDefinition.IsDisabled">@callActionDefinition.Label</DropdownItem>
+                                                    }
+                                                }
+                                            </Items>
+                                        </Dropdown>
+                                    </SplitItem>
+                                </Split>
+                            }
+                            else
+                            {
+                                int i = 0;
+                                <Split IsGutter=@(actionColumnDefinition.ActionColumnType == ActionColumnType.GutterButtons)>
+                                    @foreach (var action in actionDefinitions)
+                                    {
+                                        if (action is CallActionDefinition callActionDefinition)
                                         {
-                                            <DropdownItem Key="@callActionDefinition.Key" OnClick=@((s, e)=> callActionDefinition.Action(Record)) IsDisabled="@callActionDefinition.IsDisabled">@callActionDefinition.Label</DropdownItem>
+                                            var buttonVariant = ButtonVariants[Math.Min(ButtonVariants.Length - 1, i++)];
+                                            <SplitItem>
+                                                <Button Variant=@buttonVariant OnClick=@((s, e) => callActionDefinition.Action(Record)) IsDisabled="@callActionDefinition.IsDisabled">@callActionDefinition.Label</Button>
+                                            </SplitItem>
                                         }
                                     }
-                                }
-                            </Items>
-                        </Dropdown>
+                                </Split>
+                            }
+                        }
                     </ActionCell>
                 }
                 else

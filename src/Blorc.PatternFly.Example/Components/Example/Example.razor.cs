@@ -6,6 +6,9 @@
 
     public class ExampleComponent : BlorcComponentBase
     {
+        [Inject]
+        protected NavigationManager NavigationManager { get; set; }
+
         [Parameter]
         public string Title { get; set; }
 

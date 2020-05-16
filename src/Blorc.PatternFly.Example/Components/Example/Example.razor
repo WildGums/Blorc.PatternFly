@@ -3,14 +3,25 @@
 <br /><br />
 
 <div class="ws-example">
-    <h3 id="@Slug" class="pf-c-title pf-m-lg ws-example-heading">
-        <a href="#@Slug" class="ws-heading-anchor" tabindex="-1" aria-hidden="true">
-        @Title
-        </a>
-    </h3>
-    <div class="ws-preview">
-        <div class="ws-preview-html">
-        @ChildContent
-        </div>
-    </div>
+  <h3 id="@Slug" class="pf-c-title pf-m-lg ws-example-heading">
+      <a href="#@Slug" class="ws-heading-anchor" tabindex="-1" aria-hidden="true">
+          @Title
+      </a>
+  </h3>
+  @if (NavigationManager.Uri.Contains("/layouts/"))
+  {
+      <div class="ws-preview">
+          <div class="ws-preview-html">
+              @ChildContent
+          </div>
+      </div>
+  }
+  else
+  {
+      <div class="ws-preview1">
+          <div class="ws-preview-html">
+              @ChildContent
+          </div>
+      </div>
+  }
 </div>
