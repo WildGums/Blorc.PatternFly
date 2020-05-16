@@ -21,6 +21,14 @@ app {
     transition: width .2s ease-in-out;
 }
 
+.ws-preview2 {
+    padding: 1rem;
+    background-color: #fff;
+    border-bottom: 1px solid #f8f8f8;
+    -webkit-transition: width .2s ease-in-out;
+    transition: width .2s ease-in-out;
+}
+
 .ws-heading-anchor {
     color: #000;
     /*float: left;
