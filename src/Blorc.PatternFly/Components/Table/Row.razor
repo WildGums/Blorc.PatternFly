@@ -50,7 +50,7 @@
                             }
                             else if (actionColumnDefinition.ActionColumnType == ActionColumnType.ButtonAndToggle)
                             {
-                                var actionDefinition = actionDefinitions.OfType<CallActionDefinition>().FirstOrDefault(definition => !definition.IsDisabled);
+                                var actionDefinition = actionDefinitions.OfType<CallActionDefinition>().FirstOrDefault();
                                 <Split IsGutter="true">
                                     @if (actionDefinition != null)
                                     {
