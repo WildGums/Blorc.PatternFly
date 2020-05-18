@@ -66,6 +66,12 @@
             return _data;
         }
 
+        public bool IsHighlighted(object record)
+        {
+            var idx = _data.IndexOf(record);
+            return idx % 2 == 0;
+        }
+
         public void UpdateSingleRow()
         {
             var next = _random.Next(0, _data.Count);

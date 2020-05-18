@@ -126,6 +126,21 @@
             </Header>
         </Table>
     </Example>
+    
+    <Example Title="Highlighting Row Table">
+        <Table Caption="Sortable Table" DataSourceFunc=@(() => GetData()) HighlightPredicate=@(o => IsHighlighted(o))>
+            <Header>
+                <Row>
+                    <!--TODO Try to avoid the index parameter later-->
+                    <Column Label="Repositories" Key="Repositories" IsSortable="true" Idx="0" />
+                    <Column Label="Branches" Key="Branches" IsSortable="true" Idx="1" />
+                    <Column Label="Pull requests" Key="PullRequests" IsSortable="true" Idx="2" />
+                    <Column Label="Workspaces" Key="Workspaces" Idx="3" />
+                    <Column Label="Last commit" Key="LastCommit" Align="@Align.Center" Idx="4" />
+                </Row>
+            </Header>
+        </Table>
+</Example>
 
     <Example Title="Filtrable Table">
         <TextInput @bind-Value="FilterText" UpdateMode="@UpdateMode.Continuous" @ref="_filterTextInput" />

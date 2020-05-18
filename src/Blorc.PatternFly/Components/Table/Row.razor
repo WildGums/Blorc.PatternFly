@@ -12,13 +12,13 @@
 
     @if (ChildContent != null)
     {
-        <tr class="@Class">
+        <tr class="@Class" style="@Style">
             @ChildContent
         </tr>
     }
     else if (ContainerTable != null && Record != null)
     {
-        <tr class="@Class">
+        <tr class="@Class" style="@Style">
             @foreach (var columnDefinition in ContainerTable.ColumnDefinitions.OrderBy(pair => pair.Value.Idx).Select(pair => pair.Value))
             {
                 if (columnDefinition is ActionColumnDefinition actionColumnDefinition)

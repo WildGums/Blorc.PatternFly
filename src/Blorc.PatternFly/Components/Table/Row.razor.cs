@@ -9,7 +9,22 @@
 
     public class RowComponent : BlorcComponentBase
     {
+        private const string DefaultHighlightStyle = "border-left: 3px solid var(--pf-global--primary-color--100);";
+
         protected static readonly ButtonVariant[] ButtonVariants = { ButtonVariant.Primary, ButtonVariant.Secondary, ButtonVariant.Tertiary };
+
+        public string Style
+        {
+            get
+            {
+                if (!IsHighlighted)
+                {
+                    return string.Empty;
+                }
+
+                return !string.IsNullOrWhiteSpace(ContainerTable?.CustomHighlightStyle) ? ContainerTable?.CustomHighlightStyle : DefaultHighlightStyle;
+            }
+        }
 
         [Parameter]
         public RenderFragment ChildContent { get; set; }
@@ -20,6 +35,20 @@
         public TableComponent ContainerTable { get; set; }
 
         [Parameter]
+        public bool IsHighlighted
+        {
+            get
+            {
+                return GetPropertyValue<bool>(nameof(IsHighlighted));
+            }
+
+            set
+            {
+                SetPropertyValue(nameof(IsHighlighted), value);
+            }
+        }
+
+        [Parameter]
         public object Record { get; set; }
 
         protected override void OnParametersSet()
@@ -27,6 +56,11 @@
             base.OnParametersSet();
             if (ContainerTable != null)
             {
+                if (ContainerTable.HighlightPredicate != null)
+                {
+                    IsHighlighted = ContainerTable.HighlightPredicate(Record);
+                }
+
                 StateHasChanged();
             }
 

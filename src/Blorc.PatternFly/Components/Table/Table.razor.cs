@@ -34,11 +34,6 @@
             IsStickyHeader = false;
         }
 
-        public string TableId { get; }
-
-        [Parameter]
-        public string Id { get; set; }
-
         public event EventHandler<OrderByColumnChangedEventArg> OrderByColumnChanged;
 
         [Parameter]
@@ -54,6 +49,22 @@
 
         [Parameter]
         public SortedDictionary<string, ColumnDefinition> ColumnDefinitions { get; set; } = new SortedDictionary<string, ColumnDefinition>();
+
+        public override string ComponentName { get { return "table"; } }
+
+        [Parameter]
+        public string CustomHighlightStyle
+        {
+            get
+            {
+                return GetPropertyValue<string>(nameof(CustomHighlightStyle));
+            }
+
+            set
+            {
+                SetPropertyValue(nameof(CustomHighlightStyle), value);
+            }
+        }
 
         [Parameter]
         public IEnumerable DataSource
@@ -73,7 +84,20 @@
         public Func<IEnumerable> DataSourceFunc { get; set; }
 
         [Parameter]
+        public GridSize GridSize
+        {
+            get { return GetPropertyValue<GridSize>(nameof(GridSize)); }
+            set { SetPropertyValue(nameof(GridSize), value); }
+        }
+
+        [Parameter]
         public RenderFragment Header { get; set; }
+
+        [Parameter]
+        public Predicate<object> HighlightPredicate { get; set; }
+
+        [Parameter]
+        public string Id { get; set; }
 
         public bool IsSorted => OrderState != null && OrderState.IsSorted;
 
@@ -85,16 +109,11 @@
         }
 
         [Parameter]
-        public GridSize GridSize
-        {
-            get { return GetPropertyValue<GridSize>(nameof(GridSize)); }
-            set { SetPropertyValue(nameof(GridSize), value); }
-        }
-
-        [Parameter]
         public RenderFragment NoRowsContent { get; set; }
 
         public OrderState OrderState { get; set; }
+
+        public string TableId { get; }
 
         public bool IsSortedBy(string propertyName)
         {
@@ -186,7 +205,5 @@
                 _sorting = false;
             }
         }
-
-        public override string ComponentName { get { return "table"; } }
     }
 }
