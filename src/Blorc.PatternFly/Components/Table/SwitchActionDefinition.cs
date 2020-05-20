@@ -14,22 +14,28 @@ namespace Blorc.PatternFly.Components.Table
 
     public class SwitchActionDefinition : ActionDefinition, INotifyPropertyChanged
     {
+        private bool _isChecked;
+
         private bool _isDisabled;
 
         private string _label;
 
-        private bool _isChecked;
-
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public Action<object> Action { get; set; }
+        public Action<object, bool> Action { get; set; }
+
+    
 
         public bool IsChecked
         {
             get => _isChecked;
             set
             {
-                if (value == _isChecked) return;
+                if (value == _isChecked)
+                {
+                    return;
+                }
+
                 _isChecked = value;
                 OnPropertyChanged();
             }
@@ -70,6 +76,11 @@ namespace Blorc.PatternFly.Components.Table
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
+            if (propertyName == nameof(IsChecked))
+            {
+                Action(DataContext, IsChecked);
+            }
+
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }

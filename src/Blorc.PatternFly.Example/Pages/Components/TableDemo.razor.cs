@@ -17,7 +17,7 @@
 
         private ArrayList _data;
 
-        private List<ActionDefinition> actionDefinitions;
+        private Dictionary<object, List<ActionDefinition>> actionDefinitionsCache = new Dictionary<object, List<ActionDefinition>>();
 
         public string FilterText
         {
@@ -29,10 +29,15 @@
 
         public IEnumerable<ActionDefinition> GetActions(object row)
         {
-            if (actionDefinitions == null)
+            if (!actionDefinitionsCache.ContainsKey(row))
+            {
+                actionDefinitionsCache[row] = new List<ActionDefinition>();
+            }
+
+            var actionDefinitions = actionDefinitionsCache[row];
+            if (actionDefinitions.Count == 0)
             {
                 // This parameter allow customization per row state.
-                actionDefinitions = new List<ActionDefinition>();
                 if (row is Record record)
                 {
                     actionDefinitions.Add(
@@ -40,7 +45,14 @@
                     actionDefinitions.Add(new SeparatorActionDefinition());
                     actionDefinitions.Add(
                         new CallActionDefinition { Label = "Print Branches", Action = PrintBranches });
-                    var switchActionDefinition = new SwitchActionDefinition { Label = "Turn On", Action = SwitchBranches };
+                    
+                    var switchActionDefinition = new SwitchActionDefinition
+                                                 {
+                                                     Label = "Turn On",
+                                                     DataContext = record,
+                                                     Action = SwitchBranches
+                                                 };
+
                     switchActionDefinition.PropertyChanged += (sender, args) =>
                     {
                         if (args.PropertyName == nameof(SwitchActionDefinition.IsChecked))
@@ -52,12 +64,13 @@
 
                     // actionDefinitions.Add(
                     // new CallActionDefinition { Label = "Disabled Call", IsDisabled = true });
-
-                    return actionDefinitions;
                 }
             }
 
-            return actionDefinitions;
+            foreach (var actionDefinition in actionDefinitions)
+            {
+                yield return actionDefinition;
+            }
         }
 
         public IEnumerable GetData(bool reload = false)
@@ -120,9 +133,9 @@
             }
         }
 
-        private void SwitchBranches(object obj)
+        private void SwitchBranches(object obj, bool isChecked)
         {
-            Console.WriteLine("Switching...");
+            Console.WriteLine($"Switching... {isChecked}");
         }
 
         public class Record : INotifyPropertyChanged, IDictionary

@@ -7,5 +7,6 @@ namespace Blorc.PatternFly.Components.Table
 {
     public class ActionDefinition
     {
+        public object DataContext { get; set; }
     }
 }
