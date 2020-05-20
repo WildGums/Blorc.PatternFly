@@ -1,5 +1,7 @@
 ﻿namespace Blorc.PatternFly.Components.Checkbox
 {
+    using System.ComponentModel;
+
     using Blorc.Components;
 
     using Microsoft.AspNetCore.Components;

@@ -2,13 +2,13 @@
 
 @using Blorc.PatternFly.Components.Switch
 
+@inherits SwitchDemoComponent
+
 <Metadata ComponentName="Switch" />
 
 <section class="ws-section ws-live-demo">
     <Example Title="Simple switch">
-        <Switch @ref="simpleSwitch"
-                IsChecked="true"
-                OnChange="@OnSimpleSwitchIsCheckedChanged" />
+        <Switch Label=@SimpleSwitchLabel @bind-IsChecked=@SimpleSwitchIsChecked @bind-IsChecked:event="OnChange" />
     </Example>
 
     <Example Title="Simple (no labels)">
@@ -35,24 +35,8 @@
 
 @code
 {
-    private Switch simpleSwitch;
+   
     private Switch noLabelsSwitch;
-
-    private void OnSimpleSwitchIsCheckedChanged()
-    {
-        UpdateSimpleSwitch();
-    }
-
-    private void UpdateSimpleSwitch()
-    {
-        simpleSwitch.Label = simpleSwitch.IsChecked ? "Message when on" : "Message when off";
-    }
-
-    protected override void OnAfterRender(bool firstRender)
-    {
-        base.OnAfterRender(firstRender);
-
-        UpdateSimpleSwitch();
-    }
+ 
 }
 

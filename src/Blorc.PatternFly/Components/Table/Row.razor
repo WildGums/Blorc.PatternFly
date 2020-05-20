@@ -1,6 +1,7 @@
 ﻿@using System.Linq
 @using Blorc.PatternFly.Components.Dropdown
 @using Blorc.PatternFly.Components.Button
+@using Blorc.PatternFly.Components.Switch
 @using Blorc.PatternFly.Layouts.Split
 @using Blorc.PatternFly.Helpers
 @using Blorc.Reflection
@@ -34,15 +35,21 @@
                                         <KebabToggle />
                                     </Toggle>
                                     <Items>
-                                        @foreach (var action in actionDefinitions)
+                                        @foreach (var actionDefinition in actionDefinitions)
                                         {
-                                            @if (action is SeparatorActionDefinition)
+                                            @if (actionDefinition is SeparatorActionDefinition)
                                             {
                                                 <Separator Key="separator" />
                                             }
-                                            else if (action is CallActionDefinition callActionDefinition)
+                                            else if (actionDefinition is CallActionDefinition callActionDefinition)
                                             {
                                                 <DropdownItem Key="@callActionDefinition.Key" OnClick=@((s, e) => callActionDefinition.Action(Record)) IsDisabled="@callActionDefinition.IsDisabled">@callActionDefinition.Label</DropdownItem>
+                                            }
+                                            else if (actionDefinition is SwitchActionDefinition switchActionDefinition)
+                                            {
+                                                <DropdownItem Key="@switchActionDefinition.Key">
+                                                    <Switch Label=@switchActionDefinition.Label @bind-IsChecked=@switchActionDefinition.IsChecked @bind-IsChecked:event="OnChange" @bind-IsDisbled=@switchActionDefinition.IsDisabled/>
+                                                </DropdownItem>
                                             }
                                         }
                                     </Items>
@@ -80,6 +87,13 @@
                                                                 count++;
                                                                 <DropdownItem Key="@callActionDefinition.Key" OnClick=@((s, e) => callActionDefinition.Action(Record)) IsDisabled="@callActionDefinition.IsDisabled">@callActionDefinition.Label</DropdownItem>
                                                             }
+                                                            else if (actionDefinition is SwitchActionDefinition switchActionDefinition)
+                                                            {
+                                                                count++;
+                                                                <DropdownItem Key="@switchActionDefinition.Key">
+                                                                    <Switch Label=@switchActionDefinition.Label @bind-IsChecked=@switchActionDefinition.IsChecked @bind-IsChecked:event="OnChange" @bind-IsDisbled=@switchActionDefinition.IsDisabled DataContext=@switchActionDefinition />
+                                                                </DropdownItem>
+                                                            }
                                                         }
                                                     }
                                                 }
@@ -92,13 +106,19 @@
                             {
                                 int i = 0;
                                 <Split IsGutter=@(actionColumnDefinition.ActionColumnType == ActionColumnType.GutterButtons)>
-                                    @foreach (var action in actionDefinitions)
+                                    @foreach (var actionDefinition in actionDefinitions)
                                     {
-                                        if (action is CallActionDefinition callActionDefinition)
+                                        if (actionDefinition is CallActionDefinition callActionDefinition)
                                         {
                                             var buttonVariant = ButtonVariants[Math.Min(ButtonVariants.Length - 1, i++)];
-                                            <SplitItem IsFilled="true">
+                                            <SplitItem>
                                                 <Button Variant=@buttonVariant OnClick=@((s, e) => callActionDefinition.Action(Record)) IsDisabled="@callActionDefinition.IsDisabled">@callActionDefinition.Label</Button>
+                                            </SplitItem>
+                                        } 
+                                        else if (actionDefinition is SwitchActionDefinition switchActionDefinition)
+                                        {
+                                            <SplitItem IsFilled="true">
+                                                    <Switch Label=@switchActionDefinition.Label @bind-IsChecked=@switchActionDefinition.IsChecked @bind-IsChecked:event="OnChange" @bind-IsDisbled=@switchActionDefinition.IsDisabled/>
                                             </SplitItem>
                                         }
                                     }

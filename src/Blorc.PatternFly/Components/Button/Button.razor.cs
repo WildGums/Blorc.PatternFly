@@ -96,24 +96,28 @@
 
         private RenderFragment CreateComponent() => builder =>
         {
-            builder.OpenElement(0, Component);
+            int idx = 0;
+            builder.OpenElement(idx++, Component);
 
             if (Component == "button")
             {
-                builder.AddAttribute(1, "type", Type.ToString().ToLower());
+                builder.AddAttribute(idx++, "type", Type.ToString().ToLower());
             }
 
-            builder.AddAttribute(2, "class", $"pf-c-button {Class}");
-            builder.AddAttribute(3, "disabled", IsDisabled);
-            builder.AddAttribute(4, "onclick", new EventCallback<MouseEventArgs>(this, new Action<MouseEventArgs>(OnButtonClicked)));
+            builder.AddAttribute(idx++, "class", $"pf-c-button {Class}");
+            builder.AddAttribute(idx++, "disabled", IsDisabled);
+            if (OnClick != null)
+            {
+                builder.AddAttribute(idx++, "onclick", new EventCallback<MouseEventArgs>(this, new Action<MouseEventArgs>(OnButtonClicked)));
+            }
 
             if (!string.IsNullOrWhiteSpace(Href))
             {
-                builder.AddAttribute(5, "href", Href);
-                builder.AddAttribute(6, "target", "_blank");
+                builder.AddAttribute(idx++, "href", Href);
+                builder.AddAttribute(idx++, "target", "_blank");
             }
 
-            builder.AddContent(7, ChildContent);
+            builder.AddContent(idx, ChildContent);
             builder.CloseElement();
         };
 

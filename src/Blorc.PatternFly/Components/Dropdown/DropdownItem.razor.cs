@@ -94,23 +94,27 @@
 
         private RenderFragment CreateComponent() => builder =>
         {
-            builder.OpenElement(0, Component);
+            int idx = 0;
+            builder.OpenElement(idx++, Component);
 
-            builder.AddAttribute(1, "role", "menuitem");
-            builder.AddAttribute(2, "class", Class);
+            builder.AddAttribute(idx++, "role", "menuitem");
+            builder.AddAttribute(idx++, "class", Class);
+
 
             if (!string.IsNullOrWhiteSpace(Href))
             {
-
-                builder.AddAttribute(3, "href", Href);
+                builder.AddAttribute(idx++, "href", Href);
             }
 
-            builder.AddAttribute(4, "onclick", new EventCallback<MouseEventArgs>(this, new Action<MouseEventArgs>(OnButtonClicked)));
+            if (OnClick != null)
+            {
+                builder.AddAttribute(idx++, "onclick", new EventCallback<MouseEventArgs>(this, new Action<MouseEventArgs>(OnButtonClicked)));
+            }
 
-            builder.AddAttribute(5, "tabindex", Index);
-            builder.AddAttribute(6, "disabled", IsDisabled);
+            builder.AddAttribute(idx++, "tabindex", Index);
+            builder.AddAttribute(idx++, "disabled", IsDisabled);
 
-            builder.AddContent(7, ChildContent);
+            builder.AddContent(idx, ChildContent);
             builder.CloseElement();
         };
 

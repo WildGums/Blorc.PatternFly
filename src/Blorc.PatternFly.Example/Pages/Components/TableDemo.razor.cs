@@ -17,6 +17,8 @@
 
         private ArrayList _data;
 
+        private List<ActionDefinition> actionDefinitions;
+
         public string FilterText
         {
             get => GetPropertyValue<string>(nameof(FilterText));
@@ -27,18 +29,32 @@
 
         public IEnumerable<ActionDefinition> GetActions(object row)
         {
-            // This parameter allow customization per row state.
-            var actionDefinitions = new List<ActionDefinition>();
-            if (row is Record record)
+            if (actionDefinitions == null)
             {
-                actionDefinitions.Add(
-                    new CallActionDefinition { Label = "Print Repositories", Action = PrintRepositories });
-                actionDefinitions.Add(new SeparatorActionDefinition());
-                actionDefinitions.Add(
-                    new CallActionDefinition { Label = "Print Branches", Action = PrintBranches });
-                actionDefinitions.Add(
-                    new CallActionDefinition { Label = "Disabled Call", IsDisabled = true });
-                return actionDefinitions;
+                // This parameter allow customization per row state.
+                actionDefinitions = new List<ActionDefinition>();
+                if (row is Record record)
+                {
+                    actionDefinitions.Add(
+                        new CallActionDefinition { Label = "Print Repositories", Action = PrintRepositories });
+                    actionDefinitions.Add(new SeparatorActionDefinition());
+                    actionDefinitions.Add(
+                        new CallActionDefinition { Label = "Print Branches", Action = PrintBranches });
+                    var switchActionDefinition = new SwitchActionDefinition { Label = "Turn On", Action = SwitchBranches };
+                    switchActionDefinition.PropertyChanged += (sender, args) =>
+                    {
+                        if (args.PropertyName == nameof(SwitchActionDefinition.IsChecked))
+                        {
+                            switchActionDefinition.Label = switchActionDefinition.IsChecked ? "Turn Off" : "Turn On";
+                        }
+                    };
+                    actionDefinitions.Add(switchActionDefinition);
+
+                    // actionDefinitions.Add(
+                    // new CallActionDefinition { Label = "Disabled Call", IsDisabled = true });
+
+                    return actionDefinitions;
+                }
             }
 
             return actionDefinitions;
@@ -104,6 +120,11 @@
             }
         }
 
+        private void SwitchBranches(object obj)
+        {
+            Console.WriteLine("Switching...");
+        }
+
         public class Record : INotifyPropertyChanged, IDictionary
         {
             private string _branches;
@@ -132,6 +153,16 @@
                     OnPropertyChanged();
                 }
             }
+
+            public int Count { get; }
+
+            public bool IsFixedSize { get; }
+
+            public bool IsReadOnly { get; }
+
+            public bool IsSynchronized { get; }
+
+            public ICollection Keys { get; }
 
             public string LastCommit
             {
@@ -178,6 +209,10 @@
                 }
             }
 
+            public object SyncRoot { get; }
+
+            public ICollection Values { get; }
+
             public string Workspaces
             {
                 get => _workspaces;
@@ -193,10 +228,10 @@
                 }
             }
 
-            [NotifyPropertyChangedInvocator]
-            protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+            public object this[object key]
             {
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+                get => PropertyHelper.GetPropertyValue(this, key.ToString());
+                set => throw new NotImplementedException();
             }
 
             public void Add(object key, object value)
@@ -214,6 +249,11 @@
                 throw new NotImplementedException();
             }
 
+            public void CopyTo(Array array, int index)
+            {
+                throw new NotImplementedException();
+            }
+
             public IDictionaryEnumerator GetEnumerator()
             {
                 throw new NotImplementedException();
@@ -224,35 +264,16 @@
                 throw new NotImplementedException();
             }
 
-            public bool IsFixedSize { get; }
-
-            public bool IsReadOnly { get; }
-
-            public object this[object key]
-            {
-                get => PropertyHelper.GetPropertyValue(this, key.ToString());
-                set => throw new NotImplementedException();
-            }
-
-            public ICollection Keys { get; }
-
-            public ICollection Values { get; }
-
             IEnumerator IEnumerable.GetEnumerator()
             {
                 return GetEnumerator();
             }
 
-            public void CopyTo(Array array, int index)
+            [NotifyPropertyChangedInvocator]
+            protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
             {
-                throw new NotImplementedException();
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
             }
-
-            public int Count { get; }
-
-            public bool IsSynchronized { get; }
-
-            public object SyncRoot { get; }
         }
     }
 }
