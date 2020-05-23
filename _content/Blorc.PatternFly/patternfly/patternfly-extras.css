@@ -8,7 +8,7 @@
 
 .pf-c-table.pf-m-sticky-header > thead > tr > * {
     position: sticky;
-    top: 0;
+    top: -1px;
     background: var(--pf-c-table--BackgroundColor);
     z-index: var(--pf-global--ZIndex--xs);
 }
