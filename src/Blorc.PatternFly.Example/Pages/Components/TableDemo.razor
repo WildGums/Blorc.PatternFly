@@ -128,7 +128,7 @@
     </Example>
     
     <Example Title="Highlighting Row Table">
-        <Table Caption="Sortable Table" DataSourceFunc=@(() => GetData()) HighlightPredicate=@(o => IsHighlighted(o))>
+        <Table Caption="Sortable Table" DataSourceFunc=@(() => GetData()) HighlightStyleFunc=@(o => GetHighlightStyle(o))>
             <Header>
                 <Row>
                     <!--TODO Try to avoid the index parameter later-->

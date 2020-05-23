@@ -95,10 +95,15 @@
             return _data;
         }
 
-        public bool IsHighlighted(object record)
+        public string GetHighlightStyle(object record)
         {
             var idx = _data.IndexOf(record);
-            return idx % 2 == 0;
+            if (idx % 2 == 0)
+            {
+                return "border-left: 3px solid var(--pf-global--primary-color--100);";
+            }
+
+            return "border-left: 3px solid var(--pf-global--danger-color--100);";
         }
 
         public void UpdateSingleRow()

@@ -55,15 +55,8 @@
         [Parameter]
         public string CustomHighlightStyle
         {
-            get
-            {
-                return GetPropertyValue<string>(nameof(CustomHighlightStyle));
-            }
-
-            set
-            {
-                SetPropertyValue(nameof(CustomHighlightStyle), value);
-            }
+            get;
+            set;
         }
 
         [Parameter]
@@ -94,7 +87,10 @@
         public RenderFragment Header { get; set; }
 
         [Parameter]
-        public Predicate<object> HighlightPredicate { get; set; }
+        public Predicate<object> HighlightPredicate { get; set; }   
+        
+        [Parameter]
+        public Func<object, string> HighlightStyleFunc { get; set; }
 
         [Parameter]
         public string Id { get; set; }

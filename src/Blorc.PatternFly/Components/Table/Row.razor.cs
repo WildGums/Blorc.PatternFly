@@ -17,6 +17,11 @@
         {
             get
             {
+                if (!string.IsNullOrWhiteSpace(HighlightStyle))
+                {
+                    return HighlightStyle;
+                }
+
                 if (!IsHighlighted)
                 {
                     return string.Empty;
@@ -33,6 +38,22 @@
 
         [CascadingParameter]
         public TableComponent ContainerTable { get; set; }
+
+
+        [Parameter]
+        public string HighlightStyle
+        {
+            get
+            {
+                return GetPropertyValue<string>(nameof(HighlightStyle));
+            }
+
+            set
+            {
+                SetPropertyValue(nameof(HighlightStyle), value);
+            }
+        }
+
 
         [Parameter]
         public bool IsHighlighted
@@ -56,9 +77,14 @@
             base.OnParametersSet();
             if (ContainerTable != null)
             {
-                if (ContainerTable.HighlightPredicate != null)
+                if (ContainerTable.HighlightPredicate != null && Record != null)
                 {
                     IsHighlighted = ContainerTable.HighlightPredicate(Record);
+                }
+
+                if (ContainerTable.HighlightStyleFunc != null && Record != null)
+                {
+                    HighlightStyle = ContainerTable.HighlightStyleFunc(Record);
                 }
 
                 StateHasChanged();
@@ -69,6 +95,7 @@
                 propertyChanged.PropertyChanged += OnPropertyChangedOnPropertyChanged;
             }
         }
+
 
         private void OnPropertyChangedOnPropertyChanged(object sender, PropertyChangedEventArgs args)
         {
