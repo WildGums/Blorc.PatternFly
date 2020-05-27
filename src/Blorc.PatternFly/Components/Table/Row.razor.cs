@@ -11,7 +11,6 @@
     {
         private const string DefaultHighlightStyle = "border-left: 3px solid var(--pf-global--primary-color--100);";
 
-        protected static readonly ButtonVariant[] ButtonVariants = { ButtonVariant.Primary, ButtonVariant.Secondary, ButtonVariant.Tertiary };
 
         public string Style
         {

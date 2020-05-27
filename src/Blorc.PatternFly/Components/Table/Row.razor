@@ -11,129 +11,25 @@
 @inherits RowComponent
 
 
-    @if (ChildContent != null)
-    {
-        <tr class="@Class" style="@Style">
-            @ChildContent
-        </tr>
-    }
-    else if (ContainerTable != null && Record != null)
-    {
-        <tr class="@Class" style="@Style">
-            @foreach (var columnDefinition in ContainerTable.ColumnDefinitions.OrderBy(pair => pair.Value.Idx).Select(pair => pair.Value))
+@if (ChildContent != null)
+{
+    <tr class="@Class" style="@Style">
+        @ChildContent
+    </tr>
+}
+else if (ContainerTable != null && Record != null)
+{
+    <tr class="@Class" style="@Style">
+        @foreach (var columnDefinition in ContainerTable.ColumnDefinitions.OrderBy(pair => pair.Value.Idx).Select(pair => pair.Value))
+        {
+            if (columnDefinition is ActionColumnDefinition actionColumnDefinition)
             {
-                if (columnDefinition is ActionColumnDefinition actionColumnDefinition)
-                {
-                    var actionDefinitions = actionColumnDefinition.ActionSource(Record)?.ToList();
-                    <ActionCell>
-                        @if (actionDefinitions != null)
-                        {
-                            @if (actionColumnDefinition.ActionColumnType == ActionColumnType.Toggle)
-                            {
-                                <Dropdown IsPlain="true" Position="@DropdownPosition.Right">
-                                    <Toggle>
-                                        <KebabToggle />
-                                    </Toggle>
-                                    <Items>
-                                        @foreach (var actionDefinition in actionDefinitions)
-                                        {
-                                            @if (actionDefinition is SeparatorActionDefinition)
-                                            {
-                                                <Separator Key="separator" />
-                                            }
-                                            else if (actionDefinition is CallActionDefinition callActionDefinition)
-                                            {
-                                                <DropdownItem Key="@callActionDefinition.Key" OnClick=@((s, e) => callActionDefinition.Action(Record)) IsDisabled="@callActionDefinition.IsDisabled">@callActionDefinition.Label</DropdownItem>
-                                            }
-                                            else if (actionDefinition is SwitchActionDefinition switchActionDefinition)
-                                            {
-                                                switchActionDefinition.PropertyChanged += (sender, args) => StateHasChanged();
-                                                <DropdownItem Key="@switchActionDefinition.Key">
-                                                    <Switch Label=@switchActionDefinition.Label @bind-IsChecked=@switchActionDefinition.IsChecked @bind-IsChecked:event="OnChange" @bind-IsDisbled=@switchActionDefinition.IsDisabled/>
-                                                </DropdownItem>
-                                            }
-                                        }
-                                    </Items>
-                                </Dropdown>
-                            }
-                            else if (actionColumnDefinition.ActionColumnType == ActionColumnType.ButtonAndToggle)
-                            {
-                                var buttonActionDefinition = actionDefinitions.OfType<CallActionDefinition>().FirstOrDefault();
-                                <Split IsGutter="true">
-                                    @if (buttonActionDefinition != null)
-                                    {
-                                        <SplitItem IsFilled="true">
-                                            <Button Variant=@ButtonVariant.Primary OnClick=@((s, e) => buttonActionDefinition.Action(Record)) IsDisabled="@buttonActionDefinition.IsDisabled">@buttonActionDefinition.Label</Button>
-                                        </SplitItem>
-                                    }
-                                    <SplitItem >
-                                        <Dropdown IsPlain="true" Position="@DropdownPosition.Right">
-                                            <Toggle>
-                                                <KebabToggle />
-                                            </Toggle>
-                                            <Items>
-                                                @{
-                                                    var count = 0;
-                                                    foreach (var actionDefinition in actionDefinitions)
-                                                    {
-                                                        if (buttonActionDefinition != actionDefinition)
-                                                        {
-                                                            if (actionDefinition is SeparatorActionDefinition && count > 0)
-                                                            {
-                                                                count = 0;
-                                                                <Separator Key="separator"/>
-                                                            }
-                                                            else if (actionDefinition is CallActionDefinition callActionDefinition)
-                                                            {
-                                                                count++;
-                                                                <DropdownItem Key="@callActionDefinition.Key" OnClick=@((s, e) => callActionDefinition.Action(Record)) IsDisabled="@callActionDefinition.IsDisabled">@callActionDefinition.Label</DropdownItem>
-                                                            }
-                                                            else if (actionDefinition is SwitchActionDefinition switchActionDefinition)
-                                                            {
-                                                                count++;
-                                                                switchActionDefinition.PropertyChanged += (sender, args) => StateHasChanged();
-                                                                <DropdownItem Key="@switchActionDefinition.Key">
-                                                                    <Switch Label=@switchActionDefinition.Label @bind-IsChecked=@switchActionDefinition.IsChecked @bind-IsChecked:event="OnChange" @bind-IsDisbled=@switchActionDefinition.IsDisabled DataContext=@switchActionDefinition />
-                                                                </DropdownItem>
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            </Items>
-                                        </Dropdown>
-                                    </SplitItem>
-                                </Split>
-                            }
-                            else
-                            {
-                                int i = 0;
-                                <Split IsGutter=@(actionColumnDefinition.ActionColumnType == ActionColumnType.GutterButtons)>
-                                    @foreach (var actionDefinition in actionDefinitions)
-                                    {
-                                        if (actionDefinition is CallActionDefinition callActionDefinition)
-                                        {
-                                            var buttonVariant = ButtonVariants[Math.Min(ButtonVariants.Length - 1, i++)];
-                                            <SplitItem>
-                                                <Button Variant=@buttonVariant OnClick=@((s, e) => callActionDefinition.Action(Record)) IsDisabled="@callActionDefinition.IsDisabled">@callActionDefinition.Label</Button>
-                                            </SplitItem>
-                                        }
-                                        else if (actionDefinition is SwitchActionDefinition switchActionDefinition)
-                                        {
-                                            switchActionDefinition.PropertyChanged += (sender, args) => StateHasChanged();
-                                            <SplitItem IsFilled="true">
-                                                    <Switch Label=@switchActionDefinition.Label @bind-IsChecked=@switchActionDefinition.IsChecked @bind-IsChecked:event="OnChange" @bind-IsDisbled=@switchActionDefinition.IsDisabled/>
-                                            </SplitItem>
-                                        }
-                                    }
-                                </Split>
-                            }
-                        }
-                    </ActionCell>
-                }
-                else
-                {
-                    <Cell Label="@columnDefinition.Label" Key="@columnDefinition.Key" Value="@DataHelper.GetValue(Record, columnDefinition.Key)?.ToString()" />
-                }
+                <ActionCell DataContext=@Record ActionType=@actionColumnDefinition.ActionColumnType ActionSource=@actionColumnDefinition.ActionSource/> 
             }
-         </tr>
-    }
+            else
+            {
+                <Cell Label="@columnDefinition.Label" Key="@columnDefinition.Key" Value="@DataHelper.GetValue(Record, columnDefinition.Key)?.ToString()" />
+            }
+        }
+    </tr>
+}

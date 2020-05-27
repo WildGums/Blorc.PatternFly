@@ -1,27 +1,45 @@
 ﻿namespace Blorc.PatternFly.Components.Table
 {
     using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Linq;
+
     using Blorc.Components;
-    using Dropdown;
+    using Blorc.PatternFly.Components.Button;
+    using Blorc.StateConverters;
+
     using Microsoft.AspNetCore.Components;
-    using StateConverters;
 
     public class ActionCellComponent : BlorcComponentBase
     {
+        protected static readonly ButtonVariant[] ButtonVariants = { ButtonVariant.Primary, ButtonVariant.Secondary, ButtonVariant.Tertiary };
+
         public ActionCellComponent()
         {
             CreateConverter()
-                .Fixed("")
+                .Fixed(string.Empty)
                 .If(() => Align == Align.Center, "pf-m-center")
                 .Watch(() => Align)
                 .Update(() => Class);
         }
 
         [Parameter]
-        public string Label { get; set; }
+        public Func<object, IEnumerable<ActionDefinition>> ActionSource { get; set; }
 
         [Parameter]
-        public string Key { get; set; }
+        public ActionColumnType ActionType
+        {
+            get => GetPropertyValue<ActionColumnType>(nameof(ActionType));
+            set => SetPropertyValue(nameof(ActionType), value);
+        }
+
+        [Parameter]
+        public Align Align
+        {
+            get => GetPropertyValue<Align>(nameof(Align));
+            set => SetPropertyValue(nameof(Align), value);
+        }
 
         [Parameter]
         public RenderFragment ChildContent { get; set; }
@@ -29,10 +47,47 @@
         public string Class { get; set; }
 
         [Parameter]
-        public Align Align
+        public object DataContext
         {
-            get => GetPropertyValue<Align>(nameof(Align));
-            set => SetPropertyValue(nameof(Align), value);
+            get => GetPropertyValue<object>(nameof(DataContext));
+            set
+            {
+                if (GetPropertyValue<object>(nameof(DataContext)) is INotifyPropertyChanged storedValueAsNotifyPropertyChanged)
+                {
+                    storedValueAsNotifyPropertyChanged.PropertyChanged -= OnDataContextPropertyChanged;
+                }
+
+                if (value is INotifyPropertyChanged valueAsNotifyPropertyChanged)
+                {
+                    valueAsNotifyPropertyChanged.PropertyChanged += OnDataContextPropertyChanged;
+                }
+
+                SetPropertyValue(nameof(DataContext), value);
+            }
+        }
+
+        [Parameter]
+        public string Key { get; set; }
+
+        [Parameter]
+        public string Label { get; set; }
+
+        protected List<ActionDefinition> ActionDefinitions
+        {
+            get
+            {
+                if (ActionSource == null || DataContext == null)
+                {
+                    return null;
+                }
+
+                return ActionSource(DataContext).ToList();
+            }
+        }
+
+        private void OnDataContextPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            StateHasChanged();
         }
     }
 }
