@@ -78,7 +78,8 @@ The ultimate goal of this library is to wrap all PatternFly components and makin
 
 ## Examples
 
-http://blorc-patternfly.wildgums.com/
+Live Demo: http://blorc-patternfly.wildgums.com/
+Quick Start: https://github.com/alexfdezsauco/Blorc.PatternFly.QuickStart
 
 ## Contributing
 
@@ -87,13 +88,3 @@ If you would like support for any new component, you can get in touch by:
 - Creating tickets.
 - Contributing by pull requests.
 - Contributing via Open Collective.
-
-### How to update Patternfly assets?
-
-- Install patternfly from npm repository in an external folder
-
-    `npm install @patternfly --save`
-
-- Update the following files and folders in `Blorc.PatternFly\wwwroot\patternfly\` with the files and folders in  `react\node_modules\@patternfly\patternfly\` 
-    - patternfly.css 
-    - assets
