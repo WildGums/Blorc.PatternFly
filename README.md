@@ -78,8 +78,8 @@ The ultimate goal of this library is to wrap all PatternFly components and makin
 
 ## Examples
 
-Live Demo: http://blorc-patternfly.wildgums.com/
-Quick Start: https://github.com/alexfdezsauco/Blorc.PatternFly.QuickStart
+- Live Demo: http://blorc-patternfly.wildgums.com/
+- Quick Start: https://github.com/alexfdezsauco/Blorc.PatternFly.QuickStart
 
 ## Contributing
 
