@@ -188,7 +188,7 @@ The ultimate goal of this library is to wrap all PatternFly components and makin
             </MainContent>
         </Page>
         
-6) Start using PatternFly components. For instance`Shared\NavMenu.razor`.
+6) Start using PatternFly components. For instance in the `Shared\NavMenu.razor`.
 
         @using Blorc.PatternFly.Components.Navigation
         @using Blorc.PatternFly.Components.Icon
