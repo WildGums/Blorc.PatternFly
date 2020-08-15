@@ -163,9 +163,30 @@ The ultimate goal of this library is to wrap all PatternFly components and makin
             }
         }
 
-5) Add this line in the `Shared\MainLayout.razor` file.
+5) Update `Shared\MainLayout.razor` file.
+
+        @using Blorc.PatternFly.Layouts
+        @using Blorc.PatternFly.Components.Page
+        @using Blorc.PatternFly.Components.Button
 
         @inherits Blorc.Components.BlorcLayoutComponentBase
+
+        <Page>
+            <LogoContent>
+                Blorc.PatternFly.QuickStart
+            </LogoContent>
+            <ToolbarContent>
+                <Button Component="a" Variant="ButtonVariant.Primary" Href="http://blazor.net">
+                    About
+                </Button>
+            </ToolbarContent>
+            <SidebarContent>
+                <NavMenu />
+            </SidebarContent>
+            <MainContent>
+                @Body
+            </MainContent>
+        </Page>
         
 6) Start using PatternFly components. For instance`Shared\NavMenu.razor`.
 
