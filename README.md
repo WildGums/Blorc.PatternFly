@@ -81,7 +81,7 @@ The ultimate goal of this library is to wrap all PatternFly components and makin
 - Live Demo: http://blorc-patternfly.wildgums.com/
 - Quick Start: https://github.com/alexfdezsauco/Blorc.PatternFly.QuickStart
 
-# Summary of quick start steps
+### Summary of quick start steps
 
 1) Create a new Blazor app with Blazor WebAssembly experience
 2) Update `wwwroot/index.html` file.
