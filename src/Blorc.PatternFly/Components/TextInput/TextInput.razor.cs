@@ -1,9 +1,10 @@
 ﻿namespace Blorc.PatternFly.Components.TextInput
 {
-    using System;
     using System.ComponentModel;
+
     using Blorc.Components;
-    using Core;
+    using Blorc.PatternFly.Core;
+
     using Microsoft.AspNetCore.Components;
 
     public class TextInputComponent : BlorcComponentBase
@@ -15,7 +16,19 @@
         }
 
         [Parameter]
-        public string Label { get; set; }
+        public string Class
+        {
+            get => GetPropertyValue<string>(nameof(Class)) ?? "pf-c-form-control";
+            set => SetPropertyValue(nameof(Class), value);
+        }
+
+        [Parameter]
+        public bool IsDisabled { get; set; }
+
+        public bool IsInvalid => !IsValid;
+
+        [Parameter]
+        public bool IsReadOnly { get; set; }
 
         [Parameter]
         public bool IsRequired { get; set; }
@@ -23,16 +36,14 @@
         [Parameter]
         public bool IsValid { get; set; }
 
-        public bool IsInvalid => !IsValid;
-
         [Parameter]
-        public bool IsDisabled { get; set; }
-
-        [Parameter]
-        public bool IsReadOnly { get; set; }
+        public string Label { get; set; }
 
         [Parameter]
         public string Type { get; set; }
+
+        [Parameter]
+        public UpdateMode UpdateMode { get; set; }
 
         [Parameter]
         public string Value
@@ -40,9 +51,6 @@
             get => GetPropertyValue<string>(nameof(Value));
             set => SetPropertyValue(nameof(Value), value);
         }
-
-        [Parameter]
-        public UpdateMode UpdateMode { get; set; }
 
         [Parameter]
         public EventCallback<string> ValueChanged { get; set; }

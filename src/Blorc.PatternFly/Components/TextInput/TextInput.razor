@@ -4,26 +4,27 @@
 
 @inherits Blorc.PatternFly.Components.TextInput.TextInputComponent
 
+
 @switch (UpdateMode)
 {
     case UpdateMode.Continuous:
             <input aria-label="@Label" 
-                   class="pf-c-form-control" 
+                   class="@Class" 
                    type="@Type" aria-invalid="@IsInvalid.ToString().ToLower()" 
                    aria-required="@IsRequired" 
                    @bind-value="Value" 
                    @bind-value:event="oninput" 
                    readonly="@IsReadOnly" 
-                   disabled="@IsDisabled" />
+                   disabled="@IsDisabled" @attributes="AdditionalAttributes" />
             break;
     default:
             <input aria-label="@Label" 
-                   class="pf-c-form-control" 
+                   class="@Class" 
                    type="@Type" 
                    aria-invalid="@IsInvalid.ToString().ToLower()" 
                    aria-required="@IsRequired" 
                    @bind-value="Value"  
                    readonly="@IsReadOnly" 
-                   disabled="@IsDisabled" />
+                   disabled="@IsDisabled" @attributes="AdditionalAttributes" />
             break;
 }
