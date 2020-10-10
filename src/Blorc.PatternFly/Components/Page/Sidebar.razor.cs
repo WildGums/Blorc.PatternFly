@@ -13,6 +13,7 @@
             CreateConverter()
                 .Fixed("pf-c-page__sidebar ws-page-sidebar")
                 .If(() => IsExpanded, "pf-m-expanded")
+                .If(() => !IsExpanded, "pf-m-collapsed")
                 .Update(() => Class);
         }
 
@@ -49,6 +50,8 @@
             {
                 Theme = PageComponent.Theme;
             }
+
+            IsExpanded = true;
         }
 
         protected override void OnParametersSet()
@@ -58,14 +61,6 @@
             {
                 StateHasChanged();
             }
-        }
-
-        protected override void OnPropertyChanged(PropertyChangedEventArgs e)
-        {
-            //if(e.PropertyName == nameof(Class))
-            //{
-            //    StateHasChanged();
-            //}
         }
     }
 }
