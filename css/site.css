@@ -140,8 +140,8 @@ app {
     padding: 1rem;
 }
 
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {
     .pf-c-page__header-brand-toggle {
         display: none;
     }
-}
+}*/
