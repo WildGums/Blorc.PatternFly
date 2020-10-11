@@ -87,7 +87,8 @@
                             Branches = $"two-{_random.Next(0, 100).ToString().PadLeft(2, '0')}",
                             PullRequests = $"three-{_random.Next(0, 100).ToString().PadLeft(2, '0')}",
                             Workspaces = $"four-{_random.Next(0, 100).ToString().PadLeft(2, '0')}",
-                            LastCommit = $"five-{_random.Next(0, 100).ToString().PadLeft(2, '0')}"
+                            LastCommit = $"five-{_random.Next(0, 100).ToString().PadLeft(2, '0')}",
+                            Link = "https://github.com/WildGums/Blorc.PatternFly"
                         });
                 }
             }
@@ -171,6 +172,8 @@
                     OnPropertyChanged();
                 }
             }
+
+            public string Link { get; set; }
 
             public int Count { get; }
 

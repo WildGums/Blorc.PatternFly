@@ -72,7 +72,7 @@
                             var columnsWithPredicate = ColumnDefinitions.Where(pair => pair.Value.FilterPredicate != null).ToList();
                             if (columnsWithPredicate.Count <= 0 || columnsWithPredicate.Select(pair => pair.Value).Any(definition => definition.FilterPredicate(DataHelper.GetValue(record, definition.Key))))
                             {
-                                <Row Record="@record" />
+                                <Row  Record="@record" />
                                 noRows = false;
                             }
                         }

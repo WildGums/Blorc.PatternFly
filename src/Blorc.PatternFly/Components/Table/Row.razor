@@ -26,6 +26,10 @@ else if (ContainerTable != null && Record != null)
             {
                 <ActionCell DataContext=@Record ActionType=@actionColumnDefinition.ActionColumnType ActionSource=@actionColumnDefinition.ActionSource/> 
             }
+            else if (columnDefinition is ButtonColumnDefinition buttonColumnDefinition)
+            {
+                <ButtonCell Label="@columnDefinition.Label" Key="@columnDefinition.Key" Value="@DataHelper.GetValue(Record, columnDefinition.Key)?.ToString()" Variant="@buttonColumnDefinition.Variant" Action=@(()=> buttonColumnDefinition.Action(Record)) />
+            }
             else
             {
                 <Cell Label="@columnDefinition.Label" Key="@columnDefinition.Key" Value="@DataHelper.GetValue(Record, columnDefinition.Key)?.ToString()" />

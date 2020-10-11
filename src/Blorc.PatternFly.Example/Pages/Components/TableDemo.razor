@@ -218,22 +218,36 @@
         </Table>
     </Example>   
     
-    <Example Title="Action Column Table (ToggleButton)">
-        <Table Caption="Action Column" DataSourceFunc=@(() => GetData())>
-            <Header>
-                <Row>
-                    <Column Label="Repositories" Key="Repositories" IsSortable="true" Idx="0" />
-                    <Column Label="Branches" Key="Branches" IsSortable="true" Idx="1" />
-                    <Column Label="Pull requests" Key="PullRequests" IsSortable="true" Idx="2" />
-                    <Column Label="Workspaces" Key="Workspaces" Idx="3" />
-                    <Column Label="Last commit" Key="LastCommit" Align="@Align.Center" Idx="4" />
-                    <ActionColumn ActionColumnType=@ActionColumnType.ButtonAndToggle Label="Actions" Key="Actions" Align="@Align.Center" Idx="5" ActionSource=@(record => GetActions(record)) />
-                </Row>
-            </Header>
-        </Table>
-    </Example>
+<Example Title="Action Column Table (ToggleButton)">
+    <Table Caption="Action Column" DataSourceFunc=@(() => GetData())>
+        <Header>
+            <Row>
+                <Column Label="Repositories" Key="Repositories" IsSortable="true" Idx="0" />
+                <Column Label="Branches" Key="Branches" IsSortable="true" Idx="1" />
+                <Column Label="Pull requests" Key="PullRequests" IsSortable="true" Idx="2" />
+                <Column Label="Workspaces" Key="Workspaces" Idx="3" />
+                <Column Label="Last commit" Key="LastCommit" Align="@Align.Center" Idx="4" />
+                <ActionColumn ActionColumnType=@ActionColumnType.ButtonAndToggle Label="Actions" Key="Actions" Align="@Align.Center" Idx="5" ActionSource=@(record => GetActions(record)) />
+            </Row>
+        </Header>
+    </Table>
+</Example>
 
-    <Example Title="Integration Demo (EmptyState / Spinner / Pagination)">
+<Example Title="Link Column Table ">
+    <Table Caption="Action Column" DataSourceFunc=@(() => GetData())>
+        <Header>
+            <Row>
+                <ButtonColumn Variant=@ButtonVariant.Link Label="Repositories" Key="Repositories" HRefKey="Link" Idx="0" Action=@((o)=> Console.WriteLine((o as Record).Link))/>
+                <Column Label="Branches" Key="Branches" IsSortable="true" Idx="1" />
+                <Column Label="Pull requests" Key="PullRequests" IsSortable="true" Idx="2" />
+                <Column Label="Workspaces" Key="Workspaces" Idx="3" />
+                <Column Label="Last commit" Key="LastCommit" Align="@Align.Center" Idx="4" />
+            </Row>
+        </Header>
+    </Table>
+</Example>
+
+<Example Title="Integration Demo (EmptyState / Spinner / Pagination)">
         <TableIntegrationExample />
     </Example>
 
