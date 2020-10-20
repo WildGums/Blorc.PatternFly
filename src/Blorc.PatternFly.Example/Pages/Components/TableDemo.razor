@@ -237,7 +237,7 @@
     <Table Caption="Action Column" DataSourceFunc=@(() => GetData())>
         <Header>
             <Row>
-                <ButtonColumn Variant=@ButtonVariant.Link Label="Repositories" Key="Repositories" HRefKey="Link" Idx="0" Action=@((o)=> Console.WriteLine((o as Record).Link))/>
+                <ButtonColumn Variant=@ButtonVariant.Link Label="Repositories" Key="Repositories" Idx="0" Action=@((o)=> Console.WriteLine((o as Record).Link))/>
                 <Column Label="Branches" Key="Branches" IsSortable="true" Idx="1" />
                 <Column Label="Pull requests" Key="PullRequests" IsSortable="true" Idx="2" />
                 <Column Label="Workspaces" Key="Workspaces" Idx="3" />
