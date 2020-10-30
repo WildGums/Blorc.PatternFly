@@ -9,7 +9,7 @@ Parameters["Company"] = "WildGums";
 Parameters["RepositoryUrl"] = string.Format("https://github.com/{0}/{1}", GetBuildServerVariable("Company"), GetBuildServerVariable("SolutionName"));
 Parameters["StartYear"] = "2019";
 Parameters["TestTargetFramework"] = "netcoreapp3.0";
-Parameters["UseVisualStudioPrerelease"] = "true";
+Parameters["UseVisualStudioPrerelease"] = "false";
 Parameters["SourceLinkDisabled"] = "true";
 
 // Note: the rest of the variables should be coming from the build server,
