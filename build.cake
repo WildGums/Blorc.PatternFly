@@ -8,7 +8,6 @@ Parameters["SolutionName"] = "Blorc.PatternFly";
 Parameters["Company"] = "WildGums";
 Parameters["RepositoryUrl"] = string.Format("https://github.com/{0}/{1}", GetBuildServerVariable("Company"), GetBuildServerVariable("SolutionName"));
 Parameters["StartYear"] = "2019";
-Parameters["TestTargetFramework"] = "netcoreapp3.0";
 Parameters["UseVisualStudioPrerelease"] = "false";
 Parameters["SourceLinkDisabled"] = "true";
 
