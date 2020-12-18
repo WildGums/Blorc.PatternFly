@@ -1,6 +1,6 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras">
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.0</TargetFrameworks>
+    <TargetFrameworks>net5.0</TargetFrameworks>
     <AssemblyName>Blorc.PatternFly.Tests</AssemblyName>
     <RootNamespace>Blorc.PatternFly.Tests</RootNamespace>
     <PackageId>WebGums.Tests</PackageId>
@@ -14,14 +14,6 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
-    <PackageReference Include="Catel.Core" Version="5.12.11" />
-    <PackageReference Include="Catel.Fody" Version="4.5.0" PrivateAssets="all" />
-    <PackageReference Include="Fody" Version="6.3.0" PrivateAssets="all">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="LoadAssembliesOnStartup.Fody" Version="4.5.0" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
-    <PackageReference Include="ModuleInit.Fody" Version="2.1.1" PrivateAssets="all" />
     <PackageReference Include="Catel.Core" Version="5.12.11" />
     <PackageReference Include="Catel.Fody" Version="4.5.0" PrivateAssets="all" />
     <PackageReference Include="Fody" Version="6.3.0" PrivateAssets="all">
