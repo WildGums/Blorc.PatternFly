@@ -5,9 +5,9 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class EmptyStateComponent : BlorcComponentBase
+    public partial class EmptyState : BlorcComponentBase
     {
-        public EmptyStateComponent()
+        public EmptyState()
         {
             Variant = EmptyStateVariant.Large;
         }

@@ -9,16 +9,15 @@
 
     using Blorc.Components;
     using Blorc.PatternFly.Components.Table.EventArgs;
-    using Blorc.PatternFly.Helpers;
     using Blorc.StateConverters;
 
     using Microsoft.AspNetCore.Components;
 
-    public class TableComponent : UniqueComponentBase
+    public partial class Table : UniqueComponentBase
     {
         private bool _sorting;
 
-        public TableComponent()
+        public Table()
         {
             TableId = GenerateUniqueId("pf-table-id");
             CreateConverter()
@@ -116,7 +115,7 @@
             return OrderState != null && OrderState.IsSortedBy(propertyName);
         }
 
-        public void OrderBy(ColumnComponent columnComponent, Order order)
+        public void OrderBy(Column columnComponent, Order order)
         {
             OrderState = new OrderState(columnComponent.Key, order, columnComponent.Comparer);
 

@@ -5,9 +5,9 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class KebabToggleComponent : BlorcComponentBase
+    public partial class KebabToggle : BlorcComponentBase
     {
-        public KebabToggleComponent()
+        public KebabToggle()
         {
             Label = "Actions";
             IsPlain = true;

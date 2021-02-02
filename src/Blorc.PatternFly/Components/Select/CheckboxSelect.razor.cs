@@ -1,12 +1,8 @@
 ﻿namespace Blorc.PatternFly.Components.Select
 {
-    using System;
-    using System.Collections.Generic;
-    using Microsoft.AspNetCore.Components;
-
-    public class CheckboxSelectComponent : SelectComponent
+    public partial class CheckboxSelect : Select
     {
-        public CheckboxSelectComponent()
+        public CheckboxSelect()
         {
 
         }

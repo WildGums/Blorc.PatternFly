@@ -13,7 +13,7 @@ namespace Blorc.PatternFly.Components.ToggleComponentContainer
 
     using Microsoft.AspNetCore.Components;
 
-    public class ToggleComponentContainerComponent : BlorcComponentBase, IToggleComponentContainer
+    public partial class ToggleComponentContainer : BlorcComponentBase, IToggleComponentContainer
     {
         public event EventHandler<ToggleComponentChangedEventArg> ToogleComponentChanged;
 
@@ -25,7 +25,7 @@ namespace Blorc.PatternFly.Components.ToggleComponentContainer
             toggleComponent.Toggled += Toggled;
         }
 
-        protected virtual void OnToogleComponentChanged(ToggleComponentChangedEventArg e)
+        protected virtual void OnToggleComponentChanged(ToggleComponentChangedEventArg e)
         {
             ToogleComponentChanged?.Invoke(this, e);
         }
@@ -34,7 +34,7 @@ namespace Blorc.PatternFly.Components.ToggleComponentContainer
         {
             if (sender is IToggleComponent toggleComponent && toggleComponent.IsOpen)
             {
-                OnToogleComponentChanged(new ToggleComponentChangedEventArg(toggleComponent));
+                OnToggleComponentChanged(new ToggleComponentChangedEventArg(toggleComponent));
             }
         }
     }

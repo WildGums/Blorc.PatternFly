@@ -8,38 +8,38 @@
 @using Blorc.PatternFly.Components.Modal
 @using Blorc.PatternFly.Components.Progress
 
-@inherits Blorc.PatternFly.Components.Modal.UIModalComponent
+@inherits BlorcComponentBase
 
-    <SourceContainer @ref="_modalSourceContainer">
-        @if (CloseButtonPressed != null)
-        {
-            <Modal Size="@Size" ShowCloseButton="@ShowCloseButton" CloseButtonPressed="@CloseButtonPressed">
-                <Header>
-                    @Header
-                </Header>
-                <Body>
-                    @Body
-                </Body>
-                <Footer>
-                    @Footer
-                </Footer>
-            </Modal>
-        }
-        else
-        {
-            <Modal Size="@Size" ShowCloseButton="@ShowCloseButton">
-                <Header>
-                    @Header
-                </Header>
-                <Body>
-                    @Body
-                </Body>
-                <Footer>
-                    @Footer
-                </Footer>
-            </Modal>
-        }
-    </SourceContainer>
+<SourceContainer @ref="_modalSourceContainer">
+    @if (CloseButtonPressed != null)
+    {
+        <Modal Size="@Size" ShowCloseButton="@ShowCloseButton" CloseButtonPressed="@CloseButtonPressed">
+            <Header>
+                @Header
+            </Header>
+            <Body>
+                @Body
+            </Body>
+            <Footer>
+                @Footer
+            </Footer>
+        </Modal>
+    }
+    else
+    {
+        <Modal Size="@Size" ShowCloseButton="@ShowCloseButton">
+            <Header>
+                @Header
+            </Header>
+            <Body>
+                @Body
+            </Body>
+            <Footer>
+                @Footer
+            </Footer>
+        </Modal>
+    }
+</SourceContainer>
 
 @code
 {

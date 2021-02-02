@@ -7,9 +7,9 @@
 
     using Microsoft.AspNetCore.Components;
 
-    public class CardComponent : BlorcComponentBase
+    public partial class Card : BlorcComponentBase
     {
-        public CardComponent()
+        public Card()
         {
             Component = "article";
 

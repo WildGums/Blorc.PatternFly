@@ -1,11 +1,10 @@
 ﻿namespace Blorc.PatternFly.Example.Pages.Components
 {
     using Blorc.Components;
-    using Blorc.PatternFly.Services.Interfaces;
 
-    public class AboutModalDemoComponent : BlorcComponentBase
+    public partial class AboutModalDemo : BlorcComponentBase
     {
-        public AboutModalDemoComponent()
+        public AboutModalDemo()
             : base(true)
         {
         }

@@ -5,13 +5,13 @@
 
     using Microsoft.AspNetCore.Components;
 
-    public class CheckboxSelectGroupComponent : BlorcComponentBase
+    public partial class CheckboxSelectGroup : BlorcComponentBase
     {
         [Parameter]
         public RenderFragment ChildContent { get; set; }
 
         [CascadingParameter]
-        public SelectComponent ContainerSelect { get; set; }
+        public Select ContainerSelect { get; set; }
 
         [Parameter]
         public string Key { get; set; }

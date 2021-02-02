@@ -2,7 +2,6 @@
 {
     using System.Threading.Tasks;
 
-    using Blorc.PatternFly.Services.Extensions;
     using Blorc.Services;
 
     using Microsoft.AspNetCore.Components.WebAssembly.Hosting;

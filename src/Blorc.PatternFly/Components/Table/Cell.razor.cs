@@ -4,9 +4,9 @@
     using Microsoft.AspNetCore.Components;
     using StateConverters;
 
-    public class CellComponent : BlorcComponentBase
+    public partial class Cell : BlorcComponentBase
     {
-        public CellComponent()
+        public Cell()
         {
             CreateConverter()
                 .Fixed("")

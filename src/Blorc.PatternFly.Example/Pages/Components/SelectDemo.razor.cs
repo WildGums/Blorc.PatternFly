@@ -7,7 +7,7 @@
 
     using Blorc.Components;
 
-    public class SelectDemoComponent : BlorcComponentBase
+    public partial class SelectDemo : BlorcComponentBase
     {
         public List<Tuple<string, string>> DataSource { get; set; }
 

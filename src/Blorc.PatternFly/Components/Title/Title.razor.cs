@@ -4,9 +4,9 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class TitleComponent : BlorcComponentBase
+    public partial class Title : BlorcComponentBase
     {
-        public TitleComponent()
+        public Title()
         {
             Size = "xl";
             HeadingLevel = "h1";

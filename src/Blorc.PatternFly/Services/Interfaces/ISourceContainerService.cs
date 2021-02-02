@@ -1,10 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ISourceContainerService.cs" company="WildGums">
-//   Copyright (c) 2008 - 2020 WildGums. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-namespace Blorc.PatternFly.Services.Interfaces
+﻿namespace Blorc.PatternFly
 {
     using System.Threading.Tasks;
 

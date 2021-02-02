@@ -1,4 +1,4 @@
-﻿namespace Blorc.PatternFly.Services.Extensions
+﻿namespace Blorc.PatternFly
 {
     using System.Threading.Tasks;
 
@@ -6,10 +6,10 @@
 
     public static class DocumentServiceExtensions
     {
-        public static async Task InjectBlorcPatternFly(this IDocumentService documentService)
+        public static async Task InjectBlorcPatternFlyAsync(this IDocumentService documentService)
         {
-            await documentService.InjectAssemblyCSSFile(typeof(DocumentServiceExtensions).Assembly, "patternfly/patternfly.css");
-            await documentService.InjectAssemblyCSSFile(typeof(DocumentServiceExtensions).Assembly, "patternfly/patternfly-extras.css");
+            await documentService.InjectAssemblyCSSFileAsync(typeof(DocumentServiceExtensions).Assembly, "patternfly/patternfly.css");
+            await documentService.InjectAssemblyCSSFileAsync(typeof(DocumentServiceExtensions).Assembly, "patternfly/patternfly-extras.css");
         }
     }
 }

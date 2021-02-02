@@ -1,13 +1,12 @@
 ﻿namespace Blorc.PatternFly.Components.Page
 {
     using Blorc.Components;
-    using Blorc.PatternFly.Services.Interfaces;
 
     using Microsoft.AspNetCore.Components;
 
-    public class PageComponent : BlorcComponentBase
+    public partial class Page : BlorcComponentBase
     {
-        public PageComponent()
+        public Page ()
             : base(true)
         {
             IncludeTargetContainer = true;
@@ -26,7 +25,7 @@
         [Parameter]
         public RenderFragment MainContent { get; set; }
 
-        public SidebarComponent Sidebar { get; set; }
+        public Sidebar Sidebar { get; set; }
 
         [Parameter]
         public RenderFragment SidebarContent { get; set; }
@@ -46,7 +45,9 @@
         {
             if (Sidebar != null)
             {
+#pragma warning disable BL0005 // Component parameter should not be set outside of its component.
                 Sidebar.IsExpanded = !Sidebar.IsExpanded;
+#pragma warning restore BL0005 // Component parameter should not be set outside of its component.
             }
         }
     }

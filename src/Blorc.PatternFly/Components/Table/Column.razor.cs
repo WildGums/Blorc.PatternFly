@@ -10,9 +10,9 @@
 
     using Microsoft.AspNetCore.Components;
 
-    public class ColumnComponent : BlorcComponentBase
+    public partial class Column : BlorcComponentBase
     {
-        public ColumnComponent()
+        public Column()
         {
             CreateConverter()
                 .Fixed(string.Empty)
@@ -50,7 +50,7 @@
         }
 
         [CascadingParameter]
-        public TableComponent ContainerTable { get; set; }
+        public Table ContainerTable { get; set; }
 
         [Parameter]
         public Predicate<object> FilterPredicate

@@ -3,9 +3,9 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class DropdownGroupComponent : BlorcComponentBase
+    public partial class DropdownGroup : BlorcComponentBase
     {
-        public DropdownGroupComponent()
+        public DropdownGroup()
         {
         }
 

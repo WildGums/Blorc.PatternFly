@@ -11,11 +11,11 @@
 
     using Microsoft.AspNetCore.Components;
 
-    public class ActionCellComponent : BlorcComponentBase
+    public partial class ActionCell : BlorcComponentBase
     {
         protected static readonly ButtonVariant[] ButtonVariants = { ButtonVariant.Primary, ButtonVariant.Secondary, ButtonVariant.Tertiary };
 
-        public ActionCellComponent()
+        public ActionCell()
         {
             CreateConverter()
                 .Fixed(string.Empty)

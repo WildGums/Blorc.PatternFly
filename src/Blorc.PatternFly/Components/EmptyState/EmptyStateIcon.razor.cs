@@ -5,9 +5,9 @@
     using Blorc.PatternFly.Components.Icon;
     using Microsoft.AspNetCore.Components;
 
-    public class EmptyStateIconComponent : BlorcComponentBase
+    public partial class EmptyStateIcon : BlorcComponentBase
     {
-        public EmptyStateIconComponent()
+        public EmptyStateIcon()
         {
 
         }

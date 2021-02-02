@@ -4,9 +4,9 @@
     using Core;
     using Microsoft.AspNetCore.Components;
 
-    public class TextAreaComponent : BlorcComponentBase
+    public partial class TextArea : BlorcComponentBase
     {
-        public TextAreaComponent()
+        public TextArea()
         {
             IsValid = true;
         }

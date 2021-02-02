@@ -3,15 +3,12 @@
     using System.ComponentModel;
 
     using Blorc.Components;
-    using Blorc.PatternFly.Components.Button;
 
     using Microsoft.AspNetCore.Components;
 
-    public class RowComponent : BlorcComponentBase
+    public partial class Row : BlorcComponentBase
     {
         private const string DefaultHighlightStyle = "border-left: 3px solid var(--pf-global--primary-color--100);";
-
-
         public string Style
         {
             get
@@ -36,8 +33,7 @@
         public string Class { get; set; }
 
         [CascadingParameter]
-        public TableComponent ContainerTable { get; set; }
-
+        public Table ContainerTable { get; set; }
 
         [Parameter]
         public string HighlightStyle

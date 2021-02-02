@@ -4,7 +4,7 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class SingleSelectComponent : BlorcComponentBase
+    public partial class SingleSelect : BlorcComponentBase
     {
         [Parameter] public object SelectedItem { get; set; }
 

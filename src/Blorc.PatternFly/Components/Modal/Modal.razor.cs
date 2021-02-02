@@ -10,9 +10,9 @@
 
     using Microsoft.AspNetCore.Components;
 
-    public class ModalComponent : BlorcComponentBase
+    public partial class Modal : BlorcComponentBase
     {
-        public ModalComponent()
+        public Modal()
         {
             CreateConverter()
                 .Fixed("pf-c-modal-box")
@@ -55,7 +55,7 @@
         }
 
         [CascadingParameter]
-        public TargetContainerComponent TargetContainer { get; set; }
+        public TargetContainer TargetContainer { get; set; }
 
         public void Close()
         {

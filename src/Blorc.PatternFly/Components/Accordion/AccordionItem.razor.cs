@@ -4,10 +4,10 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class AccordionItemComponent : BlorcComponentBase
+    public partial class AccordionItem : BlorcComponentBase
     {
         [CascadingParameter]
-        public AccordionComponent ContainerAccordion { get; set; }
+        public Accordion ContainerAccordion { get; set; }
 
         [Parameter]
         public int Index { get; set; }

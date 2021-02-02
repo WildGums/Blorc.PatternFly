@@ -6,9 +6,9 @@
     using Blorc.PatternFly.Components.Dropdown;
     using Microsoft.AspNetCore.Components;
 
-    public class ApplicationLauncherComponent : BlorcComponentBase
+    public partial class ApplicationLauncher : BlorcComponentBase
     {
-        public ApplicationLauncherComponent()
+        public ApplicationLauncher()
         {
             IsPlain = true;
             Direction = DropdownDirection.Down;

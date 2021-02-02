@@ -6,9 +6,9 @@
     using Blorc.StateConverters;
     using Microsoft.AspNetCore.Components;
 
-    public class DropdownToggleCheckboxComponent : BlorcComponentBase
+    public partial class DropdownToggleCheckbox : BlorcComponentBase
     {
-        public DropdownToggleCheckboxComponent()
+        public DropdownToggleCheckbox()
         {
             Id = GenerateUniqueId("dropdown-checkbox");
 

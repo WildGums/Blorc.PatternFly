@@ -4,9 +4,9 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class EmptyStateBodyComponent : BlorcComponentBase
+    public partial class EmptyStateBody : BlorcComponentBase
     {
-        public EmptyStateBodyComponent()
+        public EmptyStateBody()
         {
         }
 

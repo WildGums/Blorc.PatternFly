@@ -1,6 +1,6 @@
 ﻿namespace Blorc.PatternFly.Components.Select
 {
-    public class CheckboxSelectOptionComponent : SelectOptionComponent
+    public partial class CheckboxSelectOption : SelectOption
     {
     }
 }

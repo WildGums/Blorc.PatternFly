@@ -7,9 +7,9 @@
     using Blorc.PatternFly.Components.Modal;
     using Blorc.Services;
 
-    public class ModalDemoComponent : BlorcComponentBase
+    public partial class ModalDemo : BlorcComponentBase
     {
-        public ModalDemoComponent()
+        public ModalDemo()
             : base(true)
         {
         }

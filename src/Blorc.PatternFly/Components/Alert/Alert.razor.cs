@@ -3,7 +3,7 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class AlertComponent : BlorcComponentBase
+    public partial class Alert : BlorcComponentBase
     {
         [Parameter]
         public AlertType AlertType { get; set; } = AlertType.Danger;

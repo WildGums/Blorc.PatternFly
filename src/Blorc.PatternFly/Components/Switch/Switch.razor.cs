@@ -8,7 +8,7 @@
 
     using Microsoft.AspNetCore.Components;
 
-    public class SwitchComponent : UniqueComponentBase
+    public partial class Switch : UniqueComponentBase
     {
         public override string ComponentName => "switch";
 

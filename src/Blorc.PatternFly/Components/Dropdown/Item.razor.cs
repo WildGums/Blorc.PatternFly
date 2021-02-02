@@ -5,9 +5,9 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class ItemComponent : BlorcComponentBase
+    public partial class Item : BlorcComponentBase
     {
-        public ItemComponent()
+        public Item()
         {
             Component = "a";
             Href = "#";

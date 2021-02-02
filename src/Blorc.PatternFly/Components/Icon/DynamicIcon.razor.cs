@@ -4,9 +4,9 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class DynamicIconComponent : BlorcComponentBase
+    public partial class DynamicIcon : BlorcComponentBase
     {
-        public DynamicIconComponent()
+        public DynamicIcon()
         {
 
         }

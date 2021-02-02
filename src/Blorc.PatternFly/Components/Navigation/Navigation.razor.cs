@@ -4,7 +4,7 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class NavigationComponent : BlorcComponentBase, IContainerNavigationComponent
+    public partial class Navigation : BlorcComponentBase, IContainerNavigationComponent
     {
         [Parameter]
         public RenderFragment Items { get; set; }

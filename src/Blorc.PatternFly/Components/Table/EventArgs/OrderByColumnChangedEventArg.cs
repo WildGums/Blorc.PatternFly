@@ -9,10 +9,9 @@ namespace Blorc.PatternFly.Components.Table.EventArgs
 
     public class OrderByColumnChangedEventArg : EventArgs
     {
+        public Column ColumnComponent { get; }
 
-        public ColumnComponent ColumnComponent { get; }
-
-        public OrderByColumnChangedEventArg(ColumnComponent columnComponent)
+        public OrderByColumnChangedEventArg(Column columnComponent)
         {
             ColumnComponent = columnComponent;
         }

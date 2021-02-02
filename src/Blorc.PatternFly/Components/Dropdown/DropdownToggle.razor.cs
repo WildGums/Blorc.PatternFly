@@ -9,9 +9,9 @@
     using Blorc.StateConverters;
     using Microsoft.AspNetCore.Components;
 
-    public class DropdownToggleComponent : BlorcComponentBase, IToggleComponent
+    public partial class DropdownToggle : BlorcComponentBase, IToggleComponent
     {
-        public DropdownToggleComponent()
+        public DropdownToggle()
         {
             Icon = "CaretDown";
 
@@ -136,7 +136,7 @@
         {
             base.OnParametersSet();
 
-            ContainerDropdown.DropDownToggle = this;
+            ContainerDropdown.DropdownToggle = this;
         }
 
         protected void OnClick()

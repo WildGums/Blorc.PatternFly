@@ -6,11 +6,11 @@
     using Blorc.StateConverters;
     using Microsoft.AspNetCore.Components;
 
-    public class TabComponent : BlorcComponentBase, ITab
+    public partial class Tab : BlorcComponentBase, ITab
     {
         private static int Counter;
 
-        public TabComponent()
+        public Tab()
         {
             Id = ++Counter;
             UniqueLabelId = GenerateUniqueId($"pf-tab-pf");

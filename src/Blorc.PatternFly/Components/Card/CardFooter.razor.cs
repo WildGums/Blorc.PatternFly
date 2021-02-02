@@ -4,9 +4,9 @@
     using Blorc.StateConverters;
     using Microsoft.AspNetCore.Components;
 
-    public class CardFooterComponent : BlorcComponentBase
+    public partial class CardFooter : BlorcComponentBase
     {
-        public CardFooterComponent()
+        public CardFooter()
         {
             Component = "div";
 

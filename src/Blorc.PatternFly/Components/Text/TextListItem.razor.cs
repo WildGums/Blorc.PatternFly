@@ -4,9 +4,9 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class TextListItemComponent : BlorcComponentBase
+    public partial class TextListItem : BlorcComponentBase
     {
-        public TextListItemComponent()
+        public TextListItem()
         {
             Component = "li";
         }

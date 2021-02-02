@@ -3,11 +3,11 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class InputGroupTextComponent : BlorcComponentBase
+    public partial class InputGroupText : BlorcComponentBase
     {
         protected RenderFragment CustomRender { get; private set; }
 
-        public InputGroupTextComponent()
+        public InputGroupText()
         {
             Component = "span";
         }

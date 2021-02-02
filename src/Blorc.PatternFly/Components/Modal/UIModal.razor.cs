@@ -4,13 +4,12 @@
     using System.Threading.Tasks;
 
     using Blorc.Components;
-    using Blorc.PatternFly.Services.Interfaces;
 
     using Microsoft.AspNetCore.Components;
 
-    public class UIModalComponent : BlorcComponentBase
+    public partial class UIModal : BlorcComponentBase
     {
-        public UIModalComponent()
+        public UIModal()
             : base(true)
         {
         }

@@ -8,9 +8,9 @@
     using Blorc.StateConverters;
     using Microsoft.AspNetCore.Components;
 
-    public class ExpandableComponent : BlorcComponentBase
+    public partial class Expandable : BlorcComponentBase
     {
-        public ExpandableComponent()
+        public Expandable()
         {
             ToggleText = string.Empty;
 

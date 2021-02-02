@@ -9,11 +9,11 @@
     using Microsoft.AspNetCore.Components;
     using Microsoft.AspNetCore.Components.Web;
 
-    public class TooltipComponent : BlorcComponentBase
+    public partial class Tooltip : BlorcComponentBase
     {
         private const int ArrowSize = 20;
 
-        public TooltipComponent()
+        public Tooltip()
         {
             Position = TooltipPosition.Top;
             Trigger = TooltipTrigger.Click | TooltipTrigger.MouseEnter;
@@ -84,11 +84,12 @@
 
         protected async Task OnMouseEnter(MouseEventArgs e)
         {
-            var tooltipRect = await DocumentService.GetBoundingClientRectById(Id.ToString());
+            var tooltipRect = await DocumentService.GetBoundingClientRectByIdAsync(Id.ToString());
             var tooltipRectHeight = tooltipRect.Height;
             var tooltipRectWidth = tooltipRect.Width;
 
-            Rect boundingClientRect = await DocumentService.GetOffsetBoundingClientRect(e.ClientX, e.ClientY);
+            var boundingClientRect = await DocumentService.GetOffsetBoundingClientRectAsync(e.ClientX, e.ClientY);
+
             switch (Position)
             {
                 case TooltipPosition.Top:

@@ -6,9 +6,9 @@
     using Microsoft.AspNetCore.Components;
     using Microsoft.AspNetCore.Components.Web;
 
-    public class ButtonComponent : UniqueComponentBase
+    public partial class Button : UniqueComponentBase
     {
-        public ButtonComponent()
+        public Button()
         {
             Component = "button";
             Variant = ButtonVariant.Primary;

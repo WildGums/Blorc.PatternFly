@@ -1,4 +1,4 @@
-﻿namespace Blorc.PatternFly.Services
+﻿namespace Blorc.PatternFly
 {
     using System.Threading.Tasks;
 
@@ -13,7 +13,7 @@
 
         public async Task ExecuteAsync(object state = null)
         {
-            await ((PleaseWaitModalComponent)Component).ExecuteAsync(state);
+            await ((PleaseWaitModal)Component).ExecuteAsync(state);
         }
     }
 }

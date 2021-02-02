@@ -13,11 +13,11 @@
 
     using Microsoft.AspNetCore.Components;
 
-    public class SelectComponent : BlorcComponentBase
+    public partial class Select : BlorcComponentBase
     {
         private readonly Dictionary<string, string> _selectedItems = new Dictionary<string, string>();
 
-        public SelectComponent()
+        public Select()
         {
             Variant = SelectVariant.Single;
 

@@ -1,5 +1,5 @@
-﻿@using Blorc.PatternFly.Services.Extensions
-@using Blorc.Services
+﻿@using Blorc.Services
+
 @inherits Blorc.Components.BlorcApplicationBase
 
 @if (Initialized)
@@ -21,6 +21,6 @@
     protected override async Task OnConfiguringDocumentAsync(IDocumentService documentService)
     {
         await base.OnConfiguringDocumentAsync(documentService);
-        await documentService.InjectBlorcPatternFly();
+        await documentService.InjectBlorcPatternFlyAsync();
     }
 }

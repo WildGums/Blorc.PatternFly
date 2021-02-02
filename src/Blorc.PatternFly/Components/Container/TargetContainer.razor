@@ -1,16 +1,16 @@
 ﻿@using Microsoft.AspNetCore.Components
 @using Microsoft.AspNetCore.Components.Web
 
-@inherits Blorc.PatternFly.Components.Container.TargetContainerComponent
+@inherits BlorcComponentBase
 
 
-    <div>
-        <CascadingValue Value=@this>
-            @foreach (var renderFragment in RenderFragments)
-            {
-                <div>
-                    @renderFragment
-                </div>
-            }
-        </CascadingValue>
-    </div>
+<div>
+    <CascadingValue Value=@this>
+        @foreach (var renderFragment in RenderFragments)
+        {
+            <div>
+                @renderFragment
+            </div>
+        }
+    </CascadingValue>
+</div>

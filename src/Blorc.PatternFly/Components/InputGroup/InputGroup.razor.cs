@@ -4,9 +4,9 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class InputGroupComponent : BlorcComponentBase
+    public partial class InputGroup : BlorcComponentBase
     {
-        public InputGroupComponent()
+        public InputGroup()
         {
         }
 

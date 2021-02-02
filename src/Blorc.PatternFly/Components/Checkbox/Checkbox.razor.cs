@@ -6,9 +6,9 @@
 
     using Microsoft.AspNetCore.Components;
 
-    public class CheckboxComponent : UniqueComponentBase
+    public partial class Checkbox : UniqueComponentBase
     {
-        public CheckboxComponent()
+        public Checkbox()
         {
             IsValid = true;
         }
@@ -18,15 +18,8 @@
         [Parameter]
         public bool IsChecked
         {
-            get
-            {
-                return GetPropertyValue<bool>(nameof(IsChecked));
-            }
-
-            set
-            {
-                SetPropertyValue(nameof(IsChecked), value);
-            }
+            get { return GetPropertyValue<bool>(nameof(IsChecked)); }
+            set { SetPropertyValue(nameof(IsChecked), value); }
         }
 
         [Parameter]

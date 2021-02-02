@@ -1,7 +1,5 @@
-﻿namespace Blorc.PatternFly.Services.Extensions
+﻿namespace Blorc.PatternFly
 {
-    using Blorc.PatternFly.Services.Interfaces;
-
     using Microsoft.Extensions.DependencyInjection;
 
     public static class IServiceCollectionExtensions

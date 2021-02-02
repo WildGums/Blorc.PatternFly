@@ -9,9 +9,9 @@
 
     using Microsoft.AspNetCore.Components;
 
-    public class ButtonCellComponent : BlorcComponentBase
+    public partial class ButtonCell : BlorcComponentBase
     {
-        public ButtonCellComponent()
+        public ButtonCell()
         {
             CreateConverter()
                 .Fixed(string.Empty)

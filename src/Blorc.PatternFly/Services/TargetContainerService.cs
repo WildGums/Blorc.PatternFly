@@ -1,14 +1,7 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ContainerService.cs" company="WildGums">
-//   Copyright (c) 2008 - 2020 WildGums. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-namespace Blorc.PatternFly.Services
+﻿namespace Blorc.PatternFly
 {
     using Blorc.PatternFly.Components.Container;
     using Blorc.PatternFly.Components.List;
-    using Blorc.PatternFly.Services.Interfaces;
 
     using Microsoft.AspNetCore.Components;
 
@@ -18,12 +11,12 @@ namespace Blorc.PatternFly.Services
 
         public void Add(RenderFragment renderFragment)
         {
-            ((TargetContainerComponent)Component).RenderFragments.Add(renderFragment);
+            ((TargetContainer)Component).RenderFragments.Add(renderFragment);
         }
 
         public void Remove(RenderFragment renderFragment)
         {
-            ((TargetContainerComponent)Component).RenderFragments.Remove(renderFragment);
+            ((TargetContainer)Component).RenderFragments.Remove(renderFragment);
         }
     }
 }

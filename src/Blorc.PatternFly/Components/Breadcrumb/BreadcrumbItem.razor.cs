@@ -4,9 +4,9 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class BreadcrumbItemComponent : BlorcComponentBase
+    public partial class BreadcrumbItem : BlorcComponentBase
     {
-        public BreadcrumbItemComponent()
+        public BreadcrumbItem()
         {
             Component = "a";
         }

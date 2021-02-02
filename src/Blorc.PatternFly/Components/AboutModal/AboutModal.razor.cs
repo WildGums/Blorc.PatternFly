@@ -7,7 +7,7 @@
 
     using Microsoft.AspNetCore.Components;
 
-    public class AboutModalComponent : BlorcComponentBase
+    public partial class AboutModal : BlorcComponentBase
     {
         [Parameter]
         public string BrandImageAlt { get; set; }
@@ -22,7 +22,7 @@
         public RenderFragment Content { get; set; }
 
         [CascadingParameter]
-        public TargetContainerComponent TargetContainer { get; set; }
+        public TargetContainer TargetContainer { get; set; }
 
         [Parameter]
         public bool IsOpen

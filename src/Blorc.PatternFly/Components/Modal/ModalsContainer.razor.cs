@@ -7,7 +7,7 @@
 
     using Microsoft.AspNetCore.Components;
 
-    public class ModalsContainerComponent : BlorcComponentBase
+    public partial class ModalsContainer : BlorcComponentBase
     {
         [Inject]
         public IModalComponentService ModalComponentService { get; set; }

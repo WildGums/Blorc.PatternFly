@@ -6,7 +6,7 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class ProgressComponent : UniqueComponentBase
+    public partial class Progress : UniqueComponentBase
     {
         protected override void OnPropertyChanged(PropertyChangedEventArgs e)
         {
@@ -17,7 +17,7 @@
             }
         }
 
-        public ProgressComponent()
+        public Progress()
         {
             Size = ProgressSize.Normal;
             MeasureLocation = ProgressMeasureLocation.Top;

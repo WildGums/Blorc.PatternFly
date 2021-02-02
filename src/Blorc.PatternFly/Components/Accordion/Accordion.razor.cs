@@ -3,7 +3,7 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class AccordionComponent : BlorcComponentBase
+    public partial class Accordion : BlorcComponentBase
     {
         private int _selectedIndex;
 

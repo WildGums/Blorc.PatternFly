@@ -6,9 +6,9 @@
     using Microsoft.AspNetCore.Components;
     using Microsoft.AspNetCore.Components.Web;
 
-    public class DropdownItemComponent : BlorcComponentBase
+    public partial class DropdownItem : BlorcComponentBase
     {
-        public DropdownItemComponent()
+        public DropdownItem()
         {
             Component = "a";
             Index = -1;

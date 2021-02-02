@@ -1,10 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ModalUIVisualizationService.cs" company="WildGums">
-//   Copyright (c) 2008 - 2020 WildGums. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-namespace Blorc.PatternFly.Services
+﻿namespace Blorc.PatternFly
 {
     using System.Threading.Tasks;
 
@@ -19,17 +13,17 @@ namespace Blorc.PatternFly.Services
 
         public async Task CloseAsync()
         {
-            await ((UIModalComponent)Component).CloseAsync();
+            await ((UIModal)Component).CloseAsync();
         }
 
         public async Task ShowAsync()
         {
-            await ((UIModalComponent)Component).ShowAsync();
+            await ((UIModal)Component).ShowAsync();
         }
 
         public async Task UpdateAsync()
         {
-            await ((UIModalComponent)Component).UpdateAsync();
+            await ((UIModal)Component).UpdateAsync();
         }
     }
 }

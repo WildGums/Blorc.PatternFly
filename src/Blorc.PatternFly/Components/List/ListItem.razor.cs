@@ -4,9 +4,9 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class ListItemComponent : BlorcComponentBase
+    public partial class ListItem : BlorcComponentBase
     {
-        public ListItemComponent()
+        public ListItem()
         {
 
         }

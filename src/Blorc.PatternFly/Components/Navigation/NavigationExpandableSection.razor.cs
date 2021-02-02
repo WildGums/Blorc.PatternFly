@@ -5,7 +5,7 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class NavigationExpandableSectionComponent : BlorcComponentBase, IContainerNavigationComponent
+    public partial class NavigationExpandableSection : BlorcComponentBase, IContainerNavigationComponent
     {
         private bool _clicked;
 

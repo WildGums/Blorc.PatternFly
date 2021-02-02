@@ -8,9 +8,9 @@
 
     using Microsoft.AspNetCore.Components;
 
-    public class ActionColumnComponent : BlorcComponentBase
+    public partial class ActionColumn : BlorcComponentBase
     {
-        public ActionColumnComponent()
+        public ActionColumn()
         {
             CreateConverter()
                 .Fixed(string.Empty)
@@ -32,7 +32,7 @@
         public string Class { get; set; }
 
         [CascadingParameter]
-        public TableComponent ContainerTable { get; set; }
+        public Table ContainerTable { get; set; }
 
         [Parameter]
         public int Idx { get; set; }

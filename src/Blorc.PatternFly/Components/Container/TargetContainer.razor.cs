@@ -7,9 +7,9 @@
 
     using Microsoft.AspNetCore.Components;
 
-    public class TargetContainerComponent : BlorcComponentBase
+    public partial class TargetContainer : BlorcComponentBase
     {
-        public TargetContainerComponent()
+        public TargetContainer()
         {
             RenderFragments.CollectionChanged += RenderFragments_OnCollectionChanged;
         }

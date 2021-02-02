@@ -4,9 +4,9 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class TextContentComponent : BlorcComponentBase
+    public partial class TextContent : BlorcComponentBase
     {
-        public TextContentComponent()
+        public TextContent()
         {
         }
 

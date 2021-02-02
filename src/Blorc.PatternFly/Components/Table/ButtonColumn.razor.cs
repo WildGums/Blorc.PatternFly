@@ -8,9 +8,9 @@
 
     using Microsoft.AspNetCore.Components;
 
-    public class ButtonColumnComponent : BlorcComponentBase
+    public partial class ButtonColumn : BlorcComponentBase
     {
-        public ButtonColumnComponent()
+        public ButtonColumn()
         {
             CreateConverter()
                 .Fixed(string.Empty)
@@ -29,7 +29,7 @@
         public string Class { get; set; }
 
         [CascadingParameter]
-        public TableComponent ContainerTable { get; set; }
+        public Table ContainerTable { get; set; }
 
         [Parameter]
         public int Idx { get; set; }

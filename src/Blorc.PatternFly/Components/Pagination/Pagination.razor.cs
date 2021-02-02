@@ -10,9 +10,9 @@
 
     using Microsoft.AspNetCore.Components;
 
-    public class PaginationComponent : BlorcComponentBase
+    public partial class Pagination : BlorcComponentBase
     {
-        public PaginationComponent()
+        public Pagination()
         {
             CreateConverter()
                 .Fixed("pf-c-pagination")

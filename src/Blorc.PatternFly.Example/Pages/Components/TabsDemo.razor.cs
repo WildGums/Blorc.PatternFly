@@ -10,7 +10,7 @@
 
     using Microsoft.AspNetCore.Components;
 
-    public class TabsDemoComponent : BlorcComponentBase
+    public partial class TabsDemo : BlorcComponentBase
     {
         private readonly Random _random = new Random();
 
@@ -54,7 +54,7 @@
                 for (var j = 0; j < 5; j++)
                 {
                     data.Add(
-                        new TableDemoComponent.Record
+                        new TableDemo.Record
                         {
                             Repositories = $"one-{_random.Next(0, 100).ToString().PadLeft(2, '0')}",
                             Branches = $"two-{_random.Next(0, 100).ToString().PadLeft(2, '0')}",

@@ -4,9 +4,9 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class TextListComponent : BlorcComponentBase
+    public partial class TextList : BlorcComponentBase
     {
-        public TextListComponent()
+        public TextList()
         {
             Component = "ul";
         }

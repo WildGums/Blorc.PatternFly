@@ -5,9 +5,9 @@
     using Blorc.StateConverters;
     using Microsoft.AspNetCore.Components;
 
-    public class TabsComponent : BlorcComponentBase
+    public partial class Tabs : BlorcComponentBase
     {
-        public TabsComponent()
+        public Tabs()
         {
             Variant = TabsVariant.Div;
             LeftScrollAriaLabel = "Scroll left";

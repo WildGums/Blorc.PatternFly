@@ -6,9 +6,9 @@
     using Blorc.StateConverters;
     using Microsoft.AspNetCore.Components;
 
-    public class SeparatorComponent : BlorcComponentBase
+    public partial class Separator : BlorcComponentBase
     {
-        public SeparatorComponent()
+        public Separator()
         {
             Component = "div";
 

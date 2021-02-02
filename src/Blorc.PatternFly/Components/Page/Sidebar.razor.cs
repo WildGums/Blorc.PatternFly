@@ -6,9 +6,9 @@
     using Microsoft.AspNetCore.Components;
     using System.ComponentModel;
 
-    public class SidebarComponent : BlorcComponentBase
+    public partial class Sidebar : BlorcComponentBase
     {
-        public SidebarComponent()
+        public Sidebar()
         {
             CreateConverter()
                 .Fixed("pf-c-page__sidebar ws-page-sidebar")
@@ -34,7 +34,7 @@
         }
 
         [CascadingParameter]
-        public PageComponent PageComponent { get; set; }
+        public Page PageComponent { get; set; }
 
         [Parameter]
         public string Theme

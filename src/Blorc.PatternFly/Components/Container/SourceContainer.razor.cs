@@ -10,7 +10,7 @@ namespace Blorc.PatternFly.Components.Container
 
     using Microsoft.AspNetCore.Components;
 
-    public class SourceContainerComponent : BlorcComponentBase
+    public partial class SourceContainer : BlorcComponentBase
     {
         [Parameter]
         public RenderFragment ChildContent { get; set; }

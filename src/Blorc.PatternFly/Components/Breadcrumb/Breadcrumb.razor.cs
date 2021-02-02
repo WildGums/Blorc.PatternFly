@@ -5,9 +5,9 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class BreadcrumbComponent : BlorcComponentBase
+    public partial class Breadcrumb : BlorcComponentBase
     {
-        public BreadcrumbComponent()
+        public Breadcrumb()
         {
             Label = "Breadcrumb";
         }

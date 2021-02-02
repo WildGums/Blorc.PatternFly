@@ -5,9 +5,9 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class BadgeComponent : BlorcComponentBase
+    public partial class Badge : BlorcComponentBase
     {
-        public BadgeComponent()
+        public Badge()
         {
 
         }

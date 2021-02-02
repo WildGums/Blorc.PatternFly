@@ -1,17 +1,10 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="SourceContainerService.cs" company="WildGums">
-//   Copyright (c) 2008 - 2020 WildGums. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-namespace Blorc.PatternFly.Services
+﻿namespace Blorc.PatternFly
 {
     using System;
     using System.Reflection;
     using System.Threading.Tasks;
 
     using Blorc.PatternFly.Components.Container;
-    using Blorc.PatternFly.Services.Interfaces;
 
     using Microsoft.AspNetCore.Components;
 

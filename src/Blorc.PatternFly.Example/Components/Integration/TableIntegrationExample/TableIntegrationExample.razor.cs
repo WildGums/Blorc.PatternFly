@@ -89,7 +89,7 @@
                 for (var i = 0; i < 100; i++)
                 {
                     _data.Add(
-                        new TableDemoComponent.Record
+                        new TableDemo.Record
                         {
                             Repositories = $"one-{_random.Next(0, 100).ToString().PadLeft(2, '0')}",
                             Branches = $"two-{_random.Next(0, 100).ToString().PadLeft(2, '0')}",

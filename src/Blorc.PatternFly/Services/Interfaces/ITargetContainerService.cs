@@ -1,4 +1,4 @@
-﻿namespace Blorc.PatternFly.Services.Interfaces
+﻿namespace Blorc.PatternFly
 {
     using Blorc.Services;
 

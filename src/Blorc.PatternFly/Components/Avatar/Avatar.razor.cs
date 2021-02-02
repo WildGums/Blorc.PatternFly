@@ -3,9 +3,9 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class AvatarComponent : BlorcComponentBase
+    public partial class Avatar : BlorcComponentBase
     {
-        public AvatarComponent()
+        public Avatar()
         {
         }
 

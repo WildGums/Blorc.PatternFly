@@ -4,7 +4,7 @@
 
     using Blorc.Components;
 
-    public class SwitchDemoComponent : BlorcComponentBase
+    public partial class SwitchDemo : BlorcComponentBase
     {
         protected bool SimpleSwitchIsChecked
         {

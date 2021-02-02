@@ -5,18 +5,16 @@
     using System.Threading.Tasks;
 
     using Blorc.Components;
-    using Blorc.PatternFly.Components.Container;
     using Blorc.PatternFly.Components.Progress;
     using Blorc.PatternFly.Core;
-    using Blorc.PatternFly.Services.Interfaces;
 
     using Microsoft.AspNetCore.Components;
 
-    public class PleaseWaitModalComponent : BlorcComponentBase, IProgressAsync<int>
+    public partial class PleaseWaitModal : BlorcComponentBase, IProgressAsync<int>
     {
         public const string DefaultPleaseWaitHeader = "Please Wait...";
 
-        public PleaseWaitModalComponent()
+        public PleaseWaitModal()
             : base(true)
         {
         }
@@ -47,7 +45,7 @@
 
         protected ISourceContainerService ModalSourceContainerService { get; set; }
 
-        protected ProgressComponent Progress { get; set; }
+        protected Progress Progress { get; set; }
 
         public async Task ExecuteAsync(object state = null)
         {
@@ -71,7 +69,9 @@
         {
             if (ShowProgress)
             {
+#pragma warning disable BL0005 // Component parameter should not be set outside of its component.
                 Progress.Value = value;
+#pragma warning restore BL0005 // Component parameter should not be set outside of its component.
                 await Task.Delay(1);
             }
         }

@@ -4,91 +4,90 @@
 @using Microsoft.AspNetCore.Components
 @using Microsoft.AspNetCore.Components.Web
 @using Blorc.PatternFly.Components.Dropdown
-@using Blorc.PatternFly.Layouts
 @using Blorc.PatternFly.Components.Icon
 @using Blorc.PatternFly.Components.Text
-@using Blorc.PatternFly.Helpers
+@using Blorc.PatternFly.Layouts
 
-@inherits TableComponent
+@inherits UniqueComponentBase
 
 <CascadingValue Value=this>
-        <table id="@(Id ?? TableId)" class="@Class">
-            @if (string.IsNullOrWhiteSpace(Caption))
+    <table id="@(Id ?? TableId)" class="@Class">
+        @if (string.IsNullOrWhiteSpace(Caption))
+        {
+            <caption>@Caption</caption>
+        }
+        <thead>
+            @if (ColumnDefinitions.Count > 0)
             {
-                <caption>@Caption</caption>
-            }
-            <thead>
-                @if (ColumnDefinitions.Count > 0)
-                {
-                    <Row>
-                        @foreach (var columnDefinition in ColumnDefinitions.OrderBy(pair => pair.Value.Idx).Select(pair => pair.Value))
+                <Row>
+                    @foreach (var columnDefinition in ColumnDefinitions.OrderBy(pair => pair.Value.Idx).Select(pair => pair.Value))
+                    {
+                        if (columnDefinition is ActionColumnDefinition)
                         {
-                            if (columnDefinition is ActionColumnDefinition)
+                            <ActionColumn Label="@columnDefinition.Label"
+                                          Key="@columnDefinition.Key"
+                                          Idx="@columnDefinition.Idx" />
+                        }
+                        else
+                        {
+                            if (columnDefinition.FilterPredicate != null)
                             {
-                                <ActionColumn Label="@columnDefinition.Label" 
-                                              Key="@columnDefinition.Key" 
-                                              Idx="@columnDefinition.Idx" />
+                                <Column Label="@columnDefinition.Label"
+                                        Key="@columnDefinition.Key"
+                                        Idx="@columnDefinition.Idx"
+                                        IsSortable="@columnDefinition.IsSortable"
+                                        IsSelected="@columnDefinition.IsSelected"
+                                        FilterPredicate=@columnDefinition.FilterPredicate />
                             }
                             else
                             {
-                                if (columnDefinition.FilterPredicate != null)
-                                {
-                                    <Column Label="@columnDefinition.Label"
-                                            Key="@columnDefinition.Key"
-                                            Idx="@columnDefinition.Idx"
-                                            IsSortable="@columnDefinition.IsSortable"
-                                            IsSelected="@columnDefinition.IsSelected"
-                                            FilterPredicate=@columnDefinition.FilterPredicate />
-                                }
-                                else
-                                {
-                                    <Column Label="@columnDefinition.Label"
-                                            Key="@columnDefinition.Key"
-                                            Idx="@columnDefinition.Idx"
-                                            IsSortable="@columnDefinition.IsSortable"
-                                            IsSelected="@columnDefinition.IsSelected"/>
-                                }
+                                <Column Label="@columnDefinition.Label"
+                                        Key="@columnDefinition.Key"
+                                        Idx="@columnDefinition.Idx"
+                                        IsSortable="@columnDefinition.IsSortable"
+                                        IsSelected="@columnDefinition.IsSelected" />
                             }
                         }
-                    </Row>
-                }
-                else if(Header != null)
+                    }
+                </Row>
+            }
+            else if (Header != null)
+            {
+                @Header
+            }
+        </thead>
+        <tbody>
+            @if (Body != null)
+            {
+                @Body
+            }
+            else
+            {
+                bool noRows = true;
+                if (DataSource != null)
                 {
-                    @Header
-                }
-            </thead>
-            <tbody>
-                @if (Body != null)
-                {
-                    @Body
-                }
-                else
-                {
-                    bool noRows = true;
-                    if (DataSource != null)
+                    foreach (var record in DataSource)
                     {
-                        foreach (var record in DataSource)
+                        var columnsWithPredicate = ColumnDefinitions.Where(pair => pair.Value.FilterPredicate != null).ToList();
+                        if (columnsWithPredicate.Count <= 0 || columnsWithPredicate.Select(pair => pair.Value).Any(definition => definition.FilterPredicate(DataHelper.GetValue(record, definition.Key))))
                         {
-                            var columnsWithPredicate = ColumnDefinitions.Where(pair => pair.Value.FilterPredicate != null).ToList();
-                            if (columnsWithPredicate.Count <= 0 || columnsWithPredicate.Select(pair => pair.Value).Any(definition => definition.FilterPredicate(DataHelper.GetValue(record, definition.Key))))
-                            {
-                                <Row  Record="@record" />
-                                noRows = false;
-                            }
+                            <Row Record="@record" />
+                            noRows = false;
                         }
                     }
-
-                    if (noRows && NoRowsContent != null)
-                    {
-                        <tr class="pf-m-height-auto">
-                            <td colspan="@ColumnDefinitions.Count">
-                                <Bullseye>
-                                    @NoRowsContent
-                                </Bullseye>
-                            </td>
-                        </tr>
-                    }
                 }
-            </tbody>
-        </table>
-    </CascadingValue>
+
+                if (noRows && NoRowsContent != null)
+                {
+                    <tr class="pf-m-height-auto">
+                        <td colspan="@ColumnDefinitions.Count">
+                            <Bullseye>
+                                @NoRowsContent
+                            </Bullseye>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</CascadingValue>

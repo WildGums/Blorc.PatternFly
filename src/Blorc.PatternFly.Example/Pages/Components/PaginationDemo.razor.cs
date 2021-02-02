@@ -3,9 +3,9 @@
     using Blorc.Components;
     using Blorc.StateConverters;
 
-    public class PaginationComponent : BlorcComponentBase
+    public partial class PaginationDemo : BlorcComponentBase
     {
-        public PaginationComponent()
+        public PaginationDemo()
         {
         }
     }

@@ -2,7 +2,7 @@
 @using Microsoft.AspNetCore.Components.Web
 @using Blorc.PatternFly.Components.Button
 
-@inherits ButtonCellComponent
+@inherits BlorcComponentBase
 
 <td data-label="@Label" data-key="@Key" class="@Class">
     <Button Variant=@Variant OnClick=@((s,e)=>Action())>@Value</Button>

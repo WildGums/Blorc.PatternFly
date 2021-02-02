@@ -5,9 +5,9 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class TextComponent : BlorcComponentBase
+    public partial class Text : BlorcComponentBase
     {
-        public TextComponent()
+        public Text()
         {
             Component = "p";
         }

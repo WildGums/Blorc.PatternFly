@@ -6,9 +6,9 @@
 
     using Microsoft.AspNetCore.Components;
 
-    public class SpinnerComponent : BlorcComponentBase
+    public partial class Spinner : BlorcComponentBase
     {
-        public SpinnerComponent()
+        public Spinner()
         {
             CreateConverter()
                 .Fixed("pf-c-spinner")

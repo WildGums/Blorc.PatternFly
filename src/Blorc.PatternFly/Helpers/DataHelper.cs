@@ -4,7 +4,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Blorc.PatternFly.Helpers
+namespace Blorc.PatternFly
 {
     using System;
     using System.Collections;
@@ -29,7 +29,7 @@ namespace Blorc.PatternFly.Helpers
         /// </exception>
         public static object GetValue(object record, string key)
         {
-            if (record == null)
+            if (record is null)
             {
                 throw new ArgumentNullException(nameof(record));
             }

@@ -7,9 +7,9 @@
 
     using Microsoft.AspNetCore.Components;
 
-    public class TextInputComponent : BlorcComponentBase
+    public partial class TextInput : BlorcComponentBase
     {
-        public TextInputComponent()
+        public TextInput()
         {
             IsValid = true;
             Type = "text";

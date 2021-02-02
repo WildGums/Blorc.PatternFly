@@ -4,9 +4,9 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class LabelComponent : BlorcComponentBase
+    public partial class Label : BlorcComponentBase
     {
-        public LabelComponent()
+        public Label()
         {
 
         }

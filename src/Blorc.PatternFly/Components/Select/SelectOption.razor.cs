@@ -1,20 +1,13 @@
 ﻿namespace Blorc.PatternFly.Components.Select
-
 {
     using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.Linq;
-    using System.Reflection;
-    using System.Threading.Tasks;
     using Blorc.Components;
     using Blorc.StateConverters;
-    using Icon;
     using Microsoft.AspNetCore.Components;
 
-    public class SelectOptionComponent : BlorcComponentBase
+    public partial class SelectOption : BlorcComponentBase
     {
-        public SelectOptionComponent()
+        public SelectOption()
         {
             CreateConverter()
                 .Fixed("pf-c-select__menu-item")
@@ -26,7 +19,7 @@
         }
 
         [CascadingParameter]
-        public SelectComponent ContainerSelect { get; set; }
+        public Select ContainerSelect { get; set; }
 
         public string Class
         {

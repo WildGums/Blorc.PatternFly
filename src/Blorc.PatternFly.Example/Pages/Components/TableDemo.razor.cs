@@ -11,13 +11,13 @@
     using Blorc.PatternFly.Example.Annotations;
     using Blorc.Reflection;
 
-    public class TableDemoComponent : BlorcComponentBase
+    public partial class TableDemo : BlorcComponentBase
     {
         private readonly Random _random = new Random();
 
         private ArrayList _data;
 
-        private Dictionary<object, List<ActionDefinition>> actionDefinitionsCache = new Dictionary<object, List<ActionDefinition>>();
+        private readonly Dictionary<object, List<ActionDefinition>> _actionDefinitionsCache = new Dictionary<object, List<ActionDefinition>>();
 
         public string FilterText
         {
@@ -25,16 +25,16 @@
             set => SetPropertyValue(nameof(FilterText), value);
         }
 
-        public TableComponent FiltrableTable { get; set; }
+        public Table FiltrableTable { get; set; }
 
         public IEnumerable<ActionDefinition> GetActions(object row)
         {
-            if (!actionDefinitionsCache.ContainsKey(row))
+            if (!_actionDefinitionsCache.ContainsKey(row))
             {
-                actionDefinitionsCache[row] = new List<ActionDefinition>();
+                _actionDefinitionsCache[row] = new List<ActionDefinition>();
             }
 
-            var actionDefinitions = actionDefinitionsCache[row];
+            var actionDefinitions = _actionDefinitionsCache[row];
             if (actionDefinitions.Count == 0)
             {
                 // This parameter allow customization per row state.

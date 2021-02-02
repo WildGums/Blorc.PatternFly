@@ -3,9 +3,9 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class EmptyStateSecondaryActionsComponent : BlorcComponentBase
+    public partial class EmptyStateSecondaryActions : BlorcComponentBase
     {
-        public EmptyStateSecondaryActionsComponent()
+        public EmptyStateSecondaryActions()
         {
         }
 

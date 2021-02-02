@@ -3,9 +3,9 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class BrandComponent : BlorcComponentBase
+    public partial class Brand : BlorcComponentBase
     {
-        public BrandComponent()
+        public Brand()
         {
 
         }

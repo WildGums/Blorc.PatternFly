@@ -11,9 +11,9 @@
 
     using Microsoft.AspNetCore.Components;
 
-    public class DropdownComponent : UniqueComponentBase, IToggleComponent
+    public partial class Dropdown : UniqueComponentBase, IToggleComponent
     {
-        public DropdownComponent()
+        public Dropdown()
         {
             Position = DropdownPosition.Left;
             Direction = DropdownDirection.Down;
@@ -104,17 +104,17 @@
         [Parameter]
         public string ToggleId { get; set; }
 
-        internal DropdownToggleComponent DropDownToggle
+        internal DropdownToggle DropdownToggle
         {
-            get => GetPropertyValue<DropdownToggleComponent>(nameof(DropDownToggle));
-            set => SetPropertyValue(nameof(DropDownToggle), value);
+            get => GetPropertyValue<DropdownToggle>(nameof(DropdownToggle));
+            set => SetPropertyValue(nameof(DropdownToggle), value);
         }
 
         public void Close()
         {
             IsOpen = false;
             //// TODO: This can be removed after a binding system fix.
-            DropDownToggle?.Close();
+            DropdownToggle?.Close();
         }
 
         protected override async Task OnParametersSetAsync()
@@ -139,12 +139,14 @@
         {
             base.OnPropertyChanged(e);
 
-            if (e.PropertyName == nameof(DropDownToggle))
+            if (e.PropertyName == nameof(DropdownToggle))
             {
-                var toggle = DropDownToggle;
+                var toggle = DropdownToggle;
                 if (toggle != null)
                 {
-                    toggle.Toggled += OnDropDownToggled;
+#pragma warning disable BL0005 // Component parameter should not be set outside of its component.
+                    toggle.Toggled += OnDropdownToggled;
+#pragma warning restore BL0005 // Component parameter should not be set outside of its component.
                 }
             }
         }
@@ -154,9 +156,9 @@
             Toggled?.Invoke(this, EventArgs.Empty);
         }
 
-        private void OnDropDownToggled(object sender, EventArgs e)
+        private void OnDropdownToggled(object sender, EventArgs e)
         {
-            IsOpen = DropDownToggle.IsOpen;
+            IsOpen = DropdownToggle.IsOpen;
             OnToggled();
         }
     }

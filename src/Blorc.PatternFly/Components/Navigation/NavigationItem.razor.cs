@@ -7,9 +7,9 @@
     using Microsoft.AspNetCore.Components;
     using Microsoft.AspNetCore.Components.Routing;
 
-    public class NavigationItemComponent : BlorcComponentBase
+    public partial class NavigationItem : BlorcComponentBase
     {
-        public NavigationItemComponent()
+        public NavigationItem()
         {
             CreateConverter()
                 .Fixed("pf-c-nav__link")

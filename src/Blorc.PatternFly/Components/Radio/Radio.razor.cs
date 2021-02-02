@@ -4,9 +4,9 @@
     using Blorc.Components;
     using Microsoft.AspNetCore.Components;
 
-    public class RadioComponent : UniqueComponentBase
+    public partial class Radio : UniqueComponentBase
     {
-        public RadioComponent()
+        public Radio()
         {
             IsValid = true;
         }

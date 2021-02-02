@@ -5,7 +5,7 @@
 
     using Blorc.Components;
 
-    public class CheckboxDemoComponent : BlorcComponentBase
+    public partial class CheckboxDemo : BlorcComponentBase
     {
         public bool IsChecked
         {
