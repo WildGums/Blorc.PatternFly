@@ -20,7 +20,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Blorc.Core" Version="1.0.0-alpha0484" />
+    <PackageReference Include="Blorc.Core" Version="1.0.0-alpha0485" />
   </ItemGroup>
 
   <ItemGroup>
