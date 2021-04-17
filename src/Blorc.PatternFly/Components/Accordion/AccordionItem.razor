@@ -14,7 +14,7 @@
     </h3>
 </dt>
 <dd class="pf-c-accordion__expanded-content @GetIsExpandedClass()" hidden="@(!IsSelected)">
-    @if (Content != null)
+    @if (Content is not null)
     {
         <div class="pf-c-accordion__expanded-content-body">
             @Content

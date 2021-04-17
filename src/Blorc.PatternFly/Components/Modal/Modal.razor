@@ -19,7 +19,7 @@
                     </button>
                 }
 
-                @if (Header != null)
+                @if (Header is not null)
                 {
                     <h3 class="pf-c-title pf-m-2xl">@Header</h3>
                 }
@@ -28,7 +28,7 @@
                     @Body
                 </div>
 
-                @if (Footer != null)
+                @if (Footer is not null)
                 {
                     <div class="pf-c-modal-box__footer">
                         @Footer

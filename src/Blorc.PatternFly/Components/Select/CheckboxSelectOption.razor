@@ -4,7 +4,7 @@
 
 @inherits SelectOption
 
-@if (ContainerSelect != null && ContainerSelect.IsExpanded && IsVisible)
+@if (ContainerSelect is not null && ContainerSelect.IsExpanded && IsVisible)
 {
     <label class="pf-c-check pf-c-select__menu-item">
         <Checkbox Label="@Value" IsChecked="@IsSelected" OnChange="@OptionClick" />

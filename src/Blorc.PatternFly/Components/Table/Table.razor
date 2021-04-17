@@ -30,7 +30,7 @@
                         }
                         else
                         {
-                            if (columnDefinition.FilterPredicate != null)
+                            if (columnDefinition.FilterPredicate is not null)
                             {
                                 <Column Label="@columnDefinition.Label"
                                         Key="@columnDefinition.Key"
@@ -51,24 +51,24 @@
                     }
                 </Row>
             }
-            else if (Header != null)
+            else if (Header is not null)
             {
                 @Header
             }
         </thead>
         <tbody>
-            @if (Body != null)
+            @if (Body is not null)
             {
                 @Body
             }
             else
             {
                 bool noRows = true;
-                if (DataSource != null)
+                if (DataSource is not null)
                 {
                     foreach (var record in DataSource)
                     {
-                        var columnsWithPredicate = ColumnDefinitions.Where(pair => pair.Value.FilterPredicate != null).ToList();
+                        var columnsWithPredicate = ColumnDefinitions.Where(pair => pair.Value.FilterPredicate is not null).ToList();
                         if (columnsWithPredicate.Count <= 0 || columnsWithPredicate.Select(pair => pair.Value).Any(definition => definition.FilterPredicate(DataHelper.GetValue(record, definition.Key))))
                         {
                             <Row Record="@record" />
@@ -77,7 +77,7 @@
                     }
                 }
 
-                if (noRows && NoRowsContent != null)
+                if (noRows && NoRowsContent is not null)
                 {
                     <tr class="pf-m-height-auto">
                         <td colspan="@ColumnDefinitions.Count">

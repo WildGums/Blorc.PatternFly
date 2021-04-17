@@ -17,8 +17,17 @@
             builder.Services.AddBlorcCore();
             builder.Services.AddBlorcPatternFly();
 
-            await builder
-                .Build()
+            var webAssemblyHost = builder
+                .Build();
+
+            await webAssemblyHost.ConfigureDocumentAsync(
+                async documentService =>
+                {
+                    await documentService.InjectBlorcCoreJsAsync();
+                    await documentService.InjectBlorcPatternFlyAsync();
+                });
+
+            await webAssemblyHost
                 .MapComponentServices(options => options.MapBlorcPatternFly())
                 .RunAsync();
         }

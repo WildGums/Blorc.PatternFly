@@ -24,7 +24,7 @@
         IsChecked = (bool)e.Value;
 
         var handler = OnChange;
-        if (handler != null)
+        if (handler is not null)
         {
             handler(this, EventArgs.Empty);
         }

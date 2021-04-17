@@ -15,13 +15,13 @@
 
     <div class="pf-c-page">
         <!--TODO: Review why set z-index is required (modal components are not properly working) -->
-        @if (SidebarContent != null || LogoContent != null || ToolbarContent != null)
+        @if (SidebarContent is not null || LogoContent is not null || ToolbarContent is not null)
         {
             <header role="banner" class="pf-c-page__header">
-                @if (SidebarContent != null || LogoContent != null)
+                @if (SidebarContent is not null || LogoContent is not null)
                 {
                     <div class="pf-c-page__header-brand">
-                        @if (SidebarContent != null)
+                        @if (SidebarContent is not null)
                         {
                             <div class="pf-c-page__header-brand-toggle">
                                 <button id="nav-toggle" aria-controls="page-sidebar" aria-label="Global navigation" class="pf-c-button pf-m-plain" type="button" @onclick="OnClickNavbarToogle">
@@ -34,7 +34,7 @@
                     </div>
                 }
 
-                @if (ToolbarContent != null)
+                @if (ToolbarContent is not null)
                 {
                     <div class="pf-c-page__header-tools">
                         @ToolbarContent
@@ -43,7 +43,7 @@
             </header>
         }
 
-        @if (SidebarContent != null)
+        @if (SidebarContent is not null)
         {
             <Sidebar @ref="Sidebar">
                 @SidebarContent

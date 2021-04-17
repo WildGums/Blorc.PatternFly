@@ -88,7 +88,7 @@
         protected void OnButtonClicked(MouseEventArgs e)
         {
             var handler = OnClick;
-            if (handler != null)
+            if (handler is not null)
             {
                 handler(this, EventArgs.Empty);
             }
@@ -106,7 +106,7 @@
 
             builder.AddAttribute(idx++, "class", $"pf-c-button {Class}");
             builder.AddAttribute(idx++, "disabled", IsDisabled);
-            if (OnClick != null)
+            if (OnClick is not null)
             {
                 builder.AddAttribute(idx++, "onclick", new EventCallback<MouseEventArgs>(this, new Action<MouseEventArgs>(OnButtonClicked)));
             }

@@ -11,7 +11,7 @@
 @inherits BlorcComponentBase
 
 <SourceContainer @ref="_modalSourceContainer">
-    @if (CloseButtonPressed != null)
+    @if (CloseButtonPressed is not null)
     {
         <Modal Size="@Size" ShowCloseButton="@ShowCloseButton" CloseButtonPressed="@CloseButtonPressed">
             <Header>

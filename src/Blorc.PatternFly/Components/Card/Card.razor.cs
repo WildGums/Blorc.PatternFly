@@ -41,7 +41,7 @@
                 builder.OpenElement(idx++, Component);
                 builder.AddAttribute(idx++, "class", Class);
                 builder.AddAttribute(idx++, "onmouseover", EventCallback.Factory.Create(this, MouseOver));
-                if (AdditionalAttributes != null && AdditionalAttributes.TryGetValue("style", out var style))
+                if (AdditionalAttributes is not null && AdditionalAttributes.TryGetValue("style", out var style))
                 {
                     builder.AddAttribute(idx++, "style", style);
                 }

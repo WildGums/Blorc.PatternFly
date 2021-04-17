@@ -50,7 +50,7 @@
         public async Task ExecuteAsync(object state = null)
         {
             var executionContext = new ExecutionContext(this, state);
-            if (HeaderTextAction != null)
+            if (HeaderTextAction is not null)
             {
                 HeaderText = await HeaderTextAction(executionContext);
             }

@@ -120,7 +120,7 @@
         protected override async Task OnParametersSetAsync()
         {
             await base.OnParametersSetAsync();
-            if (ToggleComponentContainer != null)
+            if (ToggleComponentContainer is not null)
             {
                 ToggleComponentContainer.Register(this);
                 ToggleComponentContainer.ToogleComponentChanged += ToggleComponentContainerOnToogleComponentChanged;
@@ -142,7 +142,7 @@
             if (e.PropertyName == nameof(DropdownToggle))
             {
                 var toggle = DropdownToggle;
-                if (toggle != null)
+                if (toggle is not null)
                 {
 #pragma warning disable BL0005 // Component parameter should not be set outside of its component.
                     toggle.Toggled += OnDropdownToggled;

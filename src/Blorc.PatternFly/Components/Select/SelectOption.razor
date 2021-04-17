@@ -2,7 +2,7 @@
 
 @inherits BlorcComponentBase
 
-@if (ContainerSelect != null && ContainerSelect.IsExpanded && IsVisible)
+@if (ContainerSelect is not null && ContainerSelect.IsExpanded && IsVisible)
 {
     <li role="presentation">
         <button class="@Class" role="option" @onclick="OptionClick">

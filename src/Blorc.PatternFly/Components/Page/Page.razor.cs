@@ -43,7 +43,7 @@
 
         protected void OnClickNavbarToogle()
         {
-            if (Sidebar != null)
+            if (Sidebar is not null)
             {
 #pragma warning disable BL0005 // Component parameter should not be set outside of its component.
                 Sidebar.IsExpanded = !Sidebar.IsExpanded;

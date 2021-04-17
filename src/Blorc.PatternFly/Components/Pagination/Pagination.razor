@@ -8,7 +8,7 @@
     <div class="pf-c-pagination__total-items">
         <b>@(PageFirstItemIndex + 1)<!-- --> - <!-- -->@(PageLastItemIndex + 1)</b> <!-- -->of <b>@ItemsCount</b>
     </div>
-    @if (ItemsPerPageOptions != null)
+    @if (ItemsPerPageOptions is not null)
     {
         <div class=@OptionsClass>
             <div class=@OptionsToogleClass>

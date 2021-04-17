@@ -80,7 +80,7 @@
     </Example>
 
     <Example Title="Execute Async Task">
-        <PleaseWaitModal Size="ModalSize.Small" Action=@(ctx => DoSomething(ctx)) @ref="_pleaseWaitModal">
+        <PleaseWaitModal Size="ModalSize.Small" Action=@(ctx => DoSomethingAsync(ctx)) @ref="_pleaseWaitModal">
             <Header>
                 Please wait...
             </Header>
@@ -93,7 +93,7 @@
     <Example Title="Execute Async Task (Progress)">
         <PleaseWaitModal @ref="_pleaseWaitModalWithProgress"
                           Size="ModalSize.Small"
-                          Action=@(ctx => DoSomething(ctx))
+                          Action=@(ctx => DoSomethingAsync(ctx))
                           ShowProgress="true">
             <Header>
                 Please wait...
@@ -105,7 +105,7 @@
     <Example Title="Execute Async Task (Progress & Body)">
         <PleaseWaitModal @ref="_pleaseWaitModalWithProgressAndBody"
                           Size="@ModalSize.Small"
-                          Action=@(ctx => DoSomething(ctx))
+                          Action=@(ctx => DoSomethingAsync(ctx))
                           ShowProgress="true">
             <Header>
                 Please wait...

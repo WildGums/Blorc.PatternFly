@@ -9,13 +9,13 @@
 
 @inherits BlorcComponentBase
 
-@if (ChildContent != null)
+@if (ChildContent is not null)
 {
     <tr class="@Class" style="@Style">
         @ChildContent
     </tr>
 }
-else if (ContainerTable != null && Record != null)
+else if (ContainerTable is not null && Record is not null)
 {
     <tr class="@Class" style="@Style">
         @foreach (var columnDefinition in ContainerTable.ColumnDefinitions.OrderBy(pair => pair.Value.Idx).Select(pair => pair.Value))

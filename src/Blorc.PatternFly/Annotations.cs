@@ -74,7 +74,7 @@ namespace Blorc.PatternFly.Annotations
   /// public void Foo([ItemNotNull]List&lt;string&gt; books)
   /// {
   ///   foreach (var book in books) {
-  ///     if (book != null) // Warning: Expression is always true
+  ///     if (book is not null) // Warning: Expression is always true
   ///      Console.WriteLine(book.ToUpper());
   ///   }
   /// }
@@ -180,7 +180,7 @@ namespace Blorc.PatternFly.Annotations
   /// </summary>
   /// <example><code>
   /// void Foo(string param) {
-  ///   if (param == null)
+  ///   if (param is null)
   ///     throw new ArgumentNullException("par"); // Warning: Cannot resolve symbol
   /// }
   /// </code></example>
@@ -334,7 +334,7 @@ namespace Blorc.PatternFly.Annotations
   ///   void Test() {
   ///     var ca1 = new NoEquality();
   ///     var ca2 = new NoEquality();
-  ///     if (ca1 != null) { // OK
+  ///     if (ca1 is not null) { // OK
   ///       bool condition = ca1 == ca2; // Warning
   ///     }
   ///   }

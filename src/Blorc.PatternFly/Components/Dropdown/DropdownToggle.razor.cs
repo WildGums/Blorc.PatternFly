@@ -40,7 +40,7 @@
 
         public bool IsSplitButton
         {
-            get { return SplitButtonItems != null; }
+            get { return SplitButtonItems is not null; }
         }
 
         [CascadingParameter]
@@ -143,7 +143,7 @@
         {
             IsOpen = !IsOpen;
             var handler = Toggled;
-            if (handler != null)
+            if (handler is not null)
             {
                 handler(this, EventArgs.Empty);
             }

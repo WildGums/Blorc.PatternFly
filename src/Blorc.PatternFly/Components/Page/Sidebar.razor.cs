@@ -46,7 +46,7 @@
         protected override void OnInitialized()
         {
             base.OnInitialized();
-            if (PageComponent != null)
+            if (PageComponent is not null)
             {
                 Theme = PageComponent.Theme;
             }
@@ -57,7 +57,7 @@
         protected override void OnParametersSet()
         {
             base.OnParametersSet();
-            if (PageComponent != null)
+            if (PageComponent is not null)
             {
                 StateHasChanged();
             }

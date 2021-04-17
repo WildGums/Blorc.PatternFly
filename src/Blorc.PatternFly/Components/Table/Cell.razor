@@ -3,7 +3,7 @@
 
 @inherits BlorcComponentBase
 
-@if (ValueContent != null)
+@if (ValueContent is not null)
 {
     <td data-label="@Label" data-key="@Key" class="@Class">@ValueContent</td>
 }

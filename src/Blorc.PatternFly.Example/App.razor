@@ -1,26 +1,11 @@
-﻿@using Blorc.Services
+﻿<Router AppAssembly="@typeof(Program).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+    </Found>
+    <NotFound>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <p>Sorry, there's nothing at this address.</p>
+        </LayoutView>
+    </NotFound>
+</Router>
 
-@inherits Blorc.Components.BlorcApplicationBase
-
-@if (Initialized)
-{
-    <Router AppAssembly="@typeof(Program).Assembly">
-        <Found Context="routeData">
-            <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
-        </Found>
-        <NotFound>
-            <LayoutView Layout="@typeof(MainLayout)">
-                <p>Sorry, there's nothing at this address.</p>
-            </LayoutView>
-        </NotFound>
-    </Router>
-}
-
-@code
-{
-    protected override async Task OnConfiguringDocumentAsync(IDocumentService documentService)
-    {
-        await base.OnConfiguringDocumentAsync(documentService);
-        await documentService.InjectBlorcPatternFlyAsync();
-    }
-}

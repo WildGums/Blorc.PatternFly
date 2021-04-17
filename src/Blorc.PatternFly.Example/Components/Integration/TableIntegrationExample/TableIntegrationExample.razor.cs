@@ -82,7 +82,7 @@
         {
             base.OnInitialized();
 
-            if (_data == null)
+            if (_data is null)
             {
                 IsDataAvailable = false;
                 _data = new List<object>();

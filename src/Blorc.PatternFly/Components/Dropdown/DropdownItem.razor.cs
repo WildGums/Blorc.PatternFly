@@ -76,12 +76,12 @@
         protected void OnButtonClicked(MouseEventArgs e)
         {
             var handler = OnClick;
-            if (handler != null)
+            if (handler is not null)
             {
                 handler(this, EventArgs.Empty);
             }
 
-            if (ContainerDropdown != null)
+            if (ContainerDropdown is not null)
             {
                 ContainerDropdown.Close();
             }
@@ -106,7 +106,7 @@
                 builder.AddAttribute(idx++, "href", Href);
             }
 
-            if (OnClick != null)
+            if (OnClick is not null)
             {
                 builder.AddAttribute(idx++, "onclick", new EventCallback<MouseEventArgs>(this, new Action<MouseEventArgs>(OnButtonClicked)));
             }

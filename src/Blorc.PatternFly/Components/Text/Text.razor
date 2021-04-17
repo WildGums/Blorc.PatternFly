@@ -21,7 +21,7 @@
                     builder.AddAttribute(idx++, "href", Href);
                 }
 
-                if (AdditionalAttributes != null && AdditionalAttributes.TryGetValue("style", out var style))
+                if (AdditionalAttributes is not null && AdditionalAttributes.TryGetValue("style", out var style))
                 {
                     builder.AddAttribute(idx++, "style", style);
                 }

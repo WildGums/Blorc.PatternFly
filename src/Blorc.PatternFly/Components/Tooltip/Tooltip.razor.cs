@@ -82,7 +82,7 @@
             HideTooltip();
         }
 
-        protected async Task OnMouseEnter(MouseEventArgs e)
+        protected async Task OnMouseEnterAsync(MouseEventArgs e)
         {
             var tooltipRect = await DocumentService.GetBoundingClientRectByIdAsync(Id.ToString());
             var tooltipRectHeight = tooltipRect.Height;

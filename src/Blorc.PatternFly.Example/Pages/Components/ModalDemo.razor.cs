@@ -26,14 +26,14 @@
 
         protected IUIVisualizationService SmallUIModal { get; set; }
 
-        public async Task DoSomething(ExecutionContext ctx)
+        public async Task DoSomethingAsync(ExecutionContext ctx)
         {
             var total = 100;
             for (var i = 0; i < total; i++)
             {
                 var value = Convert.ToInt32(100.0d * i / total);
 
-                if (ctx.State != null && (bool)ctx.State)
+                if (ctx.State is not null && (bool)ctx.State)
                 {
                     await Task.Delay(10);
                 }

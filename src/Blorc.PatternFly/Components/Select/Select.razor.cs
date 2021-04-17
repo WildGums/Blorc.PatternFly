@@ -130,7 +130,7 @@
                     }
 
                     var selectedKey = SelectedItems.FirstOrDefault();
-                    if (selectedKey != null && Values.TryGetValue(selectedKey, out var selectedValue))
+                    if (selectedKey is not null && Values.TryGetValue(selectedKey, out var selectedValue))
                     {
                         return selectedValue;
                     }
@@ -139,7 +139,7 @@
                 if (Variant == SelectVariant.Single || Variant == SelectVariant.Typeahead || Variant == SelectVariant.TypeaheadMulti)
                 {
                     var selectedKey = SelectedItems.FirstOrDefault();
-                    if (selectedKey != null && Values.TryGetValue(selectedKey, out var selectedValue))
+                    if (selectedKey is not null && Values.TryGetValue(selectedKey, out var selectedValue))
                     {
                         return selectedValue;
                     }
@@ -274,12 +274,12 @@
         protected override void OnParametersSet()
         {
             base.OnParametersSet();
-            if (SelectedItems == null)
+            if (SelectedItems is null)
             {
                 SelectedItems = new ObservableCollection<string>();
             }
 
-            if (DataSource != null)
+            if (DataSource is not null)
             {
                 InitializeValues();
             }
@@ -317,17 +317,17 @@
             {
                 string key = null;
                 string value = null;
-                if (KeyFunc != null)
+                if (KeyFunc is not null)
                 {
                     key = KeyFunc(record);
                 }
 
-                if (ValueFunc != null)
+                if (ValueFunc is not null)
                 {
                     value = ValueFunc(record);
                 }
 
-                if (value != null)
+                if (value is not null)
                 {
                     Values[key ?? value] = value;
                 }

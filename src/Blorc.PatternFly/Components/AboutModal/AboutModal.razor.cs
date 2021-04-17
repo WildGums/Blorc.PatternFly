@@ -40,7 +40,7 @@
         protected override void OnParametersSet()
         {
             base.OnParametersSet();
-            if (TargetContainer != null)
+            if (TargetContainer is not null)
             {
                 IsOpen = true;
             }
@@ -48,7 +48,7 @@
 
         public void Close()
         {
-            if (TargetContainer == null)
+            if (TargetContainer is null)
             {
                 IsOpen = false;
                 StateHasChanged();
@@ -59,7 +59,7 @@
 
         public void Show()
         {
-            if (TargetContainer == null)
+            if (TargetContainer is null)
             {
                 IsOpen = true;
                 StateHasChanged();

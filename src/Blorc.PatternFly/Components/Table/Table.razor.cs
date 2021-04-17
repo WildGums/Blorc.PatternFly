@@ -94,7 +94,7 @@
         [Parameter]
         public string Id { get; set; }
 
-        public bool IsSorted => OrderState != null && OrderState.IsSorted;
+        public bool IsSorted => OrderState is not null && OrderState.IsSorted;
 
         [Parameter]
         public bool IsStickyHeader
@@ -112,7 +112,7 @@
 
         public bool IsSortedBy(string propertyName)
         {
-            return OrderState != null && OrderState.IsSortedBy(propertyName);
+            return OrderState is not null && OrderState.IsSortedBy(propertyName);
         }
 
         public void OrderBy(Column columnComponent, Order order)
@@ -121,7 +121,7 @@
 
             OrderByColumnChanged?.Invoke(this, new OrderByColumnChangedEventArg(columnComponent));
 
-            if (DataSource == null || AlwaysReload)
+            if (DataSource is null || AlwaysReload)
             {
                 DataSource = DataSourceFunc.Invoke();
             }
@@ -147,7 +147,7 @@
         {
             base.OnAfterRender(firstRender);
 
-            if (firstRender && Header != null && ColumnDefinitions.Count > 0)
+            if (firstRender && Header is not null && ColumnDefinitions.Count > 0)
             {
                 StateHasChanged();
             }
@@ -155,7 +155,7 @@
 
         protected override async Task OnInitializedAsync()
         {
-            if (DataSource == null)
+            if (DataSource is null)
             {
                 DataSource = DataSourceFunc?.Invoke();
             }
@@ -179,7 +179,7 @@
 
         private void SortIfRequired()
         {
-            if (DataSource != null)
+            if (DataSource is not null)
             {
                 if (OrderState is null)
                 {

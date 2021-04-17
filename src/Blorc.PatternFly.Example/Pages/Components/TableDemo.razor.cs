@@ -75,7 +75,7 @@
 
         public IEnumerable GetData(bool reload = false)
         {
-            if (_data == null || reload)
+            if (_data is null || reload)
             {
                 _data = new ArrayList();
                 for (var i = 0; i < 5; i++)

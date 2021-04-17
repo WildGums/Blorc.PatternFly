@@ -76,7 +76,7 @@
         {
             get
             {
-                if (ActionSource == null || DataContext == null)
+                if (ActionSource is null || DataContext is null)
                 {
                     return null;
                 }

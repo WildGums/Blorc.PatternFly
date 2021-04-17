@@ -70,14 +70,14 @@
         protected override void OnParametersSet()
         {
             base.OnParametersSet();
-            if (ContainerTable != null)
+            if (ContainerTable is not null)
             {
-                if (ContainerTable.HighlightPredicate != null && Record != null)
+                if (ContainerTable.HighlightPredicate is not null && Record is not null)
                 {
                     IsHighlighted = ContainerTable.HighlightPredicate(Record);
                 }
 
-                if (ContainerTable.HighlightStyleFunc != null && Record != null)
+                if (ContainerTable.HighlightStyleFunc is not null && Record is not null)
                 {
                     HighlightStyle = ContainerTable.HighlightStyleFunc(Record);
                 }

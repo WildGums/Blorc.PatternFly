@@ -227,7 +227,7 @@
         protected override void OnParametersSet()
         {
             base.OnParametersSet();
-            if (ItemsPerPageOptions != null && ItemsPerPageOptions.Any())
+            if (ItemsPerPageOptions is not null && ItemsPerPageOptions.Any())
             {
                 var itemsPerPage = ItemsPerPageOptions.First();
                 if (ItemsPerPage == 0)

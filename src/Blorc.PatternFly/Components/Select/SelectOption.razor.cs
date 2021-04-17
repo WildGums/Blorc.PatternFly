@@ -36,7 +36,7 @@
         [Parameter]
         public bool IsDisabled { get; set; }
 
-        public bool IsSelected => ContainerSelect != null && ContainerSelect.SelectedItems.Contains(Key);
+        public bool IsSelected => ContainerSelect is not null && ContainerSelect.SelectedItems.Contains(Key);
 
         public bool IsVisible
         {
@@ -44,7 +44,7 @@
             {
                 if (ContainerSelect.Variant == SelectVariant.Typeahead || ContainerSelect.Variant == SelectVariant.TypeaheadMulti)
                 {
-                    return string.IsNullOrWhiteSpace(ContainerSelect.FilterText) || ContainerSelect != null &&
+                    return string.IsNullOrWhiteSpace(ContainerSelect.FilterText) || ContainerSelect is not null &&
                            (ContainerSelect.TypeaheadMatchExpression?.Invoke(ContainerSelect.FilterText, Value) ?? Value.StartsWith(ContainerSelect.FilterText, StringComparison.InvariantCultureIgnoreCase));
                 }
 
@@ -87,7 +87,7 @@
         protected override void OnParametersSet()
         {
             base.OnParametersSet();
-            if (ContainerSelect != null && !string.IsNullOrWhiteSpace(Key))
+            if (ContainerSelect is not null && !string.IsNullOrWhiteSpace(Key))
             {
                 ContainerSelect.Values[Key] = Value;
             }

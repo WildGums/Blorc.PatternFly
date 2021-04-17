@@ -6,7 +6,7 @@
 <CascadingValue Value=this>
     <li class="pf-c-nav__item pf-m-expandable @GetExpandableNavItemClass()">
         <a class="pf-c-nav__link" aria-expanded="true" @onclick="Toggle">
-            @if (Content != null)
+            @if (Content is not null)
             {
                 @Content
             }

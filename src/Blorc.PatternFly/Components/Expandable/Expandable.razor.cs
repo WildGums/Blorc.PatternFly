@@ -73,7 +73,7 @@
         {
             IsExpanded = !IsExpanded;
             var handler = Toggled;
-            if (handler != null)
+            if (handler is not null)
             {
                 handler(this, EventArgs.Empty);
             }

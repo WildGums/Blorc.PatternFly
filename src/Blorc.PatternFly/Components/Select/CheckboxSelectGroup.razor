@@ -3,7 +3,7 @@
 
 @inherits BlorcComponentBase
 
-@if (ContainerSelect != null && ContainerSelect.IsExpanded)
+@if (ContainerSelect is not null && ContainerSelect.IsExpanded)
 {
     <div class="pf-c-select__menu-group">
         <div class="pf-c-select__menu-group-title" aria-hidden="true">@Label</div>

@@ -106,7 +106,7 @@
             {
                 Console.WriteLine("IsSelectExpanded Changed");
             }
-            else if (e.PropertyName == nameof(SelectedItems) && SelectedItems != null)
+            else if (e.PropertyName == nameof(SelectedItems) && SelectedItems is not null)
             {
                 Console.WriteLine($"Changed SelectedItems: {SelectedItems2.Count}");
                 SelectedItems.CollectionChanged += (sender, args) =>
@@ -114,7 +114,7 @@
                     Console.WriteLine($"SelectedItems: {SelectedItems.Count}");
                 };
             }
-            else if (e.PropertyName == nameof(SelectedItems2) && SelectedItems2 != null)
+            else if (e.PropertyName == nameof(SelectedItems2) && SelectedItems2 is not null)
             {
                 Console.WriteLine($"Changed SelectedItems2: {SelectedItems2.Count}");
                 SelectedItems2.CollectionChanged += (sender, args) =>
@@ -122,7 +122,7 @@
                     Console.WriteLine($"SelectedItems2: {SelectedItems2.Count}");
                 };
             }
-            else if (e.PropertyName == nameof(SelectedItems3) && SelectedItems3 != null)
+            else if (e.PropertyName == nameof(SelectedItems3) && SelectedItems3 is not null)
             {
                 Console.WriteLine($"Changed SelectedItems3: {SelectedItems3.Count}");
                 SelectedItems3.CollectionChanged += (sender, args) =>
@@ -130,7 +130,7 @@
                     Console.WriteLine($"SelectedItems3: {SelectedItems3.Count}");
                 };
             }
-            else if (e.PropertyName == nameof(SelectedItems4) && SelectedItems4 != null)
+            else if (e.PropertyName == nameof(SelectedItems4) && SelectedItems4 is not null)
             {
                 Console.WriteLine($"Changed SelectedItems4: {SelectedItems4.Count}");
                 SelectedItems4.CollectionChanged += (sender, args) =>

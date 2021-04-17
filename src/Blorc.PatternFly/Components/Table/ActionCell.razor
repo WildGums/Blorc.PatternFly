@@ -7,7 +7,7 @@
 
 @inherits BlorcComponentBase
 
-@if (ChildContent != null)
+@if (ChildContent is not null)
 {
     <td data-label="@Label" data-key="@Key" class="pf-c-table__action">
         @ChildContent
@@ -16,7 +16,7 @@
 else
 {
     var actionDefinitions = ActionDefinitions;
-    if (actionDefinitions != null)
+    if (actionDefinitions is not null)
     {
         <td data-label="@Label" data-key="@Key" class="pf-c-table__action">
             @if (ActionType == ActionColumnType.Toggle)
@@ -54,7 +54,7 @@ else
             {
                 var buttonActionDefinition = actionDefinitions.OfType<CallActionDefinition>().FirstOrDefault();
                 <Split IsGutter="true">
-                    @if (buttonActionDefinition != null)
+                    @if (buttonActionDefinition is not null)
                     {
                         <SplitItem IsFilled="true">
                             <Button Variant=@ButtonVariant.Primary OnClick=@((s, e) => buttonActionDefinition.Action(DataContext)) IsDisabled="@buttonActionDefinition.IsDisabled">@buttonActionDefinition.Label</Button>
