@@ -83,7 +83,7 @@
         [Parameter]
         public EventHandler<EventArgs> OnClick { get; set; }
 
-        protected RenderFragment CustomRender;
+        protected RenderFragment _customRender;
 
         protected void OnButtonClicked(MouseEventArgs e)
         {
@@ -125,7 +125,7 @@
         {
             base.OnInitialized();
 
-            CustomRender = CreateComponent();
+            _customRender = CreateComponent();
         }
     }
 }

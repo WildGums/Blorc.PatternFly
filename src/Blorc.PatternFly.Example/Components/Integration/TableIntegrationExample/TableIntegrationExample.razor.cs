@@ -55,10 +55,10 @@
         public void Generate()
         {
             IsDataAvailable = true;
-            Load(0, 0, 5);
+            LoadAsync(0, 0, 5);
         }
 
-        public Task Load(int page, int offset, int limit)
+        public Task LoadAsync(int page, int offset, int limit)
         {
             Console.WriteLine($"Loading {page} {offset} {limit}...");
 
